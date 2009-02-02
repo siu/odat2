@@ -1,38 +1,28 @@
-class Admin::RegionsController < ApplicationController
+class Admin::RegionsController < Admin::AdminSectionController
+
+  # load data
   before_filter :new_region, :only => [:new, :create]
   before_filter :load_region, :only => [:show, :edit, :update, :destroy]
   before_filter :load_regions, :only => [:index]
 
+  # render templates
+  before_filter :show_regions, :only => [:index]
+  before_filter :show_region, :only => [:show, :new]
+
   # GET /regions
   # GET /regions.xml
-  def index
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @regions }
-    end
-  end
+  def index; end
 
   # GET /regions/1
   # GET /regions/1.xml
-  def show
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @region }
-    end
-  end
+  def show; end
 
   # GET /regions/new
   # GET /regions/new.xml
-  def new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @region }
-    end
-  end
+  def new; end
 
   # GET /regions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /regions
   # POST /regions.xml
@@ -52,8 +42,7 @@ class Admin::RegionsController < ApplicationController
     end
   end
 
-  # PUT /regions/1
-  # PUT /regions/1.xml
+  # PUT /regions/1 # PUT /regions/1.xml
   def update
     respond_to do |format|
       if @region.update_attributes(params[:region])
@@ -79,7 +68,10 @@ class Admin::RegionsController < ApplicationController
     end
   end
 
+
   protected
+
+  # Load data
 
   def load_regions
     @regions = Region.find(:all)
@@ -91,6 +83,22 @@ class Admin::RegionsController < ApplicationController
 
   def new_region
     @region = Region.new
+  end
+
+  # Render templates
+
+  def show_region
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @region }
+    end
+  end
+
+  def show_regions
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @regions }
+    end
   end
 
 end
