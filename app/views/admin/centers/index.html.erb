@@ -1,0 +1,20 @@
+<h1>Listing centers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for center in @centers %>
+  <tr>
+    <td><%=h center.name %></td>
+    <td><%= link_to 'Show', [:admin, center] %></td>
+    <td><%= link_to 'Edit', edit_admin_center_path(center) %></td>
+    <td><%= link_to 'Destroy', [:admin, center], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New center', new_admin_center_path %>
