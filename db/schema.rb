@@ -12,13 +12,14 @@
 ActiveRecord::Schema.define(:version => 20090203223959) do
 
   create_table "centers", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :limit => 50, :null => false
+    t.integer  "region_id",                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "regions", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :limit => 40, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

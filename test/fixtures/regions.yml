@@ -1,7 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+madrid:
+  name: Comunidad de Madrid
 
-two:
-  name: MyString
+catalunya:
+  name: Comunidad de Catalunya
+
+valencia:
+  name: Comunidad Valenciana
+
+demo:
+  name: Demo

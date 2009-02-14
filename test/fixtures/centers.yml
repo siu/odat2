@@ -1,7 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+demo:
+  name: Centro Demo
+  region: regions(:demo)
 
-two:
-  name: MyString
+madrid:
+  name: Madrid 1
+  region: regions(:madrid)
+
+catalunya:
+  name: Barcelona 1
+  region: regions(:catalunya)
+
+valencia:
+  name: Valencia 1
+  region: regions(:valencia)

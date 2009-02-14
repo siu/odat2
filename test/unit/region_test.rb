@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class Admin::RegionTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_the_truth
-    assert true
+  def test_invalid_default_attributes
+    region =  Region.new
+    assert !region.valid?
+    assert region.errors.invalid?(:name)
   end
 end
