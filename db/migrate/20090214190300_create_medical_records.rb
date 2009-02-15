@@ -42,7 +42,7 @@ class CreateMedicalRecords < ActiveRecord::Migration
       t.string  :portable_phone, :limit => 9
       t.string  :job_phone, :limit => 9
       t.integer :total_siblings_amount, :limit => 6
-      t.integer :postal, :limit => 5
+      t.string	:postal, :limit => 5
       t.integer :birth_position,  :limit => 2
       t.boolean :sanitary_services
       t.boolean :social_services

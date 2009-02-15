@@ -1,17 +1,6 @@
-require File.dirname(__FILE__) + '/../test_helper'
-require 'medical_records_controller'
+require 'test_helper'
 
-# Re-raise errors caught by the controller.
-class MedicalRecordsController; def rescue_action(e) raise e end; end
-
-class MedicalRecordsControllerTest < Test::Unit::TestCase
-  fixtures :medical_records
-
-  def setup
-    @controller = MedicalRecordsController.new
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
-  end
+class MedicalRecordsControllerTest  < ActionController::TestCase
 
   def test_should_get_index
     get :index

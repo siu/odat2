@@ -62,19 +62,18 @@ class MedicalRecord < ActiveRecord::Base
   validates_numericality_of :postal, 
     :only_integer => true, 
     :allow_nil => true, 
-    :message => N_('El código postal debe ser un número'), 
-    :if => :postal
+    :message => N_('El código postal debe ser un número'),
+    :if => Proc.new { |p| p.postal != '' }
 
   validates_length_of :postal, 
     :is => 5, 
-    :message => N_('El código postal debe tener 5 digitos'), 
-    :if => :postal
+    :message => N_('El código postal debe tener 5 digitos'),
+    :allow_blank => true
 
   validates_numericality_of :birth_position,
     :only_integer => true, 
     :allow_nil => true, 
-    :message => N_('El número de parto debe ser un número'), 
-    :if => :birth_position
+    :message => N_('El número de parto debe ser un número') 
 
   def full_name
     surname + ', ' + name
