@@ -29,22 +29,22 @@ class MedicalRecord < ActiveRecord::Base
     #:class_name => 'FormationLevel',
     #:foreign_key => 'father_formation_level_id'
 
-  # Related to mather
-  #belongs_to :mather_job,
+  # Related to mother
+  #belongs_to :mother_job,
     #:class_name => 'Job',
-    #:foreign_key => 'mather_job_id'
+    #:foreign_key => 'mother_job_id'
 
-  #belongs_to :mather_civil_state,
+  #belongs_to :mother_civil_state,
     #:class_name => 'CivilState', 
-    #:foreign_key => 'mather_civil_state_id'
+    #:foreign_key => 'mother_civil_state_id'
 
-  #belongs_to :mather_job_situation,
+  #belongs_to :mother_job_situation,
     #:class_name => 'JobSituation',
-    #:foreign_key => 'mather_job_situation_id'
+    #:foreign_key => 'mother_job_situation_id'
 
-  #belongs_to :mather_formation_level,
+  #belongs_to :mother_formation_level,
     #:class_name => 'FormationLevel',
-    #:foreign_key => 'mather_formation_level_id'
+    #:foreign_key => 'mother_formation_level_id'
 
   # Validations
   validates_presence_of :center,

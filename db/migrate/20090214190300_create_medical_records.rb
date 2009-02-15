@@ -26,16 +26,16 @@ class CreateMedicalRecords < ActiveRecord::Migration
       t.string  :father_email,   :limit => 30
       t.text    :father_extra_information
 
-      # Related to the mather
-      t.string  :mather_name, :limit => 25
-      t.string  :mather_surname, :limit => 50
-      t.date    :mather_birth_date
-      t.integer :mather_job_id
-      t.integer :mather_civil_state_id
-      t.integer :mather_job_situation_id
-      t.integer :mather_study_level_id
-      t.string  :mather_email,   :limit => 30
-      t.text    :mather_extra_information
+      # Related to the mother
+      t.string  :mother_name, :limit => 25
+      t.string  :mother_surname, :limit => 50
+      t.date    :mother_birth_date
+      t.integer :mother_job_id
+      t.integer :mother_civil_state_id
+      t.integer :mother_job_situation_id
+      t.integer :mother_study_level_id
+      t.string  :mother_email,   :limit => 30
+      t.text    :mother_extra_information
 
       # Extra data
       t.string  :home_phone, :limit => 9
