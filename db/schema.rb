@@ -9,11 +9,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090203223959) do
+ActiveRecord::Schema.define(:version => 20090214190300) do
 
   create_table "centers", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
     t.integer  "region_id",                :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medical_records", :force => true do |t|
+    t.integer  "center_id",                              :null => false
+    t.string   "name",                     :limit => 25, :null => false
+    t.string   "surname",                  :limit => 50, :null => false
+    t.date     "birth_date"
+    t.date     "archive_date"
+    t.integer  "region_id"
+    t.string   "city",                     :limit => 40
+    t.string   "address",                  :limit => 60
+    t.integer  "birth_position",           :limit => 2
+    t.string   "gender",                   :limit => 9
+    t.string   "father_name",              :limit => 25
+    t.string   "father_surname",           :limit => 50
+    t.date     "father_birth_date"
+    t.integer  "father_job_id"
+    t.integer  "father_civil_state_id"
+    t.integer  "father_job_situation_id"
+    t.integer  "father_study_level_id"
+    t.string   "father_email",             :limit => 30
+    t.text     "father_extra_information"
+    t.string   "mather_name",              :limit => 25
+    t.string   "mather_surname",           :limit => 50
+    t.date     "mather_birth_date"
+    t.integer  "mather_job_id"
+    t.integer  "mather_civil_state_id"
+    t.integer  "mather_job_situation_id"
+    t.integer  "mather_study_level_id"
+    t.string   "mather_email",             :limit => 30
+    t.text     "mather_extra_information"
+    t.string   "home_phone",               :limit => 9
+    t.string   "portable_phone",           :limit => 9
+    t.string   "job_phone",                :limit => 9
+    t.integer  "total_siblings_amount",    :limit => 6
+    t.integer  "postal",                   :limit => 5
+    t.boolean  "sanitary_services"
+    t.boolean  "social_services"
+    t.boolean  "educative_services"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,22 @@
+<h1>Listing medical reports</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for medical_record in @medical_records %>
+  <tr>
+    <td><%=h medical_record.name %></td>
+    <td><%= link_to 'Show', medical_record %></td>
+    <td><%= link_to 'Edit', edit_medical_record_path(medical_record) %></td>
+    <td><%= link_to 'Destroy', medical_record, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @medical_record %>
+
+<br />
+
+<%= link_to 'New center', new_medical_record_path %>

@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+pedrito:
+  name: Pedro
+  surname: Pedrito Perez
+  center_id: centers(:demo)
+  created_at: Time.now
+  

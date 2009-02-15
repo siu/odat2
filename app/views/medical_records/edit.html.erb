@@ -1,0 +1,16 @@
+<h1>Editing medical report</h1>
+
+<% form_for(@medical_record) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @medical_record %> |
+<%= link_to 'Back', medical_records_path %>

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :medical_records
+
   map.namespace :admin do |admin|
     admin.resources :regions
     admin.resources :centers
