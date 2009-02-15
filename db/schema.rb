@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090214190300) do
+ActiveRecord::Schema.define(:version => 20090215194554) do
 
   create_table "centers", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(:version => 20090214190300) do
 
   create_table "regions", :force => true do |t|
     t.string   "name",       :limit => 40, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reports", :force => true do |t|
+    t.boolean  "show_signature",                :default => true
+    t.string   "signature",      :limit => 150
+    t.boolean  "show_signed_on",                :default => true
+    t.datetime "signed_on"
+    t.integer  "font_size",                     :default => 0
+    t.string   "font_family",    :limit => 150
     t.datetime "created_at"
     t.datetime "updated_at"
   end
