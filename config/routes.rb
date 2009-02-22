@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :medical_records
+  map.resources :medical_records, :has_many => [:odat_diagnoses]
 
   map.namespace :admin do |admin|
     admin.resources :regions

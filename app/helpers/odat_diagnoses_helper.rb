@@ -1,0 +1,2 @@
+module OdatDiagnosesHelper
+end

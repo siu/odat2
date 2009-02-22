@@ -1,0 +1,40 @@
+<h1>Editing odat_diagnosis</h1>
+
+<% form_for([@medical_record, @odat_diagnosis]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :medical_record_id %><br />
+    <%= f.text_field :medical_record_id %>
+  </p>
+  <p>
+    <%= f.label :derivation_source_id %><br />
+    <%= f.text_field :derivation_source_id %>
+  </p>
+  <p>
+    <%= f.label :derivation_cause_id %><br />
+    <%= f.text_field :derivation_cause_id %>
+  </p>
+  <p>
+    <%= f.label :consultation_reason_id %><br />
+    <%= f.text_field :consultation_reason_id %>
+  </p>
+  <p>
+    <%= f.label :handicap_value %><br />
+    <%= f.text_field :handicap_value %>
+  </p>
+  <p>
+    <%= f.label :main_diagnosis_item_id %><br />
+    <%= f.text_field :main_diagnosis_item_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [@medical_record, @odat_diagnosis] %> |
+<%= link_to 'Back', medical_record_odat_diagnoses_path(@medical_record) %>

@@ -2,10 +2,10 @@ class MedicalRecord < ActiveRecord::Base
   belongs_to :center
   delegate :region, :region=, :to => :center
 
-  #has_many  :odat_diagnostics,
-    #:class_name => 'OdatDiagnostic',
-    #:dependent => :destroy, 
-    #:order => 'created_at DESC'
+  has_many  :odat_diagnoses,
+    :class_name => 'OdatDiagnosis',
+    :dependent => :destroy, 
+    :order => 'created_at DESC'
 
   #has_many :individual_reports,
     #:class_name => 'IndividualReport', 

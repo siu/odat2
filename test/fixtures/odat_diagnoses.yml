@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  medical_record: medical_records(:pedrito)
+  derivation_source_id: 1
+  derivation_cause_id: 1
+  consultation_reason_id: 1
+  handicap_value: 1
+  main_diagnosis_item_id: 1
+  description: MyString
+
+two:
+  medical_record: medical_records(:pedrito)
+  derivation_source_id: 1
+  derivation_cause_id: 1
+  consultation_reason_id: 1
+  handicap_value: 1
+  main_diagnosis_item_id: 1
+  description: MyString

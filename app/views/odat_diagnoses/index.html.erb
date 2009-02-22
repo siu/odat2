@@ -1,0 +1,22 @@
+<h1>Listing odat_diagnoses</h1>
+
+<table>
+  <tr>
+    <th>Created at</th>
+    <th>Handicap value</th>
+  </tr>
+
+<% for odat_diagnosis in @odat_diagnoses %>
+  <tr>
+    <td><%=h odat_diagnosis.created_at %></td>
+    <td><%=h odat_diagnosis.handicap_value %></td>
+    <td><%= link_to 'Show', [@medical_record, odat_diagnosis] %></td>
+    <td><%= link_to 'Edit', edit_medical_record_odat_diagnosis_path(@medical_record, odat_diagnosis) %></td>
+    <td><%= link_to 'Destroy', [@medical_record, odat_diagnosis], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New odat_diagnosis', new_medical_record_odat_diagnosis_path(@medical_report) %>

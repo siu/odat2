@@ -1,0 +1,38 @@
+<p>
+  <b>Medical record:</b>
+  <%=h @odat_diagnosis.medical_record_id %>
+</p>
+
+<p>
+  <b>Derivation source:</b>
+  <%=h @odat_diagnosis.derivation_source_id %>
+</p>
+
+<p>
+  <b>Derivation cause:</b>
+  <%=h @odat_diagnosis.derivation_cause_id %>
+</p>
+
+<p>
+  <b>Consultation reason:</b>
+  <%=h @odat_diagnosis.consultation_reason_id %>
+</p>
+
+<p>
+  <b>Handicap value:</b>
+  <%=h @odat_diagnosis.handicap_value %>
+</p>
+
+<p>
+  <b>Main diagnosis:</b>
+  <%=h @odat_diagnosis.main_diagnosis_item_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @odat_diagnosis.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_medical_record_odat_diagnosis_path(@medical_record, @odat_diagnosis) %> |
+<%= link_to 'Back', medical_record_odat_diagnoses_path(@medical_record) %>
