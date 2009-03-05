@@ -21,9 +21,9 @@ class MedicalRecord < ActiveRecord::Base
     #:class_name => 'CivilState', 
     #:foreign_key => 'father_civil_state_id'
 
-  #belongs_to :father_job_situation,
-    #:class_name => 'JobSituation',
-    #:foreign_key => 'father_job_situation_id'
+  #belongs_to :father_job_status,
+    #:class_name => 'JobStatus',
+    #:foreign_key => 'father_job_status_id'
 
   #belongs_to :father_formation_level,
     #:class_name => 'FormationLevel',
@@ -38,9 +38,9 @@ class MedicalRecord < ActiveRecord::Base
     #:class_name => 'CivilState', 
     #:foreign_key => 'mother_civil_state_id'
 
-  #belongs_to :mother_job_situation,
-    #:class_name => 'JobSituation',
-    #:foreign_key => 'mother_job_situation_id'
+  #belongs_to :mother_job_status,
+    #:class_name => 'JobStatus',
+    #:foreign_key => 'mother_job_status_id'
 
   #belongs_to :mother_formation_level,
     #:class_name => 'FormationLevel',

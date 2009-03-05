@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @civil_state.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @civil_state.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_civil_state_path(@civil_state) %> |
+<%= link_to 'Back', admin_civil_states_path %>

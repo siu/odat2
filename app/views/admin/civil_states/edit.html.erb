@@ -1,0 +1,20 @@
+<h1>Editing civil_state</h1>
+
+<% form_for([:admin, @civil_state]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @civil_state] %> |
+<%= link_to 'Back', admin_civil_states_path %>

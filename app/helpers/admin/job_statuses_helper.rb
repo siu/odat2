@@ -1,0 +1,2 @@
+module Admin::JobStatusesHelper
+end

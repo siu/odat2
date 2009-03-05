@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class Admin::CentersControllerTest < ActionController::TestCase
-  tests Admin::CentersController
-
   def test_should_get_index
     get :index
     assert_response :success

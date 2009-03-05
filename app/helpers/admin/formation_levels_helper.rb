@@ -1,0 +1,2 @@
+module Admin::FormationLevelsHelper
+end

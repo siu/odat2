@@ -1,9 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :medical_records, :has_many => [:odat_diagnoses]
 
   map.namespace :admin do |admin|
     admin.resources :regions
     admin.resources :centers
+    admin.resources :formation_levels
+    admin.resources :job_statuses
+    admin.resources :civil_states
+    admin.resources :jobs
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

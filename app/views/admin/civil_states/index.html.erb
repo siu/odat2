@@ -1,0 +1,22 @@
+<h1>Listing civil_states</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for civil_state in @civil_states %>
+  <tr>
+    <td><%=h civil_state.name %></td>
+    <td><%=h civil_state.description %></td>
+    <td><%= link_to 'Show', [:admin, civil_state] %></td>
+    <td><%= link_to 'Edit', edit_admin_civil_state_path(civil_state) %></td>
+    <td><%= link_to 'Destroy', [:admin, civil_state], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New civil_state', new_admin_civil_state_path %>

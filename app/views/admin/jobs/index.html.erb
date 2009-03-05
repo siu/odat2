@@ -1,0 +1,22 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for job in @jobs %>
+  <tr>
+    <td><%=h job.name %></td>
+    <td><%=h job.description %></td>
+    <td><%= link_to 'Show', [:admin, job] %></td>
+    <td><%= link_to 'Edit', edit_admin_job_path(job) %></td>
+    <td><%= link_to 'Destroy', [:admin, job], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New job', new_admin_job_path %>
