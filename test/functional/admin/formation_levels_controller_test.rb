@@ -14,7 +14,9 @@ class Admin::FormationLevelsControllerTest < ActionController::TestCase
 
   def test_should_create_formation_level
     assert_difference('FormationLevel.count') do
-      post :create, :formation_level => { }
+      post :create, :formation_level => { 
+	:name => 'Nivel 1'
+      }
     end
 
     assert_redirected_to admin_formation_level_path(assigns(:formation_level))

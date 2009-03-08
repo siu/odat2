@@ -52,10 +52,17 @@ class OdatDiagnosesController < ApplicationController
       if @odat_diagnosis.save
         flash[:notice] = 'OdatDiagnosis was successfully created.'
         format.html { redirect_to(@medical_record, @odat_diagnosis) }
-        format.xml  { render :xml => @odat_diagnosis, :status => :created, :location => @odat_diagnosis }
+        format.xml  { 
+	  render :xml => @odat_diagnosis, 
+	  :status => :created, 
+	  :location => @odat_diagnosis 
+	}
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @odat_diagnosis.errors, :status => :unprocessable_entity }
+        format.xml  { 
+	  render :xml => @odat_diagnosis.errors, 
+	  :status => :unprocessable_entity 
+	}
       end
     end
   end
@@ -72,7 +79,10 @@ class OdatDiagnosesController < ApplicationController
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @odat_diagnosis.errors, :status => :unprocessable_entity }
+        format.xml  { 
+	  render :xml => @odat_diagnosis.errors, 
+	  :status => :unprocessable_entity 
+	}
       end
     end
   end

@@ -14,7 +14,9 @@ class Admin::JobsControllerTest < ActionController::TestCase
 
   def test_should_create_job
     assert_difference('Job.count') do
-      post :create, :job => { }
+      post :create, :job => { 
+	:name => 'Trabajo 1'
+      }
     end
 
     assert_redirected_to admin_job_path(assigns(:job))

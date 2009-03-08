@@ -13,38 +13,38 @@ class MedicalRecord < ActiveRecord::Base
     #:order => 'created_at DESC'
 
   # Related to father
-  #belongs_to :father_job,
-    #:class_name => 'Job',
-    #:foreign_key => 'father_job_id'
+  belongs_to :father_job,
+    :class_name => 'Job',
+    :foreign_key => 'father_job_id'
 
-  #belongs_to :father_civil_state,
-    #:class_name => 'CivilState', 
-    #:foreign_key => 'father_civil_state_id'
+  belongs_to :father_civil_state,
+    :class_name => 'CivilState', 
+    :foreign_key => 'father_civil_state_id'
 
-  #belongs_to :father_job_status,
-    #:class_name => 'JobStatus',
-    #:foreign_key => 'father_job_status_id'
+  belongs_to :father_job_status,
+    :class_name => 'JobStatus',
+    :foreign_key => 'father_job_status_id'
 
-  #belongs_to :father_formation_level,
-    #:class_name => 'FormationLevel',
-    #:foreign_key => 'father_formation_level_id'
+  belongs_to :father_formation_level,
+    :class_name => 'FormationLevel',
+    :foreign_key => 'father_formation_level_id'
 
   # Related to mother
-  #belongs_to :mother_job,
-    #:class_name => 'Job',
-    #:foreign_key => 'mother_job_id'
+  belongs_to :mother_job,
+    :class_name => 'Job',
+    :foreign_key => 'mother_job_id'
 
-  #belongs_to :mother_civil_state,
-    #:class_name => 'CivilState', 
-    #:foreign_key => 'mother_civil_state_id'
+  belongs_to :mother_civil_state,
+    :class_name => 'CivilState', 
+    :foreign_key => 'mother_civil_state_id'
 
-  #belongs_to :mother_job_status,
-    #:class_name => 'JobStatus',
-    #:foreign_key => 'mother_job_status_id'
+  belongs_to :mother_job_status,
+    :class_name => 'JobStatus',
+    :foreign_key => 'mother_job_status_id'
 
-  #belongs_to :mother_formation_level,
-    #:class_name => 'FormationLevel',
-    #:foreign_key => 'mother_formation_level_id'
+  belongs_to :mother_formation_level,
+    :class_name => 'FormationLevel',
+    :foreign_key => 'mother_formation_level_id'
 
   # Validations
   validates_presence_of :center,

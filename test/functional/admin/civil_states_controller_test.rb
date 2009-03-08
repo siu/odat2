@@ -14,7 +14,9 @@ class Admin::CivilStatesControllerTest < ActionController::TestCase
 
   def test_should_create_civil_state
     assert_difference('CivilState.count') do
-      post :create, :civil_state => { }
+      post :create, :civil_state => { 
+	:name => 'Soltero'
+      }
     end
 
     assert_redirected_to admin_civil_state_path(assigns(:civil_state))
