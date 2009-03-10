@@ -1,7 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  medical_record: medical_records(:pedrito)
+  medical_record: pedrito
+  created_at: Time.now
   derivation_source_id: 1
   derivation_cause_id: 1
   consultation_reason_id: 1
@@ -10,7 +11,8 @@ one:
   description: MyString
 
 two:
-  medical_record: medical_records(:pedrito)
+  medical_record: pedrito
+  created_at: Time.now
   derivation_source_id: 1
   derivation_cause_id: 1
   consultation_reason_id: 1

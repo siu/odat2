@@ -17,12 +17,14 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
       post :create, 
 	:medical_record_id => medical_records(:pedrito).id, 
 	:odat_diagnosis => {
-	  :medical_record_id => medical_records(:pedrito).id, 
+	  :created_at => Time.now
 	}
     end
 
     assert_redirected_to 
-    	medical_record_odat_diagnosis_path({:medical_record_id => medical_records(:pedrito)}, assigns(:odat_diagnosis))
+    	medical_record_odat_diagnosis_path(
+	  {:medical_record_id => medical_records(:pedrito).id}, 
+	  assigns(:odat_diagnosis))
   end
 
   def test_should_show_odat_diagnosis
@@ -44,7 +46,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	:medical_record_id => medical_records(:pedrito).id, 
 	:id => odat_diagnoses(:one).id, 
 	:odat_diagnosis => { 
-	  :medical_record_id => medical_records(:pedrito).id, 
+	  :created_at => Time.now
 	}
     assert_redirected_to 
     	medical_record_odat_diagnosis_path(

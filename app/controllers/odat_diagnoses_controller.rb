@@ -8,7 +8,7 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses
   # GET /odat_diagnoses.xml
   def index
-    @odat_diagnoses = OdatDiagnosis.find(:all)
+    @odat_diagnoses = @medical_record.odat_diagnoses
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +19,7 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses/1
   # GET /odat_diagnoses/1.xml
   def show
-    @odat_diagnosis = OdatDiagnosis.find(params[:id])
+    @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,7 +30,7 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses/new
   # GET /odat_diagnoses/new.xml
   def new
-    @odat_diagnosis = OdatDiagnosis.new
+    @odat_diagnosis = @medical_record.odat_diagnoses.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,13 +40,14 @@ class OdatDiagnosesController < ApplicationController
 
   # GET /odat_diagnoses/1/edit
   def edit
-    @odat_diagnosis = OdatDiagnosis.find(params[:id])
+    @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
   end
 
   # POST /odat_diagnoses
   # POST /odat_diagnoses.xml
   def create
-    @odat_diagnosis = OdatDiagnosis.new(params[:odat_diagnosis])
+    @odat_diagnosis = @medical_record.odat_diagnoses.build(
+      attributes = params[:odat_diagnosis])
 
     respond_to do |format|
       if @odat_diagnosis.save
@@ -70,7 +71,7 @@ class OdatDiagnosesController < ApplicationController
   # PUT /odat_diagnoses/1
   # PUT /odat_diagnoses/1.xml
   def update
-    @odat_diagnosis = OdatDiagnosis.find(params[:id])
+    @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
 
     respond_to do |format|
       if @odat_diagnosis.update_attributes(params[:odat_diagnosis])
@@ -90,7 +91,7 @@ class OdatDiagnosesController < ApplicationController
   # DELETE /odat_diagnoses/1
   # DELETE /odat_diagnoses/1.xml
   def destroy
-    @odat_diagnosis = OdatDiagnosis.find(params[:id])
+    @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
     @odat_diagnosis.destroy
 
     respond_to do |format|
