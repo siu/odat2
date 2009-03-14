@@ -5,6 +5,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     get :index, :medical_record_id => medical_records(:pedrito).id
     assert_response :success
     assert_not_nil assigns(:odat_diagnoses)
+    assert_equal medical_records(:pedrito).odat_diagnoses.size, assigns(:odat_diagnoses).size
   end
 
   def test_should_get_new

@@ -15,10 +15,11 @@ class MedicalRecordsControllerTest  < ActionController::TestCase
 
   def test_should_create_medical_record
     assert_difference('MedicalRecord.count') do
-      post :create, :medical_record => { :name => 'Paciente 1',
-					  :surname => 'Apellidos test',
-					  :center => centers(:demo),
-					  :created_at => Time.now }
+      post :create, :medical_record => { 
+	:name => 'Paciente 1',
+	:surname => 'Apellidos test',
+	:center => centers(:demo),
+	:created_at => Time.now }
     end
 
     assert_redirected_to medical_record_path(assigns(:medical_record))
