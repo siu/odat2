@@ -14,12 +14,11 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_create_odat_diagnosis
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     assert_difference('OdatDiagnosis.count') do
       post :create, 
 	:medical_record_id => medical_records(:pedrito).id, 
-	:odat_diagnosis => {
-	  :created_at => Time.now
-	}
+	:odat_diagnosis => { }
     end
 
     assert_redirected_to 
@@ -43,12 +42,11 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_update_odat_diagnosis
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     put :update, 
 	:medical_record_id => medical_records(:pedrito).id, 
 	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { 
-	  :created_at => Time.now
-	}
+	:odat_diagnosis => { }
     assert_redirected_to 
     	medical_record_odat_diagnosis_path(
 	    {:medical_record_id => medical_records(:pedrito).id},

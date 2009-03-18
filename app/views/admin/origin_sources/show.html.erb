@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @origin_source.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @origin_source.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_origin_source_path(@origin_source) %> |
+<%= link_to 'Back', admin_origin_sources_path %>

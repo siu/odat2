@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @consultation_cause.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @consultation_cause.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_consultation_cause_path(@consultation_cause) %> |
+<%= link_to 'Back', admin_consultation_causes_path %>

@@ -9,6 +9,9 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :job_statuses
     admin.resources :civil_states
     admin.resources :jobs
+    admin.resources :consultation_causes
+    admin.resources :origin_causes
+    admin.resources :origin_sources
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,22 @@
+<h1>Listing origin_sources</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for origin_source in @origin_sources %>
+  <tr>
+    <td><%=h origin_source.name %></td>
+    <td><%=h origin_source.description %></td>
+    <td><%= link_to 'Show', [:admin, origin_source] %></td>
+    <td><%= link_to 'Edit', edit_admin_origin_source_path(origin_source) %></td>
+    <td><%= link_to 'Destroy', [:admin, origin_source], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New origin_source', new_admin_origin_source_path %>
