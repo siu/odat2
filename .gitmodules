@@ -1,3 +1,9 @@
 [submodule "vendor/plugins/resource_this"]
 	path = vendor/plugins/resource_this
 	url = git://github.com/jnewland/resource_this.git
+[submodule "vendor/plugins/acts_as_nested_set"]
+	path = vendor/plugins/acts_as_nested_set
+	url = git://github.com/rails/acts_as_nested_set.git
+[submodule "vendor/plugins/acts_as_html_text"]
+	path = vendor/plugins/acts_as_html_text
+	url = git://github.com/siu/acts_as_html_text.git

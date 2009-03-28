@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :consultation_causes
     admin.resources :origin_causes
     admin.resources :origin_sources
+    admin.resources :diagnosis_items
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
