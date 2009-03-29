@@ -13,6 +13,7 @@ class Admin::RegionsControllerTest < ActionController::TestCase
   end
 
   def test_should_create_region
+    Region.any_instance.stubs(:valid?).returns(:true)
     assert_difference('Region.count') do
       post :create, :region => { :name => 'New Region' }
     end
@@ -31,6 +32,7 @@ class Admin::RegionsControllerTest < ActionController::TestCase
   end
 
   def test_should_update_region
+    Region.any_instance.stubs(:valid?).returns(:true)
     put :update, :id => regions(:madrid).id, :region => { 
 	    :name => 'Updated region' }
     assert_redirected_to admin_region_path(assigns(:region))

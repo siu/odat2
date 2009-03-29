@@ -13,6 +13,7 @@ class Admin::JobsControllerTest < ActionController::TestCase
   end
 
   def test_should_create_job
+    Job.any_instance.stubs(:valid?).returns(:true)
     assert_difference('Job.count') do
       post :create, :job => { 
 	:name => 'Trabajo 1'
@@ -33,6 +34,7 @@ class Admin::JobsControllerTest < ActionController::TestCase
   end
 
   def test_should_update_job
+    Job.any_instance.stubs(:valid?).returns(:true)
     put :update, :id => jobs(:one).id, :job => { }
     assert_redirected_to admin_job_path(assigns(:job))
   end

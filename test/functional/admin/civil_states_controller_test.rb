@@ -13,9 +13,9 @@ class Admin::CivilStatesControllerTest < ActionController::TestCase
   end
 
   def test_should_create_civil_state
+    CivilState.any_instance.stubs(:valid?).returns(:true)
     assert_difference('CivilState.count') do
       post :create, :civil_state => { 
-	:name => 'Soltero'
       }
     end
 
@@ -33,6 +33,7 @@ class Admin::CivilStatesControllerTest < ActionController::TestCase
   end
 
   def test_should_update_civil_state
+    CivilState.any_instance.stubs(:valid?).returns(:true)
     put :update, :id => civil_states(:one).id, :civil_state => { }
     assert_redirected_to admin_civil_state_path(assigns(:civil_state))
   end

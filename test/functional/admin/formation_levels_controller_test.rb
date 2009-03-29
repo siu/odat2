@@ -13,6 +13,7 @@ class Admin::FormationLevelsControllerTest < ActionController::TestCase
   end
 
   def test_should_create_formation_level
+    FormationLevel.any_instance.stubs(:valid?).returns(:true)
     assert_difference('FormationLevel.count') do
       post :create, :formation_level => { 
 	:name => 'Nivel 1'
@@ -33,6 +34,7 @@ class Admin::FormationLevelsControllerTest < ActionController::TestCase
   end
 
   def test_should_update_formation_level
+    FormationLevel.any_instance.stubs(:valid?).returns(:true)
     put :update, :id => formation_levels(:one).id, :formation_level => { }
     assert_redirected_to admin_formation_level_path(assigns(:formation_level))
   end

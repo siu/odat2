@@ -13,6 +13,7 @@ class Admin::CentersControllerTest < ActionController::TestCase
   end
 
   def test_should_create_center
+    Center.any_instance.stubs(:valid?).returns(:true)
     assert_difference('Center.count') do
       post :create, :center => {  :name => 'test1',
 				  :region => regions(:demo) }
@@ -32,6 +33,7 @@ class Admin::CentersControllerTest < ActionController::TestCase
   end
 
   def test_should_update_center
+    Center.any_instance.stubs(:valid?).returns(:true)
     put :update,  :id => centers(:madrid).id, 
 		  :center => {	:name => 'updated',
 				:region => regions(:demo) }

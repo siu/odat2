@@ -14,6 +14,7 @@ class MedicalRecordsControllerTest  < ActionController::TestCase
   end
 
   def test_should_create_medical_record
+    MedicalRecord.any_instance.stubs(:valid?).returns(:true)
     assert_difference('MedicalRecord.count') do
       post :create, :medical_record => { 
 	:name => 'Paciente 1',
@@ -36,6 +37,7 @@ class MedicalRecordsControllerTest  < ActionController::TestCase
   end
 
   def test_should_update_medical_record
+    MedicalRecord.any_instance.stubs(:valid?).returns(:true)
     put :update, 
 	:id => medical_records(:pedrito).id, 
 	:medical_record => {:name => 'Paciente 1',
