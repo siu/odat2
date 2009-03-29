@@ -1,0 +1,320 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Sans, arial;
+	font-size: .82em;
+}
+/** Estructura **/
+/* Cabecera */
+#cabecera {}
+#titulo {
+	margin: 0;
+	padding: 0;
+	padding: .8em;
+	height: 55px;
+}
+#menu-cabecera, #usuario {
+	display: block;
+	background-color: #e5ecf9;
+	padding: .2em;
+	text-align: right;
+	border-bottom: 1px solid #c0c0e0;
+}
+#usuario {
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+}
+#menu-cabecera ul, #menu-cabecera li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	margin-right: .5em;
+}
+/* Cuerpo */
+#contenido p {
+	text-align: justify;
+}
+#lateral {
+	float: left;
+	width: 18%;
+	padding: 1.2em;
+	background-color: #eee;
+	border-right: 1px solid #ddd;
+}
+#cuerpo>#lateral {
+	padding: 1.8%;
+	width: 17.9%;
+}
+#contenido {
+	width: 72%;
+	float: left;
+	padding: 1.2em;
+}
+#cuerpo>#contenido {
+	width: 74.6%;
+	padding: 1.8%;
+	padding-top: .5%;
+}
+#contenido_ancho {
+	width: auto;
+	padding: 1.8%;
+}
+#central {
+	padding: 1.8%;
+	padding-top: .5%;
+}
+#contenido, #lateral {
+	margin-bottom: 1.5em;
+	line-height: 1.5em;
+}
+/* Pie */
+#pie {
+	padding: 1.8%;
+	text-align: center;
+	border-top: 2px solid #ddd;
+	background-color: #eee;
+	color: #666;
+}
+/* etiquetas */
+img {
+	border: 0;
+}
+a {
+	color: #404080;
+	text-decoration: underline;
+}
+a:hover {
+	background-color: #fff;
+	color: #933;
+}
+a.a_alerta {
+	color: #922;
+}
+a.a_alerta:hover {
+	background-color: #f22;
+	color: #fff;
+}
+.alerta {
+	color: #f22;
+}
+input.dest-action {
+	padding: 0 .1em;
+	-moz-border-radius: 3px;
+}
+input.dest-action:hover, input.dest-action:focus {
+	border-color: #933;
+	color: #000;
+}
+form.button-to, form.button-to div {
+  display: inline;
+}
+fieldset {
+	border: 1px solid #c0c0e0;
+	-moz-border-radius: 4px;
+	margin-bottom: 2em;
+	padding: 1em;
+}
+legend {
+	font-size: 1.05em;
+	color: #933;
+	font-weight: bold;
+	margin-bottom: .95em;
+}
+fieldset>legend {
+	margin-bottom: 0;
+}
+h2, h3, h4, h5, h6 {
+	color: #933;
+}
+h1 {
+	font-size: 1.8em;
+}
+h2 {
+	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.2em;
+}
+h4 {
+	font-size: 1.05em;
+}
+h2 small {
+	font-size: 85%;
+}
+input, select, textarea {
+	border: 1px solid #999;
+}
+input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:focus {
+	border: 1px solid #444;
+}
+form p {
+	padding: .6em;
+	border: 1px solid #c0c0e0;
+	-moz-border-radius: 4px;
+}
+form fieldset p {
+	padding: 0;
+	text-align: left;
+	border: 0;
+	-moz-border-radius: 0;
+}
+form fieldset table td {
+	border: 0;
+}
+form table th {
+    text-align: right;
+}
+p.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+table {
+	width: 100%;
+}
+table th {
+	width: 25%;
+	text-align: left;
+	padding: .2em .4em;
+	background-color: #efefef;
+	vertical-align: top;
+}
+th small {
+	font-size: .9em;
+	font-weight: normal
+}
+table td {
+	background-color: #efefef;
+	color: #333;
+	padding: .2em .4em;
+}
+.opciones, .opciones li {
+	list-style: none;
+	padding: .2em 0;
+	margin: 0;
+	color: #000;
+}
+.opciones {
+	padding: .5em 0;
+}
+.opciones input {
+	border: 0 solid #000;
+}
+table.datosv {
+	width: 100%;
+}
+table.datosv th {
+	text-align: left;
+	padding: .2em .4em;
+	background-color: #efefef;
+	vertical-align: top;
+	color: #933;
+}
+table.datosv td {
+	background-color: #efefef;
+	color: #333;
+	padding: .2em .4em;
+}
+table.datosh {
+	width: 100%;
+}
+table.datosh th {
+	width: 24%;
+	text-align: left;
+	padding: .2em .4em;
+	background-color: #efefef;
+	vertical-align: top;
+}
+table.datosh td {
+	background-color: #efefef;
+	color: #333;
+	padding: .2em .4em;
+}
+small {
+	font-size: .8em;
+}
+textarea, input, option {
+	padding: .3em;
+}
+.alerta {
+	color: #933;
+}
+a.accion-principal {
+	font-weight: bold;
+}
+a.accion-principal:hover {
+	color: #933;
+}
+fieldset table {
+	border-spacing: 0 2px;
+}
+.ajustado {
+	width: auto;
+}
+.flash-notice, .flash-alert, .flash-info, .errorExplanation {
+	background-color: #e5ecf9;
+	border: 1px solid #c0c0e0;
+	padding: .1em .6em;
+	margin-bottom: 1em;
+}
+.flash-alert, .errorExplanation {
+	border: 1px solid #933;
+	background-color: #f9e5ec;
+}
+tt {
+	font-size: 1.25em;
+}
+.fieldWithErrors input, .fieldWithErrors textarea, .fieldWithErrors select {
+	border: 1px solid #933;
+	background-color: #f9e5ec;
+}
+div.fieldWithErrors {display:inline}
+/* Estilos para las diferentes secciones */
+#cabecera h1, #cabecera h2 {
+	display: inline;
+	color: #944;
+	font-size: 2.7em;
+}
+#cabecera h2 {
+	font-size: 1.5em;
+}
+#cabecera img {
+	top: 0;
+	right: 0;
+	margin: 1.7em .5em;
+	position: absolute;
+}
+#cabecera #menu-cabecera li.primero {
+	position: absolute;
+	left: .8em;
+}
+#lateral ul {
+	padding: 0 .6em 0;
+	list-style: none;
+}
+#lateral ul li ul {
+	padding: 0 0 0 0.5em;
+	list-style: none;
+}
+#lateral ul{margin: 0 0 .5em}
+#cuerpo li {
+	/*line-height: 1.7em;*/
+	margin: .4em 0;
+}
+#lateral p{padding: 0 .6em}
+#lateral h2 {
+	color: #000;
+	font-size: 1.2em;
+	background-color: #e5ecf9;
+	border: 1px solid #c0c0e0;
+	border-bottom: 1px solid #a0a0c0;
+	padding: .2em;
+	-moz-border-radius: 3px;
+}
+#cuerpo #central p {
+	margin-bottom: 1.5em;
+	line-height: 1.7em;
+}
+label:hover {
+    background-color: #fff;
+}

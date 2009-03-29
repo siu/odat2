@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.home '/', :controller => :medical_records
 
   map.resources :medical_records, :has_many => [:odat_diagnoses]
 

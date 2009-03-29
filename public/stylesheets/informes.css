@@ -1,0 +1,12 @@
+#cabecera #titulo {
+    display:none;
+}
+#cuerpo {
+	margin-top: 4cm;
+}
+.flash-notice, .flash-alert, .flash-info {
+    display: none;
+}
+.subseccion {
+    display: block;
+}

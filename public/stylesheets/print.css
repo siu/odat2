@@ -1,0 +1,51 @@
+body {
+	padding: 8pt;
+	font-family: Sans, arial;
+	font-size: 11pt;
+}
+#cabecera #titulo {
+}
+#cabecera #menu-cabecera {
+	display: none;
+}
+#cabecera #usuario {display:none}
+
+#cuerpo {
+	width: 100%;
+}
+
+#cuerpo #lateral {
+	display: none;
+}
+#cuerpo #contenido {
+	width: 100%;
+	border-top: 2px solid #ddd;
+	float: none;
+}
+#pie {
+	border-top: 2px solid #ddd;
+	background: none;
+	display: none;
+}
+th, td {
+    padding: 3pt;
+	border: 1px solid #666;
+}
+table.datosv, table.datosh {
+	width: 100%;
+}
+table.datosv th {
+	width: auto;
+}
+
+table.datosh th {
+	width: 4cm;
+	text-align: left;
+	vertical-align: top;
+}
+table.datosh td {
+	width: auto;
+}
+.no-print {
+    display: none;
+}

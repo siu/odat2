@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Sans, arial;
+	font-size: .80em;
+	line-height: 1.6em;
+}
+a {
+	color: #404080;
+	text-decoration: underline;
+}
+a:hover {
+	background-color: #fff;
+	color: #933;
+}
+#cabecera {
+	padding: 1.2em;
+}
+#central {
+	padding: 1.2em;
+}
+#menu-ayuda {border-bottom: 1px solid #ddd}
+#menu-ayuda, #pie {
+	padding: 1.8%;
+	border-top: 1px solid #ddd;
+	background-color: #eee;
+}
+#pie {text-align:center}
+h1 {
+	color: #933;
+}

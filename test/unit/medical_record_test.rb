@@ -10,7 +10,7 @@ class MedicalRecordTest < ActiveSupport::TestCase
     return medical_record
   end
 
-  def test_invalid_default_attributes
+  should "be invalid if created with default attributes" do
     medical_record =  MedicalRecord.new
 
     assert !medical_record.valid?

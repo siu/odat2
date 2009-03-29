@@ -1,0 +1,37 @@
+html {
+}
+#lateral {
+  float: right;
+}
+#contenido {
+  float: right;
+}
+form fieldset p {
+  text-align: right;
+}
+table th {
+  text-align: right;
+}
+table.datosv th {
+  text-align: right;
+}
+table.datosh th {
+  text-align: left;
+}
+#cabecera #menu-cabecera {
+    text-align: left;
+}
+#cabecera #menu-cabecera ul {
+    padding-left: 0.8em;
+}
+#cabecera #menu-cabecera li.primero {
+    left: auto;
+    right: 0.8em;
+}
+#usuario {
+    text-align: left;
+}
+#cabecera img {
+  right:inherit;
+  left:0;
+}
