@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090326190501) do
+ActiveRecord::Schema.define(:version => 20090329132118) do
 
   create_table "centers", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(:version => 20090326190501) do
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "diagnosis_items_odat_diagnoses", :force => true do |t|
+    t.integer "diagnosis_item_id", :null => false
+    t.integer "odat_diagnosis_id", :null => false
   end
 
   create_table "formation_levels", :force => true do |t|

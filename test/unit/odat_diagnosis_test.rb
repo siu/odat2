@@ -10,6 +10,8 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     odat_diagnosis.build_origin_cause()
     odat_diagnosis.build_consultation_cause()
 
+    odat_diagnosis.build_main_diagnosis()
+
     return odat_diagnosis
   end
 
@@ -28,5 +30,6 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     assert odat_diagnosis.errors.invalid?(:origin_source)
     assert odat_diagnosis.errors.invalid?(:origin_cause)
     assert odat_diagnosis.errors.invalid?(:consultation_cause)
+    assert odat_diagnosis.errors.invalid?(:main_diagnosis)
   end
 end
