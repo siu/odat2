@@ -1,0 +1,20 @@
+<h1>Editing diagnosis_item</h1>
+
+<% form_for([:admin, @diagnosis_item]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @diagnosis_item] %> |
+<%= link_to 'Back', admin_diagnosis_items_path %>

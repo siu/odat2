@@ -1,0 +1,22 @@
+<h1>Listing diagnosis_items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for diagnosis_item in @diagnosis_items %>
+  <tr>
+    <td><%=h diagnosis_item.name %></td>
+    <td><%=h diagnosis_item.description %></td>
+    <td><%= link_to 'Show', [:admin, diagnosis_item] %></td>
+    <td><%= link_to 'Edit', edit_admin_diagnosis_item_path(diagnosis_item) %></td>
+    <td><%= link_to 'Destroy', [:admin, diagnosis_item], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New diagnosis_item', new_admin_diagnosis_item_path %>

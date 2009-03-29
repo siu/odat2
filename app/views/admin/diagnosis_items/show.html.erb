@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @diagnosis_item.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @diagnosis_item.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_diagnosis_item_path(@diagnosis_item) %> |
+<%= link_to 'Back', admin_diagnosis_items_path %>
