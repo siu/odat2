@@ -1,16 +1,8 @@
-<h1>Editing medical report</h1>
+<% @page_title = _('Editar expediente') -%>
 
-<% form_for(@medical_record) do |f| %>
-  <%= f.error_messages %>
+<% content_for('lateral') do -%>
+<% end -%>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
-<%= link_to 'Show', @medical_record %> |
-<%= link_to 'Back', medical_records_path %>
+<%= link_to _('Listado'), @medical_record %>

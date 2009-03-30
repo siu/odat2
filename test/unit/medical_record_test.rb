@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class MedicalRecordTest < ActiveSupport::TestCase
+protected
   def new_valid_medical_record(options = {})
     medical_record = MedicalRecord.new
     medical_record.name = options[:name] || 'Test1'
@@ -10,6 +11,7 @@ class MedicalRecordTest < ActiveSupport::TestCase
     return medical_record
   end
 
+public
   should "be invalid if created with default attributes" do
     medical_record =  MedicalRecord.new
 
@@ -49,14 +51,14 @@ class MedicalRecordTest < ActiveSupport::TestCase
   end
 
 
-  def test_valid_postal_if_empty
+  should "be valid if postal code is empty"
     medical_record = new_valid_medical_record
     medical_record.postal = ''
 
     assert !medical_record.errors.invalid?(:postal)
   end
 
-  def test_invalid_postal_if_string
+  should "be invalid if postal code is an string"
     medical_record = new_valid_medical_record
     medical_record.postal = 'error'
 

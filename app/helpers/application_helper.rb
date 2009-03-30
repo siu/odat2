@@ -8,6 +8,7 @@ def vtable(collection, headers, options = {}, &proc)
     :summary      => nil,
     :footer       => nil
   })
+  if collection.any?
     summary = options[:summary] || _('Listado de ') + collection.first.class.to_s.pluralize
     output = "<table summary=\"#{summary}\">\n"
     output << content_tag('caption', options[:caption]) if options[:caption]
@@ -20,6 +21,7 @@ def vtable(collection, headers, options = {}, &proc)
       proc.call(row, cycle('odd', 'even'))
     end
     concat("</tbody>\n</table>\n", proc.binding)
+  end
 end
 
 end

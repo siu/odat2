@@ -41,16 +41,16 @@
     <div id="cuerpo">
 
       <div id="lateral">
-	<%= @content_for_menu_principal %>
-	<%= @content_for_menu_secundario %>
-	<%= @content_for_mini_ayuda %>
-	<%= @content_for_lateral %>
+	<%= yield :menu_principal %>
+	<%= yield :menu_secundario %>
+	<%= yield :mini_ayuda %>
+	<%= yield :lateral %>
       </div>
 
       <div id="contenido">
 	<h1><%= @page_title %></h1>
 	<%= show_flash %>
-	<%= @content_for_layout %>
+	<%= yield %>
       </div>
 
       <p class="clear"></p>

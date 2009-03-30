@@ -1,15 +1,8 @@
-<h1>New medical_record</h1>
+<% @page_title = _('Nuevo expediente') -%>
 
-<% form_for([:admin, @medical_record]) do |f| %>
-  <%= f.error_messages %>
+<% content_for('lateral') do -%>
+<% end -%>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
-<%= link_to 'Back', admin_medical_records_path %>
+<%= link_to _('Listado'), @medical_record %>

@@ -7,13 +7,18 @@
 <% vtable( @medical_records, [_('Nombre'), _('Expediente'), _('Diagnósticos'), _('Informes')]) do |medical_record, klass| -%>
   <tr>
     <td><%= link_to(medical_record.full_name, medical_record) %></td>
+
     <td><%= link_to(_('Ver expediente'), medical_record) + ', ' + 
-      link_to(_('Editar'), edit_medical_record_path(medical_record)) %></td>
+	    link_to(_('Editar'), 
+		    edit_medical_record_path(medical_record)) %></td>
+
     <td><%= link_to(_('Nuevo dianóstico'), 
-		    :controller => 'diagnostico', :action => 'nuevo', 
-		    :eid => medical_record.id) + ', ' +
-	    link_to(_('Historial'), :controller => 'diagnostico', 
-		:action => 'listar', :eid => medical_record.id) %></td>
+		    new_medical_record_odat_diagnosis_url(
+		      :medical_record_id => medical_record.id)) + ', ' +
+	    link_to(_('Historial'), 
+		    medical_record_odat_diagnoses_path(
+		    :medical_record_id => medical_record.id)) %></td>
+
     <td><%= link_to(_('Nuevo informe'), :controller => 'informe', 
 		    :action => 'nuevo', 
 		    :eid => medical_record.id) + ', ' +
