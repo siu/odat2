@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class MedicalRecordTest < ActiveSupport::TestCase
-  def new_valid_medical_record
+  def new_valid_medical_record(options = {})
     medical_record = MedicalRecord.new
-    medical_record.name = 'Test1'
-    medical_record.surname = 'Surname 1'
-    medical_record.center = centers(:demo)
+    medical_record.name = options[:name] || 'Test1'
+    medical_record.surname = options[:surname] || 'Surname 1'
+    medical_record.center = options[:center] || centers(:demo)
     medical_record.created_at = Time.now
     return medical_record
   end
@@ -20,6 +20,32 @@ class MedicalRecordTest < ActiveSupport::TestCase
     assert medical_record.errors.invalid?(:center)
 
     assert medical_record.errors.invalid?(:created_at)
+  end
+
+  should "not let create two records with the same name for the same center" do
+    medical_record = new_valid_medical_record(
+      :name => 'Name 1', :surname => 'Surname 1', :center => centers(:demo))
+    medical_record.save
+    assert medical_record.valid?
+
+    medical_record = new_valid_medical_record(
+      :name => 'Name 1', :surname => 'Surname 1', :center => centers(:demo))
+    medical_record.save
+    assert !medical_record.valid?
+
+    assert_equal 1, medical_record.errors.size
+  end
+
+  should "let create two records with the same name for different same centers" do
+    medical_record = new_valid_medical_record(
+      :name => 'Name 1', :surname => 'Surname 1', :center => centers(:demo))
+    medical_record.save
+    assert medical_record.valid?
+
+    medical_record = new_valid_medical_record(
+      :name => 'Name 1', :surname => 'Surname 1', :center => centers(:demo2))
+    medical_record.save
+    assert medical_record.valid?
   end
 
 

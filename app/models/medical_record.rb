@@ -53,6 +53,8 @@ class MedicalRecord < ActiveRecord::Base
   validates_presence_of :name, 
     :message => N_('Debes especificar un nombre')
 
+  validate :not_repeated_name_for_same_center
+
   validates_presence_of :surname, 
     :message => N_('Debes especificar los apellidos')
 
@@ -79,4 +81,13 @@ class MedicalRecord < ActiveRecord::Base
     surname + ', ' + name
   end
 
+protected
+  def not_repeated_name_for_same_center
+    if !self.class.find(:all, 
+			:conditions => ["id != ? AND name = ? AND surname = ? AND center_id = ?", 
+			  id, name, surname, center_id]).empty?
+
+      errors.add_to_base("Ya existe un expediente para #{self.full_name}")
+    end
+  end
 end

@@ -1,22 +1,24 @@
-<h1>Listing medical reports</h1>
+<% @page_title = _('Listado de expedientes') -%>
 
-<table>
+<% content_for('lateral') do -%>
+	asfdsdaf
+<% end -%>
+
+<% vtable( @medical_records, [_('Nombre'), _('Expediente'), _('Diagnósticos'), _('Informes')]) do |medical_record, klass| -%>
   <tr>
-    <th>Name</th>
-  </tr>
+    <td><%= link_to(medical_record.full_name, medical_record) %></td>
+    <td><%= link_to(_('Ver expediente'), medical_record) + ', ' + 
+      link_to(_('Editar'), edit_medical_record_path(medical_record)) %></td>
+    <td><%= link_to(_('Nuevo dianóstico'), 
+		    :controller => 'diagnostico', :action => 'nuevo', 
+		    :eid => medical_record.id) + ', ' +
+	    link_to(_('Historial'), :controller => 'diagnostico', 
+		:action => 'listar', :eid => medical_record.id) %></td>
+    <td><%= link_to(_('Nuevo informe'), :controller => 'informe', 
+		    :action => 'nuevo', 
+		    :eid => medical_record.id) + ', ' +
+	    link_to(_('Listar'), :controller => 'informe', 
+		    :action => 'listar', :eid => medical_record.id) %></td>
+<% end -%>
 
-<% for medical_record in @medical_records %>
-  <tr>
-    <td><%=h medical_record.name %></td>
-    <td><%= link_to 'Show', medical_record %></td>
-    <td><%= link_to 'Edit', edit_medical_record_path(medical_record) %></td>
-    <td><%= link_to 'Destroy', medical_record, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<%= will_paginate @medical_record %>
-
-<br />
-
-<%= link_to 'New center', new_medical_record_path %>
+<%= will_paginate @medical_records %>
