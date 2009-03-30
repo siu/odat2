@@ -15,34 +15,34 @@ class Admin::CentersControllerTest < ActionController::TestCase
   def test_should_create_center
     Center.any_instance.stubs(:valid?).returns(:true)
     assert_difference('Center.count') do
-      post :create, :center => {  :name => 'test1',
-				  :region => regions(:demo) }
+      post :create, :center => { 
+	:name => 'test',
+	:region_id => regions(:demo).id
+      }
     end
 
     assert_redirected_to admin_center_path(assigns(:center))
   end
 
   def test_should_show_center
-    get :show, :id => centers(:madrid).id
+    get :show, :id => centers(:demo).id
     assert_response :success
   end
 
   def test_should_get_edit
-    get :edit, :id => centers(:madrid).id
+    get :edit, :id => centers(:demo).id
     assert_response :success
   end
 
   def test_should_update_center
     Center.any_instance.stubs(:valid?).returns(:true)
-    put :update,  :id => centers(:madrid).id, 
-		  :center => {	:name => 'updated',
-				:region => regions(:demo) }
+    put :update, :id => centers(:demo).id, :center => { }
     assert_redirected_to admin_center_path(assigns(:center))
   end
 
   def test_should_destroy_center
     assert_difference('Center.count', -1) do
-      delete :destroy, :id => centers(:madrid).id
+      delete :destroy, :id => centers(:demo).id
     end
 
     assert_redirected_to admin_centers_path
