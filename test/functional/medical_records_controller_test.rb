@@ -1,11 +1,10 @@
 require 'test_helper'
 
-class MedicalRecordsControllerTest  < ActionController::TestCase
-
+class MedicalRecordsControllerTest < ActionController::TestCase
   def test_should_get_index
     get :index
     assert_response :success
-    assert assigns(:medical_records)
+    assert_not_nil assigns(:medical_records)
   end
 
   def test_should_get_new
@@ -17,10 +16,10 @@ class MedicalRecordsControllerTest  < ActionController::TestCase
     MedicalRecord.any_instance.stubs(:valid?).returns(:true)
     assert_difference('MedicalRecord.count') do
       post :create, :medical_record => { 
-	:name => 'Paciente 1',
-	:surname => 'Apellidos test',
-	:center => centers(:demo),
-	:created_at => Time.now }
+	:center_id => centers(:demo).id,
+	:name => 'a',
+	:surname => 'b'
+      }
     end
 
     assert_redirected_to medical_record_path(assigns(:medical_record))
@@ -38,13 +37,12 @@ class MedicalRecordsControllerTest  < ActionController::TestCase
 
   def test_should_update_medical_record
     MedicalRecord.any_instance.stubs(:valid?).returns(:true)
-    put :update, 
-	:id => medical_records(:pedrito).id, 
-	:medical_record => {:name => 'Paciente 1',
-			    :surname => 'Apellidos test',
-			    :center => centers(:demo),
-			    :created_at => Time.now }
-
+    put :update, :id => medical_records(:pedrito).id, :medical_record => 
+    {
+      :center_id => centers(:demo).id,
+      :name => 'a',
+      :surname => 'b'
+    }
     assert_redirected_to medical_record_path(assigns(:medical_record))
   end
 

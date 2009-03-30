@@ -51,14 +51,14 @@ public
   end
 
 
-  should "be valid if postal code is empty"
+  should "be valid if postal code is empty" do
     medical_record = new_valid_medical_record
     medical_record.postal = ''
 
     assert !medical_record.errors.invalid?(:postal)
   end
 
-  should "be invalid if postal code is an string"
+  should "be invalid if postal code is an string" do
     medical_record = new_valid_medical_record
     medical_record.postal = 'error'
 
