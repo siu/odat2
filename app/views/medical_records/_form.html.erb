@@ -1,0 +1,22 @@
+<% form_for(@medical_record) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </p>
+
+  <p>
+  <% if @medical_record.new_record? -%>
+    <%= f.submit _('Nuevo') %>
+  <% else %>
+    <%= f.submit _('Guardar') %>
+  <% end %>
+  </p>
+
+<% end %>
