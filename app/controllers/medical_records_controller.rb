@@ -26,6 +26,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/new
   # GET /medical_records/new.xml
   def new
+    load_data
     @medical_record = MedicalRecord.new
 
     respond_to do |format|
@@ -36,6 +37,7 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records/1/edit
   def edit
+    load_data
     @medical_record = MedicalRecord.find(params[:id])
   end
 
@@ -50,7 +52,10 @@ class MedicalRecordsController < ApplicationController
         format.html { redirect_to(@medical_record) }
         format.xml  { render :xml => @medical_record, :status => :created, :location => @medical_record }
       else
-        format.html { render :action => "new" }
+        format.html { 
+	  load_data
+	  render :action => "new" 
+	}
         format.xml  { render :xml => @medical_record.errors, :status => :unprocessable_entity }
       end
     end
@@ -67,7 +72,10 @@ class MedicalRecordsController < ApplicationController
         format.html { redirect_to(@medical_record) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { 
+	  load_data
+	  render :action => "edit" 
+	}
         format.xml  { render :xml => @medical_record.errors, :status => :unprocessable_entity }
       end
     end
@@ -84,4 +92,14 @@ class MedicalRecordsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+protected
+  def load_data
+    @regions = Region.find(:all)
+    @genders = [_('Masculino'), _('Femenino')]
+    @formation_levels = FormationLevel.find(:all)
+    @jobs = Job.find(:all)
+    @job_statuses = JobStatus.find(:all)
+    @civil_states = CivilState.find(:all)
+  end
+
 end

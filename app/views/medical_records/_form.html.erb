@@ -50,7 +50,7 @@
 	<th><%= f.label(:gender, _('Sexo')) %></th>
 	<td>
 	  <%= f.collection_select(:gender, 
-				  [_('Male'), _('Female')], 
+				  @genders,
 				  :to_str, :to_str, 
 				  { :include_blank => true }) %>
 	</td>
