@@ -3,7 +3,7 @@ module ApplicationHelper
 
 def vtable(collection, headers, options = {}, &proc)
   options.reverse_merge!({
-    :placeholder  => _('No hay elementos'),
+    :placeholder  => _('No hay elementos.'),
     :caption      => nil,
     :summary      => nil,
     :footer       => nil
@@ -21,6 +21,8 @@ def vtable(collection, headers, options = {}, &proc)
       proc.call(row, cycle('odd', 'even'))
     end
     concat("</tbody>\n</table>\n", proc.binding)
+  else
+    concat("<p>#{options[:placeholder]}</p>", proc.binding)
   end
 end
 

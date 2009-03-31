@@ -1,15 +1,104 @@
 <% form_for(@medical_record) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  <fieldset>
+    <legend><%= _('Expediente') %></legend>
+    <table>
+      <tr>
+	<th><%= f.label(:created_at, _('Fecha inicio expediente')) %></th>
+	<td><%= f.date_select(:created_at, 
+			      :start_year => 1992, 
+			      :order => [:day, :month, :year], 
+			      :use_month_numbers => true, 
+			      :include_blank => true ) %>
+	</td>
+      </tr>
 
-  <p>
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
-  </p>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend><%= _('Datos personales') %></legend>
+    <table>
+      <tr>
+	<th><%= f.label(:name, _('Nombre')) %></th>
+	<td>
+	  <%= f.text_field(:name, 
+			   :size => 30, 
+			   :maxlength => 30, 
+			   :class => :ancho) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:surname, _('Apellidos')) %></th>
+	<td><%= f.text_field(:surname, 
+			     :size => 50, 
+			     :maxlength => 100, 
+			     :class => :ancho) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:birth_date, _('Fecha de nacimiento')) %></th>
+
+	<td><%= f.date_select(:birth_date, 
+			      :start_year => 1992, 
+			      :order => [:day, :month, :year], 
+			      :use_month_numbers => true ) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:gender, _('Sexo')) %></th>
+	<td>
+	  <%= f.collection_select(:gender, 
+				  [_('Male'), _('Female')], 
+				  :to_str, :to_str, 
+				  { :include_blank => true }) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:birth_position, 
+      _('Número de parto <small>(en caso de parto múltiple)</small>')) %></th>
+	<td><%= f.text_field(:birth_position, 
+			     :size => 1, 
+			     :maxlength => 1) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:address, _('Calle')) %></th>
+	<td><%= f.text_field(:address, 
+			     :size => 50, 
+			     :maxlength => 100, 
+			     :class => :ancho) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:postal, _('Código postal')) %></th>
+	<td><%= f.text_field(:postal, 
+			     :size => 5, 
+			     :maxlength => 5) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:city, _('Localidad')) %></th>
+	<td><%= f.text_field(:city, 
+			     :size => 50, 
+			     :maxlength => 50, 
+			     :class => :ancho) %>
+	</td>
+      </tr>
+      <tr>
+	<th><%= f.label(:region_id, _('Provincia')) %></th>
+	<td>
+	  <%= f.collection_select(:region_id, 
+				  Region.find(:all, :order => :name), 
+				  :id, :name, 
+				  { :include_blank => true }) %>
+	</td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <%= render :partial => 'form_sociofamiliares', :locals => { :f => f } %>
 
   <p>
   <% if @medical_record.new_record? -%>

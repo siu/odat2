@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090329132118) do
+ActiveRecord::Schema.define(:version => 20090331164558) do
 
   create_table "centers", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
@@ -70,39 +70,39 @@ ActiveRecord::Schema.define(:version => 20090329132118) do
   end
 
   create_table "medical_records", :force => true do |t|
-    t.integer  "center_id",                              :null => false
-    t.string   "name",                     :limit => 25, :null => false
-    t.string   "surname",                  :limit => 50, :null => false
+    t.integer  "center_id",                               :null => false
+    t.string   "name",                      :limit => 25, :null => false
+    t.string   "surname",                   :limit => 50, :null => false
     t.date     "birth_date"
     t.date     "archive_date"
     t.integer  "region_id"
-    t.string   "city",                     :limit => 40
-    t.string   "address",                  :limit => 60
-    t.integer  "birth_position",           :limit => 2
-    t.string   "gender",                   :limit => 9
-    t.string   "father_name",              :limit => 25
-    t.string   "father_surname",           :limit => 50
+    t.string   "city",                      :limit => 40
+    t.string   "address",                   :limit => 60
+    t.integer  "birth_position",            :limit => 2
+    t.string   "gender",                    :limit => 9
+    t.string   "father_name",               :limit => 25
+    t.string   "father_surname",            :limit => 50
     t.date     "father_birth_date"
     t.integer  "father_job_id"
     t.integer  "father_civil_state_id"
-    t.integer  "father_job_situation_id"
-    t.integer  "father_study_level_id"
-    t.string   "father_email",             :limit => 30
+    t.integer  "father_job_status_id"
+    t.integer  "father_formation_level_id"
+    t.string   "father_email",              :limit => 30
     t.text     "father_extra_information"
-    t.string   "mother_name",              :limit => 25
-    t.string   "mother_surname",           :limit => 50
+    t.string   "mother_name",               :limit => 25
+    t.string   "mother_surname",            :limit => 50
     t.date     "mother_birth_date"
     t.integer  "mother_job_id"
     t.integer  "mother_civil_state_id"
-    t.integer  "mother_job_situation_id"
-    t.integer  "mother_study_level_id"
-    t.string   "mother_email",             :limit => 30
+    t.integer  "mother_job_status_id"
+    t.integer  "mother_formation_level_id"
+    t.string   "mother_email",              :limit => 30
     t.text     "mother_extra_information"
-    t.string   "home_phone",               :limit => 9
-    t.string   "portable_phone",           :limit => 9
-    t.string   "job_phone",                :limit => 9
-    t.integer  "total_siblings_amount",    :limit => 6
-    t.string   "postal",                   :limit => 5
+    t.string   "home_phone",                :limit => 9
+    t.string   "portable_phone",            :limit => 9
+    t.string   "work_phone",                :limit => 9
+    t.integer  "total_siblings_amount",     :limit => 6
+    t.string   "postal",                    :limit => 5
     t.boolean  "sanitary_services"
     t.boolean  "social_services"
     t.boolean  "educative_services"

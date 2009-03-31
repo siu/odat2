@@ -3,7 +3,8 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records.xml
   def index
     #@medical_records = MedicalRecord.find(:all)
-    @medical_records = MedicalRecord.paginate(:page => params[:page], :order => 'surname ASC')
+    @medical_records = MedicalRecord.paginate(:page => params[:page], 
+					      :order => 'surname ASC')
 
     respond_to do |format|
       format.html # index.html.erb

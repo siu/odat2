@@ -21,15 +21,15 @@
       </div>
 
       <div id="titulo">
-	<h1><%= link_to _('ODAT'), home_url %></h1>
+	<h1><%= link_to _('ODAT'), root_path %></h1>
 	<h2>Organización Diagnóstica en Atención Temprana</h2>
 	<h3><%= image_tag '/images/gat.gif' %></h3>
       </div>
 
       <div id="menu-cabecera">
 	<ul>
-	  <li class="primero"><%= link_to _('Listado expedientes'), medical_records_url, :class => 'accion-principal' %></li>
-	  <li><%= link_to _('Nuevo expediente'), new_medical_record_url, :class => 'accion-principal' %></li>
+	  <li class="primero"><%= link_to _('Listado expedientes'), medical_records_path, :class => 'accion-principal' %></li>
+	  <li><%= link_to _('Nuevo expediente'), new_medical_record_path, :class => 'accion-principal' %></li>
 	  <li><%= link_to _('Documentación ODAT'), :controller => 'documentacion' %></li>
 	  <li><%= link_to _('Acerca de ODAT'), :controller => 'acercade' %></li>
 	</ul>

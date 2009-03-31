@@ -1,7 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.home '/', :controller => :medical_records
+  map.root :controller => :dashboard
 
-  map.resources :medical_records, :has_many => [:odat_diagnoses]
+  #map.resources :medical_records, :has_many => [:odat_diagnoses]
+  map.resources :medical_records, :as => 'expedientes', :shallow => true do |record|
+    record.resources :odat_diagnoses, :as => 'diagnosticos'
+  end
 
   map.namespace :admin do |admin|
     admin.resources :regions
