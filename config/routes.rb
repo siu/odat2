@@ -1,10 +1,32 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => :dashboard
 
-  #map.resources :medical_records, :has_many => [:odat_diagnoses]
+
+  map.root :controller => 'dashboard'
+  map.resources :users, 
+    :member => { 
+      :suspend => :put, 
+      :unsuspend => :put, 
+      :purge => :delete }
+  map.resource :session
+
   map.resources :medical_records, :as => 'expedientes', :shallow => true do |record|
     record.resources :odat_diagnoses, :as => 'diagnosticos'
   end
+
+  map.logout '/logout', 
+    :controller => 'sessions', :action => 'destroy'
+  map.login '/login', 
+    :controller => 'sessions', :action => 'new'
+  map.register '/register', 
+    :controller => 'users', :action => 'create'
+  map.signup '/signup', 
+    :controller => 'users', :action => 'new'
+
+  map.activate '/activate/:activation_code', 
+    :controller => 'users', 
+    :action => 'activate', 
+    :activation_code => nil
+
 
   map.namespace :admin do |admin|
     admin.resources :regions

@@ -18,6 +18,7 @@
     <div id="cabecera">
 
       <div id="usuario">
+	<%= render :partial => 'users/user_bar' %>
       </div>
 
       <div id="titulo">
@@ -28,10 +29,14 @@
 
       <div id="menu-cabecera">
 	<ul>
-	  <li class="primero"><%= link_to _('Listado expedientes'), medical_records_path, :class => 'accion-principal' %></li>
-	  <li><%= link_to _('Nuevo expediente'), new_medical_record_path, :class => 'accion-principal' %></li>
-	  <li><%= link_to _('Documentación ODAT'), :controller => 'documentacion' %></li>
-	  <li><%= link_to _('Acerca de ODAT'), :controller => 'acercade' %></li>
+	  <li class="primero"><%= link_to _('Listado expedientes'), 
+	      medical_records_path, :class => 'accion-principal' %></li>
+	  <li><%= link_to _('Nuevo expediente'), 
+	      new_medical_record_path, :class => 'accion-principal' %></li>
+	  <li><%= link_to _('Documentación ODAT'), 
+	      :controller => 'documentacion' %></li>
+	  <li><%= link_to _('Acerca de ODAT'), 
+	      :controller => 'acercade' %></li>
 	</ul>
       </div>
       <p class="clear"></p>
