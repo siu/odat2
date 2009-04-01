@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/acts_as_html_text"]
 	path = vendor/plugins/acts_as_html_text
 	url = git://github.com/siu/acts_as_html_text.git
+[submodule "vendor/plugins/restful_authentication"]
+	path = vendor/plugins/restful_authentication
+	url = git://github.com/technoweenie/restful-authentication.git
