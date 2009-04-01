@@ -1,8 +1,8 @@
-<% @page_title = _('Editar expediente') -%>
+<% page_title _('Editar expediente') -%>
 
 <% content_for('lateral') do -%>
 <% end -%>
 
 <%= render :partial => 'form' %>
 
-<%= link_to _('Listado'), @medical_record %>
+<%= link_to _('Listado'), medical_records_path %>
