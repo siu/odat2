@@ -2,7 +2,8 @@ class Admin::CivilStatesController < ApplicationController
   # GET /civil_states
   # GET /civil_states.xml
   def index
-    @civil_states = CivilState.find(:all)
+    @civil_states = CivilState.paginate(:page => params[:page], 
+					:order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

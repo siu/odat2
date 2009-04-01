@@ -2,7 +2,9 @@ class Admin::JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.xml
   def index
-    @jobs = Job.find(:all)
+    @jobs = Job.paginate(
+      :page => params[:page], 
+      :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

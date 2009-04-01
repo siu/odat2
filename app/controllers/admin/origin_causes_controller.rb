@@ -2,7 +2,9 @@ class Admin::OriginCausesController < Admin::AdminSectionController
   # GET /origin_causes
   # GET /origin_causes.xml
   def index
-    @origin_causes = OriginCause.find(:all)
+    @origin_causes = OriginCause.paginate(
+      :page => params[:page], 
+      :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

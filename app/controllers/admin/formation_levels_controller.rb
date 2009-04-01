@@ -2,7 +2,9 @@ class Admin::FormationLevelsController < ApplicationController
   # GET /formation_levels
   # GET /formation_levels.xml
   def index
-    @formation_levels = FormationLevel.find(:all)
+    @formation_levels = FormationLevel.paginate(
+      :page => params[:page], 
+      :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

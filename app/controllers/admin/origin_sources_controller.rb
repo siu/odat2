@@ -2,7 +2,9 @@ class Admin::OriginSourcesController < Admin::AdminSectionController
   # GET /origin_sources
   # GET /origin_sources.xml
   def index
-    @origin_sources = OriginSource.find(:all)
+    @origin_sources = OriginSource.paginate(
+      :page => params[:page], 
+      :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

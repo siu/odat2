@@ -2,7 +2,9 @@ class Admin::DiagnosisItemsController < Admin::AdminSectionController
   # GET /diagnosis_items
   # GET /diagnosis_items.xml
   def index
-    @diagnosis_items = DiagnosisItem.find(:all)
+    @diagnosis_items = DiagnosisItem.paginate(
+      :page => params[:page], 
+      :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

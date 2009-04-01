@@ -1,0 +1,246 @@
+<fieldset>
+  <legend><%= _('Datos sociofamiliares') %></legend>
+
+  <h4><%= _('Hermanos') %></h4>
+  <table>
+    <tr>
+      <th><%= f.label(:total_siblings_amount, _('Número total de hermanos')) %></th>
+      <td><%= f.text_field(:total_siblings_amount, 
+			   :size => 2, 
+			   :maxlength => 2) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:birth_position, _('Lugar que ocupa')) %></th>
+      <td><%= f.text_field(:birth_position, 
+			   :size => 2, 
+			   :maxlength => 2) %>
+      </td>
+    </tr>
+  </table>
+
+  <h4><%= _('Padre') %></h4>
+  <table>
+    <tr>
+      <th><%= f.label(:father_name, _('Nombre')) %></th>
+      <td><%= f.text_field(:father_name, 
+			   :size => 30, 
+			   :maxlength => 30, 
+			   :class => :ancho) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_surname, _('Apellidos')) %></th>
+      <td><%= f.text_field(:father_surname, 
+			   :size => 50, 
+			   :maxlength => 50, 
+			   :class => :ancho) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_birth_date, _('Fecha de nacimiento')) %></th>
+      <td><%= f.date_select(:father_birth_date, 
+			    :start_year => 1930, 
+			    :order => [:day, :month, :year], 
+			    :use_month_numbers => true, 
+			    :include_blank => true ) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_job_status_id, 
+		      _('Situación laboral')) %></th>
+      <td>
+	<%= f.collection_select(:father_job_status_id, 
+				@job_statuses,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_job_id, _('Ocupación')) %> 
+	<small>(<%= link_to(_('ayuda'), 
+			    { :controller => 'trabajo', 
+			      :action => :ayuda }, 
+			    :target => '_blank', 
+			    :onclick => 'link_popup(this); return false') %>)</small>
+      </th>
+      <td>
+	<%= f.collection_select(:father_job_id, 
+				@jobs,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_formation_level_id, _('Nivel de estudios máximo')) %></th>
+      <td>
+	<%= f.collection_select(:father_formation_level_id, 
+				@formation_levels,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_civil_state_id, _('Estado civil')) %></th>
+      <td>
+	<%= f.collection_select(:father_civil_state_id, 
+				@civil_states,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+
+      <th><%= f.label(:father_email, _('Email')) %></th>
+      <td><%= f.text_field(:father_email, 
+			 :size => 40, 
+			 :maxlength => 100, 
+			 :class => :ancho) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:father_extra_information, _('Información extra')) %></th>
+      <td><%= f.text_area(:father_extra_information, 
+			:rows => 10, 
+			:cols => 50, 
+			:class => :ancho) %>
+      </td>
+    </tr>
+  </table>
+
+  <h4><%= _('Madre') %></h4>
+  <table>
+    <tr>
+      <th><%= f.label(:mother_name, _('Nombre')) %></th>
+      <td><%= f.text_field(:mother_name, 
+			   :size => 30, 
+			   :maxlength => 30, 
+			   :class => :ancho) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_surname, _('Apellidos')) %></th>
+      <td><%= f.text_field(:mother_surname, 
+			   :size => 50, 
+			   :maxlength => 50, 
+			   :class => :ancho) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_birth_date, _('Fecha de nacimiento')) %></th>
+      <td><%= f.date_select(:mother_birth_date, 
+			    :start_year => 1930, 
+			    :order => [:day, :month, :year], 
+			    :use_month_numbers => true, 
+			    :include_blank => true ) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_job_status_id, 
+		      _('Situación laboral')) %></th>
+      <td>
+	<%= f.collection_select(:mother_job_status_id, 
+				@job_statuses,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_job_id, _('Ocupación')) %> 
+	<small>(<%= link_to(_('ayuda'), 
+			    { :controller => 'trabajo', 
+			      :action => :ayuda }, 
+			    :target => '_blank', 
+			    :onclick => 'link_popup(this); return false') %>)</small>
+      </th>
+      <td>
+	<%= f.collection_select(:mother_job_id, 
+				@jobs,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_formation_level_id, _('Nivel de estudios máximo')) %></th>
+      <td>
+	<%= f.collection_select(:mother_formation_level_id, 
+				@formation_levels,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_civil_state_id, _('Estado civil')) %></th>
+      <td>
+	<%= f.collection_select(:mother_civil_state_id, 
+				@civil_states,
+				:id, :name, 
+				{ :include_blank => true }) %>
+      </td>
+    </tr>
+    <tr>
+
+      <th><%= f.label(:mother_email, _('Email')) %></th>
+      <td><%= f.text_field(:mother_email, 
+			 :size => 40, 
+			 :maxlength => 100, 
+			 :class => :ancho) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:mother_extra_information, _('Información extra')) %></th>
+      <td><%= f.text_area(:mother_extra_information, 
+			:rows => 10, 
+			:cols => 50, 
+			:class => :ancho) %>
+      </td>
+    </tr>
+  </table>
+
+  <h4><%= _('Teléfonos') %></h4>
+  <table>
+    <tr>
+      <th><%= f.label(:home_phone, _('Domicilio:')) %></th>
+      <td><%= f.text_field(:home_phone, 
+			   :size => 9, 
+			   :maxlength => 9) %>
+      </td>
+    </tr>
+
+    <tr>
+      <th><%= f.label(:portable_phone, _('Móvil')) %></th>
+      <td><%= f.text_field(:portable_phone, 
+			 :size => 9, 
+			 :maxlength => 9) %>
+      </td>
+    </tr>
+
+    <tr>
+      <th><%= f.label(:work_phone, _('Trabajo')) %></th>
+      <td><%= f.text_field(:work_phone, 
+			   :size => 9, 
+			   :maxlength => 9) %>
+      </td>
+    </tr>
+  </table>
+
+  <h4><%= _('Coordinación') %></h4>
+  <table>
+    <tr>
+      <th><%= f.label(:sanitary_services, _('Servicios Sanitarios')) %></th>
+      <td><%= f.check_box(:sanitary_services) %> <%= _('Sí') %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label(:social_services, _('Servicios Sociales')) %></th>
+      <td><%= f.check_box(:social_services) %> <%= _('Sí') %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label(:educative_services, _('Servicios Educativos')) %></th>
+      <td><%= f.check_box(:educative_services) %> <%= _('Sí') %></td>
+    </tr>
+  </table>
+
+</fieldset>
+

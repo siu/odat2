@@ -2,7 +2,8 @@ class Admin::CentersController < Admin::AdminSectionController
   # GET /centers
   # GET /centers.xml
   def index
-    @centers = Center.paginate(:page => params[:page], :order => 'name ASC')
+    @centers = Center.paginate(:page => params[:page], 
+			       :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

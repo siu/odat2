@@ -2,7 +2,9 @@ class Admin::ConsultationCausesController  < Admin::AdminSectionController
   # GET /consultation_causes
   # GET /consultation_causes.xml
   def index
-    @consultation_causes = ConsultationCause.find(:all)
+    @consultation_causes = ConsultationCause.paginate(
+      :page => params[:page], 
+      :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb
