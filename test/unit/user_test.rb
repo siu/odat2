@@ -155,6 +155,10 @@ class UserTest < ActiveSupport::TestCase
     assert users(:quentin).deleted?
   end
 
+  should "not be admin" do
+    assert !users(:quentin).is_admin?
+  end
+
 protected
   def create_user(options = {})
     record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
