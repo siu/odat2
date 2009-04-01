@@ -1,8 +1,11 @@
-<p>
-  <b>Name:</b>
-  <%=h @medical_record.name %>
-</p>
+<% @page_title = _('Consultar datos del expediente') -%>
 
+<% content_for :header_options do -%>
+  <%= javascript_include_tag 'form_selector' %>
+<% end -%>
 
-<%= link_to 'Edit', edit_medical_record_path(@medical_record) %> |
-<%= link_to 'Back', medical_records_path %>
+<% content_for :lateral do -%>
+  <%= render :partial => 'side_menu' %>
+<% end -%>
+
+<%= render :partial => 'show' %>

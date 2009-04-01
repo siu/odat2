@@ -2,7 +2,6 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records
   # GET /medical_records.xml
   def index
-    #@medical_records = MedicalRecord.find(:all)
     @medical_records = MedicalRecord.paginate(:page => params[:page], 
 					      :order => 'surname ASC')
 
@@ -50,13 +49,16 @@ class MedicalRecordsController < ApplicationController
       if @medical_record.save
         flash[:notice] = 'MedicalRecord was successfully created.'
         format.html { redirect_to(@medical_record) }
-        format.xml  { render :xml => @medical_record, :status => :created, :location => @medical_record }
+        format.xml  { render :xml => @medical_record, 
+	  :status => :created, 
+	  :location => @medical_record }
       else
-        format.html { 
+        format.html do 
 	  load_data
 	  render :action => "new" 
-	}
-        format.xml  { render :xml => @medical_record.errors, :status => :unprocessable_entity }
+	end
+        format.xml  { render :xml => @medical_record.errors, 
+	  :status => :unprocessable_entity }
       end
     end
   end
@@ -72,11 +74,12 @@ class MedicalRecordsController < ApplicationController
         format.html { redirect_to(@medical_record) }
         format.xml  { head :ok }
       else
-        format.html { 
+        format.html do
 	  load_data
 	  render :action => "edit" 
-	}
-        format.xml  { render :xml => @medical_record.errors, :status => :unprocessable_entity }
+	end
+        format.xml  { render :xml => @medical_record.errors, 
+	  :status => :unprocessable_entity }
       end
     end
   end
@@ -92,7 +95,9 @@ class MedicalRecordsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 protected
+
   def load_data
     @regions = Region.find(:all)
     @genders = [_('Masculino'), _('Femenino')]

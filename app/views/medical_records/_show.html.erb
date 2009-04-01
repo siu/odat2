@@ -1,0 +1,73 @@
+<h3><%= _('Datos personales') %></h3>
+
+<table class="datosh">
+  <tr>
+    <th><%= _('Nombre') %></th>
+    <td><strong><%= h @medical_record.full_name %></strong></td>
+  </tr>
+  <tr>
+    <th><%= _('Fecha de ingreso') %></th>
+    <td><%= h @medical_record.created_at.to_date.short_format if @medical_record.created_at %></td>
+  </tr>
+  <tr>
+    <th><%= _('Fecha de nacimiento') %></th>
+    <td><%= h @medical_record.birth_date.short_format if @medical_record.birth_date %></td>
+  </tr>
+  <tr>
+    <th><%= _('Edad') %></th>
+    <td><%= distance_of_time_in_words(@medical_record.birth_date, Time.now) if @medical_record.birth_date %></td>
+  </tr>
+  <tr>
+    <th><%= _('Sexo') %></th>
+    <td><%= h @medical_record.gender %></td>
+  </tr>
+  <tr>
+    <th><%= _('Número de parto <small>(en caso de parto múltiple)</small>') %></th>
+    <td><%= h @medical_record.birth_position %></td>
+  </tr>
+  <tr>
+    <th><%= _('Calle') %></th>
+    <td><%= h @medical_record.address %></td>
+  </tr>
+  <tr>
+    <th><%= _('Localidad') %></th>
+    <td><%= h(@medical_record.postal) if @medical_record.postal && @medical_record.postal != '' %> <%= h @medical_record.city %></td>
+  </tr>
+  <tr>
+    <th><%= _('Provincia') %></th>
+    <td><%= h(@medical_record.region.name) unless @medical_record.region.nil? %></td>
+  </tr>
+
+</table>
+
+
+<h3><%= _('Datos sociofamiliares') %></h3>
+<h4><%= _('Hermanos') %></h4>
+<table class="datosh">
+  <%= render :partial => 'show_siblings_data' %>
+</table>
+
+
+<h4><%= _('Padre') %></h4>
+<table class="datosh">
+  <%= render :partial => 'show_father_data' %>
+</table>
+
+
+<h4><%= _('Madre') %></h4>
+<table class="datosh">
+  <%= render :partial => 'show_mother_data' %>
+</table>
+
+
+<h4><%= _('Teléfonos') %></h4>
+<table class="datosh">
+  <%= render :partial => 'show_phones_data' %>
+</table>
+
+<h4><%= _('Coordinación') %></h4>
+<table class="datosh">
+  <%= render :partial => 'show_coordination_data' %>
+</table>
+
+

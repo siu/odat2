@@ -1,6 +1,6 @@
 class MedicalRecord < ActiveRecord::Base
   belongs_to :center
-  delegate :region, :region=, :to => :center
+  belongs_to :region
 
   has_many  :odat_diagnoses,
     :class_name => 'OdatDiagnosis',

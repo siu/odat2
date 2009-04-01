@@ -24,6 +24,7 @@
 		    :eid => medical_record.id) + ', ' +
 	    link_to(_('Listar'), :controller => 'informe', 
 		    :action => 'listar', :eid => medical_record.id) %></td>
+  </tr>
 <% end -%>
 
 <%= will_paginate @medical_records %>

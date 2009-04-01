@@ -1,0 +1,41 @@
+<tr>
+  <th><%= _('Nombre') %></th>
+  <td><%= h @medical_record.father_name %></td>
+</tr>
+<tr>
+  <th><%= _('Apellidos') %></th>
+  <td><%= h @medical_record.father_surname %></td>
+</tr>
+<tr>
+  <th><%= _('Fecha de nacimiento') %></th>
+  <td><%= h @medical_record.father_birth_date.short_format unless @medical_record.father_birth_date.nil? %></td>
+
+</tr>
+<tr>
+  <th><%= _('Situación laboral') %></th>
+  <td><%= h @medical_record.father_job_status.name unless @medical_record.father_job_status.nil? %></td>
+</tr>
+<tr>
+  <th><%= _('Ocupación') %></th>
+  <td><%= h @medical_record.father_job.name unless @medical_record.father_job.nil? %></td>
+</tr>
+<tr>
+  <th><%= _('Nivel de estudios') %></th>
+
+  <td><%= h @medical_record.father_formation_level.name unless @medical_record.father_formation_level.nil? %></td>
+</tr>
+<tr>
+  <th><%= _('Estado civil') %></th>
+
+  <td><%= h @medical_record.father_civil_state.name unless @medical_record.father_civil_state.nil? %></td>
+</tr>
+<tr>
+  <th><%= _('Email') %></th>
+  <td><a href="mailto:<%= h @medical_record.father_email %>" title="Enviar un email"><%= h @medical_record.father_email %></a></td>
+</tr>
+<tr>
+  <th><%= _('Información extra') %></th>
+
+  <td><%= h @medical_record.father_extra_information %></td>
+</tr>
+
