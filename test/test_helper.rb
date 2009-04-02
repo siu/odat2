@@ -49,72 +49,124 @@ class Test::Unit::TestCase
 end
 
 module NotLoggedInChecks
-  #should "redirect to login if not logged in" do
-  def test_redirect_to_login_if_not_logged_in
-    [:index, :new, :edit, :show].each do |m|
-      get m
-      assert_redirected_to login_path
-    end
-    [:create].each do |m|
-      post m
-      assert_redirected_to login_path
-    end
-    [:update].each do |m|
-      put m
-      assert_redirected_to login_path
-    end
-    [:destroy].each do |m|
-      delete m
-      assert_redirected_to login_path
-    end
+  def test_index_redirects_to_login_if_not_logged_in
+    get :index
+    assert_redirected_to login_url
+  end
+
+  def test_new_redirects_to_login_if_not_logged_in
+    get :new
+    assert_redirected_to login_url
+  end
+
+  def test_edit_redirects_to_login_if_not_logged_in
+    get :edit
+    assert_redirected_to login_url
+  end
+
+  def test_show_redirects_to_login_if_not_logged_in
+    get :show
+    assert_redirected_to login_url
+  end
+
+  def test_create_redirects_to_login_if_not_logged_in
+    post :create
+    assert_redirected_to login_url
+  end
+
+  def test_update_redirects_to_login_if_not_logged_in
+    put :update
+    assert_redirected_to login_url
+  end
+
+  def test_destroy_redirects_to_login_if_not_logged_in
+    delete :destroy
+    assert_redirected_to login_url
   end
 end
 
 module MyApp
-module Admin
-  module NotLoggedInChecks
-    #should "redirect to login if not logged in" do
-    def test_redirect_to_login_if_not_logged_in
-      [:index, :new, :edit, :show].each do |m|
-	get m
-	assert_response 404
+  module Admin
+    module NotLoggedInChecks
+      def test_index_returns_404_if_not_logged_in
+	get :index
+	assert_response :not_found
       end
-      [:create].each do |m|
-	post m
-	assert_response 404
-      end
-      [:update].each do |m|
-	put m
-	assert_response 404
-      end
-      [:destroy].each do |m|
-	delete m
-	assert_response 404
-      end
-    end
-  end
 
-  module UserLoggedInChecks
-    #should "redirect to login if not logged in" do
-    def test_redirect_to_login_if_not_logged_in
-      login_as_user
-      [:index, :new, :edit, :show].each do |m|
-	get m
-	assert_response 404
+      def test_new_returns_404_if_not_logged_in
+	get :new
+	assert_response :not_found
       end
-      [:create].each do |m|
-	post m
-	assert_response 404
+
+      def test_edit_returns_404_if_not_logged_in
+	get :edit
+	assert_response :not_found
       end
-      [:update].each do |m|
-	put m
-	assert_response 404
+
+      def test_show_returns_404_if_not_logged_in
+	get :show
+	assert_response :not_found
       end
-      [:destroy].each do |m|
-	delete m
-	assert_response 404
+
+      def test_create_returns_404_if_not_logged_in
+	post :create
+	assert_response :not_found
+      end
+
+      def test_update_returns_404_if_not_logged_in
+	put :update
+	assert_response :not_found
+      end
+
+      def test_destroy_returns_404_if_not_logged_in
+	delete :destroy
+	assert_response :not_found
+      end
+
+    end
+
+    module UserLoggedInChecks
+      def test_index_returns_404_if_user_logged_in
+	login_as_user
+	get :index
+	assert_response :not_found
+      end
+
+      def test_new_returns_404_if_user_logged_in
+	login_as_user
+	get :new
+	assert_response :not_found
+      end
+
+      def test_edit_returns_404_if_user_logged_in
+	login_as_user
+	get :edit
+	assert_response :not_found
+      end
+
+      def test_show_returns_404_if_user_logged_in
+	login_as_user
+	get :show
+	assert_response :not_found
+      end
+
+      def test_create_returns_404_if_user_logged_in
+	login_as_user
+	post :create
+	assert_response :not_found
+      end
+
+      def test_update_returns_404_if_user_logged_in
+	login_as_user
+	put :update
+	assert_response :not_found
+      end
+
+      def test_destroy_returns_404_if_user_logged_in
+	login_as_user
+	delete :destroy
+	assert_response :not_found
       end
     end
   end
-end
 end
