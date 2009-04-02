@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class OdatDiagnosesControllerTest < ActionController::TestCase
+  include NotLoggedInChecks
+
   def test_should_get_index
+    login_as_user
     get :index, :medical_record_id => medical_records(:pedrito).id
     assert_response :success
     assert_not_nil assigns(:odat_diagnoses)
@@ -10,11 +13,13 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_get_new
+    login_as_user
     get :new, :medical_record_id => medical_records(:pedrito).id
     assert_response :success
   end
 
   def test_should_create_odat_diagnosis
+    login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     assert_difference('OdatDiagnosis.count') do
       post :create, 
@@ -29,6 +34,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_show_odat_diagnosis
+    login_as_user
     get :show, 
 	:medical_record_id => medical_records(:pedrito).id, 
 	:id => odat_diagnoses(:one).id
@@ -36,6 +42,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_get_edit
+    login_as_user
     get :edit, 
 	:medical_record_id => medical_records(:pedrito).id, 
 	:id => odat_diagnoses(:one).id
@@ -43,6 +50,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_update_odat_diagnosis
+    login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     put :update, 
 	:medical_record_id => medical_records(:pedrito).id, 
@@ -55,6 +63,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   def test_should_destroy_odat_diagnosis
+    login_as_user
     assert_difference('OdatDiagnosis.count', -1) do
       delete :destroy, 
 	:medical_record_id => medical_records(:pedrito).id, 

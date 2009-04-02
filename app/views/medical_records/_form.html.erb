@@ -56,9 +56,11 @@
 	</td>
       </tr>
       <tr>
-	<th><%= f.label(:birth_position, 
-      _('Número de parto <small>(en caso de parto múltiple)</small>')) %></th>
-	<td><%= f.text_field(:birth_position, 
+	<th><%= f.label(:multiple_birth, _('Parto múltiple')) %></th>
+	<td><%= f.check_box(:multiple_birth) %> 
+	    <%= f.label(:birth_position, 
+	    _('Posición en el parto <small>(orden)</small>')) %> 
+	<%= f.text_field(:birth_position, 
 			     :size => 1, 
 			     :maxlength => 1) %>
 	</td>

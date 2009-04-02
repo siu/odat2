@@ -1,4 +1,4 @@
-class Admin::JobStatusesController < ApplicationController
+class Admin::JobStatusesController < Admin::AdminSectionController
   # GET /job_statuses
   # GET /job_statuses.xml
   def index

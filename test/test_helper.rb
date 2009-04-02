@@ -36,4 +36,85 @@ class Test::Unit::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include AuthenticatedTestHelper
+
+  def login_as_user
+    login_as :quentin
+  end
+
+  def login_as_admin
+    login_as :admin
+  end
+
+end
+
+module NotLoggedInChecks
+  #should "redirect to login if not logged in" do
+  def test_redirect_to_login_if_not_logged_in
+    [:index, :new, :edit, :show].each do |m|
+      get m
+      assert_redirected_to login_path
+    end
+    [:create].each do |m|
+      post m
+      assert_redirected_to login_path
+    end
+    [:update].each do |m|
+      put m
+      assert_redirected_to login_path
+    end
+    [:destroy].each do |m|
+      delete m
+      assert_redirected_to login_path
+    end
+  end
+end
+
+module MyApp
+module Admin
+  module NotLoggedInChecks
+    #should "redirect to login if not logged in" do
+    def test_redirect_to_login_if_not_logged_in
+      [:index, :new, :edit, :show].each do |m|
+	get m
+	assert_response 404
+      end
+      [:create].each do |m|
+	post m
+	assert_response 404
+      end
+      [:update].each do |m|
+	put m
+	assert_response 404
+      end
+      [:destroy].each do |m|
+	delete m
+	assert_response 404
+      end
+    end
+  end
+
+  module UserLoggedInChecks
+    #should "redirect to login if not logged in" do
+    def test_redirect_to_login_if_not_logged_in
+      login_as_user
+      [:index, :new, :edit, :show].each do |m|
+	get m
+	assert_response 404
+      end
+      [:create].each do |m|
+	post m
+	assert_response 404
+      end
+      [:update].each do |m|
+	put m
+	assert_response 404
+      end
+      [:destroy].each do |m|
+	delete m
+	assert_response 404
+      end
+    end
+  end
+end
 end

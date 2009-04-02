@@ -1,4 +1,4 @@
-class Admin::FormationLevelsController < ApplicationController
+class Admin::FormationLevelsController < Admin::AdminSectionController
   # GET /formation_levels
   # GET /formation_levels.xml
   def index

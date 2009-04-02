@@ -1,4 +1,4 @@
-class Admin::CivilStatesController < ApplicationController
+class Admin::CivilStatesController < Admin::AdminSectionController
   # GET /civil_states
   # GET /civil_states.xml
   def index
