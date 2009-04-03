@@ -89,10 +89,10 @@
 	</td>
       </tr>
       <tr>
-	<th><%= f.label(:region_id, _('Provincia')) %></th>
+	<th><%= f.label(:province_id, _('Provincia')) %></th>
 	<td>
-	  <%= f.collection_select(:region_id, 
-				  Region.find(:all, :order => :name), 
+	  <%= f.collection_select(:province_id, 
+				  @provinces,
 				  :id, :name, 
 				  { :include_blank => true }) %>
 	</td>

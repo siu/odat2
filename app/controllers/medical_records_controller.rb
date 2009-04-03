@@ -99,12 +99,12 @@ class MedicalRecordsController < ApplicationController
 protected
 
   def load_data
-    @regions = Region.find(:all)
+    @provinces = Province.find(:all, :order => 'name ASC')
     @genders = [_('Masculino'), _('Femenino')]
-    @formation_levels = FormationLevel.find(:all)
-    @jobs = Job.find(:all)
-    @job_statuses = JobStatus.find(:all)
-    @civil_states = CivilState.find(:all)
+    @formation_levels = FormationLevel.find(:all, :order => 'name ASC')
+    @jobs = Job.find(:all, :order => 'name ASC')
+    @job_statuses = JobStatus.find(:all, :order => 'name ASC')
+    @civil_states = CivilState.find(:all, :order => 'name ASC')
   end
 
 end

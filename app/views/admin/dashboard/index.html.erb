@@ -1,3 +1,36 @@
 <% page_title _('Administración') -%>
 
-<h2>Admin Section</h2>
+<h3><%= _('Parte dinámica') %></h3>
+
+<ul>
+  <li><%= link_to(_('Cuentas de usuario'), login_path) %>
+      <small>(<%= User.count %>)</small></li>
+  <li><%= link_to(_('Autonomías'), admin_regions_path) %>
+      <small>(<%= Region.count %>)</small></li>
+  <li><%= link_to(_('Centros'), admin_centers_path) %>
+      <small>(<%= Center.count %>)</small></li>
+</ul>
+
+<h3><%= _('Parte estática') %></h3>
+
+<ul>
+  <li>Falta recursos de centro</li>
+  <li><%= link_to(_('Elementos de diagnóstico'), admin_diagnosis_items_path) %>
+      <small>(<%= DiagnosisItem.count %>)</small></li>
+  <li><%= link_to(_('Provincias'), admin_provinces_path) %>
+      <small>(<%= Province.count %>)</small></li>
+  <li><%= link_to(_('Trabajos'), admin_jobs_path) %>
+      <small>(<%= Job.count %>)</small></li>
+  <li><%= link_to(_('Motivos de consulta'), admin_consultation_causes_path) %>
+      <small>(<%= ConsultationCause.count %>)</small></li>
+  <li><%= link_to(_('Motivos de derivación'), admin_origin_causes_path) %>
+      <small>(<%= OriginCause.count %>)</small></li>
+  <li><%= link_to(_('Fuentes de derivacion'), admin_origin_sources_path) %>
+      <small>(<%= OriginSource.count %>)</small></li>
+  <li><%= link_to(_('Estados Civiles'), admin_civil_states_path) %>
+      <small>(<%= CivilState.count %>)</small></li>
+  <li><%= link_to(_('Situaciones laborales'), admin_job_statuses_path) %>
+      <small>(<%= JobStatus.count %>)</small></li>
+  <li><%= link_to(_('Niveles de formación'), admin_formation_levels_path) %>
+      <small>(<%= FormationLevel.count %>)</small></li>
+</ul>

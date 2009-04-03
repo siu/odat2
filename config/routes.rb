@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   # Users dashboard
   map.root :controller => 'dashboard'
 
@@ -33,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :origin_causes
     admin.resources :origin_sources
     admin.resources :diagnosis_items
+    admin.resources :provinces
   end
 
   # Session and user routes

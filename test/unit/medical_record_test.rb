@@ -84,11 +84,6 @@ public
     assert !medical_record.errors.invalid?(:postal)
   end
 
-  def test_region_should_be_the_same_as_the_center
-    medical_record = new_valid_medical_record
-    assert medical_record.region == medical_record.center.region
-  end
-
   def test_birth_position_should_be_numeric
     medical_record = new_valid_medical_record
     medical_record.birth_position = 'test'

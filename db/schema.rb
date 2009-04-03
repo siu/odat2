@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090402080428) do
+ActiveRecord::Schema.define(:version => 20090403084808) do
 
   create_table "centers", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(:version => 20090402080428) do
     t.string   "surname",                   :limit => 50,                    :null => false
     t.date     "birth_date"
     t.date     "archive_date"
-    t.integer  "region_id"
     t.string   "city",                      :limit => 40
     t.string   "address",                   :limit => 60
     t.integer  "birth_position",            :limit => 2
@@ -109,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20090402080428) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "multiple_birth",                          :default => false, :null => false
+    t.integer  "province_id"
   end
 
   create_table "odat_diagnoses", :force => true do |t|
@@ -133,6 +133,12 @@ ActiveRecord::Schema.define(:version => 20090402080428) do
   create_table "origin_sources", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

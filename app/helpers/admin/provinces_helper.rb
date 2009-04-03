@@ -1,0 +1,2 @@
+module Admin::ProvincesHelper
+end
