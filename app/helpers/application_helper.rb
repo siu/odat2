@@ -37,4 +37,8 @@ module ApplicationHelper
     end
   end
 
+  def display_no_records_message
+    "<p>#{_('No se han encontrado registros.')}</p>"
+  end
+
 end

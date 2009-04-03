@@ -10,6 +10,15 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:medical_records)
   end
 
+  def test_should_get_index_when_no_records
+    MedicalRecord.delete_all
+
+    login_as_user
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:medical_records)
+  end
+
   def test_should_get_new
     login_as_user
     get :new
