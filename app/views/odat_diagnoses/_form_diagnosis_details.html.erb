@@ -16,7 +16,7 @@
 		  "Element.toggle('subcat_#{cat.id}_#{subcat.id}');
 		   Element.toggle('hide_#{cat.id}_#{subcat.id}');
 		   Element.toggle('show_#{cat.id}_#{subcat.id}');") %>)</small>
-	     <small id="<%= "hide_#{cat.id}_#{subcat.id}" %>" 
+	    <small id="<%= "hide_#{cat.id}_#{subcat.id}" %>" 
 	      <% if (@odat_diagnosis.diagnosis_items.delete(subcat.direct_children)).any? -%>
 	       style="display: none"<% end -%>>(<%= link_to_function(
 	      _('ocultar'),
