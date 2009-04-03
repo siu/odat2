@@ -1,10 +1,6 @@
 class OdatDiagnosesController < ApplicationController
   before_filter :load_medical_record
 
-  def load_medical_record
-    @medical_record = MedicalRecord.find(params[:medical_record_id])
-  end
-
   # GET /odat_diagnoses
   # GET /odat_diagnoses.xml
   def index
@@ -31,6 +27,7 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses/new.xml
   def new
     @odat_diagnosis = @medical_record.odat_diagnoses.build
+    load_form_data
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +38,7 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses/1/edit
   def edit
     @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
+    load_form_data
   end
 
   # POST /odat_diagnoses
@@ -59,7 +57,9 @@ class OdatDiagnosesController < ApplicationController
 	  :location => @odat_diagnosis 
 	}
       else
-        format.html { render :action => "new" }
+        format.html { 
+	  load_form_data
+	  render :action => "new" }
         format.xml  { 
 	  render :xml => @odat_diagnosis.errors, 
 	  :status => :unprocessable_entity 
@@ -79,7 +79,9 @@ class OdatDiagnosesController < ApplicationController
         format.html { redirect_to(@medical_record, @odat_diagnosis) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { 
+	  load_form_data
+	  render :action => "edit" }
         format.xml  { 
 	  render :xml => @odat_diagnosis.errors, 
 	  :status => :unprocessable_entity 
@@ -99,5 +101,16 @@ class OdatDiagnosesController < ApplicationController
 				:medical_record_id => @medical_record.id)) }
       format.xml  { head :ok }
     end
+  end
+
+protected
+  def load_medical_record
+    @medical_record = MedicalRecord.find(params[:medical_record_id])
+  end
+
+  def load_form_data
+    @origin_sources = OriginSource.find(:all, :order => 'name ASC')
+    @origin_causes = OriginCause.find(:all, :order => 'name ASC')
+    @consultation_causes = ConsultationCause.find(:all, :order => 'name ASC')
   end
 end

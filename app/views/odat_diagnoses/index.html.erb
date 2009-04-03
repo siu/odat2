@@ -1,22 +1,40 @@
-<h1>Listing odat_diagnoses</h1>
+<% page_title _('Historial de %{name}') % {:name => @medical_record.full_name } %>
 
-<table>
-  <tr>
-    <th>Created at</th>
-    <th>Handicap value</th>
-  </tr>
+<% content_for(:side) do -%>
+  uh
+<% end -%>
 
-<% for odat_diagnosis in @odat_diagnoses %>
-  <tr>
-    <td><%=h odat_diagnosis.created_at %></td>
-    <td><%=h odat_diagnosis.handicap_value %></td>
-    <td><%= link_to 'Show', [@medical_record, odat_diagnosis] %></td>
-    <td><%= link_to 'Edit', edit_medical_record_odat_diagnosis_path(@medical_record, odat_diagnosis) %></td>
-    <td><%= link_to 'Destroy', [@medical_record, odat_diagnosis], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<table class="vdata">
+  <thead>
+    <tr>
+      <th><%= _('Fecha') %></th>
+      <th><%= _('Modificar') %></th>
+      <th><%= _('Eliminar') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for odat_diagnosis in @odat_diagnoses %>
+      <tr>
+	<td>
+	  <%= link_to(odat_diagnosis.created_at, [@medical_record, odat_diagnosis]) %>
+	</td>
+	<td>
+	  <%= link_to(_('Ver'), [@medical_record, odat_diagnosis]) %>
+	  <%= link_to(_('Modificar'), 
+		      edit_medical_record_odat_diagnosis_path(
+			@medical_record, odat_diagnosis)) %>
+	</td>
+	<td>
+	  <%= link_to(_('Eliminar'), 
+	  [@medical_record, odat_diagnosis], 
+	  :confirm => _('Realmente deseas borrar el diagnóstico (Operación irreversible)'),
+	  :method => :delete) %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New odat_diagnosis', new_medical_record_odat_diagnosis_path(@medical_report) %>
+<%= link_to 'New odat_diagnosis', 
+  new_medical_record_odat_diagnosis_path(@medical_record) %>

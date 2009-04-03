@@ -3,9 +3,9 @@
 one:
   medical_record: pedrito
   created_at: Time.now
-  derivation_source_id: 1
-  derivation_cause_id: 1
-  consultation_reason_id: 1
+  origin_source_id: 1
+  origin_cause_id: 1
+  consultation_cause_id: 1
   handicap_value: 1
   main_diagnosis_item_id: 1
   description: MyString
@@ -13,9 +13,9 @@ one:
 two:
   medical_record: pedrito
   created_at: Time.now
-  derivation_source_id: 1
-  derivation_cause_id: 1
-  consultation_reason_id: 1
+  origin_source_id: 1
+  origin_cause_id: 1
+  consultation_cause_id: 1
   handicap_value: 1
   main_diagnosis_item_id: 1
   description: MyString

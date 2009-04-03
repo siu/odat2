@@ -1,0 +1,45 @@
+<table>
+  <tr>
+    <th><%= f.label(:origin_source, _('Fuente de derivación')) %></th>
+    <td>
+      <%= f.collection_select(:origin_source_id, 
+			    @origin_sources, 
+			    :id, :name, 
+			    { :include_blank => true }) %>
+    </td>
+  </tr>
+
+  <tr>
+    <th><%= f.label(:origin_cause, _('Motivo de derivación')) %></th>
+    <td>
+      <%= f.collection_select(:origin_cause_id, 
+			      @origin_causes, 
+			      :id, :name, 
+			      { :include_blank => true }) %>
+    </td>
+  </tr>
+
+  <tr>
+    <th><%= f.label(:consultation_cause, 
+		    _('Motivo de consulta expresado por los padres')) %></th>
+    <td>
+      <%= f.collection_select(:consultation_cause_id, 
+			      @consultation_causes, 
+			      :id, :name, 
+			      { :include_blank => true }) %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= f.label(:description, _('Denominación')) %>
+      <p><small>
+	<%= _('Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc.') %>
+      </small></p>
+    </th>
+    <td>
+      <%= f.text_area(:description, 
+		      :rows => 10, :cols => 50, 
+		      :class => :ancho) %>
+    </td>
+  </tr>
+</table>
+

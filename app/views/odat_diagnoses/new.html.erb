@@ -1,39 +1,12 @@
-<h1>New odat_diagnosis</h1>
+<% page_title(_('Nuevo diagnóstico')) -%>
 
-<% form_for([@medical_record, @odat_diagnosis]) do |f| %>
-  <%= f.error_messages %>
+<% content_for(:header_options) do -%>
+  <%= javascript_include_tag('form_selector') %>
+<% end -%>
 
-  <p>
-    <%= f.label :medical_record_id %><br />
-    <%= f.text_field :medical_record_id %>
-  </p>
-  <p>
-    <%= f.label :derivation_source_id %><br />
-    <%= f.text_field :derivation_source_id %>
-  </p>
-  <p>
-    <%= f.label :derivation_cause_id %><br />
-    <%= f.text_field :derivation_cause_id %>
-  </p>
-  <p>
-    <%= f.label :consultation_reason_id %><br />
-    <%= f.text_field :consultation_reason_id %>
-  </p>
-  <p>
-    <%= f.label :handicap_value %><br />
-    <%= f.text_field :handicap_value %>
-  </p>
-  <p>
-    <%= f.label :main_diagnosis_item_id %><br />
-    <%= f.text_field :main_diagnosis_item_id %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
+<% content_for(:side) do -%>
+  menu lat nuevo
+  menu lat expediente
+<% end -%>
 
-<%= link_to 'Back', medical_record_odat_diagnoses_path(@medical_record) %>
+<%= render(:partial => 'form') %>

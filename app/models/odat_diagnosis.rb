@@ -36,5 +36,4 @@ class OdatDiagnosis < ActiveRecord::Base
   validates_presence_of :main_diagnosis, 
     :message => N_('Debes especificar al menos un elemento en ' +
 		   'diagnóstico detallado y un diagnóstico principal')
-
 end

@@ -1,0 +1,41 @@
+<% form_for([@medical_record, @odat_diagnosis]) do |f| %>
+  <%= f.error_messages %>
+
+  <h3><%= _('Parte 1: General') %></h3>
+
+  <fieldset>
+    <legend><%= _('Expediente') %></legend>
+    <%= render(:partial => 'form_medical_record_details', :locals => {:f => f}) %>
+  </fieldset>
+
+  <fieldset>
+    <legend><%= _('Datos demanda') %></legend>
+    <%= render(:partial => 'form_consultation_details', :locals => {:f => f}) %>
+  </fieldset>
+
+  <fieldset>
+    <legend><%= _('Datos de centro') %></legend>
+    <%= render(:partial => 'form_center_details', :locals => {:f => f}) %>
+  </fieldset>
+
+  <h3><%= _('Parte 2: Diagnóstico') %></h3>
+
+  <fieldset>
+    <legend><%= _('Diagnóstico detallado') %></legend>
+    <%= render(:partial => 'form_diagnosis_details', :locals => {:f => f}) %>
+  </fieldset>
+
+  <fieldset>
+    <legend><%= _('Diagnóstico principal') %></legend>
+    <%= render(:partial => 'form_main_diagnosis_details', :locals => {:f => f}) %>
+  </fieldset>
+
+  <p>
+  <% if @odat_diagnosis.new_record? -%>
+    <%= f.submit _('Nuevo') %> 
+  <% else -%>
+    <%= f.submit _('Guardar') %> 
+  <% end -%>
+  <%= link_to(_('Cancelar'), medical_record_odat_diagnoses_path(@medical_record)) %>
+  </p>
+<% end %>
