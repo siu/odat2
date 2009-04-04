@@ -12,10 +12,6 @@ module OdatDiagnosesHelper
 		  :onclick => 'link_popup(this); return false;')})</small>"
   end
 
-  def should_display_subcat?(subcat, diagnoses)
-    subcat.ancestor_of_any?(diagnoses)
-  end
-
   def hide_attr_if(condition)
     ' style="display: none"' if condition
   end
