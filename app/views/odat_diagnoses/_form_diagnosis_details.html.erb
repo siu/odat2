@@ -1,4 +1,3 @@
-<p><%= _('Haga <em>click</em> en el nombre de las subcategorías para expandir/contraer su contenido.') %></p>
 <table>
   <% for cat in DiagnosisItem.categories do -%>
   <tr>
@@ -9,23 +8,23 @@
 	  <li>
 	  <%= h(subcat.name) %>
 	  <% if subcat.items.any? -%>
-	  <%= render(:partial => 'form_diagnosis_items_subcategory_toggle',
-		     :locals => {
-		       :f => f, 
-		       :cat => cat, 
-		       :subcat => subcat, 
-		       :diagnoses => @odat_diagnosis.diagnosis_items}) %>
+	    <%= render(:partial => 'form_diagnosis_items_subcategory_toggle',
+		       :locals => {
+			 :f => f, 
+			 :cat => cat, 
+			 :subcat => subcat, 
+			 :diagnoses => @odat_diagnosis.diagnosis_items}) %>
 	  <% end -%>
 
-	 <ul id="subcat_<%= "#{cat.id}_#{subcat.id}" %>" 
-	   <%= hide_attr_unless(
-	     subcat.ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
-	   <% for item in subcat.items do -%>
-	     <li><%= display_item_for_diagnosis(f, 
-						item, 
-						@odat_diagnosis.diagnosis_items) %></li>
-	   <% end -%>
-	 </ul>
+	  <ul id="subcat_<%= "#{cat.id}_#{subcat.id}" %>" 
+	    <%= hide_attr_unless(
+	      subcat.ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
+	    <% for item in subcat.items do -%>
+	      <li><%= display_item_for_diagnosis(f, 
+						 item, 
+					       @odat_diagnosis.diagnosis_items) %></li> 
+	    <% end -%>
+	  </ul>
 	</li>
 	<% end -%>
       </ul>
