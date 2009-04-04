@@ -1,6 +1,8 @@
 <table>
   <tr>
-    <th>TODO</th>
-    <td>TODO</td>
+    <th><%= f.label(:main_diagnosis_item_id, _('Diagnóstico principal')) %></th>
+    <td><%= f.collection_select(:main_diagnosis_item_id,
+				DiagnosisItem.find(:all),
+				:id, :name) %></td>
   </tr>
 </table>

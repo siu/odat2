@@ -1,38 +1,36 @@
-<p>
-  <b>Medical record:</b>
-  <%=h @odat_diagnosis.medical_record_id %>
-</p>
+<h4><%= _('Datos personales') %></h4>
 
-<p>
-  <b>Origin source:</b>
-  <%=h @odat_diagnosis.origin_source_id %>
-</p>
+<table class="hdata">
+  <tr>
+    <th><%= _('Nombre') %></th>
+    <td><strong><%=h @odat_diagnosis.medical_record.full_name %></strong></td>
+  </tr>
+</table>
 
-<p>
-  <b>Origin cause:</b>
-  <%=h @odat_diagnosis.origin_cause_id %>
-</p>
+<h4><%= _('Diagnóstico') %></h4>
 
-<p>
-  <b>Consultation cause:</b>
-  <%=h @odat_diagnosis.consultation_cause_id %>
-</p>
+<table class="hdata">
+  <tr>
+    <th><%= _('Fecha de creación') %></th>
+    <td><%= @odat_diagnosis.created_at.short_format if @odat_diagnosis.created_at %></td>
+  </tr>
+  <tr>
+    <th><%= _('Última modificación') %></th>
+    <td><%= @odat_diagnosis.updated_at.short_format if @odat_diagnosis.updated_at %></td>
+  </tr>
+</table>
 
-<p>
-  <b>Handicap value:</b>
-  <%=h @odat_diagnosis.handicap_value %>
-</p>
+<h4><%= _('Datos socio-familiares') %></h4>
 
-<p>
-  <b>Main diagnosis:</b>
-  <%=h @odat_diagnosis.main_diagnosis_item_id %>
-</p>
+<h5><%= _('Datos demanda') %></h5>
+<%= render :partial => 'show_consultation_data' %>
 
-<p>
-  <b>Description:</b>
-  <%=h @odat_diagnosis.description %>
-</p>
+<h5><%= _('Datos de centro') %></h5>
+<%= render :partial => 'show_center_data' %>
 
+<h5><%= _('Diagnóstico principal') %></h5>
+<%= render :partial => 'show_main_diagnosis' %>
 
-<%= link_to 'Edit', edit_medical_record_odat_diagnosis_path(@medical_record, @odat_diagnosis) %> |
-<%= link_to 'Back', medical_record_odat_diagnoses_path(@medical_record) %>
+<h5><%= _('Datos de diagnóstico') %></h5>
+<%= render :partial => 'show_detailed_diagnosis' %>
+
