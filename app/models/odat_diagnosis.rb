@@ -17,7 +17,7 @@ class OdatDiagnosis < ActiveRecord::Base
   has_and_belongs_to_many :diagnosis_items, 
     :order => 'id ASC'
 
-  #has_and_belongs_to_many :center_items, 
+  #has_and_belongs_to_many :center_resources, 
     #:order => 'id ASC'
 
   # Validaciones

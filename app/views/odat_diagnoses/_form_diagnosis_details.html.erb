@@ -7,30 +7,25 @@
       <ul>
 	<% for subcat in cat.subcategories do -%>
 	  <li>
-	    <%= h(subcat.name) %>
-	    <small id="<%= "show_#{cat.id}_#{subcat.id}" %>"
-	      <% unless (@odat_diagnosis.diagnosis_items.delete(subcat.direct_children)).any? -%>
-	       style="display: none"<% end -%>>(<%= link_to_function(
-	      _('%{count} elementos sin mostrar') % 
-		{:count => subcat.direct_children.count}, 
-		  "Element.toggle('subcat_#{cat.id}_#{subcat.id}');
-		   Element.toggle('hide_#{cat.id}_#{subcat.id}');
-		   Element.toggle('show_#{cat.id}_#{subcat.id}');") %>)</small>
-	    <small id="<%= "hide_#{cat.id}_#{subcat.id}" %>" 
-	      <% if (@odat_diagnosis.diagnosis_items.delete(subcat.direct_children)).any? -%>
-	       style="display: none"<% end -%>>(<%= link_to_function(
-	      _('ocultar'),
-		  "Element.toggle('subcat_#{cat.id}_#{subcat.id}');
-		   Element.toggle('hide_#{cat.id}_#{subcat.id}');
-		   Element.toggle('show_#{cat.id}_#{subcat.id}');") %>)</small>
+	  <%= h(subcat.name) %>
+	  <% if subcat.items.any? -%>
+	  <%= render(:partial => 'form_diagnosis_items_subcategory_toggle',
+		     :locals => {
+		       :f => f, 
+		       :cat => cat, 
+		       :subcat => subcat, 
+		       :diagnoses => @odat_diagnosis.diagnosis_items}) %>
+	  <% end -%>
 
-		 <ul id="subcat_<%= "#{cat.id}_#{subcat.id}" %>" 
-		   <% if (@odat_diagnosis.diagnosis_items.delete(subcat.direct_children)).any? -%>
-		    style="display: none"<% end -%>>
-		   <% for item in subcat.items do -%>
-		     <li><%= display_item_for_diagnosis(f, item, @odat_diagnosis) %></li>
-		   <% end -%>
-		 </ul>
+	 <ul id="subcat_<%= "#{cat.id}_#{subcat.id}" %>" 
+	   <%= hide_attr_unless(
+	     subcat.ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
+	   <% for item in subcat.items do -%>
+	     <li><%= display_item_for_diagnosis(f, 
+						item, 
+						@odat_diagnosis.diagnosis_items) %></li>
+	   <% end -%>
+	 </ul>
 	</li>
 	<% end -%>
       </ul>

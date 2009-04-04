@@ -27,10 +27,14 @@ class DiagnosisItem < ActiveRecord::Base
   end
 
   def self_and_ancestors
-    self.class.find(:all, { 
+    @all_ancestors ||= self.class.find(:all, { 
       :conditions => "(#{self[left_col_name]} " +
 	"BETWEEN #{left_col_name} AND #{right_col_name})", 
       :order => "#{left_col_name}" })
+  end
+
+  def ancestor_of_any?(items)
+    items != (items - self.items)
   end
 
 end
