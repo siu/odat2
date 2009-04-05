@@ -72,8 +72,9 @@ class OdatDiagnosesController < ApplicationController
   # PUT /odat_diagnoses/1
   # PUT /odat_diagnoses/1.xml
   def update
+    params[:odat_diagnosis][:diagnosis_item_ids] ||= []
     @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
-    @odat_diagnosis.diagnosis_item_ids = []
+    #@odat_diagnosis.diagnosis_item_ids = []
 
     respond_to do |format|
       if @odat_diagnosis.update_attributes(params[:odat_diagnosis])

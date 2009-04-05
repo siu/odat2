@@ -33,6 +33,33 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	  assigns(:odat_diagnosis))
   end
 
+  should "create two odat_diagnosis for the same medical_record" do
+    login_as_user
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+    assert_difference('OdatDiagnosis.count') do
+      post :create, 
+	:medical_record_id => medical_records(:pedrito).id, 
+	:odat_diagnosis => { 
+	  :diagnosis_item_ids => [diagnosis_items(:e1_1_1), 
+				diagnosis_items(:e1_1_2)]
+      }
+    end
+
+    assert_redirected_to 
+    	medical_record_odat_diagnosis_path(
+	  {:medical_record_id => medical_records(:pedrito).id}, 
+	  assigns(:odat_diagnosis))
+
+    assert_difference('OdatDiagnosis.count') do
+      post :create,
+	:medical_record_id => medical_records(:pedrito).id,
+	:odat_diagnosis => {
+	  :diagnosis_item_ids => [diagnosis_items(:e1_1_1), 
+				diagnosis_items(:e1_1_2)]
+	}
+    end
+  end
+
   def test_should_show_odat_diagnosis
     login_as_user
     get :show, 
