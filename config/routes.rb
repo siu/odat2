@@ -3,6 +3,22 @@ ActionController::Routing::Routes.draw do |map|
   # Users dashboard
   map.root :controller => 'dashboard'
 
+  # Session and user routes
+  map.logout '/logout', 
+    :controller => 'sessions', :action => 'destroy'
+  map.login '/login', 
+    :controller => 'sessions', :action => 'new'
+  map.register '/register', 
+    :controller => 'users', :action => 'create'
+  map.signup '/signup', 
+    :controller => 'users', :action => 'new'
+
+  # User activation
+  map.activate '/activate/:activation_code', 
+    :controller => 'users', 
+    :action => 'activate', 
+    :activation_code => nil
+
   # Users
   map.resources :users, 
     :member => { 
@@ -14,8 +30,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # MedicalRecords
   map.resources :medical_records, 
-    :as => 'expedientes', 
-    :shallow => true do |record|
+    :as => 'expedientes' do |record|
+    #:shallow => true do |record|
       record.resources :odat_diagnoses, :as => 'diagnosticos'
   end
 
@@ -36,22 +52,6 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :diagnosis_items
     admin.resources :provinces
   end
-
-  # Session and user routes
-  map.logout '/logout', 
-    :controller => 'sessions', :action => 'destroy'
-  map.login '/login', 
-    :controller => 'sessions', :action => 'new'
-  map.register '/register', 
-    :controller => 'users', :action => 'create'
-  map.signup '/signup', 
-    :controller => 'users', :action => 'new'
-
-  # User activation
-  map.activate '/activate/:activation_code', 
-    :controller => 'users', 
-    :action => 'activate', 
-    :activation_code => nil
 
   # Default routes, not needed at all
   map.connect ':controller/:action/:id'

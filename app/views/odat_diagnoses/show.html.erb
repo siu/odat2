@@ -12,11 +12,11 @@
 <table class="hdata">
   <tr>
     <th><%= _('Fecha de creación') %></th>
-    <td><%= @odat_diagnosis.created_at.short_format if @odat_diagnosis.created_at %></td>
+    <td><%= l(@odat_diagnosis.created_at, :format => :short) if @odat_diagnosis.created_at %></td>
   </tr>
   <tr>
     <th><%= _('Última modificación') %></th>
-    <td><%= @odat_diagnosis.updated_at.short_format if @odat_diagnosis.updated_at %></td>
+    <td><%= l(@odat_diagnosis.updated_at, :format => :short) if @odat_diagnosis.updated_at %></td>
   </tr>
 </table>
 

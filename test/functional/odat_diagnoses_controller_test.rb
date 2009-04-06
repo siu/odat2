@@ -28,9 +28,9 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to 
-    	medical_record_odat_diagnosis_path(
+    	medical_record_odat_diagnoses_path(
 	  {:medical_record_id => medical_records(:pedrito).id}, 
-	  assigns(:odat_diagnosis))
+	  assigns(:medical_record))
   end
 
   should "create two odat_diagnosis for the same medical_record" do
@@ -46,9 +46,9 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to 
-    	medical_record_odat_diagnosis_path(
+    	medical_record_odat_diagnoses_path(
 	  {:medical_record_id => medical_records(:pedrito).id}, 
-	  assigns(:odat_diagnosis))
+	  assigns(:medical_record))
 
     assert_difference('OdatDiagnosis.count') do
       post :create,
@@ -83,10 +83,9 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	:medical_record_id => medical_records(:pedrito).id, 
 	:id => odat_diagnoses(:one).id, 
 	:odat_diagnosis => { }
-    assert_redirected_to 
-    	medical_record_odat_diagnosis_path(
-	    {:medical_record_id => medical_records(:pedrito).id},
-	    assigns(:odat_diagnosis))
+    assert_redirected_to(
+    	medical_record_odat_diagnoses_path(
+	    :medical_record_id => medical_records(:pedrito).id))
   end
 
   def test_should_destroy_odat_diagnosis
@@ -97,8 +96,8 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	:id => odat_diagnoses(:one).id
     end
 
-    assert_redirected_to 
+    assert_redirected_to(
     	medical_record_odat_diagnoses_path(
-	    :medical_record_id => medical_records(:pedrito).id)
+	  :medical_record_id => medical_records(:pedrito).id))
   end
 end
