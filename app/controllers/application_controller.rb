@@ -16,5 +16,10 @@ class ApplicationController < ActionController::Base
   init_gettext "odat"
 
   before_filter :login_required
+  before_filter :set_locale
 
+protected
+  def set_locale
+    I18n.locale = :es
+  end
 end

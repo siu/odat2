@@ -97,14 +97,15 @@ class Admin::UsersControllerTest < ActionController::TestCase
     # well played, sir
   end
 
-  protected
-    def create_user(options = {})
-      post :create, :user => { 
-	:login => 'quire', 
-	:email => 'quire@example.com',
+protected
+  def create_user(options = {})
+    post :create, 
+      :user => { 
+        :login => 'quire', 
+        :email => 'quire@example.com',
         :password => 'quire69', 
-	:password_confirmation => 'quire69',
-	:center_id => centers(:demo).id 
+        :password_confirmation => 'quire69',
+        :center_id => centers(:demo).id 
       }.merge(options)
-    end
+  end
 end

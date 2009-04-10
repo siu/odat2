@@ -1,0 +1,26 @@
+
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+
+<% form_for([:admin, @user]) do |f| -%>
+  <p><%= f.label:login %><br/>
+  <%= f.text_field :login %></p>
+
+  <p><%= f.label:email %><br/>
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label:password %><br/>
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation, 'Confirm Password' %><br/>
+  <%= f.password_field :password_confirmation %></p>
+
+  <p><%= f.label(:center_id, _('Centro')) %><br />
+  <%= f.collection_select(:center_id,
+        @centers, :id, :name) %>
+  </p>
+
+  <p><%= submit_tag(_('Crear')) %></p>
+<% end -%>
+

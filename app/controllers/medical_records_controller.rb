@@ -1,4 +1,5 @@
 class MedicalRecordsController < ApplicationController
+
   # GET /medical_records
   # GET /medical_records.xml
   def index
@@ -44,6 +45,7 @@ class MedicalRecordsController < ApplicationController
   # POST /medical_records.xml
   def create
     @medical_record = MedicalRecord.new(params[:medical_record])
+    @medical_record.center_id = current_user.center_id
 
     respond_to do |format|
       if @medical_record.save

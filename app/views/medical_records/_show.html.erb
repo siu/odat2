@@ -7,11 +7,11 @@
   </tr>
   <tr>
     <th><%= _('Fecha de ingreso') %></th>
-    <td><%= h @medical_record.created_at.to_date.short_format if @medical_record.created_at %></td>
+    <td><%= l(@medical_record.created_at.to_date, :format => :short) if @medical_record.created_at %></td>
   </tr>
   <tr>
     <th><%= _('Fecha de nacimiento') %></th>
-    <td><%= h @medical_record.birth_date.short_format if @medical_record.birth_date %></td>
+    <td><%= l(@medical_record.birth_date, :format => :short) if @medical_record.birth_date %></td>
   </tr>
   <tr>
     <th><%= _('Edad') %></th>

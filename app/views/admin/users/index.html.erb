@@ -1,0 +1,29 @@
+<% page_title(_('Listado de usuarios')) %>
+
+<table>
+  <tr>
+    <th><%= _('Login') %></th>
+    <th><%= _('Estado') %></th>
+    <th><%= _('Centro') %></th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%= h user.login %></td>
+    <td><%= h user.state %></td>
+    <td><%= h(user.center.name) unless user.center.nil? %></td>
+    <td><%= link_to 'Show', admin_user_path(user) %></td>
+    <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+    <td><%= link_to 'Suspend', suspend_admin_user_path(user), :method => :put %></td>
+    <td><%= link_to 'Unsuspend', unsuspend_admin_user_path(user), :method => :put %></td>
+    <td><%= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @users %>
+
+<br />
+
+<%= link_to _('Dar de alta nuevo usuario'), new_admin_user_path %>
+

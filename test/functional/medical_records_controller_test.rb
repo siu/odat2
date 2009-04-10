@@ -30,13 +30,26 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     MedicalRecord.any_instance.stubs(:valid?).returns(:true)
     assert_difference('MedicalRecord.count') do
       post :create, :medical_record => { 
-	:center_id => centers(:demo).id,
 	:name => 'a',
 	:surname => 'b'
       }
     end
 
     assert_redirected_to medical_record_path(assigns(:medical_record))
+  end
+
+  should "should belong to the same center as the user when new" do
+    login_as_user
+    MedicalRecord.any_instance.stubs(:valid?).returns(:true)
+    assert_difference('MedicalRecord.count') do
+      post :create, :medical_record => { 
+	:name => 'a',
+	:surname => 'b'
+      }
+    end
+
+    assert_redirected_to medical_record_path(assigns(:medical_record))
+    assert_equal assigns(:medical_record).center, current_user.center
   end
 
   def test_should_show_medical_record

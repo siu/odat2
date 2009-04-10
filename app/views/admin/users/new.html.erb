@@ -1,19 +1,4 @@
-<h1>Sign up as a new user</h1>
-<% @user.password = @user.password_confirmation = nil %>
+<% page_title(_('Registrar nuevo usuario')) -%>
 
-<%= error_messages_for :user %>
-<% form_for([:admin, @user]) do |f| -%>
-  <p><%= f.label:login %><br/>
-  <%= f.text_field :login %></p>
+<%= render :partial => 'form' %>
 
-  <p><%= f.label:email %><br/>
-  <%= f.text_field :email %></p>
-
-  <p><%= f.label:password %><br/>
-  <%= f.password_field :password %></p>
-
-  <p><%= f.label :password_confirmation, 'Confirm Password' %><br/>
-  <%= f.password_field :password_confirmation %></p>
-
-  <p><%= submit_tag 'Crear' %></p>
-<% end -%>

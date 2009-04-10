@@ -46,6 +46,10 @@ class ActiveSupport::TestCase
     login_as :admin
   end
 
+  def current_user
+    @current_user ||= User.find_by_id((@request.session[:user_id]))
+  end
+
 end
 
 module NotLoggedInChecks
