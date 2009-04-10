@@ -13,13 +13,19 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   filter_parameter_logging :password
-  init_gettext "odat"
 
   before_filter :login_required
   before_filter :set_locale
+  init_gettext "odat", :content_type => "application/xhtml+xml"
+
+  def locale_rtl?
+    return GetText.locale.language == 'ar'
+  end
 
 protected
   def set_locale
     I18n.locale = :es
+    GetText.locale = "es"
   end
+
 end
