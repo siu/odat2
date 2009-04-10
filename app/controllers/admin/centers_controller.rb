@@ -26,6 +26,7 @@ class Admin::CentersController < Admin::AdminSectionController
   # GET /centers/new.xml
   def new
     @center = Center.new
+    load_data
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class Admin::CentersController < Admin::AdminSectionController
 
   # GET /centers/1/edit
   def edit
+    load_data
     @center = Center.find(params[:id])
   end
 
@@ -49,7 +51,9 @@ class Admin::CentersController < Admin::AdminSectionController
         format.html { redirect_to([:admin, @center]) }
         format.xml  { render :xml => @center, :status => :created, :location => @center }
       else
-        format.html { render :action => "new" }
+        format.html { 
+	  load_data
+	  render :action => "new" }
         format.xml  { render :xml => @center.errors, :status => :unprocessable_entity }
       end
     end
@@ -66,7 +70,9 @@ class Admin::CentersController < Admin::AdminSectionController
         format.html { redirect_to([:admin, @center]) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { 
+	  load_data
+	  render :action => "edit" }
         format.xml  { render :xml => @center.errors, :status => :unprocessable_entity }
       end
     end
@@ -82,5 +88,10 @@ class Admin::CentersController < Admin::AdminSectionController
       format.html { redirect_to(admin_centers_url) }
       format.xml  { head :ok }
     end
+  end
+
+protected
+  def load_data
+    @regions = Region.find(:all, :order => 'name ASC')
   end
 end

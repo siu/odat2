@@ -11,6 +11,7 @@ quentin:
   activation_code:           
   activated_at:              <%= 5.days.ago.to_s :db %>
   state:                     active
+  center:                    demo
       
 aaron:
   id:                        2
@@ -25,6 +26,7 @@ aaron:
   activated_at:              
 
   state:                     pending
+  center:                    demo
 
 
 old_password_holder:
@@ -40,6 +42,7 @@ old_password_holder:
 
 
   state:                     active
+  center:                    demo
 
 admin:
   login:                     admin
@@ -53,4 +56,5 @@ admin:
   activated_at:              <%= 5.days.ago.to_s :db %>
   state:                     active
   type:                      Admin
+  center:                    demo
 

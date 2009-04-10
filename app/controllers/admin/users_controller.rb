@@ -1,7 +1,7 @@
-class UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminSectionController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-  skip_before_filter :login_required, :only => [:new, :create, :activate]
+  # skip_before_filter :login_required, :only => [:new, :create, :activate]
   
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
  
   def create
-    logout_keeping_session!
+    # logout_keeping_session!
     @user = User.new(params[:user])
     @user.register! if @user && @user.valid?
     success = @user && @user.valid?
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def activate
-    logout_keeping_session!
+    # logout_keeping_session!
     user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
     case
     when (!params[:activation_code].blank?) && user && !user.active?

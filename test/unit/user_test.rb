@@ -53,6 +53,13 @@ class UserTest < ActiveSupport::TestCase
       assert u.errors.on(:email)
     end
   end
+  
+  def test_should_require_center
+    assert_no_difference 'User.count' do
+      u = create_user(:center_id => nil)
+      assert u.errors.on(:center_id)
+    end
+  end
 
   def test_should_reset_password
     users(:quentin).update_attributes(:password => 'new password', :password_confirmation => 'new password')
@@ -161,7 +168,12 @@ class UserTest < ActiveSupport::TestCase
 
 protected
   def create_user(options = {})
-    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
+    record = User.new({ 
+      :login => 'quire', 
+      :email => 'quire@example.com', 
+      :password => 'quire69', 
+      :password_confirmation => 'quire69',
+      :center_id => centers(:demo).id }.merge(options))
     record.register! if record.valid?
     record
   end

@@ -1,16 +1,6 @@
 <h1>Editing center</h1>
 
-<% form_for([:admin, @center]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Show', [:admin, @center] %> |
 <%= link_to 'Back', admin_centers_path %>

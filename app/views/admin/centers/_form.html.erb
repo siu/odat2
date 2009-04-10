@@ -1,0 +1,19 @@
+<% form_for([:admin, @center]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label(:region_id) %><br />
+    <%= f.collection_select(:region_id, @regions, :id, :name) %>
+  </p>
+  <p>
+  <% if @center.new_record? -%>
+    <%= f.submit(_('Crear')) %>
+  <% else -%>
+    <%= f.submit(_('Guardar')) %>
+  <% end -%>
+  </p>
+<% end %>

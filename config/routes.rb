@@ -8,23 +8,19 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'sessions', :action => 'destroy'
   map.login '/login', 
     :controller => 'sessions', :action => 'new'
-  map.register '/register', 
-    :controller => 'users', :action => 'create'
-  map.signup '/signup', 
-    :controller => 'users', :action => 'new'
+  map.resources :users
+
+  # map.register '/register', 
+  #   :controller => 'users', :action => 'create'
+  # map.signup '/signup', 
+  #   :controller => 'users', :action => 'new'
 
   # User activation
-  map.activate '/activate/:activation_code', 
-    :controller => 'users', 
-    :action => 'activate', 
-    :activation_code => nil
+  # map.activate '/activate/:activation_code', 
+  #   :controller => 'users', 
+  #   :action => 'activate', 
+  #   :activation_code => nil
 
-  # Users
-  map.resources :users, 
-    :member => { 
-      :suspend => :put, 
-      :unsuspend => :put, 
-      :purge => :delete }
   # Session
   map.resource :session
 
@@ -40,6 +36,14 @@ ActionController::Routing::Routes.draw do |map|
 
   # Admin section
   map.namespace :admin do |admin|
+    # Users
+    admin.resources :users, 
+      :member => { 
+	:suspend => :put, 
+	:unsuspend => :put, 
+	:purge => :delete }
+
+    # All other resources
     admin.resources :regions
     admin.resources :centers
     admin.resources :formation_levels

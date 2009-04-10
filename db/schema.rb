@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090403130439) do
+ActiveRecord::Schema.define(:version => 20090410111129) do
 
   create_table "centers", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(:version => 20090403130439) do
     t.string   "state",                                    :default => "passive"
     t.datetime "deleted_at"
     t.string   "type",                                     :default => "User",    :null => false
+    t.integer  "center_id"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
