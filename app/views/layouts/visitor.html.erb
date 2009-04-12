@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES">
+  <head>
+    <title><%= yield(:page_title) || _('Organización Diagnóstica para la Atención Temprana') %> - ODAT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <%= stylesheet_link_tag 'base.css' %>
+    <%= stylesheet_link_tag 'layout.css' %>
+    <%= stylesheet_link_tag 'gfx.css' %>
+    <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'popup.js' %>
+    <%= yield :header_options %>
+  </head>
+
+  <body>
+    <div id="page-wrapper">
+      <div id="wrapper1">
+	<a class="anchor" name="top"></a>
+
+	<!-- Cabecera de la pagina -->
+	<div id="header-wrapper">
+
+	  <div id="header">
+	    <%= render :partial => 'layouts/header' %>
+	  </div>
+
+	  <div id="navbar">
+	    <%= render :partial => 'layouts/visitor_navbar' %>
+	  </div>
+	  <p class="clear"></p>
+	</div>
+
+	<!-- Cuerpo -->
+	<div id="content">
+
+	  <div id="main" class="simple">
+	    <h1><%= yield :page_title || _('ODAT') %></h1>
+	    <%= display_flash %>
+	    <%= yield %>
+	  </div>
+
+	  <p class="clear"></p>
+
+	  <div class="push"></div>
+
+	</div>
+      </div>
+      <!-- Pie de pagina -->
+      <div id="footer">
+	<%= render :partial => 'layouts/footer' %>
+      </div>
+    </div>
+  </body>
+
+</html>

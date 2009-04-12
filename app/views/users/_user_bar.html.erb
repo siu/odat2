@@ -1,7 +1,7 @@
 <% if logged_in? -%>
   <%= link_to_current_user :content_method => :login %>
   [ 
-    <%= link_to _('Editar'), edit_user_path(current_user) %> / 
+    <%= link_to _('Preferencias'), edit_user_path(current_user) %> / 
     <%= link_to _('Cerrar Sesión'), logout_path, 
     { :title => _('Cerrar Sesión') } %> ]
 <% else -%>

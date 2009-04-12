@@ -27,6 +27,9 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   border-color: #303030;
 }
+input {
+  margin-left: 0;
+}
 #page-wrapper {
     font-size: 1em;
     line-height:1.4285em;
@@ -309,4 +312,9 @@ div.fieldWithErrors {display:inline}
 #cuerpo #central p {
 	margin-bottom: 1.5em;
 	line-height: 1.7em;
+}
+
+/* ODAT 2.0 */
+.pagination {
+	margin: 1em 0 0;
 }

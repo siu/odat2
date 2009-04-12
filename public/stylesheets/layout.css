@@ -16,9 +16,9 @@
     padding-bottom: 10px;
 }
 #main.simple {
-    float:none;
-    width:80%;
     margin: 0 auto;
+    float: none;
+    width: auto;
 }
 #footer {
     clear: both;
@@ -39,4 +39,7 @@ html, body, #page-wrapper {
 }
 #footer {
     height: 78px;
+}
+.clear {
+	clear: both;
 }

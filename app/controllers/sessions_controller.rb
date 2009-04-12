@@ -2,6 +2,7 @@
 class SessionsController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
+  layout 'visitor'
 
   skip_before_filter :login_required, :only => [:new, :create]
 
