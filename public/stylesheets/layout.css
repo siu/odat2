@@ -1,0 +1,42 @@
+/* Maquetación */
+#sidebar {
+    width: 14%;
+    float: left;
+}
+#main {
+    position: relative;
+    float:left;
+    width: 80%;
+}
+#sidebar, #main {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+}
+#sidebar {
+    padding-bottom: 10px;
+}
+#main.simple {
+    float:none;
+    width:80%;
+    margin: 0 auto;
+}
+#footer {
+    clear: both;
+}
+/* Pie inferior */
+/* técnica: http://ryanfait.com/sticky-footer/ */
+html, body, #page-wrapper {
+    height:100%;
+}
+#wrapper1 {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -90px; /* the bottom margin is the negative value of the footer's height */
+}
+#push {
+    height: 90px;
+}
+#footer {
+    height: 78px;
+}

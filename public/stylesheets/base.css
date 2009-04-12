@@ -1,0 +1,66 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, p, blockquote, th, td {
+margin:0;
+padding:0;
+vertical-align:baseline;
+}
+body {
+font-family: "Arial",sans-serif;
+font-size:14px;
+font-size: 0.8750em;
+line-height:20px;
+line-height:1.4286em;
+/*background: #fff url(../images/grid.png);*/
+}
+p, h1, h2, h3, ul, dl, blockquote, pre {
+font-size:14px;
+font-size:1.0000em;
+margin-bottom:1.4286em ;
+}
+ul ul {
+margin-bottom:0pt;
+}
+h1 {
+font-size:36px;
+font-size:2.5714em;
+line-height:40px;
+line-height:1.1111em;
+margin-bottom: 0.5556em;
+}
+h2 {
+font-size:24px;
+font-size:1.7143em;
+line-height:40px;
+line-height:1.6666em;
+margin-bottom:0.8333em;
+}
+h3 {
+font-size:20px;
+font-size:1.4286em;
+line-height:1em;
+margin-bottom: 1em;
+}
+h4, h5, h6 {
+font-size:16px;
+font-size:1.1429em;
+line-height:1.25em;
+margin-bottom: 0;
+}
+img {
+border:0pt none;
+}
+dt {
+text-decoration:underline;
+}
+dd {
+margin-bottom:20px;
+margin-bottom:1em;
+margin-left:5em;
+}
+li {
+margin-left:30px;
+}
+p.clear {
+clear:both;
+height:0pt;
+margin:0pt;
+}
