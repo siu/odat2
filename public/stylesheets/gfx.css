@@ -170,7 +170,7 @@ fieldset {
 	border: 1px solid #c0c0e0;
 	-moz-border-radius: 4px;
 	margin-bottom: 2em;
-	padding: 1em;
+	padding: 1em 1em 0;
 }
 legend {
 	color: #933;
@@ -261,6 +261,9 @@ fieldset table {
 	border: 1px solid #933;
 	background-color: #f9e5ec;
 }
+table { 
+	margin-bottom: 1em;
+}
 tt {
 	font-size: 1.25em;
 }
@@ -315,6 +318,3 @@ div.fieldWithErrors {display:inline}
 }
 
 /* ODAT 2.0 */
-.pagination {
-	margin: 1em 0 0;
-}
