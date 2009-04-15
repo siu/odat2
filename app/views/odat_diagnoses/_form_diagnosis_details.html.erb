@@ -18,7 +18,7 @@
 
 	  <ul id="subcat_<%= "#{cat.id}_#{subcat.id}" %>" 
 	    <%= hide_attr_unless(
-	      subcat.ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
+	      subcat.is_ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
 	    <% for item in subcat.items do -%>
 	      <li><%= display_item_for_diagnosis(f, 
 						 item, 

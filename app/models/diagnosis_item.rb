@@ -5,35 +5,20 @@ class DiagnosisItem < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :description
 
+  default_scope :order => 'id ASC'
+
   def self.categories
-    self.find(:all, :conditions => "parent_id = 0 OR parent_id IS NULL", 
-	      :order => "lft")
+    self.find(:all, :conditions => "parent_id = 0 OR parent_id IS NULL")
   end
 
   def self.subcategories
-    self.categories.collect{ |c| c.direct_children }.flatten!
+    self.categories.collect{ |c| c.children }.flatten!
   end
 
-  alias :subcategories :direct_children
-  alias :items :direct_children
+  alias :subcategories :children
+  alias :items :children
 
-  def is_parent?(item)
-    (item[left_col_name] > self[left_col_name]) and 
-      (item[right_col_name] < self[right_col_name])
-  end
-
-  def ancestors
-    self_and_ancestors - [self]
-  end
-
-  def self_and_ancestors
-    @all_ancestors ||= self.class.find(:all, { 
-      :conditions => "(#{self[left_col_name]} " +
-	"BETWEEN #{left_col_name} AND #{right_col_name})", 
-      :order => "#{left_col_name}" })
-  end
-
-  def ancestor_of_any?(items)
+  def is_ancestor_of_any?(items)
     items != (items - self.items)
   end
 

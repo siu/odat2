@@ -50,8 +50,8 @@ class DiagnosisItemTest < ActiveSupport::TestCase
   end
 
   def test_subcategory_is_children_of_category_and_root
-    assert diagnosis_items(:c1).is_parent?(diagnosis_items(:s1_1))
-    assert !diagnosis_items(:c1).is_parent?(diagnosis_items(:s2_1))
+    assert diagnosis_items(:c1).is_ancestor_of?(diagnosis_items(:s1_1))
+    assert !diagnosis_items(:c1).is_ancestor_of?(diagnosis_items(:s2_1))
   end
 
   def test_ancestors
@@ -65,19 +65,21 @@ class DiagnosisItemTest < ActiveSupport::TestCase
   end
 
   should "return true to includes_any? if any is included" do
-    assert diagnosis_items(:s1_1).ancestor_of_any?([diagnosis_items(:e1_1_1)])
+    assert diagnosis_items(:s1_1).is_ancestor_of_any?(
+      [diagnosis_items(:e1_1_1)])
   end
 
   should "return true to includes_any? if any is included multiple" do
-    assert diagnosis_items(:s1_1).ancestor_of_any?([diagnosis_items(:e1_1_1),
-						    diagnosis_items(:e1_1_2)])
+    assert diagnosis_items(:s1_1).is_ancestor_of_any?(
+      [diagnosis_items(:e1_1_1),
+        diagnosis_items(:e1_1_2)])
   end
 
   should "return false to includes_any? if none is included multiple" do
-    assert !diagnosis_items(:s1_1).ancestor_of_any?([])
+    assert !diagnosis_items(:s1_1).is_ancestor_of_any?([])
   end
 
   should "return false to includes_any? if subcat has no children" do
-    assert !diagnosis_items(:s2_2).ancestor_of_any?([])
+    assert !diagnosis_items(:s2_2).is_ancestor_of_any?([])
   end
 end

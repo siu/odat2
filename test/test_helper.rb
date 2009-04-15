@@ -38,7 +38,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   include AuthenticatedTestHelper
 
-  def login_as_user
+  def login_as_user(sym = :quentin)
     login_as :quentin
   end
 

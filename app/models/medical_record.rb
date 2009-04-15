@@ -47,13 +47,13 @@ class MedicalRecord < ActiveRecord::Base
     :foreign_key => 'mother_formation_level_id'
 
   # Validations
+  validate :not_repeated_name_for_same_center
+
   validates_presence_of :center,
     :message => N_('Debes especificar el centro al que pertenece')
 
   validates_presence_of :name, 
     :message => N_('Debes especificar un nombre')
-
-  validate :not_repeated_name_for_same_center
 
   validates_presence_of :surname, 
     :message => N_('Debes especificar los apellidos')
@@ -87,7 +87,7 @@ protected
 	  :conditions => 
 	    ["id != ? AND name = ? AND surname = ? AND center_id = ?", 
 	    id, name, surname, center_id]).empty?
-      errors.add_to_base("Ya existe un expediente para #{self.full_name}")
+      errors.add_to_base(_('Ya existe un expediente para %{name}') % {:name => self.full_name})
     end
   end
 end
