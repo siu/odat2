@@ -108,7 +108,10 @@ class OdatDiagnosesController < ApplicationController
 
 protected
   def load_medical_record
-    @medical_record = MedicalRecord.find(params[:medical_record_id])
+    @medical_record = 
+      current_user.medical_records.find(params[:medical_record_id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to medical_records_path
   end
 
   def load_form_data

@@ -67,8 +67,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_should_not_rehash_password
-    users(:quentin).update_attributes(:login => 'quentin2')
-    assert_equal users(:quentin), User.authenticate('quentin2', 'monkey')
+    users(:quentin).update_attributes(:login => 'quentin_new')
+    assert_equal users(:quentin), User.authenticate('quentin_new', 'monkey')
   end
 
   def test_should_authenticate_user
@@ -164,6 +164,13 @@ class UserTest < ActiveSupport::TestCase
 
   should "not be admin" do
     assert !users(:quentin).is_admin?
+  end
+
+  should "have the same medical records that his center" do
+    assert_equal users(:quentin).medical_records, 
+      users(:quentin).center.medical_records
+    assert_equal users(:quentin2).medical_records, 
+      users(:quentin2).center.medical_records
   end
 
 protected
