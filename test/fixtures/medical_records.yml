@@ -3,6 +3,18 @@
 pedrito:
   name: Pedro
   surname: Pedrito Perez
-  center_id: centers(:demo)
+  center: demo
   created_at: Time.now
   
+pepito:
+  name: Pepito
+  surname: Antonio Antonio
+  center: demo
+  created_at: Time.now
+
+paco:
+  name: Paco
+  surname: J. J.
+  center: demo2
+  created_at: Time.now
+        

@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   # ODAT
   belongs_to :center
   validates_presence_of :center_id
+  delegate :medical_records, :to => :center
   
 
   # HACK HACK HACK -- how to do attr_accessible from here?

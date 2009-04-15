@@ -3,4 +3,6 @@ class Center < ActiveRecord::Base
 
   validates_presence_of :name
   validates_presence_of :region
+
+  has_many :medical_records
 end

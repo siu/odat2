@@ -3,8 +3,9 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records
   # GET /medical_records.xml
   def index
-    @medical_records = MedicalRecord.paginate(:page => params[:page], 
-					      :order => 'surname ASC')
+    @medical_records = current_user.medical_records.paginate(
+      :page => params[:page], 
+      :order => 'surname ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,12 +16,14 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/1
   # GET /medical_records/1.xml
   def show
-    @medical_record = MedicalRecord.find(params[:id])
+    @medical_record = current_user.medical_records.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @medical_record }
     end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to medical_records_path
   end
 
   # GET /medical_records/new
@@ -38,7 +41,9 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/1/edit
   def edit
     load_data
-    @medical_record = MedicalRecord.find(params[:id])
+    @medical_record = current_user.medical_records.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to medical_records_path
   end
 
   # POST /medical_records
@@ -68,7 +73,7 @@ class MedicalRecordsController < ApplicationController
   # PUT /medical_records/1
   # PUT /medical_records/1.xml
   def update
-    @medical_record = MedicalRecord.find(params[:id])
+    @medical_record = current_user.medical_records.find(params[:id])
 
     respond_to do |format|
       if @medical_record.update_attributes(params[:medical_record])
@@ -84,18 +89,22 @@ class MedicalRecordsController < ApplicationController
 	  :status => :unprocessable_entity }
       end
     end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to medical_records_path
   end
 
   # DELETE /medical_records/1
   # DELETE /medical_records/1.xml
   def destroy
-    @medical_record = MedicalRecord.find(params[:id])
+    @medical_record = current_user.medical_records.find(params[:id])
     @medical_record.destroy
 
     respond_to do |format|
       format.html { redirect_to(medical_records_url) }
       format.xml  { head :ok }
     end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to medical_records_path
   end
 
 protected
