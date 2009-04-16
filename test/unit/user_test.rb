@@ -13,16 +13,10 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  def test_should_initialize_activation_code_upon_creation
+  def test_should_create_and_start_in_active_state
     user = create_user
     user.reload
-    assert_not_nil user.activation_code
-  end
-
-  def test_should_create_and_start_in_pending_state
-    user = create_user
-    user.reload
-    assert user.pending?
+    assert user.active?
   end
 
 
@@ -119,7 +113,7 @@ class UserTest < ActiveSupport::TestCase
     assert user.passive?
     user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
     user.register!
-    assert user.pending?
+    assert user.active?
   end
 
   def test_should_suspend_user

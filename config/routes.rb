@@ -8,18 +8,7 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'sessions', :action => 'destroy'
   map.login '/login', 
     :controller => 'sessions', :action => 'new'
-  map.resources :users
-
-  # map.register '/register', 
-  #   :controller => 'users', :action => 'create'
-  # map.signup '/signup', 
-  #   :controller => 'users', :action => 'new'
-
-  # User activation
-  # map.activate '/activate/:activation_code', 
-  #   :controller => 'users', 
-  #   :action => 'activate', 
-  #   :activation_code => nil
+  map.resource :user
 
   # Session
   map.resource :session
