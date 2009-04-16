@@ -2,10 +2,11 @@ module OdatDiagnosesHelper
   def display_item_for_diagnosis(f, item, diagnoses)
     output = ''
     output << check_box_tag("odat_diagnosis[diagnosis_item_ids][]", 
-			  item.id,
+                          item.id,
 			  diagnoses.to_a.include?(item),
+			  :id => "diagnosis_item_ids_"+item.id.to_s,
 			  :onchange => "update_main_diagnosis_list(this, #{item.id}, \"#{h item.name}\")")
-    output << f.label("diagnosis_item_ids[#{item.id}]", item.name)
+    output << label_tag("diagnosis_item_ids[#{item.id}]", item.name)
     output << " <small>(#{link_to(_('ayuda'), 
 		  {:controller => :help},
 		  :target => '_blank', 
