@@ -1,0 +1,2 @@
+module CenterResourcesHelper
+end

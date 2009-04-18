@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @center_resource.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @center_resource.description %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @center_resource.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_center_resource_path(@center_resource) %> |
+<%= link_to 'Back', admin_center_resources_path %>

@@ -1,0 +1,24 @@
+<h1>Listing center_resources</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% @center_resources.each do |center_resource| %>
+  <tr>
+    <td><%=h center_resource.name %></td>
+    <td><%=h center_resource.description %></td>
+    <td><%=h center_resource.position %></td>
+    <td><%= link_to 'Show', [:admin, center_resource] %></td>
+    <td><%= link_to 'Edit', edit_admin_center_resource_path(center_resource) %></td>
+    <td><%= link_to 'Destroy', [:admin, center_resource], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New center_resource', new_admin_center_resource_path %>

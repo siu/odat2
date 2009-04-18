@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-
   # Users dashboard
   map.root :controller => 'dashboard'
 
@@ -33,6 +32,7 @@ ActionController::Routing::Routes.draw do |map|
 	:purge => :delete }
 
     # All other resources
+    admin.resources :center_resources
     admin.resources :regions
     admin.resources :centers
     admin.resources :formation_levels
