@@ -2,7 +2,7 @@
   <tr>
     <th><%= f.label(:main_diagnosis_item_id, _('Diagnóstico principal')) %></th>
     <td><%= f.collection_select(:main_diagnosis_item_id,
-				DiagnosisItem.leaves,
-				:id, :name) %></td>
+				@odat_diagnosis.diagnosis_items,
+                                :id, :name, {:id => 'main_diagnosis_select'}) %></td>
   </tr>
 </table>
