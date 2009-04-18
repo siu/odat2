@@ -18,14 +18,15 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   init_gettext "odat", :content_type => "application/xhtml+xml"
 
-  def locale_rtl?
-    return GetText.locale.language == 'ar'
-  end
-
 protected
   def set_locale
     I18n.locale = :es
     GetText.locale = "es"
   end
+
+  def locale_rtl?
+    return GetText.locale.language == 'ar'
+  end
+
 
 end
