@@ -1,0 +1,25 @@
+<table class="hdata">
+  <% for cat in DiagnosisItem.roots -%>
+    <% if cat.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items) -%>
+      <tr>
+        <th>
+          <%= cat.name %>
+        </th>
+        <td>
+          <% for subcat in cat.children -%>
+            <% if subcat.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items) -%>
+              <%= subcat.name %>
+              <ul>
+              <% for item in subcat.children -%>
+                <% if item.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items) -%>
+                  <li><%= item.name %></li>
+                <% end -%>
+              <% end -%>
+              </ul>
+            <% end -%>
+          <% end -%>
+        </td>
+      </tr>
+    <% end -%>
+  <% end -%>
+</table>

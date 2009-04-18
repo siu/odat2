@@ -1,0 +1,6 @@
+<% if @odat_diagnosis.main_diagnosis %>
+    <p><strong><%= h @odat_diagnosis.main_diagnosis.name %></strong></p>
+<% else %>
+    <p><%= _('No se ha indicado un diagnóstico principal.') %></p>
+<% end %>
+

@@ -176,8 +176,11 @@ legend {
 	color: #933;
 	font-weight: bold;
 }
-h4, h5, h6 {
+h3, h4 {
 	color: #933;
+}
+h4, h5, h6 {
+        margin-bottom: 1em;
 }
 h2 small {
 	font-size: 85%;

@@ -1,4 +1,6 @@
-<h4><%= _('Datos personales') %></h4>
+<% page_title _('Ver diagnóstico') -%>
+
+<h3><%= _('Datos personales') %></h3>
 
 <table class="hdata">
   <tr>
@@ -7,7 +9,7 @@
   </tr>
 </table>
 
-<h4><%= _('Diagnóstico') %></h4>
+<h3><%= _('Diagnóstico') %></h3>
 
 <table class="hdata">
   <tr>
@@ -20,17 +22,17 @@
   </tr>
 </table>
 
-<h4><%= _('Datos socio-familiares') %></h4>
+<h3><%= _('Datos socio-familiares') %></h3>
 
-<h5><%= _('Datos demanda') %></h5>
+<h4><%= _('Datos demanda') %></h4>
 <%= render :partial => 'show_consultation_data' %>
 
-<h5><%= _('Datos de centro') %></h5>
+<h4><%= _('Datos de centro') %></h4>
 <%= render :partial => 'show_center_data' %>
 
-<h5><%= _('Diagnóstico principal') %></h5>
+<h4><%= _('Diagnóstico principal') %></h4>
 <%= render :partial => 'show_main_diagnosis' %>
 
-<h5><%= _('Datos de diagnóstico') %></h5>
+<h4><%= _('Datos de diagnóstico') %></h4>
 <%= render :partial => 'show_detailed_diagnosis' %>
 

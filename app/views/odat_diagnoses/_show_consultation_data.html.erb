@@ -1,0 +1,19 @@
+<table class="hdata">
+	<tr>
+		<th><%= _('Fuente de derivación') %>: </th>
+		<td><%=h @odat_diagnosis.origin_source.name if @odat_diagnosis.origin_source %></td>
+	</tr>
+	<tr>
+		<th><%= _('Motivo de derivación') %>: </th>
+		<td><%=h @odat_diagnosis.origin_cause.name if @odat_diagnosis.origin_cause %></td>
+	</tr>
+	<tr>
+		<th><%= _('Motivo de consulta expresado por los padres') %>: </th>
+		<td><%=h @odat_diagnosis.consultation_cause.name if @odat_diagnosis.consultation_cause %></td>
+	</tr>
+	<tr>
+		<th><%= _('Denominación') %>: </th>
+		<td><%=h @odat_diagnosis.description %></td>
+	</tr>
+</table>
+

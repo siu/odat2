@@ -1,7 +1,13 @@
 <table>
   <% for cat in DiagnosisItem.categories do -%>
   <tr>
-    <th><%= h cat.name %></th>
+    <th><%= h cat.name %><br />
+        <small class="help">(<%= link_to(_('ayuda'), 
+		  {:controller => :help},
+		  :target => '_blank', 
+                  :class => 'help',
+                  :onclick => 'link_popup(this); return false;') %>)</small>
+    </th>
     <td>
       <ul>
 	<% for subcat in cat.subcategories do -%>

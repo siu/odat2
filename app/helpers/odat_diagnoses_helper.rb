@@ -7,10 +7,6 @@ module OdatDiagnosesHelper
 			  :id => "diagnosis_item_ids_"+item.id.to_s,
 			  :onchange => "update_main_diagnosis_list(this, #{item.id}, \"#{h item.name}\")")
     output << label_tag("diagnosis_item_ids[#{item.id}]", item.name)
-    output << " <small>(#{link_to(_('ayuda'), 
-		  {:controller => :help},
-		  :target => '_blank', 
-		  :onclick => 'link_popup(this); return false;')})</small>"
   end
 
   def hide_attr_if(condition)
