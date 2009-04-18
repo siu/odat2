@@ -56,6 +56,11 @@ class User < ActiveRecord::Base
     false
   end
 
+  def name_or_login
+    name unless name.nil?
+    login
+  end
+
   protected
     
     def make_activation_code

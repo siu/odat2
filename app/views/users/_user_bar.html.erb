@@ -1,5 +1,5 @@
 <% if logged_in? -%>
-  <%= link_to_current_user :content_method => :login %>
+  <%= current_user.name_or_login %> 
   [ 
     <%= link_to _('Preferencias'), edit_user_path(current_user) %> / 
     <%= link_to _('Cerrar Sesión'), logout_path, 

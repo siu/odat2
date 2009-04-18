@@ -40,34 +40,41 @@
 
 </table>
 
+<% if @medical_record.has_siblings_data? then -%>
+  <h3><%= _('Datos sociofamiliares') %></h3>
+  <h4><%= _('Hermanos') %></h4>
+  <table class="datosh">
+    <%= render :partial => 'show_siblings_data' %>
+  </table>
+<% end -%>
 
-<h3><%= _('Datos sociofamiliares') %></h3>
-<h4><%= _('Hermanos') %></h4>
-<table class="datosh">
-  <%= render :partial => 'show_siblings_data' %>
-</table>
-
-
-<h4><%= _('Padre') %></h4>
-<table class="datosh">
-  <%= render :partial => 'show_father_data' %>
-</table>
-
-
-<h4><%= _('Madre') %></h4>
-<table class="datosh">
-  <%= render :partial => 'show_mother_data' %>
-</table>
+<% if @medical_record.has_father_data? then -%>
+  <h4><%= _('Padre') %></h4>
+  <table class="datosh">
+    <%= render :partial => 'show_father_data' %>
+  </table>
+<% end -%>
 
 
+<% if @medical_record.has_mother_data? then -%>
+  <h4><%= _('Madre') %></h4>
+  <table class="datosh">
+    <%= render :partial => 'show_mother_data' %>
+  </table>
+<% end -%>
+
+<% if @medical_record.has_phone_data? then -%>
 <h4><%= _('Teléfonos') %></h4>
 <table class="datosh">
   <%= render :partial => 'show_phones_data' %>
 </table>
+<% end -%>
 
+<% if @medical_record.has_coordination_data? then -%>
 <h4><%= _('Coordinación') %></h4>
 <table class="datosh">
   <%= render :partial => 'show_coordination_data' %>
 </table>
+<% end -%>
 
 

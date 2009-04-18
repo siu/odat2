@@ -81,12 +81,38 @@ class MedicalRecord < ActiveRecord::Base
     surname + ', ' + name
   end
 
+  def has_siblings_data?
+    has_any_attr?([:total_siblings_amount, :birth_position])
+  end
+
+  def has_father_data?
+    has_any_attr?([:father_name, :father_surname, :father_birth_date, :father_job_id, :father_civil_state_id, :father_job_status_id, :father_formation_level_id, :father_email, :father_extra_information])
+  end
+
+  def has_mother_data?
+    has_any_attr?([:mother_name, :mother_surname, :mother_birth_date, :mother_job_id, :mother_civil_state_id, :mother_job_status_id, :mother_formation_level_id, :mother_email, :mother_extra_information])
+  end
+
+  def has_phone_data?
+    has_any_attr?([:home_phone, :portable_phone, :work_phone])
+  end
+
+  def has_coordination_data?
+    has_any_attr?([:sanitary_services, :social_services, :educative_services])
+  end
+
 protected
+  def has_any_attr?(attrs)
+    attrs.any? do |m|
+      self.send(m) && !self.send(m).nil? && !self.send(m).empty?
+    end
+  end
+
   def not_repeated_name_for_same_center
     if !self.class.find(:all, 
 	  :conditions => 
-	    ["id != ? AND name = ? AND surname = ? AND center_id = ?", 
-	    id, name, surname, center_id]).empty?
+	    ["(? is NULL OR id != ?) AND name = ? AND surname = ? AND center_id = ?", 
+	    id, id, name, surname, center_id]).empty?
       errors.add_to_base(_('Ya existe un expediente para %{name}') % {:name => self.full_name})
     end
   end

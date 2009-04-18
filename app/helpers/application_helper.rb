@@ -16,7 +16,7 @@ module ApplicationHelper
     "<p>#{_('No se han encontrado registros.')}</p>"
   end
 
-  FLASH_TYPES = [:error, :warning, :success, :message]
+  FLASH_TYPES = [:error, :warning, :success, :message, :notice]
   def display_flash(type = nil)
     html = ""
     if type.nil?
