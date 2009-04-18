@@ -32,13 +32,13 @@ html, body, #page-wrapper {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -90px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
 }
 #push {
-    height: 90px;
+    height: 100px;
 }
 #footer {
-    height: 78px;
+    height: 88px;
 }
 .clear {
 	clear: both;
