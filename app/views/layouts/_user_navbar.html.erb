@@ -1,10 +1,10 @@
 <ul>
   <li class="first"><%= link_to _('Listado expedientes'), 
-    medical_records_path, :class => 'accion-principal' %></li>
+    medical_records_path, 
+    :class => 'accion-principal' %></li>
   <li><%= link_to _('Nuevo expediente'), 
-      new_medical_record_path, :class => 'accion-principal' %></li>
-  <li><%= link_to _('Documentación ODAT'), 
-      :controller => 'documentacion' %></li>
-  <li><%= link_to _('Acerca de ODAT'), 
-      :controller => 'acercade' %></li>
+    new_medical_record_path, 
+    :class => 'accion-principal' %></li>
+  <li><%= link_to _('Documentación ODAT'), docs_path %></li>
+  <li><%= link_to _('Acerca de ODAT'), about_path %></li>
 </ul>

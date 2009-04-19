@@ -1,0 +1,26 @@
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Permalink</th>
+    <th>Sidebar content</th>
+    <th>Sidebar content html</th>
+    <th>Content</th>
+    <th>Content html</th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%=h page.title %></td>
+    <td><%=h page.permalink %></td>
+    <td><%= link_to 'Show', [:admin, page] %></td>
+    <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
+    <td><%= link_to 'Destroy', [:admin, page], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New page', new_admin_page_path %>

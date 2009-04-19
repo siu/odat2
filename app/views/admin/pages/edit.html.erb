@@ -1,0 +1,28 @@
+<h1>Editing page</h1>
+
+<% form_for([:admin,@page]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+  <p>
+    <%= f.label :sidebar_content %><br />
+    <%= f.text_area :sidebar_content %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin,@page] %> |
+<%= link_to 'Back', admin_pages_path %>

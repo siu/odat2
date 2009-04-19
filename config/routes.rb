@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   # Users dashboard
   map.root :controller => 'dashboard'
 
@@ -18,6 +19,20 @@ ActionController::Routing::Routes.draw do |map|
     #:shallow => true do |record|
       record.resources :odat_diagnoses, :as => 'diagnosticos'
   end
+
+  # Routes for documentation
+  map.docs 'pages/docs', 
+    :controller => 'pages', :action => 'show', 
+    :permalink => 'docs'
+
+  # Route for about
+  map.about 'pages/about', 
+    :controller => 'pages', :action => 'show', 
+    :permalink => 'about'
+
+  # Routes for other static pages
+  map.route 'pages/:permalink', 
+    :controller => 'pages', :action => 'show'
 
   # Admin dashboard
   map.admin '/admin', :controller => 'admin/dashboard'
@@ -44,6 +59,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :origin_sources
     admin.resources :diagnosis_items
     admin.resources :provinces
+    admin.resources :pages
   end
 
   # Default routes, not needed at all

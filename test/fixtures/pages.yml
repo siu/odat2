@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  permalink: MyString
+  sidebar_content: MyText
+  sidebar_content_html: MyText
+  content: MyText
+  content_html: MyText
+
+two:
+  title: MyString
+  permalink: MyString
+  sidebar_content: MyText
+  sidebar_content_html: MyText
+  content: MyText
+  content_html: MyText
+
+docs:
+  title: documentation
+  permalink: docs
+  content: content for documentation
+  content_html: "<p><strong>content for documentation</strong></p>"
+
