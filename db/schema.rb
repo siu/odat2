@@ -63,11 +63,6 @@ ActiveRecord::Schema.define(:version => 20090418142309) do
     t.datetime "updated_at"
   end
 
-  create_table "item_diagnosticos", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "job_statuses", :force => true do |t|
     t.string   "name"
     t.string   "description"

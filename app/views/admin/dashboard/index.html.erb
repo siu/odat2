@@ -1,6 +1,6 @@
 <% page_title _('Administración') -%>
 
-<h3><%= _('Parte dinámica') %></h3>
+<h3><%= _('Usuarios y Centros') %></h3>
 
 <ul>
   <li><%= link_to(_('Cuentas de usuario'), admin_users_path) %>
@@ -9,12 +9,13 @@
       <small>(<%= Center.count %>)</small></li>
 </ul>
 
-<h3><%= _('Parte estática') %></h3>
+<h3><%= _('Datos de diagnóstico') %></h3>
 
 <ul>
   <li><%= link_to(_('Autonomías'), admin_regions_path) %>
       <small>(<%= Region.count %>)</small></li>
-  <li>Falta recursos de centro</li>
+  <li><%= link_to(_('Recursos de centro'), admin_center_resources_path) %>
+      <small>(<%= CenterResource.count %>)</small></li>
   <li><%= link_to(_('Elementos de diagnóstico'), admin_diagnosis_items_path) %>
       <small>(<%= DiagnosisItem.count %>)</small></li>
   <li><%= link_to(_('Provincias'), admin_provinces_path) %>
