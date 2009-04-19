@@ -14,11 +14,9 @@ class OdatDiagnosis < ActiveRecord::Base
     :class_name => 'DiagnosisItem', 
     :foreign_key => 'main_diagnosis_item_id'
 
-  has_and_belongs_to_many :diagnosis_items, 
-    :order => 'id ASC'
+  has_and_belongs_to_many :diagnosis_items
 
-  #has_and_belongs_to_many :center_resources, 
-    #:order => 'id ASC'
+  has_and_belongs_to_many :center_resources
 
   # Validaciones
   validates_presence_of :medical_record,

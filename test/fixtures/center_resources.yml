@@ -3,9 +3,25 @@
 one:
   name: MyString
   description: MyText
-  position: 1
+  position: 4
 
 two:
   name: MyString
   description: MyText
+  position: 5
+
+r1:
+  name: Recurso 1
+  description: Desc recurso 1
   position: 1
+
+r2:
+  name: Recurso 2
+  description: Desc recurso 2
+  position: 2
+
+r3:
+  name: Recurso 3
+  description: Desc recurso 3
+  position: 3
+

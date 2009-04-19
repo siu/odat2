@@ -1,6 +1,17 @@
 <table>
   <tr>
-    <th></th>
-    <td>TODO</td>
+    <th><%= _('Recursos de centro') %></th>
+    <td>
+      <ul>
+  <% for resource in CenterResource.find(:all) do -%>
+    <li><%= check_box_tag("odat_diagnosis[center_resource_ids][]", 
+      resource.id,
+      @odat_diagnosis.center_resources.to_a.include?(resource),
+      :id => "center_resource_ids_"+resource.id.to_s) %>
+      <%= label_tag("center_resource_ids[#{resource.id}]", resource.name) %>    
+      </li>
+  <% end -%>
+</ul>
+    </td>
   </tr>
 </table>

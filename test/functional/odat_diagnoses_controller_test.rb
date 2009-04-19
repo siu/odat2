@@ -50,31 +50,32 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_redirected_to medical_records_path
   end
 
-  should "allow creation of two odat_diagnosis for the same medical_record" do
+  should "allow creation of two odat_diagnosis with the same medical_record" do
     login_as_user
+
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+
+    items = [diagnosis_items(:e1_1_1).id, diagnosis_items(:e1_1_2).id]
+
     assert_difference('OdatDiagnosis.count') do
       post :create, 
 	:medical_record_id => medical_records(:pedrito).id, 
 	:odat_diagnosis => { 
-	  :diagnosis_item_ids => [diagnosis_items(:e1_1_1), 
-				diagnosis_items(:e1_1_2)]
-      }
+	  :diagnosis_item_ids => items
+	}
     end
-
-    assert_redirected_to 
-    	medical_record_odat_diagnoses_path(
-	  {:medical_record_id => medical_records(:pedrito).id}, 
-	  assigns(:medical_record))
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
 
     assert_difference('OdatDiagnosis.count') do
       post :create,
 	:medical_record_id => medical_records(:pedrito).id,
 	:odat_diagnosis => {
-	  :diagnosis_item_ids => [diagnosis_items(:e1_1_1), 
-				diagnosis_items(:e1_1_2)]
+	  :diagnosis_item_ids => items
 	}
     end
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
   end
 
   def test_should_show_odat_diagnosis
@@ -129,6 +130,61 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	:id => odat_diagnoses(:one).id, 
 	:odat_diagnosis => { }
     assert_redirected_to medical_records_path
+  end
+  
+  should "update item_diagnosis relations" do
+    login_as_user
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+
+    items = [diagnosis_items(:e1_1_1).id, diagnosis_items(:e1_1_2).id]
+    put :update, 
+	:medical_record_id => medical_records(:pedrito).id, 
+	:id => odat_diagnoses(:one).id, 
+	:odat_diagnosis => { :diagnosis_item_ids => items }
+
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+
+    items = []
+    put :update, 
+	:medical_record_id => medical_records(:pedrito).id, 
+	:id => odat_diagnoses(:one).id, 
+	:odat_diagnosis => { :diagnosis_item_ids => items }
+
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+
+    items = [diagnosis_items(:e1_1_1).id]
+    put :update, 
+	:medical_record_id => medical_records(:pedrito).id, 
+	:id => odat_diagnoses(:one).id, 
+	:odat_diagnosis => { :diagnosis_item_ids => items }
+
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+  end
+
+  should "update center_resources relations" do
+    login_as_user
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+
+    items = [center_resources(:r1).id, center_resources(:r2).id]
+    put :update, 
+	:medical_record_id => medical_records(:pedrito).id, 
+	:id => odat_diagnoses(:one).id, 
+	:odat_diagnosis => { :center_resource_ids => items }
+
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).center_resources.count
+
+    items = [center_resources(:r3).id]
+    put :update, 
+	:medical_record_id => medical_records(:pedrito).id, 
+	:id => odat_diagnoses(:one).id, 
+	:odat_diagnosis => { :center_resource_ids => items }
+
+    assert_response :redirect
+    assert_equal items.count, assigns(:odat_diagnosis).center_resources.count
   end
 
   def test_should_destroy_odat_diagnosis
