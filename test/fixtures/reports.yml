@@ -3,11 +3,7 @@
 one:
   signature: MyString
   signed_on: 2009-02-15 20:45:37
-  font_size: 1
-  font_family: MyString
 
 two:
   signature: MyString
   signed_on: 2009-02-15 20:45:37
-  font_size: 1
-  font_family: MyString

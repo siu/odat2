@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090419170258) do
+ActiveRecord::Schema.define(:version => 20090421202322) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(:version => 20090419170258) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "configurable_views", :force => true do |t|
+    t.integer "font_size"
+    t.string  "font_family", :limit => 150
   end
 
   create_table "consultation_causes", :force => true do |t|
@@ -179,14 +184,13 @@ ActiveRecord::Schema.define(:version => 20090419170258) do
   end
 
   create_table "reports", :force => true do |t|
-    t.boolean  "show_signature",                :default => true
-    t.string   "signature",      :limit => 150
-    t.boolean  "show_signed_on",                :default => true
+    t.boolean  "show_signature",                      :default => true
+    t.string   "signature",            :limit => 150
+    t.boolean  "show_signed_on",                      :default => true
     t.datetime "signed_on"
-    t.integer  "font_size",                     :default => 0
-    t.string   "font_family",    :limit => 150
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "configurable_view_id"
   end
 
   create_table "users", :force => true do |t|

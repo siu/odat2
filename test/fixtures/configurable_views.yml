@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  font_size: 1
+  font_family: MyString
+
+two:
+  font_size: 1
+  font_family: MyString
