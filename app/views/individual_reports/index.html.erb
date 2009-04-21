@@ -1,0 +1,38 @@
+<h1>Listing individual_reports</h1>
+
+<table>
+  <tr>
+    <th>Medical record</th>
+    <th>Odat diagnosis</th>
+    <th>Topic</th>
+    <th>Topic html</th>
+    <th>Tests</th>
+    <th>Tests html</th>
+    <th>Results</th>
+    <th>Results html</th>
+    <th>Orientation</th>
+    <th>Orientation html</th>
+  </tr>
+
+<% @individual_reports.each do |individual_report| %>
+  <tr>
+    <td><%=h individual_report.medical_record_id %></td>
+    <td><%=h individual_report.odat_diagnosis_id %></td>
+    <td><%=h individual_report.topic %></td>
+    <td><%=h individual_report.topic_html %></td>
+    <td><%=h individual_report.tests %></td>
+    <td><%=h individual_report.tests_html %></td>
+    <td><%=h individual_report.results %></td>
+    <td><%=h individual_report.results_html %></td>
+    <td><%=h individual_report.orientation %></td>
+    <td><%=h individual_report.orientation_html %></td>
+    <td><%= link_to 'Show', individual_report %></td>
+    <td><%= link_to 'Edit', edit_individual_report_path(individual_report) %></td>
+    <td><%= link_to 'Destroy', individual_report, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New individual_report', new_individual_report_path %>

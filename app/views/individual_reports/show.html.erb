@@ -1,0 +1,53 @@
+<p>
+  <b>Medical record:</b>
+  <%=h @individual_report.medical_record_id %>
+</p>
+
+<p>
+  <b>Odat diagnosis:</b>
+  <%=h @individual_report.odat_diagnosis_id %>
+</p>
+
+<p>
+  <b>Topic:</b>
+  <%=h @individual_report.topic %>
+</p>
+
+<p>
+  <b>Topic html:</b>
+  <%=h @individual_report.topic_html %>
+</p>
+
+<p>
+  <b>Tests:</b>
+  <%=h @individual_report.tests %>
+</p>
+
+<p>
+  <b>Tests html:</b>
+  <%=h @individual_report.tests_html %>
+</p>
+
+<p>
+  <b>Results:</b>
+  <%=h @individual_report.results %>
+</p>
+
+<p>
+  <b>Results html:</b>
+  <%=h @individual_report.results_html %>
+</p>
+
+<p>
+  <b>Orientation:</b>
+  <%=h @individual_report.orientation %>
+</p>
+
+<p>
+  <b>Orientation html:</b>
+  <%=h @individual_report.orientation_html %>
+</p>
+
+
+<%= link_to 'Edit', edit_individual_report_path(@individual_report) %> |
+<%= link_to 'Back', individual_reports_path %>

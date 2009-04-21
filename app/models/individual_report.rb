@@ -1,0 +1,2 @@
+class IndividualReport < Report
+end

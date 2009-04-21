@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  medical_record_id: 1
+  odat_diagnosis_id: 1
+  topic: MyText
+  topic_html: MyText
+  tests: MyText
+  tests_html: MyText
+  results: MyText
+  results_html: MyText
+  orientation: MyText
+  orientation_html: MyText
+
+two:
+  medical_record_id: 1
+  odat_diagnosis_id: 1
+  topic: MyText
+  topic_html: MyText
+  tests: MyText
+  tests_html: MyText
+  results: MyText
+  results_html: MyText
+  orientation: MyText
+  orientation_html: MyText
