@@ -1,3 +1,5 @@
-<table class="hdata">
-</table>
-
+<ul>
+  <% for resource in @odat_diagnosis.center_resources do -%>
+    <li><%= h resource.name %></li>
+  <% end -%>
+</ul>
