@@ -58,8 +58,8 @@ class MedicalRecord < ActiveRecord::Base
   validates_presence_of :surname, 
     :message => N_('Debes especificar los apellidos')
 
-  validates_presence_of :created_at, 
-    :message => N_('Es necesario una fecha de creación')
+  validates_presence_of :archive_date, 
+    :message => N_('Es necesario una fecha de inicio de expediente')
 
   validates_numericality_of :postal, 
     :only_integer => true, 

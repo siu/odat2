@@ -5,8 +5,8 @@
     <legend><%= _('Expediente') %></legend>
     <table>
       <tr>
-	<th><%= f.label(:created_at, _('Fecha inicio expediente')) %></th>
-	<td><%= f.date_select(:created_at, 
+	<th><%= f.label(:archive_date_3i, _('Fecha inicio expediente')) %></th>
+	<td><%= f.date_select(:archive_date, 
 			      :start_year => 1992, 
 			      :order => [:day, :month, :year], 
 			      :use_month_numbers => true, 
