@@ -1,4 +1,5 @@
 class JobStatus < ActiveRecord::Base
-  default_scope :order => 'name ASC'
   validates_presence_of :name
+
+  default_scope :order => 'position ASC, name ASC'
 end

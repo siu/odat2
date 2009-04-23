@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421205902) do
+ActiveRecord::Schema.define(:version => 20090421210808) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "configurable_views", :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "diagnosis_items", :force => true do |t|
@@ -59,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "diagnosis_items_odat_diagnoses", :id => false, :force => true do |t|
@@ -71,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "individual_reports", :force => true do |t|
@@ -98,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "jobs", :force => true do |t|
@@ -105,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "medical_records", :force => true do |t|
@@ -166,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "origin_sources", :force => true do |t|
@@ -173,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20090421205902) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "pages", :force => true do |t|

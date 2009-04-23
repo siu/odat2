@@ -5,7 +5,7 @@ class DiagnosisItem < ActiveRecord::Base
   validates_presence_of :name
   validate :has_description_if_leaf
 
-  default_scope :order => 'id ASC'
+  default_scope :order => 'position ASC, id ASC'
 
   def self.categories
     self.find(:all, :conditions => "parent_id = 0 OR parent_id IS NULL")
