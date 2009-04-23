@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class IndividualReportsControllerTest < ActionController::TestCase
+  def setup
+    login_as_user
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -13,6 +17,7 @@ class IndividualReportsControllerTest < ActionController::TestCase
   end
 
   test "should create individual_report" do
+    IndividualReport.any_instance.stubs(:valid?).returns(:true)
     assert_difference('IndividualReport.count') do
       post :create, :individual_report => { }
     end
@@ -31,11 +36,13 @@ class IndividualReportsControllerTest < ActionController::TestCase
   end
 
   test "should update individual_report" do
+    IndividualReport.any_instance.stubs(:valid?).returns(:true)
     put :update, :id => individual_reports(:one).to_param, :individual_report => { }
     assert_redirected_to individual_report_path(assigns(:individual_report))
   end
 
   test "should destroy individual_report" do
+    IndividualReport.any_instance.stubs(:valid?).returns(:true)
     assert_difference('IndividualReport.count', -1) do
       delete :destroy, :id => individual_reports(:one).to_param
     end

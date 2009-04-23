@@ -7,10 +7,9 @@ class MedicalRecord < ActiveRecord::Base
     :dependent => :destroy, 
     :order => 'created_at DESC'
 
-  #has_many :individual_reports,
-    #:class_name => 'IndividualReport', 
-    #:dependent => :destroy, 
-    #:order => 'created_at DESC'
+  has_many :individual_reports,
+    :dependent => :destroy, 
+    :order => 'created_at DESC'
 
   # Related to father
   belongs_to :father_job,
