@@ -17,8 +17,13 @@
     <% for odat_diagnosis in @odat_diagnoses %>
       <tr>
 	<td>
-          <%= link_to(l(odat_diagnosis.created_at, :format => :short), 
+          <% if odat_diagnosis.created_at -%>
+            <%= link_to(l(odat_diagnosis.created_at, :format => :short), 
                       [@medical_record, odat_diagnosis]) %>
+          <% else -%>
+            <%= link_to(_('Fecha desconocida'), 
+                      [@medical_record, odat_diagnosis]) %>
+          <% end -%>
 	</td>
 	<td>
 	  <%= link_to(_('Ver'), [@medical_record, odat_diagnosis]) %>
