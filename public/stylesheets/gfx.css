@@ -268,13 +268,13 @@ textarea, input, option {
 fieldset table {
 	border-spacing: 0 2px;
 }
-.flash-notice, .flash-alert, .flash-info, .errorExplanation {
+.notice, .error, .info, .errorExplanation {
 	background-color: #e5ecf9;
 	border: 1px solid #c0c0e0;
-	padding: .1em .6em;
-	margin-bottom: 1em;
+        padding: 20px 20px 0;
+	margin-bottom: 20px;
 }
-.flash-alert, .errorExplanation {
+.error, .errorExplanation {
 	border: 1px solid #933;
 	background-color: #f9e5ec;
 }
