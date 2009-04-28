@@ -26,7 +26,20 @@ class ReportTest < ActiveSupport::TestCase
     assert !report.configurable_view.nil?
   end
 
-protected
+  test "should save configurable view when saved" do
+    report = create_report
+    assert !report.configurable_view.new_record?
+  end
+
+  test "should destroy configurable view when destroyed" do
+    report = create_report
+    view = report.configurable_view
+    report.destroy
+    view = view.reload
+    assert view.nil?
+  end
+
+  protected
   def create_report(options = {})
     report = Report.create({
       :signature => 'John Smith',
