@@ -21,6 +21,11 @@ class ReportTest < ActiveSupport::TestCase
     assert report.errors.on(:signed_on)
   end
 
+  test "should have a configurable view properties" do
+    report = create_report
+    assert !report.configurable_view.nil?
+  end
+
 protected
   def create_report(options = {})
     report = Report.create({
