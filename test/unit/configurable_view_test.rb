@@ -5,6 +5,7 @@ class ConfigurableViewTest < ActiveSupport::TestCase
     view = create_configurable_view
     assert !view.font_size.nil?
     assert view.font_size != 0
+    assert view.font_family.nil?
   end
 
 protected
