@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421210808) do
+ActiveRecord::Schema.define(:version => 20090429084033) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -90,6 +90,28 @@ ActiveRecord::Schema.define(:version => 20090421210808) do
     t.text     "orientation_html"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "signature",                        :limit => 150
+    t.datetime "signed_on"
+    t.boolean  "show_signature",                                  :default => true
+    t.boolean  "show_signed_on",                                  :default => true
+    t.integer  "configurable_view_id"
+    t.boolean  "show_medical_record_archive_date"
+    t.boolean  "show_birth_date"
+    t.boolean  "show_age"
+    t.boolean  "show_full_name"
+    t.boolean  "show_gender"
+    t.boolean  "show_birth_position"
+    t.boolean  "show_address"
+    t.boolean  "show_siblings_data"
+    t.boolean  "show_father_data"
+    t.boolean  "show_mother_data"
+    t.boolean  "show_phone_numbers"
+    t.boolean  "show_diagnosis_created_at"
+    t.boolean  "show_consultation_details"
+    t.boolean  "show_center_resources"
+    t.boolean  "show_detailed_diagnosis"
+    t.boolean  "show_coordination_services"
+    t.boolean  "show_main_diagnosis"
   end
 
   create_table "item_diagnosticos", :force => true do |t|

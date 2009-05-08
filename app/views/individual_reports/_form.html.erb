@@ -1,0 +1,165 @@
+<% form_for([@medical_record, @individual_report]) do |f| -%>
+<%= f.error_messages %>
+
+<fieldset>
+  <legend><%= _('Datos del expediente') %></legend>
+  <table>
+    <tr>
+      <th><%= _('Expediente') %></th>
+      <td>
+        <ul>
+          <li><%= f.check_box(:show_medical_record_archive_date) %>
+              <%= f.label(:show_medical_record_archive_date, _('Fecha inicio expediente')) %></li>
+        </ul>
+      </td>
+    </tr>
+
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend><%= _('Datos personales') %></legend>
+  <table>
+    <tr>
+      <th><%= _('Datos personales') %></th>
+      <td>
+        <ul>
+	  <li><%= f.check_box(:show_full_name) %>
+	  <%= f.label(:show_full_name, _('Nombre completo')) %>
+	  </li>
+	  <li><%= f.check_box(:show_birth_date) %>
+	  <%= f.label(:show_birth_date, _('Fecha de nacimiento')) %>
+	  </li>
+	  <li><%= f.check_box(:show_age) %>
+	  <%= f.label(:show_age, _('Edad')) %>
+	  </li>
+	  <li><%= f.check_box(:show_birth_position) %>
+	  <%= f.label(:show_birth_position, _('Posición en el parto')) %>
+	  </li>
+	  <li><%= f.check_box(:show_gender) %>
+	  <%= f.label(:show_gender, _('Sexo')) %>
+	  </li>
+	  <li><%= f.check_box(:show_address) %>
+	  <%= f.label(:show_address, _('Dirección')) %>
+	  </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th><%= _('Datos sociofamiliares') %></th>
+      <td>
+        <ul>
+	  <li><%= f.check_box(:show_siblings_data) %>
+	  <%= f.label(:show_siblings_data, _('Datos de los hermanos')) %>
+	  </li>
+	  <li><%= f.check_box(:show_father_data) %>
+	  <%= f.label(:show_father_data, _('Datos del padre')) %>
+	  </li>
+	  <li><%= f.check_box(:show_mother_data) %>
+	  <%= f.label(:show_mother_data, _('Datos de la madre')) %>
+	  </li>
+	  <li><%= f.check_box(:show_phone_numbers) %>
+	  <%= f.label(:show_phone_numbers, _('Teléfonos')) %>
+	  </li>
+	  <li><%= f.check_box(:show_coordination_services) %>
+	  <%= f.label(:show_coordination_services, _('Servicios de coordinación')) %>
+	  </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend><%= _('Diagnóstico detallado') %></legend>
+  <table>
+    <tr>
+      <th><%= f.label(:odat_diagnosis_id, _('Diagnóstico')) %></th>
+      <td>
+	<%= f.collection_select(:odat_diagnosis_id, 
+				@medical_record.odat_diagnoses, 
+				:id, 
+				:formatted_date,
+				{:prompt => true}) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= _('Datos diagnóstico') %></th>
+      <td>
+        <ul>
+	  <li><%= f.check_box(:show_diagnosis_created_at) %>
+	  <%= f.label(:show_diagnosis_created_at, _('Fecha de creación del diagnóstico')) %>
+	  </li>
+	  <li><%= f.check_box(:show_consultation_details) %>
+	  <%= f.label(:show_consultation_details, _('Datos de la demanda')) %>
+	  </li>
+	  <li><%= f.check_box(:show_center_resources) %>
+	  <%= f.label(:show_center_resources, _('Recursos de centro')) %>
+	  </li>
+	  <li><%= f.check_box(:show_main_diagnosis) %>
+	  <%= f.label(:show_main_diagnosis, _('Diagnóstico principal')) %>
+	  </li>
+	  <li><%= f.check_box(:show_detailed_diagnosis) %>
+	  <%= f.label(:show_detailed_diagnosis, _('Listado de diagnóstico detallado')) %>
+	  </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend><%= _('Informe') %></legend>
+  <table>
+    <tr>
+      <th><%= f.label(:topic, _('Asunto')) %></th>
+      <td>
+	<%= f.text_area(:topic) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:tests, _('Pruebas')) %></th>
+      <td>
+	<%= f.text_area(:tests) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:results, _('Resultados')) %></th>
+      <td>
+	<%= f.text_area(:results) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:orientations, _('Orientaciones')) %></th>
+      <td>
+	<%= f.text_area(:orientation) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= _('Firma y fecha') %></th>
+      <td>
+        <ul>
+	  <li><%= f.check_box(:show_signed_on) %>
+	  <%= f.label(:signed_on, _('Fecha del informe')) %>
+	  <%= f.date_select(:signed_on) %>
+	  </li>
+	  <li><%= f.check_box(:show_signature) %>
+	  <%= f.label(:show_signature, _('Firma')) %>
+	  <%= f.text_field(:signature) %>
+	  </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+
+<p>
+<% if @individual_report.new_record? -%>
+  <%= f.submit(_('Crear')) %>
+<% else -%>
+  <%= f.submit(_('Guardar')) %>
+<% end -%>
+ o <%= link_to(_('Cancelar'), individual_reports_path(@individual_report)) %>
+</p>
+
+<% end -%>

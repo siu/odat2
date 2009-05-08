@@ -35,4 +35,11 @@ class OdatDiagnosis < ActiveRecord::Base
     :message => N_('Debes especificar al menos un elemento en ' +
 		   'diagnóstico detallado y un diagnóstico principal')
 
+  def formatted_date
+    if !self.created_at.nil?
+    I18n.localize(self.created_at, :format => :short)
+    else
+      ''
+    end
+  end
 end

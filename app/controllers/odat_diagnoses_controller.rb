@@ -51,7 +51,8 @@ class OdatDiagnosesController < ApplicationController
     respond_to do |format|
       if @odat_diagnosis.save
         flash[:notice] = 'OdatDiagnosis was successfully created.'
-        format.html { redirect_to(medical_record_odat_diagnoses_path(@medical_record)) }
+        format.html { redirect_to(
+          medical_record_odat_diagnoses_path(@medical_record)) }
         format.xml  { 
 	  render :xml => @odat_diagnosis, 
 	  :status => :created, 
@@ -79,7 +80,9 @@ class OdatDiagnosesController < ApplicationController
     respond_to do |format|
       if @odat_diagnosis.update_attributes(params[:odat_diagnosis])
         flash[:notice] = 'OdatDiagnosis was successfully updated.'
-        format.html { redirect_to(medical_record_odat_diagnoses_path(@medical_record)) }
+        format.html { 
+          redirect_to(
+            medical_record_odat_diagnoses_path(@medical_record)) }
         format.xml  { head :ok }
       else
         format.html { 
@@ -100,8 +103,9 @@ class OdatDiagnosesController < ApplicationController
     @odat_diagnosis.destroy
 
     respond_to do |format|
-      format.html { redirect_to(medical_record_odat_diagnoses_path(
-				@medical_record)) }
+      format.html { redirect_to(
+        medical_record_odat_diagnoses_path(
+        @medical_record)) }
       format.xml  { head :ok }
     end
   end

@@ -1,12 +1,8 @@
 <h1>New individual_report</h1>
 
-<% form_for(@individual_report) do |f| %>
+<% form_for([@medical_record,@individual_report]) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :medical_record_id %><br />
-    <%= f.text_field :medical_record_id %>
-  </p>
   <p>
     <%= f.label :odat_diagnosis_id %><br />
     <%= f.text_field :odat_diagnosis_id %>
@@ -16,36 +12,28 @@
     <%= f.text_area :topic %>
   </p>
   <p>
-    <%= f.label :topic_html %><br />
-    <%= f.text_area :topic_html %>
-  </p>
-  <p>
     <%= f.label :tests %><br />
     <%= f.text_area :tests %>
-  </p>
-  <p>
-    <%= f.label :tests_html %><br />
-    <%= f.text_area :tests_html %>
   </p>
   <p>
     <%= f.label :results %><br />
     <%= f.text_area :results %>
   </p>
   <p>
-    <%= f.label :results_html %><br />
-    <%= f.text_area :results_html %>
-  </p>
-  <p>
     <%= f.label :orientation %><br />
     <%= f.text_area :orientation %>
   </p>
   <p>
-    <%= f.label :orientation_html %><br />
-    <%= f.text_area :orientation_html %>
+    <%= f.label :signature %><br />
+    <%= f.text_field :signature %>
+  </p>
+  <p>
+    <%= f.label :signed_on %><br />
+    <%= f.date_select :signed_on %>
   </p>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', individual_reports_path %>
+<%= link_to 'Back', medical_record_individual_reports_path %>

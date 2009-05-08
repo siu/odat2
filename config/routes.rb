@@ -1,7 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :individual_reports
-
-
   # Users dashboard
   map.root :controller => 'dashboard'
 
@@ -20,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
     :as => 'expedientes' do |record|
     #:shallow => true do |record|
       record.resources :odat_diagnoses, :as => 'diagnosticos'
+      record.resources :individual_reports, :as => 'informes'
   end
 
   # Routes for documentation

@@ -1,4 +1,6 @@
 class IndividualReportsController < ApplicationController
+  before_filter :load_medical_record
+
   # GET /individual_reports
   # GET /individual_reports.xml
   def index
@@ -24,7 +26,7 @@ class IndividualReportsController < ApplicationController
   # GET /individual_reports/new
   # GET /individual_reports/new.xml
   def new
-    @individual_report = IndividualReport.new
+    @individual_report = @medical_record.individual_reports.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,18 +36,22 @@ class IndividualReportsController < ApplicationController
 
   # GET /individual_reports/1/edit
   def edit
-    @individual_report = IndividualReport.find(params[:id])
+    @individual_report = @medical_record.individual_reports.find(params[:id])
   end
 
   # POST /individual_reports
   # POST /individual_reports.xml
   def create
-    @individual_report = IndividualReport.new(params[:individual_report])
+    @individual_report = @medical_record.individual_reports.new(params[:individual_report])
 
     respond_to do |format|
       if @individual_report.save
         flash[:notice] = 'IndividualReport was successfully created.'
-        format.html { redirect_to(@individual_report) }
+        format.html { 
+          redirect_to(medical_record_individual_report_path(
+            :medical_record_id => @medical_record.id, 
+            :id => @individual_report.id))
+        }
         format.xml  { render :xml => @individual_report, :status => :created, :location => @individual_report }
       else
         format.html { render :action => "new" }
@@ -57,12 +63,17 @@ class IndividualReportsController < ApplicationController
   # PUT /individual_reports/1
   # PUT /individual_reports/1.xml
   def update
-    @individual_report = IndividualReport.find(params[:id])
+    @individual_report = @medical_record.individual_reports.find(params[:id])
 
     respond_to do |format|
       if @individual_report.update_attributes(params[:individual_report])
         flash[:notice] = 'IndividualReport was successfully updated.'
-        format.html { redirect_to(@individual_report) }
+        format.html { 
+          redirect_to(
+            medical_record_individual_report_path(
+              :medical_record_id => @medical_record.id,
+              :id => @individual_report.id)) 
+        }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -74,12 +85,23 @@ class IndividualReportsController < ApplicationController
   # DELETE /individual_reports/1
   # DELETE /individual_reports/1.xml
   def destroy
-    @individual_report = IndividualReport.find(params[:id])
+    @individual_report = @medical_record.individual_reports.find(params[:id])
     @individual_report.destroy
 
     respond_to do |format|
-      format.html { redirect_to(individual_reports_url) }
+      format.html { redirect_to(medical_record_individual_reports_url) }
       format.xml  { head :ok }
     end
+  end
+
+protected
+  def load_medical_record
+    @medical_record = 
+      current_user.medical_records.find(params[:medical_record_id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to medical_records_path
+  end
+
+  def load_form_data
   end
 end

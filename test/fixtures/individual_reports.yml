@@ -1,8 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  medical_record_id: 1
-  odat_diagnosis_id: 1
+  medical_record: pedrito
+  odat_diagnosis_id: one
   topic: MyText
   topic_html: MyText
   tests: MyText
@@ -13,8 +13,8 @@ one:
   orientation_html: MyText
 
 two:
-  medical_record_id: 1
-  odat_diagnosis_id: 1
+  medical_record: pedrito
+  odat_diagnosis_id: two
   topic: MyText
   topic_html: MyText
   tests: MyText
