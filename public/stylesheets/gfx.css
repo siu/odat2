@@ -39,7 +39,7 @@ input {
     margin-bottom: 5px;
 }
 #sidebar {
-    padding-top: 14px;
+    padding: 14px 10px 0 10px;
     background-color: #eee;
     border-right: 1px solid #ddd;
 }
@@ -88,13 +88,6 @@ input {
 #sidebar ul li li {
     font-weight: normal;
     list-style-type: circle;
-}
-#sidebar h3 {
-    font-size: 14px;
-    font-size: 1em;
-    line-height: 20px;
-    line-height: 1.4286em;
-    margin-bottom: 0;
 }
 label.error, span.error { 
     color: #C00; 

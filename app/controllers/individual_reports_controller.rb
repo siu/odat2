@@ -1,4 +1,5 @@
 class IndividualReportsController < ApplicationController
+  layout 'medical_records'
   before_filter :load_medical_record
 
   # GET /individual_reports

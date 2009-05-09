@@ -1,4 +1,5 @@
 class MedicalRecordsController < ApplicationController
+  layout :get_layout
 
   # GET /medical_records
   # GET /medical_records.xml
@@ -116,6 +117,14 @@ protected
     @jobs = Job.find(:all, :order => 'name ASC')
     @job_statuses = JobStatus.find(:all, :order => 'name ASC')
     @civil_states = CivilState.find(:all, :order => 'name ASC')
+  end
+
+  def get_layout
+    if ['index', 'new'].include?request[:action]
+      'application'
+    else
+      'medical_records'
+    end
   end
 
 end

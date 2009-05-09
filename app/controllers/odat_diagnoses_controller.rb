@@ -1,4 +1,5 @@
 class OdatDiagnosesController < ApplicationController
+  layout 'medical_records'
   before_filter :load_medical_record
 
   # GET /odat_diagnoses
