@@ -193,6 +193,13 @@ public
     end
   end
 
+  test "doesn't have coordination data if false data" do
+    [:sanitary_services, :social_services, :educative_services].each do |a|
+      medical_record = create_medical_record(a => false)
+      assert !medical_record.has_coordination_data?
+    end
+  end
+
   test "has coordination data" do
     [:sanitary_services, :social_services, :educative_services].each do |a|
       medical_record = create_medical_record(a => true)
