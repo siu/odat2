@@ -100,4 +100,103 @@ public
     assert medical_record.full_name == 
       medical_record.surname + ', ' + medical_record.name
   end
+
+  test "doesn't have siblings data" do
+    medical_record = create_medical_record()
+    assert !medical_record.has_siblings_data?
+  end
+
+  test "doesn't have siblings data if nil data" do
+    medical_record = create_medical_record(:total_siblings_amount => nil)
+    assert !medical_record.has_siblings_data?
+    medical_record = create_medical_record(:birth_position => nil)
+    assert !medical_record.has_siblings_data?
+  end
+
+  test "has siblings data" do
+    medical_record = create_medical_record(:total_siblings_amount => 2)
+    assert medical_record.has_siblings_data?
+    medical_record = create_medical_record(:birth_position => 2)
+    assert medical_record.has_siblings_data?
+  end
+
+  test "doesn't have father data" do
+    medical_record = create_medical_record()
+    assert !medical_record.has_father_data?
+  end
+
+  test "doesn't have father data if empty data" do
+    [:father_name, :father_surname, :father_job_id, :father_civil_state_id, :father_job_status_id, :father_formation_level_id, :father_email, :father_extra_information].each do |a|
+      medical_record = create_medical_record(a => '')
+      assert !medical_record.has_father_data?, a
+    end
+  end
+
+  test "has father data" do
+    [:father_name, :father_surname, :father_job_id, :father_civil_state_id, :father_job_status_id, :father_formation_level_id, :father_email, :father_extra_information].each do |a|
+      medical_record = create_medical_record(a => '1')
+      assert medical_record.has_father_data?, a
+    end
+    medical_record = create_medical_record(:father_birth_date => Time.now)
+    assert medical_record.has_father_data?
+  end
+
+  test "doesn't have mother data" do
+    medical_record = create_medical_record()
+    assert !medical_record.has_mother_data?
+  end
+
+  test "doesn't have mother data if empty data" do
+    [:mother_name, :mother_surname, :mother_job_id, :mother_civil_state_id, :mother_job_status_id, :mother_formation_level_id, :mother_email, :mother_extra_information].each do |a|
+      medical_record = create_medical_record(a => '')
+      assert !medical_record.has_mother_data?, a
+    end
+  end
+
+  test "has mother data" do
+    [:mother_name, :mother_surname, :mother_job_id, :mother_civil_state_id, :mother_job_status_id, :mother_formation_level_id, :mother_email, :mother_extra_information].each do |a|
+      medical_record = create_medical_record(a => '1')
+      assert medical_record.has_mother_data?, a
+    end
+    medical_record = create_medical_record(:mother_birth_date => Time.now)
+    assert medical_record.has_mother_data?
+  end
+
+  test "doesn't have phone data" do
+    medical_record = create_medical_record()
+    assert !medical_record.has_phone_data?
+  end
+
+  test "doesn't have phone data if empty data" do
+    [:home_phone, :portable_phone, :work_phone].each do |a|
+      medical_record = create_medical_record(a => '')
+      assert !medical_record.has_phone_data?, a
+    end
+  end
+
+  test "has phone data" do
+    [:home_phone, :portable_phone, :work_phone].each do |a|
+      medical_record = create_medical_record(a => '1')
+      assert medical_record.has_phone_data?, a
+    end
+  end
+
+  test "doesn't have coordination data" do
+    medical_record = create_medical_record()
+    assert !medical_record.has_phone_data?
+  end
+
+  test "doesn't have coordination data if empty data" do
+    [:sanitary_services, :social_services, :educative_services].each do |a|
+      medical_record = create_medical_record(a => '')
+      assert !medical_record.has_coordination_data?
+    end
+  end
+
+  test "has coordination data" do
+    [:sanitary_services, :social_services, :educative_services].each do |a|
+      medical_record = create_medical_record(a => true)
+      assert medical_record.has_coordination_data?
+    end
+  end
 end

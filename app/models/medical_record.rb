@@ -103,7 +103,8 @@ class MedicalRecord < ActiveRecord::Base
 protected
   def has_any_attr?(attrs)
     attrs.any? do |m|
-      self.send(m) && !self.send(m).nil? && !self.send(m).empty?
+      !self.send(m).nil? && 
+      (!self.send(m).respond_to?(:empty?) || !self.send(m).empty?)
     end
   end
 
