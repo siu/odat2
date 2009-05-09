@@ -328,3 +328,9 @@ div.fieldWithErrors {display:inline}
 }
 
 /* ODAT 2.0 */
+.note {
+	background-color: #f9f9d5;
+	border: 1px solid #e0e0a0;
+        padding: 10px;
+	margin-bottom: 20px;
+}
