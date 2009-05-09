@@ -7,13 +7,6 @@ class ReportTest < ActiveSupport::TestCase
     assert report.valid?
   end
 
-  test "should require a signature" do
-    report = create_report(:signature => nil)
-
-    assert !report.valid?
-    assert report.errors.on(:signature)
-  end
-
   test "should require a signed_on date" do
     report = create_report(:signed_on => nil)
 
@@ -37,6 +30,19 @@ class ReportTest < ActiveSupport::TestCase
     report.destroy
     view = view.reload
     assert view.nil?
+  end
+
+  test "should not require a signature if not show_signature" do
+    report = create_report(:show_signature => false, :signature => nil)
+
+    assert report.valid?
+  end
+
+  test "should require a signature if show_signature" do
+    report = create_report(:show_signature => true, :signature => nil)
+
+    assert !report.valid?
+    assert report.errors.on(:signature)
   end
 
   protected
