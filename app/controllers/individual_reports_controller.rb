@@ -17,6 +17,7 @@ class IndividualReportsController < ApplicationController
   # GET /individual_reports/1.xml
   def show
     @individual_report = IndividualReport.find(params[:id])
+    @odat_diagnosis = @individual_report.odat_diagnosis
 
     respond_to do |format|
       format.html # show.html.erb

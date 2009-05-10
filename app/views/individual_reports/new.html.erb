@@ -1,39 +1,6 @@
-<h1>New individual_report</h1>
+<% page_title(_('Nuevo informe')) -%>
 
-<% form_for([@medical_record,@individual_report]) do |f| %>
-  <%= f.error_messages %>
+<% content_for(:sidebar) do -%>
+<% end -%>
 
-  <p>
-    <%= f.label :odat_diagnosis_id %><br />
-    <%= f.text_field :odat_diagnosis_id %>
-  </p>
-  <p>
-    <%= f.label :topic %><br />
-    <%= f.text_area :topic %>
-  </p>
-  <p>
-    <%= f.label :tests %><br />
-    <%= f.text_area :tests %>
-  </p>
-  <p>
-    <%= f.label :results %><br />
-    <%= f.text_area :results %>
-  </p>
-  <p>
-    <%= f.label :orientation %><br />
-    <%= f.text_area :orientation %>
-  </p>
-  <p>
-    <%= f.label :signature %><br />
-    <%= f.text_field :signature %>
-  </p>
-  <p>
-    <%= f.label :signed_on %><br />
-    <%= f.date_select :signed_on %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', medical_record_individual_reports_path %>
+<%= render :partial => 'form' %>

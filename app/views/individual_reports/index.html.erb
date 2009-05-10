@@ -22,9 +22,7 @@
           <%= link_to(_('Ver'), individual_report_path(report)) %>
           <%= link_to(_('Editar'), edit_individual_report_path(report)) %>
           <%= button_to(_('Borrar informe'), 
-              {:action => :borrar, 
-                :eid => @medical_record.id, 
-                :inf_id => report.id}, 
+              individual_report_path(report), :method => :delete, 
               :confirm => _("¿Estas seguro de borrar este informe permanentemente?"), 
               :class => 'dest-action') %>
         </td>

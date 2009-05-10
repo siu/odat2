@@ -1,53 +1,190 @@
-<p>
-  <b>Medical record:</b>
-  <%=h @individual_report.medical_record_id %>
-</p>
+<% content_for :header_options do -%>
+  <%= stylesheet_link_tag 'reports', :media => :print %>
+<% end -%>
 
-<p>
-  <b>Odat diagnosis:</b>
-  <%=h @individual_report.odat_diagnosis_id %>
-</p>
+<% if @individual_report.show_personal_data? -%>
+  <div class="subseccion">
+    <h3><%= _('Datos personales') %></h3>
+    <table class="datosh">
+      <% if @individual_report.show_full_name? -%>
+        <tr>
+          <th><%= _('Nombre') %></th>
+          <td><strong><%=h @medical_record.full_name %></strong></td>
+        </tr>
+      <% end -%>
+      <% if @individual_report.show_medical_record_archive_date? && 
+	      @medical_record.archive_date -%>
+        <tr>
+          <th><%= _('Fecha de ingreso') %></th>
+          <td><%= l(@medical_record.archive_date, :format => :short) %></td>
+        </tr>
+      <% end -%>
+      <% if @individual_report.show_birth_date? && 
+	      @medical_record.birth_date -%>
+        <tr>
+          <th><%= _('Fecha de nacimiento') %></th>
+          <td><%= l(@medical_record.birth_date, :format => :short) %></td>
+        </tr>
+      <% end -%>
+      <% if @individual_report.show_age? -%>
+        <tr>
+          <th><%= _('Edad') %></th>
+          <td><%=h @medical_record.age %></td>
+        </tr>
+      <% end -%>
+      <% if @individual_report.show_gender? -%>
+        <tr>
+          <th><%= _('Sexo') %></th>
+          <td><%=h @medical_record.gender %></td>
+        </tr>
+      <% end -%>
+      <% if @individual_report.show_birth_position? -%>
+        <tr>
+          <th><%= _('Número de parto <small>(en caso de parto múltiple)</small>') %></th>
+          <td><%=h @medical_record.birth_position %></td>
+        </tr>
+      <% end -%>
+      <% if @individual_report.show_address? -%>
+        <tr>
+          <th><%= _('Direccion') %></th>
+          <td><%=h @medical_record.address %></td>
+        </tr>
+      <% end -%>
+    </table>
+  </div>
+<% end -%>
 
-<p>
-  <b>Topic:</b>
-  <%=h @individual_report.topic %>
-</p>
+<% if @individual_report.show_family_data? -%>
+  <h3><%= _('Datos sociofamiliares') %></h3>
+  <% if @individual_report.show_siblings_data? -%>
+    <div class="subseccion">
+      <h4><%= _('Hermanos') %></h4>
+      <table class="datosh">
+        <%= render :partial => 'medical_records/show_siblings_data' %>
+      </table>
+    </div>
+  <% end -%>
 
-<p>
-  <b>Topic html:</b>
-  <%=h @individual_report.topic_html %>
-</p>
+  <% if @individual_report.show_father_data? -%>
+    <div class="subseccion">
+      <h4><%= _('Padre') %></h4>
+      <table class="datosh">
+        <%= render :partial => 'medical_records/show_father_data' %>
+      </table>
+    </div>
+  <% end -%>
 
-<p>
-  <b>Tests:</b>
-  <%=h @individual_report.tests %>
-</p>
+  <% if @individual_report.show_mother_data? -%>	
+    <div class="subseccion">
+      <h4><%= _('Madre') %></h4>
+      <table class="datosh">
+        <%= render :partial => 'medical_records/show_mother_data' %>
+      </table>
+    </div>
+  <% end -%>	
 
-<p>
-  <b>Tests html:</b>
-  <%=h @individual_report.tests_html %>
-</p>
+  <% if @individual_report.show_phone_numbers? -%>
+    <div class="subseccion">
+      <h4><%= _('Teléfonos') %></h4>
+      <table class="datosh">
+        <%= render :partial => 'medical_records/show_phones_data' %>
+      </table>
+    </div>
+  <% end -%>
 
-<p>
-  <b>Results:</b>
-  <%=h @individual_report.results %>
-</p>
+  <% if @individual_report.show_coordination_services? -%>
+    <div class="subseccion">
+      <h4><%= _('Coordinación') %></h4>
+      <table class="datosh">
+        <%= render :partial => 'medical_records/show_coordination_data' %>
+      </table>
+    </div>
+  <% end %>
+<% end -%>
 
-<p>
-  <b>Results html:</b>
-  <%=h @individual_report.results_html %>
-</p>
+<% if @individual_report.show_diagnosis_data? -%>
+  <h3><%= _('Datos de diagnóstico') %></h3>
+  <% if @individual_report.show_diagnosis_created_at? &&
+	@odat_diagnosis.created_at -%>
+    <div class="subseccion">
+      <h4><%= _('Fecha de creación del diagnóstico') %></h4>
+      <table class="datosh">
+        <tr>
+          <th><%= _('Fecha de creación') %></th>
+          <td><%= l(@odat_diagnosis.created_at, :format => :short) %></td>
+        </tr>
+      </table>
+    </div>
+  <% end -%>
+  <% if @individual_report.show_consultation_details? -%>
+    <div class="subseccion">
+      <h4><%= _('Datos de demanda') %></h4>
+      <%= render :partial => 'odat_diagnoses/show_consultation_data' %>
+    </div>
+  <% end -%>
+  <% if @individual_report.show_center_resources? -%>
+    <div class="subseccion">
+      <h4><%= _('Datos de centro') %></h4>
+      <%= render :partial => 'odat_diagnoses/show_center_data' %>
+    </div>
+  <% end -%>
+  <% if @individual_report.show_main_diagnosis? -%>
+    <div class="subseccion">
+      <h4><%= _('Diagnóstico principal') %></h4>
+      <%= render :partial => 'odat_diagnoses/show_main_diagnosis' %>
+    </div>
+  <% end -%>
+  <% if @individual_report.show_detailed_diagnosis? -%>
+    <div class="subseccion">
+      <h4><%= _('Datos de diagnóstico') %></h4>
+      <%= render :partial => 'odat_diagnoses/show_detailed_diagnosis' %>
+    </div>
+  <% end -%>
+<% end -%>
 
-<p>
-  <b>Orientation:</b>
-  <%=h @individual_report.orientation %>
-</p>
+<% if @individual_report.show_report_data? -%>
+  <h3><%= _('Informe') %></h3>
+  <% if @individual_report.show_topic? -%>
+    <div class="subseccion">
+      <h4><%= _('Asunto') %></h4>
+      <%= @individual_report.topic_html %>
+    </div>
+  <% end -%>
 
-<p>
-  <b>Orientation html:</b>
-  <%=h @individual_report.orientation_html %>
-</p>
+  <% if @individual_report.show_tests? -%>
+    <div class="subseccion">
+      <h4><%= _('Pruebas') %></h4>
+      <%= @individual_report.tests_html %>
+    </div>
+  <% end -%>
 
+  <% if @individual_report.show_results? -%>
+    <div class="subseccion">
+      <h4><%= _('Resultados') %></h4>
+      <%= @individual_report.results_html %>
+    </div>
+  <% end -%>
 
-<%= link_to 'Edit', edit_medical_record_individual_report_path(@medical_record, @individual_report) %> |
-<%= link_to 'Back', medical_record_individual_reports_path %>
+  <% if @individual_report.show_orientation? -%>
+    <div class="subseccion">
+      <h4><%= _('Orientaciones') %></h4>
+      <%= @individual_report.orientation_html %>
+    </div>
+  <% end -%>
+
+  <% if @individual_report.show_signed_on? and @individual_report.signed_on -%>
+    <div class="subseccion">
+      <h4><%= _('Fecha') %></h4>
+      <p><%= l(@individual_report.signed_on, :format => :short) %></p>
+    </div>
+  <% end -%>
+
+  <% if @individual_report.show_signature? -%>
+    <div class="subseccion">
+      <h4><%= _('Firma') %></h4>
+      <p><%= @individual_report.signature %></p>
+    </div>
+  <% end -%>
+
+<% end -%>
+

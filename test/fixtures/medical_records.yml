@@ -5,6 +5,38 @@ pedrito:
   surname: Pedrito Perez
   center: demo
   created_at: Time.now
+  birth_date: Date.today
+  archive_date: Time.now
+  city: "Alcoy"
+  address: "Juan Gil Albert 100, 100 A"
+  multiple_birth: true
+  birth_position: 2
+  gender: Masculino
+  father_name: Pedrito Padre
+  father_surname: Ape1
+  father_birth_date: 23.years.from_now
+  father_job: one
+  father_civil_state: one
+  father_formation_level: one
+  father_email: father@family.com
+  father_extra_information: nothing
+  mother_name: Pedrita Madre
+  mother_surname: Ape1
+  mother_birth_date: 23.years.from_now
+  mother_job: one
+  mother_civil_state: one
+  mother_formation_level: one
+  mother_email: mother@family.com
+  mother_extra_information: nothing
+  home_phone: 965555555
+  portable_phone: 666666666
+  work_phone: 966666666
+  total_siblings_amount: 3
+  postal: "03801"
+  sanitary_services: true
+  social_services: true
+  educative_services: true
+  province: one
   
 pepito:
   name: Pepito

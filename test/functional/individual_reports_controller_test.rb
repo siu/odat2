@@ -73,4 +73,13 @@ class IndividualReportsControllerTest < ActionController::TestCase
 
     assert_redirected_to medical_record_individual_reports_path
   end
+
+  # More tests on show action
+  test "should show individual_report with full details" do
+    login_as_user
+    get :show, 
+      :medical_record_id => medical_records(:pedrito).id, 
+      :id => individual_reports(:two).to_param
+    assert_response :success
+  end
 end

@@ -1,4 +1,5 @@
 <% form_for([@medical_record, @individual_report]) do |f| -%>
+    <p class="note"><%= _('Selecciona la información que será mostrada en el informe.') %></p>
 <%= f.error_messages %>
 
 <fieldset>
@@ -72,6 +73,7 @@
 
 <fieldset>
   <legend><%= _('Diagnóstico detallado') %></legend>
+  <p class="note"><%= _('Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>.') %></p>
   <table>
     <tr>
       <th><%= f.label(:odat_diagnosis_id, _('Diagnóstico')) %></th>
@@ -80,7 +82,7 @@
 				@medical_record.odat_diagnoses, 
 				:id, 
 				:formatted_date,
-				{:prompt => true}) %>
+                                {:prompt => true}) %>
       </td>
     </tr>
     <tr>
@@ -110,6 +112,7 @@
 
 <fieldset>
   <legend><%= _('Informe') %></legend>
+    <p class="note"><%= _('Sólo se requiere completar los campos necesarios para el informe.') %></p>
   <table>
     <tr>
       <th><%= f.label(:topic, _('Asunto')) %></th>
@@ -140,7 +143,7 @@
       <td>
         <ul>
 	  <li><%= f.check_box(:show_signed_on) %>
-	  <%= f.label(:signed_on, _('Fecha del informe')) %>
+	  <%= f.label(:show_signed_on, _('Fecha del informe')) %>
 	  <%= f.date_select(:signed_on) %>
 	  </li>
 	  <li><%= f.check_box(:show_signature) %>

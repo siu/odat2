@@ -80,6 +80,11 @@ class MedicalRecord < ActiveRecord::Base
     surname + ', ' + name
   end
 
+  def age
+    return (Date.today - birth_date).to_i / 365 if birth_date
+    nil
+  end
+
   def has_siblings_data?
     has_any_attr?([:total_siblings_amount, :birth_position])
   end
