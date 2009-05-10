@@ -334,3 +334,9 @@ div.fieldWithErrors {display:inline}
         padding: 10px;
 	margin-bottom: 20px;
 }
+a.new-btn {
+  border: 1px solid #999999;
+  background-color: #eee;
+  padding: 0.3em 0.2em;
+  color: #303030;
+}

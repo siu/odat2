@@ -1,7 +1,10 @@
 <% page_title _('Listado de expedientes') -%>
 
 <% content_for(:sidebar) do -%>
-  <p class='note'><%= _('Aquí se muestran todos los diagnósticos del centro') %></p>
+  <div class='note'>
+    <p><%= _('Aquí se muestran todos los expedientes del centro') %></p>
+    <p><%= link_to(_('Nuevo expediente'), new_medical_record_path, :class => 'new-btn') %></p>
+  </div>
 <% end -%>
 
 <% if @medical_records.any? -%>
