@@ -65,6 +65,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	}
     end
     assert_response :redirect
+    assert !assigns(:odat_diagnosis).new_record?
     assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
 
     assert_difference('OdatDiagnosis.count') do
@@ -75,6 +76,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	}
     end
     assert_response :redirect
+    assert !assigns(:odat_diagnosis).new_record?
     assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
   end
 

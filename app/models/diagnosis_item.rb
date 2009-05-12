@@ -3,7 +3,7 @@ class DiagnosisItem < ActiveRecord::Base
   acts_as_html_text
 
   validates_presence_of :name
-  validate :has_description_if_leaf
+  #validate :has_description_if_leaf
 
   default_scope :order => 'position ASC, id ASC'
 

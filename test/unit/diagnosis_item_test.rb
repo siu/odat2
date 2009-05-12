@@ -5,7 +5,6 @@ class DiagnosisItemTest < ActiveSupport::TestCase
     diagnosis = DiagnosisItem.new
     assert !diagnosis.valid?
     assert diagnosis.errors.invalid?(:name)
-    #assert diagnosis.errors.invalid?(:description)
   end
 
   def test_create_valid
