@@ -340,3 +340,18 @@ a.new-btn {
   padding: 0.3em 0.2em;
   color: #303030;
 }
+#medical-record-menu h3, #medical-record-menu p, #medical-record-menu ul {
+  background-color: #fff;
+  margin:0;
+  padding:0.3em 0.2em 1em;
+
+}
+#medical-record-menu h4, #medical-record-menu ul {
+	background-color: #f9f9d5;
+        margin: 0;
+        padding:0.3em 0.2em 1em;
+      }
+#medical-record-menu h4 {
+  border-top: 3px solid #e0e0a0;
+  border-bottom: 1px solid #e0e0a0;
+}

@@ -15,7 +15,7 @@
   </tr>
   <tr>
     <th><%= _('Edad') %></th>
-    <td><%= distance_of_time_in_words(@medical_record.birth_date, Time.now) if @medical_record.birth_date %></td>
+    <td><%= @medical_record.age if @medical_record.birth_date %></td>
   </tr>
   <tr>
     <th><%= _('Sexo') %></th>

@@ -1,12 +1,13 @@
 <% content_for :sidebar do -%>
-	<h3>Expediente</h3>
+  <div id="medical-record-menu">
+  <h3><%= _('Expediente') %></h3>
 	<p>
 	<%= link_to_unless_current(@medical_record.full_name,
 	@medical_record) %>, 
 	<%= link_to(_('M'),
 		edit_medical_record_path(@medical_record)) %></p>
 
-	<h4>Diagnosticos</h4>
+        <h4><%= _('Diagnósticos') %></h4>
 	<ul>
 	<li><%= link_to(_('Nuevo'),
 		new_medical_record_odat_diagnosis_path(@medical_record)) %></li>
@@ -14,7 +15,7 @@
 		medical_record_odat_diagnoses_path(@medical_record)) %></li>
 	</ul>
 
-	<h4>Informes</h4>
+        <h4><%= _('Informes') %></h4>
 	<ul>
 	<li><%= link_to(_('Nuevo'),
 		new_medical_record_individual_report_path(@medical_record)) %></li>
@@ -22,5 +23,6 @@
 		medical_record_individual_reports_path(@medical_record)) %></li>
 	</ul>
 
+      </div>
 <% end -%>
 <%= render :file => 'layouts/application' %>
