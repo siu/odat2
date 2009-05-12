@@ -23,7 +23,9 @@ class IndividualReportTest < ActiveSupport::TestCase
       :show_mother_data, 
       :show_phone_numbers
     ] do
-      report = create_report(a => true)
+      report = create_report(
+        a => true, 
+        :medical_record => medical_records(:pedrito))
       assert report.show_family_data?
     end
   end

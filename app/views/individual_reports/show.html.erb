@@ -172,7 +172,8 @@
     </div>
   <% end -%>
 
-  <% if @individual_report.show_signed_on? and @individual_report.signed_on -%>
+  <% if @individual_report.show_signed_on? and 
+  @individual_report.signed_on -%>
     <div class="subseccion">
       <h4><%= _('Fecha') %></h4>
       <p><%= l(@individual_report.signed_on, :format => :short) %></p>
