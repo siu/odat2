@@ -120,7 +120,7 @@ protected
   end
 
   def get_layout
-    if ['index', 'new'].include?request[:action]
+    if ['index', 'new', 'create'].include?request[:action]
       'application'
     else
       'medical_records'
