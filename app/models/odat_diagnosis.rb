@@ -42,4 +42,12 @@ class OdatDiagnosis < ActiveRecord::Base
       ''
     end
   end
+
+  def clone
+    o = super.dup
+    o.center_resource_ids = self.center_resource_ids
+    o.diagnosis_item_ids = self.diagnosis_item_ids
+    o.main_diagnosis_item_id = self.main_diagnosis_item_id
+    o
+  end
 end

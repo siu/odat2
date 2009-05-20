@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class OdatDiagnosisTest < ActiveSupport::TestCase
+
+protected
+
   def get_new_valid_entity
     odat_diagnosis = OdatDiagnosis.new
     odat_diagnosis.medical_record = medical_records(:pedrito)
@@ -14,6 +17,8 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
 
     return odat_diagnosis
   end
+
+public
 
   def test_create_new
     odat_diagnosis = get_new_valid_entity

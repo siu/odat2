@@ -76,6 +76,14 @@ class MedicalRecord < ActiveRecord::Base
     :allow_nil => true, 
     :message => N_('El número de parto debe ser un número') 
 
+  def clone_last_or_new_odat_diagnosis
+    if self.odat_diagnoses.empty?
+      self.odat_diagnoses.build
+    else
+      self.odat_diagnoses.first.clone
+    end
+  end
+
   def full_name
     surname + ', ' + name
   end

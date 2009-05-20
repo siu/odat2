@@ -15,6 +15,7 @@ protected
   end
 
 public
+
   should "be invalid if created with default attributes" do
     medical_record =  MedicalRecord.new
 
@@ -205,5 +206,48 @@ public
       medical_record = create_medical_record(a => true)
       assert medical_record.has_coordination_data?
     end
+  end
+
+  test "clone_last_or_new_odat_diagnosis returns new odat_diagnosis if no previous" do
+    medical_record = create_medical_record()
+    odat_diagnosis = medical_record.clone_last_or_new_odat_diagnosis
+    assert odat_diagnosis.new_record?
+    assert odat_diagnosis.center_resources.empty?
+    assert odat_diagnosis.diagnosis_items.empty?
+    assert odat_diagnosis.main_diagnosis.nil?
+  end
+
+  test "clone_last_or_new_odat_diagnosis returns a new copy of odat_diagnosis if previous" do
+    medical_record = create_medical_record()
+    odat_diagnosis = medical_record.clone_last_or_new_odat_diagnosis
+
+    odat_diagnosis.created_at = Time.now
+    odat_diagnosis.medical_record = medical_records(:pedrito)
+    odat_diagnosis.origin_source = origin_sources(:one)
+    odat_diagnosis.origin_cause = origin_causes(:one)
+    odat_diagnosis.consultation_cause = consultation_causes(:one)
+    odat_diagnosis.center_resources = [center_resources(:one)]
+    odat_diagnosis.diagnosis_items = [
+      diagnosis_items(:e1_1_1), 
+      diagnosis_items(:e1_1_2)
+    ]
+    odat_diagnosis.main_diagnosis = diagnosis_items(:e1_1_2)
+    assert medical_record.save, medical_record.errors.inspect
+    assert medical_record.valid?
+    assert !odat_diagnosis.new_record?
+    assert_equal 1, odat_diagnosis.center_resources.size
+    assert_equal 2, odat_diagnosis.diagnosis_items.size
+    assert_equal diagnosis_items(:e1_1_2), odat_diagnosis.main_diagnosis
+
+    odat_diagnosis = medical_record.clone_last_or_new_odat_diagnosis
+
+    assert odat_diagnosis.new_record?
+    assert_equal 1, odat_diagnosis.center_resources.size
+    assert_equal 2, odat_diagnosis.diagnosis_items.size
+    assert_equal diagnosis_items(:e1_1_2), odat_diagnosis.main_diagnosis
+
+    assert odat_diagnosis.save
+    assert odat_diagnosis.valid?
+    assert !odat_diagnosis.new_record?
   end
 end

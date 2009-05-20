@@ -27,7 +27,13 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses/new
   # GET /odat_diagnoses/new.xml
   def new
-    @odat_diagnosis = @medical_record.odat_diagnoses.build
+    if @medical_record.odat_diagnoses.any?
+      flash.now[:notice] = _('Se han recuperado los datos del último diagnóstico para la creación del nuevo')
+      @odat_diagnosis = @medical_record.clone_last_or_new_odat_diagnosis
+    else
+      @odat_diagnosis = @medical_record.clone_last_or_new_odat_diagnosis
+    end
+
     load_form_data
 
     respond_to do |format|
