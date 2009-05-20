@@ -1,13 +1,19 @@
 <tr>
   <td><%= link_to(medical_record.full_name, medical_record) %></td>
-  <td><%= link_to(_('Ver expediente'), medical_record) %>, 
-      <%= link_to(_('Editar'), edit_medical_record_path(medical_record)) %></td>
-  <td><%= link_to(_('Nuevo dianóstico'), new_medical_record_odat_diagnosis_url(
-		  :medical_record_id => medical_record.id)) %>, 
-      <%= link_to(_('Historial'), medical_record_odat_diagnoses_path(
-		  :medical_record_id => medical_record.id)) %></td>
-	  <td><%= link_to(_('Nuevo informe'), 
-			  new_individual_report_path(medical_record)) %>, 
-	      <%= link_to(_('Listar'), 
-		      individual_reports_path(medical_record)) %></td>
+  <td><%= link_to(_('Modificar'), edit_medical_record_path(medical_record)) %></td>
+  <td>
+    <%= link_to(_('%{num} Diagnósticos') % 
+                {:num => medical_record.odat_diagnoses.count}, 
+      medical_record_odat_diagnoses_path(
+        :medical_record_id => medical_record.id)) %>, 
+    <%= link_to(_('Nuevo'), new_medical_record_odat_diagnosis_url(
+		  :medical_record_id => medical_record.id)) %>
+    </td>
+    <td>
+      <%= link_to(_('%{num} Informes') % 
+                  {:num => medical_record.individual_reports.count}, 
+      individual_reports_path(medical_record)) %>, 
+      <%= link_to(_('Nuevo'), 
+	new_individual_report_path(medical_record)) %>
+    </td>
 </tr>

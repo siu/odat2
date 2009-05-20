@@ -5,7 +5,7 @@ class IndividualReportsController < ApplicationController
   # GET /individual_reports
   # GET /individual_reports.xml
   def index
-    @individual_reports = IndividualReport.all
+    @individual_reports = @medical_record.individual_reports.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +16,7 @@ class IndividualReportsController < ApplicationController
   # GET /individual_reports/1
   # GET /individual_reports/1.xml
   def show
-    @individual_report = IndividualReport.find(params[:id])
+    @individual_report = @medical_record.individual_reports.find(params[:id])
     @odat_diagnosis = @individual_report.odat_diagnosis
 
     respond_to do |format|

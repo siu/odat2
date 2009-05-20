@@ -175,15 +175,13 @@
   <% if @individual_report.show_signed_on? and 
   @individual_report.signed_on -%>
     <div class="subseccion">
-      <h4><%= _('Fecha') %></h4>
-      <p><%= l(@individual_report.signed_on, :format => :short) %></p>
+      <p><%= l(@individual_report.signed_on.to_date, :format => :short) %></p>
     </div>
   <% end -%>
 
   <% if @individual_report.show_signature? -%>
     <div class="subseccion">
-      <h4><%= _('Firma') %></h4>
-      <p><%= @individual_report.signature %></p>
+      <p><%= _('Firma') %>: <%= @individual_report.signature %></p>
     </div>
   <% end -%>
 

@@ -1,9 +1,9 @@
 <% page_title _('Historial de %{name}') % {:name => @medical_record.full_name } %>
 
-<% content_for(:side) do -%>
-  uh
-<% end -%>
+<p><%= link_to(_('Nuevo diagnóstico'), 
+  new_medical_record_odat_diagnosis_path(@medical_record), {:class => 'new-btn'}) %></p>
 
+<% if @odat_diagnoses.any? -%>
 <table class="vdata">
   <thead>
     <tr>
@@ -41,6 +41,7 @@
     <% end %>
   </tbody>
 </table>
+<% else -%>
+  <p><%= _('No hay diagnósticos almacenados.') %></p>
+<% end -%>
 
-<%= link_to 'New odat_diagnosis', 
-  new_medical_record_odat_diagnosis_path(@medical_record) %>
