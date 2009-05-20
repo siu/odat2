@@ -74,9 +74,7 @@ class Admin::RegionsController < Admin::AdminSectionController
   # Load data
 
   def load_regions
-    @regions = Region.paginate(
-      :page => params[:page], 
-      :order => 'name ASC')
+    @regions = Region.paginate(:page => params[:page])
   end
 
   def load_region

@@ -53,33 +53,13 @@ class IndividualReportTest < ActiveSupport::TestCase
       report = create_report(a => 'text')
       assert report.show_report_data?
     end
+      report = create_report(:show_signature => true,
+                             :signature => 'Signer')
+      assert report.show_report_data?
+      report = create_report(:show_signed_on => true,
+                             :signed_on => Time.now)
+      assert report.show_report_data?
   end
-
-#
-#   t.boolean  "show_signature"
-#   t.boolean  "show_signed_on"
-    #
-#   t.boolean  "show_medical_record_archive_date"
-#   t.boolean  "show_birth_date"
-#   t.boolean  "show_age"
-#   t.boolean  "show_full_name"
-#   t.boolean  "show_gender"
-#   t.boolean  "show_address"
-    #
-#   t.boolean  "show_birth_position"
-#   t.boolean  "show_siblings_data"
-    #
-#   t.boolean  "show_father_data"
-#   t.boolean  "show_mother_data"
-#   t.boolean  "show_phone_numbers"
-    #   
-#   t.boolean  "show_coordination_services"
-    #
-#   t.boolean  "show_diagnosis_created_at"
-#   t.boolean  "show_consultation_details"
-#   t.boolean  "show_center_resources"
-#   t.boolean  "show_detailed_diagnosis"
-#   t.boolean  "show_main_diagnosis"
 
   protected
   def create_report(options = {})
