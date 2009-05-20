@@ -21,6 +21,9 @@
 	<li><%= link_to(_('Nuevo'),
 		new_medical_record_individual_report_path(@medical_record)) %></li>
 	</ul>
+        </li>
+        <li><%= button_to(_('Eliminar expediente'),
+                          medical_record_path(@medical_record), :method => :delete, :confirm => _('Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?'), :class => 'dest-action') %></li>
       </ul>
 
       </div>
