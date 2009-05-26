@@ -22,6 +22,7 @@ class IndividualReportsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @individual_report }
+      format.pdf  { render :layout => false }
     end
   end
 

@@ -8,7 +8,7 @@
 </tr>
 <tr>
   <th><%= _('Fecha de nacimiento') %></th>
-  <td><%= h @medical_record.father_birth_date.short_format unless @medical_record.father_birth_date.nil? %></td>
+  <td><%= l(@medical_record.father_birth_date, :format => :short) unless @medical_record.father_birth_date.nil? %></td>
 
 </tr>
 <tr>

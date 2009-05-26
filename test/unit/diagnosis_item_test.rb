@@ -63,22 +63,22 @@ class DiagnosisItemTest < ActiveSupport::TestCase
     assert 4, diagnosis_items(:e1_1_2).self_and_ancestors.size
   end
 
-  should "return true to includes_any? if any is included" do
+  test "shoul return true to includes_any? if any is included" do
     assert diagnosis_items(:s1_1).is_ancestor_of_any?(
       [diagnosis_items(:e1_1_1)])
   end
 
-  should "return true to includes_any? if any is included multiple" do
+  test "shoul return true to includes_any? if any is included multiple" do
     assert diagnosis_items(:s1_1).is_ancestor_of_any?(
       [diagnosis_items(:e1_1_1),
         diagnosis_items(:e1_1_2)])
   end
 
-  should "return false to includes_any? if none is included multiple" do
+  test "shoul return false to includes_any? if none is included multiple" do
     assert !diagnosis_items(:s1_1).is_ancestor_of_any?([])
   end
 
-  should "return false to includes_any? if subcat has no children" do
+  test "shoul return false to includes_any? if subcat has no children" do
     assert !diagnosis_items(:s2_2).is_ancestor_of_any?([])
   end
 end

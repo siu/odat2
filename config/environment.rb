@@ -32,10 +32,15 @@ Rails::Initializer.run do |config|
                                      :lib => 'will_paginate',  
                                      :source => 'http://gems.github.com'  
   config.gem 'RedCloth'
-  config.gem "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"
+  config.gem "thoughtbot-shoulda", 
+    :lib => "shoulda", 
+    :source => "http://gems.github.com"
   config.gem "locale_rails"
   config.gem "gettext_activerecord"
   config.gem "gettext_rails"
+  config.gem "prawn"
+  config.gem "prawn-format", 
+    :lib => 'prawn/format'
 
 
   # Only load the plugins named here, in the order given. By default, all plugins 

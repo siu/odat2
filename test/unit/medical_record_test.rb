@@ -16,7 +16,7 @@ protected
 
 public
 
-  should "be invalid if created with default attributes" do
+  test "should be invalid if created with default attributes" do
     medical_record =  MedicalRecord.new
 
     assert !medical_record.valid?
@@ -28,7 +28,7 @@ public
     assert medical_record.errors.invalid?(:archive_date)
   end
 
-  should "not let create two records with the same name for the same center" do
+  test "should not let create two records with the same name for the same center" do
     attributes = {
       :name => 'Name 1', 
       :surname => 'Surname 1', 
@@ -43,7 +43,7 @@ public
     assert_equal 1, medical_record.errors.size
   end
 
-  should "let create two records with the same name for different centers" do
+  test "should let create two records with the same name for different centers" do
 
     attributes = {
       :name => 'Name 1', 
@@ -60,13 +60,13 @@ public
   end
 
 
-  should "be valid if postal code is empty" do
+  test "should be valid if postal code is empty" do
     medical_record = create_medical_record(:postal => '')
 
     assert !medical_record.errors.invalid?(:postal)
   end
 
-  should "be invalid if postal code is an string" do
+  test "should be invalid if postal code is an string" do
     medical_record = create_medical_record(:postal => 'error')
 
     assert !medical_record.valid?

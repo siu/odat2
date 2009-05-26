@@ -30,8 +30,8 @@ protected
       :permalink => 'testpage',
       :content => 'Content for test page',
       :sidebar_content => 'Sidebar content'
-      }.merge(options))
-    record.save if record.valid?
+      }.merge!(options))
+    record.save
     record
   end
 

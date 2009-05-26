@@ -54,7 +54,7 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     assert_redirected_to medical_record_path(assigns(:medical_record))
   end
 
-  should "create new medical_records for the same center as the user" do
+  test "should create new medical_records for the same center as the user" do
     login_as_user
     MedicalRecord.any_instance.stubs(:valid?).returns(:true)
     assert_difference('MedicalRecord.count') do

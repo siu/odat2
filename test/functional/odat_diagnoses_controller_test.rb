@@ -12,7 +12,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	    assigns(:odat_diagnoses).size
   end
 
-  should "not get index if user is not in the same center as the record" do
+  test "should not get index if user is not in the same center as the record" do
     login_as :quentin
     get :index, :medical_record_id => medical_records(:paco).id
     assert_redirected_to medical_records_path
@@ -39,7 +39,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	  assigns(:medical_record))
   end
 
-  should "not create if user is not in the same center as the record" do
+  test "should not create if user is not in the same center as the record" do
     login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     assert_no_difference('OdatDiagnosis.count') do
@@ -50,7 +50,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_redirected_to medical_records_path
   end
 
-  should "allow creation of two odat_diagnosis with the same medical_record" do
+  test "should allow creation of two odat_diagnosis with the same medical_record" do
     login_as_user
 
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
@@ -88,7 +88,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  should "not show if user not in the same center" do
+  test "should not show if user not in the same center" do
     login_as :quentin
     get :show, 
 	:medical_record_id => medical_records(:paco).id, 
@@ -104,7 +104,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  should "not get edit if user not in the same center" do
+  test "should not get edit if user not in the same center" do
     login_as :quentin
     get :edit, 
 	:medical_record_id => medical_records(:paco).id, 
@@ -124,7 +124,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	    :medical_record_id => medical_records(:pedrito).id))
   end
 
-  should "not update if user not in the same center" do
+  test "should not update if user not in the same center" do
     login_as :quentin
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     put :update, 
@@ -134,7 +134,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_redirected_to medical_records_path
   end
   
-  should "update item_diagnosis relations" do
+  test "should update item_diagnosis relations" do
     login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
 
@@ -166,7 +166,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
   end
 
-  should "update center_resources relations" do
+  test "should update center_resources relations" do
     login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
 
@@ -202,7 +202,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	  :medical_record_id => medical_records(:pedrito).id))
   end
 
-  should "not destroy if user not in the same center" do
+  test "should not destroy if user not in the same center" do
     login_as :quentin
     assert_no_difference('OdatDiagnosis.count') do
       delete :destroy, 

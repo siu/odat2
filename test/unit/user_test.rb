@@ -156,11 +156,11 @@ class UserTest < ActiveSupport::TestCase
     assert users(:quentin).deleted?
   end
 
-  should "not be admin" do
+  test "should not be admin" do
     assert !users(:quentin).is_admin?
   end
 
-  should "have the same medical records that his center" do
+  test "should have the same medical records that his center" do
     assert_equal users(:quentin).medical_records, 
       users(:quentin).center.medical_records
     assert_equal users(:quentin2).medical_records, 
