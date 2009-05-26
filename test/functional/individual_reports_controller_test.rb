@@ -41,6 +41,16 @@ class IndividualReportsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should download individual_report pdf" do
+    login_as_user
+    @request.accept = "application/pdf"
+    get :show, 
+      :medical_record_id => medical_records(:pedrito).id, 
+      :id => individual_reports(:one).to_param,
+      :format => 'pdf'
+    assert_response :success
+  end
+
   test "should get edit" do
     login_as_user
     get :edit, 
