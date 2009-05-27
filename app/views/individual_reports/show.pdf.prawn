@@ -1,22 +1,23 @@
+require 'prawn'
 require 'prawn/format'
 
 def h1(pdf, text)
-  pdf.text tag :h1, text
+  pdf.text mytag(:h1, text)
   pdf.move_down 40-16
 end
 
 def h2(pdf, text)
-  pdf.text tag :h2, text
+  pdf.text mytag(:h2, text)
   pdf.move_down 20-14
   text
 end
 
 def h3(pdf, text)
-  pdf.text tag :h3, text
-  pdf.move_down 20-12
+  pdf.text mytag(:h3, text)
+  pdf.move_down 20-13
 end
 
-def tag(tag, text)
+def mytag(tag, text)
   "<#{tag.to_s}>" << text << "</#{tag.to_s}>"
 end
 
@@ -31,7 +32,7 @@ end
 
 pdf.tags :h1 => {:font_size => 16, :font_weight => :bold}
 pdf.tags :h2 => {:font_size => 14, :font_weight => :bold}
-pdf.tags :h3 => {:font_size => 12, :font_weight => :bold}
+pdf.tags :h3 => {:font_size => 13, :font_weight => :bold}
 pdf.tags :indent => {:width => '2em'}
 
 pdf.tags :small => {:font_size => 10}
@@ -245,15 +246,16 @@ if @individual_report.show_diagnosis_data?
 
     for cat in DiagnosisItem.roots
       if cat.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items)
-        pdf.text cat.name
+        pdf.text "<strong> &bull; #{h(cat.name)}</strong>"
         
         for subcat in cat.children
           if subcat.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items)
-            pdf.text "<indent/>#{subcat.name}"
+            pdf.move_down 10
+            pdf.text "<indent/> &bull; #{h(subcat.name)}"
 
             for item in subcat.children
               if item.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items)
-                pdf.text "<indent/><indent/> &bull; #{item.name}"
+                pdf.text "<indent/><indent/> &bull; #{h(item.name)}"
               end
             end
 
@@ -273,23 +275,29 @@ if @individual_report.show_report_data?
   if @individual_report.show_topic?
     h3(pdf, _('Asunto'))
     pdf.text @individual_report.topic_html
+    pdf.move_down 20
   end
   if @individual_report.show_tests?
     h3(pdf, _('Pruebas'))
     pdf.text @individual_report.tests_html
+    pdf.move_down 20
   end
   if @individual_report.show_results?
     h3(pdf, _('Resultados'))
     pdf.text @individual_report.results_html
+    pdf.move_down 20
   end
   if @individual_report.show_orientation?
     h3(pdf, _('Orientaciones'))
     pdf.text @individual_report.orientation_html
+    pdf.move_down 20
   end
   if @individual_report.show_signed_on? and @individual_report.signed_on
-    pdf.text l(@individual_report.signed_on.to_date, :format => :short)
+    pdf.text l(@individual_report.signed_on.to_date, :format => :short), :align => :right
+    pdf.move_down 20
   end
   if @individual_report.show_signature?
-    pdf.text _('Firma') << ': ' << h(@individual_report.signature)
+    pdf.text _('Firma') << ': ' << h(@individual_report.signature), :align => :right
+    pdf.move_down 20
   end
 end

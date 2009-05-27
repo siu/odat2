@@ -2,6 +2,10 @@
   <%= stylesheet_link_tag 'reports', :media => :print %>
 <% end -%>
 
+<div id="context-menu">
+  <p><%= link_to(_('Descargar pdf'), {:id => @individual_report.id, :format => :pdf}) %></p>
+</div>
+
 <% if @individual_report.show_personal_data? -%>
   <div class="subseccion">
     <h3><%= _('Datos personales') %></h3>
