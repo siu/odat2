@@ -32,9 +32,6 @@ Rails::Initializer.run do |config|
                                      :lib => 'will_paginate',  
                                      :source => 'http://gems.github.com'  
   config.gem 'RedCloth'
-  config.gem "thoughtbot-shoulda", 
-    :lib => "shoulda", 
-    :source => "http://gems.github.com"
   config.gem "locale_rails"
   config.gem "gettext_activerecord"
   config.gem "gettext_rails"
