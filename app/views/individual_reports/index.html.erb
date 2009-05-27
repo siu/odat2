@@ -1,6 +1,6 @@
 <% page_title(_('Listado de informes para %{full_name}') % {:full_name => @medical_record.full_name }) -%>
 
-<p><%= link_to(_('Nuevo informe individual'), new_medical_record_individual_report_path, {:class => 'new-btn'}) %></p>
+<p><%= link_to(_('Nuevo informe individual'), new_medical_record_individual_report_path, {:class => 'btn new-btn'}) %></p>
 
 <% unless @individual_reports.empty? -%>
   <table class="vdata">

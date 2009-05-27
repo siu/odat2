@@ -3,7 +3,7 @@
 <% end -%>
 
 <div id="context-menu">
-  <p><%= link_to(_('Descargar pdf'), {:id => @individual_report.id, :format => :pdf}) %></p>
+  <p><%= link_to(_('Descargar pdf'), {:id => @individual_report.id, :format => :pdf}, :class => 'pdf-btn btn') %></p>
 </div>
 
 <% if @individual_report.show_personal_data? -%>
