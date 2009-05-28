@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090429084033) do
+ActiveRecord::Schema.define(:version => 20090527132620) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20090429084033) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+  end
+
+  create_table "comparative_functions", :force => true do |t|
+    t.string   "applicable_on"
+    t.text     "function"
+    t.string   "render_method"
+    t.string   "render_options"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "configurable_views", :force => true do |t|
@@ -112,6 +121,11 @@ ActiveRecord::Schema.define(:version => 20090429084033) do
     t.boolean  "show_detailed_diagnosis"
     t.boolean  "show_coordination_services"
     t.boolean  "show_main_diagnosis"
+  end
+
+  create_table "item_diagnosticos", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "job_statuses", :force => true do |t|

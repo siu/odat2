@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  applicable_on: MyString
+  function: MyText
+  render_method: MyString
+  render_options: MyString
+
+two:
+  applicable_on: MyString
+  function: MyText
+  render_method: MyString
+  render_options: MyString
