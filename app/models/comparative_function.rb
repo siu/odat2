@@ -8,10 +8,19 @@ class ComparativeFunction < ActiveRecord::Base
   before_save :marshal_render_options
 
   def applicable_on=(val)
-    write_attribute(:applicable_on, eval("[" << val << "]")) unless val.nil?
+    unless val.nil?
+      write_attribute(:applicable_on, eval("[" << val << "]"))
+    else 
+      write_attribute(:applicable_on, [])
+    end
   rescue SyntaxError, NameError => exc
     write_attribute(:applicable_on, val)
   end
+
+  def applicable_on?(klass)
+    applicable_on.include?(klass)
+  end
+
 protected
   def render_options_is_a_hash
     begin
@@ -54,6 +63,7 @@ protected
   end
 
   def is_array_of_classes?(array)
+    return false if array.empty?
     array.all? do |element|
       element.instance_of?(Class)
     end

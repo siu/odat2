@@ -62,6 +62,18 @@ class ComparativeFunctionTest < ActiveSupport::TestCase
     function = create_function(:render_options => "{:headers => ['string','size']}")
     assert function.valid?
   end
+
+  test "applicable_on? method" do
+    function = create_function(:applicable_on => 'String')
+    assert function.applicable_on?(String)
+    assert !function.applicable_on?(Array)
+
+    function = create_function(:applicable_on => 'Hash, String')
+    assert function.applicable_on?(String)
+    assert function.applicable_on?(Hash)
+    assert !function.applicable_on?(Array)
+
+  end
 protected
   def create_function(opts = {})
     function = ComparativeFunction.new({
