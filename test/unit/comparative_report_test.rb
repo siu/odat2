@@ -25,6 +25,7 @@ class ComparativeReportTest < ActiveSupport::TestCase
     assert report.valid?, report.errors.full_messages
 
     assert 2, report.results.size
+    assert 2, report.results.first[:data].size
   end
 
 protected
