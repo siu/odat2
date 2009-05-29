@@ -21,6 +21,11 @@ class ComparativeFunction < ActiveRecord::Base
     applicable_on.include?(klass)
   end
 
+  def apply(items)
+    objs = items
+    eval(self.function, binding)
+  end
+
 protected
   def render_options_is_a_hash
     begin

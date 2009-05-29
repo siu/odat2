@@ -74,11 +74,22 @@ class ComparativeFunctionTest < ActiveSupport::TestCase
     assert !function.applicable_on?(Array)
 
   end
+
+  test "apply method" do
+    function = create_function(:applicable_on => 'String',
+                              :function => "objs.collect {|o| [o, o.size]}")
+    assert function.applicable_on?(String)
+
+    strings = %(uno cuatro)
+    for string in strings do
+      assert_equal [[string, string.size]], function.apply(string)
+    end
+  end
 protected
   def create_function(opts = {})
     function = ComparativeFunction.new({
       :applicable_on => 'String',
-      :function => "objs.collect {|o| o.size }",
+      :function => "objs.collect {|o| [o.size] }",
       :render_method => 'matrix'
     }.merge(opts))
   end

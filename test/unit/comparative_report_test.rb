@@ -18,6 +18,15 @@ class ComparativeReportTest < ActiveSupport::TestCase
     assert report.valid?, report.comparative_functions.inspect
   end
 
+  test "comparative functions are applied over compatible items" do
+    report = create_report(
+      :items => [odat_diagnoses(:one), odat_diagnoses(:two)],
+      :comparative_functions => [comparative_functions(:for_odat_diagnoses)])
+    assert report.valid?, report.errors.full_messages
+
+    assert 2, report.results.size
+  end
+
 protected
   def create_report(opts = {})
     report = ComparativeReport.new({
