@@ -48,9 +48,16 @@ class ComparativeFunctionTest < ActiveSupport::TestCase
   end
 
   test "requires a hash (in string form) in render_options" do
+
     function = create_function(:render_options => 'basdfbsadf')
     assert !function.valid?
     assert function.errors.on(:render_options)
+
+    function = create_function(:render_options => nil)
+    assert function.valid?
+
+    function = create_function(:render_options => '')
+    assert function.valid?
 
     function = create_function(:render_options => "{:headers => ['string','size']}")
     assert function.valid?

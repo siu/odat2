@@ -1,0 +1,28 @@
+<h1>Listing comparative_reports</h1>
+
+<table>
+  <tr>
+    <th>Show signature</th>
+    <th>Signature</th>
+    <th>Show signed on</th>
+    <th>Signed on</th>
+    <th>Configurable view</th>
+  </tr>
+
+<% @comparative_reports.each do |comparative_report| %>
+  <tr>
+    <td><%=h comparative_report.show_signature %></td>
+    <td><%=h comparative_report.signature %></td>
+    <td><%=h comparative_report.show_signed_on %></td>
+    <td><%=h comparative_report.signed_on %></td>
+    <td><%=h comparative_report.configurable_view_id %></td>
+    <td><%= link_to 'Show', comparative_report %></td>
+    <td><%= link_to 'Edit', edit_comparative_report_path(comparative_report) %></td>
+    <td><%= link_to 'Destroy', comparative_report, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New comparative_report', new_comparative_report_path %>

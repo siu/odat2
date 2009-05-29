@@ -1,0 +1,2 @@
+module ComparativeReportsHelper
+end

@@ -5,7 +5,7 @@ class Report < ActiveRecord::Base
 
   belongs_to :configurable_view, :dependent => :destroy
 
-  def initialize(args)
+  def initialize(args = nil)
     super(args)
     self.build_configurable_view
   end

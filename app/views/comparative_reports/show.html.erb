@@ -1,0 +1,28 @@
+<p>
+  <b>Show signature:</b>
+  <%=h @comparative_report.show_signature %>
+</p>
+
+<p>
+  <b>Signature:</b>
+  <%=h @comparative_report.signature %>
+</p>
+
+<p>
+  <b>Show signed on:</b>
+  <%=h @comparative_report.show_signed_on %>
+</p>
+
+<p>
+  <b>Signed on:</b>
+  <%=h @comparative_report.signed_on %>
+</p>
+
+<p>
+  <b>Configurable view:</b>
+  <%=h @comparative_report.configurable_view_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_comparative_report_path(@comparative_report) %> |
+<%= link_to 'Back', comparative_reports_path %>
