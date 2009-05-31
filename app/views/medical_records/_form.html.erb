@@ -9,8 +9,7 @@
 	<td><%= f.date_select(:archive_date, 
 			      :start_year => 1992, 
 			      :order => [:day, :month, :year], 
-			      :use_month_numbers => true, 
-			      :include_blank => true ) %>
+			      :use_month_numbers => true ) %>
 	</td>
       </tr>
 
@@ -43,7 +42,8 @@
 	<td><%= f.date_select(:birth_date, 
 			      :start_year => 1992, 
 			      :order => [:day, :month, :year], 
-			      :use_month_numbers => true ) %>
+                              :use_month_numbers => true,
+                              :include_blank => true ) %>
 	</td>
       </tr>
       <tr>
