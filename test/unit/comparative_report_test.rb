@@ -9,13 +9,15 @@ class ComparativeReportTest < ActiveSupport::TestCase
   test "Items can be added to the items list" do
     report = create_report(
       :items => [odat_diagnoses(:one), odat_diagnoses(:two)])
-    assert report.valid?
+    assert report.valid?, report.errors.full_messages
+    assert_equal 2, report.items.size
   end
 
   test "comparative functions can be added to the functions list" do
     report = create_report(
       :comparative_functions => [comparative_functions(:one)])
     assert report.valid?, report.comparative_functions.inspect
+    assert_equal 1, report.comparative_functions.size
   end
 
   test "comparative functions are applied over items" do

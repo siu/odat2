@@ -8,7 +8,7 @@ class ComparativeFunction < ActiveRecord::Base
   before_save :marshal_render_options
 
   def applicable_on=(val)
-    unless val.nil?
+    unless val.nil? || val.instance_of?(Array)
       write_attribute(:applicable_on, eval("[" << val << "]"))
     else 
       write_attribute(:applicable_on, [])
@@ -21,19 +21,35 @@ class ComparativeFunction < ActiveRecord::Base
     applicable_on.include?(klass)
   end
 
+  def render_options=(val)
+    unless val.nil? || val.instance_of?(Hash)
+      write_attribute(:render_options, eval(val))
+    else
+      write_attribute(:render_options, val)
+    end
+  rescue SyntaxError, NameError => exc
+    write_attribute(:render_options, val)
+  end
+
   def apply(items)
     objs = items
     eval(self.function, binding)
   end
 
+  def after_initialize
+    self.render_options = self.render_options
+  rescue SyntaxError, NameError => exc
+    write_attribute(:render_options, nil)
+  end
 protected
   def render_options_is_a_hash
     begin
-      if(render_options.nil? || 
-         render_options.instance_of?(Hash) || 
-         (render_options.instance_of?(String) && 
-           (  render_options.empty? || 
-              eval(render_options).instance_of?(Hash))))
+      unless self.render_options.nil? || self.render_options.instance_of?(Hash)
+        write_attribute(:render_options, eval(self.render_options))
+      else
+        write_attribute(:render_options, self.render_options)
+      end
+      if(render_options.nil? || render_options.instance_of?(Hash))
         true
       else
         self.errors.add(:render_options)
@@ -64,7 +80,7 @@ protected
   end
 
   def marshal_render_options
-    write_attribute(:render_options, render_options.to_s)
+    write_attribute(:render_options, render_options.inspect)
   end
 
   def is_array_of_classes?(array)

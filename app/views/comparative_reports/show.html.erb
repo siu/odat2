@@ -23,6 +23,44 @@
   <%=h @comparative_report.configurable_view_id %>
 </p>
 
+<h3>Items</h3>
+<ul>
+  <% for item in @comparative_report.items do -%>
+    <li><%= h item.inspect %></li>
+  <% end %>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+  <% for function in @comparative_report.comparative_functions do -%>
+    <li><%= h function.name %></li>
+  <% end %>
+</ul>
+
+<p>
+  <b>Results</b>
+  <% for results in @comparative_report.results -%>
+    <table>
+      <% if results[:render_options][:headers] -%>
+      <thead>
+        <tr>
+        <% for header in results[:render_options][:headers] do -%>
+          <th><%= header %></th>
+        <% end -%>
+      </tr>
+      </thead>
+    <% end -%>
+      <% for row in results[:data] -%>
+        <tr>
+          <% for data in row -%>
+            <td><%= data %></td>
+          <% end -%>
+        </tr>
+      <% end -%>
+    </table>
+  <% end -%>
+</p>
+
 
 <%= link_to 'Edit', edit_comparative_report_path(@comparative_report) %> |
 <%= link_to 'Back', comparative_reports_path %>

@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :applicable_on %><br />
-    <%= f.text_field :applicable_on %>
+    <%= f.text_field :applicable_on, :value => @comparative_function.applicable_on.collect { |c| c.to_s }.join(' ') %>
   </p>
   <p>
     <%= f.label :function %><br />
@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :render_options %><br />
-    <%= f.text_field :render_options %>
+    <%= f.text_field :render_options, :value => @comparative_function.render_options.inspect %>
   </p>
   <p>
     <%= f.submit 'Update' %>
