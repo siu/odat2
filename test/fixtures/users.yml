@@ -58,9 +58,9 @@ admin:
   type:                      Admin
   center:                    demo
 
-quentin2:
-  login:                     quentin2
-  email:                     quentin2@example.com
+quentin_other:
+  login:                     quentin_other
+  email:                     quentin_other@example.com
   salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
   crypted_password:          1ac28eb0e3bb4aaec9916858f55812e31a12114d # 'monkey'
   created_at:                <%= 5.days.ago.to_s :db  %>

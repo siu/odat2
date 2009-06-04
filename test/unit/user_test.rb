@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class UserTest < ActiveSupport::TestCase
+#class UserTest < ActiveSupport::TestCase
+class UserTest < ActiveRecord::TestCase 
   # Be sure to include AuthenticatedTestHelper in test/test_helper.rb instead.
   # Then, you can remove it from this and the functional test.
   include AuthenticatedTestHelper
@@ -61,8 +62,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_should_not_rehash_password
-    users(:quentin).update_attributes(:login => 'quentin_new')
-    assert_equal users(:quentin), User.authenticate('quentin_new', 'monkey')
+    users(:quentin).update_attributes(:login => 'quentin2')
+    assert_equal users(:quentin), User.authenticate('quentin2', 'monkey')
   end
 
   def test_should_authenticate_user
@@ -163,8 +164,8 @@ class UserTest < ActiveSupport::TestCase
   test "should have the same medical records that his center" do
     assert_equal users(:quentin).medical_records, 
       users(:quentin).center.medical_records
-    assert_equal users(:quentin2).medical_records, 
-      users(:quentin2).center.medical_records
+    assert_equal users(:quentin_other).medical_records, 
+      users(:quentin_other).center.medical_records
   end
 
 protected
