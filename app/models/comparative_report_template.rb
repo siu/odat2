@@ -1,0 +1,2 @@
+class ComparativeReportTemplate < ReportTemplate
+end
