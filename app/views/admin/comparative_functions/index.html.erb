@@ -2,18 +2,16 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Applicable on</th>
-    <th>Function</th>
     <th>Render method</th>
-    <th>Render options</th>
   </tr>
 
 <% @comparative_functions.each do |comparative_function| %>
   <tr>
+    <td><%=h comparative_function.name %></td>
     <td><%=h comparative_function.applicable_on %></td>
-    <td><%=h comparative_function.function %></td>
     <td><%=h comparative_function.render_method %></td>
-    <td><%=h comparative_function.render_options %></td>
     <td><%= link_to 'Show', comparative_function %></td>
     <td><%= link_to 'Edit', edit_comparative_function_path(comparative_function) %></td>
     <td><%= link_to 'Destroy', comparative_function, :confirm => 'Are you sure?', :method => :delete %></td>
