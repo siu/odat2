@@ -1,4 +1,4 @@
-class ComparativeFunction < ActiveRecord::Base
+class ReportFieldTemplate < ActiveRecord::Base
   RENDER_METHODS = %w(single_value matrix graph)
   validates_presence_of :function
   validates_inclusion_of :render_method, :in => RENDER_METHODS

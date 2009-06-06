@@ -1,11 +1,11 @@
-<h1>New comparative_function</h1>
+<h1>New report_field_template</h1>
 
-<% form_for(@comparative_function) do |f| %>
+<% form_for(@report_field_template) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :applicable_on %><br />
-    <%= f.text_field :applicable_on, :value => @comparative_function.applicable_on||[].collect { |c| c.to_s }.join(' ') %>
+    <%= f.text_field :applicable_on, :value => @report_field_template.applicable_on||[].collect { |c| c.to_s }.join(' ') %>
   </p>
   <p>
     <%= f.label :function %><br />
@@ -17,11 +17,11 @@
   </p>
   <p>
     <%= f.label :render_options %><br />
-    <%= f.text_field :render_options, :value => @comparative_function.render_options.inspect %>
+    <%= f.text_field :render_options, :value => @report_field_template.render_options.inspect %>
   </p>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', comparative_functions_path %>
+<%= link_to 'Back', report_field_templates_path %>

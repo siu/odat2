@@ -1,0 +1,23 @@
+<p>
+  <b>Applicable on:</b>
+  <%=h @report_field_template.applicable_on %>
+</p>
+
+<p>
+  <b>Function:</b>
+  <%=h @report_field_template.function %>
+</p>
+
+<p>
+  <b>Render method:</b>
+  <%=h @report_field_template.render_method %>
+</p>
+
+<p>
+  <b>Render options:</b>
+  <%=h @report_field_template.render_options.inspect %>
+</p>
+
+
+<%= link_to 'Edit', edit_report_field_template_path(@report_field_template) %> |
+<%= link_to 'Back', report_field_templates_path %>

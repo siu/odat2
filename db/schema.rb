@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090528154138) do
+ActiveRecord::Schema.define(:version => 20090606105635) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -39,22 +39,12 @@ ActiveRecord::Schema.define(:version => 20090528154138) do
     t.integer  "position"
   end
 
-  create_table "comparative_functions", :force => true do |t|
-    t.string   "applicable_on"
-    t.text     "function"
-    t.string   "render_method"
-    t.string   "render_options"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name",           :default => "unnamed", :null => false
-  end
-
-  create_table "comparative_report_function_assignments", :force => true do |t|
+  create_table "comparative_report_field_template_assignments", :force => true do |t|
     t.integer  "position"
     t.string   "name"
     t.string   "group"
     t.integer  "comparative_report_id"
-    t.integer  "comparative_function_id"
+    t.integer  "report_field_template_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -249,6 +239,16 @@ ActiveRecord::Schema.define(:version => 20090528154138) do
     t.string   "name",       :limit => 40, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "report_field_templates", :force => true do |t|
+    t.string   "applicable_on"
+    t.text     "function"
+    t.string   "render_method"
+    t.string   "render_options"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name",           :default => "unnamed", :null => false
   end
 
   create_table "reports", :force => true do |t|

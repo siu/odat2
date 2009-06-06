@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ComparativeFunctionTest < ActiveSupport::TestCase
+class ReportFieldTemplateTest < ActiveSupport::TestCase
   test "creates a valid function" do
     function = create_function()
     assert function.valid?, function.errors.inspect
@@ -87,7 +87,7 @@ class ComparativeFunctionTest < ActiveSupport::TestCase
   end
 protected
   def create_function(opts = {})
-    function = ComparativeFunction.new({
+    function = ReportFieldTemplate.new({
       :applicable_on => 'String',
       :function => "objs.collect {|o| [o.size] }",
       :render_method => 'matrix'

@@ -62,7 +62,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :diagnosis_items
     admin.resources :provinces
     admin.resources :pages
-    admin.resources :comparative_functions, :name_prefix => nil
+    admin.resources :report_field_templates, :name_prefix => nil
 
   end
 

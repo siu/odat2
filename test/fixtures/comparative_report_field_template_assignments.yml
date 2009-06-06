@@ -5,11 +5,11 @@ one:
   name: MyString
   group: MyString
   comparative_report_id: 1
-  comparative_function_id: 1
+  report_field_template_id: 1
 
 two:
   position: 1
   name: MyString
   group: MyString
   comparative_report_id: 1
-  comparative_function_id: 1
+  report_field_template_id: 1

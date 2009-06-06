@@ -1,7 +1,7 @@
 class ComparativeReport < Report
-  has_many :comparative_report_function_assignments
-  has_many :comparative_functions, 
-    :through => :comparative_report_function_assignments
+  has_many :comparative_report_field_template_assignments
+  has_many :report_field_templates, 
+    :through => :comparative_report_field_template_assignments
 
   has_many :item_report_associations, :autosave => true, :validate => false
   has_many :items, :through => :item_report_associations, :source_type => 'OdatDiagnosis', :validate => false
@@ -26,7 +26,7 @@ class ComparativeReport < Report
 protected
   def compute_results
     results = []
-    for function in comparative_functions
+    for function in report_field_templates
       results << {:render_method => function.render_method,
                   :render_options => function.render_options,
                   :data => function.apply(self.items)}

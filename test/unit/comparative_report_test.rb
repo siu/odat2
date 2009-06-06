@@ -15,15 +15,15 @@ class ComparativeReportTest < ActiveSupport::TestCase
 
   test "comparative functions can be added to the functions list" do
     report = create_report(
-      :comparative_functions => [comparative_functions(:one)])
-    assert report.valid?, report.comparative_functions.inspect
-    assert_equal 1, report.comparative_functions.size
+      :report_field_templates => [report_field_templates(:one)])
+    assert report.valid?, report.report_field_templates.inspect
+    assert_equal 1, report.report_field_templates.size
   end
 
   test "comparative functions are applied over items" do
     report = create_report(
       :items => [odat_diagnoses(:one), odat_diagnoses(:two)],
-      :comparative_functions => [comparative_functions(:for_odat_diagnoses)])
+      :report_field_templates => [report_field_templates(:for_odat_diagnoses)])
     assert report.valid?, report.errors.full_messages
 
     assert 2, report.results.size
