@@ -19,10 +19,10 @@ class MedicalRecordsControllerTest < ActionController::TestCase
   end
 
   def test_should_get_index_only_medical_records_of_center_demo2
-    login_as :quentin2
+    login_as :quentin_other
     get :index
     assert_response :success
-    assert_equal users(:quentin2).center.medical_records.count,
+    assert_equal users(:quentin_other).center.medical_records.count,
       assigns(:medical_records).count
   end
 
