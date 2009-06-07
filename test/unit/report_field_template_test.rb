@@ -12,6 +12,23 @@ class ReportFieldTemplateTest < ActiveSupport::TestCase
     assert function.errors.on(:applicable_on)
   end
 
+  test "requires a function" do
+    function = create_function(:function => '')
+    assert !function.valid?
+    assert function.errors.on(:function)
+  end
+
+  test "requires render_options" do
+    function = create_function(:render_options => nil)
+    assert !function.valid?
+  end
+
+  test "requires a render_method" do
+    function = create_function(:render_options => {:method => ''}.inspect)
+    assert !function.valid?
+    assert function.errors.on(:render_options)
+  end
+
   test "requires a valid list of classes to be applied on" do
     function = create_function(:applicable_on => "String")
     assert function.valid?
@@ -23,43 +40,30 @@ class ReportFieldTemplateTest < ActiveSupport::TestCase
     assert function.valid?
   end
 
-  test "requires a function" do
-    function = create_function(:function => '')
-    assert !function.valid?
-    assert function.errors.on(:function)
-  end
-
-  test "requires a render_method" do
-    function = create_function(:render_method => '')
-    assert !function.valid?
-    assert function.errors.on(:render_method)
-  end
-
   test "requires a valid render_method " do
-    function = create_function(:render_method => 'random')
+    function = create_function(
+      :render_options => "{:method => :random}")
     assert !function.valid?
-    assert function.errors.on(:render_method)
+    assert function.errors.on(:render_options)
 
     methods = %w(single_value matrix graph)
     for method in methods do
-      function = create_function(:render_method => method)
+      function = create_function(
+        :render_options => {:method => method.to_sym}.inspect)
       assert function.valid?
     end
   end
 
   test "requires a hash (in string form) in render_options" do
-
     function = create_function(:render_options => 'basdfbsadf')
     assert !function.valid?
     assert function.errors.on(:render_options)
 
-    function = create_function(:render_options => nil)
-    assert function.valid?
-
     function = create_function(:render_options => '')
-    assert function.valid?
+    assert !function.valid?
+    assert function.errors.on(:render_options)
 
-    function = create_function(:render_options => "{:headers => ['string','size']}")
+    function = create_function(:render_options => "{:method => :matrix, :headers => ['string','size']}")
     assert function.valid?
   end
 
@@ -88,9 +92,10 @@ class ReportFieldTemplateTest < ActiveSupport::TestCase
 protected
   def create_function(opts = {})
     function = ReportFieldTemplate.new({
-      :applicable_on => 'String',
+      :name => 'Hombres-Mujeres',
       :function => "objs.collect {|o| [o.size] }",
-      :render_method => 'matrix'
+      :applicable_on => 'String',
+      :render_options => '{:method => :matrix}'
     }.merge(opts))
   end
 

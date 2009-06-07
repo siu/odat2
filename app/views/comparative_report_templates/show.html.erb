@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @comparative_report_template.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @comparative_report_template.title %>
+</p>
+
+<p>
+  <b>Applicable on:</b>
+  <%=h @comparative_report_template.applicable_on %>
+</p>
+
+
+<%= link_to 'Edit', edit_comparative_report_template_path(@comparative_report_template) %> |
+<%= link_to 'Back', comparative_report_templates_path %>

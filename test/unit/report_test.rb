@@ -4,7 +4,7 @@ class ReportTest < ActiveSupport::TestCase
   test "create valid report" do
     report = create_report
 
-    assert report.valid?
+    assert report.valid?, report.errors.full_messages
   end
 
   test "should require a signed_on date" do
@@ -49,7 +49,9 @@ class ReportTest < ActiveSupport::TestCase
   def create_report(options = {})
     report = Report.create({
       :signature => 'John Smith',
-      :signed_on => Time.now }.merge(options))
+      :signed_on => Time.now,
+      :center_id => centers(:demo).id
+    }.merge!(options))
     report
   end
 end

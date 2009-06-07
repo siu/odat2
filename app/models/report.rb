@@ -1,8 +1,11 @@
 class Report < ActiveRecord::Base
   validate :is_signed_if_show_signature
   validates_presence_of :signed_on
-  validates_presence_of :configurable_view
 
+  validates_presence_of :configurable_view
+  validates_presence_of :center
+
+  belongs_to :center
   belongs_to :configurable_view, :dependent => :destroy
 
   def initialize(args = nil)
@@ -15,7 +18,7 @@ protected
     if show_signature? && (signature.nil? || signature.empty?)
       errors.add(:signature)
     end
-
   end
+
 
 end

@@ -1,0 +1,24 @@
+<h1>Listing comparative_report_templates</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Applicable on</th>
+  </tr>
+
+<% @comparative_report_templates.each do |comparative_report_template| %>
+  <tr>
+    <td><%=h comparative_report_template.name %></td>
+    <td><%=h comparative_report_template.title %></td>
+    <td><%=h comparative_report_template.applicable_on %></td>
+    <td><%= link_to 'Show', comparative_report_template %></td>
+    <td><%= link_to 'Edit', edit_comparative_report_template_path(comparative_report_template) %></td>
+    <td><%= link_to 'Destroy', comparative_report_template, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New comparative_report_template', new_comparative_report_template_path %>
