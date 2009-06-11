@@ -21,20 +21,18 @@
     <legend><%= _('Datos personales') %></legend>
     <table>
       <tr>
-	<th><%= f.label(:name, _('Nombre')) %></th>
+	      <th><%= f.label(:name, _('Nombre'), :required => true) %></th>
 	<td>
 	  <%= f.text_field(:name, 
 			   :size => 30, 
-			   :maxlength => 30, 
-			   :class => :ancho) %>
+			   :maxlength => 30) %>
 	</td>
       </tr>
       <tr>
 	<th><%= f.label(:surname, _('Apellidos')) %></th>
 	<td><%= f.text_field(:surname, 
 			     :size => 50, 
-			     :maxlength => 100, 
-			     :class => :ancho) %>
+			     :maxlength => 100) %>
 	</td>
       </tr>
       <tr>
@@ -69,8 +67,7 @@
 	<th><%= f.label(:address, _('Calle')) %></th>
 	<td><%= f.text_field(:address, 
 			     :size => 50, 
-			     :maxlength => 100, 
-			     :class => :ancho) %>
+			     :maxlength => 100) %>
 	</td>
       </tr>
       <tr>
@@ -84,8 +81,7 @@
 	<th><%= f.label(:city, _('Localidad')) %></th>
 	<td><%= f.text_field(:city, 
 			     :size => 50, 
-			     :maxlength => 50, 
-			     :class => :ancho) %>
+			     :maxlength => 50) %>
 	</td>
       </tr>
       <tr>
@@ -104,7 +100,7 @@
 
   <p>
   <% if @medical_record.new_record? -%>
-    <%= f.submit _('Nuevo') %>
+    <%= f.submit(_('Nuevo')) %>
   <% else %>
     <%= f.submit _('Guardar') %>
   <% end %>

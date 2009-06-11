@@ -19,3 +19,6 @@
 [submodule "vendor/plugins/prawnto"]
 	path = vendor/plugins/prawnto
 	url = git://github.com/thorny-sun/prawnto.git
+[submodule "vendor/plugins/semantic_form_builder"]
+	path = vendor/plugins/semantic_form_builder
+	url = git://github.com/scivi/semantic_form_builder.git
