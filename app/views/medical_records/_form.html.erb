@@ -5,11 +5,10 @@
     <legend><%= _('Expediente') %></legend>
     <table>
       <tr>
-	<th><%= f.label(:archive_date_3i, _('Fecha inicio expediente')) %></th>
+	      <th><%= f.label(:archive_date_3i, _('Fecha inicio expediente'), :required => true) %></th>
 	<td><%= f.date_select(:archive_date, 
-			      :start_year => 1992, 
+			      :start_year => 1990, 
 			      :order => [:day, :month, :year], 
-			      :use_month_numbers => true, 
 			      :include_blank => true ) %>
 	</td>
       </tr>
@@ -29,7 +28,7 @@
 	</td>
       </tr>
       <tr>
-	<th><%= f.label(:surname, _('Apellidos')) %></th>
+	      <th><%= f.label(:surname, _('Apellidos'), :required => true) %></th>
 	<td><%= f.text_field(:surname, 
 			     :size => 50, 
 			     :maxlength => 100) %>
