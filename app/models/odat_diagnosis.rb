@@ -19,19 +19,16 @@ class OdatDiagnosis < ActiveRecord::Base
   has_and_belongs_to_many :center_resources
 
   # Validaciones
-  validates_presence_of :medical_record,
+  validates_presence_of :medical_record_id,
     :message => N_('El diagnostico debe estar asociado a un expediente')
 
-  validates_presence_of :created_at, 
-    :message => N_('Es necesario una fecha de creación')
-
-  validates_presence_of :origin_source, 
+  validates_presence_of :origin_source_id, 
     :message => N_('Debes especificar una fuente de derivación')
-  validates_presence_of :origin_cause, 
+  validates_presence_of :origin_cause_id, 
     :message => N_('Debes especificar un motivo de derivación')
-  validates_presence_of :consultation_cause, 
+  validates_presence_of :consultation_cause_id, 
     :message => N_('Debes especificar un motivo de consulta')
-  validates_presence_of :main_diagnosis, 
+  validates_presence_of :main_diagnosis_item_id, 
     :message => N_('Debes especificar al menos un elemento en ' +
 		   'diagnóstico detallado y un diagnóstico principal')
 
