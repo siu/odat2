@@ -99,9 +99,9 @@
 
   <p>
   <% if @medical_record.new_record? -%>
-    <%= f.submit(_('Nuevo')) %>
-  <% else %>
-    <%= f.submit _('Guardar') %>
+    <%= f.submit_or_cancel(_('Nuevo'),_('Cancelar'), medical_records_path) %>
+  <% else -%>
+    <%= f.submit_or_cancel(_('Guardar'),_('Cancelar'), medical_records_path) %>
   <% end %>
   </p>
 

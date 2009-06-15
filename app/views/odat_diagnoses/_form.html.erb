@@ -32,10 +32,9 @@
 
   <p>
   <% if @odat_diagnosis.new_record? -%>
-    <%= f.submit _('Nuevo') %> 
+    <%= f.submit_or_cancel(_('Nuevo'),_('Cancelar'), medical_record_odat_diagnoses_path(@medical_record)) %> 
   <% else -%>
-    <%= f.submit _('Guardar') %> 
+    <%= f.submit_or_cancel(_('Guardar'),_('Cancelar'), medical_record_odat_diagnoses_path(@medical_record)) %> 
   <% end -%>
-  <%= link_to(_('Cancelar'), medical_record_odat_diagnoses_path(@medical_record)) %>
   </p>
 <% end %>

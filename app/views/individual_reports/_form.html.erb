@@ -158,11 +158,10 @@
 
 <p>
 <% if @individual_report.new_record? -%>
-  <%= f.submit(_('Crear')) %>
+  <%= f.submit_or_cancel(_('Nuevo'),_('Cancelar'), individual_reports_path(@medical_record)) %>
 <% else -%>
-  <%= f.submit(_('Guardar')) %>
+  <%= f.submit_or_cancel(_('Guardar'),_('Cancelar'), individual_reports_path(@medical_record)) %>
 <% end -%>
- o <%= link_to(_('Cancelar'), individual_reports_path(@medical_record)) %>
 </p>
 
 <% end -%>
