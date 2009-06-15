@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th><%= _('Fecha') %></th>
-      <th><%= _('Modificar') %></th>
+      <th><%= _('Diagnóstico') %></th>
       <th><%= _('Eliminar') %></th>
     </tr>
   </thead>
@@ -26,15 +26,14 @@
           <% end -%>
 	</td>
 	<td>
-	  <%= link_to(_('Ver'), [@medical_record, odat_diagnosis]) %>
 	  <%= link_to(_('Modificar'), 
 		      edit_medical_record_odat_diagnosis_path(
 			@medical_record, odat_diagnosis)) %>
 	</td>
 	<td>
-	  <%= button_to(_('Eliminar'), 
+	  <%= button_to(_('Eliminar diagnóstico'), 
 	  [@medical_record, odat_diagnosis], 
-	  :confirm => _('Realmente deseas borrar el diagnóstico (Operación irreversible)'),
+	  :confirm => _('¿Realmente deseas eliminar el diagnóstico permanentemente?'),
           :method => :delete, :class => 'dest-action') %>
 	</td>
       </tr>

@@ -1,6 +1,9 @@
 <% page_title _('Nuevo expediente') -%>
 
 <% content_for(:sidebar) do -%>
+  <div class="note">
+    <%= _('En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas.') %>
+  </div>
 <% end -%>
 
 <%= render :partial => 'form' %>
