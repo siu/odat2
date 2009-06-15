@@ -96,6 +96,13 @@ public
     assert medical_record.errors.invalid?(:birth_position)
   end
 
+  test "position_in_siblings should be numeric" do
+    medical_record = create_medical_record(:position_in_siblings => 'test')
+
+    medical_record.valid?
+    assert medical_record.errors.invalid?(:position_in_siblings)
+  end
+
   def test_full_name
     medical_record = create_medical_record()
     assert medical_record.full_name == 

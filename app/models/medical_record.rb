@@ -76,6 +76,11 @@ class MedicalRecord < ActiveRecord::Base
     :allow_nil => true, 
     :message => N_('El número de parto debe ser un número') 
 
+  validates_numericality_of :position_in_siblings,
+    :only_integer => true, 
+    :allow_nil => true, 
+    :message => N_('El lugar que ocupa entre los hermanos debe ser un número') 
+
   def clone_last_or_new_odat_diagnosis
     if self.odat_diagnoses.empty?
       self.odat_diagnoses.build
