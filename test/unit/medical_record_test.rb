@@ -106,7 +106,7 @@ public
   def test_full_name
     medical_record = create_medical_record()
     assert medical_record.full_name == 
-      medical_record.surname + ', ' + medical_record.name
+      medical_record.name + ' ' + medical_record.surname
   end
 
   test "doesn't have siblings data" do
