@@ -80,7 +80,16 @@ class MedicalRecord < ActiveRecord::Base
     :only_integer => true, 
     :allow_nil => true, 
     :message => N_('El lugar que ocupa entre los hermanos debe ser un número') 
+  # Filters
+  before_save :namecase_name_and_surname
 
+  def namecase_name_and_surname
+    self.name = self.name.namecase
+    self.surname = self.surname.namecase
+  end
+
+  # Other
+  #
   def clone_last_or_new_odat_diagnosis
     if self.odat_diagnoses.empty?
       self.odat_diagnoses.build
@@ -90,7 +99,7 @@ class MedicalRecord < ActiveRecord::Base
   end
 
   def full_name
-    surname + ', ' + name
+    name + ' ' + surname
   end
 
   def age
