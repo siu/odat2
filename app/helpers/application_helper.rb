@@ -27,4 +27,8 @@ module ApplicationHelper
     end
     html
   end
+
+  def show_required_fields_explanation
+    @required_field_exp ||= %Q{<div class="note">} << _('Los <span class="requiredField">campos obligatorios<strong><sup>*</sup></strong></span> aparecen subrayados y con un asterisco.') << %Q{</div>}
+  end
 end

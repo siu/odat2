@@ -1,6 +1,8 @@
 <table>
   <tr>
-    <th><%= f.label(:main_diagnosis_item_id, _('Diagnóstico principal')) %></th>
+	  <th><%= f.label(:main_diagnosis_item_id, 
+			  _('Diagnóstico principal'),
+			  :required => true) %></th>
     <td><%= f.collection_select(:main_diagnosis_item_id,
 				@odat_diagnosis.diagnosis_items,
                                 :id, :name, {:id => 'main_diagnosis_select'}) %></td>

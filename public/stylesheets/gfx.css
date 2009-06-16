@@ -323,6 +323,13 @@ div.fieldWithErrors {display:inline}
 }
 
 /* ODAT 2.0 */
+.requiredField strong sup {
+	font-size: 95%;
+	color: #933;
+}
+.requiredField {
+	border-bottom: solid 1px #933;
+}
 .note {
 	background-color: #f9f9d5;
 	border: 1px solid #e0e0a0;

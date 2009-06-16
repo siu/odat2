@@ -1,6 +1,8 @@
 <table>
   <tr>
-    <th><%= f.label(:origin_source, _('Fuente de derivación')) %></th>
+	  <th><%= f.label(:origin_source, 
+			  _('Fuente de derivación'),
+			  :required => true) %></th>
     <td>
       <%= f.collection_select(:origin_source_id, 
 			    @origin_sources, 
@@ -10,7 +12,9 @@
   </tr>
 
   <tr>
-    <th><%= f.label(:origin_cause_id, _('Motivo de derivación')) %></th>
+	  <th><%= f.label(:origin_cause_id, 
+			  _('Motivo de derivación'),
+			  :required => true) %></th>
     <td>
       <%= f.collection_select(:origin_cause_id, 
 			      @origin_causes, 
@@ -21,7 +25,8 @@
 
   <tr>
     <th><%= f.label(:consultation_cause_id, 
-		    _('Motivo de consulta expresado por los padres')) %></th>
+		    _('Motivo de consulta expresado por los padres'),
+		    :required => true) %></th>
     <td>
       <%= f.collection_select(:consultation_cause_id, 
 			      @consultation_causes, 

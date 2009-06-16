@@ -1,6 +1,8 @@
 <% form_for([@medical_record, @individual_report]) do |f| -%>
-    <p class="note"><%= _('Selecciona la información que será mostrada en el informe.') %></p>
 <%= f.error_messages %>
+
+<p class="note"><%= _('Selecciona la información que será mostrada en el informe.') %></p>
+  <%= show_required_fields_explanation %>
 
 <fieldset>
   <legend><%= _('Datos del expediente') %></legend>

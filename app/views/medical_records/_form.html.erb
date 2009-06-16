@@ -1,6 +1,8 @@
 <% form_for(@medical_record) do |f| %>
   <%= f.error_messages %>
 
+  <%= show_required_fields_explanation %>
+
   <fieldset>
     <legend><%= _('Expediente') %></legend>
     <table>
