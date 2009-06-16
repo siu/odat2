@@ -9,7 +9,7 @@
 <% if @individual_report.show_personal_data? -%>
   <div class="subseccion">
     <h3><%= _('Datos personales') %></h3>
-    <table class="datosh">
+    <table class="hdata">
       <% if @individual_report.show_full_name? -%>
         <tr>
           <th><%= _('Nombre') %></th>
@@ -63,7 +63,7 @@
   <% if @individual_report.show_siblings_data? -%>
     <div class="subseccion">
       <h4><%= _('Hermanos') %></h4>
-      <table class="datosh">
+      <table class="hdata">
         <%= render :partial => 'medical_records/show_siblings_data' %>
       </table>
     </div>
@@ -72,7 +72,7 @@
   <% if @individual_report.show_father_data? -%>
     <div class="subseccion">
       <h4><%= _('Padre') %></h4>
-      <table class="datosh">
+      <table class="hdata">
         <%= render :partial => 'medical_records/show_father_data' %>
       </table>
     </div>
@@ -81,7 +81,7 @@
   <% if @individual_report.show_mother_data? -%>	
     <div class="subseccion">
       <h4><%= _('Madre') %></h4>
-      <table class="datosh">
+      <table class="hdata">
         <%= render :partial => 'medical_records/show_mother_data' %>
       </table>
     </div>
@@ -90,7 +90,7 @@
   <% if @individual_report.show_phone_numbers? -%>
     <div class="subseccion">
       <h4><%= _('Teléfonos') %></h4>
-      <table class="datosh">
+      <table class="hdata">
         <%= render :partial => 'medical_records/show_phones_data' %>
       </table>
     </div>
@@ -99,7 +99,7 @@
   <% if @individual_report.show_coordination_services? -%>
     <div class="subseccion">
       <h4><%= _('Coordinación') %></h4>
-      <table class="datosh">
+      <table class="hdata">
         <%= render :partial => 'medical_records/show_coordination_data' %>
       </table>
     </div>
@@ -112,7 +112,7 @@
 	@odat_diagnosis.created_at -%>
     <div class="subseccion">
       <h4><%= _('Fecha de creación del diagnóstico') %></h4>
-      <table class="datosh">
+      <table class="hdata">
         <tr>
           <th><%= _('Fecha de creación') %></th>
           <td><%= l(@odat_diagnosis.created_at, :format => :short) %></td>

@@ -1,4 +1,4 @@
-<% page_title _('Historial de %{name}') % {:name => @medical_record.full_name } %>
+<% page_title _('Diagnósticos de %{name}') % {:name => @medical_record.full_name } %>
 
 <p><%= link_to(_('Nuevo diagnóstico'), 
   new_medical_record_odat_diagnosis_path(@medical_record), {:class => 'btn new-btn'}) %></p>
@@ -7,7 +7,7 @@
 <table class="vdata">
   <thead>
     <tr>
-      <th><%= _('Fecha') %></th>
+      <th width="25%"><%= _('Fecha') %></th>
       <th><%= _('Diagnóstico') %></th>
       <th><%= _('Eliminar') %></th>
     </tr>

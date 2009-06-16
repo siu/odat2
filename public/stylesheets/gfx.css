@@ -141,8 +141,6 @@ p.edit {
 	padding: 0;
 	margin-right: .5em;
 }
-
-
 img {
 	border: 0;
 }
@@ -204,7 +202,6 @@ p.clear {
 	padding: 0;
 }
 table th {
-	width: 25%;
 	text-align: left;
 	padding: .2em .4em;
 	background-color: #efefef;
@@ -215,36 +212,6 @@ th small {
 	font-weight: normal
 }
 table td {
-	background-color: #efefef;
-	color: #333;
-	padding: .2em .4em;
-}
-table.datosv {
-	width: 100%;
-}
-table.datosv th {
-	text-align: left;
-	padding: .2em .4em;
-	background-color: #efefef;
-	vertical-align: top;
-	color: #933;
-}
-table.datosv td {
-	background-color: #efefef;
-	color: #333;
-	padding: .2em .4em;
-}
-table.datosh {
-	width: 100%;
-}
-table.datosh th {
-	width: 24%;
-	text-align: left;
-	padding: .2em .4em;
-	background-color: #efefef;
-	vertical-align: top;
-}
-table.datosh td {
 	background-color: #efefef;
 	color: #333;
 	padding: .2em .4em;
@@ -294,38 +261,18 @@ div.fieldWithErrors {display:inline}
         float: left;
 	left: 10px;
 }
-#lateral ul {
-	padding: 0 .6em 0;
-	list-style: none;
-}
-#lateral ul li ul {
-	padding: 0 0 0 0.5em;
-	list-style: none;
-}
-#lateral ul{margin: 0 0 .5em}
-#cuerpo li {
-	/*line-height: 1.7em;*/
-	margin: .4em 0;
-}
-#lateral p{padding: 0 .6em}
-#lateral h2 {
-	color: #000;
-	font-size: 1.2em;
-	background-color: #e5ecf9;
-	border: 1px solid #c0c0e0;
-	border-bottom: 1px solid #a0a0c0;
-	padding: .2em;
-	-moz-border-radius: 3px;
-}
-#cuerpo #central p {
-	margin-bottom: 1.5em;
-	line-height: 1.7em;
-}
 
 /* ODAT 2.0 */
+.vdata, .hdata, fieldset table {
+	width: 100%;
+}
+fieldset table th, .hdata th {
+	width: 22%;
+}
 .requiredField strong sup {
 	font-size: 95%;
 	color: #933;
+	vertical-align: top;
 }
 .requiredField {
 	border-bottom: solid 1px #933;
@@ -360,7 +307,6 @@ a.new-btn {
 	border-bottom: 1px solid #e0e0a0;
 }
 #medical-record-menu h3, #medical-record-menu p, #medical-record-menu ul {
-
   margin:0;
 }
 #medical-record-menu h3 a {
