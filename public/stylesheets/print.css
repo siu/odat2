@@ -3,48 +3,45 @@ body {
 	font-family: Sans, arial;
 	font-size: 11pt;
 }
-#cabecera #titulo {
-}
-#cabecera #menu-cabecera {
+#navbar, #usrbar, #sidebar {
 	display: none;
 }
-#cabecera #usuario {display:none}
-
-#cuerpo {
+#main{
 	width: 100%;
 }
 
-#cuerpo #lateral {
-	display: none;
-}
-#cuerpo #contenido {
+#main {
 	width: 100%;
 	border-top: 2px solid #ddd;
 	float: none;
 }
-#pie {
+#footer {
 	border-top: 2px solid #ddd;
 	background: none;
 	display: none;
 }
+#logo-gat {display:none}
 th, td {
     padding: 3pt;
-	border: 1px solid #666;
+        border: 1px solid #666;
 }
-table.datosv, table.datosh {
+table.vdata, table.hdata {
 	width: 100%;
 }
-table.datosv th {
+table.vdata th {
 	width: auto;
 }
 
-table.datosh th {
+table.hdata th {
 	width: 4cm;
 	text-align: left;
 	vertical-align: top;
 }
-table.datosh td {
+table.hdata td {
 	width: auto;
+}
+#context-menu {
+  display: none;
 }
 .no-print {
     display: none;

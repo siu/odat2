@@ -21,14 +21,17 @@ line-height:1.8182em;
 margin-bottom: 0.9091em;
 }
 input, textarea, select {
-    padding: .1em;
     border: 1px solid #c0c0c0;
+  margin-left: 0;
+}
+input, textarea {
+    padding: .2em .3em;
+}
+option {
+	padding: .3em .2em;
 }
 input:focus, textarea:focus, select:focus {
   border-color: #303030;
-}
-input {
-  margin-left: 0;
 }
 #page-wrapper {
     font-size: 1em;
@@ -82,6 +85,14 @@ input {
 #sidebar ul li li {
     font-weight: normal;
     list-style-type: circle;
+}
+#context-menu {
+	float: right;
+	margin-top: -10px;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-top: 0px;
 }
 label.error, span.error { 
     color: #C00; 
@@ -155,15 +166,25 @@ a.a_alerta:hover {
 	color: #f22;
 }
 input.dest-action {
-	padding: 0 .1em;
+	padding: 0 .3em;
 	-moz-border-radius: 3px;
+	color:#444;
+	border-color: #933;
 }
 input.dest-action:hover, input.dest-action:focus {
 	border-color: #933;
-	color: #000;
+	color: #933;
+	background-color: #e33;
+	color: #fff;
 }
 form.button-to, form.button-to div {
   display: inline;
+}
+form.inline, form.inline div{
+  display: inline;
+}
+form.inline option {
+	padding: 0 .2em;
 }
 fieldset {
 	border: 1px solid #c0c0e0;
@@ -184,10 +205,10 @@ h4, h5, h6 {
 h2 small {
 	font-size: 85%;
 }
-input, select, textarea {
+input, select, textarea, .btn {
 	border: 1px solid #999;
 }
-input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:focus {
+input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:focus, .btn:hover, .btn:focus {
 	border: 1px solid #444;
 }
 label:hover {
@@ -215,9 +236,6 @@ table td {
 	background-color: #efefef;
 	color: #333;
 	padding: .2em .4em;
-}
-textarea, input, option {
-	padding: .3em .2em;
 }
 fieldset table {
 	border-spacing: 0 2px;
@@ -263,11 +281,22 @@ div.fieldWithErrors {display:inline}
 }
 
 /* ODAT 2.0 */
+#context-menu p {
+	margin-bottom: 0;
+}
 .vdata, .hdata, fieldset table {
 	width: 100%;
 }
 fieldset table th, .hdata th {
 	width: 22%;
+}
+a.btn {
+  background-color: #eee;
+  padding: 0.3em 0.2em;
+  color: #303030;
+}
+a.btn:hover, a.btn:focus {
+  background-color: #F2F4F7;
 }
 .requiredField strong sup {
 	font-size: 95%;
@@ -283,18 +312,11 @@ fieldset table th, .hdata th {
         padding: 10px;
 	margin-bottom: 20px;
 }
-a.btn {
-  border: 1px solid #999999;
-  background-color: #eee;
-  padding: 0.3em 0.2em;
-  color: #303030;
-}
-a.new-btn {
-}
 #medical-record-menu {
   background-color: #fff;
   border: 1px solid #c0c0e0;
   padding: 2px;
+  overflow: hidden;
 }
 #medical-record-menu h3 {
   font-size: 1.21em;
@@ -331,3 +353,28 @@ a.new-btn {
 #medical-record-menu ul li {
         list-style-type: disc;
       }
+#medical-record-menu ul li.destroy {
+background-color:#EEEEEE;
+border-top:1px solid #C0C0E0;
+list-style-type:none;
+margin:5px -2px -7px -22px;
+padding:10px 20px;
+}
+#context-menu * {
+	vertical-align:bottom;
+}
+.pdf-file {
+	background-image:url(/images/icons/pdf.gif);
+}
+.printer {
+	background-image:url(/images/icons/printer.png);
+}
+a.icon:not([classname~="icon"]), span.icon:not([classname~="icon"]) {
+	display:inline-block;
+	vertical-align:bottom;
+}
+.link-list .icon, .icon {
+	background-position:left center;
+	background-repeat:no-repeat;
+	padding-left:20px;
+}

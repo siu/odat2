@@ -19,7 +19,9 @@
 	  </div>
 
 	  <div id="main">
-	    <h2><%= yield :page_title || _('ODAT') %></h2>
+            <% unless @content_for_page_title.nil? -%>
+              <h2><%= yield(:page_title) %></h2>
+            <% end -%>
 	    <%= display_flash %>
 	    <%= yield %>
 	  </div>
