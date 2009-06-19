@@ -4,12 +4,14 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Position</th>
   </tr>
 
 <% for origin_cause in @origin_causes %>
   <tr>
     <td><%=h origin_cause.name %></td>
     <td><%=h origin_cause.description %></td>
+    <td><%=h origin_cause.position %></td>
     <td><%= link_to 'Show', [:admin, origin_cause] %></td>
     <td><%= link_to 'Edit', edit_admin_origin_cause_path(origin_cause) %></td>
     <td><%= link_to 'Destroy', [:admin, origin_cause], :confirm => 'Are you sure?', :method => :delete %></td>

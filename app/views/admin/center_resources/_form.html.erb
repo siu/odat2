@@ -1,0 +1,23 @@
+<% form_for([:admin, @center_resource]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </p>
+  <p>
+  <% if @center_resource.new_record? -%>
+    <%= f.submit 'Create' %>
+  <% else -%>
+    <%= f.submit 'Update' %>
+  <% end -%>
+  </p>
+<% end %>

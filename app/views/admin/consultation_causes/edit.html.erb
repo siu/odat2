@@ -1,20 +1,6 @@
-<h1>Editing consultation_cause</h1>
+<% page_title 'Editing consultation_cause' -%>
 
-<% form_for([:admin, @consultation_cause]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Show', [:admin, @consultation_cause] %> |
 <%= link_to 'Back', admin_consultation_causes_path %>

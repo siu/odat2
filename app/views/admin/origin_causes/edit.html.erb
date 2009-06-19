@@ -1,20 +1,6 @@
-<h1>Editing origin_cause</h1>
+<% page_title 'Editing origin_cause' -%>
 
-<% form_for([:admin, @origin_cause]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Show', [:admin, @origin_cause] %> |
 <%= link_to 'Back', admin_origin_causes_path %>

@@ -1,15 +1,17 @@
-<h1>Listing job_statuses</h1>
+<% page_title 'Listing Job Statuses' -%>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Position</th>
   </tr>
 
 <% for job_status in @job_statuses %>
   <tr>
     <td><%=h job_status.name %></td>
     <td><%=h job_status.description %></td>
+    <td><%=h job_status.position %></td>
     <td><%= link_to 'Show', [:admin, job_status] %></td>
     <td><%= link_to 'Edit', edit_admin_job_status_path(job_status) %></td>
     <td><%= link_to 'Destroy', [:admin, job_status], :confirm => 'Are you sure?', :method => :delete %></td>

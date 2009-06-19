@@ -8,6 +8,10 @@
   <%=h @job_status.description %>
 </p>
 
+<p>
+  <b>Position:</b>
+  <%=h @job_status.position %>
+</p>
 
 <%= link_to 'Edit', edit_admin_job_status_path(@job_status) %> |
 <%= link_to 'Back', admin_job_statuses_path %>

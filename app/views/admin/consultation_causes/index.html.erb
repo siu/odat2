@@ -1,15 +1,17 @@
-<h1>Listing consultation_causes</h1>
+<% page_title 'Listing consultation_causes' -%>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Position</th>
   </tr>
 
 <% for consultation_cause in @consultation_causes %>
   <tr>
     <td><%=h consultation_cause.name %></td>
     <td><%=h consultation_cause.description %></td>
+    <td><%=h consultation_cause.position %></td>
     <td><%= link_to 'Show', [:admin, consultation_cause] %></td>
     <td><%= link_to 'Edit', edit_admin_consultation_cause_path(consultation_cause) %></td>
     <td><%= link_to 'Destroy', [:admin, consultation_cause], :confirm => 'Are you sure?', :method => :delete %></td>

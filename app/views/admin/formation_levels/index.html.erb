@@ -4,12 +4,14 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Position</th>
   </tr>
 
 <% for formation_level in @formation_levels %>
   <tr>
     <td><%=h formation_level.name %></td>
     <td><%=h formation_level.description %></td>
+    <td><%=h formation_level.position %></td>
     <td><%= link_to 'Show', [:admin, formation_level] %></td>
     <td><%= link_to 'Edit', edit_admin_formation_level_path(formation_level) %></td>
     <td><%= link_to 'Destroy', [:admin, formation_level], :confirm => 'Are you sure?', :method => :delete %></td>

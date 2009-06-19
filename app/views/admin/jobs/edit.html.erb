@@ -1,20 +1,6 @@
-<h1>Editing job</h1>
+<% page_title 'Editing Job' -%>
 
-<% form_for([:admin, @job]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Show', [:admin, @job] %> |
 <%= link_to 'Back', admin_jobs_path %>

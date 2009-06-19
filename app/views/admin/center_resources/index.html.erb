@@ -12,9 +12,13 @@
     <td><%=h center_resource.name %></td>
     <td><%=h center_resource.description %></td>
     <td><%=h center_resource.position %></td>
-    <td><%= link_to 'Show', [:admin, center_resource] %></td>
-    <td><%= link_to 'Edit', edit_admin_center_resource_path(center_resource) %></td>
-    <td><%= link_to 'Destroy', [:admin, center_resource], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to(_('Ver'), [:admin, center_resource]) %></td>
+    <td><%= link_to(_('Modificar'), 
+                    edit_admin_center_resource_path(center_resource)) %></td>
+    <td><%= link_to(_('Eliminar'), 
+                    [:admin, center_resource], 
+                    :confirm => _('seguro?'), 
+                    :method => :delete) %></td>
   </tr>
 <% end %>
 </table>

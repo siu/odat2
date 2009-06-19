@@ -1,3 +1,5 @@
+<% page_title 'Origin source' -%>
+
 <p>
   <b>Name:</b>
   <%=h @origin_source.name %>
@@ -8,6 +10,10 @@
   <%=h @origin_source.description %>
 </p>
 
+<p>
+  <b>Position:</b>
+  <%=h @origin_source.position %>
+</p>
 
 <%= link_to 'Edit', edit_admin_origin_source_path(@origin_source) %> |
 <%= link_to 'Back', admin_origin_sources_path %>

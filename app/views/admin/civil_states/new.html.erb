@@ -1,19 +1,5 @@
-<h1>New civil_state</h1>
+<% page_title _('Nuevo Estado Civil') -%>
 
-<% form_for([:admin, @civil_state]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' -%>
 
 <%= link_to 'Back', admin_civil_states_path %>
