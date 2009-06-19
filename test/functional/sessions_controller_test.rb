@@ -17,6 +17,18 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+  def test_should_login_and_redirect_to_root
+    post :create, :login => 'quentin', :password => 'monkey'
+    assert session[:user_id]
+    assert_redirected_to root_path
+  end
+
+  def test_should_login_and_redirect_admin_to_admin_section
+    post :create, :login => 'admin', :password => 'monkey'
+    assert session[:user_id]
+    assert_redirected_to admin_path
+  end
+
   def test_should_fail_login_and_not_redirect
     post :create, :login => 'quentin', :password => 'bad password'
     assert_nil session[:user_id]

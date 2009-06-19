@@ -8,11 +8,7 @@
 	  </div>
 
 	  <div id="navbar">
-            <% if !current_user.is_admin? -%>
-	      <%= render :partial => 'layouts/user_navbar' %>
-            <% else -%>
-	      <%= render :partial => 'layouts/admin_navbar' %>
-            <% end -%>
+	    <%= render :partial => 'layouts/admin_navbar' %>
 	  </div>
 <% end -%>
 
