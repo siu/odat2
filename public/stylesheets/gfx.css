@@ -354,11 +354,11 @@ a.btn:hover, a.btn:focus {
         list-style-type: disc;
       }
 #medical-record-menu ul li.destroy {
-background-color:#EEEEEE;
-border-top:1px solid #C0C0E0;
-list-style-type:none;
-margin:5px -2px -7px -22px;
-padding:10px 20px;
+        background-color:#EEEEEE;
+        border-top:1px solid #C0C0E0;
+        list-style-type:none;
+        margin:5px -2px -7px -22px;
+        padding:10px 20px;
 }
 #context-menu * {
 	vertical-align:bottom;
@@ -367,7 +367,7 @@ padding:10px 20px;
 #context-menu a.btn {
   background-color: #eee;
   padding: 0.2em 0.2em;
-  border-bottom:solid 1px #404080;
+  border-bottom: solid 1px #404080;
   color: #404080;
 }
 #context-menu a.btn:hover, #context-menu a.btn:focus {
