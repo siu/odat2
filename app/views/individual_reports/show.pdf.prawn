@@ -1,6 +1,12 @@
 require 'prawn'
 require 'prawn/format'
 
+view = @individual_report.configurable_view
+@font_size = view.font_size ? view.font_size*12/14 : 12
+@border_style = view.table_grid? ? :grid : :underline_header
+pdf.font_size = @font_size
+margin_top = 100
+
 def h1(pdf, text)
   pdf.text mytag(:h1, text)
   pdf.move_down 40-16
@@ -24,22 +30,26 @@ end
 def print_table(pdf, data)
   return if data.empty?
   pdf.table data,
-    :border_style => :grid,
+    :border_style => @border_style,
     :column_widths => { 0 => 200},
-    :align => :left
+    :align => :left,
+    :font_size => @font_size
   pdf.move_down 20
 end
 
-pdf.tags :h1 => {:font_size => 16, :font_weight => :bold}
-pdf.tags :h2 => {:font_size => 14, :font_weight => :bold}
-pdf.tags :h3 => {:font_size => 13, :font_weight => :bold}
+pdf.tags :h1 => {:font_size => @font_size * 1.3333, :font_weight => :bold}
+pdf.tags :h2 => {:font_size => @font_size * 1.1666, :font_weight => :bold}
+pdf.tags :h3 => {:font_size => @font_size * 1.0833, :font_weight => :bold}
 pdf.tags :indent => {:width => '2em'}
 
-pdf.tags :small => {:font_size => 10}
+pdf.tags :small => {:font_size => @font_size * 0.8333}
 pdf.tags :br => {}
 pdf.tags :p => {}
 
 pdf.font "Helvetica" 
+
+# Begin document
+pdf.move_down margin_top
 
 h1(pdf, _('Informe para %{full_name}') % {:full_name => @individual_report.medical_record.full_name})
 

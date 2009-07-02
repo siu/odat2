@@ -5,6 +5,7 @@
 			  :required => true) %></th>
     <td><%= f.collection_select(:main_diagnosis_item_id,
 				@odat_diagnosis.diagnosis_items,
-                                :id, :name, {:id => 'main_diagnosis_select'}) %></td>
+                                :id, :name, {:id => 'main_diagnosis_select'},
+                                :style => 'width:100%') %></td>
   </tr>
 </table>

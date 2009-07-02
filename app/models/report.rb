@@ -5,6 +5,8 @@ class Report < ActiveRecord::Base
 
   belongs_to :configurable_view, :dependent => :destroy
 
+  accepts_nested_attributes_for :configurable_view
+
   def initialize(args)
     super(args)
     self.build_configurable_view

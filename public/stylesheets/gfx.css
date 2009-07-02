@@ -363,6 +363,16 @@ padding:10px 20px;
 #context-menu * {
 	vertical-align:bottom;
 }
+
+#context-menu a.btn {
+  background-color: #eee;
+  padding: 0.2em 0.2em;
+  border-bottom:solid 1px #404080;
+  color: #404080;
+}
+#context-menu a.btn:hover, #context-menu a.btn:focus {
+  background-color: #fff;
+}
 .pdf-file {
 	background-image:url(/images/icons/pdf.gif);
 }

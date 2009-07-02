@@ -11,6 +11,8 @@ one:
   results_html: MyText
   orientation: MyText
   orientation_html: MyText
+  configurable_view: one
+
 two:
   medical_record: pedrito
   odat_diagnosis: two
@@ -43,4 +45,5 @@ two:
   show_detailed_diagnosis: true
   show_coordination_services: true
   show_main_diagnosis: true
+  configurable_view: two
 

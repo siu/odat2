@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090615143835) do
+ActiveRecord::Schema.define(:version => 20090624232830) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20090615143835) do
   create_table "configurable_views", :force => true do |t|
     t.integer "font_size"
     t.string  "font_family", :limit => 150
+    t.boolean "table_grid"
   end
 
   create_table "consultation_causes", :force => true do |t|

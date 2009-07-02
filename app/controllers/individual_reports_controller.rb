@@ -78,6 +78,7 @@ class IndividualReportsController < ApplicationController
               :id => @individual_report.id)) 
         }
         format.xml  { head :ok }
+        format.js
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @individual_report.errors, :status => :unprocessable_entity }
