@@ -42,6 +42,23 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     assert odat_diagnosis.errors.invalid?(:main_diagnosis_item_id)
   end
 
+  test "When removed all the associated individual reports are removed too" do
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+    odat_diagnosis = create_odat_diagnosis
+    report = odat_diagnosis.individual_reports.build
+    IndividualReport.any_instance.stubs(:valid?).returns(:true)
+    assert report.save
+
+    odat_diagnosis.destroy
+
+    begin
+      report.reload
+      assert false
+    rescue
+      assert true
+    end
+  end
+
 protected
 
   def create_odat_diagnosis(opts = {})

@@ -1,8 +1,10 @@
 class IndividualReport < Report
   set_table_name 'individual_reports'
 
-  belongs_to :medical_record
+  # Both needed here because it can be associated to a medica_record and
+  # not to an odat_diagnosis
   belongs_to :odat_diagnosis
+  belongs_to :medical_record
 
   acts_as_html_text
 

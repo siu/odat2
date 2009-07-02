@@ -257,4 +257,21 @@ public
     assert odat_diagnosis.valid?
     assert !odat_diagnosis.new_record?
   end
+
+  test "should remove all associated individual reports if deleted" do
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+    odat_diagnosis = create_odat_diagnosis
+    report = odat_diagnosis.individual_reports.build
+    IndividualReport.any_instance.stubs(:valid?).returns(:true)
+    assert report.save
+
+    odat_diagnosis.destroy
+
+    begin
+      report.reload
+      assert false
+    rescue
+      assert true
+    end
+  end
 end

@@ -18,6 +18,8 @@ class OdatDiagnosis < ActiveRecord::Base
 
   has_and_belongs_to_many :center_resources
 
+  has_many :individual_reports, :dependent => :destroy
+
   # Validaciones
   validates_presence_of :medical_record_id,
     :message => N_('El diagnostico debe estar asociado a un expediente')

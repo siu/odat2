@@ -8,7 +8,7 @@ class MedicalRecord < ActiveRecord::Base
     :order => 'created_at DESC'
 
   has_many :individual_reports,
-    :dependent => :destroy, 
+    :dependent => :delete_all, 
     :order => 'created_at DESC'
 
   # Related to father
