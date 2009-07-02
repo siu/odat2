@@ -1,4 +1,6 @@
 class OdatDiagnosis < ActiveRecord::Base
+  acts_as_html_text
+
   belongs_to :medical_record
 
   belongs_to 	:origin_source, # Fuente de derivacion

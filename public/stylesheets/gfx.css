@@ -388,3 +388,10 @@ a.icon:not([classname~="icon"]), span.icon:not([classname~="icon"]) {
 	background-repeat:no-repeat;
 	padding-left:20px;
 }
+#help-menu {border-bottom: 1px solid #ddd}
+#help-menu {
+	padding: 1.8%;
+	border-top: 1px solid #ddd;
+	background-color: #eee;
+}
+

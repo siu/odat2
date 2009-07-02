@@ -1,0 +1,24 @@
+<% page_title _('Ayuda para la clasificación diagnóstica') -%>
+
+<% content_for :menu do -%>
+  asdfsafdd
+<% end -%>
+
+<h2><%= @diagnosis_item.name %></h2>
+
+<%= @diagnosis_item.description_html %>
+
+<% if @diagnosis_item.children.any? -%>
+  <ul>
+    <% for item in @diagnosis_item.children do -%>
+      <% if(!item.children.any?) -%>
+        <li><strong><%= item.name %></strong><br />
+        <%= item.description_html %></li>
+      <% else -%>
+        <li><strong><%= link_to item.name, '/help/diagnosis_items/%d' % item.id %></strong></li>
+      <% end -%>
+    <% end -%>
+  </ul>
+<% end -%>
+
+

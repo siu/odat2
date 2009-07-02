@@ -1,0 +1,13 @@
+<% page_title _('Ayuda sobre los recursos de centro') -%>
+
+<% content_for :menu do -%>
+<% end -%>
+
+<ul>
+<% for resource in @center_resources -%>
+  <li>
+    <strong><%= resource.name %></strong><br />
+    <%= resource.description_html %>
+  </li>
+<% end -%>
+</ul>

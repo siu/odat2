@@ -259,19 +259,22 @@ public
   end
 
   test "should remove all associated individual reports if deleted" do
-    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
-    odat_diagnosis = create_odat_diagnosis
-    report = odat_diagnosis.individual_reports.build
-    IndividualReport.any_instance.stubs(:valid?).returns(:true)
-    assert report.save
+    medical_record = medical_records(:pedrito)
+    report = medical_record.individual_reports.first
+    medical_record.destroy
 
-    odat_diagnosis.destroy
-
-    begin
+    assert_raises ActiveRecord::RecordNotFound do
       report.reload
-      assert false
-    rescue
-      assert true
+    end
+  end
+
+  test "should remove all associated odat diagnoses if deleted" do
+    medical_record = medical_records(:pedrito)
+    odat_diagnosis = medical_record.odat_diagnoses.first
+    medical_record.destroy
+
+    assert_raises ActiveRecord::RecordNotFound do
+      odat_diagnosis.reload
     end
   end
 end

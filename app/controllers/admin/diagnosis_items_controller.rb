@@ -23,6 +23,17 @@ class Admin::DiagnosisItemsController < Admin::AdminSectionController
     end
   end
 
+  # GET /diagnosis_items/1
+  # GET /diagnosis_items/1.xml
+  def help
+    @diagnosis_item = DiagnosisItem.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :layout => 'help/help_layout' }
+      format.xml  { render :xml => @diagnosis_item }
+    end
+  end
+
   # GET /diagnosis_items/new
   # GET /diagnosis_items/new.xml
   def new

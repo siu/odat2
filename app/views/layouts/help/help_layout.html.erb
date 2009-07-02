@@ -1,0 +1,25 @@
+<% content_for :header do -%>
+	  <div id="header">
+            <% unless @content_for_page_title.nil? -%>
+              <h2><%= yield(:page_title) %></h2>
+            <% end -%>
+	  </div>
+<% end -%>
+
+<% content_for :content do -%>
+	  <div id="help-menu">
+	    <%= yield :menu %>
+	    <%= yield :sidebar %>
+	  </div>
+
+	  <div id="main">
+	    <%= display_flash %>
+	    <%= yield %>
+	  </div>
+<% end -%>
+
+<% content_for :footer do -%>
+  <a href="javascript:window.close()"><%= _('Cerrar ventana') %></a>
+<% end -%>
+
+<%= render :file => 'layouts/default' %>

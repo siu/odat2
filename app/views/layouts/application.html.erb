@@ -31,4 +31,8 @@
 	  </div>
 <% end -%>
 
+<% content_for :footer do -%>
+	<%= render :partial => 'layouts/footer' %>
+<% end -%>
+
 <%= render :file => 'layouts/default' %>
