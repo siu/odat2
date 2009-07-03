@@ -1,0 +1,10 @@
+<% page_title _('Ayuda sobre puestos de trabajo') %>
+
+<ul>
+  <% for job in @jobs -%>
+    <li id="anchor-<%= job.id %>">
+      <strong><%= h job.name %></strong>
+      <%= job.description_html %>
+    </li>
+  <% end -%>
+</ul>

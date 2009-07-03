@@ -1,0 +1,2 @@
+module Help::OriginCausesHelper
+end

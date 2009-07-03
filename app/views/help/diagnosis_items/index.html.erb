@@ -1,0 +1,17 @@
+<% page_title _('Ayuda para la clasificación diagnóstica') -%>
+
+<% content_for :menu do -%>
+  <%= link_to _('Clasificación diagnóstica'), '/help/diagnosis_items' %>
+<% end -%>
+
+<h2><%= _('Clasificación diagnóstica') %></h2>
+
+<% if @diagnosis_items.any? -%>
+  <ul>
+    <% for item in @diagnosis_items do -%>
+        <li><strong><%= link_to item.name, '/help/diagnosis_items/%d' % item.id %></strong></li>
+    <% end -%>
+  </ul>
+<% end -%>
+
+

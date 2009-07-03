@@ -35,14 +35,9 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'pages', :action => 'show'
 
   # Routes for help
-  map.with_options :path_prefix => 'help' do |help|
-    help.connect 'diagnosis_items', 
-      :controller => 'admin/diagnosis_items', 
-      :action => 'help_index'
-    help.connect 'diagnosis_items/:id', 
-      :controller => 'admin/diagnosis_items', 
-      :action => 'help',
-      :requirements => { :id => /\d+/ }
+  map.namespace :help do |help|
+    help.resources :diagnosis_items
+    help.resources :jobs
   end
 
   # Admin dashboard

@@ -57,8 +57,8 @@
     <tr>
       <th><%= f.label(:father_job_id, _('Ocupación')) %> 
 	<small>(<%= link_to(_('ayuda'), 
-			    { :controller => 'trabajo', 
-			      :action => :ayuda }, 
+			    { :controller => '/help/jobs', 
+			      :action => :index }, 
 			    :target => '_blank', 
 			    :onclick => 'link_popup(this); return false') %>)</small>
       </th>
@@ -142,8 +142,8 @@
     <tr>
       <th><%= f.label(:mother_job_id, _('Ocupación')) %> 
 	<small>(<%= link_to(_('ayuda'), 
-			    { :controller => 'trabajo', 
-			      :action => :ayuda }, 
+			    { :controller => '/help/jobs', 
+			      :action => :index }, 
 			    :target => '_blank', 
 			    :onclick => 'link_popup(this); return false') %>)</small>
       </th>
