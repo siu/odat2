@@ -3,8 +3,7 @@ class Admin::OriginCausesController < Admin::AdminSectionController
   # GET /origin_causes.xml
   def index
     @origin_causes = OriginCause.paginate(
-      :page => params[:page], 
-      :order => 'name ASC')
+      :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

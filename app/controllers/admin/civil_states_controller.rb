@@ -2,8 +2,7 @@ class Admin::CivilStatesController < Admin::AdminSectionController
   # GET /civil_states
   # GET /civil_states.xml
   def index
-    @civil_states = CivilState.paginate(:page => params[:page], 
-					:order => 'name ASC')
+    @civil_states = CivilState.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

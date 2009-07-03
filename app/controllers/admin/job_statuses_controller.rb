@@ -3,8 +3,7 @@ class Admin::JobStatusesController < Admin::AdminSectionController
   # GET /job_statuses.xml
   def index
     @job_statuses = JobStatus.paginate(
-      :page => params[:page], 
-      :order => 'name ASC')
+      :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
