@@ -1,7 +1,6 @@
 <table>
   <tr>
-    <th><%= _('Recursos de centro') %><br />
-      <small>(<%= link_to(_('ayuda'), '/help/center_resources', :target => '_blank', :onclick => 'link_popup(this); return false;') %>)</small></th>
+    <th><%= _('Recursos de centro') %></th>
     <td>
       <ul>
   <% for resource in CenterResource.find(:all) do -%>

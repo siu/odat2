@@ -36,13 +36,6 @@ ActionController::Routing::Routes.draw do |map|
 
   # Routes for help
   map.with_options :path_prefix => 'help' do |help|
-    help.connect 'center_resources', 
-      :controller => 'admin/center_resources', 
-      :action => 'help_index'
-    help.connect 'center_resources/:id', 
-      :controller => 'admin/center_resources', 
-      :action => 'help',
-      :requirements => { :id => /\d+/ }
     help.connect 'diagnosis_items', 
       :controller => 'admin/diagnosis_items', 
       :action => 'help_index'
