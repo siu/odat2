@@ -1,7 +1,7 @@
 <% page_title _('Ayuda para la clasificación diagnóstica') -%>
 
 <% content_for :menu do -%>
-  <%= link_to _('Clasificación diagnóstica'), '/help/diagnosis_items' %> &rarr; <%= @diagnosis_item.self_and_ancestors.collect{|e| link_to(e.name, '/help/diagnosis_items/%d' % e.id)}.join(' &rarr; ') %>
+  <%= link_to _('Clasificación diagnóstica'), '/help/diagnosis_items' %> &rarr; <%= @diagnosis_item.self_and_ancestors.collect{|e| link_to(e.name, "/help/diagnosis_items/#{e.id}")}.join(' &rarr; ') %>
 <% end -%>
 
 <h2><%= @diagnosis_item.name %></h2>
@@ -15,10 +15,9 @@
         <li><strong><%= item.name %></strong><br />
         <%= item.description_html %></li>
       <% else -%>
-        <li><strong><%= link_to item.name, '/help/diagnosis_items/%d' % item.id %></strong></li>
+	<li><strong><%= link_to item.name, "/help/diagnosis_items/#{item.id}" %></strong></li>
       <% end -%>
     <% end -%>
   </ul>
 <% end -%>
-
 
