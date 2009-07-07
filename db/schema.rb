@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090606105635) do
+ActiveRecord::Schema.define(:version => 20090707085358) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description_html"
   end
 
   create_table "center_resources_odat_diagnoses", :id => false, :force => true do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "comparative_report_field_template_assignments", :force => true do |t|
@@ -49,9 +51,41 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "updated_at"
   end
 
+  create_table "comparative_report_template_field_assignments", :force => true do |t|
+    t.integer  "position"
+    t.string   "name"
+    t.string   "group"
+    t.integer  "comparative_report_template_id"
+    t.integer  "report_field_template_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comparative_report_templates", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "view_template"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comparative_reports", :force => true do |t|
+    t.boolean  "show_signature",                                :default => true
+    t.string   "signature",                      :limit => 150
+    t.boolean  "show_signed_on",                                :default => true
+    t.datetime "signed_on"
+    t.integer  "configurable_view_id"
+    t.integer  "center_id"
+    t.integer  "comparative_report_template_id"
+    t.string   "type",                                          :default => "ComparativeReport", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "configurable_views", :force => true do |t|
     t.integer "font_size"
     t.string  "font_family", :limit => 150
+    t.boolean "table_grid"
   end
 
   create_table "consultation_causes", :force => true do |t|
@@ -60,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "diagnosis_items", :force => true do |t|
@@ -85,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "individual_reports", :force => true do |t|
@@ -138,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "jobs", :force => true do |t|
@@ -146,6 +183,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "medical_records", :force => true do |t|
@@ -188,6 +226,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "updated_at"
     t.boolean  "multiple_birth",                          :default => false, :null => false
     t.integer  "province_id"
+    t.integer  "position_in_siblings"
   end
 
   create_table "odat_diagnoses", :force => true do |t|
@@ -200,6 +239,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description_html"
   end
 
   create_table "origin_causes", :force => true do |t|
@@ -208,6 +248,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "origin_sources", :force => true do |t|
@@ -216,6 +257,7 @@ ActiveRecord::Schema.define(:version => 20090606105635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.text     "description_html"
   end
 
   create_table "pages", :force => true do |t|

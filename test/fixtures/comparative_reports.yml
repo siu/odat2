@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  signature: MyString
+  signed_on: 2009-02-15 20:45:37
+  center: demo
+  comparative_report_template: complex
+
+two:
+  signature: MyString
+  signed_on: 2009-02-15 20:45:37
+  center: demo
+  comparative_report_template: complex

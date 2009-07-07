@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ComparativeReportsControllerTest < ActionController::TestCase
-  alias :comparative_reports :reports
   test "should get index" do
     login_as_user
     get :index

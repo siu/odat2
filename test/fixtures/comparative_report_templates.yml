@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  title: MyString
+  view_template: MyText
+
+two:
+  name: MyString
+  title: MyString
+  view_template: MyText
+
+complex:
+  name: Complex thing
+  title: Complex report
+  view_template: o.title

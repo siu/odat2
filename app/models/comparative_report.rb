@@ -1,4 +1,6 @@
 class ComparativeReport < Report
+  set_table_name "comparative_reports"
+
   has_many :comparative_report_field_template_assignments
   has_many :report_field_templates, 
     :through => :comparative_report_field_template_assignments
@@ -6,18 +8,8 @@ class ComparativeReport < Report
   has_many :item_report_associations, :autosave => true, :validate => false
   has_many :items, :through => :item_report_associations, :source_type => 'OdatDiagnosis', :validate => false
 
-#  def items
-#    @items ||= item_report_associations.collect { |i| i.item }
-#  end
-# 
-#  def items=(items)
-#    @items = nil
-#    self.item_report_associations = items.collect do |i| 
-#      ira = ItemReportAssociation.new_for(self,i)
-#      ira.save
-#      ira
-#    end
-#  end
+  belongs_to :comparative_report_template
+  belongs_to :center
 
   def results
     @results ||= compute_results()
