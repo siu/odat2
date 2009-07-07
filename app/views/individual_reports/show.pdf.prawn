@@ -78,7 +78,7 @@ if @individual_report.show_personal_data?
              h(@medical_record.birth_position)]
   end
   if @individual_report.show_address?
-    data << [_('Direccion'), h(@medical_record.address)]
+    data << [_('Dirección'), h(@medical_record.address)]
   end
 
   print_table(pdf, data)
