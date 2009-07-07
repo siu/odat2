@@ -1,0 +1,73 @@
+<p>
+  <b>Show signature:</b>
+  <%=h @comparative_report.show_signature %>
+</p>
+
+<p>
+  <b>Signature:</b>
+  <%=h @comparative_report.signature %>
+</p>
+
+<p>
+  <b>Show signed on:</b>
+  <%=h @comparative_report.show_signed_on %>
+</p>
+
+<p>
+  <b>Signed on:</b>
+  <%=h @comparative_report.signed_on %>
+</p>
+
+<p>
+  <b>Configurable view:</b>
+  <%=h @comparative_report.configurable_view_id %>
+</p>
+
+<h3>Items</h3>
+<ul>
+  <% for item in @comparative_report.items do -%>
+    <li><%= h item.inspect %></li>
+  <% end %>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+  <% for function in @comparative_report.report_field_templates do -%>
+    <li><%= h function.name %></li>
+  <% end %>
+</ul>
+
+<p>
+  <b>Results</b>
+  <% for results in @comparative_report.results -%>
+    <% case results[:render_method] 
+         when :graph.to_s then -%>
+           <p>graph</p>
+      <% when :matrix.to_s then -%>
+        <table>
+          <% if results[:render_options][:headers] -%>
+          <thead>
+            <tr>
+            <% for header in results[:render_options][:headers] do -%>
+              <th><%= header %></th>
+            <% end -%>
+          </tr>
+          </thead>
+        <% end -%>
+          <% for row in results[:data] -%>
+            <tr>
+              <% for data in row -%>
+                <td><%= data %></td>
+              <% end -%>
+            </tr>
+          <% end -%>
+        </table>
+      <% else -%>
+        <p>Ni idea</p>
+    <% end -%>
+  <% end -%>
+</p>
+
+
+<%= link_to 'Edit', edit_comparative_report_path(@comparative_report) %> |
+<%= link_to 'Back', comparative_reports_path %>

@@ -1,0 +1,24 @@
+<h1>Listing report_field_templates</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Applicable on</th>
+    <th>Render method</th>
+  </tr>
+
+<% @report_field_templates.each do |report_field_template| %>
+  <tr>
+    <td><%=h report_field_template.name %></td>
+    <td><%=h report_field_template.applicable_on %></td>
+    <td><%=h report_field_template.render_method %></td>
+    <td><%= link_to 'Show', report_field_template %></td>
+    <td><%= link_to 'Edit', edit_report_field_template_path(report_field_template) %></td>
+    <td><%= link_to 'Destroy', report_field_template, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New report_field_template', new_report_field_template_path %>

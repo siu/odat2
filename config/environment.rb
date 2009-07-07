@@ -38,7 +38,9 @@ Rails::Initializer.run do |config|
   config.gem "gettext_rails"
   config.gem "prawn"
   config.gem "prawn-format", 
-    :lib => 'prawn/format'
+    :lib => "prawn/format"
+  config.gem "thoughtbot-shoulda", 
+    :lib => "shoulda/rails", :source => "http://gems.github.com"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
