@@ -69,6 +69,9 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :provinces
     admin.resources :pages
     admin.resources :report_field_templates, :name_prefix => nil
+    admin.resources :comparative_report_templates, 
+      :name_prefix => nil, 
+      :collection => {:ajax_fields => :put }
   end
 
   # Default routes, not needed at all

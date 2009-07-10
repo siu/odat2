@@ -1,0 +1,14 @@
+<% page_title _('Informes Comparativo: %{name}') % {:name => @comparative_report_template.name } -%>
+
+<p>Name: <br/>
+<%=h @comparative_report_template.name %></p>
+<p>Title: <br />
+<%=h @comparative_report_template.title %></p>
+<p>Funciones comparativas: <br />
+<%=h @comparative_report_template.report_field_templates.count %></p>
+
+<br />
+
+<p><%= link_to 'Edit', edit_comparative_report_template_path(@comparative_report_template) %></p>
+<p><%= link_to 'Destroy', @comparative_report_template, 
+   :confirm => 'Are you sure?', :method => :delete %></p>

@@ -51,9 +51,7 @@ class OdatDiagnosesController < ApplicationController
   # POST /odat_diagnoses
   # POST /odat_diagnoses.xml
   def create
-    params[:odat_diagnosis].reverse_merge!(:created_at => Time.now)
-    @odat_diagnosis = @medical_record.odat_diagnoses.build(
-      attributes = params[:odat_diagnosis])
+    @odat_diagnosis = @medical_record.odat_diagnoses.build(params[:odat_diagnosis])
 
     respond_to do |format|
       if @odat_diagnosis.save

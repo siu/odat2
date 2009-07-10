@@ -1,0 +1,114 @@
+<% form_for(@comparative_report_template, :html => {:id => 'template_form'}) do |f| -%>
+  <%= f.error_messages %>
+
+  <fieldset>
+    <legend><%= _('Plantilla de Informe Comparativo') %></legend>
+
+    <table class="hdata">
+      <tbody>
+        <tr>
+          <th><%= f.label :name %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :title %></th>
+          <td><%= f.text_field :title %></td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend><%= _('Procesamiento de datos') %></legend>
+    <table class="hdata">
+      <tbody>
+        <tr>
+          <th><%= f.label :report_field_templates %></th>
+          <td class="report-field-templates">
+            <ul id="assigned" class="fields">
+              <%= render :partial => 'report_field_templates_settings' %>
+            </ul>
+            <ul id="available" class="fields">
+              <% for field in ReportFieldTemplate.find(:all)-@comparative_report_template.report_field_templates -%>
+                <li id="field_<%= field.id %>" class="report-field-template">
+                  <strong><%= field.name %></strong><br />
+                  <%= field.name %> / <%= field.render_method %>
+                  <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett", :style => 'display:none' %>
+                </li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th><%= f.label :view_template %></th>
+          <td><%= f.text_area :view_template %></td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+
+<style type="text/css">
+  #assigned, #available { 
+    border: 1px solid #999;
+    background-color: #fff;
+    list-style-type: none; 
+    margin: 0; 
+    padding: 10px; 
+    float: left; 
+    margin-right: 10px; 
+    width: 35%;
+  }
+  #assigned li, #available li { 
+    margin: 0 5px 5px 5px; 
+    padding: 5px; 
+    font-size: 1.2em; 
+    background-color: #eee;
+  }
+  .ui-state-highlight { 
+    height: 1.5em; 
+    line-height: 1.2em; 
+    background-color: orange !important;
+  }
+</style>
+<script type="text/javascript">
+  $(function() {
+      $("#assigned").sortable({
+        connectWith: '.fields',
+        placeholder: 'ui-state-highlight',
+        update: function() {
+            $('#assigned .sett').css('display', 'inline');
+            $.post(
+              '/admin/comparative_report_templates/ajax_fields.json', 
+              '_method=put&authenticity_token='+encodeURIComponent('<%= form_authenticity_token %>')+'&'+$(this).sortable('serialize'), 
+              function(fields) {
+                $('#assigned').html('');
+                for(var x=0; x < fields.length; x++) {
+                  var field = fields[x].report_field_template;
+                  var elm = '<li id="field_'+field.id+'" class="report-field-template"> \
+                  <strong>' + field.name + '</strong><br /> \
+                  '+field.name+' / '+ field.render_method + '</li>'
+                  $('#assigned').append(elm);
+                }
+              }, 'json');
+          }
+        }).disableSelection();
+      $("#available").sortable({
+        connectWith: '.fields',
+        placeholder: 'ui-state-highlight',
+        update: function() {
+            $('#available .sett').css('display', 'none');
+          }
+        }).disableSelection();
+      });
+</script>
+
+  <p>
+    <% if @comparative_report_template.new_record? -%>
+      <%= f.submit_or_cancel(_('Nuevo'), _('Cancelar'), 
+                             comparative_report_templates_path) %>
+    <% else -%>
+      <%= f.submit_or_cancel(_('Guardar'), _('Cancelar'), 
+                             comparative_report_templates_path) %>
+    <% end -%>
+  </p>
+<% end -%>

@@ -5,7 +5,7 @@ class ComparativeReport < Report
   has_many :report_field_templates, 
     :through => :comparative_report_field_template_assignments
 
-  has_many :item_report_associations, :autosave => true, :validate => false
+  has_many :item_report_associations, :autosave => true, :validate => false, :order => 'position ASC'
   has_many :items, :through => :item_report_associations, :source_type => 'OdatDiagnosis', :validate => false
 
   belongs_to :comparative_report_template
