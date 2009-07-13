@@ -51,4 +51,5 @@ class ComparativeReportsControllerTest < ActionController::TestCase
 
     assert_redirected_to comparative_reports_path
   end
+
 end

@@ -1,9 +1,9 @@
 class ComparativeReportTemplate < ActiveRecord::Base
   has_many :comparative_report_template_field_assignments
   has_many :report_field_templates, 
-    :through => :comparative_report_template_field_assignments,
-    :autosave => true
+    :through => :comparative_report_template_field_assignments
 
+  accepts_nested_attributes_for :comparative_report_template_field_assignments, :allow_destroy => true
   has_many :comparative_reports
 
   validates_presence_of :name
@@ -16,20 +16,15 @@ class ComparativeReportTemplate < ActiveRecord::Base
   end
 
   def report_field_template_ids=(ids)
-    deleted = self.report_field_template_ids - ids
-    new = ids - self.report_field_template_ids
-
-    deleted.each do |field|
-      self.comparative_report_template_field_assignments.find_by_report_field_template_id(field).destroy
-    end
-
-    new.each do |field|
-      self.report_field_templates << ReportFieldTemplate.find(field).clone
-    end
-
+    self.write_attribute(:report_field_template_ids, ids)
     self.order_report_fields(ids)
   end
 
+  # what about adding methods to the has_many declaration?
+  # could work, sample:
+  # http://blog.katipo.co.nz/?p=25
+  # http://refactormycode.com/codes/357-recreating-a-list-with-acts_as_list
+  
 protected
 
   def order_report_fields(ordered_ids)

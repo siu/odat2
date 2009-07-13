@@ -25,18 +25,34 @@
         <tr>
           <th><%= f.label :report_field_templates %></th>
           <td class="report-field-templates">
+
             <ul id="assigned" class="fields">
-              <%= render :partial => 'report_field_templates_settings' %>
+              <% for assignment in @comparative_report_template.comparative_report_template_field_assignments -%>
+                <% f.fields_for 'comparative_report_template_field_assignments_attributes[]', assignment do |assignment_form| -%>
+                  <li id="field_<%= assignment.report_field_template.id %>" class="report-field-template">
+                  <%= assignment_form.hidden_field :report_field_template_id, :index => nil, :class => 'cb' %>
+                  <%= assignment_form.hidden_field :_delete, :value => assignment.report_field_template.id, :index => nil, :class => 'delete', :disabled => true %>
+                  <strong><%= assignment.report_field_template.name %></strong><br />
+                  <%= assignment.report_field_template.name %> / <%= assignment.report_field_template.render_method %><br />
+                  <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett" %>
+                  </li>
+                <% end -%>
+              <% end -%>
             </ul>
+
             <ul id="available" class="fields">
-              <% for field in ReportFieldTemplate.find(:all)-@comparative_report_template.report_field_templates -%>
+              <% for field in ReportFieldTemplate.find(:all)-@comparative_report_template.comparative_report_template_field_assignments.collect { |a| a.report_field_template } -%>
                 <li id="field_<%= field.id %>" class="report-field-template">
-                  <strong><%= field.name %></strong><br />
-                  <%= field.name %> / <%= field.render_method %>
-                  <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett", :style => 'display:none' %>
+                  <% f.fields_for 'comparative_report_template_field_assignments_attributes[]', field do |assignment_form| -%>
+                    <%= assignment_form.hidden_field 'report_field_template_id', :index => nil, :value => field.id, :class => 'cb', :disabled => true %>
+                    <strong><%= field.name %></strong><br />
+                    <%= field.name %> / <%= field.render_method %><br />
+                    <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett", :style => 'display:none' %>
+                  <% end -%>
                 </li>
-              <% end %>
+              <% end -%>
             </ul>
+
           </td>
         </tr>
         <tr>
@@ -77,26 +93,17 @@
         placeholder: 'ui-state-highlight',
         update: function() {
             $('#assigned .sett').css('display', 'inline');
-            $.post(
-              '/admin/comparative_report_templates/ajax_fields.json', 
-              '_method=put&authenticity_token='+encodeURIComponent('<%= form_authenticity_token %>')+'&'+$(this).sortable('serialize'), 
-              function(fields) {
-                $('#assigned').html('');
-                for(var x=0; x < fields.length; x++) {
-                  var field = fields[x].report_field_template;
-                  var elm = '<li id="field_'+field.id+'" class="report-field-template"> \
-                  <strong>' + field.name + '</strong><br /> \
-                  '+field.name+' / '+ field.render_method + '</li>'
-                  $('#assigned').append(elm);
-                }
-              }, 'json');
-          }
+            $('#assigned .cb').attr('disabled', null);
+            $('#assigned .delete').attr('disabled', 'disabled');
+	  }
         }).disableSelection();
       $("#available").sortable({
         connectWith: '.fields',
         placeholder: 'ui-state-highlight',
         update: function() {
             $('#available .sett').css('display', 'none');
+            $('#assigned .cb').attr('disabled', 'disabled');
+            $('#assigned .delete').attr('disabled', null);
           }
         }).disableSelection();
       });

@@ -34,7 +34,7 @@ class ComparativeReportTest < ActiveSupport::TestCase
 
 protected
   def create_report(opts = {})
-    report = ComparativeReport.new({
+    report = ComparativeReport.create({
       :signature => 'John Smith',
       :signed_on => Time.now
     }.merge!(opts))
