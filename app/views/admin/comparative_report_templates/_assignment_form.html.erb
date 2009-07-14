@@ -1,0 +1,30 @@
+<% unless field.nil? -%>
+<li id="field_<%= field.id %>" class="report-field-template">
+<% f.fields_for 'comparative_report_template_field_assignments_attributes[]', field do |assignment_form| -%>
+
+  <% if assigned == true -%>
+
+    <%= assignment_form.hidden_field 'report_field_template_id', :value => field.id, :index => nil, :class => 'cb' %>
+    <%= assignment_form.hidden_field '_delete', :value => field.id, :index => nil, :class => 'delete', :disabled => true %>
+
+    <%= link_to 'C', "#field_form_#{field.id}", :class => "btn settings", :rel => 'facebox', :style => 'float:right' %>
+    <strong><%= field.name %></strong><br />
+    <%= field.name %> / <%= field.render_method %>
+
+  <% else -%>
+
+    <%= assignment_form.hidden_field 'report_field_template_id', :index => nil, :value => field.id, :class => 'cb', :disabled => true %>
+
+    <%= link_to 'C', "#field_form_#{field.id}", :class => "btn settings", :rel => 'facebox', :style => 'display:none;float:right' %>
+    <strong><%= field.name %></strong><br />
+    <%= field.name %> / <%= field.render_method %>
+
+  <% end -%>
+
+  <div id="field_form_<%= field.id %>" style="display:none">
+    <h3><%= field.name %></h3>
+  </div>
+
+<% end -%>
+</li>
+<% end -%>

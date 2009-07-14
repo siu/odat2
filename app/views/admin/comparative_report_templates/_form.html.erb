@@ -27,30 +27,14 @@
           <td class="report-field-templates">
 
             <ul id="assigned" class="fields">
-              <% for assignment in @comparative_report_template.comparative_report_template_field_assignments -%>
-                <% f.fields_for 'comparative_report_template_field_assignments_attributes[]', assignment do |assignment_form| -%>
-                  <li id="field_<%= assignment.report_field_template.id %>" class="report-field-template">
-                  <%= assignment_form.hidden_field :report_field_template_id, :index => nil, :class => 'cb' %>
-		  <%= assignment_form.hidden_field :_delete, :value => assignment.report_field_template.id, 
-			  :index => nil, :class => 'delete', :disabled => true %>
-                  <strong><%= assignment.report_field_template.name %></strong><br />
-                  <%= assignment.report_field_template.name %> / <%= assignment.report_field_template.render_method %><br />
-                  <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett" %>
-                  </li>
-                <% end -%>
+              <% for field in @comparative_report_template.comparative_report_template_field_assignments.collect {|a| a.report_field_template } -%>
+		<%= render :partial => 'assignment_form', :locals => {:field => field, :f => f, :assigned => true} %>
               <% end -%>
             </ul>
 
             <ul id="available" class="fields">
               <% for field in ReportFieldTemplate.find(:all)-@comparative_report_template.comparative_report_template_field_assignments.collect { |a| a.report_field_template } -%>
-                <li id="field_<%= field.id %>" class="report-field-template">
-                  <% f.fields_for 'comparative_report_template_field_assignments_attributes[]', field do |assignment_form| -%>
-                    <%= assignment_form.hidden_field 'report_field_template_id', :index => nil, :value => field.id, :class => 'cb', :disabled => true %>
-                    <strong><%= field.name %></strong><br />
-                    <%= field.name %> / <%= field.render_method %><br />
-                    <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett", :style => 'display:none' %>
-                  <% end -%>
-                </li>
+		<%= render :partial => 'assignment_form', :locals => {:field => field, :f => f, :assigned => false} %>
               <% end -%>
             </ul>
 
@@ -93,7 +77,7 @@
         connectWith: '.fields',
         placeholder: 'ui-state-highlight',
         update: function() {
-            $('#assigned .sett').css('display', 'inline');
+            $('#assigned .settings').css('display', 'inline');
             $('#assigned .cb').attr('disabled', null);
             $('#assigned .delete').attr('disabled', 'disabled');
 	  }
@@ -102,7 +86,7 @@
         connectWith: '.fields',
         placeholder: 'ui-state-highlight',
         update: function() {
-            $('#available .sett').css('display', 'none');
+            $('#available .settings').css('display', 'none');
             $('#available .cb').attr('disabled', 'disabled');
             $('#available .delete').attr('disabled', null);
           }
