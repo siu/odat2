@@ -31,7 +31,8 @@
                 <% f.fields_for 'comparative_report_template_field_assignments_attributes[]', assignment do |assignment_form| -%>
                   <li id="field_<%= assignment.report_field_template.id %>" class="report-field-template">
                   <%= assignment_form.hidden_field :report_field_template_id, :index => nil, :class => 'cb' %>
-                  <%= assignment_form.hidden_field :_delete, :value => assignment.report_field_template.id, :index => nil, :class => 'delete', :disabled => true %>
+		  <%= assignment_form.hidden_field :_delete, :value => assignment.report_field_template.id, 
+			  :index => nil, :class => 'delete', :disabled => true %>
                   <strong><%= assignment.report_field_template.name %></strong><br />
                   <%= assignment.report_field_template.name %> / <%= assignment.report_field_template.render_method %><br />
                   <%= link_to 'Configure', "javascript:alert('eh')", :class => "sett" %>
@@ -102,8 +103,8 @@
         placeholder: 'ui-state-highlight',
         update: function() {
             $('#available .sett').css('display', 'none');
-            $('#assigned .cb').attr('disabled', 'disabled');
-            $('#assigned .delete').attr('disabled', null);
+            $('#available .cb').attr('disabled', 'disabled');
+            $('#available .delete').attr('disabled', null);
           }
         }).disableSelection();
       });
