@@ -46,6 +46,90 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
   end
 
+  test "should create a comparative_report_template with a report_field_template linked" do
+    login_as_admin
+
+    ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
+    assert_difference('ComparativeReportTemplate.count') do
+      post :create, :comparative_report_template => { 
+        :name => 'ulala',
+        :comparative_report_template_field_assignments_attributes => 
+          [
+            {:report_field_template_id => report_field_templates(:one).id}
+          ]
+      }
+    end
+
+    assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
+    assert 1, assigns(:comparative_report_template).report_field_templates.size
+  end
+
+  test "should update and mantain associated comparative_report_field" do
+    login_as_admin
+    ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
+    put :update, :id => comparative_report_templates(:one).to_param, 
+      :comparative_report_template => { 
+        :comparative_report_template_field_assignments_attributes => 
+          [
+            {:report_field_template_id => report_field_templates(:one).id}
+          ]
+      }
+    assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
+    assert 1, assigns(:comparative_report_template).report_field_templates.size
+  end
+
+  test "should update and remove associated comparative_report_field" do
+    login_as_admin
+    ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
+    put :update, :id => comparative_report_templates(:one).to_param, 
+      :comparative_report_template => { 
+        :comparative_report_template_field_assignments_attributes => 
+          [
+            {:_delete => report_field_templates(:one).id}
+          ]
+      }
+    assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
+    assert 0, assigns(:comparative_report_template).report_field_templates.size
+  end
+
+  test "should update and mantain and remove associated comparative_report_fields 1" do
+    login_as_admin
+
+    assert 2, comparative_report_templates(:two).report_field_templates.size
+    ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
+
+    put :update, :id => comparative_report_templates(:two).to_param, 
+      :comparative_report_template => { 
+        :comparative_report_template_field_assignments_attributes => 
+          [
+            {:report_field_template_id => report_field_templates(:one).id},
+            {:_delete => report_field_templates(:two).id}
+          ]
+      }
+
+    assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
+    assert 1, assigns(:comparative_report_template).report_field_templates.size
+  end
+
+  test "should update and mantain and remove associated comparative_report_fields 2" do
+    login_as_admin
+
+    assert 2, comparative_report_templates(:two).report_field_templates.size
+    ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
+
+    put :update, :id => comparative_report_templates(:two).to_param, 
+      :comparative_report_template => { 
+        :comparative_report_template_field_assignments_attributes => 
+          [
+            {:report_field_template_id => report_field_templates(:two).id},
+            {:_delete => report_field_templates(:one).id}
+          ]
+      }
+
+    assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
+    assert 1, assigns(:comparative_report_template).report_field_templates.size
+  end
+
   test "should destroy comparative_report_template" do
     login_as_admin
     assert_difference('ComparativeReportTemplate.count', -1) do

@@ -6,9 +6,31 @@
 # two:
 #   column: value
 
-one:
+complex:
   position: 1
   name: MyString
   group: MyString
   comparative_report_template: complex
   report_field_template: one
+
+one:
+  position: 1
+  name: MyString
+  group: MyString
+  comparative_report_template: one
+  report_field_template: one
+
+two_one:
+  position: 1
+  name: MyString
+  group: MyString
+  comparative_report_template: two
+  report_field_template: one
+
+two_one:
+  position: 2
+  name: MyString
+  group: MyString
+  comparative_report_template: two
+  report_field_template: two
+
