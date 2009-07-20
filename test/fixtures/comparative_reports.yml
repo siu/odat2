@@ -5,9 +5,18 @@ one:
   signed_on: 2009-02-15 20:45:37
   center: demo
   comparative_report_template: complex
+  type: ComparativeReport
 
 two:
   signature: MyString
   signed_on: 2009-02-15 20:45:37
   center: demo
   comparative_report_template: complex
+  type: ComparativeReport
+
+center_report1:
+  signature: MyString
+  signed_on: 2009-02-15 20:45:37
+  center: demo
+  comparative_report_template: center
+  type: CenterReport

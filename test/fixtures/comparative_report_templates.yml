@@ -13,4 +13,10 @@ two:
 complex:
   name: Complex thing
   title: Complex report
-  view_template: o.title
+  view_template: text
+
+center:
+  name: center
+  title: Center Report
+  view_template: text
+

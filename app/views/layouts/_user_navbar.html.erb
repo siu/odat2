@@ -1,7 +1,11 @@
-<ul>
-  <li class="first"><%= link_to _('Listado expedientes'), 
-    medical_records_path, 
-    :class => 'accion-principal' %></li>
+<ul class="navbar">
+  <li class="first">
+    <%= link_to _('Centro'), medical_records_path %>
+    <ul class="subnav">
+      <li><%= link_to _('Listado expedientes'), medical_records_path, :class => 'accion-principal' %></li>
+      <li><%= link_to _('Informes de centro'), center_reports_path %></li>
+    </ul>
+  </li>
   <li><%= link_to _('Documentación ODAT'), docs_path %></li>
   <li><%= link_to _('Acerca de ODAT'), about_path %></li>
 </ul>

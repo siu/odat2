@@ -146,12 +146,6 @@ p.edit {
 	background-color: #eee;
 	border-bottom: 1px solid #ccc;
 }
-#navbar ul, #navbar li {
-	display: inline;
-	margin: 0;
-	padding: 0;
-	margin-right: .5em;
-}
 img {
 	border: 0;
 }
@@ -304,7 +298,7 @@ a.btn:hover, a.btn:focus {
 	vertical-align: top;
 }
 .requiredField {
-	border-bottom: solid 1px #933;
+  font-style: italic;
 }
 .note {
 	background-color: #f9f9d5;
@@ -365,19 +359,30 @@ a.btn:hover, a.btn:focus {
 }
 
 #context-menu a.btn {
-  background-color: #eee;
+  background-color: #f6f6f6;
   padding: 0.2em 0.2em;
-  border-bottom: solid 1px #404080;
+  border:1px solid #C0C0C0;
+  border-bottom:1px solid #A0A0A0;
+  border-right:1px solid #A0A0A0;
   color: #404080;
 }
 #context-menu a.btn:hover, #context-menu a.btn:focus {
   background-color: #fff;
+  border:1px solid #444;
 }
 .pdf-file {
 	background-image:url(/images/icons/pdf.gif);
 }
 .printer {
 	background-image:url(/images/icons/printer.png);
+}
+.new-btn:not([classname~="icon"]) {
+        display:inline-block;
+        vertical-align:bottom;
+        background-position:2px center;
+        background-repeat:no-repeat;
+        padding-left:26px;
+        background-image:url(/images/icons/add.png);
 }
 a.icon:not([classname~="icon"]), span.icon:not([classname~="icon"]) {
 	display:inline-block;
@@ -393,5 +398,81 @@ a.icon:not([classname~="icon"]), span.icon:not([classname~="icon"]) {
 	padding: 1.8%;
 	border-top: 1px solid #ddd;
 	background-color: #eee;
+}
+
+/* MenuBar */
+#navbar ul {
+	margin: 0;
+	padding: 0;
+}
+ul.navbar li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	margin-right: .5em;
+}
+ul li.navcat {
+	margin: 0;
+	padding: 0 15px 0 0;
+	padding: 0;
+	position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+ul li.navcat > a{
+	padding: 4px 10px;
+	text-decoration: none;
+        border: 1px solid #d0d0d0;
+        border-right: none;
+        -moz-border-radius-topleft: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        background-color: #eee;
+        font-weight: bold;
+        width: 10em;
+}
+ul li.navcat > a:hover {
+  background-color: #fff;
+}
+ul li.navcat li a{
+	padding: 4px;
+        width: 10em;
+	text-decoration: none;
+        border: 1px solid #d0d0d0;
+        border-right: none;
+}
+ul li.navcat span { /*--Drop down trigger styles--*/
+	padding: 4px 10px;
+        margin-left: -4px;
+        border: 1px solid #d0d0d0;
+        border-left: none;
+        -moz-border-radius-topright: 4px;
+        -moz-border-radius-bottomright: 4px;
+        background-color: #eee;
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-image:url(/images/icons/dropdown.png);
+}
+ul li.navcat span.subhover {
+  cursor: pointer;
+  background-color: #fff;
+}
+ul li.navcat ul.subnav {
+	margin: 0; padding: 0;
+	list-style: none;
+        top: 22px;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	background-color: #eee;
+	margin: 0; padding: 0;
+	display: none;
+}
+ul li.navcat ul.subnav li{
+	margin: 0; padding: 0;
+	clear: both;
+        text-align: left;
+}
+html ul li.navcat ul.subnav li a {
+        border: 1px solid #d0d0d0;
+        border-top: 0;
+	float: left;
+}
+html ul li.navcat ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 }
 

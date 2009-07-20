@@ -40,7 +40,7 @@ class ReportFieldTemplateTest < ActiveSupport::TestCase
     assert !function.valid?
     assert function.errors.on(:render_method)
 
-    methods = %w(single_value matrix graph)
+    methods = %w(single_value table graph)
     for method in methods do
       function = create_function(:render_method => method)
       assert function.valid?
@@ -90,7 +90,7 @@ protected
     function = ReportFieldTemplate.new({
       :applicable_on => 'String',
       :function => "objs.collect {|o| [o.size] }",
-      :render_method => 'matrix'
+      :render_method => 'table'
     }.merge(opts))
   end
 

@@ -8,21 +8,17 @@ class ComparativeReportTemplateTest < ActiveSupport::TestCase
     assert template.errors.invalid?(:name)
   end
 
-  test "Should accept a list of ReportFieldTemplates" do
+  test "Should accept a list of comparative report field template \
+        assignment attributes" do
     template = create_comparative_report_template(
-      :report_field_templates => [report_field_templates(:one)])
+      :comparative_report_template_field_assignments_attributes => 
+        [
+          {:report_field_template_id => report_field_templates(:one).id}
+        ])
 
     assert template.valid?, template.report_field_templates.inspect
     assert_equal 1, template.report_field_templates.size
 
-  end
-
-  test "Should clone to a ComparativeReport" do
-    template = comparative_report_templates(:complex)
-
-    report = template.build_report()
-    assert report.report_field_templates.size == template.report_field_templates.size
-    assert report.comparative_report_template == template
   end
 
 protected

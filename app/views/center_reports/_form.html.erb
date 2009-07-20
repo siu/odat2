@@ -1,0 +1,53 @@
+<% form_for(@center_report) do |f| %>
+  <%= f.error_messages %>
+
+  <%= show_required_fields_explanation %>
+
+  <fieldset>
+    <legend><%= _('Configuración') %></legend>
+    <table>
+      <tr>
+        <th><%= _('Funciones analíticas') %></th>
+        <td>
+          <ul>
+            <% for field in @center_report.comparative_report_template.report_field_templates -%>
+              <li><%= check_box_tag('center_report[comparative_report_field_template_assignments_attributes[][report_field_template_id]', 
+                field.id,
+                @center_report.comparative_report_field_template_assignments.collect { |a| a.report_field_template_id}.include?(field.id),
+                :index => nil, 
+                :id => "cb_#{field.id}") %> <%= label_tag("cb_#{field.id}", field.name) %></li>
+            <% end -%>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+<fieldset>
+  <legend><%= _('Informe') %></legend>
+  <table>
+    <tr>
+      <th><%= _('Firma y fecha') %></th>
+      <td>
+        <ul>
+	  <li><%= f.check_box(:show_signed_on) %>
+	  <%= f.label(:show_signed_on, _('Fecha del informe')) %>
+	  <%= f.date_select(:signed_on) %>
+	  </li>
+	  <li><%= f.check_box(:show_signature) %>
+	  <%= f.label(:show_signature, _('Firma')) %>
+	  <%= f.text_field(:signature) %>
+	  </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+  <p>
+  <% if(@center_report.new_record?) -%>
+    <%= f.submit_or_cancel(_('Nuevo'), _('Cancelar'), center_reports_path) %>
+  <% else -%>
+    <%= f.submit_or_cancel(_('Guardar'), _('Cancelar'), center_reports_path) %>
+  <% end -%>
+  </p>
+<% end %>

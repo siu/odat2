@@ -1,0 +1,2 @@
+module CenterReportsHelper
+end

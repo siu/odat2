@@ -13,3 +13,17 @@ two:
   group: MyString
   comparative_report_id: 1
   report_field_template_id: 1
+
+center_report_1_1:
+  position: 1
+  name: MyString
+  group: MyString
+  comparative_report: center_report1
+  report_field_template: for_medical_records
+
+center_report_1_2:
+  position: 2
+  name: MyString
+  group: MyString
+  comparative_report: center_report1
+  report_field_template: for_medical_records

@@ -1,0 +1,24 @@
+<% page_title(@center_report.template.title) -%>
+
+<table class="hdata">
+<% @center_report.report_field_templates.each_with_index do |function, index| -%>
+  <tr>
+    <th><%= function.name %></th>
+    <td>
+    <% if @center_report.results[index][:render_method] == 'table' -%>
+      <table>
+      <% for row in @center_report.results[index][:data] -%>
+        <tr>
+          <% for cell in row -%>
+            <td><%= h cell %></td>
+          <% end -%>
+        </tr>
+      <% end -%>
+    </table>
+    <% else -%>
+      <%= @center_report.results[index][:data].inspect %>
+    <% end -%>
+    </td>
+  </tr>
+<% end -%>
+</table>

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :center_reports
+
   map.resources :comparative_reports
 
   # Users dashboard

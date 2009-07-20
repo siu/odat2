@@ -7,9 +7,9 @@ class Report < ActiveRecord::Base
 
   accepts_nested_attributes_for :configurable_view
 
-  def initialize(args = nil)
+  before_validation_on_create :init_configurable_view
 
-    super(args)
+  def init_configurable_view
     self.build_configurable_view
   end
   

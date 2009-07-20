@@ -1,0 +1,2 @@
+class CenterReport < ComparativeReport
+end

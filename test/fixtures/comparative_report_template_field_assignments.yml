@@ -34,3 +34,9 @@ two_one:
   comparative_report_template: two
   report_field_template: two
 
+center:
+  position: 1
+  name: MyString
+  group: MyString
+  comparative_report_template: center
+  report_field_template: for_medical_records

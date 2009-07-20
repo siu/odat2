@@ -3,13 +3,33 @@ class ComparativeReport < Report
 
   has_many :comparative_report_field_template_assignments
   has_many :report_field_templates, 
-    :through => :comparative_report_field_template_assignments
+    :through => :comparative_report_field_template_assignments, 
+    :autosave => true, 
+    :uniq => true
 
-  has_many :item_report_associations, :autosave => true, :validate => false, :order => 'position ASC'
-  has_many :items, :through => :item_report_associations, :source_type => 'OdatDiagnosis', :validate => false
+  has_many :item_report_associations, 
+    :autosave => true, 
+    :validate => false
 
   belongs_to :comparative_report_template
   belongs_to :center
+
+  accepts_nested_attributes_for :comparative_report_field_template_assignments, 
+    :allow_destroy => true
+
+  alias :template :comparative_report_template
+
+  def items=(elements)
+    self.item_report_associations.delete_all
+    elements.each do |element|
+      self.item_report_associations << ItemReportAssociation.new(
+        :item => element, :comparative_report => self)
+    end
+  end
+
+  def items
+    item_report_associations.collect { |a| a.item }
+  end
 
   def results
     @results ||= compute_results()
