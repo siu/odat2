@@ -96,6 +96,26 @@
 	</td>
       </tr>
     </table>
+
+    <h4><%= _('Minusvalía') %></h4>
+    <table>
+      <tr>
+        <th><%= f.label(:handicap, h(_('Clasificación de minusvalía mayor que 33 grados'))) %></th>
+        <td><%= f.check_box(:handicap) %> <%= f.label(:handicap, _('Sí')) %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label(:dependency_degree, _('Grado de dependencia')) %></th>
+        <td><%= f.select(:dependency_degree, MedicalRecord::DEPENDENCY_DEGREES, :include_blank => true) %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label(:dependency_situation, _('Situación de dependencia')) %></th>
+        <td><%= f.select(:dependency_situation, MedicalRecord::DEPENDENCY_SITUATIONS, :include_blank => true) %></td>
+      </tr>
+
+    </table>
+
   </fieldset>
 
   <%= render :partial => 'form_social_familiar', :locals => { :f => f } %>

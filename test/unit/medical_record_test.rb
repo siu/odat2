@@ -103,6 +103,38 @@ public
     assert medical_record.errors.invalid?(:position_in_siblings)
   end
 
+  test "dependency_degree should be in 1..4" do
+    medical_record = create_medical_record(:dependency_degree => 'test')
+    assert !medical_record.valid?
+    assert medical_record.errors.invalid?(:dependency_degree)
+
+    medical_record = create_medical_record(:dependency_degree => '1')
+    assert medical_record.valid?
+
+    medical_record = create_medical_record(:dependency_degree => '5')
+    assert !medical_record.valid?
+    assert medical_record.errors.invalid?(:dependency_degree)
+  end
+
+  test "dependency_situation should be in 1..3" do
+    medical_record = create_medical_record(:dependency_situation => 'test')
+    assert !medical_record.valid?
+    assert medical_record.errors.invalid?(:dependency_situation)
+
+    medical_record = create_medical_record(:dependency_situation => '1')
+    assert medical_record.valid?
+
+    medical_record = create_medical_record(:dependency_situation => '4')
+    assert !medical_record.valid?
+    assert medical_record.errors.invalid?(:dependency_situation)
+  end
+
+  test "accepts SchoolType" do
+    medical_record = create_medical_record(:school_type_id => school_types(:one).id)
+
+    assert medical_record.valid?
+  end
+
   def test_full_name
     medical_record = create_medical_record()
     assert medical_record.full_name == 
@@ -212,6 +244,16 @@ public
     [:sanitary_services, :social_services, :educative_services].each do |a|
       medical_record = create_medical_record(a => true)
       assert medical_record.has_coordination_data?
+    end
+  end
+
+  test "has handicap data" do
+    medical_record = create_medical_record(:handicap => true)
+    assert medical_record.has_handicap_data?
+
+    [:dependency_degree, :dependency_situation].each do |a|
+      medical_record = create_medical_record(a => '2')
+      assert medical_record.has_handicap_data?
     end
   end
 

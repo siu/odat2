@@ -1,0 +1,14 @@
+<tr>
+  <th><%= h(_('Clasificación de minusvalía mayor que 33 grados')) %></th>
+  <td><%= print_boolean(@medical_record.handicap) %></td>
+</tr>
+
+<tr>
+  <th><%= _('Grado de dependencia') %></th>
+  <td><%= h(@medical_record.dependency_degree ? 'Grado ' << @medical_record.dependency_degree.to_s : '') %></td>
+</tr>
+<tr>
+  <th><%= _('Situación de dependencia') %></th>
+  <td><%= h(@medical_record.dependency_situation ? 'Grado ' << @medical_record.dependency_situation.to_s : '') %></td>
+</tr>
+

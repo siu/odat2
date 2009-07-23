@@ -40,6 +40,14 @@
 
 </table>
 
+<% if @medical_record.has_handicap_data? then -%>
+<h4><%= _('Minusvalía') %></h4>
+<table class="hdata">
+  <%= render :partial => 'show_handicap_data' %>
+</table>
+<% end -%>
+
+
 <% if @medical_record.has_siblings_data? then -%>
   <h3><%= _('Datos sociofamiliares') %></h3>
   <h4><%= _('Hermanos') %></h4>
@@ -76,5 +84,4 @@
   <%= render :partial => 'show_coordination_data' %>
 </table>
 <% end -%>
-
 

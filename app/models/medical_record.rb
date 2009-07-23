@@ -1,4 +1,8 @@
 class MedicalRecord < ActiveRecord::Base
+
+  DEPENDENCY_DEGREES = 1..4
+  DEPENDENCY_SITUATIONS = 1..3
+
   belongs_to :center
   belongs_to :province
 
@@ -45,6 +49,9 @@ class MedicalRecord < ActiveRecord::Base
     :class_name => 'FormationLevel',
     :foreign_key => 'mother_formation_level_id'
 
+  # Other
+  belongs_to :school_type
+
   # Validations
   validate :not_repeated_name_for_same_center
 
@@ -80,6 +87,13 @@ class MedicalRecord < ActiveRecord::Base
     :only_integer => true, 
     :allow_nil => true, 
     :message => N_('El lugar que ocupa entre los hermanos debe ser un número') 
+
+  validates_inclusion_of :dependency_degree, :in => 1..4,
+    :allow_nil=> true
+
+  validates_inclusion_of :dependency_situation, :in => 1..3,
+    :allow_nil => true
+
   # Filters
   before_save :namecase_name_and_surname
 
@@ -125,6 +139,10 @@ class MedicalRecord < ActiveRecord::Base
 
   def has_coordination_data?
     has_any_attr?([:sanitary_services, :social_services, :educative_services])
+  end
+
+  def has_handicap_data?
+    has_any_attr?([:handicap, :dependency_degree, :dependency_situation])
   end
 
 protected

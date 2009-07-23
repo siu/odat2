@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :center_reports
-
-  map.resources :comparative_reports
-
   # Users dashboard
   map.root :controller => 'dashboard'
 
@@ -23,6 +19,13 @@ ActionController::Routing::Routes.draw do |map|
       record.resources :odat_diagnoses, :as => 'diagnosticos'
       record.resources :individual_reports, :as => 'informes'
   end
+
+  # Center Reports
+  map.resources :center_reports
+
+  # Comparative Reports
+  # Should remove this line
+  map.resources :comparative_reports
 
   # Routes for documentation
   map.docs 'pages/docs', 
@@ -70,10 +73,9 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :diagnosis_items
     admin.resources :provinces
     admin.resources :pages
-    admin.resources :report_field_templates, :name_prefix => nil
-    admin.resources :comparative_report_templates, 
-      :name_prefix => nil, 
-      :collection => {:ajax_fields => :put }
+    admin.resources :report_field_templates,       :name_prefix => nil
+    admin.resources :comparative_report_templates, :name_prefix => nil
+    admin.resources :school_types,                 :name_prefix => nil
   end
 
   # Default routes, not needed at all

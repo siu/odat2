@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @school_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @school_type.description %>
+</p>
+
+<p>
+  <b>Description html:</b>
+  <%=h @school_type.description_html %>
+</p>
+
+
+<%= link_to 'Edit', edit_school_type_path(@school_type) %> |
+<%= link_to 'Back', school_types_path %>

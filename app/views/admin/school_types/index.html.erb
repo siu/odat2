@@ -1,0 +1,24 @@
+<h1>Listing school_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Description html</th>
+  </tr>
+
+<% @school_types.each do |school_type| %>
+  <tr>
+    <td><%=h school_type.name %></td>
+    <td><%=h school_type.description %></td>
+    <td><%=h school_type.description_html %></td>
+    <td><%= link_to 'Show', school_type %></td>
+    <td><%= link_to 'Edit', edit_school_type_path(school_type) %></td>
+    <td><%= link_to 'Destroy', school_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New school_type', new_school_type_path %>

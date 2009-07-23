@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090707085358) do
+ActiveRecord::Schema.define(:version => 20090723144407) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -227,6 +227,10 @@ ActiveRecord::Schema.define(:version => 20090707085358) do
     t.boolean  "multiple_birth",                          :default => false, :null => false
     t.integer  "province_id"
     t.integer  "position_in_siblings"
+    t.boolean  "handicap",                                :default => false, :null => false
+    t.integer  "dependency_degree"
+    t.integer  "dependency_situation"
+    t.integer  "school_type_id"
   end
 
   create_table "odat_diagnoses", :force => true do |t|
@@ -234,7 +238,6 @@ ActiveRecord::Schema.define(:version => 20090707085358) do
     t.integer  "origin_source_id"
     t.integer  "origin_cause_id"
     t.integer  "consultation_cause_id"
-    t.integer  "handicap_value"
     t.integer  "main_diagnosis_item_id"
     t.string   "description"
     t.datetime "created_at"
@@ -301,6 +304,14 @@ ActiveRecord::Schema.define(:version => 20090707085358) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "configurable_view_id"
+  end
+
+  create_table "school_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "description_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
