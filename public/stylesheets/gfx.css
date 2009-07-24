@@ -234,13 +234,13 @@ table td {
 fieldset table {
 	border-spacing: 0 2px;
 }
-.notice, .error, .info, .errorExplanation {
+div.notice, div.error, div.info, .errorExplanation {
 	background-color: #e5ecf9;
 	border: 1px solid #c0c0e0;
         padding: 20px 20px 0;
 	margin-bottom: 20px;
 }
-.error, .errorExplanation {
+div.error, .errorExplanation {
 	border: 1px solid #933;
 	background-color: #f9e5ec;
 }

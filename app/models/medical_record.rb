@@ -113,12 +113,20 @@ class MedicalRecord < ActiveRecord::Base
   end
 
   def full_name
-    name + ' ' + surname
+    if name && surname
+      @full_name ||= name + ' ' + surname
+    else
+      ''
+    end
   end
 
   def age
     return (Date.today - birth_date).to_i / 365 if birth_date
     nil
+  end
+
+  def last_diagnosis
+    self.odat_diagnoses.last || nil
   end
 
   def has_siblings_data?

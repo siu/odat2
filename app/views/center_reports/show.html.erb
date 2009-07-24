@@ -1,24 +1,28 @@
 <% page_title(@center_report.template.title) -%>
 
-<table class="hdata">
-<% @center_report.report_field_templates.each_with_index do |function, index| -%>
-  <tr>
-    <th><%= function.name %></th>
-    <td>
-    <% if @center_report.results[index][:render_method] == 'table' -%>
-      <table>
-      <% for row in @center_report.results[index][:data] -%>
-        <tr>
-          <% for cell in row -%>
-            <td><%= h cell %></td>
-          <% end -%>
-        </tr>
+  <table class="hdata">
+  <% @center_report.report_field_templates.each_with_index do |function, index| -%>
+    <tr>
+      <th><%= function.name %></th>
+      <td>
+<% begin -%>
+      <% if @center_report.results[index][:render_method] == 'table' -%>
+        <table>
+        <% for row in @center_report.results[index][:data] -%>
+          <tr>
+            <% for cell in row -%>
+              <td><%= h cell %></td>
+            <% end -%>
+          </tr>
+        <% end -%>
+      </table>
+      <% else -%>
+        <%= @center_report.results[index][:data].inspect %>
       <% end -%>
-    </table>
-    <% else -%>
-      <%= @center_report.results[index][:data].inspect %>
-    <% end -%>
-    </td>
-  </tr>
+<% rescue Exception -%>
+  <p><span class="error"><%= _('Algo ha ido mal') %></span></p>
 <% end -%>
-</table>
+      </td>
+    </tr>
+  <% end -%>
+  </table>

@@ -32,17 +32,40 @@ class ComparativeReport < Report
   end
 
   def results
-    @results ||= compute_results()
+    @results ||= ComparativeReportResults.new(report_field_templates, items)
+  end
+
+end
+
+class ComparativeReportResults
+  def initialize(functions, items)
+    @functions = functions
+    @items = items
+    @results = []
+  end
+
+  def [](i)
+    @results[i % @functions.size] ||= compute_results(i % @functions.size)
+  end
+  
+  def method_missing(*args, &block)
+    @results.__send__ *args, &block
+  end 
+
+  def first
+    self[0]
+  end
+
+  def last
+    self[-1]
   end
 
 protected
-  def compute_results
-    results = []
-    for function in report_field_templates
-      results << {:render_method => function.render_method,
-                  :render_options => function.render_options,
-                  :data => function.apply(self.items)}
-    end
-    results
+  def compute_results(i)
+    function = @functions[i]
+    { :render_method => function.render_method,
+      :render_options => function.render_options,
+      :data => function.apply(@items)
+    }
   end
 end

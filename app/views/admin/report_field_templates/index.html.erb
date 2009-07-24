@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Applicable on</th>
     <th>Render method</th>
+    <th>Valid</th>
   </tr>
 
 <% @report_field_templates.each do |report_field_template| %>
@@ -12,6 +13,15 @@
     <td><%=h report_field_template.name %></td>
     <td><%=h report_field_template.applicable_on %></td>
     <td><%=h report_field_template.render_method %></td>
+    <td>
+      <%= begin
+            report_field_template.apply([eval(report_field_template.applicable_on).new])
+            'OK'
+          rescue Exception
+            '<span class="error">Error</span>'
+          end
+      %>
+    </td>
     <td><%= link_to 'Show', report_field_template %></td>
     <td><%= link_to 'Edit', edit_report_field_template_path(report_field_template) %></td>
     <td><%= link_to 'Destroy', report_field_template, :confirm => 'Are you sure?', :method => :delete %></td>
