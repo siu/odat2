@@ -5,8 +5,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records.xml
   def index
     @medical_records = current_user.medical_records.paginate(
-      :page => params[:page], 
-      :order => 'surname ASC')
+      :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -111,12 +110,12 @@ class MedicalRecordsController < ApplicationController
 protected
 
   def load_data
-    @provinces = Province.find(:all, :order => 'name ASC')
+    @provinces = Province.find(:all)
     @genders = [_('Masculino'), _('Femenino')]
-    @formation_levels = FormationLevel.find(:all, :order => 'name ASC')
-    @jobs = Job.find(:all, :order => 'name ASC')
-    @job_statuses = JobStatus.find(:all, :order => 'name ASC')
-    @civil_states = CivilState.find(:all, :order => 'name ASC')
+    @formation_levels = FormationLevel.find(:all)
+    @jobs = Job.find(:all)
+    @job_statuses = JobStatus.find(:all)
+    @civil_states = CivilState.find(:all)
   end
 
   def get_layout

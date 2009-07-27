@@ -124,8 +124,8 @@ protected
   end
 
   def load_form_data
-    @origin_sources = OriginSource.find(:all, :order => 'name ASC')
-    @origin_causes = OriginCause.find(:all, :order => 'name ASC')
-    @consultation_causes = ConsultationCause.find(:all, :order => 'name ASC')
+    @origin_sources = OriginSource.find(:all)
+    @origin_causes = OriginCause.find(:all)
+    @consultation_causes = ConsultationCause.find(:all)
   end
 end
