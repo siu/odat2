@@ -40,7 +40,7 @@ class ReportFieldTemplateTest < ActiveSupport::TestCase
     assert !function.valid?
     assert function.errors.on(:render_method)
 
-    methods = %w(single_value table graph)
+    methods = %w(single_value table graph nested_list)
     for method in methods do
       function = create_function(:render_method => method)
       assert function.valid?

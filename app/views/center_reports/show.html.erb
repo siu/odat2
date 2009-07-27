@@ -16,11 +16,13 @@
           </tr>
         <% end -%>
       </table>
+      <% elsif @center_report.results[index][:render_method] == 'nested_list' -%>
+        <%= ul @center_report.results[index][:data] %>
       <% else -%>
         <%= @center_report.results[index][:data].inspect %>
       <% end -%>
-<% rescue Exception -%>
-  <p><span class="error"><%= _('Algo ha ido mal') %></span></p>
+    <% rescue Exception => e -%>
+      <p><span class="error"><%= _('Algo ha ido mal') %>: <%= simple_format h e.message %></span></p>
 <% end -%>
       </td>
     </tr>

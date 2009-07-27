@@ -1,4 +1,5 @@
 class MedicalRecord < ActiveRecord::Base
+  default_scope :order => 'name ASC'
 
   DEPENDENCY_DEGREES = 1..4
   DEPENDENCY_SITUATIONS = 1..3
@@ -126,7 +127,7 @@ class MedicalRecord < ActiveRecord::Base
   end
 
   def last_diagnosis
-    self.odat_diagnoses.last || nil
+    self.odat_diagnoses.first || nil
   end
 
   def has_siblings_data?

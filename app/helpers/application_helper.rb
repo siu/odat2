@@ -31,4 +31,24 @@ module ApplicationHelper
   def show_required_fields_explanation
     @required_field_exp ||= %Q{<div class="note">} << _('Los <span class="requiredField">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco.') << %Q{</div>}
   end
+
+  def html_list(type, elements, options = {})
+    items = elements.map do |key, value|
+      if value.is_a?(Hash)
+        "<li>" << key.to_s << html_list(type, value, options) << "</li>"
+      else
+        content_tag("li", key.to_s + ' &rarr; ' + content_tag("strong", value.to_s))
+      end
+    end.reverse
+    content_tag(type, items, options)
+  end
+
+  def ul(*args)
+    html_list("ul", *args)
+  end
+
+  def ol(*args)
+    html_list("ol", *args)
+  end
+
 end

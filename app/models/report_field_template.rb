@@ -1,5 +1,5 @@
 class ReportFieldTemplate < ActiveRecord::Base
-  RENDER_METHODS = %w(single_value table graph)
+  RENDER_METHODS = %w(single_value table graph nested_list)
   validates_presence_of :function
   validates_inclusion_of :render_method, :in => RENDER_METHODS
   validate :render_options_is_a_hash
