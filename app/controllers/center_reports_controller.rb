@@ -49,8 +49,10 @@ class CenterReportsController < ApplicationController
 
     respond_to do |format|
       if @center_report.save
-        flash[:notice] = 'CenterReport was successfully created.'
-        format.html { redirect_to(@center_report) }
+        format.html { 
+          flash[:notice] = _('El nuevo informe de centro se ha almacenado con éxito')
+          redirect_to(@center_report) 
+        }
         format.xml  { render :xml => @center_report, :status => :created, :location => @center_report }
       else
         format.html { render :action => "new" }
@@ -67,7 +69,7 @@ class CenterReportsController < ApplicationController
     respond_to do |format|
       if @center_report.update_attributes(params[:center_report])
         format.html { 
-          flash[:notice] = 'CenterReport was successfully updated.'
+          flash[:notice] = _('Las modificaciones se han guardado correctamente')
           redirect_to(@center_report) 
         }
         format.js
@@ -87,7 +89,10 @@ class CenterReportsController < ApplicationController
     @center_report.destroy
 
     respond_to do |format|
-      format.html { redirect_to(center_reports_url) }
+      format.html { 
+        flash[:notice] = _('Se ha eliminado el informe correctamente')
+        redirect_to(center_reports_url) 
+      }
       format.xml  { head :ok }
     end
   end

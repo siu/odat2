@@ -4,8 +4,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records
   # GET /medical_records.xml
   def index
-    @medical_records = current_user.medical_records.paginate(
-      :page => params[:page])
+    @medical_records = current_user.medical_records.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -54,7 +53,7 @@ class MedicalRecordsController < ApplicationController
 
     respond_to do |format|
       if @medical_record.save
-        flash[:notice] = 'MedicalRecord was successfully created.'
+        flash[:notice] = _('El nuevo expediente se ha almacenado con éxito')
         format.html { redirect_to(@medical_record) }
         format.xml  { render :xml => @medical_record, 
 	  :status => :created, 
@@ -77,7 +76,7 @@ class MedicalRecordsController < ApplicationController
 
     respond_to do |format|
       if @medical_record.update_attributes(params[:medical_record])
-        flash[:notice] = 'MedicalRecord was successfully updated.'
+        flash[:notice] = _('Las modificaciones se han guardado correctamente')
         format.html { redirect_to(@medical_record) }
         format.xml  { head :ok }
       else

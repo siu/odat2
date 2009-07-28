@@ -49,7 +49,7 @@ class IndividualReportsController < ApplicationController
 
     respond_to do |format|
       if @individual_report.save
-        flash[:notice] = 'IndividualReport was successfully created.'
+        flash[:notice] = _('El nuevo informe individual se ha almacenado con éxito')
         format.html { 
           redirect_to(medical_record_individual_report_path(
             :medical_record_id => @medical_record.id, 
@@ -71,7 +71,7 @@ class IndividualReportsController < ApplicationController
     respond_to do |format|
       if @individual_report.update_attributes(params[:individual_report])
         format.html { 
-          flash[:notice] = 'IndividualReport was successfully updated.'
+          flash[:notice] = _('Las modificaciones se han guardado correctamente')
           redirect_to(
             medical_record_individual_report_path(
               :medical_record_id => @medical_record.id,
@@ -107,8 +107,5 @@ protected
       current_user.medical_records.find(params[:medical_record_id])
   rescue ActiveRecord::RecordNotFound
     redirect_to medical_records_path
-  end
-
-  def load_form_data
   end
 end

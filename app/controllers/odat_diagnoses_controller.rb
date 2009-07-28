@@ -28,7 +28,7 @@ class OdatDiagnosesController < ApplicationController
   # GET /odat_diagnoses/new.xml
   def new
     if @medical_record.odat_diagnoses.any?
-      flash.now[:notice] = _('Se han recuperado los datos del último diagnóstico para la creación del nuevo')
+      notice = _('Se han recuperado los datos del último diagnóstico para la creación del nuevo')
       @odat_diagnosis = @medical_record.clone_last_or_new_odat_diagnosis
     else
       @odat_diagnosis = @medical_record.clone_last_or_new_odat_diagnosis
@@ -37,7 +37,9 @@ class OdatDiagnosesController < ApplicationController
     load_form_data
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html {
+        flash.now[:notice] = notice if notice
+      }
       format.xml  { render :xml => @odat_diagnosis }
     end
   end
@@ -55,7 +57,7 @@ class OdatDiagnosesController < ApplicationController
 
     respond_to do |format|
       if @odat_diagnosis.save
-        flash[:notice] = 'OdatDiagnosis was successfully created.'
+        flash[:notice] = _('El nuevo diagnóstico se ha almacenado con éxito')
         format.html { redirect_to(
           medical_record_odat_diagnoses_path(@medical_record)) }
         format.xml  { 
@@ -84,7 +86,7 @@ class OdatDiagnosesController < ApplicationController
 
     respond_to do |format|
       if @odat_diagnosis.update_attributes(params[:odat_diagnosis])
-        flash[:notice] = 'OdatDiagnosis was successfully updated.'
+        flash[:notice] = _('Las modificaciones se han guardado correctamente')
         format.html { 
           redirect_to(
             medical_record_odat_diagnoses_path(@medical_record)) }
