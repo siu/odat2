@@ -1,5 +1,5 @@
 class MedicalRecord < ActiveRecord::Base
-  default_scope :order => 'name ASC'
+  default_scope :order => 'surname ASC'
 
   DEPENDENCY_DEGREES = 1..4
   DEPENDENCY_SITUATIONS = 1..3
