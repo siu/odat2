@@ -20,3 +20,4 @@ center_report1:
   center: demo
   comparative_report_template: center
   type: CenterReport
+  configurable_view: three
