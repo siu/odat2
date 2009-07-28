@@ -1,22 +1,27 @@
 <%= page_title _('Informes de Centro') -%>
 
+<% content_for :sidebar do -%>
+<%= note(_('Aquí se muestran los informes de centro almacenados.')) %>
+<% end -%>
+
 <p><%= link_to _('Nuevo Informe de Centro'), new_center_report_path, :class => 'btn new-btn' %></p>
 
-<table class="hdata">
+<% if @center_reports.any? -%>
+<table class="vdata">
   <thead>
     <tr>
-      <th>Uh</th>
+      <th><%= _('Título') %></th>
+      <th width="25%"><%= _('Fecha de creación') %></th>
+      <th><%= _('Informe') %></th>
+      <th><%= _('Eliminar') %></th>
     </tr>
   </thead>
-
-<% @center_reports.each do |center_report| %>
-  <tr>
-    <td><%= link_to 'Show', center_report %></td>
-    <td><%= link_to 'Edit', edit_center_report_path(center_report) %></td>
-    <td><%= link_to 'Destroy', center_report, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <%= render(:partial => 'center_report', :collection => @center_reports) %>
+  </tbody>
 </table>
+<% else -%>
+  <%= display_no_records_message %>
+<% end -%>
 
-<br />
-
+<%= will_paginate @center_reports %>

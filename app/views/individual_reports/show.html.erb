@@ -2,23 +2,7 @@
   <%= javascript_include_tag 'report' %>
 <% end -%>
 
-<div id="context-menu">
-  <%= link_to_function(_('Imprimir'), 'javascript:print()', :class => 'icon printer') %> 
-  <%= link_to(_('Descargar PDF'), {:id => @individual_report.id, :format => :pdf}, :class => 'icon pdf-file') %> | 
-  <% form_for(@individual_report, :html => {:id => 'individual_report_view',:class => 'inline'}) do |f| -%>
-    <% f.fields_for :configurable_view do |c| -%>
-            <%= link_to_function('A+', 'javascript:increase_text_size()', :class=>'btn') %> 
-            <%= link_to_function('a-', 'javascript:decrease_text_size()', :class=>'btn') %>
-            <%= link_to_function(
-              image_tag('icons/border_all.png'), 'javascript:border_all()', :class=>'btn') %>
-            <%= link_to_function(
-              image_tag('icons/border_none.png'), 'javascript:border_none()', :class=>'btn') %>
-
-	    <%= c.hidden_field(:font_size) %>
-	    <%= c.hidden_field(:table_grid) %>
-    <% end -%>
-  <% end -%>
-</div>
+<%= render :partial => '/reports/context_menu.html.erb', :locals => { :report => @individual_report } %>
 
 <div id="report">
 <% if @individual_report.show_personal_data? -%>

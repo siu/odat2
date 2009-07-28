@@ -1,30 +1,36 @@
-<% page_title(@center_report.template.title) -%>
+<% content_for :header_options do -%>
+  <%= javascript_include_tag 'report' %>
+<% end -%>
 
-  <table class="hdata">
+<%= render :partial => '/reports/context_menu.html.erb', :locals => { :report => @center_report } %>
+
+<div id="report">
+<h3><%= _('Informe de centro') %></h3>
+<table class="hdata">
   <% @center_report.report_field_templates.each_with_index do |function, index| -%>
     <tr>
       <th><%= function.name %></th>
       <td>
-<% begin -%>
-      <% if @center_report.results[index][:render_method] == 'table' -%>
-        <table>
-        <% for row in @center_report.results[index][:data] -%>
-          <tr>
-            <% for cell in row -%>
-              <td><%= h cell %></td>
-            <% end -%>
-          </tr>
+        <% begin -%>
+          <% if @center_report.results[index][:render_method] == 'table' -%>
+            <table>
+              <% for row in @center_report.results[index][:data] -%>
+                <tr>
+                  <% for cell in row -%>
+                    <td><%= h cell %></td>
+                  <% end -%>
+                </tr>
+              <% end -%>
+            </table>
+          <% elsif @center_report.results[index][:render_method] == 'nested_list' -%>
+            <%= ul @center_report.results[index][:data] %>
+          <% else -%>
+            <%= @center_report.results[index][:data].inspect %>
+          <% end -%>
+        <% rescue Exception => e -%>
+          <p><span class="error"><%= _('Algo ha ido mal') %>: <%= simple_format h e.message %></span></p>
         <% end -%>
-      </table>
-      <% elsif @center_report.results[index][:render_method] == 'nested_list' -%>
-        <%= ul @center_report.results[index][:data] %>
-      <% else -%>
-        <%= @center_report.results[index][:data].inspect %>
-      <% end -%>
-    <% rescue Exception => e -%>
-      <p><span class="error"><%= _('Algo ha ido mal') %>: <%= simple_format h e.message %></span></p>
-<% end -%>
       </td>
     </tr>
   <% end -%>
-  </table>
+</table>

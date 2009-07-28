@@ -70,8 +70,8 @@ class IndividualReportsController < ApplicationController
 
     respond_to do |format|
       if @individual_report.update_attributes(params[:individual_report])
-        flash[:notice] = 'IndividualReport was successfully updated.'
         format.html { 
+          flash[:notice] = 'IndividualReport was successfully updated.'
           redirect_to(
             medical_record_individual_report_path(
               :medical_record_id => @medical_record.id,
@@ -93,7 +93,10 @@ class IndividualReportsController < ApplicationController
     @individual_report.destroy
 
     respond_to do |format|
-      format.html { redirect_to(medical_record_individual_reports_url) }
+      format.html { 
+        flash[:notice] = _('Se ha eliminado el informe correctamente')
+        redirect_to(medical_record_individual_reports_url) 
+      }
       format.xml  { head :ok }
     end
   end

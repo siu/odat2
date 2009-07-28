@@ -164,6 +164,7 @@ input.dest-action {
 	-moz-border-radius: 3px;
 	color:#444;
 	border-color: #933;
+        white-space: normal;
 }
 input.dest-action:hover, input.dest-action:focus {
 	border-color: #933;
@@ -244,6 +245,10 @@ div.error, .errorExplanation {
 	border: 1px solid #933;
 	background-color: #f9e5ec;
 }
+p.hide-flash {
+  float: right;
+  font-size: 80%;
+}
 table { 
 	margin-bottom: 1em;
 }
@@ -306,13 +311,13 @@ a.btn:hover, a.btn:focus {
         padding: 10px;
 	margin-bottom: 20px;
 }
-#medical-record-menu {
+#entity-menu {
   background-color: #fff;
   border: 1px solid #c0c0e0;
   padding: 2px;
   overflow: hidden;
 }
-#medical-record-menu h3 {
+#entity-menu h3 {
   font-size: 1.21em;
   line-height: 1.18em;
   font-weight: normal;
@@ -322,32 +327,32 @@ a.btn:hover, a.btn:focus {
 	background-color: #f9f9d5;
 	border-bottom: 1px solid #e0e0a0;
 }
-#medical-record-menu h3, #medical-record-menu p, #medical-record-menu ul {
+#entity-menu h3, #entity-menu p, #entity-menu ul {
   margin:0;
 }
-#medical-record-menu h3 a {
+#entity-menu h3 a {
   color: #933;
   border-color: #933;
 }
-#medical-record-menu h4, #medical-record-menu ul {
+#entity-menu h4, #entity-menu ul {
 }
-#medical-record-menu h4 {
+#entity-menu h4 {
   background-color: #eee;
   color: #933;
   margin: 0;
 }
-#medical-record-menu ul a {
+#entity-menu ul a {
 }
-#medical-record-menu ul {
+#entity-menu ul {
         padding: 5px 0px 5px 20px;
       }
-#medical-record-menu ul ul {
+#entity-menu ul ul {
         margin-bottom: 0;
       }
-#medical-record-menu ul li {
+#entity-menu ul li {
         list-style-type: disc;
       }
-#medical-record-menu ul li.destroy {
+#entity-menu ul li.destroy {
         background-color:#EEEEEE;
         border-top:1px solid #C0C0E0;
         list-style-type:none;
@@ -462,6 +467,7 @@ ul li.navcat ul.subnav {
 	background-color: #eee;
 	margin: 0; padding: 0;
 	display: none;
+        border-top: 1px solid #d0d0d0;
 }
 ul li.navcat ul.subnav li{
 	margin: 0; padding: 0;

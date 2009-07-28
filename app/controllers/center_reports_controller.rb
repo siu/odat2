@@ -1,8 +1,11 @@
 class CenterReportsController < ApplicationController
+  layout :get_layout
+
   # GET /center_reports
   # GET /center_reports.xml
   def index
-    @center_reports = CenterReport.all
+    @center_reports = current_user.center.center_reports.paginate(
+      :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class CenterReportsController < ApplicationController
   # GET /center_reports/1
   # GET /center_reports/1.xml
   def show
-    @center_report = CenterReport.find(params[:id])
+    @center_report = current_user.center.center_reports.find(params[:id])
     @center_report.items = current_user.center.medical_records
 
     respond_to do |format|
@@ -35,7 +38,7 @@ class CenterReportsController < ApplicationController
 
   # GET /center_reports/1/edit
   def edit
-    @center_report = CenterReport.find(params[:id])
+    @center_report = current_user.center.center_reports.find(params[:id])
   end
 
   # POST /center_reports
@@ -59,16 +62,20 @@ class CenterReportsController < ApplicationController
   # PUT /center_reports/1
   # PUT /center_reports/1.xml
   def update
-    @center_report = CenterReport.find(params[:id])
+    @center_report = current_user.center.center_reports.find(params[:id])
 
     respond_to do |format|
       if @center_report.update_attributes(params[:center_report])
-        flash[:notice] = 'CenterReport was successfully updated.'
-        format.html { redirect_to(@center_report) }
+        format.html { 
+          flash[:notice] = 'CenterReport was successfully updated.'
+          redirect_to(@center_report) 
+        }
+        format.js
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @center_report.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -76,7 +83,7 @@ class CenterReportsController < ApplicationController
   # DELETE /center_reports/1
   # DELETE /center_reports/1.xml
   def destroy
-    @center_report = CenterReport.find(params[:id])
+    @center_report = current_user.center.center_reports.find(params[:id])
     @center_report.destroy
 
     respond_to do |format|
@@ -95,4 +102,11 @@ protected
     o
   end
   
+  def get_layout
+    if ['index', 'new', 'create'].include?request[:action]
+      'application'
+    else
+      'center_reports'
+    end
+  end
 end

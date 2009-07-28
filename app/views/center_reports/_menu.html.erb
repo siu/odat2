@@ -1,0 +1,16 @@
+<% content_for :menu do -%>
+  <div id="center_report-menu">
+    <h3><%= link_to_unless_current(@center_report.full_name,
+	@center_report) %></h3>
+	<ul>
+          <li><%= link_to(_('Modificar'),
+            edit_center_report_path(@center_report)) %></li>
+
+	<ul>
+        <li class="destroy"><%= button_to(_('Eliminar informe de centro'),
+                          center_report_path(@center_report), :method => :delete, :confirm => _('Seguro deseas borrar el informe de centro actual (operación irreversible)?'), :class => 'dest-action') %></li>
+      </ul>
+
+      </div>
+<% end -%>
+<%= render :file => 'layouts/application' %>
