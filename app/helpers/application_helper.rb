@@ -23,7 +23,7 @@ module ApplicationHelper
     if type.nil?
       FLASH_TYPES.each { |name| html << display_flash(name) }
     else
-      return flash[type].blank? ? "" : "<div class=\"#{type}\"><p>#{flash[type]}</p></div>"
+      return flash[type].blank? ? "" : "<div id=\"flash\" class=\"#{type}\"><p class=\"hide-flash\">#{link_to_function _("Ocultar"), 'hide_flash()'}</p><p>#{flash[type]}</p></div>"
     end
     html
   end
@@ -49,6 +49,10 @@ module ApplicationHelper
 
   def ol(*args)
     html_list("ol", *args)
+  end
+
+  def note(text, options = {})
+    content_tag("div", text, {:class => 'note'}.merge(options))
   end
 
 end

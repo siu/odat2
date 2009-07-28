@@ -108,9 +108,9 @@ class OdatDiagnosesController < ApplicationController
     @odat_diagnosis.destroy
 
     respond_to do |format|
-      format.html { redirect_to(
-        medical_record_odat_diagnoses_path(
-        @medical_record)) }
+      format.html { 
+        flash[:notice] = _('Se ha eliminado el diagnóstico correctamente')
+        redirect_to(medical_record_odat_diagnoses_path(@medical_record)) }
       format.xml  { head :ok }
     end
   end

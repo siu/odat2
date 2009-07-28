@@ -100,7 +100,10 @@ class MedicalRecordsController < ApplicationController
     @medical_record.destroy
 
     respond_to do |format|
-      format.html { redirect_to(medical_records_url) }
+      format.html { 
+        flash[:notice] = _('Se ha eliminado el expediente para %{name} correctamente') % {:name => @medical_record.full_name}
+        redirect_to(medical_records_url) 
+      }
       format.xml  { head :ok }
     end
   rescue ActiveRecord::RecordNotFound
