@@ -3,17 +3,17 @@
 one:
   medical_record: pedrito
   created_at: Time.now
-  origin_source_id: 1
-  origin_cause_id: 1
-  consultation_cause_id: 1
-  main_diagnosis_item_id: 1
+  origin_source: origin_sources(:one)
+  origin_cause: origin_causes(:one)
+  consultation_cause: consultation_causes(:one)
+  main_diagnosis: diagnosis_items(:e1_1_1)
   description: MyString
 
 two:
   medical_record: pedrito
   created_at: Time.now
-  origin_source_id: 1
-  origin_cause_id: 1
-  consultation_cause_id: 1
-  main_diagnosis_item_id: 1
+  origin_source: origin_sources(:one)
+  origin_cause: origin_causes(:one)
+  consultation_cause: consultation_causes(:one)
+  main_diagnosis: diagnosis_items(:e1_1_1)
   description: MyString

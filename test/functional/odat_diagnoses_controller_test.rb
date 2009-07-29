@@ -55,13 +55,15 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
 
-    items = [diagnosis_items(:e1_1_1).id, diagnosis_items(:e1_1_2).id]
+    items = get_diagnosis_items_ids([:e1_1_1, :e1_1_2])
 
     assert_difference('OdatDiagnosis.count') do
       post :create, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:odat_diagnosis => { 
-	  :diagnosis_item_ids => items
+	{
+          :medical_record_id => medical_records(:pedrito).id, 
+	  :odat_diagnosis => { 
+	    :diagnosis_item_ids => items
+          }
 	}
     end
     assert_response :redirect
@@ -70,9 +72,10 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 
     assert_difference('OdatDiagnosis.count') do
       post :create,
-	:medical_record_id => medical_records(:pedrito).id,
-	:odat_diagnosis => {
-	  :diagnosis_item_ids => items
+        { :medical_record_id => medical_records(:pedrito).id,
+	  :odat_diagnosis => {
+	    :diagnosis_item_ids => items
+          }
 	}
     end
     assert_response :redirect
@@ -128,9 +131,10 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     login_as :quentin
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     put :update, 
-	:medical_record_id => medical_records(:paco).id, 
-	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { }
+        { :medical_record_id => medical_records(:paco).id, 
+	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis => { }
+        }
     assert_redirected_to medical_records_path
   end
   
@@ -138,29 +142,32 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
 
-    items = [diagnosis_items(:e1_1_1).id, diagnosis_items(:e1_1_2).id]
+    items = get_diagnosis_items_ids([:e1_1_1, :e1_1_2])
     put :update, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { :diagnosis_item_ids => items }
+        { :medical_record_id => medical_records(:pedrito).id, 
+    	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis => { :diagnosis_item_ids => items }
+        }
 
     assert_response :redirect
     assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
 
     items = []
     put :update, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { :diagnosis_item_ids => items }
+        { :medical_record_id => medical_records(:pedrito).id, 
+	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis => { :diagnosis_item_ids => items }
+        }
 
     assert_response :redirect
     assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
 
-    items = [diagnosis_items(:e1_1_1).id]
+    items = get_diagnosis_items_ids([:e1_1_1])
     put :update, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { :diagnosis_item_ids => items }
+        { :medical_record_id => medical_records(:pedrito).id, 
+	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis => { :diagnosis_item_ids => items }
+        }
 
     assert_response :redirect
     assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
@@ -170,20 +177,22 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     login_as_user
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
 
-    items = [center_resources(:r1).id, center_resources(:r2).id]
+    items = get_center_resources_ids([:r1, :r2])
     put :update, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { :center_resource_ids => items }
+	{ :medical_record_id => medical_records(:pedrito).id, 
+	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis => { :center_resource_ids => items }
+        }
 
     assert_response :redirect
     assert_equal items.count, assigns(:odat_diagnosis).center_resources.count
 
-    items = [center_resources(:r3).id]
+    items = get_center_resources_ids([:r3])
     put :update, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:id => odat_diagnoses(:one).id, 
-	:odat_diagnosis => { :center_resource_ids => items }
+        { :medical_record_id => medical_records(:pedrito).id, 
+	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis => { :center_resource_ids => items }
+        }
 
     assert_response :redirect
     assert_equal items.count, assigns(:odat_diagnosis).center_resources.count
@@ -193,8 +202,9 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     login_as_user
     assert_difference('OdatDiagnosis.count', -1) do
       delete :destroy, 
-	:medical_record_id => medical_records(:pedrito).id, 
-	:id => odat_diagnoses(:one).id
+	{ :medical_record_id => medical_records(:pedrito).id, 
+	  :id => odat_diagnoses(:one).id
+        }
     end
 
     assert_redirected_to(
@@ -206,9 +216,19 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     login_as :quentin
     assert_no_difference('OdatDiagnosis.count') do
       delete :destroy, 
-	:medical_record_id => medical_records(:paco).id, 
-	:id => odat_diagnoses(:one).id
+        { :medical_record_id => medical_records(:paco).id, 
+	  :id => odat_diagnoses(:one).id
+        }
     end
     assert_redirected_to medical_records_path
   end
+protected
+  def get_diagnosis_items_ids(fixtures)
+    fixtures.collect { |e| diagnosis_items(e).id.to_s }
+  end
+
+  def get_center_resources_ids(fixtures)
+    fixtures.collect { |e| center_resources(e).id.to_s }
+  end
+
 end
