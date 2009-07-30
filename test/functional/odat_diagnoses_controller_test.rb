@@ -224,11 +224,11 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 protected
   def get_diagnosis_items_ids(fixtures)
-    fixtures.collect { |e| diagnosis_items(e).id.to_s }
+    fixtures.collect { |e| diagnosis_items(e).id.to_param }
   end
 
   def get_center_resources_ids(fixtures)
-    fixtures.collect { |e| center_resources(e).id.to_s }
+    fixtures.collect { |e| center_resources(e).id.to_param }
   end
 
 end
