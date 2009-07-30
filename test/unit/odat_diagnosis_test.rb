@@ -62,7 +62,7 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
 protected
 
   def create_odat_diagnosis(opts = {})
-    OdatDiagnosis.new({
+    OdatDiagnosis.create({
       :medical_record_id => medical_records(:pedrito).id,
       :origin_source_id => origin_sources(:one).id,
       :origin_cause_id => origin_causes(:one).id,
