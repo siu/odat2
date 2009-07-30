@@ -1,4 +1,6 @@
 class Report < ActiveRecord::Base
+  default_scope :order => 'created_at DESC'
+
   validate :is_signed_if_show_signature
   validates_presence_of :signed_on
   validates_presence_of :configurable_view
