@@ -1,21 +1,6 @@
 require 'test_helper'
 
 class MedicalRecordTest < ActiveSupport::TestCase
-protected
-  def create_medical_record(options = {})
-    options.reverse_merge!(
-      :name => 'Test1',
-      :surname => 'Surname 1',
-      :center => centers(:demo),
-      :archive_date => Time.now,
-      :created_at => Time.now)
-
-    medical_record = MedicalRecord.create(options)
-    medical_record
-  end
-
-public
-
   test "should be invalid if created with default attributes" do
     medical_record =  MedicalRecord.new
 
@@ -318,5 +303,13 @@ public
     assert_raises ActiveRecord::RecordNotFound do
       odat_diagnosis.reload
     end
+  end
+protected
+  def create_medical_record(options = {})
+    MedicalRecord.create({:name => 'Test1',
+      :surname => 'Surname 1',
+      :center => centers(:demo),
+      :archive_date => Time.now,
+      :created_at => Time.now}.merge!(options))
   end
 end

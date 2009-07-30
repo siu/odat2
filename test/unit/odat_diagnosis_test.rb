@@ -42,7 +42,7 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     assert odat_diagnosis.errors.invalid?(:main_diagnosis_item_id)
   end
 
-  test "When removed all the associated individual reports are removed too" do
+  test "When destroyed all the associated individual reports are removed too" do
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     odat_diagnosis = create_odat_diagnosis
     report = odat_diagnosis.individual_reports.build
@@ -62,14 +62,13 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
 protected
 
   def create_odat_diagnosis(opts = {})
-    odat_diagnosis = OdatDiagnosis.create({
+    OdatDiagnosis.new({
       :medical_record_id => medical_records(:pedrito).id,
       :origin_source_id => origin_sources(:one).id,
       :origin_cause_id => origin_causes(:one).id,
       :consultation_cause_id => consultation_causes(:one).id,
       :main_diagnosis_item_id => diagnosis_items(:e1_1_1).id
     }.merge!(opts))
-    odat_diagnosis
   end
 
 end
