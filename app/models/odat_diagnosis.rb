@@ -22,6 +22,7 @@ class OdatDiagnosis < ActiveRecord::Base
   has_many :individual_reports, :dependent => :destroy
 
   # Validaciones
+  validates_presence_of :medical_record_id
   validates_presence_of :origin_source_id
   validates_presence_of :origin_cause_id
   validates_presence_of :consultation_cause_id
