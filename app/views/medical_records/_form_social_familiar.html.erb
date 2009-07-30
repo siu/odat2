@@ -55,13 +55,7 @@
       </td>
     </tr>
     <tr>
-      <th><%= f.label(:father_job_id, _('Ocupación')) %> 
-	<small>(<%= link_to(_('ayuda'), 
-			    { :controller => '/help/jobs', 
-			      :action => :index }, 
-			    :target => '_blank', 
-			    :onclick => 'link_popup(this); return false') %>)</small>
-      </th>
+      <th><%= f.label(:father_job_id, _('Ocupación')) %></th>
       <td>
 	<%= f.collection_select(:father_job_id, 
 				@jobs,
@@ -140,13 +134,7 @@
       </td>
     </tr>
     <tr>
-      <th><%= f.label(:mother_job_id, _('Ocupación')) %> 
-	<small>(<%= link_to(_('ayuda'), 
-			    { :controller => '/help/jobs', 
-			      :action => :index }, 
-			    :target => '_blank', 
-			    :onclick => 'link_popup(this); return false') %>)</small>
-      </th>
+      <th><%= f.label(:mother_job_id, _('Ocupación')) %></th>
       <td>
 	<%= f.collection_select(:mother_job_id, 
 				@jobs,
