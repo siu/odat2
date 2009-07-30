@@ -40,18 +40,18 @@ end
 def pdf_list(pdf, elements, options = {})
   items = elements.each do |key, value|
     if value.is_a?(Hash)
-      pdf.bounding_box([pdf.bounds.left + 20, pdf.bounds.bottom]) do
+      pdf.bounding_box([pdf.bounds.left + 20, pdf.cursor], :width => pdf.bounds.width) do
         pdf.text("&bull; #{key.to_s}")
         pdf.move_down 10
         pdf_list(pdf, value, options)
       end
     else
-      pdf.bounding_box([20,10]) do
+      pdf.bounding_box([pdf.bounds.left + 20, pdf.cursor], :width => pdf.bounds.width) do
         pdf.text("&bull; #{key.to_s} - #{mytag("strong", value.to_s)}")
       end
     end
   end
-  #pdf.move_down 20
+  pdf.move_down 10
 end
 
 pdf.tags :h1 => {:font_size => @font_size * 1.3333, :font_weight => :bold}
@@ -78,6 +78,7 @@ begin
     print_table(pdf, @center_report.results[index][:data])
   elsif @center_report.results[index][:render_method] == 'nested_list'
     pdf_list(pdf, @center_report.results[index][:data])
+    #test(pdf)
   else
     pdf.text @center_report.results[index][:data].inspect
     pdf.move_down 20
@@ -97,4 +98,3 @@ if @center_report.show_signature?
   pdf.text _('Firma') << ': ' << h(@center_report.signature), :align => :right
   pdf.move_down 20
 end
-
