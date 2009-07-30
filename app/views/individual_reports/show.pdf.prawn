@@ -107,7 +107,7 @@ if @individual_report.show_family_data?
             h(@medical_record.father_surname)]
 
     data << [_('Fecha de nacimiento') ,
-            l(@medical_record.father_birth_date, :format => :short)] unless @medical_record.father_birth_date.nil? 
+            l(@medical_record.father_birth_date)] unless @medical_record.father_birth_date.nil? 
 
     data << [_('Situación laboral') ,
             h(@medical_record.father_job_status.name)] unless @medical_record.father_job_status.nil? 
@@ -141,7 +141,7 @@ if @individual_report.show_family_data?
             h(@medical_record.mother_surname)]
 
     data << [_('Fecha de nacimiento') ,
-            l(@medical_record.mother_birth_date, :format => :short)] unless @medical_record.mother_birth_date.nil? 
+            l(@medical_record.mother_birth_date)] unless @medical_record.mother_birth_date.nil? 
 
     data << [_('Situación laboral') ,
             h(@medical_record.mother_job_status.name)] unless @medical_record.mother_job_status.nil? 
@@ -201,7 +201,7 @@ if @individual_report.show_diagnosis_data?
     h3(pdf, _('Fecha de creación del diagnóstico'))
     
     data << [_('Fecha de creación'),
-            l(@odat_diagnosis.created_at, :format => :short)]
+            l(@odat_diagnosis.created_at)]
     print_table(pdf, data)
     data = []
   end
@@ -303,7 +303,7 @@ if @individual_report.show_report_data?
     pdf.move_down 20
   end
   if @individual_report.show_signed_on? and @individual_report.signed_on
-    pdf.text l(@individual_report.signed_on.to_date, :format => :short), :align => :right
+    pdf.text l(@individual_report.signed_on.to_date), :align => :right
     pdf.move_down 20
   end
   if @individual_report.show_signature?

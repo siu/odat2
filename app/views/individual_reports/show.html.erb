@@ -18,14 +18,14 @@
 	      @medical_record.archive_date -%>
         <tr>
           <th><%= _('Fecha de ingreso') %></th>
-          <td><%= l(@medical_record.archive_date, :format => :short) %></td>
+          <td><%= l(@medical_record.archive_date) %></td>
         </tr>
       <% end -%>
       <% if @individual_report.show_birth_date? && 
 	      @medical_record.birth_date -%>
         <tr>
           <th><%= _('Fecha de nacimiento') %></th>
-          <td><%= l(@medical_record.birth_date, :format => :short) %></td>
+          <td><%= l(@medical_record.birth_date) %></td>
         </tr>
       <% end -%>
       <% if @individual_report.show_age? -%>
@@ -101,7 +101,7 @@
       <table class="hdata">
         <tr>
           <th><%= _('Fecha de creación') %></th>
-          <td><%= l(@odat_diagnosis.created_at, :format => :short) %></td>
+          <td><%= l(@odat_diagnosis.created_at) %></td>
         </tr>
       </table>
   <% end -%>
@@ -147,7 +147,7 @@
 
   <% if @individual_report.show_signed_on? and 
   @individual_report.signed_on -%>
-      <p><%= l(@individual_report.signed_on.to_date, :format => :short) %></p>
+      <p><%= l(@individual_report.signed_on.to_date) %></p>
   <% end -%>
 
   <% if @individual_report.show_signature? -%>

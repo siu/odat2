@@ -56,38 +56,30 @@ class MedicalRecord < ActiveRecord::Base
   # Validations
   validate :not_repeated_name_for_same_center
 
-  validates_presence_of :center,
-    :message => N_('Debes especificar el centro al que pertenece')
+  validates_presence_of :center
 
-  validates_presence_of :name, 
-    :message => N_('Debes especificar un nombre')
+  validates_presence_of :name
 
-  validates_presence_of :surname, 
-    :message => N_('Debes especificar los apellidos')
+  validates_presence_of :surname
 
-  validates_presence_of :archive_date, 
-    :message => N_('Es necesario una fecha de inicio de expediente')
+  validates_presence_of :archive_date
 
   validates_numericality_of :postal, 
     :only_integer => true, 
     :allow_nil => true, 
-    :message => N_('El código postal debe ser un número'),
     :if => Proc.new { |p| p.postal != '' }
 
   validates_length_of :postal, 
     :is => 5, 
-    :message => N_('El código postal debe tener 5 digitos'),
     :allow_blank => true
 
   validates_numericality_of :birth_position,
     :only_integer => true, 
-    :allow_nil => true, 
-    :message => N_('El número de parto debe ser un número') 
+    :allow_nil => true
 
   validates_numericality_of :position_in_siblings,
     :only_integer => true, 
-    :allow_nil => true, 
-    :message => N_('El lugar que ocupa entre los hermanos debe ser un número') 
+    :allow_nil => true
 
   validates_inclusion_of :dependency_degree, :in => 1..4,
     :allow_nil=> true
