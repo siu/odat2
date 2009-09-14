@@ -5,7 +5,6 @@ view = @center_report.configurable_view
 @font_size = view.font_size ? view.font_size*12/14 : 12
 @border_style = view.table_grid? ? :grid : :underline_header
 pdf.font_size = @font_size
-margin_top = 100
 
 def h1(pdf, text)
   pdf.text mytag(:h1, text)
@@ -66,8 +65,6 @@ pdf.tags :p => {}
 pdf.font "Helvetica" 
 
 # Begin document
-pdf.move_down margin_top
-
 h1(pdf, @center_report.title)
 
 @center_report.report_field_templates.each_with_index do |function, index|

@@ -6,6 +6,8 @@ class ConfigurableViewTest < ActiveSupport::TestCase
     assert !view.font_size.nil?
     assert view.font_size != 0
     assert view.font_family.nil?
+    assert !view.top_margin.nil?
+    assert view.top_margin == 100
   end
 
 protected

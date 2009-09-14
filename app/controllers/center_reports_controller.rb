@@ -23,6 +23,7 @@ class CenterReportsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @center_report }
       format.pdf  { render :layout => false }
+      prawnto :prawn => { :top_margin => @center_report.configurable_view.top_margin }
     end
   end
 
