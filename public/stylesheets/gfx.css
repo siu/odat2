@@ -206,6 +206,9 @@ h2 small {
 input, select, textarea, .btn {
 	border: 1px solid #999;
 }
+input[type=submit] {
+	background-color: #F2F4F7;
+}
 input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:focus, .btn:hover, .btn:focus {
 	border: 1px solid #444;
 }
@@ -296,6 +299,7 @@ a.btn {
   background-color: #eee;
   padding: 0.3em 0.2em;
   color: #303030;
+  border-color:#B0B0B0 #999999 #999999 #B0B0B0;
 }
 a.btn:hover, a.btn:focus {
   background-color: #F2F4F7;
@@ -389,8 +393,7 @@ a.btn:hover, a.btn:focus {
         vertical-align:bottom;
         background-position:2px center;
         background-repeat:no-repeat;
-        padding-left:26px;
-        padding-right:5px;
+	padding:2px 5px 2px 26px;
         background-image:url(/images/icons/add.png);
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
@@ -426,6 +429,22 @@ ul li.navcat {
 	margin: 0;
 	padding: 0;
 	position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+a.btn, input[type~="submit"]:not([class~="dest-action"]), ul.subnav {
+  -moz-box-shadow: 1px 1px 2px #bbb;
+  -webkit-box-shadow: 1px 1px 2px #bbb;
+}
+ul li.navcat > a, ul li.navcat span {
+/*
+  -moz-box-shadow: 1px 1px 1px #bbb;
+  -webkit-box-shadow: 1px 1px 1px #bbb;
+  */
+}
+input[type~="submit"]:not([class~="dest-action"]) {
+	font-size: 1.15em;
+	background-color: #F2F4F7;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 ul li.navcat > a{
 	padding: 4px 10px 3px;
