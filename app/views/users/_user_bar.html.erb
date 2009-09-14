@@ -1,12 +1,13 @@
 <% if logged_in? -%>
   <%= current_user.name_or_login %> 
-  [ 
-    <%= link_to _('Preferencias'), edit_user_path(current_user) %> / 
-    <%= link_to _('Cerrar Sesión'), logout_path, 
-    { :title => _('Cerrar Sesión') } %> ]
+  |
+  <%= link_to _('Preferencias'), edit_user_path(current_user) %>
+  |
+  <%= link_to _('Cerrar Sesión'), logout_path, 
+    { :title => _('Cerrar Sesión') } %>
 <% else -%>
   <%= _('No se ha iniciado sesión') %>
-  [ 
+  |
   <%= link_to _('Iniciar Sesión'),  login_path,  
-    { :title => _('Iniciar Sesión') } %>]
+    { :title => _('Iniciar Sesión') } %>
 <% end -%>
