@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090723144407) do
+ActiveRecord::Schema.define(:version => 20090914101145) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -229,7 +229,6 @@ ActiveRecord::Schema.define(:version => 20090723144407) do
     t.integer  "position_in_siblings"
     t.boolean  "handicap",                                :default => false, :null => false
     t.integer  "dependency_degree"
-    t.integer  "dependency_situation"
     t.integer  "school_type_id"
   end
 

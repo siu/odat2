@@ -1,8 +1,7 @@
 class MedicalRecord < ActiveRecord::Base
   default_scope :order => 'surname ASC'
 
-  DEPENDENCY_DEGREES = 1..4
-  DEPENDENCY_SITUATIONS = 1..3
+  DEPENDENCY_DEGREES = 1..3
 
   belongs_to :center
   belongs_to :province
@@ -81,11 +80,8 @@ class MedicalRecord < ActiveRecord::Base
     :only_integer => true, 
     :allow_nil => true
 
-  validates_inclusion_of :dependency_degree, :in => 1..4,
+  validates_inclusion_of :dependency_degree, :in => DEPENDENCY_DEGREES,
     :allow_nil=> true
-
-  validates_inclusion_of :dependency_situation, :in => 1..3,
-    :allow_nil => true
 
   # Filters
   before_save :namecase_name_and_surname
@@ -143,7 +139,7 @@ class MedicalRecord < ActiveRecord::Base
   end
 
   def has_handicap_data?
-    has_any_attr?([:handicap, :dependency_degree, :dependency_situation])
+    has_any_attr?([:handicap, :dependency_degree])
   end
 
 protected
