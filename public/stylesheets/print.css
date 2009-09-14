@@ -3,7 +3,7 @@ body {
 	font-family: Sans, arial;
 	font-size: 11pt;
 }
-#navbar, #usrbar, #sidebar {
+#navbar, #usrbar, #sidebar, #flash {
 	display: none;
 }
 #main{
