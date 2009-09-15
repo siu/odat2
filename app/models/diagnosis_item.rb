@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class DiagnosisItem < ActiveRecord::Base
   acts_as_nested_set
   acts_as_html_text

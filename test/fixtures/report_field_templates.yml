@@ -2,28 +2,28 @@
 
 one:
   name: one
-  applicable_on: "[String]"
+  applicable_on: "String"
   function: "objs.collect { |o| [o, o.size] }"
   render_method: table
   render_options: NULL
 
 two:
   name: two
-  applicable_on: "[String]"
+  applicable_on: "String"
   function: "objs.collect { |o| [o, o.uppercase] }"
   render_method: table
   render_options: NULL
 
 for_odat_diagnoses:
   name: for_odat_diagnoses
-  applicable_on: "[OdatDiagnosis]"
+  applicable_on: "OdatDiagnosis"
   function: "objs.collect { |o| [o.id, o.medical_record.full_name] }"
   render_method: table
   render_options: NULL
 
 for_medical_records:
   name: for_medical_records
-  applicable_on: "[MedicalRecord]"
+  applicable_on: "MedicalRecord"
   function: "objs.collect { |o| [o.id, o.full_name] }"
   render_method: table
   render_options: NULL

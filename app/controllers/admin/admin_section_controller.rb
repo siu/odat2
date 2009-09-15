@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::AdminSectionController < ApplicationController
   skip_before_filter :login_required, :only => [:help, :help_index]
 

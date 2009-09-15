@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Help::JobsController < Help::HelpSectionController
   # GET /jobs
   # GET /jobs.xml

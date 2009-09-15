@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::ReportFieldTemplatesController < Admin::AdminSectionController
   # GET /report_field_templates
   # GET /report_field_templates.xml

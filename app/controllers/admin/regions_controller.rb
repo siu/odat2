@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::RegionsController < Admin::AdminSectionController
 
   # load data

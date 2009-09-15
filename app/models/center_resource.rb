@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CenterResource < ActiveRecord::Base
   acts_as_list
   acts_as_html_text

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::CenterResourcesController < Admin::AdminSectionController
   # GET /center_resources
   # GET /center_resources.xml

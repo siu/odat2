@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Be sure to restart your server when you modify this file
 
 # Uncomment below to force Rails into production mode when
@@ -7,6 +8,9 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 # RAILS_GEM_VERSION = '2.1.2' unless defined? RAILS_GEM_VERSION
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
+
+Encoding.default_internal = 'utf-8'
+Encoding.default_external = 'utf-8'
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -29,6 +33,9 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 
+  #config.gem "sqlite3-ruby", :lib => "sqlite3"
+  config.gem 'qoobaa-sqlite3-ruby',  :lib => 'sqlite3',  
+                                     :source => 'http://gems.github.com'  
   config.gem "mocha"
   config.gem 'mislav-will_paginate', :version => '~> 2.3.7',  
                                      :lib => 'will_paginate',  
@@ -63,7 +70,7 @@ Rails::Initializer.run do |config|
   # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
   # All files from config/locales/*.rb,yml are added automatically.
   # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
-  config.i18n.default_locale = :es
+  #config.i18n.default_locale = :es
 
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!

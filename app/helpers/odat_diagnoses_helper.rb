@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module OdatDiagnosesHelper
   def display_item_for_diagnosis(f, item, diagnoses)
     output = ''

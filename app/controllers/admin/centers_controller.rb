@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::CentersController < Admin::AdminSectionController
   # GET /centers
   # GET /centers.xml

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ItemReportAssociation < ActiveRecord::Base
   belongs_to :comparative_report
   belongs_to :item, :polymorphic => true

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ComparativeReport < Report
   set_table_name "comparative_reports"
 

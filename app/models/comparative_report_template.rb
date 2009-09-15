@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ComparativeReportTemplate < ActiveRecord::Base
   has_many :comparative_report_template_field_assignments
   has_many :report_field_templates, 

@@ -3,24 +3,28 @@
 development:
   adapter: sqlite3
   database: db/development.sqlite3
+  encoding: utf8
   pool: 5
   timeout: 5000
 
 development-es:
   adapter: sqlite3
   database: db/odat_rails-es.sqlite3
+  encoding: utf8
   pool: 5
   timeout: 5000
 
 development-ar:
   dapter: sqlite3
   database: db/odat_rails-ar.sqlite3
+  encoding: utf8
   pool: 5
   timeout: 5000
 
 development-pt:
   adapter: sqlite3
   database: db/odat_rails-pt.sqlite3
+  encoding: utf8
   pool: 5
   timeout: 5000
 
@@ -30,11 +34,13 @@ development-pt:
 test:
   adapter: sqlite3
   database: db/test.sqlite3
+  encoding: utf8
   pool: 5
   timeout: 5000
 
 production:
   adapter: sqlite3
   database: db/production.sqlite3
+  encoding: utf8
   pool: 5
   timeout: 5000

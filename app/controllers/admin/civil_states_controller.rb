@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::CivilStatesController < Admin::AdminSectionController
   # GET /civil_states
   # GET /civil_states.xml

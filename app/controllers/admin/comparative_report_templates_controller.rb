@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::ComparativeReportTemplatesController < Admin::AdminSectionController
   # GET /comparative_report_templates
   # GET /comparative_report_templates.xml

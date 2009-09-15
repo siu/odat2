@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ReportFieldTemplate < ActiveRecord::Base
   RENDER_METHODS = %w(single_value table graph nested_list)
   validates_presence_of :function
@@ -8,9 +9,11 @@ class ReportFieldTemplate < ActiveRecord::Base
   before_save :marshal_render_options
 
   def applicable_on=(val)
-    unless val.nil? || val.instance_of?(Array)
+    if !val.nil? && val.instance_of?(String)
       write_attribute(:applicable_on, eval("[" << val << "]"))
-    else 
+    elsif !val.nil? && is_array_of_classes?(val)
+      write_attribute(:applicable_on, val)
+    else
       write_attribute(:applicable_on, [])
     end
   rescue SyntaxError, NameError => exc
@@ -37,9 +40,16 @@ class ReportFieldTemplate < ActiveRecord::Base
   end
 
   def after_initialize
-    self.render_options = self.render_options
-  rescue SyntaxError, NameError => exc
-    write_attribute(:render_options, nil)
+    begin
+      self.render_options = self.render_options
+    rescue SyntaxError, NameError => exc
+      write_attribute(:render_options, nil)
+    end
+    begin
+      self.applicable_on = self.applicable_on
+    rescue SyntaxError, NameError => exc
+      write_attribute(:applicable_on, nil)
+    end
   end
 protected
   def render_options_is_a_hash

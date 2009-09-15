@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Center < ActiveRecord::Base
   belongs_to :region
 

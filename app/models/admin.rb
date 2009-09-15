@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin < User
   def is_admin?
     true

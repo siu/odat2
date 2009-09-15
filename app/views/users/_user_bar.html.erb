@@ -1,10 +1,9 @@
 <% if logged_in? -%>
   <%= current_user.name_or_login %> 
   |
-  <%= link_to _('Preferencias'), edit_user_path(current_user) %>
-  |
+  <%= link_to _('Preferencias'), edit_user_path(current_user) %> 
   <%= link_to _('Cerrar Sesión'), logout_path, 
-    { :title => _('Cerrar Sesión') } %>
+  { :title => _('Cerrar Sesión'), :class => 'logout' } %>
 <% else -%>
   <%= _('No se ha iniciado sesión') %>
   |

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::OriginSourcesController < Admin::AdminSectionController
   # GET /origin_sources
   # GET /origin_sources.xml

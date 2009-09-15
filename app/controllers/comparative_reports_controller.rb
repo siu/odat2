@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ComparativeReportsController < ApplicationController
   # GET /comparative_reports
   # GET /comparative_reports.xml

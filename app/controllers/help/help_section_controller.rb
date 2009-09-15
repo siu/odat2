@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Help::HelpSectionController < ApplicationController
   layout 'help/help_layout'
 

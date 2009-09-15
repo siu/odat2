@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CenterReportsController < ApplicationController
   layout :get_layout
 

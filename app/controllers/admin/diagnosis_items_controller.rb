@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::DiagnosisItemsController < Admin::AdminSectionController
   # GET /diagnosis_items
   # GET /diagnosis_items.xml

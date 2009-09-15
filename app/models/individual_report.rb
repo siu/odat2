@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class IndividualReport < Report
   set_table_name 'individual_reports'
 

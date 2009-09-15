@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::JobStatusesController < Admin::AdminSectionController
   # GET /job_statuses
   # GET /job_statuses.xml

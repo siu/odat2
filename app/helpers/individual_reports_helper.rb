@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module IndividualReportsHelper
   def new_individual_report_path(medical_record)
     new_medical_record_individual_report_path(medical_record)

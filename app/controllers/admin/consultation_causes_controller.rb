@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::ConsultationCausesController  < Admin::AdminSectionController
   # GET /consultation_causes
   # GET /consultation_causes.xml

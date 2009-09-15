@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::JobsController < Admin::AdminSectionController
   # GET /jobs
   # GET /jobs.xml

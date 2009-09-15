@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class OdatDiagnosis < ActiveRecord::Base
   acts_as_html_text
 

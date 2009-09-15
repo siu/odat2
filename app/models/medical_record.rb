@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class MedicalRecord < ActiveRecord::Base
   default_scope :order => 'surname ASC'
 

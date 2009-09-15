@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ConfigurableView < ActiveRecord::Base
   TOP_MARGIN = 100
 

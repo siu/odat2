@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Help::DiagnosisItemsController < Help::HelpSectionController
   # GET /help/diagnosis_items
   # GET /help/diagnosis_items.xml

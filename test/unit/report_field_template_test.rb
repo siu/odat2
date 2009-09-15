@@ -80,9 +80,9 @@ class ReportFieldTemplateTest < ActiveSupport::TestCase
                               :function => "objs.collect {|o| [o, o.size]}")
     assert function.applicable_on?(String)
 
-    strings = %(uno cuatro)
+    strings = %w( uno cuatro )
     for string in strings do
-      assert_equal [[string, string.size]], function.apply(string)
+      assert_equal([[string, string.size]], function.apply([string]))
     end
   end
 protected

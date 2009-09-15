@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::PagesController < Admin::AdminSectionController
   # GET /pages
   # GET /pages.xml

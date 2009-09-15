@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::ProvincesController < Admin::AdminSectionController
   # GET /provinces
   # GET /provinces.xml

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::OriginCausesController < Admin::AdminSectionController
   # GET /origin_causes
   # GET /origin_causes.xml

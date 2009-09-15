@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::SchoolTypesController < Admin::AdminSectionController
   # GET /school_types
   # GET /school_types.xml
