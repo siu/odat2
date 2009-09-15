@@ -1,0 +1,2029 @@
+# ODAT 2.0
+# Copyright (C) 2009 David Siñuela Pastor
+# This file is distributed under the same license as the ODAT 2.0 package.
+# David Sinuela Pastor <siu.4coders@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: odat devel\n"
+"POT-Creation-Date: 2009-07-30 18:20+0200\n"
+"PO-Revision-Date: 2009-07-30 18:31+0100\n"
+"Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/center_reports_controller.rb:54
+msgid "El nuevo informe de centro se ha almacenado con éxito"
+msgstr ""
+
+#: app/controllers/center_reports_controller.rb:73
+#: app/controllers/medical_records_controller.rb:79
+#: app/controllers/odat_diagnoses_controller.rb:89
+#: app/controllers/individual_reports_controller.rb:74
+msgid "Las modificaciones se han guardado correctamente"
+msgstr ""
+
+#: app/controllers/center_reports_controller.rb:94
+#: app/controllers/individual_reports_controller.rb:97
+msgid "Se ha eliminado el informe correctamente"
+msgstr ""
+
+#: app/controllers/medical_records_controller.rb:56
+msgid "El nuevo expediente se ha almacenado con éxito"
+msgstr ""
+
+#: app/controllers/medical_records_controller.rb:103
+msgid "Se ha eliminado el expediente para %{name} correctamente"
+msgstr ""
+
+#: app/controllers/medical_records_controller.rb:116
+msgid "Masculino"
+msgstr ""
+
+#: app/controllers/medical_records_controller.rb:116
+msgid "Femenino"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:29
+msgid "Bienvenido/a"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:40
+msgid "Se ha finalizado la sesión"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:47
+msgid "No se ha podido iniciar la sesión como %{login}"
+msgstr ""
+
+#: app/controllers/odat_diagnoses_controller.rb:31
+msgid "Se han recuperado los datos del último diagnóstico para la creación del nuevo"
+msgstr ""
+
+#: app/controllers/odat_diagnoses_controller.rb:60
+msgid "El nuevo diagnóstico se ha almacenado con éxito"
+msgstr ""
+
+#: app/controllers/odat_diagnoses_controller.rb:114
+msgid "Se ha eliminado el diagnóstico correctamente"
+msgstr ""
+
+#: app/controllers/individual_reports_controller.rb:52
+msgid "El nuevo informe individual se ha almacenado con éxito"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "user"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Login"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Name"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Email"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Crypted password"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Salt"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Created at"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Updated at"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Remember token"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Remember token expires at"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Activation code"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Activated at"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|State"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Deleted at"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Type"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "User|Center"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "province"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "Province|Name"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "Province|Created at"
+msgstr ""
+
+#: app/models/province.rb:-
+msgid "Province|Updated at"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "consultation cause"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "ConsultationCause|Name"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "ConsultationCause|Description"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "ConsultationCause|Created at"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "ConsultationCause|Updated at"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "ConsultationCause|Position"
+msgstr ""
+
+#: app/models/consultation_cause.rb:-
+msgid "ConsultationCause|Description html"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "origin cause"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "OriginCause|Name"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "OriginCause|Description"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "OriginCause|Created at"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "OriginCause|Updated at"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "OriginCause|Position"
+msgstr ""
+
+#: app/models/origin_cause.rb:-
+msgid "OriginCause|Description html"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "report"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Show signature"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Signature"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Show signed on"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Signed on"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Created at"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Updated at"
+msgstr ""
+
+#: app/models/report.rb:-
+msgid "Report|Configurable view"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "origin source"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "OriginSource|Name"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "OriginSource|Description"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "OriginSource|Created at"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "OriginSource|Updated at"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "OriginSource|Position"
+msgstr ""
+
+#: app/models/origin_source.rb:-
+msgid "OriginSource|Description html"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "medical record"
+msgstr "expediente"
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Center"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Name"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Surname"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Birth date"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Archive date"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|City"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Address"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Birth position"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Gender"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father name"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father surname"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father birth date"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father job"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father civil state"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father job status"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father formation level"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father email"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Father extra information"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother name"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother surname"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother birth date"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother job"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother civil state"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother job status"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother formation level"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother email"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Mother extra information"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Home phone"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Portable phone"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Work phone"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Total siblings amount"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Postal"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Sanitary services"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Social services"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Educative services"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Created at"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Updated at"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Multiple birth"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Province"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Position in siblings"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Handicap"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Dependency degree"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|Dependency situation"
+msgstr ""
+
+#: app/models/medical_record.rb:-
+msgid "MedicalRecord|School type"
+msgstr ""
+
+#: app/models/medical_record.rb:162
+msgid "Ya existe un expediente para %{name}"
+msgstr ""
+
+#: app/models/center.rb:-
+msgid "center"
+msgstr ""
+
+#: app/models/center.rb:-
+msgid "Center|Name"
+msgstr ""
+
+#: app/models/center.rb:-
+msgid "Center|Region"
+msgstr ""
+
+#: app/models/center.rb:-
+msgid "Center|Created at"
+msgstr ""
+
+#: app/models/center.rb:-
+msgid "Center|Updated at"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "center resource"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "CenterResource|Name"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "CenterResource|Description"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "CenterResource|Position"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "CenterResource|Created at"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "CenterResource|Updated at"
+msgstr ""
+
+#: app/models/center_resource.rb:-
+msgid "CenterResource|Description html"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "civil state"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "CivilState|Name"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "CivilState|Description"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "CivilState|Created at"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "CivilState|Updated at"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "CivilState|Position"
+msgstr ""
+
+#: app/models/civil_state.rb:-
+msgid "CivilState|Description html"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "comparative report field template assignment"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Position"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Name"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Group"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Comparative report"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Report field template"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Created at"
+msgstr ""
+
+#: app/models/comparative_report_field_template_assignment.rb:-
+msgid "ComparativeReportFieldTemplateAssignment|Updated at"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "comparative report template field assignment"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Position"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Name"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Group"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Comparative report template"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Report field template"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Created at"
+msgstr ""
+
+#: app/models/comparative_report_template_field_assignment.rb:-
+msgid "ComparativeReportTemplateFieldAssignment|Updated at"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "odat diagnosis"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Medical record"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Origin source"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Origin cause"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Consultation cause"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Main diagnosis item"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Description"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Created at"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Updated at"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:-
+msgid "OdatDiagnosis|Description html"
+msgstr ""
+
+#: app/models/odat_diagnosis.rb:30
+msgid "Debes especificar al menos un elemento en diagnóstico detallado y un diagnóstico principal"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "job status"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "JobStatus|Name"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "JobStatus|Description"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "JobStatus|Created at"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "JobStatus|Updated at"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "JobStatus|Position"
+msgstr ""
+
+#: app/models/job_status.rb:-
+msgid "JobStatus|Description html"
+msgstr ""
+
+#: app/models/configurable_view.rb:-
+msgid "configurable view"
+msgstr ""
+
+#: app/models/configurable_view.rb:-
+msgid "ConfigurableView|Font size"
+msgstr ""
+
+#: app/models/configurable_view.rb:-
+msgid "ConfigurableView|Font family"
+msgstr ""
+
+#: app/models/configurable_view.rb:-
+msgid "ConfigurableView|Table grid"
+msgstr ""
+
+#: app/models/center_report.rb:3
+msgid "Informe de Centro"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "job"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "Job|Name"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "Job|Description"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "Job|Created at"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "Job|Updated at"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "Job|Position"
+msgstr ""
+
+#: app/models/job.rb:-
+msgid "Job|Description html"
+msgstr ""
+
+#: app/models/item_report_association.rb:-
+msgid "item report association"
+msgstr ""
+
+#: app/models/item_report_association.rb:-
+msgid "ItemReportAssociation|Item type"
+msgstr ""
+
+#: app/models/item_report_association.rb:-
+msgid "ItemReportAssociation|Item"
+msgstr ""
+
+#: app/models/item_report_association.rb:-
+msgid "ItemReportAssociation|Comparative report"
+msgstr ""
+
+#: app/models/item_report_association.rb:-
+msgid "ItemReportAssociation|Created at"
+msgstr ""
+
+#: app/models/item_report_association.rb:-
+msgid "ItemReportAssociation|Updated at"
+msgstr ""
+
+#: app/models/comparative_report_template.rb:-
+msgid "comparative report template"
+msgstr ""
+
+#: app/models/comparative_report_template.rb:-
+msgid "ComparativeReportTemplate|Name"
+msgstr ""
+
+#: app/models/comparative_report_template.rb:-
+msgid "ComparativeReportTemplate|Title"
+msgstr ""
+
+#: app/models/comparative_report_template.rb:-
+msgid "ComparativeReportTemplate|View template"
+msgstr ""
+
+#: app/models/comparative_report_template.rb:-
+msgid "ComparativeReportTemplate|Created at"
+msgstr ""
+
+#: app/models/comparative_report_template.rb:-
+msgid "ComparativeReportTemplate|Updated at"
+msgstr ""
+
+#: app/models/school_type.rb:-
+msgid "school type"
+msgstr ""
+
+#: app/models/school_type.rb:-
+msgid "SchoolType|Name"
+msgstr ""
+
+#: app/models/school_type.rb:-
+msgid "SchoolType|Description"
+msgstr ""
+
+#: app/models/school_type.rb:-
+msgid "SchoolType|Description html"
+msgstr ""
+
+#: app/models/school_type.rb:-
+msgid "SchoolType|Created at"
+msgstr ""
+
+#: app/models/school_type.rb:-
+msgid "SchoolType|Updated at"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "page"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Title"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Permalink"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Sidebar content"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Sidebar content html"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Content"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Content html"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Created at"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Updated at"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "report field template"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Applicable on"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Function"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Render method"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Render options"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Created at"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Updated at"
+msgstr ""
+
+#: app/models/report_field_template.rb:-
+msgid "ReportFieldTemplate|Name"
+msgstr ""
+
+#: app/models/report_field_template.rb:58
+#: app/models/report_field_template.rb:74
+msgid "Error de sintaxis o de nombrado de variables: %{message}"
+msgstr ""
+
+#: app/models/report_field_template.rb:71
+msgid "Debe ser una lista de clases separadas por comas"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "formation level"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "FormationLevel|Name"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "FormationLevel|Description"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "FormationLevel|Created at"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "FormationLevel|Updated at"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "FormationLevel|Position"
+msgstr ""
+
+#: app/models/formation_level.rb:-
+msgid "FormationLevel|Description html"
+msgstr ""
+
+#: app/models/region.rb:-
+msgid "region"
+msgstr ""
+
+#: app/models/region.rb:-
+msgid "Region|Name"
+msgstr ""
+
+#: app/models/region.rb:-
+msgid "Region|Created at"
+msgstr ""
+
+#: app/models/region.rb:-
+msgid "Region|Updated at"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "diagnosis item"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Name"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Description"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Description html"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Parent"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Lft"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Rgt"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Created at"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Updated at"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:-
+msgid "DiagnosisItem|Position"
+msgstr ""
+
+#: app/models/diagnosis_item.rb:28
+msgid "Descripción no puede estar vacía"
+msgstr ""
+
+#: app/helpers/application_helper.rb:10
+#: app/views/medical_records/_form.html.erb:104
+#: app/views/medical_records/_form_social_familiar.html.erb:211
+#: app/views/medical_records/_form_social_familiar.html.erb:216
+#: app/views/medical_records/_form_social_familiar.html.erb:221
+msgid "Sí"
+msgstr ""
+
+#: app/helpers/application_helper.rb:12
+msgid "No"
+msgstr ""
+
+#: app/helpers/application_helper.rb:32
+msgid "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco."
+msgstr ""
+
+#: app/views/help/diagnosis_items/index.html.erb:1
+#: app/views/help/diagnosis_items/show.html.erb:1
+#: app/views/admin/diagnosis_items/help.html.erb:1
+#: app/views/admin/diagnosis_items/help_index.html.erb:1
+msgid "Ayuda para la clasificación diagnóstica"
+msgstr ""
+
+#: app/views/help/diagnosis_items/index.html.erb:4
+#: app/views/help/diagnosis_items/index.html.erb:7
+#: app/views/help/diagnosis_items/show.html.erb:4
+#: app/views/admin/diagnosis_items/help.html.erb:4
+#: app/views/admin/diagnosis_items/help_index.html.erb:4
+#: app/views/admin/diagnosis_items/help_index.html.erb:7
+msgid "Clasificación diagnóstica"
+msgstr ""
+
+#: app/views/help/jobs/index.html.erb:1
+msgid "Ayuda sobre puestos de trabajo"
+msgstr ""
+
+#: app/views/reports/_context_menu.html.erb:2
+msgid "Imprimir"
+msgstr ""
+
+#: app/views/reports/_context_menu.html.erb:3
+msgid "Descargar PDF"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/edit.html.erb:1
+msgid "Modificar Plantilla de Informe Comparativo"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/new.html.erb:1
+#: app/views/admin/comparative_report_templates/index.html.erb:25
+msgid "Nueva Plantilla de Informe Comparativo"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/_form.html.erb:5
+msgid "Plantilla de Informe Comparativo"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/_form.html.erb:22
+msgid "Procesamiento de datos"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/_form.html.erb:99
+#: app/views/odat_diagnoses/_form.html.erb:37
+#: app/views/center_reports/_form.html.erb:48
+#: app/views/individual_reports/_form.html.erb:163
+#: app/views/layouts/medical_records.html.erb:12
+#: app/views/layouts/medical_records.html.erb:21
+#: app/views/medical_records/_form.html.erb:125
+#: app/views/medical_records/_medical_record.html.erb:9
+#: app/views/medical_records/_medical_record.html.erb:16
+msgid "Nuevo"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/_form.html.erb:99
+#: app/views/admin/comparative_report_templates/_form.html.erb:102
+#: app/views/odat_diagnoses/_form.html.erb:37
+#: app/views/odat_diagnoses/_form.html.erb:39
+#: app/views/center_reports/_form.html.erb:48
+#: app/views/center_reports/_form.html.erb:50
+#: app/views/individual_reports/_form.html.erb:163
+#: app/views/individual_reports/_form.html.erb:165
+#: app/views/medical_records/_form.html.erb:125
+#: app/views/medical_records/_form.html.erb:127
+msgid "Cancelar"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/_form.html.erb:102
+#: app/views/admin/centers/_form.html.erb:16
+#: app/views/odat_diagnoses/_form.html.erb:39
+#: app/views/center_reports/_form.html.erb:50
+#: app/views/individual_reports/_form.html.erb:165
+#: app/views/medical_records/_form.html.erb:127
+msgid "Guardar"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/index.html.erb:1
+msgid "Plantillas de Informes Comparativos"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/index.html.erb:5
+#: app/views/odat_diagnoses/_form_medical_record_details.html.erb:3
+#: app/views/odat_diagnoses/show.html.erb:7
+#: app/views/individual_reports/show.html.erb:13
+#: app/views/medical_records/_show.html.erb:5
+#: app/views/medical_records/_form.html.erb:25
+#: app/views/medical_records/_show_mother_data.html.erb:2
+#: app/views/medical_records/_form_social_familiar.html.erb:25
+#: app/views/medical_records/_form_social_familiar.html.erb:104
+#: app/views/medical_records/index.html.erb:15
+#: app/views/medical_records/_show_father_data.html.erb:2
+#: app/views/individual_reports/show.pdf.prawn:61
+#: app/views/individual_reports/show.pdf.prawn:103
+#: app/views/individual_reports/show.pdf.prawn:137
+msgid "Nombre"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/index.html.erb:6
+#: app/views/center_reports/index.html.erb:13
+msgid "Título"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/index.html.erb:7
+msgid "Nº de funciones comparativas"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/_report_field_templates_settings.html.erb:5
+msgid "Borrar"
+msgstr ""
+
+#: app/views/admin/comparative_report_templates/show.html.erb:1
+msgid "Informes Comparativo: %{name}"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:1
+#: app/views/layouts/_admin_navbar.html.erb:2
+msgid "Administración"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:3
+msgid "Usuarios y Centros"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:6
+msgid "Cuentas de usuario"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:8
+msgid "Centros"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:12
+msgid "Expedientes y diagnósticos"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:15
+msgid "Expedientes"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:17
+#: app/views/layouts/medical_records.html.erb:9
+#: app/views/medical_records/index.html.erb:17
+msgid "Diagnósticos"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:19
+msgid "Informes individuales"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:23
+msgid "Informes y funciones comparativas"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:26
+msgid "Informes comparativos"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:28
+msgid "Plantillas de informes comparativos"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:31
+msgid "Funciones Comparativas"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:36
+msgid "Páginas y ficheros"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:39
+msgid "Páginas informativas"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:43
+#: app/views/odat_diagnoses/show.html.erb:36
+#: app/views/individual_reports/show.html.erb:97
+#: app/views/individual_reports/show.html.erb:121
+#: app/views/individual_reports/show.pdf.prawn:199
+#: app/views/individual_reports/show.pdf.prawn:255
+msgid "Datos de diagnóstico"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:46
+msgid "Autonomías"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:48
+#: app/views/odat_diagnoses/show.html.erb:30
+#: app/views/odat_diagnoses/_form_center_details.html.erb:3
+#: app/views/individual_reports/_form.html.erb:101
+msgid "Recursos de centro"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:50
+msgid "Elementos de diagnóstico"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:52
+msgid "Provincias"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:54
+msgid "Trabajos"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:56
+msgid "Motivos de consulta"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:58
+msgid "Motivos de derivación"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:60
+msgid "Fuentes de derivacion"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:62
+msgid "Estados Civiles"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:64
+msgid "Situaciones laborales"
+msgstr ""
+
+#: app/views/admin/dashboard/index.html.erb:66
+msgid "Niveles de formación"
+msgstr ""
+
+#: app/views/admin/report_field_templates/index.html.erb:1
+msgid "Listing report_field_templates"
+msgstr ""
+
+#: app/views/admin/civil_states/edit.html.erb:1
+msgid "Modificar Estado Civil"
+msgstr ""
+
+#: app/views/admin/civil_states/new.html.erb:1
+msgid "Nuevo Estado Civil"
+msgstr ""
+
+#: app/views/admin/center_resources/edit.html.erb:1
+msgid "Editando recurso de centro"
+msgstr ""
+
+#: app/views/admin/center_resources/edit.html.erb:5
+#: app/views/admin/center_resources/index.html.erb:15
+msgid "Ver"
+msgstr ""
+
+#: app/views/admin/center_resources/edit.html.erb:6
+#: app/views/admin/center_resources/new.html.erb:5
+msgid "Atrás"
+msgstr ""
+
+#: app/views/admin/center_resources/new.html.erb:1
+msgid "Nuevo recurso de centro"
+msgstr ""
+
+#: app/views/admin/center_resources/index.html.erb:16
+#: app/views/odat_diagnoses/index.html.erb:29
+#: app/views/center_reports/_menu.html.erb:6
+#: app/views/center_reports/_center_report.html.erb:4
+#: app/views/individual_reports/index.html.erb:22
+#: app/views/layouts/center_reports.html.erb:6
+#: app/views/layouts/medical_records.html.erb:6
+#: app/views/medical_records/_medical_record.html.erb:3
+msgid "Modificar"
+msgstr ""
+
+#: app/views/admin/center_resources/index.html.erb:18
+#: app/views/odat_diagnoses/index.html.erb:12
+#: app/views/center_reports/index.html.erb:16
+#: app/views/individual_reports/index.html.erb:11
+msgid "Eliminar"
+msgstr ""
+
+#: app/views/admin/center_resources/index.html.erb:20
+msgid "seguro?"
+msgstr ""
+
+#: app/views/admin/users/edit.html.erb:1
+msgid "Editar detalles de usuario"
+msgstr ""
+
+#: app/views/admin/users/new.html.erb:1
+msgid "Registrar nuevo usuario"
+msgstr ""
+
+#: app/views/admin/users/_form.html.erb:19
+#: app/views/admin/users/index.html.erb:7
+msgid "Centro"
+msgstr ""
+
+#: app/views/admin/users/_form.html.erb:24
+#: app/views/admin/centers/_form.html.erb:14
+msgid "Crear"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:1
+msgid "Listado de usuarios"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:5
+msgid "Login"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:6
+msgid "Estado"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:28
+msgid "Dar de alta nuevo usuario"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:1
+msgid "Área de trabajo"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:3
+msgid "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
+msgstr ""
+
+#: app/views/odat_diagnoses/edit.html.erb:1
+msgid "Modificar diagnóstico"
+msgstr ""
+
+#: app/views/odat_diagnoses/new.html.erb:1
+#: app/views/odat_diagnoses/index.html.erb:3
+msgid "Nuevo diagnóstico"
+msgstr ""
+
+#: app/views/odat_diagnoses/_show_consultation_data.html.erb:3
+#: app/views/odat_diagnoses/_form_consultation_details.html.erb:4
+#: app/views/individual_reports/show.pdf.prawn:212
+msgid "Fuente de derivación"
+msgstr ""
+
+#: app/views/odat_diagnoses/_show_consultation_data.html.erb:7
+#: app/views/odat_diagnoses/_form_consultation_details.html.erb:16
+#: app/views/individual_reports/show.pdf.prawn:217
+msgid "Motivo de derivación"
+msgstr ""
+
+#: app/views/odat_diagnoses/_show_consultation_data.html.erb:11
+#: app/views/odat_diagnoses/_form_consultation_details.html.erb:28
+#: app/views/individual_reports/show.pdf.prawn:222
+msgid "Motivo de consulta expresado por los padres"
+msgstr ""
+
+#: app/views/odat_diagnoses/_show_consultation_data.html.erb:15
+#: app/views/odat_diagnoses/_form_consultation_details.html.erb:38
+#: app/views/individual_reports/show.pdf.prawn:226
+msgid "Denominación"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form_diagnosis_items_subcategory_toggle.html.erb:4
+msgid "%{count} elementos sin mostrar"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form_diagnosis_items_subcategory_toggle.html.erb:13
+msgid "ocultar"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:6
+msgid "Parte 1: General"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:9
+#: app/views/individual_reports/_form.html.erb:11
+#: app/views/medical_records/_form.html.erb:7
+#: app/views/medical_records/index.html.erb:16
+msgid "Expediente"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:14
+#: app/views/odat_diagnoses/show.html.erb:27
+msgid "Datos demanda"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:19
+#: app/views/individual_reports/show.html.erb:113
+#: app/views/individual_reports/show.pdf.prawn:234
+msgid "Datos de centro"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:23
+msgid "Parte 2: Diagnóstico"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:26
+#: app/views/individual_reports/_form.html.erb:77
+msgid "Diagnóstico detallado"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form.html.erb:31
+#: app/views/odat_diagnoses/show.html.erb:33
+#: app/views/odat_diagnoses/_form_main_diagnosis_details.html.erb:4
+#: app/views/individual_reports/_form.html.erb:104
+#: app/views/individual_reports/show.html.erb:117
+#: app/views/individual_reports/show.pdf.prawn:245
+msgid "Diagnóstico principal"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:1
+msgid "Diagnósticos de %{name}"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:10
+#: app/views/individual_reports/index.html.erb:9
+msgid "Fecha"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:11
+#: app/views/odat_diagnoses/show.html.erb:12
+#: app/views/individual_reports/_form.html.erb:81
+msgid "Diagnóstico"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:24
+msgid "Fecha desconocida"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:34
+#: app/views/center_reports/_center_report.html.erb:6
+msgid "Eliminar diagnóstico"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:36
+#: app/views/center_reports/_center_report.html.erb:8
+msgid "¿Realmente deseas eliminar el diagnóstico permanentemente?"
+msgstr ""
+
+#: app/views/odat_diagnoses/index.html.erb:44
+msgid "No hay diagnósticos almacenados."
+msgstr ""
+
+#: app/views/odat_diagnoses/_show_main_diagnosis.html.erb:4
+#: app/views/individual_reports/show.pdf.prawn:249
+msgid "No se ha indicado un diagnóstico principal."
+msgstr ""
+
+#: app/views/odat_diagnoses/show.html.erb:1
+msgid "Ver diagnóstico"
+msgstr ""
+
+#: app/views/odat_diagnoses/show.html.erb:3
+#: app/views/individual_reports/_form.html.erb:24
+#: app/views/individual_reports/_form.html.erb:27
+#: app/views/individual_reports/show.html.erb:9
+#: app/views/medical_records/_show.html.erb:1
+#: app/views/medical_records/_form.html.erb:22
+#: app/views/individual_reports/show.pdf.prawn:59
+msgid "Datos personales"
+msgstr ""
+
+#: app/views/odat_diagnoses/show.html.erb:16
+#: app/views/center_reports/index.html.erb:14
+#: app/views/individual_reports/show.html.erb:103
+#: app/views/individual_reports/show.pdf.prawn:203
+msgid "Fecha de creación"
+msgstr ""
+
+#: app/views/odat_diagnoses/show.html.erb:20
+msgid "Última modificación"
+msgstr ""
+
+#: app/views/odat_diagnoses/show.html.erb:25
+msgid "Datos socio-familiares"
+msgstr ""
+
+#: app/views/odat_diagnoses/_form_consultation_details.html.erb:40
+msgid "Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc."
+msgstr ""
+
+#: app/views/odat_diagnoses/_form_diagnosis_details.html.erb:5
+msgid "ayuda"
+msgstr ""
+
+#: app/views/center_reports/edit.html.erb:1
+msgid "Modificar Informe de centro"
+msgstr ""
+
+#: app/views/center_reports/new.html.erb:1
+#: app/views/center_reports/index.html.erb:7
+msgid "Nuevo Informe de Centro"
+msgstr ""
+
+#: app/views/center_reports/new.html.erb:4
+msgid "En este formulario se puede seleccionar qué datos se mostrarán en el informe"
+msgstr ""
+
+#: app/views/center_reports/_menu.html.erb:10
+#: app/views/layouts/center_reports.html.erb:9
+msgid "Eliminar informe de centro"
+msgstr ""
+
+#: app/views/center_reports/_menu.html.erb:11
+#: app/views/layouts/center_reports.html.erb:10
+msgid "Seguro deseas borrar el informe de centro actual (operación irreversible)?"
+msgstr ""
+
+#: app/views/center_reports/_form.html.erb:7
+msgid "Datos del informe"
+msgstr ""
+
+#: app/views/center_reports/_form.html.erb:10
+msgid "Funciones analíticas"
+msgstr ""
+
+#: app/views/center_reports/_form.html.erb:27
+#: app/views/center_reports/index.html.erb:15
+#: app/views/individual_reports/_form.html.erb:116
+#: app/views/individual_reports/index.html.erb:10
+#: app/views/individual_reports/show.html.erb:127
+#: app/views/center_reports/show.pdf.prawn:92
+#: app/views/individual_reports/show.pdf.prawn:284
+msgid "Informe"
+msgstr ""
+
+#: app/views/center_reports/_form.html.erb:30
+#: app/views/individual_reports/_form.html.erb:144
+msgid "Firma y fecha"
+msgstr ""
+
+#: app/views/center_reports/_form.html.erb:34
+#: app/views/individual_reports/_form.html.erb:148
+msgid "Fecha del informe"
+msgstr ""
+
+#: app/views/center_reports/_form.html.erb:38
+#: app/views/individual_reports/_form.html.erb:152
+#: app/views/individual_reports/show.html.erb:154
+#: app/views/center_reports/show.pdf.prawn:98
+#: app/views/individual_reports/show.pdf.prawn:310
+msgid "Firma"
+msgstr ""
+
+#: app/views/center_reports/index.html.erb:1
+msgid "Informes de Centro"
+msgstr ""
+
+#: app/views/center_reports/index.html.erb:4
+msgid "Aquí se muestran los informes de centro almacenados."
+msgstr ""
+
+#: app/views/center_reports/show.html.erb:8
+msgid "Informe de centro"
+msgstr ""
+
+#: app/views/center_reports/show.html.erb:31
+#: app/views/center_reports/show.pdf.prawn:87
+msgid "Algo ha ido mal"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:1
+#: app/views/sessions/new.html.erb:17
+msgid "Iniciar sesión"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:5
+msgid "Identificador de usuario"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:8
+msgid "Clave"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:14
+msgid "Recordarme"
+msgstr ""
+
+#: app/views/individual_reports/edit.html.erb:1
+msgid "Editar informe"
+msgstr ""
+
+#: app/views/individual_reports/new.html.erb:1
+#: app/views/individual_reports/index.html.erb:3
+msgid "Nuevo informe"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:4
+msgid "Selecciona la información que será mostrada en el informe."
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:8
+msgid "Datos del expediente"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:15
+#: app/views/medical_records/_form.html.erb:10
+msgid "Fecha inicio expediente"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:31
+msgid "Nombre completo"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:34
+#: app/views/individual_reports/show.html.erb:27
+#: app/views/medical_records/_show.html.erb:13
+#: app/views/medical_records/_form.html.erb:40
+#: app/views/medical_records/_show_mother_data.html.erb:10
+#: app/views/medical_records/_form_social_familiar.html.erb:39
+#: app/views/medical_records/_form_social_familiar.html.erb:118
+#: app/views/medical_records/_show_father_data.html.erb:10
+#: app/views/individual_reports/show.pdf.prawn:68
+#: app/views/individual_reports/show.pdf.prawn:109
+#: app/views/individual_reports/show.pdf.prawn:143
+msgid "Fecha de nacimiento"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:37
+#: app/views/individual_reports/show.html.erb:33
+#: app/views/medical_records/_show.html.erb:17
+#: app/views/individual_reports/show.pdf.prawn:71
+msgid "Edad"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:40
+msgid "Posición en el parto"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:43
+#: app/views/individual_reports/show.html.erb:39
+#: app/views/medical_records/_show.html.erb:21
+#: app/views/medical_records/_form.html.erb:50
+#: app/views/individual_reports/show.pdf.prawn:74
+msgid "Sexo"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:46
+msgid "Dirección completa"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:52
+#: app/views/individual_reports/show.html.erb:59
+#: app/views/medical_records/_show.html.erb:52
+#: app/views/medical_records/_form_social_familiar.html.erb:2
+#: app/views/individual_reports/show.pdf.prawn:89
+msgid "Datos sociofamiliares"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:56
+msgid "Datos de los hermanos"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:59
+msgid "Datos del padre"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:62
+msgid "Datos de la madre"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:65
+#: app/views/individual_reports/show.html.erb:82
+#: app/views/medical_records/_show.html.erb:75
+#: app/views/medical_records/_form_social_familiar.html.erb:180
+#: app/views/individual_reports/show.pdf.prawn:169
+msgid "Teléfonos"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:68
+msgid "Servicios de coordinación"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:78
+msgid "Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>."
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:91
+msgid "Datos diagnóstico"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:95
+#: app/views/individual_reports/show.html.erb:100
+#: app/views/individual_reports/show.pdf.prawn:201
+msgid "Fecha de creación del diagnóstico"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:98
+msgid "Datos de la demanda"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:107
+msgid "Listado de diagnóstico detallado"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:117
+msgid "Sólo se requiere completar los campos necesarios para el informe."
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:120
+#: app/views/individual_reports/show.html.erb:129
+#: app/views/individual_reports/show.pdf.prawn:286
+msgid "Asunto"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:126
+#: app/views/individual_reports/show.html.erb:134
+#: app/views/individual_reports/show.pdf.prawn:291
+msgid "Pruebas"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:132
+#: app/views/individual_reports/show.html.erb:139
+#: app/views/individual_reports/show.pdf.prawn:296
+msgid "Resultados"
+msgstr ""
+
+#: app/views/individual_reports/_form.html.erb:138
+#: app/views/individual_reports/show.html.erb:144
+#: app/views/individual_reports/show.pdf.prawn:301
+msgid "Orientaciones"
+msgstr ""
+
+#: app/views/individual_reports/index.html.erb:1
+msgid "Informes para %{full_name}"
+msgstr ""
+
+#: app/views/individual_reports/index.html.erb:25
+msgid "Eliminar informe"
+msgstr ""
+
+#: app/views/individual_reports/index.html.erb:27
+msgid "¿Realmente deseas eliminar este informe permanentemente?"
+msgstr ""
+
+#: app/views/individual_reports/index.html.erb:38
+msgid "No hay informes almacenados."
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:20
+#: app/views/medical_records/_show.html.erb:9
+#: app/views/individual_reports/show.pdf.prawn:65
+msgid "Fecha de ingreso"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:45
+#: app/views/medical_records/_show.html.erb:25
+#: app/views/individual_reports/show.pdf.prawn:77
+msgid "Número de parto <small>(en caso de parto múltiple)</small>"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:51
+msgid "Direccion"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:61
+#: app/views/medical_records/_show.html.erb:53
+#: app/views/medical_records/_form_social_familiar.html.erb:4
+#: app/views/individual_reports/show.pdf.prawn:91
+msgid "Hermanos"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:68
+#: app/views/medical_records/_show.html.erb:60
+#: app/views/medical_records/_form_social_familiar.html.erb:22
+#: app/views/individual_reports/show.pdf.prawn:101
+msgid "Padre"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:75
+#: app/views/medical_records/_show.html.erb:68
+#: app/views/medical_records/_form_social_familiar.html.erb:101
+#: app/views/individual_reports/show.pdf.prawn:135
+msgid "Madre"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:89
+#: app/views/medical_records/_show.html.erb:82
+#: app/views/medical_records/_form_social_familiar.html.erb:207
+#: app/views/individual_reports/show.pdf.prawn:185
+msgid "Coordinación"
+msgstr ""
+
+#: app/views/individual_reports/show.html.erb:109
+#: app/views/individual_reports/show.pdf.prawn:209
+msgid "Datos de demanda"
+msgstr ""
+
+#: app/views/layouts/default.html.erb:4
+#: app/views/layouts/_header.html.erb:2
+msgid "Organización Diagnóstica para la Atención Temprana"
+msgstr ""
+
+#: app/views/layouts/visitor.html.erb:13
+#: app/views/layouts/_header.html.erb:1
+msgid "ODAT"
+msgstr ""
+
+#: app/views/layouts/help/help_layout.html.erb:22
+msgid "Cerrar ventana"
+msgstr ""
+
+#: app/views/layouts/medical_records.html.erb:17
+#: app/views/medical_records/index.html.erb:18
+msgid "Informes"
+msgstr ""
+
+#: app/views/layouts/medical_records.html.erb:25
+msgid "Eliminar expediente"
+msgstr ""
+
+#: app/views/layouts/medical_records.html.erb:26
+msgid "Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?"
+msgstr ""
+
+#: app/views/layouts/_admin_navbar.html.erb:5
+#: app/views/layouts/_user_navbar.html.erb:9
+msgid "Documentación ODAT"
+msgstr ""
+
+#: app/views/layouts/_admin_navbar.html.erb:6
+#: app/views/layouts/_user_navbar.html.erb:10
+msgid "Acerca de ODAT"
+msgstr ""
+
+#: app/views/layouts/_footer.html.erb:2
+msgid "Real patronato sobre discapacidad"
+msgstr ""
+
+#: app/views/layouts/_user_navbar.html.erb:3
+msgid "Centro: %{name}"
+msgstr ""
+
+#: app/views/layouts/_user_navbar.html.erb:5
+msgid "Listado expedientes"
+msgstr ""
+
+#: app/views/layouts/_user_navbar.html.erb:6
+msgid "Informes de centro"
+msgstr ""
+
+#: app/views/users/_visitor_bar.html.erb:1
+#: app/views/users/_user_bar.html.erb:8
+msgid "No se ha iniciado sesión"
+msgstr ""
+
+#: app/views/users/_visitor_bar.html.erb:3
+#: app/views/users/_visitor_bar.html.erb:4
+#: app/views/users/_user_bar.html.erb:10
+#: app/views/users/_user_bar.html.erb:11
+msgid "Iniciar Sesión"
+msgstr ""
+
+#: app/views/users/_user_bar.html.erb:4
+msgid "Preferencias"
+msgstr ""
+
+#: app/views/users/_user_bar.html.erb:5
+#: app/views/users/_user_bar.html.erb:6
+msgid "Cerrar Sesión"
+msgstr ""
+
+#: app/views/medical_records/_show_siblings_data.html.erb:2
+#: app/views/medical_records/_form_social_familiar.html.erb:7
+#: app/views/individual_reports/show.pdf.prawn:92
+msgid "Número total de hermanos"
+msgstr ""
+
+#: app/views/medical_records/_show_siblings_data.html.erb:6
+#: app/views/medical_records/_form_social_familiar.html.erb:14
+#: app/views/individual_reports/show.pdf.prawn:94
+msgid "Lugar que ocupa"
+msgstr ""
+
+#: app/views/medical_records/edit.html.erb:1
+msgid "Editar expediente"
+msgstr ""
+
+#: app/views/medical_records/new.html.erb:1
+#: app/views/medical_records/index.html.erb:9
+msgid "Nuevo expediente"
+msgstr ""
+
+#: app/views/medical_records/new.html.erb:5
+msgid "En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas."
+msgstr ""
+
+#: app/views/medical_records/_show.html.erb:29
+#: app/views/medical_records/_form.html.erb:69
+#: app/views/individual_reports/show.pdf.prawn:81
+msgid "Dirección"
+msgstr ""
+
+#: app/views/medical_records/_show.html.erb:33
+#: app/views/medical_records/_form.html.erb:83
+msgid "Localidad"
+msgstr ""
+
+#: app/views/medical_records/_show.html.erb:37
+#: app/views/medical_records/_form.html.erb:90
+msgid "Provincia"
+msgstr ""
+
+#: app/views/medical_records/_show.html.erb:44
+#: app/views/medical_records/_form.html.erb:100
+msgid "Minusvalía"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:33
+#: app/views/medical_records/_show_mother_data.html.erb:6
+#: app/views/medical_records/_form_social_familiar.html.erb:32
+#: app/views/medical_records/_form_social_familiar.html.erb:111
+#: app/views/medical_records/_show_father_data.html.erb:6
+#: app/views/individual_reports/show.pdf.prawn:106
+#: app/views/individual_reports/show.pdf.prawn:140
+msgid "Apellidos"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:59
+msgid "Parto múltiple"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:62
+msgid "Posición en el parto <small>(orden)</small>"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:76
+msgid "Código postal"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:103
+#: app/views/medical_records/_show_handicap_data.html.erb:2
+msgid "Clasificación de minusvalía mayor que 33 grados"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:108
+#: app/views/medical_records/_show_handicap_data.html.erb:7
+msgid "Grado de dependencia"
+msgstr ""
+
+#: app/views/medical_records/_form.html.erb:113
+#: app/views/medical_records/_show_handicap_data.html.erb:11
+msgid "Situación de dependencia"
+msgstr ""
+
+#: app/views/medical_records/_medical_record.html.erb:5
+msgid "%{num} Diagnósticos"
+msgstr ""
+
+#: app/views/medical_records/_medical_record.html.erb:13
+msgid "%{num} Informes"
+msgstr ""
+
+#: app/views/medical_records/_show_mother_data.html.erb:15
+#: app/views/medical_records/_form_social_familiar.html.erb:49
+#: app/views/medical_records/_form_social_familiar.html.erb:128
+#: app/views/medical_records/_show_father_data.html.erb:15
+#: app/views/individual_reports/show.pdf.prawn:112
+#: app/views/individual_reports/show.pdf.prawn:146
+msgid "Situación laboral"
+msgstr ""
+
+#: app/views/medical_records/_show_mother_data.html.erb:19
+#: app/views/medical_records/_form_social_familiar.html.erb:58
+#: app/views/medical_records/_form_social_familiar.html.erb:137
+#: app/views/medical_records/_show_father_data.html.erb:19
+#: app/views/individual_reports/show.pdf.prawn:115
+#: app/views/individual_reports/show.pdf.prawn:149
+msgid "Ocupación"
+msgstr ""
+
+#: app/views/medical_records/_show_mother_data.html.erb:23
+#: app/views/medical_records/_show_father_data.html.erb:23
+#: app/views/individual_reports/show.pdf.prawn:118
+#: app/views/individual_reports/show.pdf.prawn:152
+msgid "Nivel de estudios"
+msgstr ""
+
+#: app/views/medical_records/_show_mother_data.html.erb:28
+#: app/views/medical_records/_form_social_familiar.html.erb:76
+#: app/views/medical_records/_form_social_familiar.html.erb:155
+#: app/views/medical_records/_show_father_data.html.erb:28
+#: app/views/individual_reports/show.pdf.prawn:121
+#: app/views/individual_reports/show.pdf.prawn:155
+msgid "Estado civil"
+msgstr ""
+
+#: app/views/medical_records/_show_mother_data.html.erb:33
+#: app/views/medical_records/_form_social_familiar.html.erb:86
+#: app/views/medical_records/_form_social_familiar.html.erb:165
+#: app/views/medical_records/_show_father_data.html.erb:33
+#: app/views/individual_reports/show.pdf.prawn:124
+#: app/views/individual_reports/show.pdf.prawn:158
+msgid "Email"
+msgstr ""
+
+#: app/views/medical_records/_show_mother_data.html.erb:37
+#: app/views/medical_records/_form_social_familiar.html.erb:93
+#: app/views/medical_records/_form_social_familiar.html.erb:172
+#: app/views/medical_records/_show_father_data.html.erb:37
+#: app/views/individual_reports/show.pdf.prawn:127
+#: app/views/individual_reports/show.pdf.prawn:161
+msgid "Información extra"
+msgstr ""
+
+#: app/views/medical_records/_show_coordination_data.html.erb:2
+#: app/views/medical_records/_form_social_familiar.html.erb:210
+#: app/views/individual_reports/show.pdf.prawn:186
+msgid "Servicios Sanitarios"
+msgstr ""
+
+#: app/views/medical_records/_show_coordination_data.html.erb:7
+#: app/views/medical_records/_form_social_familiar.html.erb:215
+#: app/views/individual_reports/show.pdf.prawn:188
+msgid "Servicios Sociales"
+msgstr ""
+
+#: app/views/medical_records/_show_coordination_data.html.erb:11
+#: app/views/medical_records/_form_social_familiar.html.erb:220
+#: app/views/individual_reports/show.pdf.prawn:190
+msgid "Servicios Educativos"
+msgstr ""
+
+#: app/views/medical_records/_form_social_familiar.html.erb:67
+#: app/views/medical_records/_form_social_familiar.html.erb:146
+msgid "Nivel de estudios máximo"
+msgstr ""
+
+#: app/views/medical_records/_form_social_familiar.html.erb:183
+#: app/views/medical_records/_show_phones_data.html.erb:2
+#: app/views/individual_reports/show.pdf.prawn:171
+msgid "Domicilio"
+msgstr ""
+
+#: app/views/medical_records/_form_social_familiar.html.erb:191
+#: app/views/medical_records/_show_phones_data.html.erb:7
+#: app/views/individual_reports/show.pdf.prawn:174
+msgid "Móvil"
+msgstr ""
+
+#: app/views/medical_records/_form_social_familiar.html.erb:199
+#: app/views/medical_records/_show_phones_data.html.erb:11
+#: app/views/individual_reports/show.pdf.prawn:177
+msgid "Trabajo"
+msgstr ""
+
+#: app/views/medical_records/index.html.erb:1
+msgid "Expedientes del centro"
+msgstr ""
+
+#: app/views/medical_records/index.html.erb:5
+msgid "Aquí se muestran todos los expedientes del centro"
+msgstr ""
+
+#: app/views/medical_records/show.html.erb:1
+msgid "Consultar datos del expediente"
+msgstr ""
+
+#: app/views/individual_reports/show.pdf.prawn:54
+msgid "Informe para %{full_name}"
+msgstr ""
+
