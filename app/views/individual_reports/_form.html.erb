@@ -135,7 +135,7 @@
       </td>
     </tr>
     <tr>
-      <th><%= f.label(:orientations, _('Orientaciones')) %></th>
+      <th><%= f.label(:orientation, _('Orientaciones')) %></th>
       <td>
 	<%= f.text_area(:orientation) %>
       </td>
@@ -150,7 +150,7 @@
 	  </li>
 	  <li><%= f.check_box(:show_signature) %>
 	  <%= f.label(:show_signature, _('Firma')) %>
-	  <%= f.text_field(:signature) %>
+	  <%= f.text_area(:signature) %>
 	  </li>
         </ul>
       </td>

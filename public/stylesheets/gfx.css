@@ -23,9 +23,13 @@ margin-bottom: 0.9091em;
 input, textarea, select {
     border: 1px solid #c0c0c0;
   margin-left: 0;
+  vertical-align: baseline;
 }
 input, textarea {
     padding: .2em .3em;
+}
+textarea {
+  vertical-align: text-top;
 }
 option {
 	padding: .3em .2em;
