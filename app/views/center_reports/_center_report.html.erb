@@ -1,5 +1,5 @@
 <tr>
-  <td>titulo</td>
+  <td><%= h(center_report.title) %></td>
   <td><%= link_to(l(center_report.created_at, :format => :short), center_report) %></td>
   <td><%= link_to(_('Modificar'), edit_center_report_path(center_report)) %></td>
   <td>

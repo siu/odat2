@@ -53,12 +53,6 @@ class IndividualReportTest < ActiveSupport::TestCase
       report = create_report(a => 'text')
       assert report.show_report_data?
     end
-      report = create_report(:show_signature => true,
-                             :signature => 'Signer')
-      assert report.show_report_data?
-      report = create_report(:show_signed_on => true,
-                             :signed_on => Time.now)
-      assert report.show_report_data?
   end
 
   protected

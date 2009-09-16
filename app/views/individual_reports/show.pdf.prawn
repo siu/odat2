@@ -199,7 +199,7 @@ if @individual_report.show_diagnosis_data?
     h3(pdf, _('Fecha de creación del diagnóstico'))
     
     data << [_('Fecha de creación'),
-            l(@odat_diagnosis.created_at)]
+            l(@odat_diagnosis.created_at.to_date)]
     print_table(pdf, data)
     data = []
   end
@@ -300,12 +300,16 @@ if @individual_report.show_report_data?
     pdf.text @individual_report.orientation_html
     pdf.move_down 20
   end
-  if @individual_report.show_signed_on? and @individual_report.signed_on
-    pdf.text l(@individual_report.signed_on.to_date), :align => :right
-    pdf.move_down 20
-  end
-  if @individual_report.show_signature?
-    pdf.text _('Firma') << ': ' << h(@individual_report.signature), :align => :right
-    pdf.move_down 20
-  end
+
+end
+
+pdf.move_down 20
+
+if @individual_report.show_signed_on? and @individual_report.signed_on
+  pdf.text l(@individual_report.signed_on.to_date, :format => :long), :align => :right
+  pdf.move_down 10
+end
+if @individual_report.show_signature?
+  pdf.text h(@individual_report.signature), :align => :right
+  pdf.move_down 20
 end

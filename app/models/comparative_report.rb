@@ -36,6 +36,19 @@ class ComparativeReport < Report
     @results ||= ComparativeReportResults.new(report_field_templates, items)
   end
 
+  # Helpers for views
+  def show_extra_information?
+    !extra_information_html.nil? && !extra_information_html.empty?
+  end
+
+  def show_report_data?
+    [
+      :show_extra_information?
+    ].any? do |a|
+      self.send(a)
+    end
+  end
+
 end
 
 class ComparativeReportResults

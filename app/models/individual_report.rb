@@ -47,18 +47,14 @@ class IndividualReport < Report
   end
 
   def show_report_data?
-    show = [
+    [
       :show_topic?,
       :show_tests?, 
       :show_results?, 
       :show_orientation?, 
-      :show_main_diagnosis?
     ].any? do |a|
       self.send(a)
     end
-
-    show or (self.show_signature? and !self.signature.empty?) or
-       (self.show_signed_on? and !self.signed_on.nil?)
   end
 
   def show_topic?

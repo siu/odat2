@@ -87,12 +87,21 @@ end
 
 end
 
-h2(pdf, _('Informe'))
+if @center_report.show_report_data?
+  h2(pdf, _('Informe'))
+  if @center_report.show_extra_information?
+    h3(pdf, _('Informe de memoria'))
+    pdf.text @center_report.extra_information_html
+    pdf.move_down 20
+  end
+end
+
+pdf.move_down 20
 if @center_report.show_signed_on? and @center_report.signed_on
-  pdf.text l(@center_report.signed_on.to_date, :format => :short), :align => :right
-  pdf.move_down 20
+  pdf.text l(@center_report.signed_on.to_date, :format => :long), :align => :right
+  pdf.move_down 10
 end
 if @center_report.show_signature?
-  pdf.text _('Firma') << ': ' << h(@center_report.signature), :align => :right
+  pdf.text h(@center_report.signature), :align => :right
   pdf.move_down 20
 end

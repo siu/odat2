@@ -32,6 +32,15 @@ class ComparativeReportTest < ActiveSupport::TestCase
     assert report.items[0].medical_record.full_name, report.results.first[:data][1]
   end
 
+  test "show_report_data? should return true if show any report data" do
+    for a in [
+      :extra_information
+    ] do
+      report = create_report(a => 'text')
+      assert report.show_report_data?
+    end
+  end
+
 protected
   def create_report(opts = {})
     report = ComparativeReport.create({

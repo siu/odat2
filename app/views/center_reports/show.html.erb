@@ -34,3 +34,22 @@
     </tr>
   <% end -%>
 </table>
+
+<% if @center_report.show_report_data? -%>
+  <% if @center_report.show_extra_information? -%>
+    <h4><%= _('Informe de memoria') %></h4>
+    <%= @center_report.extra_information_html %>
+  <% end -%>
+
+  <div style="text-align:right; margin-top: 5em">
+    <% if @center_report.show_signed_on? and 
+    @center_report.signed_on -%>
+      <p><%= l(@center_report.signed_on.to_date, :format => :long) %></p>
+    <% end -%>
+
+    <% if @center_report.show_signature? -%>
+      <%= simple_format(@center_report.signature) %>
+    <% end -%>
+  </div>
+
+<% end -%>

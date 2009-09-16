@@ -101,7 +101,7 @@
       <table class="hdata">
         <tr>
           <th><%= _('Fecha de creación') %></th>
-          <td><%= l(@odat_diagnosis.created_at) %></td>
+          <td><%= l(@odat_diagnosis.created_at.to_date) %></td>
         </tr>
       </table>
   <% end -%>
@@ -145,15 +145,17 @@
       <%= @individual_report.orientation_html %>
   <% end -%>
 
-  <% if @individual_report.show_signed_on? and 
-  @individual_report.signed_on -%>
-      <p><%= l(@individual_report.signed_on.to_date) %></p>
-  <% end -%>
-
-  <% if @individual_report.show_signature? -%>
-	<p><%= _('Firma') %>: <%= @individual_report.signature %></p>
-  <% end -%>
-
 <% end -%>
+
+<div style="text-align:right; margin-top: 5em">
+	<% if @individual_report.show_signed_on? and 
+		@individual_report.signed_on -%>
+		<p><%= l(@individual_report.signed_on.to_date, :format => :long) %></p>
+	<% end -%>
+
+	<% if @individual_report.show_signature? -%>
+		<%= simple_format(@individual_report.signature) %>
+	<% end -%>
+</div>
 
 </div>
