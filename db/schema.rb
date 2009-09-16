@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090914101145) do
+ActiveRecord::Schema.define(:version => 20090916144657) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20090914101145) do
 
   create_table "comparative_reports", :force => true do |t|
     t.boolean  "show_signature",                                :default => true
-    t.string   "signature",                      :limit => 150
+    t.text     "signature",                      :limit => 150
     t.boolean  "show_signed_on",                                :default => true
     t.datetime "signed_on"
     t.integer  "configurable_view_id"
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(:version => 20090914101145) do
     t.text     "orientation_html"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "signature",                        :limit => 150
+    t.text     "signature",                        :limit => 150
     t.datetime "signed_on"
     t.boolean  "show_signature",                                  :default => true
     t.boolean  "show_signed_on",                                  :default => true
@@ -297,7 +297,7 @@ ActiveRecord::Schema.define(:version => 20090914101145) do
 
   create_table "reports", :force => true do |t|
     t.boolean  "show_signature",                      :default => true
-    t.string   "signature",            :limit => 150
+    t.text     "signature",            :limit => 150
     t.boolean  "show_signed_on",                      :default => true
     t.datetime "signed_on"
     t.datetime "created_at"
