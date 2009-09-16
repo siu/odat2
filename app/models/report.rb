@@ -12,6 +12,8 @@ class Report < ActiveRecord::Base
 
   before_validation_on_create :init_configurable_view
 
+  acts_as_html_text
+
   def init_configurable_view
     self.build_configurable_view
   end

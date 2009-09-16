@@ -7,8 +7,6 @@ class IndividualReport < Report
   belongs_to :odat_diagnosis
   belongs_to :medical_record
 
-  acts_as_html_text
-
   def show_personal_data?
     [
       :show_full_name?, 

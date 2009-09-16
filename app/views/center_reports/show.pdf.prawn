@@ -88,9 +88,8 @@ end
 end
 
 if @center_report.show_report_data?
-  h2(pdf, _('Informe'))
   if @center_report.show_extra_information?
-    h3(pdf, _('Informe de memoria'))
+    h2(pdf, _('Informe de memoria'))
     pdf.text @center_report.extra_information_html
     pdf.move_down 20
   end

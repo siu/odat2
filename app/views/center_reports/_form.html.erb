@@ -25,20 +25,29 @@
 
 <fieldset>
   <legend><%= _('Informe') %></legend>
+  <p class="note"><%= _('Sólo se requiere completar los campos necesarios para el informe.') %></p>
   <table>
     <tr>
-      <th><%= _('Firma y fecha') %></th>
+      <th><%= f.label(:extra_information, _('Informe de memoria')) %></th>
       <td>
-        <ul>
-	  <li><%= f.check_box(:show_signed_on) %>
-	  <%= f.label(:show_signed_on, _('Fecha del informe')) %>
-	  <%= f.date_select(:signed_on) %>
-	  </li>
-	  <li><%= f.check_box(:show_signature) %>
-	  <%= f.label(:show_signature, _('Firma')) %>
-          <%= f.text_area(:signature, :style => 'text-align: right') %>
-	  </li>
-        </ul>
+	<%= f.text_area(:extra_information) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= _('Fecha') %></th>
+      <td>
+        <%= f.check_box(:show_signed_on) %>
+        <%= f.label(:show_signed_on, _('Mostrar')) %>
+        <br />
+        <%= f.date_select(:signed_on) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= _('Firma') %></th>
+      <td>
+        <%= f.check_box(:show_signature) %>
+        <%= f.label(:show_signature, _('Mostrar')) %><br />
+        <%= f.text_area(:signature, :rows => 3, :style => 'text-align: right') %>
       </td>
     </tr>
   </table>

@@ -213,6 +213,9 @@ input, select, textarea, .btn {
 input[type=submit] {
 	background-color: #F2F4F7;
 }
+fieldset textarea {
+  width: 98%;
+}
 input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:focus, .btn:hover, .btn:focus {
 	border: 1px solid #444;
 }

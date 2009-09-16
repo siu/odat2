@@ -2,7 +2,7 @@
   <li class="first">
   <%= link_to _('Centro: %{name}') % {:name => current_user.center.name }, medical_records_path %>
     <ul class="subnav">
-      <li><%= link_to _('Listado expedientes'), medical_records_path, :class => 'accion-principal' %></li>
+      <li><%= link_to _('Expedientes'), medical_records_path, :class => 'accion-principal' %></li>
       <li><%= link_to _('Informes de centro'), center_reports_path %></li>
     </ul>
   </li>

@@ -125,7 +125,7 @@
     <tr>
       <th><%= f.label(:tests, _('Pruebas')) %></th>
       <td>
-	<%= f.text_area(:tests) %>
+        <%= f.text_area(:tests) %>
       </td>
     </tr>
     <tr>
@@ -141,18 +141,20 @@
       </td>
     </tr>
     <tr>
-      <th><%= _('Firma y fecha') %></th>
+      <th><%= _('Fecha') %></th>
       <td>
-        <ul>
-	  <li><%= f.check_box(:show_signed_on) %>
-	  <%= f.label(:show_signed_on, _('Fecha del informe')) %>
-	  <%= f.date_select(:signed_on) %>
-	  </li>
-	  <li><%= f.check_box(:show_signature) %>
-	  <%= f.label(:show_signature, _('Firma')) %>
-          <%= f.text_area(:signature, :style => 'text-align: right') %>
-	  </li>
-        </ul>
+        <%= f.check_box(:show_signed_on) %>
+        <%= f.label(:show_signed_on, _('Mostrar')) %>
+        <br />
+        <%= f.date_select(:signed_on) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= _('Firma') %></th>
+      <td>
+        <%= f.check_box(:show_signature) %>
+        <%= f.label(:show_signature, _('Mostrar')) %><br />
+        <%= f.text_area(:signature, :rows => 3, :style => 'text-align: right') %>
       </td>
     </tr>
   </table>
