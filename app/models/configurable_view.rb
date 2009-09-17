@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class ConfigurableView < ActiveRecord::Base
-  TOP_MARGIN = 100
+  TOP_MARGIN = 150
 
   def top_margin
     return TOP_MARGIN
