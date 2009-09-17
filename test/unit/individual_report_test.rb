@@ -8,7 +8,8 @@ class IndividualReportTest < ActiveSupport::TestCase
       :show_age, 
       :show_medical_record_archive_date, 
       :show_gender, 
-      :show_address
+      :show_address,
+      :show_handicap_data
     ] do
       report = create_report(a => true)
       assert report.show_personal_data?

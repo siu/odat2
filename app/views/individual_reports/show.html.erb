@@ -52,6 +52,14 @@
           <td><%=h @medical_record.address %></td>
         </tr>
       <% end -%>
+      <% if @individual_report.show_handicap_data? -%>
+        <tr>
+          <th colspan="2">
+            <strong><%= _('Minusvalía') %></strong>
+          </th>
+        </tr>
+        <%= render :partial => 'medical_records/show_handicap_data' %>
+      <% end -%>
     </table>
 <% end -%>
 

@@ -3,19 +3,7 @@
 one:
   medical_record: pedrito
   odat_diagnosis: one
-  topic: MyText
-  topic_html: MyText
-  tests: MyText
-  tests_html: MyText
-  results: MyText
-  results_html: MyText
-  orientation: MyText
-  orientation_html: MyText
   configurable_view: one
-
-two:
-  medical_record: pedrito
-  odat_diagnosis: two
   topic: MyText
   topic_html: MyText
   tests: MyText
@@ -45,5 +33,40 @@ two:
   show_detailed_diagnosis: true
   show_coordination_services: true
   show_main_diagnosis: true
+  show_handicap_data: true
+
+two:
+  medical_record: pedrito
+  odat_diagnosis: two
   configurable_view: two
+  topic: MyText
+  topic_html: MyText
+  tests: MyText
+  tests_html: MyText
+  results: MyText
+  results_html: MyText
+  orientation: MyText
+  orientation_html: MyText
+  signature: Firmante
+  signed_on: <%= Time.now %>
+  show_signature: true
+  show_signed_on: true
+  show_medical_record_archive_date: true
+  show_birth_date: true
+  show_age: true
+  show_full_name: true
+  show_gender: true
+  show_birth_position: true
+  show_address: true
+  show_siblings_data: true
+  show_father_data: true
+  show_mother_data: true
+  show_phone_numbers: true
+  show_diagnosis_created_at: true
+  show_consultation_details: true
+  show_center_resources: true
+  show_detailed_diagnosis: true
+  show_coordination_services: true
+  show_main_diagnosis: true
+  show_handicap_data: true
 

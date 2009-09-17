@@ -5,5 +5,5 @@
 
 <tr>
   <th><%= _('Grado de dependencia') %></th>
-  <td><%= h(@medical_record.dependency_degree ? 'Grado ' << @medical_record.dependency_degree.to_s : '') %></td>
+  <td><%= h(@medical_record.dependency_degree ? _('Grado ') << @medical_record.dependency_degree.to_s : '') %></td>
 </tr>

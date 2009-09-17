@@ -14,7 +14,8 @@ class IndividualReport < Report
       :show_age?, 
       :show_medical_record_archive_date?, 
       :show_gender?, 
-      :show_address?
+      :show_address?,
+      :show_handicap_data?
     ].any? do |a|
       self.send(a)
     end

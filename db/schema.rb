@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090916144657) do
+ActiveRecord::Schema.define(:version => 20090917101827) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20090916144657) do
     t.string   "type",                                          :default => "ComparativeReport", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "extra_information"
+    t.text     "extra_information_html"
   end
 
   create_table "configurable_views", :force => true do |t|
@@ -158,6 +160,9 @@ ActiveRecord::Schema.define(:version => 20090916144657) do
     t.boolean  "show_detailed_diagnosis"
     t.boolean  "show_coordination_services"
     t.boolean  "show_main_diagnosis"
+    t.text     "extra_information"
+    t.text     "extra_information_html"
+    t.boolean  "show_handicap_data"
   end
 
   create_table "item_report_associations", :force => true do |t|
@@ -296,13 +301,15 @@ ActiveRecord::Schema.define(:version => 20090916144657) do
   end
 
   create_table "reports", :force => true do |t|
-    t.boolean  "show_signature",                      :default => true
-    t.text     "signature",            :limit => 150
-    t.boolean  "show_signed_on",                      :default => true
+    t.boolean  "show_signature",                        :default => true
+    t.text     "signature",              :limit => 150
+    t.boolean  "show_signed_on",                        :default => true
     t.datetime "signed_on"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "configurable_view_id"
+    t.text     "extra_information"
+    t.text     "extra_information_html"
   end
 
   create_table "school_types", :force => true do |t|
