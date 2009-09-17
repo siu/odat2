@@ -1,21 +1,26 @@
 /* Action to increase and store text size */
 function increase_text_size() {
   $current = parseFloat( $('#report').css('font-size'), 10);
-  change_text_size($current + 1);
+  change_text_size($current + 1.0);
   $("#report_view").submit();
 }
 
 /* Action to decrease and store text size */
 function decrease_text_size() {
   $current = parseFloat( $('#report').css('font-size'), 10);
-  change_text_size($current - 1);
+  change_text_size($current - 1.0);
+  $("#report_view").submit();
+}
+
+/* Reset the text size */
+function reset_text_size() {
+  change_text_size(14.0);
   $("#report_view").submit();
 }
 
 /* Change the text size to a given value */
 function change_text_size(new_size) {
-  size = new_size / 14;
-  $('#report').css('font-size', size + 'em');
+  $('#report').css('font-size', new_size);
   $('#report_configurable_view_attributes_font_size').val(new_size);
 }
 
@@ -48,7 +53,7 @@ function border_disable() {
 /* Set the display properties of a report when the page is loaded */
 $(document).ready(function() {
   $("#report_view").submitWithAjax();
-  change_text_size($("#report_configurable_view_attributes_font_size").val());
+  change_text_size(parseFloat($("#report_configurable_view_attributes_font_size").val()));
   if($("#report_configurable_view_attributes_table_grid").val()) {
     border_enable();
   }

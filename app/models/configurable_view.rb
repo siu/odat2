@@ -6,9 +6,8 @@ class ConfigurableView < ActiveRecord::Base
     return TOP_MARGIN
   end
 
-  def initialize(args)
-    super(args)
-    self.font_size = 14
+  def after_initialize
+    self.font_size = 14 if self.font_size.nil? or self.font_size.blank? or self.font_size < 1
   end
 
 end
