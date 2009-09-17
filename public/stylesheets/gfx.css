@@ -30,6 +30,7 @@ input, textarea {
 }
 textarea {
   vertical-align: text-top;
+  font-family: Sans, arial;
 }
 option {
 	padding: .3em .2em;
