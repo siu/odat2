@@ -68,7 +68,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     end
     assert_response :redirect
     assert !assigns(:odat_diagnosis).new_record?
-    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
 
     assert_difference('OdatDiagnosis.count') do
       post :create,
@@ -80,7 +80,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     end
     assert_response :redirect
     assert !assigns(:odat_diagnosis).new_record?
-    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
   end
 
   def test_should_show_odat_diagnosis
@@ -150,7 +150,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
         }
 
     assert_response :redirect
-    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
 
     items = []
     put :update, 
@@ -160,7 +160,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
         }
 
     assert_response :redirect
-    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
 
     items = get_diagnosis_items_ids([:e1_1_1])
     put :update, 
@@ -170,7 +170,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
         }
 
     assert_response :redirect
-    assert_equal items.count, assigns(:odat_diagnosis).diagnosis_items.count
+    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
   end
 
   test "should update center_resources relations" do
@@ -185,7 +185,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
         }
 
     assert_response :redirect
-    assert_equal items.count, assigns(:odat_diagnosis).center_resources.count
+    assert_equal items.size, assigns(:odat_diagnosis).center_resources.size
 
     items = get_center_resources_ids([:r3])
     put :update, 
@@ -195,7 +195,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
         }
 
     assert_response :redirect
-    assert_equal items.count, assigns(:odat_diagnosis).center_resources.count
+    assert_equal items.size, assigns(:odat_diagnosis).center_resources.size
   end
 
   def test_should_destroy_odat_diagnosis
