@@ -3,7 +3,7 @@ require 'prawn'
 require 'prawn/format'
 
 view = @center_report.configurable_view
-@font_size = view.font_size ? view.font_size*0.8 : 12
+@font_size = view.font_size ? view.font_size*0.9 : 12
 @border_style = view.table_grid? ? :grid : :underline_header
 
 def h1(pdf, text)
@@ -63,6 +63,7 @@ pdf.tags :br => {}
 pdf.tags :p => {}
 
 pdf.font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+pdf.font_size = @font_size
 
 # Begin document
 h1(pdf, @center_report.title)

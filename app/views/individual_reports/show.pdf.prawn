@@ -3,7 +3,7 @@ require 'prawn'
 require 'prawn/format'
 
 view = @individual_report.configurable_view
-@font_size = view.font_size ? view.font_size*0.8 : 12
+@font_size = view.font_size ? view.font_size*0.9 : 12
 @border_style = view.table_grid? ? :grid : :underline_header
 
 def h1(pdf, text)
@@ -46,6 +46,7 @@ pdf.tags :br => {}
 pdf.tags :p => {}
 
 pdf.font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+pdf.font_size = @font_size
 
 # Begin document
 h1(pdf, _('Informe para %{full_name}') % {:full_name => @individual_report.medical_record.full_name})
@@ -77,6 +78,12 @@ if @individual_report.show_personal_data?
   if @individual_report.show_address?
     data << [_('Dirección'), h(@medical_record.address)]
   end
+  if @individual_report.show_handicap_data?
+    data << [_('Clasificación de minusvalía mayor que 33 grados'), 
+      print_boolean(@medical_record.handicap)]
+    data << [_('Grado de dependencia'), 
+      h(@medical_record.dependency_degree ? _('Grado ') << @medical_record.dependency_degree.to_s : '')]
+  end
 
   print_table(pdf, data)
   data = []
@@ -89,7 +96,7 @@ if @individual_report.show_family_data?
     data << [_('Número total de hermanos'), 
              h(@medical_record.total_siblings_amount)]
     data << [_('Lugar que ocupa'), 
-             h(@medical_record.birth_position)]
+             h(@medical_record.position_in_siblings)]
     print_table(pdf, data)
     data = []
   end
