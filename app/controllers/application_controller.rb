@@ -26,7 +26,7 @@ protected
   end
 
   def locale_rtl?
-    return %w(ar).include?GetText.locale.language
+    return %w(ar).include?(GetText.locale.language)
   end
 
 
