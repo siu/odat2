@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
 "POT-Creation-Date: 2009-09-22 18:13+0200\n"
-"PO-Revision-Date: 2009-07-30 18:35+0100\n"
+"PO-Revision-Date: 2009-09-22 18:51+0100\n"
 "Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: Es <odat@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 
 #: app/models/user.rb:-
 msgid "User|Login"
-msgstr ""
+msgstr "Login"
 
 #: app/models/user.rb:-
 msgid "User|Name"
-msgstr ""
+msgstr "Nombre"
 
 #: app/models/user.rb:-
 msgid "User|Email"
-msgstr ""
+msgstr "Email"
 
 #: app/models/user.rb:-
 msgid "User|Crypted password"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: app/models/user.rb:-
 msgid "User|Activation code"
-msgstr ""
+msgstr "Código de activación"
 
 #: app/models/user.rb:-
 msgid "User|Activated at"
@@ -73,11 +73,11 @@ msgstr ""
 
 #: app/models/user.rb:-
 msgid "User|Type"
-msgstr ""
+msgstr "Tipo"
 
 #: app/models/user.rb:-
 msgid "User|Center"
-msgstr ""
+msgstr "Centro"
 
 #: app/models/comparative_report_field_template_assignment.rb:-
 msgid "comparative report field template assignment"
@@ -157,87 +157,87 @@ msgstr "Nombre del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father surname"
-msgstr ""
+msgstr "Apellidos del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father birth date"
-msgstr ""
+msgstr "Fecha de nacimiento del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father job"
-msgstr ""
+msgstr "Ocupación del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father civil state"
-msgstr ""
+msgstr "Estado civil del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father job status"
-msgstr ""
+msgstr "Situación laboral del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father formation level"
-msgstr ""
+msgstr "Nivel de formación del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father email"
-msgstr ""
+msgstr "Email del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Father extra information"
-msgstr ""
+msgstr "Información adicional del padre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother name"
-msgstr ""
+msgstr "Nombre de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother surname"
-msgstr ""
+msgstr "Apellidos de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother birth date"
-msgstr ""
+msgstr "Fecha de nacimiento de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother job"
-msgstr ""
+msgstr "Ocupación de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother civil state"
-msgstr ""
+msgstr "Estado civil de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother job status"
-msgstr ""
+msgstr "Situación laboral de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother formation level"
-msgstr ""
+msgstr "Nivel de formación de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother email"
-msgstr ""
+msgstr "Email de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Mother extra information"
-msgstr ""
+msgstr "Información adicional de la madre"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Home phone"
-msgstr ""
+msgstr "Teléfono del domicilio"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Portable phone"
-msgstr ""
+msgstr "Teléfono móvil"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Work phone"
-msgstr ""
+msgstr "Teléfono del trabajo"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Total siblings amount"
-msgstr ""
+msgstr "Número total de hermanos"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Postal"
@@ -245,15 +245,15 @@ msgstr "Código postal"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Sanitary services"
-msgstr ""
+msgstr "Servicios sanitarios"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Social services"
-msgstr ""
+msgstr "Servicios sociales"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Educative services"
-msgstr ""
+msgstr "Servicios educativos"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Created at"
@@ -265,27 +265,27 @@ msgstr ""
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Multiple birth"
-msgstr ""
+msgstr "Parto múltiple"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Province"
-msgstr ""
+msgstr "Provincia"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Position in siblings"
-msgstr ""
+msgstr "Posición entre los hermanos"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Handicap"
-msgstr ""
+msgstr "Minusvalía"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|Dependency degree"
-msgstr ""
+msgstr "Grado de dependencia"
 
 #: app/models/medical_record.rb:-
 msgid "MedicalRecord|School type"
-msgstr ""
+msgstr "Tipo de colegio"
 
 #: app/models/medical_record.rb:159
 msgid "Ya existe un expediente para %{name}"
@@ -329,15 +329,15 @@ msgstr ""
 
 #: app/models/configurable_view.rb:-
 msgid "ConfigurableView|Font size"
-msgstr ""
+msgstr "Tamaño de la fuente"
 
 #: app/models/configurable_view.rb:-
 msgid "ConfigurableView|Font family"
-msgstr ""
+msgstr "Fuente"
 
 #: app/models/configurable_view.rb:-
 msgid "ConfigurableView|Table grid"
-msgstr ""
+msgstr "Bordes de las tablas"
 
 #: app/models/civil_state.rb:-
 msgid "civil state"
@@ -549,23 +549,23 @@ msgstr ""
 
 #: app/models/report.rb:-
 msgid "report"
-msgstr ""
+msgstr "informe"
 
 #: app/models/report.rb:-
 msgid "Report|Show signature"
-msgstr ""
+msgstr "Mostrar firma"
 
 #: app/models/report.rb:-
 msgid "Report|Signature"
-msgstr ""
+msgstr "Firma"
 
 #: app/models/report.rb:-
 msgid "Report|Show signed on"
-msgstr ""
+msgstr "Mostrar fecha de la firma"
 
 #: app/models/report.rb:-
 msgid "Report|Signed on"
-msgstr ""
+msgstr "Fecha de la firma"
 
 #: app/models/report.rb:-
 msgid "Report|Created at"
@@ -581,7 +581,7 @@ msgstr ""
 
 #: app/models/report.rb:-
 msgid "Report|Extra information"
-msgstr ""
+msgstr "Información adicional"
 
 #: app/models/report.rb:-
 msgid "Report|Extra information html"
@@ -678,31 +678,31 @@ msgstr ""
 
 #: app/models/odat_diagnosis.rb:-
 msgid "odat diagnosis"
-msgstr ""
+msgstr "diagnostico"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Medical record"
-msgstr ""
+msgstr "Expediente"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Origin source"
-msgstr ""
+msgstr "Fuente de derivación"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Origin cause"
-msgstr ""
+msgstr "Motivo de derivación"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Consultation cause"
-msgstr ""
+msgstr "Motivo de consulta"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Main diagnosis item"
-msgstr ""
+msgstr "Diagnóstico principal"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Description"
-msgstr ""
+msgstr "Descripción"
 
 #: app/models/odat_diagnosis.rb:-
 msgid "OdatDiagnosis|Created at"
@@ -717,9 +717,7 @@ msgid "OdatDiagnosis|Description html"
 msgstr ""
 
 #: app/models/odat_diagnosis.rb:31
-msgid ""
-"Debes especificar al menos un elemento en diagnóstico detallado y un "
-"diagnóstico principal"
+msgid "Debes especificar al menos un elemento en diagnóstico detallado y un diagnóstico principal"
 msgstr ""
 
 #: app/models/item_report_association.rb:-
@@ -915,8 +913,7 @@ msgid "Se ha eliminado el informe correctamente"
 msgstr ""
 
 #: app/controllers/odat_diagnoses_controller.rb:32
-msgid ""
-"Se han recuperado los datos del último diagnóstico para la creación del nuevo"
+msgid "Se han recuperado los datos del último diagnóstico para la creación del nuevo"
 msgstr ""
 
 #: app/controllers/odat_diagnoses_controller.rb:61
@@ -972,9 +969,7 @@ msgid "No"
 msgstr ""
 
 #: app/helpers/application_helper.rb:33
-msgid ""
-"Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></"
-"strong></span> se muestran con un asterisco."
+msgid "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco."
 msgstr ""
 
 #: app/views/layouts/_user_navbar.html.erb:3
@@ -1018,15 +1013,15 @@ msgstr ""
 
 #: app/views/layouts/center_reports.html.erb:10
 #: app/views/center_reports/_menu.html.erb:11
-msgid ""
-"Seguro deseas borrar el informe de centro actual (operación irreversible)?"
+msgid "Seguro deseas borrar el informe de centro actual (operación irreversible)?"
 msgstr ""
 
 #: app/views/layouts/help/help_layout.html.erb:22
 msgid "Cerrar ventana"
 msgstr ""
 
-#: app/views/layouts/default.html.erb:4 app/views/layouts/_header.html.erb:2
+#: app/views/layouts/default.html.erb:4
+#: app/views/layouts/_header.html.erb:2
 msgid "Organización Diagnóstica para la Atención Temprana"
 msgstr ""
 
@@ -1034,7 +1029,8 @@ msgstr ""
 msgid "Real patronato sobre discapacidad"
 msgstr ""
 
-#: app/views/layouts/visitor.html.erb:13 app/views/layouts/_header.html.erb:1
+#: app/views/layouts/visitor.html.erb:13
+#: app/views/layouts/_header.html.erb:1
 msgid "ODAT"
 msgstr ""
 
@@ -1071,9 +1067,7 @@ msgid "Eliminar expediente"
 msgstr ""
 
 #: app/views/layouts/medical_records.html.erb:26
-msgid ""
-"Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e "
-"informes (operación irreversible)?"
+msgid "Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?"
 msgstr ""
 
 #: app/views/admin/report_field_templates/index.html.erb:1
@@ -1352,7 +1346,8 @@ msgstr ""
 msgid "Descargar PDF"
 msgstr ""
 
-#: app/views/sessions/new.html.erb:1 app/views/sessions/new.html.erb:17
+#: app/views/sessions/new.html.erb:1
+#: app/views/sessions/new.html.erb:17
 msgid "Iniciar sesión"
 msgstr ""
 
@@ -1377,8 +1372,7 @@ msgid "Área de trabajo"
 msgstr ""
 
 #: app/views/dashboard/index.html.erb:3
-msgid ""
-"En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
+msgid "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
 msgstr ""
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:3
@@ -1459,10 +1453,7 @@ msgid "Diagnóstico principal"
 msgstr ""
 
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:40
-msgid ""
-"Se utiliza para reseñar los diagnósticos confirmados. En este apartado "
-"reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de "
-"Down, Angelmans, Rett, etc."
+msgid "Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc."
 msgstr ""
 
 #: app/views/odat_diagnoses/edit.html.erb:1
@@ -1540,7 +1531,8 @@ msgstr ""
 msgid "ocultar"
 msgstr ""
 
-#: app/views/users/_user_bar.html.erb:3 app/views/users/_user_bar.html.erb:4
+#: app/views/users/_user_bar.html.erb:3
+#: app/views/users/_user_bar.html.erb:4
 msgid "Cerrar Sesión"
 msgstr ""
 
@@ -1549,7 +1541,8 @@ msgstr ""
 msgid "No se ha iniciado sesión"
 msgstr ""
 
-#: app/views/users/_user_bar.html.erb:7 app/views/users/_user_bar.html.erb:8
+#: app/views/users/_user_bar.html.erb:7
+#: app/views/users/_user_bar.html.erb:8
 #: app/views/users/_visitor_bar.html.erb:3
 #: app/views/users/_visitor_bar.html.erb:4
 msgid "Iniciar Sesión"
@@ -1580,8 +1573,7 @@ msgid "Nuevo Informe de Centro"
 msgstr ""
 
 #: app/views/center_reports/new.html.erb:4
-msgid ""
-"En este formulario se puede seleccionar qué datos se mostrarán en el informe"
+msgid "En este formulario se puede seleccionar qué datos se mostrarán en el informe"
 msgstr ""
 
 #: app/views/center_reports/index.html.erb:1
@@ -1832,10 +1824,7 @@ msgid "Servicios de coordinación"
 msgstr ""
 
 #: app/views/individual_reports/_form.html.erb:81
-msgid ""
-"Asociar el informe a un diagnóstico concreto es opcional, <strong>no es "
-"necesario rellenar esta sección si no se necesitan datos de diagnóstico</"
-"strong>."
+msgid "Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>."
 msgstr ""
 
 #: app/views/individual_reports/_form.html.erb:94
@@ -1995,10 +1984,7 @@ msgid "Nuevo expediente"
 msgstr ""
 
 #: app/views/medical_records/new.html.erb:5
-msgid ""
-"En esta pantalla se pueden introducir los datos de un expediente personal, "
-"<strong>rellene los datos con exactitud</strong>, luego los datos serán "
-"útiles para generar informes y estadísticas."
+msgid "En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas."
 msgstr ""
 
 #: app/views/medical_records/index.html.erb:1
@@ -2049,3 +2035,4 @@ msgstr ""
 #: app/views/individual_reports/show.pdf.prawn:52
 msgid "Informe para %{full_name}"
 msgstr ""
+

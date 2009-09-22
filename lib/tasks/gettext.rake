@@ -1,3 +1,7 @@
+gem 'locale_rails'
+gem 'gettext_activerecord'
+gem 'gettext_rails'
+
 desc "Update pot/po files."
 task :updatepo do
   require 'gettext_rails/tools'  #HERE!
