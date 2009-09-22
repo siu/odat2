@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 # in config/initializer/locale.rb
 
 # tell the I18n library where to find your translations

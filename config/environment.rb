@@ -9,8 +9,8 @@
 # RAILS_GEM_VERSION = '2.1.2' unless defined? RAILS_GEM_VERSION
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
-Encoding.default_internal = 'utf-8'
-Encoding.default_external = 'utf-8'
+Encoding.default_internal = 'utf-8' if RUBY_VERSION >= '1.9'
+Encoding.default_external = 'utf-8' if RUBY_VERSION >= '1.9'
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -47,8 +47,6 @@ Rails::Initializer.run do |config|
   config.gem "prawn"
   config.gem "prawn-format", 
     :lib => "prawn/format"
-  config.gem "thoughtbot-shoulda", 
-    :lib => "shoulda/rails", :source => "http://gems.github.com"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.

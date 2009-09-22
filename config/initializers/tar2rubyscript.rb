@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Rails
   class Configuration
     def database_configuration
