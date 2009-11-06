@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::OriginCausesControllerTest < Admin::AdminSectionControllerTest
+class Admin::OriginCausesControllerTest < ActionController::TestCase
   include MyApp::Admin::NotLoggedInChecks
   include MyApp::Admin::UserLoggedInChecks
 
