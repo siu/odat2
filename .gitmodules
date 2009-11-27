@@ -22,3 +22,6 @@
 [submodule "vendor/plugins/semantic_form_builder"]
 	path = vendor/plugins/semantic_form_builder
 	url = git://github.com/scivi/semantic_form_builder.git
+[submodule "vendor/plugins/rails-i18n-updater"]
+	path = vendor/plugins/rails-i18n-updater
+	url = git://github.com/zargony/rails-i18n-updater.git
