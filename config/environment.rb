@@ -8,8 +8,10 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 #RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 
-Encoding.default_internal = 'utf-8' if RUBY_VERSION >= '1.9'
-Encoding.default_external = 'utf-8' if RUBY_VERSION >= '1.9'
+if RUBY_VERSION >= '1.9'
+  Encoding.default_internal = 'utf-8'
+  Encoding.default_external = 'utf-8'
+end
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -40,12 +42,13 @@ Rails::Initializer.run do |config|
                                      :lib => 'will_paginate',  
                                      :source => 'http://gems.github.com'  
   config.gem 'RedCloth'
+  config.gem "locale"
   config.gem "locale_rails"
+  config.gem "gettext"
   config.gem "gettext_activerecord"
   config.gem "gettext_rails"
   config.gem "prawn"
-  config.gem "prawn-format", 
-    :lib => "prawn/format"
+  config.gem "prawn-format",         :lib => "prawn/format"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -64,10 +67,11 @@ Rails::Initializer.run do |config|
   # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
   config.time_zone = 'UTC'
 
-  # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
-  # All files from config/locales/*.rb,yml are added automatically.
-  # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
-  #config.i18n.default_locale = :es
+  # Localization can be found in config/initializers/localization.rb
+  I18n.default_locale = :es
+  AVAILABLE_LANGUAGES = { 'Español' => 'http://localhost:3000/es', 
+                          'Português' => 'http://localhost:3000/pt', 
+                          'العربية' => 'http://localhost:3000/ar'}
 
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!

@@ -539,3 +539,17 @@ html ul li.navcat ul.subnav li a {
 }
 html ul li.navcat ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 }
+#lang-selector {
+  display:inline-block;
+}
+#lang-selector ul {
+  list-style: none;
+  text-align: center;
+}
+#lang-selector li {
+  display: inline-block;
+  margin: 10px 0;
+}
+#lang-selector li a {
+  padding: 5px;
+}

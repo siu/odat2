@@ -5,7 +5,7 @@ task :updatepo do
   gem 'gettext_activerecord'
   gem 'gettext_rails'
   require 'gettext_rails/tools'  #HERE!
-  GetText.update_pofiles("odat", Dir.glob("{app,lib,bin}/**/*.{rb,erb,rjs,prawn}"), "odat devel")
+  GetText.update_pofiles("odat", Dir.glob("{app,lib,bin,config}/**/*.{rb,erb,rjs,prawn}"), "odat devel")
 end
 
 desc "Create mo-files"

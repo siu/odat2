@@ -6,6 +6,10 @@ module ApplicationHelper
     content_for(:page_title) { page_title }
   end
 
+  def locale_rtl?
+    return %w(ar).include?(I18n.locale.language)
+  end
+
   def print_boolean(value)
     if value
       _('Sí')
@@ -24,7 +28,8 @@ module ApplicationHelper
     if type.nil?
       FLASH_TYPES.each { |name| html << display_flash(name) }
     else
-      return flash[type].blank? ? "" : "<div id=\"flash\" class=\"#{type}\"><p class=\"hide-flash\">#{link_to_function _("Ocultar"), 'hide_flash()'}</p><p>#{flash[type]}</p></div>"
+      N_('Ocultar')
+      return flash[type].blank? ? "" : "<div id=\"flash\" class=\"#{type}\"><p class=\"hide-flash\">#{link_to_function _('Ocultar'), 'hide_flash()'}</p><p>#{flash[type]}</p></div>"
     end
     html
   end

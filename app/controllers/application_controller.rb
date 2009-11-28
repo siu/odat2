@@ -15,19 +15,15 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   filter_parameter_logging :password
 
+  #before_filter :set_locale
   before_filter :login_required
-  before_filter :set_locale
   init_gettext "odat", :content_type => "application/xhtml+xml"
 
 protected
-  def set_locale
-    I18n.locale = :es
-    GetText.locale = "es"
+  #def set_locale
+    #I18n.locale = :es
+  #end
+  def before_init_gettext
+    GetText.locale = I18n.locale.language
   end
-
-  def locale_rtl?
-    return %w(ar).include?(GetText.locale.language)
-  end
-
-
 end
