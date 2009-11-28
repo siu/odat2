@@ -68,7 +68,7 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
 
   # Localization can be found in config/initializers/localization.rb
-  I18n.default_locale = :es
+  config.i18n.default_locale = :es
   AVAILABLE_LANGUAGES = { 'Español' => 'http://localhost:3000/es', 
                           'Português' => 'http://localhost:3000/pt', 
                           'العربية' => 'http://localhost:3000/ar'}
