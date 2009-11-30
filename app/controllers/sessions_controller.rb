@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
       if user.is_admin?
         redirect_to admin_path
       else
-        redirect_back_or_default('/')
+        redirect_back_or_default(root_url)
       end
       flash[:notice] = _('Bienvenido/a')
     else
@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
   def destroy
     logout_killing_session!
     flash[:notice] = _('Se ha finalizado la sesión')
-    redirect_back_or_default('/')
+    redirect_back_or_default(root_url)
   end
 
 protected
