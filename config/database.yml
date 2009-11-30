@@ -35,6 +35,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *production_login
-  database: odat
+  <<: *sqlite_login
+  database: db/production.sqlite3
 
