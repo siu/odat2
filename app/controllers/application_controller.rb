@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   filter_parameter_logging :password
 
-  #before_filter :set_locale
+  #before_filter :set_locale # Locale is defined in config/initializers/locale.rb
+  before_init_gettext :set_gettext_locale
   before_filter :login_required
   init_gettext "odat", :content_type => "application/xhtml+xml"
 
@@ -23,7 +24,7 @@ protected
   #def set_locale
     #I18n.locale = :es
   #end
-  def before_init_gettext
+  def set_gettext_locale
     GetText.locale = I18n.locale.language
   end
 end
