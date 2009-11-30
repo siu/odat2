@@ -407,10 +407,10 @@ a.btn:hover, a.btn:focus {
   border:1px solid #444;
 }
 .pdf-file {
-	background-image:url(/images/icons/pdf.gif);
+	background-image:url(../images/icons/pdf.gif);
 }
 .printer {
-	background-image:url(/images/icons/printer.png);
+	background-image:url(../images/icons/printer.png);
 }
 .new-btn:not([classname~="icon"]) {
         display:inline-block;
@@ -418,7 +418,7 @@ a.btn:hover, a.btn:focus {
         background-position:2px center;
         background-repeat:no-repeat;
 	padding:2px 5px 2px 26px;
-        background-image:url(/images/icons/add.png);
+        background-image:url(../images/icons/add.png);
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
 }
@@ -505,7 +505,7 @@ ul li.navcat span { /*--Drop down trigger styles--*/
         background-color: #eee;
         background-position:center center;
         background-repeat:no-repeat;
-        background-image:url(/images/icons/dropdown.png);
+        background-image:url(../images/icons/dropdown.png);
 	vertical-align: middle;
 	display: inline-block;
 	margin-top: -3px;
