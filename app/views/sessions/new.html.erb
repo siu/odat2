@@ -1,14 +1,5 @@
 <% page_title(_('Iniciar sesión')) -%>
 
-<div class="note" id="lang-selector">
-  <h3><%= _('Cambiar idioma') %></h3>
-<ul>
-<% for lang in AVAILABLE_LANGUAGES do -%>
-  <li><%= link_to lang.first, lang.last, :class => 'btn' %></li>
-<% end -%>
-</ul>
-</div>
-
 <% form_tag session_path do -%>
 
 <p><%= label_tag('login', _('Identificador de usuario')) %><br />
