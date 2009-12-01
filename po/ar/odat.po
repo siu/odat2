@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
-"POT-Creation-Date: 2009-11-26 12:44+0100\n"
+"POT-Creation-Date: 2009-12-01 02:29+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: omar <thewickeddevil>\n"
+"Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -905,18 +905,27 @@ msgstr "نعم"
 msgid "No"
 msgstr "لا"
 
-#: app/helpers/application_helper.rb:31
+#: app/helpers/application_helper.rb:22
+#, fuzzy
+msgid "No se han encontrado registros."
+msgstr "لم يتم تسجيل الدخول في"
+
+#: app/helpers/application_helper.rb:32
 #, fuzzy
 msgid "Ocultar"
 msgstr "إخفاء"
 
-#: app/helpers/application_helper.rb:38
+#: app/helpers/application_helper.rb:39
 msgid ""
 "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></"
 "strong></span> se muestran con un asterisco."
 msgstr ""
 "ألـ <span class=\"requiredField\">فراغات يجب أن تملأ<strong><sup>*</sup></"
 "strong></span> المشار إليها بنجمة"
+
+#: app/helpers/application_helper.rb:66
+msgid "NUEVO"
+msgstr ""
 
 #: app/controllers/odat_diagnoses_controller.rb:32
 msgid ""
@@ -987,6 +996,40 @@ msgstr "مجال الشغل"
 msgid ""
 "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
 msgstr "يمكنك العثور في هذه الشاشة على آخر مستجدات المركز"
+
+#: app/views/dashboard/index.html.erb:7
+msgid "Últimos expedientes modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:18
+#, fuzzy
+msgid "Últimos diagnósticos modificados"
+msgstr "لا وجود لتشخيصات مخزنة."
+
+#: app/views/dashboard/index.html.erb:22
+#, fuzzy
+msgid "Diagnóstico %{name}"
+msgstr "تشخيصات لـ %{name}"
+
+#: app/views/dashboard/index.html.erb:31
+#, fuzzy
+msgid "Últimos Informes Individuales modificados"
+msgstr "تقارير فردية"
+
+#: app/views/dashboard/index.html.erb:35
+#, fuzzy
+msgid "Informe para %{name}"
+msgstr "تقرير لـ %{full_name}"
+
+#: app/views/dashboard/index.html.erb:43
+#, fuzzy
+msgid "Últimos informes de centro modificados"
+msgstr "تظهر هنا تقارير المركز المحتفظ بها."
+
+#: app/views/dashboard/index.html.erb:47
+#: app/views/center_reports/show.html.erb:8
+msgid "Informe de centro"
+msgstr "تقرير المركز"
 
 #: app/views/admin/dashboard/index.html.erb:1
 #: app/views/layouts/_admin_navbar.html.erb:2
@@ -1987,10 +2030,6 @@ msgstr "تسجيل الدخول"
 msgid "Cerrar Sesión"
 msgstr "تسجيل الخروج"
 
-#: app/views/center_reports/show.html.erb:8
-msgid "Informe de centro"
-msgstr "تقرير المركز"
-
 #: app/views/center_reports/show.html.erb:31
 #: app/views/center_reports/show.pdf.prawn:85
 msgid "Algo ha ido mal"
@@ -2062,4 +2101,4 @@ msgstr "تقرير لـ %{full_name}"
 
 #: config/initializers/custom_forms.rb:25
 msgid " o "
-msgstr ""
+msgstr " o "
