@@ -2,3 +2,52 @@
 <% content_for(:sidebar) do -%>
   <p class='note'><%= _('En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro') %></p>
 <% end -%>
+
+<div class="half hleft">
+  <h3><%= _('Últimos expedientes modificados') %></h3>
+  <% if @medical_records.any? -%>
+    <ul>
+      <% for medical_record in @medical_records -%>
+        <li><%= link_to(h(medical_record.full_name), medical_record) %> <small><%= l(medical_record.updated_at, :format => :short) %></small><%= status_message(medical_record) %></li>
+      <% end -%>
+    </ul>
+  <% else -%>
+    <%= display_no_records_message %>
+  <% end -%>
+  
+  <h3><%= _('Últimos diagnósticos modificados') %></h3>
+  <% if @odat_diagnoses.any? -%>
+    <ul>
+      <% for odat_diagnosis in @odat_diagnoses -%>
+        <li><%= link_to(_("Diagnóstico %{name}") % {:name => h(odat_diagnosis.medical_record.full_name)}, [medical_record, odat_diagnosis]) %> <small><%= l(odat_diagnosis.updated_at, :format => :short) %></small><%= status_message(odat_diagnosis) %></li>
+      <% end -%>
+    </ul>
+  <% else -%>
+    <%= display_no_records_message %>
+  <% end -%>
+
+<div class="half hright">
+
+  <h3><%= _('Últimos Informes Individuales modificados') %></h3>
+  <% if @individual_reports.any? -%>
+    <ul>
+      <% for individual_report in @individual_reports -%>
+        <li><%= link_to(_("Informe para %{name}") % {:name => h(individual_report.medical_record.full_name)}, medical_record) %> <small><%= l(individual_report.updated_at, :format => :short) %></small><%= status_message(individual_report) %></li>
+      <% end -%>
+    </ul>
+  <% else -%>
+    <%= display_no_records_message %>
+  <% end -%>
+</div>
+
+  <h3><%= _('Últimos informes de centro modificados') %></h3>
+  <% if @odat_diagnoses.any? -%>
+    <ul>
+      <% for center_report in @center_reports -%>
+        <li><%= link_to(_("Informe de centro"), center_report) %> <small><%= l(center_report.updated_at, :format => :short) %></small><%= status_message(center_report) %></li>
+      <% end -%>
+    </ul>
+  <% else -%>
+    <%= display_no_records_message %>
+  <% end -%>
+</div>

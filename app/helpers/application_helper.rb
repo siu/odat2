@@ -19,6 +19,7 @@ module ApplicationHelper
   end
 
   def display_no_records_message
+    N_('No se han encontrado registros.')
     "<p>#{_('No se han encontrado registros.')}</p>"
   end
 
@@ -61,4 +62,7 @@ module ApplicationHelper
     content_tag("div", text, {:class => 'note'}.merge(options))
   end
 
+  def status_message(object)
+        ' <span class="new">' << _('NUEVO') << '</span>' if object.created_at == object.updated_at
+  end
 end

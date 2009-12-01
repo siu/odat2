@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
-"POT-Creation-Date: 2009-11-26 12:44+0100\n"
+"POT-Creation-Date: 2009-12-01 02:29+0100\n"
 "PO-Revision-Date: 2009-07-30 18:31+0100\n"
 "Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -910,14 +910,22 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: app/helpers/application_helper.rb:31
+#: app/helpers/application_helper.rb:22
+msgid "No se han encontrado registros."
+msgstr ""
+
+#: app/helpers/application_helper.rb:32
 msgid "Ocultar"
 msgstr ""
 
-#: app/helpers/application_helper.rb:38
+#: app/helpers/application_helper.rb:39
 msgid ""
 "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></"
 "strong></span> se muestran con un asterisco."
+msgstr ""
+
+#: app/helpers/application_helper.rb:66
+msgid "NUEVO"
 msgstr ""
 
 #: app/controllers/odat_diagnoses_controller.rb:32
@@ -988,6 +996,35 @@ msgstr ""
 #: app/views/dashboard/index.html.erb:3
 msgid ""
 "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:7
+msgid "Últimos expedientes modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:18
+msgid "Últimos diagnósticos modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:22
+msgid "Diagnóstico %{name}"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:31
+msgid "Últimos Informes Individuales modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:35
+msgid "Informe para %{name}"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:43
+msgid "Últimos informes de centro modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:47
+#: app/views/center_reports/show.html.erb:8
+msgid "Informe de centro"
 msgstr ""
 
 #: app/views/admin/dashboard/index.html.erb:1
@@ -1979,10 +2016,6 @@ msgstr ""
 
 #: app/views/users/_user_bar.html.erb:3 app/views/users/_user_bar.html.erb:4
 msgid "Cerrar Sesión"
-msgstr ""
-
-#: app/views/center_reports/show.html.erb:8
-msgid "Informe de centro"
 msgstr ""
 
 #: app/views/center_reports/show.html.erb:31
