@@ -553,3 +553,21 @@ html ul li.navcat ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 #lang-selector li a {
   padding: 5px;
 }
+.new-record, .mod-record {
+  padding: 0 2px;
+  margin-left: 5px;
+}
+.new-record {
+  background-color: #aea;
+}
+.mod-record {
+  background-color: #eea;
+}
+.dashboard ul {
+  list-style-type: none;
+}
+.dashboard ul li {
+  margin-left: 0;
+  padding-left: 5px;
+}
+
