@@ -1,6 +1,7 @@
 # encoding: UTF-8
 class IndividualReport < Report
   set_table_name 'individual_reports'
+  default_scope :order => 'individual_reports.created_at DESC'
 
   # Both needed here because it can be associated to a medica_record and
   # not to an odat_diagnosis

@@ -1,6 +1,7 @@
 # encoding: UTF-8
 class ComparativeReport < Report
   set_table_name "comparative_reports"
+  default_scope :order => 'comparative_reports.created_at DESC'
 
   has_many :comparative_report_field_template_assignments
   has_many :report_field_templates, 
