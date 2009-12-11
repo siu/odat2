@@ -8,7 +8,13 @@ config.cache_classes = true
 # config.threadsafe!
 
 # Use a different logger for distributed setups
-# config.logger = SyslogLogger.new
+config.after_initialize do
+  require 'syslog_logger'
+  LOGGER_FILE = "rails.odat_#{I18n.locale.language}_#{RAILS_ENV}"
+  RAILS_DEFAULT_LOGGER = SyslogLogger.new(LOGGER_FILE)
+  ActiveRecord::Base.logger = RAILS_DEFAULT_LOGGER
+  ActionController::Base.logger = RAILS_DEFAULT_LOGGER
+end
 
 # Full error reports are disabled and caching is turned on
 config.action_controller.consider_all_requests_local = false

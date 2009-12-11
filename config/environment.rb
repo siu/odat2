@@ -49,6 +49,7 @@ Rails::Initializer.run do |config|
   config.gem "gettext_rails"
   config.gem "prawn"
   config.gem "prawn-format",         :lib => "prawn/format"
+  config.gem "SyslogLogger",         :lib => "syslog_logger"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -68,7 +69,7 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
 
   # Localization can be found in config/initializers/localization.rb
-  config.i18n.default_locale = :es
+  #config.i18n.default_locale = :es
 
   # The edition/release configuration of the app is located in config/initializers/odat.rb
 
@@ -83,4 +84,3 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.active_record.observers = :user_observer
 end
-
