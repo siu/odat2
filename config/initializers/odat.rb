@@ -8,10 +8,6 @@ I18n.locale = :es
 #ActionController::Base.relative_url_root = '/es'
 SESSION_SECRET = 'set_this_Secret-fef90b74968219df44040ebce2a0f37e'
 
-# Restful authentication
-REST_AUTH_SITE_KEY         = 'change_this_secret-asfdsakjdfhksaudhiu293urg293rgfbds'
-REST_AUTH_DIGEST_STRETCHES = 10
-
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rake db:sessions:create")

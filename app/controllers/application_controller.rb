@@ -3,28 +3,77 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  include AuthenticatedSystem
-  helper :all # include all helpers, all the time
+  helper :all
+  helper_method :current_user_session, :current_user
+  filter_parameter_logging :password, :password_confirmation
 
-  # See ActionController::RequestForgeryProtection for details
-  # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery # :secret => '3c9e08e92a26b36c519965a610878357'
-  
-  # See ActionController::Base for details 
-  # Uncomment this to filter the contents of submitted sensitive data parameters
-  # from your application log (in this case, all fields with names like "password"). 
-  filter_parameter_logging :password
+  # Protect cookies
+  protect_from_forgery
 
-  #before_filter :set_locale # Locale is defined in config/initializers/locale.rb
-  before_init_gettext :set_gettext_locale
   before_filter :login_required
+
+  # Gettext
+  before_init_gettext :set_gettext_locale
   init_gettext "odat", :content_type => "application/xhtml+xml"
 
-protected
-  #def set_locale
-    #I18n.locale = :es
-  #end
+  # Errors
+  def rescue_404
+    render  :template => "/errors/404.html.erb", 
+            :status => :not_found, 
+            :layout => 'visitor.html.erb'
+  end
+
+private
   def set_gettext_locale
     GetText.locale = I18n.locale.language
   end
+
+  def local_request?
+    false
+  end
+
+  def render_optional_error_file(status_code)
+    status = interpret_status(status_code)
+    render  :template => "/errors/#{status[0,3]}.html.erb", 
+    :status => status, 
+    :layout => 'visitor.html.erb'
+  end
+
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
+
+  def login_required
+    unless current_user
+      store_location
+      flash[:notice] = _('Es necesario iniciar sesión para visitar esta página')
+      redirect_to login_url
+      return false
+    end
+  end
+
+  def login_prohibited
+    if current_user
+      store_location
+      flash[:notice] = _('Debes cerrar sesión para visitar esta página')
+      redirect_to account_url
+      return false
+    end
+  end
+
+  def store_location
+    session[:return_to] = request.request_uri
+  end
+
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
+  end
+
 end

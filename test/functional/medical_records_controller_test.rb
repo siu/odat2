@@ -11,18 +11,18 @@ class MedicalRecordsControllerTest < ActionController::TestCase
   end
 
   def test_should_get_index_only_medical_records_of_center_demo
-    login_as :quentin
+    login_as :demo
     get :index
     assert_response :success
-    assert_equal users(:quentin).center.medical_records.size,
+    assert_equal users(:demo).center.medical_records.size,
       assigns(:medical_records).size
   end
 
   def test_should_get_index_only_medical_records_of_center_demo2
-    login_as :quentin_other
+    login_as :user2
     get :index
     assert_response :success
-    assert_equal users(:quentin_other).center.medical_records.size,
+    assert_equal users(:user2).center.medical_records.size,
       assigns(:medical_records).size
   end
 

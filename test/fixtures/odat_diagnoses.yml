@@ -17,3 +17,13 @@ two:
   consultation_cause: one
   main_diagnosis: e1_1_1
   description: MyString
+
+de_paco:
+  medical_record: paco
+  created_at: Time.now
+  origin_source: one
+  origin_cause: one
+  consultation_cause: one
+  main_diagnosis: e1_1_1
+  description: MyString
+

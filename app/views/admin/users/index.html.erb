@@ -3,20 +3,36 @@
 <table>
   <tr>
     <th><%= _('Login') %></th>
-    <th><%= _('Estado') %></th>
     <th><%= _('Centro') %></th>
+    <th><%= _('Activo') %></th>
+    <th><%= _('Aprovado') %></th>
+    <th><%= _('Confirmado') %></th>
   </tr>
 
 <% for user in @users %>
   <tr>
     <td><%= h user.login %></td>
-    <td><%= h user.state %></td>
     <td><%= h(user.center.name) unless user.center.nil? %></td>
+    <td><%= h user.active? %></td>
+    <td><%= h user.approved? %></td>
+    <td><%= h user.confirmed? %></td>
     <td><%= link_to 'Show', admin_user_path(user) %></td>
     <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
-    <td><%= link_to 'Suspend', suspend_admin_user_path(user), :method => :put %></td>
-    <td><%= link_to 'Unsuspend', unsuspend_admin_user_path(user), :method => :put %></td>
-    <td><%= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if user.active? %>
+    <td><%= link_to 'Desactivar', deactivate_admin_user_path(user), :method => :put %></td>
+  <% else %>
+    <td><%= link_to 'Activar', activate_admin_user_path(user), :method => :put %></td>
+  <% end %>
+  <% if user.approved? %>
+    <td><%= link_to 'Desaprovar', deapprove_admin_user_path(user), :method => :put %></td>
+  <% else %>
+    <td><%= link_to 'Aprovar', approve_admin_user_path(user), :method => :put %></td>
+  <% end %>
+  <% if user.confirmed? %>
+    <td><%= link_to 'Desconfirmar', unconfirm_admin_user_path(user), :method => :put %></td>
+  <% else %>
+    <td><%= link_to 'Confirmar', confirm_admin_user_path(user), :method => :put %></td>
+  <% end %>
   </tr>
 <% end %>
 </table>

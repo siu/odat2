@@ -13,7 +13,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   test "should not get index if user is not in the same center as the record" do
-    login_as :quentin
+    login_as :demo
     get :index, :medical_record_id => medical_records(:paco).id
     assert_redirected_to medical_records_path
   end
@@ -92,7 +92,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   test "should not show if user not in the same center" do
-    login_as :quentin
+    login_as :demo
     get :show, 
 	:medical_record_id => medical_records(:paco).id, 
 	:id => odat_diagnoses(:one).id
@@ -108,7 +108,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   test "should not get edit if user not in the same center" do
-    login_as :quentin
+    login_as :demo
     get :edit, 
 	:medical_record_id => medical_records(:paco).id, 
 	:id => odat_diagnoses(:one).id
@@ -128,7 +128,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   test "should not update if user not in the same center" do
-    login_as :quentin
+    login_as :demo
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     put :update, 
         { :medical_record_id => medical_records(:paco).id, 
@@ -184,7 +184,8 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 	  :odat_diagnosis => { :center_resource_ids => items }
         }
 
-    assert_response :redirect
+    assert_redirected_to [medical_records(:pedrito), :odat_diagnoses]
+    assert assigns(:odat_diagnosis)
     assert_equal items.size, assigns(:odat_diagnosis).center_resources.size
 
     items = get_center_resources_ids([:r3])
@@ -213,11 +214,11 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
   end
 
   test "should not destroy if user not in the same center" do
-    login_as :quentin
+    login_as_user
     assert_no_difference('OdatDiagnosis.count') do
       delete :destroy, 
         { :medical_record_id => medical_records(:paco).id, 
-	  :id => odat_diagnoses(:one).id
+	  :id => odat_diagnoses(:de_paco).id
         }
     end
     assert_redirected_to medical_records_path

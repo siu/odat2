@@ -1,0 +1,19 @@
+<% content_for :header do -%>
+	  <div id="header">
+	    <%= render :partial => 'layouts/header' %>
+	  </div>
+<% end -%>
+
+<% content_for :content do -%>
+	  <div id="main" class="simple">
+	    <h2><%= yield :page_title || _('ODAT') %></h2>
+	    <%= display_flash %>
+	    <%= yield %>
+	  </div>
+<% end -%>
+
+<% content_for :footer do -%>
+	<%= render :partial => 'layouts/footer' %>
+<% end -%>
+
+<%= render :file => 'layouts/default' %>

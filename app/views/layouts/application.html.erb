@@ -8,10 +8,10 @@
 	  </div>
 
 	  <div id="navbar">
-            <% if !current_user.is_admin? -%>
-	      <%= render :partial => 'layouts/user_navbar' %>
-            <% else -%>
+            <% if current_user and current_user.role?(:admin) -%>
 	      <%= render :partial => 'layouts/admin_navbar' %>
+            <% elsif current_user -%>
+	      <%= render :partial => 'layouts/user_navbar' %>
             <% end -%>
 	  </div>
 <% end -%>

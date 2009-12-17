@@ -4,14 +4,22 @@ require 'test_helper'
 class Admin::UsersController; def rescue_action(e) raise e end; end
 
 class Admin::UsersControllerTest < ActionController::TestCase
-  # Be sure to include AuthenticatedTestHelper in test/test_helper.rb instead
-  # Then, you can remove it from this and the units test.
-  include AuthenticatedTestHelper
-
   include MyApp::Admin::NotLoggedInChecks
   include MyApp::Admin::UserLoggedInChecks
 
   fixtures :users
+
+  def test_should_show_index
+    login_as_admin
+    get :index
+    assert_response :success
+  end
+
+  def test_should_show_user
+    login_as_admin
+    get :show, :id => users(:demo).id
+    assert_response :success
+  end
 
   def test_should_allow_signup
     login_as_admin

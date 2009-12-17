@@ -2,10 +2,12 @@
 #sidebar {
     width: 14%;
     float: left;
+    display: inline;
 }
 #main {
     position: relative;
     float:left;
+    display: inline;
     width: 80%;
 }
 #sidebar, #main {
@@ -17,8 +19,7 @@
 }
 #main.simple {
     margin: 0 auto;
-    float: none;
-    width: auto;
+    display: block;
 }
 #footer {
     clear: both;

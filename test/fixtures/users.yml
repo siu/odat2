@@ -1,74 +1,90 @@
 
-quentin:
-  id:                        1
-  login:                     quentin
-  email:                     quentin@example.com
-  salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
-  crypted_password:          1ac28eb0e3bb4aaec9916858f55812e31a12114d # 'monkey'
-  created_at:                <%= 5.days.ago.to_s :db  %>
-  remember_token_expires_at: <%= 1.days.from_now.to_s %>
-  remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
-  activation_code:           
-  activated_at:              <%= 5.days.ago.to_s :db %>
-  state:                     active
-  center:                    demo
-      
-aaron:
-  id:                        2
-  login:                     aaron
-  email:                     aaron@example.com
-  salt:                      da4b9237bacccdf19c0760cab7aec4a8359010b0 # SHA1('1')
-  crypted_password:          5c15afbb835b3b9e82b740fac28fe13f054a3a99 # 'monkey'
-  created_at:                <%= 1.days.ago.to_s :db %>
-  remember_token_expires_at: 
-  remember_token:            
-  activation_code:           1b6453892473a467d07372d45eb05abc2031647a
-  activated_at:              
-
-  state:                     pending
-  center:                    demo
-
-
-old_password_holder:
-  id:                        3
-  login:                     old_password_holder
-  email:                     salty_dog@example.com
-  salt:                      7e3041ebc2fc05a40c60028e2c4901a81035d3cd
-  crypted_password:          00742970dc9e6319f8019fd54864d3ea740f04b1 # test
-  created_at:                <%= 1.days.ago.to_s :db %>
-
-  activation_code:           
-  activated_at:              <%= 5.days.ago.to_s :db %>
-
-
-  state:                     active
-  center:                    demo
+demo:
+  login: demo
+  email: demo@odat.net
+  crypted_password: fdc089e38c72004d8598a9218817e52efe2392c40767add68fd1b17c9195e56527fd00884154377a0a869260b5debbf710eb6f84c864638d6f9e19eb91913549 # demodemo
+  password_salt: qkT_UF6dXeM_2i2LqjSB
+  perishable_token: KdQw4VTjmc4Ae66KOMc0
+  persistence_token: ac8bb3059f12b4cf3a47566c53567cf541a498d7d2936d05ac7c65fb73bcff4596bd278045516a465bef836368715ec55a4fb8902b48e883a4d84fc4c106edbe
+  active: true
+  approved: true
+  confirmed: true
+  created_at: 2009-12-14 10:29:40
+  updated_at: 2009-12-14 10:29:40
+  center: demo
+  role: user
 
 admin:
-  login:                     admin
-  email:                     admin@example.com
-  salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
-  crypted_password:          1ac28eb0e3bb4aaec9916858f55812e31a12114d # 'monkey'
-  created_at:                <%= 5.days.ago.to_s :db  %>
-  remember_token_expires_at: <%= 1.days.from_now.to_s %>
-  remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
-  activation_code:           
-  activated_at:              <%= 5.days.ago.to_s :db %>
-  state:                     active
-  type:                      Admin
-  center:                    demo
+  login: admin
+  email: admin@odat.net
+  crypted_password: 4abc1ebbe6418da62437d6d8a8d7f260d18bc83cf190e66f58e822024a06d5916dc3d3159e428bd59494e2b93be56cdb1a08ca7235be78b8aafa22c8f46b165c # secret
+  password_salt: -3WDWsuvy7yKPPeB8d_C
+  perishable_token: wU8YDNLO_rSrezqgvXCR
+  persistence_token: 4e5a71e177b1ddfab8f7ac6d2c21c027c7717241e72a7c5dac4b74c0e0439c4be29a33723be8f5f1aa9f5bac6e1522120b33c14a0f2b2758d175270045e0a68d
+  active: true
+  approved: true
+  confirmed: true
+  created_at: 2009-12-14 14:35:50.906554 Z
+  updated_at: 2009-12-14 14:36:18.147799 Z
+  center: demo
+  role: admin
 
-quentin_other:
-  login:                     quentin_other
-  email:                     quentin_other@example.com
-  salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
-  crypted_password:          1ac28eb0e3bb4aaec9916858f55812e31a12114d # 'monkey'
-  created_at:                <%= 5.days.ago.to_s :db  %>
-  remember_token_expires_at: <%= 1.days.from_now.to_s %>
-  remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
-  activation_code:           
-  activated_at:              <%= 5.days.ago.to_s :db %>
-  state:                     active
-  type:                      User
-  center:                    demo2
+user2:
+  login: user2
+  email: user2@odat.net
+  crypted_password: fdc089e38c72004d8598a9218817e52efe2392c40767add68fd1b17c9195e56527fd00884154377a0a869260b5debbf710eb6f84c864638d6f9e19eb91913549 # demodemo
+  password_salt: qkT_UF6dXeM_2i2LqjSB
+  perishable_token: KdQw4VTjmc4Ae66KOMc0
+  persistence_token: ac8bb3059f12b4cf3a47566c53567cf541a498d7d2936d05ac7c65fb73bcff4596bd278045516a465bef836368715ec55a4fb8902b48e883a4d84fc4c106edbe
+  active: true
+  approved: true
+  confirmed: true
+  created_at: 2009-12-14 10:29:40
+  updated_at: 2009-12-14 10:29:40
+  center: demo2
+  role: user
 
+not_active_user:
+  login: not_active_user
+  email: not_active_user@odat.net
+  crypted_password: fdc089e38c72004d8598a9218817e52efe2392c40767add68fd1b17c9195e56527fd00884154377a0a869260b5debbf710eb6f84c864638d6f9e19eb91913549 # demodemo
+  password_salt: qkT_UF6dXeM_2i2LqjSB
+  perishable_token: KdQw4VTjmc4Ae66KOMc0
+  persistence_token: ac8bb3059f12b4cf3a47566c53567cf541a498d7d2936d05ac7c65fb73bcff4596bd278045516a465bef836368715ec55a4fb8902b48e883a4d84fc4c106edbe
+  active: false
+  approved: true
+  confirmed: true
+  created_at: 2009-12-14 10:29:40
+  updated_at: 2009-12-14 10:29:40
+  center: demo
+  role: user
+
+not_approved_user:
+  login: not_approved_user
+  email: not_approved_user@odat.net
+  crypted_password: fdc089e38c72004d8598a9218817e52efe2392c40767add68fd1b17c9195e56527fd00884154377a0a869260b5debbf710eb6f84c864638d6f9e19eb91913549 # demodemo
+  password_salt: qkT_UF6dXeM_2i2LqjSB
+  perishable_token: KdQw4VTjmc4Ae66KOMc0
+  persistence_token: ac8bb3059f12b4cf3a47566c53567cf541a498d7d2936d05ac7c65fb73bcff4596bd278045516a465bef836368715ec55a4fb8902b48e883a4d84fc4c106edbe
+  active: true
+  approved: false
+  confirmed: true
+  created_at: 2009-12-14 10:29:40
+  updated_at: 2009-12-14 10:29:40
+  center: demo
+  role: user
+
+not_confirmed_user:
+  login: not_confirmed_user
+  email: not_confirmed_user@odat.net
+  crypted_password: fdc089e38c72004d8598a9218817e52efe2392c40767add68fd1b17c9195e56527fd00884154377a0a869260b5debbf710eb6f84c864638d6f9e19eb91913549 # demodemo
+  password_salt: qkT_UF6dXeM_2i2LqjSB
+  perishable_token: KdQw4VTjmc4Ae66KOMc0
+  persistence_token: ac8bb3059f12b4cf3a47566c53567cf541a498d7d2936d05ac7c65fb73bcff4596bd278045516a465bef836368715ec55a4fb8902b48e883a4d84fc4c106edbe
+  active: true
+  approved: true
+  confirmed: false
+  created_at: 2009-12-14 10:29:40
+  updated_at: 2009-12-14 10:29:40
+  center: demo
+  role: user

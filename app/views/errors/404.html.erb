@@ -1,0 +1,16 @@
+
+<%= image_tag("404.png", :style => 'margin:0 30px;float:left') %>
+
+<h2>404.- Recurso o página no encontrada</h2>
+
+<h3>Ha ocurrido un error. Puede ser que el recurso que buscas ya no exista, hayas escrito mal la URL o que haya cambiado de lugar, ¡disculpa las molestias!</h3>
+
+<p>Te sugerimos que vuelvas a una de estas páginas para seguir utilizando la ODAT:</p>
+<ul>
+  <li><%= link_to(_('Volver al área de trabajo'), dashboard_path) %></li>
+  <li><%= link_to(_('Volver a la lista de expedientes'), medical_records_path) %></li>
+  <li><%= link_to(_('Volver a la lista de informes de centro'), center_reports_path) %></li>
+  <li><%= link_to(_('Página de contacto'), contact_path) %></li>
+</ul>
+
+<p>Si este problema se repite, por favor, ponte en contacto con nosotros e intentaremos solucionarlo lo antes posible. <%= link_to(_('Página de contacto'), contact_path) %>.</p>

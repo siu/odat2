@@ -4,7 +4,6 @@ log/*.log
 tmp/**/*
 config/database.yml
 db/*.sqlite3
-config/initializers/site_keys.rb
 po/**/*.mo
 locale/*
 

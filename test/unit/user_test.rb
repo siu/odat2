@@ -2,9 +2,6 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 #class UserTest < ActiveSupport::TestCase
 class UserTest < ActiveRecord::TestCase 
-  # Be sure to include AuthenticatedTestHelper in test/test_helper.rb instead.
-  # Then, you can remove it from this and the functional test.
-  include AuthenticatedTestHelper
   fixtures :users
 
   def test_should_create_user
@@ -56,127 +53,49 @@ class UserTest < ActiveRecord::TestCase
     end
   end
 
-  def test_should_reset_password
-    users(:quentin).update_attributes(:password => 'new password', :password_confirmation => 'new password')
-    assert_equal users(:quentin), User.authenticate('quentin', 'new password')
+  test "should change password when password and password_confirmation are provided" do
+    old_crypted_password = users(:demo).crypted_password
+    old_password_salt = users(:demo).password_salt
+    users(:demo).update_attributes(:password => 'new password', :password_confirmation => 'new password')
+    assert_not_same users(:demo).crypted_password, old_crypted_password
+    assert_not_same users(:demo).password_salt, old_password_salt
   end
 
-  def test_should_not_rehash_password
-    users(:quentin).update_attributes(:login => 'quentin2')
-    assert_equal users(:quentin), User.authenticate('quentin2', 'monkey')
+  test "should not rehash password if password and password_confirmation are not provided" do
+    old_crypted_password = users(:demo).crypted_password
+    old_password_salt = users(:demo).password_salt
+    users(:demo).email = 'demo_new_mail@odat.net'
+    assert users(:demo).save
+    assert_same users(:demo).crypted_password, old_crypted_password
+    assert_same users(:demo).password_salt, old_password_salt
   end
 
-  def test_should_authenticate_user
-    assert_equal users(:quentin), User.authenticate('quentin', 'monkey')
-  end
-
-  def test_should_set_remember_token
-    users(:quentin).remember_me
-    assert_not_nil users(:quentin).remember_token
-    assert_not_nil users(:quentin).remember_token_expires_at
-  end
-
-  def test_should_unset_remember_token
-    users(:quentin).remember_me
-    assert_not_nil users(:quentin).remember_token
-    users(:quentin).forget_me
-    assert_nil users(:quentin).remember_token
-  end
-
-  def test_should_remember_me_for_one_week
-    before = 1.week.from_now.utc
-    users(:quentin).remember_me_for 1.week
-    after = 1.week.from_now.utc
-    assert_not_nil users(:quentin).remember_token
-    assert_not_nil users(:quentin).remember_token_expires_at
-    assert users(:quentin).remember_token_expires_at.between?(before, after)
-  end
-
-  def test_should_remember_me_until_one_week
-    time = 1.week.from_now.utc
-    users(:quentin).remember_me_until time
-    assert_not_nil users(:quentin).remember_token
-    assert_not_nil users(:quentin).remember_token_expires_at
-    assert_equal users(:quentin).remember_token_expires_at, time
-  end
-
-  def test_should_remember_me_default_two_weeks
-    before = 2.weeks.from_now.utc
-    users(:quentin).remember_me
-    after = 2.weeks.from_now.utc
-    assert_not_nil users(:quentin).remember_token
-    assert_not_nil users(:quentin).remember_token_expires_at
-    assert users(:quentin).remember_token_expires_at.between?(before, after)
-  end
-
-  def test_should_register_passive_user
-    user = create_user(:password => nil, :password_confirmation => nil)
-    assert user.passive?
-    user.update_attributes(:password => 'new password', :password_confirmation => 'new password')
-    user.register!
-    assert user.active?
-  end
-
-  def test_should_suspend_user
-    users(:quentin).suspend!
-    assert users(:quentin).suspended?
-  end
-
-  def test_suspended_user_should_not_authenticate
-    users(:quentin).suspend!
-    assert_not_equal users(:quentin), User.authenticate('quentin', 'test')
-  end
-
-  def test_should_unsuspend_user_to_active_state
-    users(:quentin).suspend!
-    assert users(:quentin).suspended?
-    users(:quentin).unsuspend!
-    assert users(:quentin).active?
-  end
-
-  def test_should_unsuspend_user_with_nil_activation_code_and_activated_at_to_passive_state
-    users(:quentin).suspend!
-    User.update_all :activation_code => nil, :activated_at => nil
-    assert users(:quentin).suspended?
-    users(:quentin).reload.unsuspend!
-    assert users(:quentin).passive?
-  end
-
-  def test_should_unsuspend_user_with_activation_code_and_nil_activated_at_to_pending_state
-    users(:quentin).suspend!
-    User.update_all :activation_code => 'foo-bar', :activated_at => nil
-    assert users(:quentin).suspended?
-    users(:quentin).reload.unsuspend!
-    assert users(:quentin).pending?
-  end
-
-  def test_should_delete_user
-    assert_nil users(:quentin).deleted_at
-    users(:quentin).delete!
-    assert_not_nil users(:quentin).deleted_at
-    assert users(:quentin).deleted?
-  end
-
-  test "should not be admin" do
-    assert !users(:quentin).is_admin?
+  def test_should_deactivate_user
+    users(:demo).deactivate!
+    assert !users(:demo).active?
   end
 
   test "should have the same medical records that his center" do
-    assert_equal users(:quentin).medical_records, 
-      users(:quentin).center.medical_records
-    assert_equal users(:quentin_other).medical_records, 
-      users(:quentin_other).center.medical_records
+    assert_equal users(:demo).medical_records, 
+      users(:demo).center.medical_records
+  end
+
+  test "demo user is not an admin" do
+    assert !users(:demo).role?(:admin)
+  end
+
+  test "admin user is an admin" do
+    assert users(:admin).role?(:admin)
   end
 
 protected
   def create_user(options = {})
-    record = User.new({ 
-      :login => 'quire', 
-      :email => 'quire@example.com', 
-      :password => 'quire69', 
-      :password_confirmation => 'quire69',
+    record = User.create({ 
+      :login => 'odat_user', 
+      :email => 'odat_user@example.com', 
+      :password => 'odat_12345', 
+      :password_confirmation => 'odat_12345',
       :center_id => centers(:demo).id }.merge(options))
-    record.register! if record.valid?
     record
   end
 end

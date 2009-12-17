@@ -4,15 +4,9 @@
 [submodule "vendor/plugins/acts_as_html_text"]
 	path = vendor/plugins/acts_as_html_text
 	url = git://github.com/siu/acts_as_html_text.git
-[submodule "vendor/plugins/restful_authentication"]
-	path = vendor/plugins/restful_authentication
-	url = git://github.com/technoweenie/restful-authentication.git
 [submodule "vendor/plugins/yaml_db"]
 	path = vendor/plugins/yaml_db
 	url = git://github.com/adamwiggins/yaml_db.git
-[submodule "vendor/plugins/acts_as_state_machine"]
-	path = vendor/plugins/acts_as_state_machine
-	url = git://github.com/omghax/acts_as_state_machine.git
 [submodule "vendor/plugins/acts_as_list"]
 	path = vendor/plugins/acts_as_list
 	url = git://github.com/rails/acts_as_list.git
@@ -22,6 +16,3 @@
 [submodule "vendor/plugins/semantic_form_builder"]
 	path = vendor/plugins/semantic_form_builder
 	url = git://github.com/scivi/semantic_form_builder.git
-[submodule "vendor/plugins/rails-i18n-updater"]
-	path = vendor/plugins/rails-i18n-updater
-	url = git://github.com/zargony/rails-i18n-updater.git

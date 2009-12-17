@@ -6,6 +6,6 @@ class Admin::AdminSectionController < ApplicationController
 
 protected
   def login_required
-    render :file => "#{RAILS_ROOT}/public/404.html", :status => 404 unless logged_in? && current_user.is_admin?
+    render_optional_error_file(404) unless current_user && current_user.role?(:admin)
   end
 end

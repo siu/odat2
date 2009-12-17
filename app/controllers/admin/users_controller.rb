@@ -2,7 +2,7 @@
 class Admin::UsersController < Admin::AdminSectionController
   
   before_filter :find_user, 
-    :only => [:edit, :suspend, :unsuspend, :destroy, :purge]
+    :only => [:show, :edit, :activate, :deactivate, :approve, :deapprove, :confirm, :unconfirm, :destroy]
   
   # render new.rhtml
   def new
@@ -19,15 +19,14 @@ class Admin::UsersController < Admin::AdminSectionController
       format.xml  { render :xml => @users }
     end
   end
+
+  def show; end
  
   def create
-    # logout_keeping_session!
     @user = User.new(params[:user])
-    @user.register! if @user && @user.valid?
-    success = @user && @user.valid?
-    if success && @user.errors.empty?
-      redirect_back_or_default(root_path)
+    if @user.save
       flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      redirect_to [:admin, @user]
     else
       load_data
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
@@ -59,24 +58,38 @@ class Admin::UsersController < Admin::AdminSectionController
     end
   end
 
-  def suspend
-    @user.suspend! 
+  def deactivate
+    flash[:notice] = _('El usuario ha sido desactivado correctamente') if @user.deactivate! 
     redirect_to admin_users_path
   end
 
-  def unsuspend
-    @user.unsuspend! 
+  def activate
+    flash[:notice] = _('El usuario ha sido activado correctamente') if @user.activate! 
+    redirect_to admin_users_path
+  end
+
+  def approve
+    flash[:notice] = _('El usuario ha sido aprovado correctamente') if @user.approve! 
+    redirect_to admin_users_path
+  end
+
+  def deapprove
+    flash[:notice] = _('El usuario ha sido desaprovado correctamente') if @user.deapprove! 
+    redirect_to admin_users_path
+  end
+
+  def confirm
+    flash[:notice] = _('El usuario ha sido confirmado correctamente') if @user.confirm! 
+    redirect_to admin_users_path
+  end
+
+  def unconfirm
+    flash[:notice] = _('El usuario ha sido desconfirmado correctamente') if @user.unconfirm! 
     redirect_to admin_users_path
   end
 
   def destroy
-    @user.delete!
-    redirect_to admin_users_path
-  end
-
-  def purge
-    @user.destroy
-    redirect_to admin_users_path
+    self.deactivate
   end
 
 protected

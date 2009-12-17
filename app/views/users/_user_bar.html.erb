@@ -1,4 +1,4 @@
-<% if logged_in? -%>
+<% if current_user -%>
     <%= current_user.name_or_login %> 
     <%= link_to _('Cerrar Sesión'), logout_path, 
   	{ :title => _('Cerrar Sesión'), :class => 'logout' } %>

@@ -2,8 +2,11 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'mocha'
+require 'authlogic/test_case'
 
 class ActiveSupport::TestCase
+  def setup
+  end
   # Transactional fixtures accelerate your tests by wrapping each test method
   # in a transaction that's rolled back on completion.  This ensures that the
   # test database remains unchanged so your fixtures don't have to be reloaded
@@ -35,21 +38,32 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
-  include AuthenticatedTestHelper
-
-  def login_as_user(sym = :quentin)
-    login_as :quentin
+  def login_as_user
+    login_as :demo
   end
 
   def login_as_admin
     login_as :admin
   end
 
-  def current_user
-    @current_user ||= User.find_by_id((@request.session[:user_id]))
+  def login_as(sym = :demo)
+    UserSession.create(users(sym), true)
   end
 
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
+
+end
+
+class ActionController::TestCase
+  setup :activate_authlogic
 end
 
 module NotLoggedInChecks
