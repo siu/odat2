@@ -14,7 +14,7 @@ jQuery.fn.submitWithAjax = function() {
 };
 
 jQuery(document).ready(function($) {
-  $('#login').focus();
+  $('#user_session_login').focus();
   $('a[rel*=facebox]').facebox();
 
   $("ul.subnav").parent().addClass("navcat");
