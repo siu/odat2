@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
-"POT-Creation-Date: 2009-12-01 02:29+0100\n"
+"POT-Creation-Date: 2009-11-30 20:46+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
+"Last-Translator: traduccion <traduccion>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -803,9 +803,7 @@ msgid "OdatDiagnosis|Description html"
 msgstr ""
 
 #: app/models/odat_diagnosis.rb:31
-msgid ""
-"Debes especificar al menos un elemento en diagnóstico detallado y un "
-"diagnóstico principal"
+msgid "Debes especificar al menos un elemento en diagnóstico detallado y un diagnóstico principal"
 msgstr "يجب أن تحدد عنصر واحد على الأقل في التشخيص المفصل وتشخيص رئيسي واحد"
 
 #: app/models/report_field_template.rb:-
@@ -906,30 +904,19 @@ msgid "No"
 msgstr "لا"
 
 #: app/helpers/application_helper.rb:22
-#, fuzzy
 msgid "No se han encontrado registros."
-msgstr "لم يتم تسجيل الدخول في"
+msgstr "لم يجدوا سجلات"
 
 #: app/helpers/application_helper.rb:32
-#, fuzzy
 msgid "Ocultar"
 msgstr "إخفاء"
 
 #: app/helpers/application_helper.rb:39
-msgid ""
-"Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></"
-"strong></span> se muestran con un asterisco."
-msgstr ""
-"ألـ <span class=\"requiredField\">فراغات يجب أن تملأ<strong><sup>*</sup></"
-"strong></span> المشار إليها بنجمة"
-
-#: app/helpers/application_helper.rb:66
-msgid "NUEVO"
-msgstr ""
+msgid "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco."
+msgstr "ألـ <span class=\"requiredField\">فراغات يجب أن تملأ<strong><sup>*</sup></strong></span> المشار إليها بنجمة"
 
 #: app/controllers/odat_diagnoses_controller.rb:32
-msgid ""
-"Se han recuperado los datos del último diagnóstico para la creación del nuevo"
+msgid "Se han recuperado los datos del último diagnóstico para la creación del nuevo"
 msgstr "تم استرجاع بيانات التشخيص الأخير لإنشاء آخر جديد"
 
 #: app/controllers/odat_diagnoses_controller.rb:61
@@ -993,43 +980,8 @@ msgid "Área de trabajo"
 msgstr "مجال الشغل"
 
 #: app/views/dashboard/index.html.erb:3
-msgid ""
-"En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
+msgid "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
 msgstr "يمكنك العثور في هذه الشاشة على آخر مستجدات المركز"
-
-#: app/views/dashboard/index.html.erb:7
-msgid "Últimos expedientes modificados"
-msgstr ""
-
-#: app/views/dashboard/index.html.erb:18
-#, fuzzy
-msgid "Últimos diagnósticos modificados"
-msgstr "لا وجود لتشخيصات مخزنة."
-
-#: app/views/dashboard/index.html.erb:22
-#, fuzzy
-msgid "Diagnóstico %{name}"
-msgstr "تشخيصات لـ %{name}"
-
-#: app/views/dashboard/index.html.erb:31
-#, fuzzy
-msgid "Últimos Informes Individuales modificados"
-msgstr "تقارير فردية"
-
-#: app/views/dashboard/index.html.erb:35
-#, fuzzy
-msgid "Informe para %{name}"
-msgstr "تقرير لـ %{full_name}"
-
-#: app/views/dashboard/index.html.erb:43
-#, fuzzy
-msgid "Últimos informes de centro modificados"
-msgstr "تظهر هنا تقارير المركز المحتفظ بها."
-
-#: app/views/dashboard/index.html.erb:47
-#: app/views/center_reports/show.html.erb:8
-msgid "Informe de centro"
-msgstr "تقرير المركز"
 
 #: app/views/admin/dashboard/index.html.erb:1
 #: app/views/layouts/_admin_navbar.html.erb:2
@@ -1487,13 +1439,8 @@ msgid "Denominación"
 msgstr "التسمية"
 
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:40
-msgid ""
-"Se utiliza para reseñar los diagnósticos confirmados. En este apartado "
-"reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de "
-"Down, Angelmans, Rett, etc."
-msgstr ""
-"تستعمل لتقديم التشخيصات المؤكدة. في هذا الباب نحدد المتلازمات أو الأمراض؛ "
-"على سبيل المثال: متلازمة داون، متلازمة أنجلمان، متلازمة ريت، إلخ."
+msgid "Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc."
+msgstr "تستعمل لتقديم التشخيصات المؤكدة. في هذا الباب نحدد المتلازمات أو الأمراض؛ على سبيل المثال: متلازمة داون، متلازمة أنجلمان، متلازمة ريت، إلخ."
 
 #: app/views/odat_diagnoses/edit.html.erb:1
 msgid "Modificar diagnóstico"
@@ -1623,13 +1570,8 @@ msgid "Nuevo expediente"
 msgstr "ملف جديد"
 
 #: app/views/medical_records/new.html.erb:5
-msgid ""
-"En esta pantalla se pueden introducir los datos de un expediente personal, "
-"<strong>rellene los datos con exactitud</strong>, luego los datos serán "
-"útiles para generar informes y estadísticas."
-msgstr ""
-"يمكنك في هذه الشاشة إدخال بيانات ملف شخصي , <strong>املأ البيانات بدقة،</"
-"strong>, سوف يستفاد من البيانات لإعداد تقارير وإحصاءات."
+msgid "En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas."
+msgstr "يمكنك في هذه الشاشة إدخال بيانات ملف شخصي , <strong>املأ البيانات بدقة،</strong>, سوف يستفاد من البيانات لإعداد تقارير وإحصاءات."
 
 #: app/views/medical_records/index.html.erb:1
 msgid "Expedientes del centro"
@@ -1803,14 +1745,11 @@ msgid "Eliminar expediente"
 msgstr "حذف ملف"
 
 #: app/views/layouts/medical_records.html.erb:26
-msgid ""
-"Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e "
-"informes (operación irreversible)?"
-msgstr ""
-"متأكد من أنك تريد حذف السجل الحالي وجميع تقارير التشخيص (عملية لا رجعة فيها)"
-"؟ "
+msgid "Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?"
+msgstr "متأكد من أنك تريد حذف السجل الحالي وجميع تقارير التشخيص (عملية لا رجعة فيها)؟ "
 
-#: app/views/layouts/default.html.erb:4 app/views/layouts/_header.html.erb:2
+#: app/views/layouts/default.html.erb:4
+#: app/views/layouts/_header.html.erb:2
 msgid "Organización Diagnóstica para la Atención Temprana"
 msgstr "تنظيم التشخيص في التدخل المبكر"
 
@@ -1818,7 +1757,8 @@ msgstr "تنظيم التشخيص في التدخل المبكر"
 msgid "Real patronato sobre discapacidad"
 msgstr "الجمعية الملكية للإعاقة"
 
-#: app/views/layouts/visitor.html.erb:13 app/views/layouts/_header.html.erb:1
+#: app/views/layouts/visitor.html.erb:13
+#: app/views/layouts/_header.html.erb:1
 msgid "ODAT"
 msgstr "ODAT"
 
@@ -1829,8 +1769,7 @@ msgstr "حذف تقرير المركز"
 
 #: app/views/layouts/center_reports.html.erb:10
 #: app/views/center_reports/_menu.html.erb:11
-msgid ""
-"Seguro deseas borrar el informe de centro actual (operación irreversible)?"
+msgid "Seguro deseas borrar el informe de centro actual (operación irreversible)?"
 msgstr "متأكد من أنك تريد حذف تقرير المركز الحالي (عملية لا رجعة فيها)؟ "
 
 #: app/views/layouts/_admin_navbar.html.erb:5
@@ -1966,13 +1905,8 @@ msgid "Servicios de coordinación"
 msgstr "مصالح التنسيق"
 
 #: app/views/individual_reports/_form.html.erb:81
-msgid ""
-"Asociar el informe a un diagnóstico concreto es opcional, <strong>no es "
-"necesario rellenar esta sección si no se necesitan datos de diagnóstico</"
-"strong>."
-msgstr ""
-"يبقى اختياريا مرافقة التقرير إلى تشخيص محدد , <strong>ليس من المطلوب ملء هذا "
-"القسم ما لم تكن هناك حاجة إلى البيانات التشخيصية</strong>."
+msgid "Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>."
+msgstr "يبقى اختياريا مرافقة التقرير إلى تشخيص محدد , <strong>ليس من المطلوب ملء هذا القسم ما لم تكن هناك حاجة إلى البيانات التشخيصية</strong>."
 
 #: app/views/individual_reports/_form.html.erb:94
 msgid "Datos diagnóstico"
@@ -2022,13 +1956,19 @@ msgstr "لم يتم تسجيل الدخول في"
 
 #: app/views/users/_visitor_bar.html.erb:3
 #: app/views/users/_visitor_bar.html.erb:4
-#: app/views/users/_user_bar.html.erb:7 app/views/users/_user_bar.html.erb:8
+#: app/views/users/_user_bar.html.erb:7
+#: app/views/users/_user_bar.html.erb:8
 msgid "Iniciar Sesión"
 msgstr "تسجيل الدخول"
 
-#: app/views/users/_user_bar.html.erb:3 app/views/users/_user_bar.html.erb:4
+#: app/views/users/_user_bar.html.erb:3
+#: app/views/users/_user_bar.html.erb:4
 msgid "Cerrar Sesión"
 msgstr "تسجيل الخروج"
+
+#: app/views/center_reports/show.html.erb:8
+msgid "Informe de centro"
+msgstr "تقرير المركز"
 
 #: app/views/center_reports/show.html.erb:31
 #: app/views/center_reports/show.pdf.prawn:85
@@ -2051,8 +1991,7 @@ msgid "Nuevo Informe de Centro"
 msgstr "جديد تقرير المركز"
 
 #: app/views/center_reports/new.html.erb:4
-msgid ""
-"En este formulario se puede seleccionar qué datos se mostrarán en el informe"
+msgid "En este formulario se puede seleccionar qué datos se mostrarán en el informe"
 msgstr "يمكنك في هذا النموذج تحديد البيانات التي سيتم عرضها في التقرير"
 
 #: app/views/center_reports/index.html.erb:1
@@ -2079,7 +2018,8 @@ msgstr "تعديل تقرير المركز"
 msgid "Ayuda sobre puestos de trabajo"
 msgstr "مساعدة حول مناصب الشغل"
 
-#: app/views/sessions/new.html.erb:1 app/views/sessions/new.html.erb:17
+#: app/views/sessions/new.html.erb:1
+#: app/views/sessions/new.html.erb:17
 msgid "Iniciar sesión"
 msgstr "تسجيل الدخول"
 
@@ -2102,3 +2042,4 @@ msgstr "تقرير لـ %{full_name}"
 #: config/initializers/custom_forms.rb:25
 msgid " o "
 msgstr " o "
+
