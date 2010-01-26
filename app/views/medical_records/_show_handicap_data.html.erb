@@ -5,5 +5,5 @@
 
 <tr>
   <th><%= _('Grado de dependencia') %></th>
-  <td><%= @medical_record.dependency_degree.nil? ? '' : _("Grado %{dependency_degree}") % {:dependency_degree => @medical_record.dependency_degree } %></td>
+  <td><%= @medical_record.dependency_degree ? '' : h(_("Grado %{dependency_degree}") % {:dependency_degree => @medical_record.dependency_degree }) %></td>
 </tr>
