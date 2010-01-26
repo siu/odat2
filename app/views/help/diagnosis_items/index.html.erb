@@ -9,7 +9,7 @@
 <% if @diagnosis_items.any? -%>
   <ul>
     <% for item in @diagnosis_items do -%>
-        <li><strong><%= link_to item.name, '/help/diagnosis_items/%d' % item.id %></strong></li>
+        <li><strong><%= link_to(item.name, [:help, item]) %></strong></li>
     <% end -%>
   </ul>
 <% end -%>
