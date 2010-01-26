@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
-"POT-Creation-Date: 2009-11-30 20:46+0100\n"
+"POT-Creation-Date: 2010-01-26 19:55+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: traduccion <traduccion>\n"
 "Language-Team: \n"
@@ -9,70 +9,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Arabic\n"
-
-#: app/models/formation_level.rb:-
-msgid "user"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Login"
-msgstr "اسم المستخدم"
-
-#: app/models/formation_level.rb:-
-msgid "User|Name"
-msgstr "الاسم الشخصي "
-
-#: app/models/formation_level.rb:-
-msgid "User|Email"
-msgstr "البريد الإلكتروني"
-
-#: app/models/formation_level.rb:-
-msgid "User|Crypted password"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Salt"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Created at"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Updated at"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Remember token"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Remember token expires at"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Activation code"
-msgstr "رمز التفعيل"
-
-#: app/models/formation_level.rb:-
-msgid "User|Activated at"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|State"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Deleted at"
-msgstr ""
-
-#: app/models/formation_level.rb:-
-msgid "User|Type"
-msgstr "نوع"
-
-#: app/models/formation_level.rb:-
-msgid "User|Center"
-msgstr "مركز"
 
 #: app/models/formation_level.rb:-
 msgid "formation level"
@@ -192,6 +128,113 @@ msgstr ""
 
 #: app/models/job.rb:-
 msgid "Job|Description html"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "user"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Created at"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Updated at"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Login"
+msgstr "اسم المستخدم"
+
+#: app/models/user.rb:-
+msgid "User|Email"
+msgstr "البريد الإلكتروني"
+
+#: app/models/user.rb:-
+msgid "User|Crypted password"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Password salt"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Persistence token"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Perishable token"
+msgstr ""
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Login count"
+msgstr "اسم المستخدم"
+
+#: app/models/user.rb:-
+msgid "User|Failed login count"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Last request at"
+msgstr ""
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Last login at"
+msgstr "اسم المستخدم"
+
+#: app/models/user.rb:-
+msgid "User|Current login at"
+msgstr ""
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Last login ip"
+msgstr "اسم المستخدم"
+
+#: app/models/user.rb:-
+msgid "User|Current login ip"
+msgstr ""
+
+#: app/models/user.rb:-
+msgid "User|Name"
+msgstr "الاسم الشخصي "
+
+#: app/models/user.rb:-
+msgid "User|Center"
+msgstr "مركز"
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Active"
+msgstr "رمز التفعيل"
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Approved"
+msgstr "نوع"
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Confirmed"
+msgstr "مركز"
+
+#: app/models/user.rb:-
+#, fuzzy
+msgid "User|Role"
+msgstr "الاسم الشخصي "
+
+#: app/models/user_session.rb:5
+msgid "Los datos de inicio de sesión no son válidos"
+msgstr ""
+
+#: app/models/user_session.rb:13
+msgid "El usuario no está activo"
+msgstr ""
+
+#: app/models/user_session.rb:14
+msgid "El usuario no ha sido aprovado"
 msgstr ""
 
 #: app/models/job_status.rb:-
@@ -803,7 +846,9 @@ msgid "OdatDiagnosis|Description html"
 msgstr ""
 
 #: app/models/odat_diagnosis.rb:31
-msgid "Debes especificar al menos un elemento en diagnóstico detallado y un diagnóstico principal"
+msgid ""
+"Debes especificar al menos un elemento en diagnóstico detallado y un "
+"diagnóstico principal"
 msgstr "يجب أن تحدد عنصر واحد على الأقل في التشخيص المفصل وتشخيص رئيسي واحد"
 
 #: app/models/report_field_template.rb:-
@@ -912,11 +957,16 @@ msgid "Ocultar"
 msgstr "إخفاء"
 
 #: app/helpers/application_helper.rb:39
-msgid "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco."
-msgstr "ألـ <span class=\"requiredField\">فراغات يجب أن تملأ<strong><sup>*</sup></strong></span> المشار إليها بنجمة"
+msgid ""
+"Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></"
+"strong></span> se muestran con un asterisco."
+msgstr ""
+"ألـ <span class=\"requiredField\">فراغات يجب أن تملأ<strong><sup>*</sup></"
+"strong></span> المشار إليها بنجمة"
 
 #: app/controllers/odat_diagnoses_controller.rb:32
-msgid "Se han recuperado los datos del último diagnóstico para la creación del nuevo"
+msgid ""
+"Se han recuperado los datos del último diagnóstico para la creación del nuevo"
 msgstr "تم استرجاع بيانات التشخيص الأخير لإنشاء آخر جديد"
 
 #: app/controllers/odat_diagnoses_controller.rb:61
@@ -926,7 +976,7 @@ msgstr "تم بنجاح تخزين التشخيص الجديد"
 #: app/controllers/odat_diagnoses_controller.rb:90
 #: app/controllers/medical_records_controller.rb:80
 #: app/controllers/center_reports_controller.rb:81
-#: app/controllers/individual_reports_controller.rb:82
+#: app/controllers/individual_reports_controller.rb:75
 msgid "Las modificaciones se han guardado correctamente"
 msgstr "تم حفظ التغييرات بشكل صحيح"
 
@@ -950,38 +1000,125 @@ msgstr "مذكر"
 msgid "Femenino"
 msgstr "مؤنث"
 
-#: app/controllers/sessions_controller.rb:30
-msgid "Bienvenido/a"
-msgstr "مرحبا"
+#: app/controllers/admin/users_controller.rb:62
+#, fuzzy
+msgid "El usuario ha sido desactivado correctamente"
+msgstr "تم بنجاح حذف التشخيص"
 
-#: app/controllers/sessions_controller.rb:41
-msgid "Se ha finalizado la sesión"
-msgstr "انتهت الاستشارة"
+#: app/controllers/admin/users_controller.rb:67
+#, fuzzy
+msgid "El usuario ha sido activado correctamente"
+msgstr "تم بنجاح حذف التشخيص"
 
-#: app/controllers/sessions_controller.rb:48
-msgid "No se ha podido iniciar la sesión como %{login}"
-msgstr "لم يتمكن من بدء الاستشارة كـ %{login}"
+#: app/controllers/admin/users_controller.rb:72
+#, fuzzy
+msgid "El usuario ha sido aprovado correctamente"
+msgstr "تم حفظ التغييرات بشكل صحيح"
+
+#: app/controllers/admin/users_controller.rb:77
+msgid "El usuario ha sido desaprovado correctamente"
+msgstr ""
+
+#: app/controllers/admin/users_controller.rb:82
+#, fuzzy
+msgid "El usuario ha sido confirmado correctamente"
+msgstr "تم حذف التقرير بشكل صحيح "
+
+#: app/controllers/admin/users_controller.rb:87
+#, fuzzy
+msgid "El usuario ha sido desconfirmado correctamente"
+msgstr "تم حذف التقرير بشكل صحيح "
+
+#: app/controllers/application_controller.rb:55
+msgid "Es necesario iniciar sesión para visitar esta página"
+msgstr ""
+
+#: app/controllers/application_controller.rb:64
+msgid "Debes cerrar sesión para visitar esta página"
+msgstr ""
+
+#: app/controllers/user_sessions_controller.rb:22
+msgid "Has salido del sistema"
+msgstr ""
 
 #: app/controllers/center_reports_controller.rb:62
 msgid "El nuevo informe de centro se ha almacenado con éxito"
 msgstr "تم تخزين التقرير الجديد للمركز بنجاح"
 
 #: app/controllers/center_reports_controller.rb:102
-#: app/controllers/individual_reports_controller.rb:105
+#: app/controllers/individual_reports_controller.rb:98
 msgid "Se ha eliminado el informe correctamente"
 msgstr "تم حذف التقرير بشكل صحيح "
 
-#: app/controllers/individual_reports_controller.rb:60
+#: app/controllers/individual_reports_controller.rb:53
 msgid "El nuevo informe individual se ha almacenado con éxito"
 msgstr "تم بنجاح تخزين التقرير الشخصي الجديد"
+
+#: app/views/errors/500.html.erb:10 app/views/errors/404.html.erb:10
+#: app/views/errors/422.html.erb:10
+#, fuzzy
+msgid "Volver al área de trabajo"
+msgstr "مجال الشغل"
+
+#: app/views/errors/500.html.erb:11 app/views/errors/404.html.erb:11
+#: app/views/errors/422.html.erb:11
+#, fuzzy
+msgid "Volver a la lista de expedientes"
+msgstr "مراجعة بيانات الملف"
+
+#: app/views/errors/500.html.erb:12 app/views/errors/404.html.erb:12
+#: app/views/errors/422.html.erb:12
+#, fuzzy
+msgid "Volver a la lista de informes de centro"
+msgstr "حذف تقرير المركز"
+
+#: app/views/errors/500.html.erb:13 app/views/errors/500.html.erb:16
+#: app/views/errors/404.html.erb:13 app/views/errors/404.html.erb:16
+#: app/views/errors/422.html.erb:13 app/views/errors/422.html.erb:16
+msgid "Página de contacto"
+msgstr ""
 
 #: app/views/dashboard/index.html.erb:1
 msgid "Área de trabajo"
 msgstr "مجال الشغل"
 
 #: app/views/dashboard/index.html.erb:3
-msgid "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
+msgid ""
+"En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
 msgstr "يمكنك العثور في هذه الشاشة على آخر مستجدات المركز"
+
+#: app/views/dashboard/index.html.erb:7
+msgid "Últimos expedientes modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:18
+#, fuzzy
+msgid "Últimos diagnósticos modificados"
+msgstr "لا وجود لتشخيصات مخزنة."
+
+#: app/views/dashboard/index.html.erb:22
+msgid "Diagnóstico para <span class=\"record\">%{name}</span>"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:30
+#, fuzzy
+msgid "Últimos Informes Individuales modificados"
+msgstr "تقارير فردية"
+
+#: app/views/dashboard/index.html.erb:34
+#, fuzzy
+msgid "Informe para %{name}"
+msgstr "تقرير لـ %{full_name}"
+
+#: app/views/dashboard/index.html.erb:41
+#, fuzzy
+msgid "Últimos informes de centro modificados"
+msgstr "تظهر هنا تقارير المركز المحتفظ بها."
+
+#: app/views/dashboard/index.html.erb:45
+#: app/views/center_reports/show.html.erb:8
+msgid "Informe de centro"
+msgstr "تقرير المركز"
 
 #: app/views/admin/dashboard/index.html.erb:1
 #: app/views/layouts/_admin_navbar.html.erb:2
@@ -1047,8 +1184,8 @@ msgstr "صفحات المعلومات"
 #: app/views/odat_diagnoses/show.html.erb:36
 #: app/views/individual_reports/show.html.erb:105
 #: app/views/individual_reports/show.html.erb:129
-#: app/views/individual_reports/show.pdf.prawn:203
-#: app/views/individual_reports/show.pdf.prawn:259
+#: app/views/individual_reports/show.pdf.prawn:205
+#: app/views/individual_reports/show.pdf.prawn:261
 msgid "Datos de diagnóstico"
 msgstr "بيانات التشخيص"
 
@@ -1123,9 +1260,9 @@ msgstr "قوالب تقارير نسبية"
 #: app/views/medical_records/_form_social_familiar.html.erb:25
 #: app/views/medical_records/_form_social_familiar.html.erb:104
 #: app/views/individual_reports/show.html.erb:13
-#: app/views/individual_reports/show.pdf.prawn:59
-#: app/views/individual_reports/show.pdf.prawn:107
-#: app/views/individual_reports/show.pdf.prawn:141
+#: app/views/individual_reports/show.pdf.prawn:61
+#: app/views/individual_reports/show.pdf.prawn:109
+#: app/views/individual_reports/show.pdf.prawn:143
 msgid "Nombre"
 msgstr "الاسم الشخصي"
 
@@ -1201,15 +1338,23 @@ msgid "Login"
 msgstr "اسم المستخدم"
 
 #: app/views/admin/users/index.html.erb:6
-msgid "Estado"
-msgstr "الحالة"
-
-#: app/views/admin/users/index.html.erb:7
 #: app/views/admin/users/_form.html.erb:19
 msgid "Centro"
 msgstr "مركز"
 
-#: app/views/admin/users/index.html.erb:28
+#: app/views/admin/users/index.html.erb:7
+msgid "Activo"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:8
+msgid "Aprovado"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:9
+msgid "Confirmado"
+msgstr ""
+
+#: app/views/admin/users/index.html.erb:44
 msgid "Dar de alta nuevo usuario"
 msgstr "حشد مستخدم جديد"
 
@@ -1291,7 +1436,7 @@ msgid "Modificar Estado Civil"
 msgstr "تعديل الحالة العائلية "
 
 #: app/views/odat_diagnoses/_show_main_diagnosis.html.erb:4
-#: app/views/individual_reports/show.pdf.prawn:253
+#: app/views/individual_reports/show.pdf.prawn:255
 msgid "No se ha indicado un diagnóstico principal."
 msgstr "لم تتم الإشارة لتشخيص رئيسي"
 
@@ -1309,7 +1454,7 @@ msgstr "عرض التشخيص"
 #: app/views/individual_reports/show.html.erb:9
 #: app/views/individual_reports/_form.html.erb:24
 #: app/views/individual_reports/_form.html.erb:27
-#: app/views/individual_reports/show.pdf.prawn:57
+#: app/views/individual_reports/show.pdf.prawn:59
 msgid "Datos personales"
 msgstr "بيانات شخصية"
 
@@ -1322,7 +1467,7 @@ msgstr "التشخيص"
 #: app/views/odat_diagnoses/show.html.erb:16
 #: app/views/individual_reports/show.html.erb:111
 #: app/views/center_reports/index.html.erb:14
-#: app/views/individual_reports/show.pdf.prawn:207
+#: app/views/individual_reports/show.pdf.prawn:209
 msgid "Fecha de creación"
 msgstr "تاريخ الإنشاء"
 
@@ -1344,7 +1489,7 @@ msgstr "بيانات الطلب"
 #: app/views/odat_diagnoses/_form.html.erb:31
 #: app/views/individual_reports/show.html.erb:125
 #: app/views/individual_reports/_form.html.erb:107
-#: app/views/individual_reports/show.pdf.prawn:249
+#: app/views/individual_reports/show.pdf.prawn:251
 msgid "Diagnóstico principal"
 msgstr "تشخيص رئيسي"
 
@@ -1401,7 +1546,7 @@ msgstr "ملف"
 
 #: app/views/odat_diagnoses/_form.html.erb:19
 #: app/views/individual_reports/show.html.erb:121
-#: app/views/individual_reports/show.pdf.prawn:238
+#: app/views/individual_reports/show.pdf.prawn:240
 msgid "Datos de centro"
 msgstr "بيانات المركز"
 
@@ -1416,31 +1561,36 @@ msgstr "تشخيص مفصل"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:3
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:4
-#: app/views/individual_reports/show.pdf.prawn:216
+#: app/views/individual_reports/show.pdf.prawn:218
 msgid "Fuente de derivación"
 msgstr "مصدر الإحالة"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:7
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:16
-#: app/views/individual_reports/show.pdf.prawn:221
+#: app/views/individual_reports/show.pdf.prawn:223
 msgid "Motivo de derivación"
 msgstr "سبب الإحالة"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:11
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:28
-#: app/views/individual_reports/show.pdf.prawn:226
+#: app/views/individual_reports/show.pdf.prawn:228
 msgid "Motivo de consulta expresado por los padres"
 msgstr "سبب طلب الآباء للاستشارة"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:15
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:38
-#: app/views/individual_reports/show.pdf.prawn:230
+#: app/views/individual_reports/show.pdf.prawn:232
 msgid "Denominación"
 msgstr "التسمية"
 
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:40
-msgid "Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc."
-msgstr "تستعمل لتقديم التشخيصات المؤكدة. في هذا الباب نحدد المتلازمات أو الأمراض؛ على سبيل المثال: متلازمة داون، متلازمة أنجلمان، متلازمة ريت، إلخ."
+msgid ""
+"Se utiliza para reseñar los diagnósticos confirmados. En este apartado "
+"reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de "
+"Down, Angelmans, Rett, etc."
+msgstr ""
+"تستعمل لتقديم التشخيصات المؤكدة. في هذا الباب نحدد المتلازمات أو الأمراض؛ "
+"على سبيل المثال: متلازمة داون، متلازمة أنجلمان، متلازمة ريت، إلخ."
 
 #: app/views/odat_diagnoses/edit.html.erb:1
 msgid "Modificar diagnóstico"
@@ -1448,13 +1598,13 @@ msgstr "تعديل تشخيص"
 
 #: app/views/medical_records/_show_siblings_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:7
-#: app/views/individual_reports/show.pdf.prawn:96
+#: app/views/individual_reports/show.pdf.prawn:98
 msgid "Número total de hermanos"
 msgstr "العدد الإجمالي للإخوة"
 
 #: app/views/medical_records/_show_siblings_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:14
-#: app/views/individual_reports/show.pdf.prawn:98
+#: app/views/individual_reports/show.pdf.prawn:100
 msgid "Lugar que ocupa"
 msgstr "مرتبته"
 
@@ -1475,8 +1625,8 @@ msgstr "مراجعة بيانات الملف"
 #: app/views/medical_records/_show_father_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:32
 #: app/views/medical_records/_form_social_familiar.html.erb:111
-#: app/views/individual_reports/show.pdf.prawn:110
-#: app/views/individual_reports/show.pdf.prawn:144
+#: app/views/individual_reports/show.pdf.prawn:112
+#: app/views/individual_reports/show.pdf.prawn:146
 msgid "Apellidos"
 msgstr "الاسم العائلي"
 
@@ -1488,9 +1638,9 @@ msgstr "الاسم العائلي"
 #: app/views/medical_records/_form_social_familiar.html.erb:118
 #: app/views/individual_reports/show.html.erb:27
 #: app/views/individual_reports/_form.html.erb:34
-#: app/views/individual_reports/show.pdf.prawn:66
-#: app/views/individual_reports/show.pdf.prawn:113
-#: app/views/individual_reports/show.pdf.prawn:147
+#: app/views/individual_reports/show.pdf.prawn:68
+#: app/views/individual_reports/show.pdf.prawn:115
+#: app/views/individual_reports/show.pdf.prawn:149
 msgid "Fecha de nacimiento"
 msgstr "تاريخ الميلاد"
 
@@ -1498,8 +1648,8 @@ msgstr "تاريخ الميلاد"
 #: app/views/medical_records/_show_father_data.html.erb:15
 #: app/views/medical_records/_form_social_familiar.html.erb:49
 #: app/views/medical_records/_form_social_familiar.html.erb:128
-#: app/views/individual_reports/show.pdf.prawn:116
-#: app/views/individual_reports/show.pdf.prawn:150
+#: app/views/individual_reports/show.pdf.prawn:118
+#: app/views/individual_reports/show.pdf.prawn:152
 msgid "Situación laboral"
 msgstr "حالة العمل"
 
@@ -1507,15 +1657,15 @@ msgstr "حالة العمل"
 #: app/views/medical_records/_show_father_data.html.erb:19
 #: app/views/medical_records/_form_social_familiar.html.erb:58
 #: app/views/medical_records/_form_social_familiar.html.erb:137
-#: app/views/individual_reports/show.pdf.prawn:119
-#: app/views/individual_reports/show.pdf.prawn:153
+#: app/views/individual_reports/show.pdf.prawn:121
+#: app/views/individual_reports/show.pdf.prawn:155
 msgid "Ocupación"
 msgstr "المهنة"
 
 #: app/views/medical_records/_show_mother_data.html.erb:23
 #: app/views/medical_records/_show_father_data.html.erb:23
-#: app/views/individual_reports/show.pdf.prawn:122
-#: app/views/individual_reports/show.pdf.prawn:156
+#: app/views/individual_reports/show.pdf.prawn:124
+#: app/views/individual_reports/show.pdf.prawn:158
 msgid "Nivel de estudios"
 msgstr "المستوى الدراسي"
 
@@ -1523,8 +1673,8 @@ msgstr "المستوى الدراسي"
 #: app/views/medical_records/_show_father_data.html.erb:28
 #: app/views/medical_records/_form_social_familiar.html.erb:76
 #: app/views/medical_records/_form_social_familiar.html.erb:155
-#: app/views/individual_reports/show.pdf.prawn:125
-#: app/views/individual_reports/show.pdf.prawn:159
+#: app/views/individual_reports/show.pdf.prawn:127
+#: app/views/individual_reports/show.pdf.prawn:161
 msgid "Estado civil"
 msgstr "الحالة المدنية"
 
@@ -1532,8 +1682,8 @@ msgstr "الحالة المدنية"
 #: app/views/medical_records/_show_father_data.html.erb:33
 #: app/views/medical_records/_form_social_familiar.html.erb:86
 #: app/views/medical_records/_form_social_familiar.html.erb:165
-#: app/views/individual_reports/show.pdf.prawn:128
-#: app/views/individual_reports/show.pdf.prawn:162
+#: app/views/individual_reports/show.pdf.prawn:130
+#: app/views/individual_reports/show.pdf.prawn:164
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -1541,26 +1691,26 @@ msgstr "البريد الإلكتروني"
 #: app/views/medical_records/_show_father_data.html.erb:37
 #: app/views/medical_records/_form_social_familiar.html.erb:93
 #: app/views/medical_records/_form_social_familiar.html.erb:172
-#: app/views/individual_reports/show.pdf.prawn:131
-#: app/views/individual_reports/show.pdf.prawn:165
+#: app/views/individual_reports/show.pdf.prawn:133
+#: app/views/individual_reports/show.pdf.prawn:167
 msgid "Información extra"
 msgstr "معلومات إضافية"
 
 #: app/views/medical_records/_show_phones_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:183
-#: app/views/individual_reports/show.pdf.prawn:175
+#: app/views/individual_reports/show.pdf.prawn:177
 msgid "Domicilio"
 msgstr "هاتف المنزل"
 
 #: app/views/medical_records/_show_phones_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:191
-#: app/views/individual_reports/show.pdf.prawn:178
+#: app/views/individual_reports/show.pdf.prawn:180
 msgid "Móvil"
 msgstr "الهاتف النقال"
 
 #: app/views/medical_records/_show_phones_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:199
-#: app/views/individual_reports/show.pdf.prawn:181
+#: app/views/individual_reports/show.pdf.prawn:183
 msgid "Trabajo"
 msgstr "هاتف العمل"
 
@@ -1570,8 +1720,13 @@ msgid "Nuevo expediente"
 msgstr "ملف جديد"
 
 #: app/views/medical_records/new.html.erb:5
-msgid "En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas."
-msgstr "يمكنك في هذه الشاشة إدخال بيانات ملف شخصي , <strong>املأ البيانات بدقة،</strong>, سوف يستفاد من البيانات لإعداد تقارير وإحصاءات."
+msgid ""
+"En esta pantalla se pueden introducir los datos de un expediente personal, "
+"<strong>rellene los datos con exactitud</strong>, luego los datos serán "
+"útiles para generar informes y estadísticas."
+msgstr ""
+"يمكنك في هذه الشاشة إدخال بيانات ملف شخصي , <strong>املأ البيانات بدقة،</"
+"strong>, سوف يستفاد من البيانات لإعداد تقارير وإحصاءات."
 
 #: app/views/medical_records/index.html.erb:1
 msgid "Expedientes del centro"
@@ -1595,7 +1750,7 @@ msgstr "تاريخ فتح الملف"
 #: app/views/medical_records/_show.html.erb:21
 #: app/views/individual_reports/show.html.erb:39
 #: app/views/individual_reports/_form.html.erb:43
-#: app/views/individual_reports/show.pdf.prawn:72
+#: app/views/individual_reports/show.pdf.prawn:74
 msgid "Sexo"
 msgstr "الجنس"
 
@@ -1609,7 +1764,7 @@ msgstr "الوضع عند الولادة <small>(الترتيب)</small>"
 
 #: app/views/medical_records/_form.html.erb:69
 #: app/views/medical_records/_show.html.erb:29
-#: app/views/individual_reports/show.pdf.prawn:79
+#: app/views/individual_reports/show.pdf.prawn:81
 msgid "Dirección"
 msgstr "العنوان"
 
@@ -1635,38 +1790,39 @@ msgstr "الإعاقة"
 
 #: app/views/medical_records/_form.html.erb:103
 #: app/views/medical_records/_show_handicap_data.html.erb:2
-#: app/views/individual_reports/show.pdf.prawn:82
+#: app/views/individual_reports/show.pdf.prawn:84
 msgid "Clasificación de minusvalía mayor que 33 grados"
 msgstr "تصنيف إعاقة تفوق 33 درجة"
 
 #: app/views/medical_records/_form.html.erb:108
 #: app/views/medical_records/_show_handicap_data.html.erb:7
-#: app/views/individual_reports/show.pdf.prawn:84
+#: app/views/individual_reports/show.pdf.prawn:86
 msgid "Grado de dependencia"
 msgstr "درجة الاعتماد"
 
 #: app/views/medical_records/_show_coordination_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:210
-#: app/views/individual_reports/show.pdf.prawn:190
+#: app/views/individual_reports/show.pdf.prawn:192
 msgid "Servicios Sanitarios"
 msgstr "خدمات صحية"
 
 #: app/views/medical_records/_show_coordination_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:215
-#: app/views/individual_reports/show.pdf.prawn:192
+#: app/views/individual_reports/show.pdf.prawn:194
 msgid "Servicios Sociales"
 msgstr "خدمات اجتماعية"
 
 #: app/views/medical_records/_show_coordination_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:220
-#: app/views/individual_reports/show.pdf.prawn:194
+#: app/views/individual_reports/show.pdf.prawn:196
 msgid "Servicios Educativos"
 msgstr "خدمات تعليمية"
 
 #: app/views/medical_records/_show_handicap_data.html.erb:8
-#: app/views/individual_reports/show.pdf.prawn:85
-msgid "Grado "
-msgstr "درجة"
+#: app/views/individual_reports/show.pdf.prawn:87
+#, fuzzy
+msgid "Grado %{dependency_degree}"
+msgstr "درجة الاعتماد"
 
 #: app/views/medical_records/edit.html.erb:1
 msgid "Editar expediente"
@@ -1674,20 +1830,20 @@ msgstr "كتابة ملف"
 
 #: app/views/medical_records/_show.html.erb:9
 #: app/views/individual_reports/show.html.erb:20
-#: app/views/individual_reports/show.pdf.prawn:63
+#: app/views/individual_reports/show.pdf.prawn:65
 msgid "Fecha de ingreso"
 msgstr "تاريخ الدخول أو الإيداع"
 
 #: app/views/medical_records/_show.html.erb:17
 #: app/views/individual_reports/show.html.erb:33
 #: app/views/individual_reports/_form.html.erb:37
-#: app/views/individual_reports/show.pdf.prawn:69
+#: app/views/individual_reports/show.pdf.prawn:71
 msgid "Edad"
 msgstr "السن"
 
 #: app/views/medical_records/_show.html.erb:25
 #: app/views/individual_reports/show.html.erb:45
-#: app/views/individual_reports/show.pdf.prawn:75
+#: app/views/individual_reports/show.pdf.prawn:77
 msgid "Número de parto <small>(en caso de parto múltiple)</small>"
 msgstr "عدد الولادات  <small>(في حالة الولادات المتعددة)</small>"
 
@@ -1695,28 +1851,28 @@ msgstr "عدد الولادات  <small>(في حالة الولادات المت
 #: app/views/medical_records/_form_social_familiar.html.erb:2
 #: app/views/individual_reports/show.html.erb:67
 #: app/views/individual_reports/_form.html.erb:55
-#: app/views/individual_reports/show.pdf.prawn:93
+#: app/views/individual_reports/show.pdf.prawn:95
 msgid "Datos sociofamiliares"
 msgstr "بيانات اجتماعية"
 
 #: app/views/medical_records/_show.html.erb:53
 #: app/views/medical_records/_form_social_familiar.html.erb:4
 #: app/views/individual_reports/show.html.erb:69
-#: app/views/individual_reports/show.pdf.prawn:95
+#: app/views/individual_reports/show.pdf.prawn:97
 msgid "Hermanos"
 msgstr "إخوة"
 
 #: app/views/medical_records/_show.html.erb:60
 #: app/views/medical_records/_form_social_familiar.html.erb:22
 #: app/views/individual_reports/show.html.erb:76
-#: app/views/individual_reports/show.pdf.prawn:105
+#: app/views/individual_reports/show.pdf.prawn:107
 msgid "Padre"
 msgstr "أب"
 
 #: app/views/medical_records/_show.html.erb:68
 #: app/views/medical_records/_form_social_familiar.html.erb:101
 #: app/views/individual_reports/show.html.erb:83
-#: app/views/individual_reports/show.pdf.prawn:139
+#: app/views/individual_reports/show.pdf.prawn:141
 msgid "Madre"
 msgstr "أم"
 
@@ -1724,14 +1880,14 @@ msgstr "أم"
 #: app/views/medical_records/_form_social_familiar.html.erb:180
 #: app/views/individual_reports/show.html.erb:90
 #: app/views/individual_reports/_form.html.erb:68
-#: app/views/individual_reports/show.pdf.prawn:173
+#: app/views/individual_reports/show.pdf.prawn:175
 msgid "Teléfonos"
 msgstr "هواتف"
 
 #: app/views/medical_records/_show.html.erb:82
 #: app/views/medical_records/_form_social_familiar.html.erb:207
 #: app/views/individual_reports/show.html.erb:97
-#: app/views/individual_reports/show.pdf.prawn:189
+#: app/views/individual_reports/show.pdf.prawn:191
 msgid "Coordinación"
 msgstr "التنسيق"
 
@@ -1745,22 +1901,25 @@ msgid "Eliminar expediente"
 msgstr "حذف ملف"
 
 #: app/views/layouts/medical_records.html.erb:26
-msgid "Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?"
-msgstr "متأكد من أنك تريد حذف السجل الحالي وجميع تقارير التشخيص (عملية لا رجعة فيها)؟ "
+msgid ""
+"Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e "
+"informes (operación irreversible)?"
+msgstr ""
+"متأكد من أنك تريد حذف السجل الحالي وجميع تقارير التشخيص (عملية لا رجعة فيها)"
+"؟ "
 
-#: app/views/layouts/default.html.erb:4
-#: app/views/layouts/_header.html.erb:2
+#: app/views/layouts/default.html.erb:4 app/views/layouts/_header.html.erb:2
 msgid "Organización Diagnóstica para la Atención Temprana"
 msgstr "تنظيم التشخيص في التدخل المبكر"
+
+#: app/views/layouts/errors.html.erb:9 app/views/layouts/visitor.html.erb:13
+#: app/views/layouts/_header.html.erb:1
+msgid "ODAT"
+msgstr "ODAT"
 
 #: app/views/layouts/_footer.html.erb:2
 msgid "Real patronato sobre discapacidad"
 msgstr "الجمعية الملكية للإعاقة"
-
-#: app/views/layouts/visitor.html.erb:13
-#: app/views/layouts/_header.html.erb:1
-msgid "ODAT"
-msgstr "ODAT"
 
 #: app/views/layouts/center_reports.html.erb:9
 #: app/views/center_reports/_menu.html.erb:10
@@ -1769,18 +1928,9 @@ msgstr "حذف تقرير المركز"
 
 #: app/views/layouts/center_reports.html.erb:10
 #: app/views/center_reports/_menu.html.erb:11
-msgid "Seguro deseas borrar el informe de centro actual (operación irreversible)?"
+msgid ""
+"Seguro deseas borrar el informe de centro actual (operación irreversible)?"
 msgstr "متأكد من أنك تريد حذف تقرير المركز الحالي (عملية لا رجعة فيها)؟ "
-
-#: app/views/layouts/_admin_navbar.html.erb:5
-#: app/views/layouts/_user_navbar.html.erb:9
-msgid "Documentación ODAT"
-msgstr "وثيقة الـ ODAT"
-
-#: app/views/layouts/_admin_navbar.html.erb:6
-#: app/views/layouts/_user_navbar.html.erb:10
-msgid "Acerca de ODAT"
-msgstr "حول الـ ODAT"
 
 #: app/views/layouts/_user_navbar.html.erb:3
 msgid "Centro: %{name}"
@@ -1789,6 +1939,14 @@ msgstr "مركز: %{name}"
 #: app/views/layouts/_user_navbar.html.erb:6
 msgid "Informes de centro"
 msgstr "تقارير المركز"
+
+#: app/views/layouts/_user_navbar.html.erb:9
+msgid "Documentación ODAT"
+msgstr "وثيقة الـ ODAT"
+
+#: app/views/layouts/_user_navbar.html.erb:10
+msgid "Acerca de ODAT"
+msgstr "حول الـ ODAT"
 
 #: app/views/layouts/help/help_layout.html.erb:22
 msgid "Cerrar ventana"
@@ -1800,12 +1958,12 @@ msgstr "العنوان"
 
 #: app/views/individual_reports/show.html.erb:108
 #: app/views/individual_reports/_form.html.erb:98
-#: app/views/individual_reports/show.pdf.prawn:205
+#: app/views/individual_reports/show.pdf.prawn:207
 msgid "Fecha de creación del diagnóstico"
 msgstr "تاريخ إنشاء التشخيص"
 
 #: app/views/individual_reports/show.html.erb:117
-#: app/views/individual_reports/show.pdf.prawn:213
+#: app/views/individual_reports/show.pdf.prawn:215
 msgid "Datos de demanda"
 msgstr "بيانات الطلب"
 
@@ -1814,31 +1972,31 @@ msgstr "بيانات الطلب"
 #: app/views/individual_reports/_form.html.erb:119
 #: app/views/center_reports/index.html.erb:15
 #: app/views/center_reports/_form.html.erb:27
-#: app/views/individual_reports/show.pdf.prawn:288
+#: app/views/individual_reports/show.pdf.prawn:290
 msgid "Informe"
 msgstr "تقرير"
 
 #: app/views/individual_reports/show.html.erb:137
 #: app/views/individual_reports/_form.html.erb:123
-#: app/views/individual_reports/show.pdf.prawn:290
+#: app/views/individual_reports/show.pdf.prawn:292
 msgid "Asunto"
 msgstr "الموضوع"
 
 #: app/views/individual_reports/show.html.erb:142
 #: app/views/individual_reports/_form.html.erb:129
-#: app/views/individual_reports/show.pdf.prawn:295
+#: app/views/individual_reports/show.pdf.prawn:297
 msgid "Pruebas"
 msgstr "اختبارات"
 
 #: app/views/individual_reports/show.html.erb:147
 #: app/views/individual_reports/_form.html.erb:135
-#: app/views/individual_reports/show.pdf.prawn:300
+#: app/views/individual_reports/show.pdf.prawn:302
 msgid "Resultados"
 msgstr "نتائج"
 
 #: app/views/individual_reports/show.html.erb:152
 #: app/views/individual_reports/_form.html.erb:141
-#: app/views/individual_reports/show.pdf.prawn:305
+#: app/views/individual_reports/show.pdf.prawn:307
 msgid "Orientaciones"
 msgstr "توجيهات"
 
@@ -1905,8 +2063,13 @@ msgid "Servicios de coordinación"
 msgstr "مصالح التنسيق"
 
 #: app/views/individual_reports/_form.html.erb:81
-msgid "Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>."
-msgstr "يبقى اختياريا مرافقة التقرير إلى تشخيص محدد , <strong>ليس من المطلوب ملء هذا القسم ما لم تكن هناك حاجة إلى البيانات التشخيصية</strong>."
+msgid ""
+"Asociar el informe a un diagnóstico concreto es opcional, <strong>no es "
+"necesario rellenar esta sección si no se necesitan datos de diagnóstico</"
+"strong>."
+msgstr ""
+"يبقى اختياريا مرافقة التقرير إلى تشخيص محدد , <strong>ليس من المطلوب ملء هذا "
+"القسم ما لم تكن هناك حاجة إلى البيانات التشخيصية</strong>."
 
 #: app/views/individual_reports/_form.html.erb:94
 msgid "Datos diagnóstico"
@@ -1956,19 +2119,36 @@ msgstr "لم يتم تسجيل الدخول في"
 
 #: app/views/users/_visitor_bar.html.erb:3
 #: app/views/users/_visitor_bar.html.erb:4
-#: app/views/users/_user_bar.html.erb:7
-#: app/views/users/_user_bar.html.erb:8
+#: app/views/users/_user_bar.html.erb:7 app/views/users/_user_bar.html.erb:8
 msgid "Iniciar Sesión"
 msgstr "تسجيل الدخول"
 
-#: app/views/users/_user_bar.html.erb:3
-#: app/views/users/_user_bar.html.erb:4
+#: app/views/users/_user_bar.html.erb:3 app/views/users/_user_bar.html.erb:4
 msgid "Cerrar Sesión"
 msgstr "تسجيل الخروج"
 
-#: app/views/center_reports/show.html.erb:8
-msgid "Informe de centro"
-msgstr "تقرير المركز"
+#: app/views/user_sessions/new.html.erb:1
+#: app/views/user_sessions/new.html.erb:16 app/views/sessions/new.html.erb:1
+#: app/views/sessions/new.html.erb:17
+msgid "Iniciar sesión"
+msgstr "تسجيل الدخول"
+
+#: app/views/user_sessions/new.html.erb:4
+#, fuzzy
+msgid "No se ha podido iniciar sesión"
+msgstr "لم يتم تسجيل الدخول في"
+
+#: app/views/user_sessions/new.html.erb:6 app/views/sessions/new.html.erb:5
+msgid "Identificador de usuario"
+msgstr "هوية المستخدم"
+
+#: app/views/user_sessions/new.html.erb:9 app/views/sessions/new.html.erb:8
+msgid "Clave"
+msgstr "الرمز"
+
+#: app/views/user_sessions/new.html.erb:13 app/views/sessions/new.html.erb:14
+msgid "Recordarme"
+msgstr "تذكير"
 
 #: app/views/center_reports/show.html.erb:31
 #: app/views/center_reports/show.pdf.prawn:85
@@ -1991,7 +2171,8 @@ msgid "Nuevo Informe de Centro"
 msgstr "جديد تقرير المركز"
 
 #: app/views/center_reports/new.html.erb:4
-msgid "En este formulario se puede seleccionar qué datos se mostrarán en el informe"
+msgid ""
+"En este formulario se puede seleccionar qué datos se mostrarán en el informe"
 msgstr "يمكنك في هذا النموذج تحديد البيانات التي سيتم عرضها في التقرير"
 
 #: app/views/center_reports/index.html.erb:1
@@ -2018,24 +2199,7 @@ msgstr "تعديل تقرير المركز"
 msgid "Ayuda sobre puestos de trabajo"
 msgstr "مساعدة حول مناصب الشغل"
 
-#: app/views/sessions/new.html.erb:1
-#: app/views/sessions/new.html.erb:17
-msgid "Iniciar sesión"
-msgstr "تسجيل الدخول"
-
-#: app/views/sessions/new.html.erb:5
-msgid "Identificador de usuario"
-msgstr "هوية المستخدم"
-
-#: app/views/sessions/new.html.erb:8
-msgid "Clave"
-msgstr "الرمز"
-
-#: app/views/sessions/new.html.erb:14
-msgid "Recordarme"
-msgstr "تذكير"
-
-#: app/views/individual_reports/show.pdf.prawn:52
+#: app/views/individual_reports/show.pdf.prawn:54
 msgid "Informe para %{full_name}"
 msgstr "تقرير لـ %{full_name}"
 
@@ -2043,3 +2207,17 @@ msgstr "تقرير لـ %{full_name}"
 msgid " o "
 msgstr " o "
 
+#~ msgid "Bienvenido/a"
+#~ msgstr "مرحبا"
+
+#~ msgid "Se ha finalizado la sesión"
+#~ msgstr "انتهت الاستشارة"
+
+#~ msgid "No se ha podido iniciar la sesión como %{login}"
+#~ msgstr "لم يتمكن من بدء الاستشارة كـ %{login}"
+
+#~ msgid "Estado"
+#~ msgstr "الحالة"
+
+#~ msgid "Grado "
+#~ msgstr "درجة"
