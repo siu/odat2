@@ -39,7 +39,7 @@
   <% end -%>
 
   <h3><%= _('Últimos informes de centro modificados') %></h3>
-  <% if @odat_diagnoses.any? -%>
+  <% if @center_reports.any? -%>
     <ul>
       <% for center_report in @center_reports -%>
         <li><%= link_to(_("Informe de centro"), center_report) %> <%= time_and_status_for(center_report) %></li>
