@@ -37,6 +37,8 @@ pedrito:
   social_services: true
   educative_services: true
   province: one
+  dependency_degree: 2
+  handicap: true
   
 pepito:
   name: Pepito
