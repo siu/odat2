@@ -82,7 +82,7 @@ if @individual_report.show_personal_data?
     data << [_('Clasificación de minusvalía mayor que 33 grados'), 
       print_boolean(@medical_record.handicap)]
     data << [_('Grado de dependencia'), 
-      h(@medical_record.dependency_degree ? _('Grado ') << @medical_record.dependency_degree.to_s : '')]
+      (@medical_record.dependency_degree ? '' : h(_("Grado %{dependency_degree}") % { :dependency_degree => @medical_record.dependency_degree} )) ]
   end
 
   print_table(pdf, data)
