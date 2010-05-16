@@ -24,9 +24,9 @@
     <td><%= link_to 'Activar', activate_admin_user_path(user), :method => :put %></td>
   <% end %>
   <% if user.approved? %>
-    <td><%= link_to 'Desaprovar', deapprove_admin_user_path(user), :method => :put %></td>
+    <td><%= link_to 'Desaprobar', deapprove_admin_user_path(user), :method => :put %></td>
   <% else %>
-    <td><%= link_to 'Aprovar', approve_admin_user_path(user), :method => :put %></td>
+    <td><%= link_to 'Aprobar', approve_admin_user_path(user), :method => :put %></td>
   <% end %>
   <% if user.confirmed? %>
     <td><%= link_to 'Desconfirmar', unconfirm_admin_user_path(user), :method => :put %></td>

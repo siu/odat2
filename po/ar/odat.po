@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
-"POT-Creation-Date: 2010-05-16 03:01+0200\n"
+"POT-Creation-Date: 2010-05-16 03:41+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: traduccion <traduccion>\n"
 "Language-Team: \n"
@@ -1012,12 +1012,13 @@ msgstr "تم بنجاح حذف التشخيص"
 
 #: app/controllers/admin/users_controller.rb:72
 #, fuzzy
-msgid "El usuario ha sido aprovado correctamente"
+msgid "El usuario ha sido aprobado correctamente"
 msgstr "تم حفظ التغييرات بشكل صحيح"
 
 #: app/controllers/admin/users_controller.rb:77
-msgid "El usuario ha sido desaprovado correctamente"
-msgstr ""
+#, fuzzy
+msgid "El usuario ha sido desaprobado correctamente"
+msgstr "تم حفظ التغييرات بشكل صحيح"
 
 #: app/controllers/admin/users_controller.rb:82
 #, fuzzy
