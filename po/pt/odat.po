@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: odat devel\n"
-"POT-Creation-Date: 2010-01-26 19:55+0100\n"
+"POT-Creation-Date: 2010-05-16 03:01+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: \n"
@@ -982,7 +982,7 @@ msgstr "O novo diagnóstico foi armazenado com êxito"
 #: app/controllers/odat_diagnoses_controller.rb:90
 #: app/controllers/medical_records_controller.rb:80
 #: app/controllers/center_reports_controller.rb:81
-#: app/controllers/individual_reports_controller.rb:75
+#: app/controllers/individual_reports_controller.rb:82
 msgid "Las modificaciones se han guardado correctamente"
 msgstr "As modificações foram guardadas correctamente"
 
@@ -1052,11 +1052,11 @@ msgid "El nuevo informe de centro se ha almacenado con éxito"
 msgstr "O novo relatório central foi armazenado com êxito"
 
 #: app/controllers/center_reports_controller.rb:102
-#: app/controllers/individual_reports_controller.rb:98
+#: app/controllers/individual_reports_controller.rb:105
 msgid "Se ha eliminado el informe correctamente"
 msgstr "O relatório foi eliminado correctamente"
 
-#: app/controllers/individual_reports_controller.rb:53
+#: app/controllers/individual_reports_controller.rb:60
 msgid "El nuevo informe individual se ha almacenado con éxito"
 msgstr "O novo relatório individual foi armazenado com êxito"
 
@@ -1095,6 +1095,10 @@ msgstr "Neste ecrã podes encontrar os últimos eventos ocorridos no centro"
 
 #: app/views/dashboard/index.html.erb:7
 msgid "Últimos expedientes modificados"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:7 app/views/dashboard/index.html.erb:41
+msgid "Ver todos"
 msgstr ""
 
 #: app/views/dashboard/index.html.erb:18
@@ -1148,6 +1152,7 @@ msgid "Expedientes y diagnósticos"
 msgstr "Processos e diagnósticos"
 
 #: app/views/admin/dashboard/index.html.erb:15
+#: app/views/medical_records/index.html.erb:1
 #: app/views/layouts/_user_navbar.html.erb:5
 msgid "Expedientes"
 msgstr "Processos"
@@ -1190,8 +1195,8 @@ msgstr "Páginas informativas"
 #: app/views/odat_diagnoses/show.html.erb:36
 #: app/views/individual_reports/show.html.erb:105
 #: app/views/individual_reports/show.html.erb:129
-#: app/views/individual_reports/show.pdf.prawn:205
-#: app/views/individual_reports/show.pdf.prawn:261
+#: app/views/individual_reports/show.pdf.prawn:203
+#: app/views/individual_reports/show.pdf.prawn:259
 msgid "Datos de diagnóstico"
 msgstr "Dados de diagnóstico"
 
@@ -1266,9 +1271,9 @@ msgstr "Quadros de Relatórios Comparativos"
 #: app/views/medical_records/_form_social_familiar.html.erb:25
 #: app/views/medical_records/_form_social_familiar.html.erb:104
 #: app/views/individual_reports/show.html.erb:13
-#: app/views/individual_reports/show.pdf.prawn:61
-#: app/views/individual_reports/show.pdf.prawn:109
-#: app/views/individual_reports/show.pdf.prawn:143
+#: app/views/individual_reports/show.pdf.prawn:59
+#: app/views/individual_reports/show.pdf.prawn:107
+#: app/views/individual_reports/show.pdf.prawn:141
 msgid "Nombre"
 msgstr "Nome"
 
@@ -1442,7 +1447,7 @@ msgid "Modificar Estado Civil"
 msgstr "Modificar Estado civil"
 
 #: app/views/odat_diagnoses/_show_main_diagnosis.html.erb:4
-#: app/views/individual_reports/show.pdf.prawn:255
+#: app/views/individual_reports/show.pdf.prawn:253
 msgid "No se ha indicado un diagnóstico principal."
 msgstr "Não se indicou um diagnóstico principal."
 
@@ -1460,7 +1465,7 @@ msgstr "Ver diagnóstico"
 #: app/views/individual_reports/show.html.erb:9
 #: app/views/individual_reports/_form.html.erb:24
 #: app/views/individual_reports/_form.html.erb:27
-#: app/views/individual_reports/show.pdf.prawn:59
+#: app/views/individual_reports/show.pdf.prawn:57
 msgid "Datos personales"
 msgstr "Dados pessoais"
 
@@ -1473,7 +1478,7 @@ msgstr "Diagnóstico"
 #: app/views/odat_diagnoses/show.html.erb:16
 #: app/views/individual_reports/show.html.erb:111
 #: app/views/center_reports/index.html.erb:14
-#: app/views/individual_reports/show.pdf.prawn:209
+#: app/views/individual_reports/show.pdf.prawn:207
 msgid "Fecha de creación"
 msgstr "Data de criação"
 
@@ -1495,7 +1500,7 @@ msgstr "Dados demanda"
 #: app/views/odat_diagnoses/_form.html.erb:31
 #: app/views/individual_reports/show.html.erb:125
 #: app/views/individual_reports/_form.html.erb:107
-#: app/views/individual_reports/show.pdf.prawn:251
+#: app/views/individual_reports/show.pdf.prawn:249
 msgid "Diagnóstico principal"
 msgstr "Diagnóstico principal"
 
@@ -1552,7 +1557,7 @@ msgstr "Processo"
 
 #: app/views/odat_diagnoses/_form.html.erb:19
 #: app/views/individual_reports/show.html.erb:121
-#: app/views/individual_reports/show.pdf.prawn:240
+#: app/views/individual_reports/show.pdf.prawn:238
 msgid "Datos de centro"
 msgstr "Dados de centro"
 
@@ -1567,25 +1572,25 @@ msgstr "Diagnóstico detalhado"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:3
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:4
-#: app/views/individual_reports/show.pdf.prawn:218
+#: app/views/individual_reports/show.pdf.prawn:216
 msgid "Fuente de derivación"
 msgstr "Fonte de derivação"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:7
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:16
-#: app/views/individual_reports/show.pdf.prawn:223
+#: app/views/individual_reports/show.pdf.prawn:221
 msgid "Motivo de derivación"
 msgstr "Motivo de derivação"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:11
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:28
-#: app/views/individual_reports/show.pdf.prawn:228
+#: app/views/individual_reports/show.pdf.prawn:226
 msgid "Motivo de consulta expresado por los padres"
 msgstr "Motivo de consulta expressado pelos pais"
 
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:15
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:38
-#: app/views/individual_reports/show.pdf.prawn:232
+#: app/views/individual_reports/show.pdf.prawn:230
 msgid "Denominación"
 msgstr "Denominação"
 
@@ -1605,13 +1610,13 @@ msgstr "Modificar diagnóstico"
 
 #: app/views/medical_records/_show_siblings_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:7
-#: app/views/individual_reports/show.pdf.prawn:98
+#: app/views/individual_reports/show.pdf.prawn:96
 msgid "Número total de hermanos"
 msgstr "Número total de irmãos"
 
 #: app/views/medical_records/_show_siblings_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:14
-#: app/views/individual_reports/show.pdf.prawn:100
+#: app/views/individual_reports/show.pdf.prawn:98
 msgid "Lugar que ocupa"
 msgstr "Lugar que ocupa"
 
@@ -1632,8 +1637,8 @@ msgstr "Consultar dados do processo"
 #: app/views/medical_records/_show_father_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:32
 #: app/views/medical_records/_form_social_familiar.html.erb:111
-#: app/views/individual_reports/show.pdf.prawn:112
-#: app/views/individual_reports/show.pdf.prawn:146
+#: app/views/individual_reports/show.pdf.prawn:110
+#: app/views/individual_reports/show.pdf.prawn:144
 msgid "Apellidos"
 msgstr "Apelidos"
 
@@ -1645,9 +1650,9 @@ msgstr "Apelidos"
 #: app/views/medical_records/_form_social_familiar.html.erb:118
 #: app/views/individual_reports/show.html.erb:27
 #: app/views/individual_reports/_form.html.erb:34
-#: app/views/individual_reports/show.pdf.prawn:68
-#: app/views/individual_reports/show.pdf.prawn:115
-#: app/views/individual_reports/show.pdf.prawn:149
+#: app/views/individual_reports/show.pdf.prawn:66
+#: app/views/individual_reports/show.pdf.prawn:113
+#: app/views/individual_reports/show.pdf.prawn:147
 msgid "Fecha de nacimiento"
 msgstr "Data de nascimento"
 
@@ -1655,8 +1660,8 @@ msgstr "Data de nascimento"
 #: app/views/medical_records/_show_father_data.html.erb:15
 #: app/views/medical_records/_form_social_familiar.html.erb:49
 #: app/views/medical_records/_form_social_familiar.html.erb:128
-#: app/views/individual_reports/show.pdf.prawn:118
-#: app/views/individual_reports/show.pdf.prawn:152
+#: app/views/individual_reports/show.pdf.prawn:116
+#: app/views/individual_reports/show.pdf.prawn:150
 msgid "Situación laboral"
 msgstr "Situação laboral"
 
@@ -1664,15 +1669,15 @@ msgstr "Situação laboral"
 #: app/views/medical_records/_show_father_data.html.erb:19
 #: app/views/medical_records/_form_social_familiar.html.erb:58
 #: app/views/medical_records/_form_social_familiar.html.erb:137
-#: app/views/individual_reports/show.pdf.prawn:121
-#: app/views/individual_reports/show.pdf.prawn:155
+#: app/views/individual_reports/show.pdf.prawn:119
+#: app/views/individual_reports/show.pdf.prawn:153
 msgid "Ocupación"
 msgstr "Ocupação"
 
 #: app/views/medical_records/_show_mother_data.html.erb:23
 #: app/views/medical_records/_show_father_data.html.erb:23
-#: app/views/individual_reports/show.pdf.prawn:124
-#: app/views/individual_reports/show.pdf.prawn:158
+#: app/views/individual_reports/show.pdf.prawn:122
+#: app/views/individual_reports/show.pdf.prawn:156
 msgid "Nivel de estudios"
 msgstr "Nível de estudos"
 
@@ -1680,8 +1685,8 @@ msgstr "Nível de estudos"
 #: app/views/medical_records/_show_father_data.html.erb:28
 #: app/views/medical_records/_form_social_familiar.html.erb:76
 #: app/views/medical_records/_form_social_familiar.html.erb:155
-#: app/views/individual_reports/show.pdf.prawn:127
-#: app/views/individual_reports/show.pdf.prawn:161
+#: app/views/individual_reports/show.pdf.prawn:125
+#: app/views/individual_reports/show.pdf.prawn:159
 msgid "Estado civil"
 msgstr "Estado civil"
 
@@ -1689,8 +1694,8 @@ msgstr "Estado civil"
 #: app/views/medical_records/_show_father_data.html.erb:33
 #: app/views/medical_records/_form_social_familiar.html.erb:86
 #: app/views/medical_records/_form_social_familiar.html.erb:165
-#: app/views/individual_reports/show.pdf.prawn:130
-#: app/views/individual_reports/show.pdf.prawn:164
+#: app/views/individual_reports/show.pdf.prawn:128
+#: app/views/individual_reports/show.pdf.prawn:162
 msgid "Email"
 msgstr "E-mail"
 
@@ -1698,26 +1703,26 @@ msgstr "E-mail"
 #: app/views/medical_records/_show_father_data.html.erb:37
 #: app/views/medical_records/_form_social_familiar.html.erb:93
 #: app/views/medical_records/_form_social_familiar.html.erb:172
-#: app/views/individual_reports/show.pdf.prawn:133
-#: app/views/individual_reports/show.pdf.prawn:167
+#: app/views/individual_reports/show.pdf.prawn:131
+#: app/views/individual_reports/show.pdf.prawn:165
 msgid "Información extra"
 msgstr "Informação extra"
 
 #: app/views/medical_records/_show_phones_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:183
-#: app/views/individual_reports/show.pdf.prawn:177
+#: app/views/individual_reports/show.pdf.prawn:175
 msgid "Domicilio"
 msgstr "Domicílio"
 
 #: app/views/medical_records/_show_phones_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:191
-#: app/views/individual_reports/show.pdf.prawn:180
+#: app/views/individual_reports/show.pdf.prawn:178
 msgid "Móvil"
 msgstr "Telemóvel"
 
 #: app/views/medical_records/_show_phones_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:199
-#: app/views/individual_reports/show.pdf.prawn:183
+#: app/views/individual_reports/show.pdf.prawn:181
 msgid "Trabajo"
 msgstr "Trabalho"
 
@@ -1735,10 +1740,6 @@ msgstr ""
 "Neste ecrã podem ser introduzidos os dados de um processo pessoal, "
 "<strong>preencha os dados com exactidão</strong>, posteriormente os dados "
 "serão úteis para gerar relatórios e estatísticas."
-
-#: app/views/medical_records/index.html.erb:1
-msgid "Expedientes del centro"
-msgstr "Processos do centro"
 
 #: app/views/medical_records/index.html.erb:5
 msgid "Aquí se muestran todos los expedientes del centro"
@@ -1758,7 +1759,7 @@ msgstr "Data inicio processo"
 #: app/views/medical_records/_show.html.erb:21
 #: app/views/individual_reports/show.html.erb:39
 #: app/views/individual_reports/_form.html.erb:43
-#: app/views/individual_reports/show.pdf.prawn:74
+#: app/views/individual_reports/show.pdf.prawn:72
 msgid "Sexo"
 msgstr "Sexo"
 
@@ -1772,7 +1773,7 @@ msgstr "Posição no parto <small>(ordem)</small>"
 
 #: app/views/medical_records/_form.html.erb:69
 #: app/views/medical_records/_show.html.erb:29
-#: app/views/individual_reports/show.pdf.prawn:81
+#: app/views/individual_reports/show.pdf.prawn:79
 msgid "Dirección"
 msgstr "Direcção"
 
@@ -1798,36 +1799,36 @@ msgstr "Minusvalía"
 
 #: app/views/medical_records/_form.html.erb:103
 #: app/views/medical_records/_show_handicap_data.html.erb:2
-#: app/views/individual_reports/show.pdf.prawn:84
+#: app/views/individual_reports/show.pdf.prawn:82
 msgid "Clasificación de minusvalía mayor que 33 grados"
 msgstr "Classificação de deficiência superior a 33 graus"
 
 #: app/views/medical_records/_form.html.erb:108
 #: app/views/medical_records/_show_handicap_data.html.erb:7
-#: app/views/individual_reports/show.pdf.prawn:86
+#: app/views/individual_reports/show.pdf.prawn:84
 msgid "Grado de dependencia"
 msgstr "Grau de dependência"
 
 #: app/views/medical_records/_show_coordination_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:210
-#: app/views/individual_reports/show.pdf.prawn:192
+#: app/views/individual_reports/show.pdf.prawn:190
 msgid "Servicios Sanitarios"
 msgstr "Serviços de saúde"
 
 #: app/views/medical_records/_show_coordination_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:215
-#: app/views/individual_reports/show.pdf.prawn:194
+#: app/views/individual_reports/show.pdf.prawn:192
 msgid "Servicios Sociales"
 msgstr "Serviços sociais"
 
 #: app/views/medical_records/_show_coordination_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:220
-#: app/views/individual_reports/show.pdf.prawn:196
+#: app/views/individual_reports/show.pdf.prawn:194
 msgid "Servicios Educativos"
 msgstr "Serviços educativos"
 
 #: app/views/medical_records/_show_handicap_data.html.erb:8
-#: app/views/individual_reports/show.pdf.prawn:87
+#: app/views/individual_reports/show.pdf.prawn:85
 #, fuzzy
 msgid "Grado %{dependency_degree}"
 msgstr "Grau de dependência"
@@ -1838,20 +1839,20 @@ msgstr "Editar processo"
 
 #: app/views/medical_records/_show.html.erb:9
 #: app/views/individual_reports/show.html.erb:20
-#: app/views/individual_reports/show.pdf.prawn:65
+#: app/views/individual_reports/show.pdf.prawn:63
 msgid "Fecha de ingreso"
 msgstr "Data de entrada"
 
 #: app/views/medical_records/_show.html.erb:17
 #: app/views/individual_reports/show.html.erb:33
 #: app/views/individual_reports/_form.html.erb:37
-#: app/views/individual_reports/show.pdf.prawn:71
+#: app/views/individual_reports/show.pdf.prawn:69
 msgid "Edad"
 msgstr "Idade"
 
 #: app/views/medical_records/_show.html.erb:25
 #: app/views/individual_reports/show.html.erb:45
-#: app/views/individual_reports/show.pdf.prawn:77
+#: app/views/individual_reports/show.pdf.prawn:75
 msgid "Número de parto <small>(en caso de parto múltiple)</small>"
 msgstr "Número de partos <small>(em caso de parto múltiplo)</small>"
 
@@ -1859,28 +1860,28 @@ msgstr "Número de partos <small>(em caso de parto múltiplo)</small>"
 #: app/views/medical_records/_form_social_familiar.html.erb:2
 #: app/views/individual_reports/show.html.erb:67
 #: app/views/individual_reports/_form.html.erb:55
-#: app/views/individual_reports/show.pdf.prawn:95
+#: app/views/individual_reports/show.pdf.prawn:93
 msgid "Datos sociofamiliares"
 msgstr "Dados sócio-familiares"
 
 #: app/views/medical_records/_show.html.erb:53
 #: app/views/medical_records/_form_social_familiar.html.erb:4
 #: app/views/individual_reports/show.html.erb:69
-#: app/views/individual_reports/show.pdf.prawn:97
+#: app/views/individual_reports/show.pdf.prawn:95
 msgid "Hermanos"
 msgstr "Irmãos"
 
 #: app/views/medical_records/_show.html.erb:60
 #: app/views/medical_records/_form_social_familiar.html.erb:22
 #: app/views/individual_reports/show.html.erb:76
-#: app/views/individual_reports/show.pdf.prawn:107
+#: app/views/individual_reports/show.pdf.prawn:105
 msgid "Padre"
 msgstr "Pai"
 
 #: app/views/medical_records/_show.html.erb:68
 #: app/views/medical_records/_form_social_familiar.html.erb:101
 #: app/views/individual_reports/show.html.erb:83
-#: app/views/individual_reports/show.pdf.prawn:141
+#: app/views/individual_reports/show.pdf.prawn:139
 msgid "Madre"
 msgstr "Mãe"
 
@@ -1888,14 +1889,14 @@ msgstr "Mãe"
 #: app/views/medical_records/_form_social_familiar.html.erb:180
 #: app/views/individual_reports/show.html.erb:90
 #: app/views/individual_reports/_form.html.erb:68
-#: app/views/individual_reports/show.pdf.prawn:175
+#: app/views/individual_reports/show.pdf.prawn:173
 msgid "Teléfonos"
 msgstr "Telefones"
 
 #: app/views/medical_records/_show.html.erb:82
 #: app/views/medical_records/_form_social_familiar.html.erb:207
 #: app/views/individual_reports/show.html.erb:97
-#: app/views/individual_reports/show.pdf.prawn:191
+#: app/views/individual_reports/show.pdf.prawn:189
 msgid "Coordinación"
 msgstr "Coordenação"
 
@@ -1967,12 +1968,12 @@ msgstr "Direcção"
 
 #: app/views/individual_reports/show.html.erb:108
 #: app/views/individual_reports/_form.html.erb:98
-#: app/views/individual_reports/show.pdf.prawn:207
+#: app/views/individual_reports/show.pdf.prawn:205
 msgid "Fecha de creación del diagnóstico"
 msgstr "Data de criação do diagnóstico"
 
 #: app/views/individual_reports/show.html.erb:117
-#: app/views/individual_reports/show.pdf.prawn:215
+#: app/views/individual_reports/show.pdf.prawn:213
 msgid "Datos de demanda"
 msgstr "Dados da demanda"
 
@@ -1981,31 +1982,31 @@ msgstr "Dados da demanda"
 #: app/views/individual_reports/_form.html.erb:119
 #: app/views/center_reports/index.html.erb:15
 #: app/views/center_reports/_form.html.erb:27
-#: app/views/individual_reports/show.pdf.prawn:290
+#: app/views/individual_reports/show.pdf.prawn:288
 msgid "Informe"
 msgstr "Relatório"
 
 #: app/views/individual_reports/show.html.erb:137
 #: app/views/individual_reports/_form.html.erb:123
-#: app/views/individual_reports/show.pdf.prawn:292
+#: app/views/individual_reports/show.pdf.prawn:290
 msgid "Asunto"
 msgstr "Assunto"
 
 #: app/views/individual_reports/show.html.erb:142
 #: app/views/individual_reports/_form.html.erb:129
-#: app/views/individual_reports/show.pdf.prawn:297
+#: app/views/individual_reports/show.pdf.prawn:295
 msgid "Pruebas"
 msgstr "Provas"
 
 #: app/views/individual_reports/show.html.erb:147
 #: app/views/individual_reports/_form.html.erb:135
-#: app/views/individual_reports/show.pdf.prawn:302
+#: app/views/individual_reports/show.pdf.prawn:300
 msgid "Resultados"
 msgstr "Resultados"
 
 #: app/views/individual_reports/show.html.erb:152
 #: app/views/individual_reports/_form.html.erb:141
-#: app/views/individual_reports/show.pdf.prawn:307
+#: app/views/individual_reports/show.pdf.prawn:305
 msgid "Orientaciones"
 msgstr "Orientações"
 
@@ -2211,13 +2212,16 @@ msgstr "Modificar Relatório central"
 msgid "Ayuda sobre puestos de trabajo"
 msgstr "Ajuda sobre os postos de trabalho"
 
-#: app/views/individual_reports/show.pdf.prawn:54
+#: app/views/individual_reports/show.pdf.prawn:52
 msgid "Informe para %{full_name}"
 msgstr "Relatório para %{full_name}"
 
 #: config/initializers/custom_forms.rb:25
 msgid " o "
 msgstr ""
+
+#~ msgid "Expedientes del centro"
+#~ msgstr "Processos do centro"
 
 #~ msgid "Bienvenido/a"
 #~ msgstr "Bem-vindo/a"
