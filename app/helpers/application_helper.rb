@@ -62,10 +62,4 @@ module ApplicationHelper
     content_tag("div", text, {:class => 'note'}.merge(options))
   end
 
-  def status_message(record)
-    record.created_at == record.updated_at ? "<span class=\"new-record\">#{_('Creado')}</span>" : "<span class=\"mod-record\">#{_('Modificado')}</span>"
-  end
-  def time_and_status_for(record)
-    "<small>#{status_message(record)} #{_('hace')} #{time_ago_in_words(record.updated_at)}</small>"
-  end
 end
