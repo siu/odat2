@@ -30,6 +30,14 @@ class CenterReportsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should download center report pdf" do
+    login_as_user
+    get :show, 
+        :id => comparative_reports(:center_report1).to_param, 
+        :format => 'pdf'
+    assert_response :success
+  end
+
   test "should get edit" do
     login_as_user
     get :edit, :id => comparative_reports(:center_report1).to_param
