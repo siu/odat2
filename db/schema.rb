@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091214205431) do
+ActiveRecord::Schema.define(:version => 20100529151536) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -114,6 +114,16 @@ ActiveRecord::Schema.define(:version => 20091214205431) do
   create_table "diagnosis_items_odat_diagnoses", :id => false, :force => true do |t|
     t.integer "diagnosis_item_id", :null => false
     t.integer "odat_diagnosis_id", :null => false
+  end
+
+  create_table "evaluation_categories", :force => true do |t|
+    t.string   "name",                            :null => false
+    t.boolean  "accepts_null",  :default => true, :null => false
+    t.integer  "default_value"
+    t.integer  "min_range",     :default => 1,    :null => false
+    t.integer  "max_range",     :default => 3,    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "formation_levels", :force => true do |t|
