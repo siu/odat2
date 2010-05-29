@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  accepts_null: false
+  min_range: 1
+  max_range: 1
+  default_value: 1
+
+two:
+  name: MyString
+  accepts_null: false
+  min_range: 1
+  max_range: 1
+  default_value: 1
