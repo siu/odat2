@@ -36,3 +36,17 @@
 <h4><%= _('Datos de diagnóstico') %></h4>
 <%= render :partial => 'show_detailed_diagnosis' %>
 
+<h3><%= _('Evaluación') %></h3>
+
+<table class="hdata">
+  <% for score in @odat_diagnosis.evaluation_category_scores -%>
+        <th>
+          <%= score.evaluation_category.name %>
+        </th>
+        <td>
+          <%= score.score %>
+        </td>
+      </tr>
+  <% end -%>
+</table>
+

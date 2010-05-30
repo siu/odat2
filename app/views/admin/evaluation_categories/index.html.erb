@@ -1,0 +1,28 @@
+<h1>Listing evaluation_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Accepts null</th>
+    <th>Min range</th>
+    <th>Max range</th>
+    <th>Default value</th>
+  </tr>
+
+<% @evaluation_categories.each do |evaluation_category| %>
+  <tr>
+    <td><%=h evaluation_category.name %></td>
+    <td><%=h evaluation_category.accepts_null %></td>
+    <td><%=h evaluation_category.min_range %></td>
+    <td><%=h evaluation_category.max_range %></td>
+    <td><%=h evaluation_category.default_value %></td>
+    <td><%= link_to 'Show', evaluation_category %></td>
+    <td><%= link_to 'Edit', edit_evaluation_category_path(evaluation_category) %></td>
+    <td><%= link_to 'Destroy', evaluation_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New evaluation_category', new_evaluation_category_path %>

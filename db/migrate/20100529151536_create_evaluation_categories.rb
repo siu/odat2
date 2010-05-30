@@ -6,8 +6,8 @@ class CreateEvaluationCategories < ActiveRecord::Migration
       t.boolean :accepts_null, :null => false, :default => true
       t.integer :default_value, :null => true, :default => nil
 
-      t.integer :min_range, :null => false, :default => 1
-      t.integer :max_range, :null => false, :default => 3
+      t.integer :min_range, :null => true, :default => 1
+      t.integer :max_range, :null => true, :default => 3
 
       t.timestamps
     end
