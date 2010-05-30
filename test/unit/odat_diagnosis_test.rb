@@ -69,6 +69,14 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     end
   end
 
+  test "returns evaluation_category_score stored" do
+    assert_equal(2.5, odat_diagnoses(:one).get_evaluation_category_score_for(evaluation_categories(:two)))
+  end
+
+  test "returns default value for evaluation_category when score not stored" do
+    assert_equal(evaluation_categories(:three).default_value, odat_diagnoses(:one).get_evaluation_category_score_for(evaluation_categories(:three)))
+  end
+
 protected
 
   def create_odat_diagnosis(opts = {})

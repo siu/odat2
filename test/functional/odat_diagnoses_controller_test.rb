@@ -227,6 +227,30 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     end
     assert_redirected_to medical_records_path
   end
+
+  test "should update evaluation_categories_scores_attributes" do
+    login_as_user
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+
+    evaluation_category = evaluation_categories(:two)
+    new_score = BigDecimal.new((1.33).to_s)
+    put :update, 
+        { :medical_record_id => medical_records(:pedrito).id, 
+    	  :id => odat_diagnoses(:one).id, 
+	  :odat_diagnosis =>  { :evaluation_category_scores_attributes => 
+                                [
+                                  {
+                                   :evaluation_category_id => evaluation_category.id.to_s,
+                                   :score => new_score.to_s
+                                  }
+                                ]
+                              }
+        }
+
+    assert_response :redirect
+    assert_equal(new_score, assigns(:odat_diagnosis).get_evaluation_category_score_for(evaluation_category))
+  end
+
 protected
   def get_diagnosis_items_ids(fixtures)
     fixtures.collect { |e| diagnosis_items(e).id.to_param }

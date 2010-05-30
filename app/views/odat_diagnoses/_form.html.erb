@@ -31,6 +31,13 @@
     <legend><%= _('Diagnóstico principal') %></legend>
     <%= render(:partial => 'form_main_diagnosis_details', :locals => {:f => f}) %>
   </fieldset>
+  
+  <h3><%= _('Parte 3: Evaluación') %></h3>
+
+  <fieldset>
+    <legend><%= _('Evaluación') %></legend>
+    <%= render(:partial => 'form_evaluation', :locals => {:f => f}) %>
+  </fieldset>
 
   <p>
   <% if @odat_diagnosis.new_record? -%>

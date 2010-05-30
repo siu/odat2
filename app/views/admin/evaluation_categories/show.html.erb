@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @evaluation_category.name %>
+</p>
+
+<p>
+  <b>Accepts null:</b>
+  <%=h @evaluation_category.accepts_null %>
+</p>
+
+<p>
+  <b>Min range:</b>
+  <%=h @evaluation_category.min_range %>
+</p>
+
+<p>
+  <b>Max range:</b>
+  <%=h @evaluation_category.max_range %>
+</p>
+
+<p>
+  <b>Default value:</b>
+  <%=h @evaluation_category.default_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_evaluation_category_path(@evaluation_category) %> |
+<%= link_to 'Back', evaluation_categories_path %>
