@@ -17,4 +17,5 @@ module OdatDiagnosesHelper
   def hide_attr_unless(condition)
     hide_attr_if(!condition)
   end
+  
 end

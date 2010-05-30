@@ -49,6 +49,8 @@
       <small>(<%= CenterResource.count %>)</small></li>
   <li><%= link_to(_('Elementos de diagnóstico'), admin_diagnosis_items_path) %>
       <small>(<%= DiagnosisItem.count %>)</small></li>
+  <li><%= link_to(_('Categorías de evaluación'), evaluation_categories_path) %>
+      <small>(<%= EvaluationCategory.count %>)</small></li>
   <li><%= link_to(_('Provincias'), admin_provinces_path) %>
       <small>(<%= Province.count %>)</small></li>
   <li><%= link_to(_('Trabajos'), admin_jobs_path) %>

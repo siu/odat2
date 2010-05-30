@@ -70,6 +70,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :report_field_templates,       :name_prefix => nil
     admin.resources :comparative_report_templates, :name_prefix => nil
     admin.resources :school_types,                 :name_prefix => nil
+    admin.resources :evaluation_categories,        :name_prefix => nil
   end
 
   map.contact 'contact_us', :controller => 'help/contact_us'

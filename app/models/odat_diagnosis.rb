@@ -22,6 +22,14 @@ class OdatDiagnosis < ActiveRecord::Base
 
   has_many :individual_reports, :dependent => :destroy
 
+  # Evaluation categories
+  has_many :evaluation_category_scores, :dependent => :destroy
+  has_many :evaluation_categories, 
+    :through => :evaluaton_category_scores,
+    :autosave => true, 
+    :uniq => true
+  accepts_nested_attributes_for :evaluation_category_scores
+
   # Validaciones
   validates_presence_of :medical_record_id
   validates_presence_of :origin_source_id
@@ -45,5 +53,11 @@ class OdatDiagnosis < ActiveRecord::Base
     o.diagnosis_item_ids = self.diagnosis_item_ids
     o.main_diagnosis_item_id = self.main_diagnosis_item_id
     o
+  end
+
+  def get_evaluation_category_score_for(cat)
+      evaluation_category_scores.find(cat.id).score
+    rescue
+      return cat.default_value
   end
 end
