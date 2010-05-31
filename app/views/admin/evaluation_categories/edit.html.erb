@@ -1,0 +1,32 @@
+<h1>Editing evaluation_category</h1>
+
+<% form_for(@evaluation_category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :accepts_null %><br />
+    <%= f.check_box :accepts_null %>
+  </p>
+  <p>
+    <%= f.label :min_range %><br />
+    <%= f.text_field :min_range %>
+  </p>
+  <p>
+    <%= f.label :max_range %><br />
+    <%= f.text_field :max_range %>
+  </p>
+  <p>
+    <%= f.label :default_value %><br />
+    <%= f.text_field :default_value %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @evaluation_category %> |
+<%= link_to 'Back', evaluation_categories_path %>
