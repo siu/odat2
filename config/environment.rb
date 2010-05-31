@@ -31,9 +31,9 @@ Rails::Initializer.run do |config|
   config.gem "gettext"
   config.gem "gettext_activerecord"
   config.gem "gettext_rails"
-  config.gem "prawn"
-  config.gem "prawn-format",         :lib => "prawn/format"
-  config.gem "SyslogLogger",         :lib => "syslog_logger"
+  config.gem "prawn",                :version => '0.6.3'
+  config.gem "prawn-format",         :lib => 'prawn/format'
+  config.gem "SyslogLogger",         :lib => 'syslog_logger'
   config.gem "authlogic"
 
   config.time_zone = 'UTC'
