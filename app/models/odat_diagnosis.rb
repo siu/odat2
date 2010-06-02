@@ -23,11 +23,11 @@ class OdatDiagnosis < ActiveRecord::Base
   has_many :individual_reports, :dependent => :destroy
 
   # Evaluation categories
-  has_many :evaluation_category_scores, :dependent => :destroy
-  has_many :evaluation_categories, 
-    :through => :evaluaton_category_scores,
-    :autosave => true, 
-    :uniq => true
+  has_many :evaluation_category_scores,
+    :dependent => :destroy, 
+#    :autosave => true, 
+    :include  => :evaluation_category
+  has_many :evaluation_categories, :through => :evaluation_category_scores, :uniq => true
   accepts_nested_attributes_for :evaluation_category_scores
 
   # Validaciones
@@ -39,6 +39,13 @@ class OdatDiagnosis < ActiveRecord::Base
     :message => N_('Debes especificar al menos un elemento en ' +
 		   'diagnóstico detallado y un diagnóstico principal')
 
+  def after_initialize
+    EvaluationCategory.find_each do |ec|
+      score = evaluation_category_scores.select {|sc| sc.evaluation_category_id == ec.id }
+      evaluation_category_scores.build(:evaluation_category_id => ec.id, :score  => ec.default_value) if score.nil? or score.empty?
+    end
+  end
+
   def formatted_date
     if !self.created_at.nil?
     I18n.localize(self.created_at, :format => :short)
@@ -48,16 +55,17 @@ class OdatDiagnosis < ActiveRecord::Base
   end
 
   def clone
-    o = super.dup
+    o = super
     o.center_resource_ids = self.center_resource_ids
     o.diagnosis_item_ids = self.diagnosis_item_ids
-    o.main_diagnosis_item_id = self.main_diagnosis_item_id
+    o.evaluation_category_scores = self.evaluation_category_scores.clone
     o
   end
 
   def get_evaluation_category_score_for(cat)
-      evaluation_category_scores.find(cat.id).score
+      evaluation_category_scores.find_by_evaluation_category_id(cat.id).score
     rescue
       return cat.default_value
   end
+
 end

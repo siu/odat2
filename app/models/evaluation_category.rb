@@ -1,9 +1,5 @@
 class EvaluationCategory < ActiveRecord::Base
   has_many :evaluation_category_scores, :dependent => :destroy
-  has_many :odat_diagnoses, 
-    :through => :evaluation_category_scores, 
-    :autosave => true,
-    :uniq => :true
 
   def accepts_score?(val)
     return accepts_null? if val.nil?

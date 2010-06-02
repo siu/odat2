@@ -1,7 +1,8 @@
 <% page_title _('Ver diagnóstico') -%>
 
-<h3><%= _('Datos personales') %></h3>
+<h3><%= _('Parte 1: General') %></h3>
 
+<h4><%= _('Expediente') %></h4>
 <table class="hdata">
   <tr>
     <th><%= _('Nombre') %></th>
@@ -9,7 +10,7 @@
   </tr>
 </table>
 
-<h3><%= _('Diagnóstico') %></h3>
+<h4><%= _('Diagnóstico') %></h4>
 
 <table class="hdata">
   <tr>
@@ -22,13 +23,13 @@
   </tr>
 </table>
 
-<h3><%= _('Datos socio-familiares') %></h3>
-
 <h4><%= _('Datos demanda') %></h4>
 <%= render :partial => 'show_consultation_data' %>
 
 <h4><%= _('Recursos de centro') %></h4>
 <%= render :partial => 'show_center_data' %>
+
+<h3><%= _('Parte 2: Diagnóstico') %></h3>
 
 <h4><%= _('Diagnóstico principal') %></h4>
 <%= render :partial => 'show_main_diagnosis' %>
@@ -36,7 +37,7 @@
 <h4><%= _('Datos de diagnóstico') %></h4>
 <%= render :partial => 'show_detailed_diagnosis' %>
 
-<h3><%= _('Evaluación') %></h3>
+<h3><%= _('Parte 3: Apoyos/Recursos') %></h3>
 
 <table class="hdata">
   <% for score in @odat_diagnosis.evaluation_category_scores -%>
