@@ -69,6 +69,26 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     end
   end
 
+  test "evaluation_category_scores are created after initialize" do
+    odat_diagnosis = new_odat_diagnosis()
+
+    assert_equal EvaluationCategory.count, odat_diagnosis.evaluation_category_scores.size
+  end
+
+  test "evaluation_category_scores size is equal to the number of evaluation categories" do
+    odat_diagnosis = odat_diagnoses(:one)
+
+    assert_equal EvaluationCategory.count, odat_diagnosis.evaluation_category_scores.size
+  end
+
+  test "evaluation_category_scores are default after initialize" do
+    odat_diagnosis = new_odat_diagnosis()
+
+    EvaluationCategory.find_each do |ec|
+      assert_equal ec.default_value, odat_diagnosis.get_evaluation_category_score_for(ec)
+    end
+  end
+
   test "returns evaluation_category_score stored" do
     assert_equal(2.5, odat_diagnoses(:one).get_evaluation_category_score_for(evaluation_categories(:two)))
   end
@@ -76,6 +96,7 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
   test "returns default value for evaluation_category when score not stored" do
     assert_equal(evaluation_categories(:three).default_value, odat_diagnoses(:one).get_evaluation_category_score_for(evaluation_categories(:three)))
   end
+
 
 protected
 
