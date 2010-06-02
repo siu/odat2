@@ -1,19 +1,9 @@
 <table>
-  <% for cat in @evaluation_categories do %>
-     <% f.fields_for 'evaluation_category_scores_attributes[]', cat do |field_form| %>
+  <% f.fields_for :evaluation_category_scores do |ec_form| %>
       <tr>
-        <th>
-          <%= field_form.hidden_field(:evaluation_category_id, :value => cat.id, :index => nil) %>
-          <%= field_form.label("ecs_#{cat.id}", cat.name) %>
-        </th>
-
-        <td><%= text_field_tag('odat_diagnosis[evaluation_category_scores_attributes][][score]', 
-                                      @odat_diagnosis.get_evaluation_category_score_for(cat),
-                                      :id => "ecs_#{cat.id}"
-                                      ) %> UMATs
-        </td>
+        <th><%= ec_form.hidden_field(:evaluation_category_id) %>
+          <%= ec_form.label(:score, ec_form.object.evaluation_category.name) %></th>
+        <td><%= ec_form.text_field(:score) %> UMATs</td>
       </tr>
   <% end %>
-<% end %>
 </table>
-
