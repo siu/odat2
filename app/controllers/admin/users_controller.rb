@@ -69,12 +69,12 @@ class Admin::UsersController < Admin::AdminSectionController
   end
 
   def approve
-    flash[:notice] = _('El usuario ha sido aprovado correctamente') if @user.approve! 
+    flash[:notice] = _('El usuario ha sido aprobado correctamente') if @user.approve! 
     redirect_to admin_users_path
   end
 
   def deapprove
-    flash[:notice] = _('El usuario ha sido desaprovado correctamente') if @user.deapprove! 
+    flash[:notice] = _('El usuario ha sido desaprobado correctamente') if @user.deapprove! 
     redirect_to admin_users_path
   end
 

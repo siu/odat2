@@ -6,7 +6,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-#RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 if RUBY_VERSION >= '1.9'
   Encoding.default_internal = 'utf-8'
@@ -31,8 +31,9 @@ Rails::Initializer.run do |config|
   config.gem "gettext"
   config.gem "gettext_activerecord"
   config.gem "gettext_rails"
-  config.gem "prawn"
-  config.gem "SyslogLogger",         :lib => "syslog_logger"
+  config.gem "prawn",                :version => '0.6.3'
+  config.gem "prawn-format",         :lib => 'prawn/format'
+  config.gem "SyslogLogger",         :lib => 'syslog_logger'
   config.gem "authlogic"
 
   config.time_zone = 'UTC'
