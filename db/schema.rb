@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100530174641) do
+ActiveRecord::Schema.define(:version => 20100605181419) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20100530174641) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "centers", ["name"], :name => "index_centers_on_name"
 
   create_table "civil_states", :force => true do |t|
     t.string   "name"
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20100530174641) do
     t.text     "extra_information_html"
   end
 
+  add_index "comparative_reports", ["center_id"], :name => "index_comparative_reports_on_center_id"
+
   create_table "configurable_views", :force => true do |t|
     t.integer "font_size"
     t.string  "font_family", :limit => 150
@@ -110,6 +114,9 @@ ActiveRecord::Schema.define(:version => 20100530174641) do
     t.datetime "updated_at"
     t.integer  "position"
   end
+
+  add_index "diagnosis_items", ["parent_id", "lft", "position"], :name => "index_diagnosis_items_on_parent_id_and_lft_and_position"
+  add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft"
 
   create_table "diagnosis_items_odat_diagnoses", :id => false, :force => true do |t|
     t.integer "diagnosis_item_id", :null => false
@@ -180,6 +187,8 @@ ActiveRecord::Schema.define(:version => 20100530174641) do
     t.text     "extra_information_html"
     t.boolean  "show_handicap_data"
   end
+
+  add_index "individual_reports", ["medical_record_id"], :name => "index_individual_reports_on_medical_record_id"
 
   create_table "item_report_associations", :force => true do |t|
     t.string   "item_type"
@@ -265,6 +274,8 @@ ActiveRecord::Schema.define(:version => 20100530174641) do
     t.text     "description_html"
   end
 
+  add_index "odat_diagnoses", ["medical_record_id"], :name => "index_odat_diagnoses_on_medical_record_id"
+
   create_table "origin_causes", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -293,6 +304,8 @@ ActiveRecord::Schema.define(:version => 20100530174641) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
   create_table "provinces", :force => true do |t|
     t.string   "name"
