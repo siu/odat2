@@ -1,73 +1,89 @@
 require 'test_helper'
 
 class OdatDiagnosisTest < ActiveSupport::TestCase
+  test "should be invalid if created with default attributes" do
+    odat_diagnosis = OdatDiagnosis.new
+    assert !odat_diagnosis.valid?
+
+    assert odat_diagnosis.errors.invalid?(:medical_record)
+    assert odat_diagnosis.errors.invalid?(:origin_source)
+    assert odat_diagnosis.errors.invalid?(:origin_cause)
+    assert odat_diagnosis.errors.invalid?(:consultation_cause)
+    assert odat_diagnosis.errors.invalid?(:main_diagnosis)
+  end
 
   test "create new valid odat diagnosis" do
     odat_diagnosis = create_odat_diagnosis
     assert odat_diagnosis.valid?
   end
 
-  test "requires medical_record_id" do
-    odat_diagnosis = create_odat_diagnosis(:medical_record_id => nil)
+  test "requires medical_record" do
+    odat_diagnosis = create_odat_diagnosis(:medical_record => nil)
 
     assert !odat_diagnosis.valid?
-    assert odat_diagnosis.errors.invalid?(:medical_record_id)
+    assert odat_diagnosis.errors.invalid?(:medical_record)
   end
 
-  test "requires origin_source_id" do
-    odat_diagnosis = create_odat_diagnosis(:origin_source_id => nil)
+  test "requires origin_source" do
+    odat_diagnosis = create_odat_diagnosis(:origin_source => nil)
 
     assert !odat_diagnosis.valid?
-    assert odat_diagnosis.errors.invalid?(:origin_source_id)
+    assert odat_diagnosis.errors.invalid?(:origin_source)
   end
 
-  test "requires origin_cause_id" do
-    odat_diagnosis = create_odat_diagnosis(:origin_cause_id => nil)
+  test "requires origin_cause" do
+    odat_diagnosis = create_odat_diagnosis(:origin_cause => nil)
 
     assert !odat_diagnosis.valid?
-    assert odat_diagnosis.errors.invalid?(:origin_cause_id)
+    assert odat_diagnosis.errors.invalid?(:origin_cause)
   end
 
-  test "requires consultation_cause_id" do
-    odat_diagnosis = create_odat_diagnosis(:consultation_cause_id => nil)
+  test "requires consultation_cause" do
+    odat_diagnosis = create_odat_diagnosis(:consultation_cause => nil)
 
     assert !odat_diagnosis.valid?
-    assert odat_diagnosis.errors.invalid?(:consultation_cause_id)
+    assert odat_diagnosis.errors.invalid?(:consultation_cause)
   end
 
-  test "requires main_diagnosis_item_id" do
-    odat_diagnosis = create_odat_diagnosis(:main_diagnosis_item_id => nil)
+  test "requires main_diagnosis" do
+    odat_diagnosis = create_odat_diagnosis(:main_diagnosis => nil)
 
     assert !odat_diagnosis.valid?
-    assert odat_diagnosis.errors.invalid?(:main_diagnosis_item_id)
+    assert odat_diagnosis.errors.invalid?(:main_diagnosis)
   end
+
 
   test "When destroyed all the associated individual reports are removed too" do
-    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+    # TODO: There is a bug somewhere in the rails/mocka stack, if I enable the following
+    # line all future instances of OdatDiagnosis return always true to valid?
+    #OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
     odat_diagnosis = create_odat_diagnosis
-    report = odat_diagnosis.individual_reports.build
+    report = odat_diagnosis.individual_reports.create
     IndividualReport.any_instance.stubs(:valid?).returns(:true)
     assert report.save
 
     odat_diagnosis.destroy
 
-    begin
+    assert_raises ActiveRecord::RecordNotFound do
       report.reload
-      assert false
-    rescue
-      assert true
     end
   end
 
 protected
 
   def create_odat_diagnosis(opts = {})
-    OdatDiagnosis.create({
-      :medical_record_id => medical_records(:pedrito).id,
-      :origin_source_id => origin_sources(:one).id,
-      :origin_cause_id => origin_causes(:one).id,
-      :consultation_cause_id => consultation_causes(:one).id,
-      :main_diagnosis_item_id => diagnosis_items(:e1_1_1).id
+    o = new_odat_diagnosis(opts)
+    o.save
+    o
+  end
+
+  def new_odat_diagnosis(opts = {})
+    OdatDiagnosis.new({
+      :medical_record => medical_records(:pedrito),
+      :origin_source => origin_sources(:one),
+      :origin_cause => origin_causes(:one),
+      :consultation_cause => consultation_causes(:one),
+      :main_diagnosis => diagnosis_items(:e1_1_1)
     }.merge!(opts))
   end
 

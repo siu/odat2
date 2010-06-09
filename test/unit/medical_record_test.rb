@@ -12,8 +12,17 @@ class MedicalRecordTest < ActiveSupport::TestCase
 
     assert medical_record.errors.invalid?(:archive_date)
   end
+  
+  test "requires center" do
+    attributes = {
+      :center => nil}
 
-  test "should not let create two records with the same name for the same center" do
+    medical_record = create_medical_record(attributes)
+    assert !medical_record.valid?
+    assert medical_record.errors.invalid?(:center)
+  end
+
+  test "should not allow to create two records with the same name for the same center" do
     attributes = {
       :name => 'Name 1', 
       :surname => 'Surname 1', 
@@ -24,11 +33,9 @@ class MedicalRecordTest < ActiveSupport::TestCase
 
     medical_record = create_medical_record(attributes)
     assert !medical_record.valid?
-
-    assert_equal 1, medical_record.errors.size
   end
 
-  test "should let create two records with the same name for different centers" do
+  test "should allow to create two records with the same name for different centers" do
 
     attributes = {
       :name => 'Name 1', 
@@ -51,7 +58,7 @@ class MedicalRecordTest < ActiveSupport::TestCase
     assert !medical_record.errors.invalid?(:postal)
   end
 
-  test "should be invalid if postal code is an string" do
+  test "should be invalid if postal code is a string" do
     medical_record = create_medical_record(:postal => 'error')
 
     assert !medical_record.valid?
@@ -59,7 +66,7 @@ class MedicalRecordTest < ActiveSupport::TestCase
     assert medical_record.errors.invalid?(:postal)
   end
 
-  def test_invalid_postal_if_length_differs_5
+  test "should be invalid if postal code length is less than 5" do
     medical_record = create_medical_record(:postal => '123')
 
     assert !medical_record.valid?
@@ -67,36 +74,51 @@ class MedicalRecordTest < ActiveSupport::TestCase
     assert medical_record.errors.invalid?(:postal)
   end
 
-  def test_valid_postal_if_length_equals_5
+  test "should be valid if postal with 12345 postal code" do
     medical_record = create_medical_record(:postal => '12345')
 
     medical_record.valid?
     assert !medical_record.errors.invalid?(:postal)
   end
 
-  def test_birth_position_should_be_numeric
+  test "birth position must be numeric" do
     medical_record = create_medical_record(:birth_position => 'test')
 
     medical_record.valid?
     assert medical_record.errors.invalid?(:birth_position)
   end
 
-  test "position_in_siblings should be numeric" do
+  test "position_in_siblings must be numeric" do
     medical_record = create_medical_record(:position_in_siblings => 'test')
 
     medical_record.valid?
     assert medical_record.errors.invalid?(:position_in_siblings)
   end
 
-  test "dependency_degree should be in 1..3" do
+  test "dependency_degree can't be a string" do
     medical_record = create_medical_record(:dependency_degree => 'test')
     assert !medical_record.valid?
     assert medical_record.errors.invalid?(:dependency_degree)
+  end
 
+  test "dependency_degree accepts 1" do
     medical_record = create_medical_record(:dependency_degree => '1')
     assert medical_record.valid?
+  end
 
+  test "dependency_degree accepts 3" do
+    medical_record = create_medical_record(:dependency_degree => '3')
+    assert medical_record.valid?
+  end
+
+  test "dependency_degree can't be 0" do
     medical_record = create_medical_record(:dependency_degree => '5')
+    assert !medical_record.valid?
+    assert medical_record.errors.invalid?(:dependency_degree)
+  end
+
+  test "dependency_degree can't be 4" do
+    medical_record = create_medical_record(:dependency_degree => '4')
     assert !medical_record.valid?
     assert medical_record.errors.invalid?(:dependency_degree)
   end
@@ -107,7 +129,7 @@ class MedicalRecordTest < ActiveSupport::TestCase
     assert medical_record.valid?
   end
 
-  def test_full_name
+  test "Full name formatting" do
     medical_record = create_medical_record()
     assert medical_record.full_name == 
       medical_record.name + ' ' + medical_record.surname
@@ -188,7 +210,7 @@ class MedicalRecordTest < ActiveSupport::TestCase
 
   test "has phone data" do
     [:home_phone, :portable_phone, :work_phone].each do |a|
-      medical_record = create_medical_record(a => '1')
+      medical_record = create_medical_record(a => '999999999')
       assert medical_record.has_phone_data?, a
     end
   end
@@ -231,16 +253,20 @@ class MedicalRecordTest < ActiveSupport::TestCase
 
   test "clone_last_or_new_odat_diagnosis returns new odat_diagnosis if no previous" do
     medical_record = create_medical_record()
-    odat_diagnosis = medical_record.clone_last_or_new_odat_diagnosis
+    assert medical_record.valid?
+    odat_diagnosis = medical_record.odat_diagnoses.clone_last_or_new
     assert odat_diagnosis.new_record?
     assert odat_diagnosis.center_resources.empty?
     assert odat_diagnosis.diagnosis_items.empty?
     assert odat_diagnosis.main_diagnosis.nil?
   end
 
+  # TODO: Review
+  #
   test "clone_last_or_new_odat_diagnosis returns a new copy of odat_diagnosis if previous" do
     medical_record = create_medical_record()
-    odat_diagnosis = medical_record.clone_last_or_new_odat_diagnosis
+    assert medical_record.valid?
+    odat_diagnosis = medical_record.odat_diagnoses.clone_last_or_new
 
     odat_diagnosis.created_at = Time.now
     odat_diagnosis.medical_record = medical_records(:pedrito)
@@ -260,16 +286,26 @@ class MedicalRecordTest < ActiveSupport::TestCase
     assert_equal 2, odat_diagnosis.diagnosis_items.size
     assert_equal diagnosis_items(:e1_1_2), odat_diagnosis.main_diagnosis
 
-    odat_diagnosis = medical_record.clone_last_or_new_odat_diagnosis
+    new_odat_diagnosis = medical_record.odat_diagnoses.clone_last_or_new
+    assert new_odat_diagnosis != odat_diagnosis
 
-    assert odat_diagnosis.new_record?
-    assert_equal 1, odat_diagnosis.center_resources.size
-    assert_equal 2, odat_diagnosis.diagnosis_items.size
-    assert_equal diagnosis_items(:e1_1_2), odat_diagnosis.main_diagnosis
+    assert new_odat_diagnosis.new_record?
+    assert_equal 1, new_odat_diagnosis.center_resources.size
+    assert_equal 2, new_odat_diagnosis.diagnosis_items.size
+    assert_equal diagnosis_items(:e1_1_2), new_odat_diagnosis.main_diagnosis
 
-    assert odat_diagnosis.save
-    assert odat_diagnosis.valid?
-    assert !odat_diagnosis.new_record?
+    assert new_odat_diagnosis.save
+    assert new_odat_diagnosis.valid?
+  end
+
+  test "should remove all associated odat diagnoses if deleted" do
+    medical_record = medical_records(:pedrito)
+    odat_diagnosis = medical_record.odat_diagnoses.first
+    medical_record.destroy
+
+    assert_raises ActiveRecord::RecordNotFound do
+      odat_diagnosis.reload
+    end
   end
 
   test "should remove all associated individual reports if deleted" do
@@ -282,15 +318,6 @@ class MedicalRecordTest < ActiveSupport::TestCase
     end
   end
 
-  test "should remove all associated odat diagnoses if deleted" do
-    medical_record = medical_records(:pedrito)
-    odat_diagnosis = medical_record.odat_diagnoses.first
-    medical_record.destroy
-
-    assert_raises ActiveRecord::RecordNotFound do
-      odat_diagnosis.reload
-    end
-  end
 protected
   def create_medical_record(options = {})
     MedicalRecord.create({:name => 'Test1',
