@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100605181419) do
+ActiveRecord::Schema.define(:version => 20100609203736) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -263,11 +263,11 @@ ActiveRecord::Schema.define(:version => 20100605181419) do
   end
 
   create_table "odat_diagnoses", :force => true do |t|
-    t.integer  "medical_record_id"
-    t.integer  "origin_source_id"
-    t.integer  "origin_cause_id"
-    t.integer  "consultation_cause_id"
-    t.integer  "main_diagnosis_item_id"
+    t.integer  "medical_record_id",      :null => false
+    t.integer  "origin_source_id",       :null => false
+    t.integer  "origin_cause_id",        :null => false
+    t.integer  "consultation_cause_id",  :null => false
+    t.integer  "main_diagnosis_item_id", :null => false
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

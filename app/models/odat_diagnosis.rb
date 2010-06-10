@@ -31,11 +31,11 @@ class OdatDiagnosis < ActiveRecord::Base
   accepts_nested_attributes_for :evaluation_category_scores
 
   # Validaciones
-  validates_presence_of :medical_record_id
-  validates_presence_of :origin_source_id
-  validates_presence_of :origin_cause_id
-  validates_presence_of :consultation_cause_id
-  validates_presence_of :main_diagnosis_item_id, 
+  validates_presence_of :medical_record
+  validates_presence_of :origin_source
+  validates_presence_of :origin_cause
+  validates_presence_of :consultation_cause
+  validates_presence_of :main_diagnosis, 
     :message => N_('Debes especificar al menos un elemento en ' +
 		   'diagnóstico detallado y un diagnóstico principal')
 
