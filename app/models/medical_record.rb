@@ -10,7 +10,15 @@ class MedicalRecord < ActiveRecord::Base
   has_many  :odat_diagnoses,
     :class_name => 'OdatDiagnosis',
     :dependent => :destroy, 
-    :order => 'created_at DESC'
+    :order => 'created_at DESC' do
+    def clone_last_or_new
+      if empty?
+        build
+      else
+        first.clone
+      end
+    end
+  end
 
   has_many :individual_reports,
     :dependent => :delete_all, 
@@ -90,16 +98,6 @@ class MedicalRecord < ActiveRecord::Base
   def namecase_name_and_surname
     self.name = self.name.namecase
     self.surname = self.surname.namecase
-  end
-
-  # Other
-  #
-  def clone_last_or_new_odat_diagnosis
-    if self.odat_diagnoses.empty?
-      self.odat_diagnoses.build
-    else
-      self.odat_diagnoses.first.clone
-    end
   end
 
   def full_name

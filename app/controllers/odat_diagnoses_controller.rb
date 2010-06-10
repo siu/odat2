@@ -30,10 +30,9 @@ class OdatDiagnosesController < ApplicationController
   def new
     if @medical_record.odat_diagnoses.any?
       notice = _('Se han recuperado los datos del último diagnóstico para la creación del nuevo')
-      @odat_diagnosis = @medical_record.clone_last_or_new_odat_diagnosis
-    else
-      @odat_diagnosis = @medical_record.clone_last_or_new_odat_diagnosis
     end
+
+    @odat_diagnosis = @medical_record.odat_diagnoses.clone_last_or_new
 
     load_form_data
 

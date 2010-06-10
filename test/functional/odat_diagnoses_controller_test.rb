@@ -30,7 +30,12 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_difference('OdatDiagnosis.count') do
       post :create, 
 	:medical_record_id => medical_records(:pedrito).id, 
-	:odat_diagnosis => { }
+	:odat_diagnosis => { 
+          :origin_source_id => origin_sources(:one).id, 
+          :origin_cause_id => origin_causes(:one).id, 
+          :consultation_cause_id => consultation_causes(:one).id, 
+          :main_diagnosis_item_id => diagnosis_items(:e1_1_1).id, 
+        }
     end
 
     assert_redirected_to 
@@ -45,7 +50,12 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     assert_no_difference('OdatDiagnosis.count') do
       post :create, 
 	:medical_record_id => medical_records(:paco).id, 
-	:odat_diagnosis => { }
+	:odat_diagnosis => { 
+          :origin_source_id => origin_sources(:one).id, 
+          :origin_cause_id => origin_causes(:one).id, 
+          :consultation_cause_id => consultation_causes(:one).id, 
+          :main_diagnosis_item_id => diagnosis_items(:e1_1_1).id, 
+        }
     end
     assert_redirected_to medical_records_path
   end
@@ -57,30 +67,24 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
 
     items = get_diagnosis_items_ids([:e1_1_1, :e1_1_2])
 
-    assert_difference('OdatDiagnosis.count') do
-      post :create, 
-	{
-          :medical_record_id => medical_records(:pedrito).id, 
-	  :odat_diagnosis => { 
-	    :diagnosis_item_ids => items
+    2.times do
+      assert_difference('OdatDiagnosis.count') do
+        post :create, 
+          {
+            :medical_record_id => medical_records(:pedrito).id, 
+            :odat_diagnosis => { 
+              :origin_source_id => origin_sources(:one).id, 
+              :origin_cause_id => origin_causes(:one).id, 
+              :consultation_cause_id => consultation_causes(:one).id, 
+              :main_diagnosis_item_id => diagnosis_items(:e1_1_1).id, 
+              :diagnosis_item_ids => items
+            }
           }
-	}
+      end
+      assert_response :redirect
+      assert !assigns(:odat_diagnosis).new_record?
+      assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
     end
-    assert_response :redirect
-    assert !assigns(:odat_diagnosis).new_record?
-    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
-
-    assert_difference('OdatDiagnosis.count') do
-      post :create,
-        { :medical_record_id => medical_records(:pedrito).id,
-	  :odat_diagnosis => {
-	    :diagnosis_item_ids => items
-          }
-	}
-    end
-    assert_response :redirect
-    assert !assigns(:odat_diagnosis).new_record?
-    assert_equal items.size, assigns(:odat_diagnosis).diagnosis_items.size
   end
 
   def test_should_show_odat_diagnosis
