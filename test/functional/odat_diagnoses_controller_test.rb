@@ -235,17 +235,17 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     evaluation_category = evaluation_categories(:two)
     new_score = 1.33
     put :update, 
-        { :medical_record_id => medical_records(:pedrito).id, 
-    	  :id => odat_diagnoses(:one).id, 
-	  :odat_diagnosis =>  { :evaluation_category_scores_attributes => 
-                                [
-                                  {
-                                   :evaluation_category_id => evaluation_category.id.to_s,
-                                   :score => new_score.to_s
-                                  }
-                                ]
-                              }
+      { :medical_record_id => medical_records(:pedrito).id, 
+        :id => odat_diagnoses(:one).id, 
+        :odat_diagnosis =>  { 
+          :evaluation_category_scores_attributes => { 
+            0 => {
+              :evaluation_category_id => evaluation_category.id.to_s,
+              :score => new_score.to_s
+            }
+          }
         }
+      }
 
     assert_response :redirect
     assert_equal(new_score, assigns(:odat_diagnosis).get_evaluation_category_score(evaluation_category))
@@ -259,22 +259,21 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     new_score = 1.33.to_s
 
     put :update, 
-        { :medical_record_id => medical_records(:pedrito).id, 
-    	  :id => odat_diagnosis.id, 
-	  :odat_diagnosis =>  { :evaluation_category_scores_attributes => 
-                                [
-                                  {
-                                   :evaluation_category_id => evaluation_categories(:one).id.to_s,
-                                   :score => new_score
-                                  },
-                                  {
-                                   :evaluation_category_id => evaluation_categories(:two).id.to_s,
-                                   :score => new_score
-                                  }
-
-                                ]
-                              }
+      { :medical_record_id => medical_records(:pedrito).id, 
+        :id => odat_diagnosis.id, 
+        :odat_diagnosis =>  { 
+          :evaluation_category_scores_attributes => {
+            0 => {
+              :evaluation_category_id => evaluation_categories(:one).id.to_s,
+              :score => new_score
+            },
+            1 => {
+              :evaluation_category_id => evaluation_categories(:two).id.to_s,
+              :score => new_score
+            }
+          }
         }
+      }
 
     assert_response :redirect
     assert_equal(2, assigns(:odat_diagnosis).evaluation_category_scores.count)
