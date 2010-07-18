@@ -1,0 +1,12 @@
+<table class="hdata">
+  <% for score in @odat_diagnosis.evaluation_category_scores -%>
+        <th>
+          <%= score.evaluation_category.name %>
+        </th>
+        <td>
+          <%= score.score %> UMATs
+        </td>
+      </tr>
+  <% end -%>
+</table>
+
