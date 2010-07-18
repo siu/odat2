@@ -82,6 +82,8 @@ class OdatDiagnosesController < ApplicationController
   def update
     params[:odat_diagnosis][:diagnosis_item_ids] ||= []
     params[:odat_diagnosis][:center_resource_ids] ||= []
+    params[:odat_diagnosis][:evaluation_category_scores_attributes] ||= []
+
     @odat_diagnosis = @medical_record.odat_diagnoses.find(params[:id])
 
     respond_to do |format|

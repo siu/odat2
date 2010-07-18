@@ -9,3 +9,9 @@ two:
   odat_diagnosis: one
   evaluation_category: two
   score: 2.5
+
+three:
+  odat_diagnosis: one
+  evaluation_category: three
+  score: 1.1
+
