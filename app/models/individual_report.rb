@@ -40,7 +40,8 @@ class IndividualReport < Report
       :show_consultation_details?, 
       :show_center_resources?, 
       :show_detailed_diagnosis?, 
-      :show_main_diagnosis?
+      :show_main_diagnosis?,
+      :show_evaluation_scores?
     ].any? do |a|
       self.send(a)
     end
