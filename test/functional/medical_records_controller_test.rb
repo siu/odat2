@@ -133,4 +133,19 @@ class MedicalRecordsControllerTest < ActionController::TestCase
 
     assert_redirected_to medical_records_path
   end
+
+  # CSV tests
+  
+  def test_should_show_medical_record_csv_format
+    login_as_user
+    get :show, :id => medical_records(:pedrito).id, :format => 'csv'
+    assert_response :success
+  end
+
+  def test_should_get_index_csv_format
+    login_as_user
+    get :index, :format => 'csv'
+    assert_response :success
+    assert_not_nil assigns(:medical_records)
+  end
 end

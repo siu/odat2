@@ -7,6 +7,50 @@ class MedicalRecord < ActiveRecord::Base
   belongs_to :center
   belongs_to :province
 
+  comma do 
+    full_name
+    center :name => 'Center name'
+    province :name => 'Province name'
+    city
+    address
+    postal 'Postal code'
+    birth_position
+    birth_date
+    archive_date
+    gender
+    father_name
+    father_surname
+    father_birth_date
+    father_job :name => 'Father job'
+    father_civil_state :name => 'Father civil state'
+    father_job_status :name => 'Father job status'
+    father_formation_level :name => 'Father formation level'
+    father_email
+    father_extra_information
+    mother_name
+    mother_surname
+    mother_birth_date
+    mother_job :name => 'Mother job'
+    mother_civil_state :name => 'Mother civil state'
+    mother_job_status :name => 'Mother job status'
+    mother_formation_level :name => 'Mother formation level'
+    mother_email
+    mother_extra_information
+    home_phone
+    portable_phone
+    work_phone
+    total_siblings_amount
+    sanitary_services
+    social_services
+    educative_services
+    created_at
+    multiple_birth
+    position_in_siblings
+    handicap
+    dependency_degree
+    school_type :name => 'School type'
+  end
+
   has_many  :odat_diagnoses,
     :class_name => 'OdatDiagnosis',
     :dependent => :destroy, 

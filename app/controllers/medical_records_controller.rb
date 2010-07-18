@@ -10,6 +10,7 @@ class MedicalRecordsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @medical_records }
+      format.csv  { render :csv => @medical_records }
     end
   end
 
@@ -21,6 +22,7 @@ class MedicalRecordsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @medical_record }
+      format.csv  { render :csv => @medical_record }
     end
   rescue ActiveRecord::RecordNotFound
     redirect_to medical_records_path
