@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100610174335) do
+ActiveRecord::Schema.define(:version => 20100718201512) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -186,6 +186,7 @@ ActiveRecord::Schema.define(:version => 20100610174335) do
     t.text     "extra_information"
     t.text     "extra_information_html"
     t.boolean  "show_handicap_data"
+    t.boolean  "show_evaluation_scores",                          :default => false
   end
 
   add_index "individual_reports", ["medical_record_id"], :name => "index_individual_reports_on_medical_record_id"

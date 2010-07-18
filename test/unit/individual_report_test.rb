@@ -37,7 +37,8 @@ class IndividualReportTest < ActiveSupport::TestCase
       :show_consultation_details, 
       :show_center_resources, 
       :show_detailed_diagnosis, 
-      :show_main_diagnosis
+      :show_main_diagnosis,
+      :show_evaluation_scores
     ] do
       report = create_report(a => true)
       assert report.show_diagnosis_data?
