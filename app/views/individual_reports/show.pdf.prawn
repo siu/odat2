@@ -282,6 +282,16 @@ if @individual_report.show_diagnosis_data?
 
   end
 
+  if @individual_report.show_evaluation_scores?
+    h3(pdf, _('Apoyos/recursos'))
+
+    for cat_score in @odat_diagnosis.evaluation_category_scores
+      data << [h(cat_score.evaluation_category.name), "#{h(cat_score.score)} UMATs"]
+    end
+    print_table(pdf, data)
+    data = []
+  end
+
 end
 
 if @individual_report.show_report_data?
