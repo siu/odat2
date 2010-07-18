@@ -233,7 +233,7 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
     OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
 
     evaluation_category = evaluation_categories(:two)
-    new_score = BigDecimal.new((1.33).to_s)
+    new_score = 1.33
     put :update, 
         { :medical_record_id => medical_records(:pedrito).id, 
     	  :id => odat_diagnoses(:one).id, 
@@ -248,7 +248,53 @@ class OdatDiagnosesControllerTest < ActionController::TestCase
         }
 
     assert_response :redirect
-    assert_equal(new_score, assigns(:odat_diagnosis).get_evaluation_category_score_for(evaluation_category))
+    assert_equal(new_score, assigns(:odat_diagnosis).get_evaluation_category_score(evaluation_category))
+  end
+
+  test "update odat_diagnosis should not duplicate evaluation category scores" do
+    login_as_user
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+
+    odat_diagnosis = odat_diagnoses(:one)
+    new_score = 1.33.to_s
+
+    put :update, 
+        { :medical_record_id => medical_records(:pedrito).id, 
+    	  :id => odat_diagnosis.id, 
+	  :odat_diagnosis =>  { :evaluation_category_scores_attributes => 
+                                [
+                                  {
+                                   :evaluation_category_id => evaluation_categories(:one).id.to_s,
+                                   :score => new_score
+                                  },
+                                  {
+                                   :evaluation_category_id => evaluation_categories(:two).id.to_s,
+                                   :score => new_score
+                                  }
+
+                                ]
+                              }
+        }
+
+    assert_response :redirect
+    assert_equal(2, assigns(:odat_diagnosis).evaluation_category_scores.count)
+  end
+
+  test "update odat_diagnosis should remove not passed scores" do
+    login_as_user
+    OdatDiagnosis.any_instance.stubs(:valid?).returns(:true)
+
+    odat_diagnosis = odat_diagnoses(:one)
+
+    put :update, 
+        { :medical_record_id => medical_records(:pedrito).id, 
+    	  :id => odat_diagnosis.id, 
+	  :odat_diagnosis =>  { 
+                              }
+        }
+
+    assert_response :redirect
+    assert_equal(0, assigns(:odat_diagnosis).evaluation_category_scores.count)
   end
 
 protected

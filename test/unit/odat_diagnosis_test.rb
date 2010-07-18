@@ -85,16 +85,31 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     odat_diagnosis = new_odat_diagnosis()
 
     EvaluationCategory.find_each do |ec|
-      assert_equal ec.default_value, odat_diagnosis.get_evaluation_category_score_for(ec)
+      assert_equal(ec.default_value, 
+                   odat_diagnosis.get_evaluation_category_score(ec.id))
     end
   end
 
   test "returns evaluation_category_score stored" do
-    assert_equal(2.5, odat_diagnoses(:one).get_evaluation_category_score_for(evaluation_categories(:two)))
+    assert_equal(2.5, 
+                 odat_diagnoses(:one).get_evaluation_category_score(evaluation_categories(:two).id))
   end
 
   test "returns default value for evaluation_category when score not stored" do
-    assert_equal(evaluation_categories(:three).default_value, odat_diagnoses(:one).get_evaluation_category_score_for(evaluation_categories(:three)))
+    assert_equal(evaluation_categories(:four).default_value, 
+                 odat_diagnoses(:one).get_evaluation_category_score(evaluation_categories(:four).id))
+  end
+
+  test "doesn't duplicate evaluation_category scores on save" do
+    old_size = odat_diagnoses(:one).evaluation_category_scores.count
+    odat_diagnoses(:one).save
+    new_size = odat_diagnoses(:one).evaluation_category_scores.count
+
+    assert_equal(old_size, new_size)
+  end
+
+  test 'get total score' do
+    assert_equal(3.6, odat_diagnoses(:one).total_score)
   end
 
 

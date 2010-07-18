@@ -25,7 +25,7 @@ class OdatDiagnosis < ActiveRecord::Base
   # Evaluation categories
   has_many :evaluation_category_scores,
     :dependent => :destroy, 
-#    :autosave => true, 
+    :autosave => true, 
     :include  => :evaluation_category
   has_many :evaluation_categories, :through => :evaluation_category_scores, :uniq => true
   accepts_nested_attributes_for :evaluation_category_scores
@@ -62,10 +62,29 @@ class OdatDiagnosis < ActiveRecord::Base
     o
   end
 
-  def get_evaluation_category_score_for(cat)
-      evaluation_category_scores.find_by_evaluation_category_id(cat.id).score
-    rescue
-      return cat.default_value
+  def evaluation_category_scores_attributes=(attrs)
+    evaluation_category_scores.destroy_all
+    attrs.each do |k, score_attrs|
+      evaluation_category_scores.build(
+        :evaluation_category_id => score_attrs[:evaluation_category_id],
+        :score => score_attrs[:score])
+    end
+  end
+
+  def get_evaluation_category_score(cat_id)
+   if sc = evaluation_category_scores.find_by_evaluation_category_id(cat_id)
+     sc.score
+   else
+     EvaluationCategory.find(cat_id).default_value
+   end
+  end
+
+  def total_score
+    EvaluationCategory.all.inject(0.0) do |r, s|
+      if not get_evaluation_category_score(s).nil?
+        r = r + get_evaluation_category_score(s)
+      end
+    end
   end
 
 end
