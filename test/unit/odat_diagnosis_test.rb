@@ -112,6 +112,10 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     assert_equal(3.6, odat_diagnoses(:one).total_score)
   end
 
+  test 'get total with nil scores' do
+    assert_equal(0.0, odat_diagnoses(:two).total_score)
+  end
+
 
 protected
 
