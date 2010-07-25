@@ -129,5 +129,6 @@ protected
     @origin_sources = OriginSource.find(:all)
     @origin_causes = OriginCause.find(:all)
     @consultation_causes = ConsultationCause.find(:all)
+    @diagnosis_categories = []
   end
 end

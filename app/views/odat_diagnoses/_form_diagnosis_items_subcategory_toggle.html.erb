@@ -1,18 +1,18 @@
-<small id="<%= "show_#{cat.id}_#{subcat.id}" %>"
+<small id="<%= "show_#{cat_id}_#{subcat.id}" %>"
   <%= hide_attr_if(subcat.is_ancestor_of_any?(diagnoses)) %>>
   (<%= link_to_function(
     _('%{count} elementos sin mostrar') % 
 	{:count => subcat.children.count}, 
-    "$('#subcat_#{cat.id}_#{subcat.id}').slideDown();
-     $('#hide_#{cat.id}_#{subcat.id}').toggle();
-     $('#show_#{cat.id}_#{subcat.id}').toggle();") %>)
+    "$('#subcat_#{cat_id}_#{subcat.id}').slideDown();
+     $('#hide_#{cat_id}_#{subcat.id}').toggle();
+     $('#show_#{cat_id}_#{subcat.id}').toggle();") %>)
 </small>
-<small id="<%= "hide_#{cat.id}_#{subcat.id}" %>" 
+<small id="<%= "hide_#{cat_id}_#{subcat.id}" %>" 
   <%= hide_attr_unless(subcat.is_ancestor_of_any?(diagnoses)) %>>
   (<%= link_to_function(
     _('ocultar'),
-    "$('#subcat_#{cat.id}_#{subcat.id}').slideUp();
-     $('#hide_#{cat.id}_#{subcat.id}').toggle();
-     $('#show_#{cat.id}_#{subcat.id}').toggle();") %>)
+    "$('#subcat_#{cat_id}_#{subcat.id}').slideUp();
+     $('#hide_#{cat_id}_#{subcat.id}').toggle();
+     $('#show_#{cat_id}_#{subcat.id}').toggle();") %>)
 </small>
 

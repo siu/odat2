@@ -8,17 +8,6 @@ class DiagnosisItem < ActiveRecord::Base
 
   default_scope :order => 'position ASC, id ASC'
 
-  def self.categories
-    self.find(:all, :conditions => "parent_id = 0 OR parent_id IS NULL")
-  end
-
-  def self.subcategories
-    self.categories.collect{ |c| c.children }.flatten!
-  end
-
-  alias :subcategories :children
-  alias :items :children
-
   def is_ancestor_of_any?(items)
     items.any? { |i| i.is_or_is_descendant_of?(self) }
   end
