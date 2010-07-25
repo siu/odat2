@@ -3,7 +3,7 @@ class Help::DiagnosisItemsController < Help::HelpSectionController
   # GET /help/diagnosis_items
   # GET /help/diagnosis_items.xml
   def index
-    @diagnosis_items = DiagnosisItem.categories
+    @diagnosis_items = DiagnosisItem.roots
   end
 
   # GET /diagnosis_items/1
