@@ -82,7 +82,7 @@ class OdatDiagnosis < ActiveRecord::Base
   def total_score
     EvaluationCategory.all.inject(0.0) do |r, s|
       if not get_evaluation_category_score(s).nil?
-        r = r + get_evaluation_category_score(s)
+        r + get_evaluation_category_score(s)
       end
     end
   end
