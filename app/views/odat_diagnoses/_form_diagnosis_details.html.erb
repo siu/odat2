@@ -1,40 +1,53 @@
 <table>
-  <% for cat in DiagnosisItem.categories do -%>
-  <tr>
-    <th><%= h cat.name %><br />
-        <small class="help">(<%= link_to(_('ayuda'), 
-		  [:help, cat],
-		  :target => '_blank', 
-                  :class => 'help',
-                  :onclick => 'link_popup(this); return false;') %>)</small>
-    </th>
-    <td>
-      <ul>
-	<% for subcat in cat.subcategories do -%>
-	  <li>
-	  <%= h(subcat.name) %>
-	  <% if subcat.items.any? -%>
-	    <%= render(:partial => 'form_diagnosis_items_subcategory_toggle',
-		       :locals => {
-			 :f => f, 
-			 :cat => cat, 
-			 :subcat => subcat, 
-			 :diagnoses => @odat_diagnosis.diagnosis_items}) %>
-	  <% end -%>
+  <% last_level = -1 %>
+  <% last_cat = nil %>
+  <% DiagnosisItem.each_with_level(DiagnosisItem.roots.map { |c| c.self_and_descendants }.flatten) do |cat, level| %>
+    <% if level == 0 %>
+      <% if last_level > 1 %>
+        </ul>
+      <% end %>
+      <% if last_level > 0 %>
+          </td>
+        </tr>
+      <% end %>
+        <tr>
+          <th><%= h cat.name %><br />
+            <small class="help">(<%= link_to(_('ayuda'), 
+                                             [:help, cat],
+                                             :target => '_blank', 
+                                             :class => 'help',
+                                             :onclick => 'link_popup(this); return false;') %>)</small>
+          </th>
 
-	  <ul id="subcat_<%= "#{cat.id}_#{subcat.id}" %>" 
-	    <%= hide_attr_unless(
-	      subcat.is_ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
-	    <% for item in subcat.items do -%>
-	      <li><%= display_item_for_diagnosis(f, 
-						 item, 
-					       @odat_diagnosis.diagnosis_items) %></li> 
-	    <% end -%>
-	  </ul>
-	</li>
-	<% end -%>
-      </ul>
-    </td>
-  </tr>
+    <% elsif level == 1 %>
+      <% if last_level < 1 %>
+        <td>
+          <ul>
+      <% end %>
+      <% if last_level > 1 %>
+          </ul>
+        </li>
+      <% end %>
+
+        <li> <%= h(cat.name) %>
+<%= render(:partial => 'form_diagnosis_items_subcategory_toggle',
+                      :locals => {
+                        :f => f, 
+                        :cat_id => cat.parent_id, 
+                        :subcat => cat, 
+                        :diagnoses => @odat_diagnosis.diagnosis_items}) %>
+    <% last_cat = cat %>
+
+    <% elsif level == 2 %>
+      <% if last_level < 2 %>
+        <ul id="subcat_<%= "#{last_cat.parent_id}_#{cat.parent_id}" %>" 
+           <%= hide_attr_unless(
+             last_cat.is_ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
+      <% end %>
+      <li><%= display_item_for_diagnosis(f, cat, @odat_diagnosis.diagnosis_items) %></li>
+    <% end %>
+    <% last_parent_id = cat.parent_id %>
+    <% last_level = level %>
   <% end -%>
+
 </table>
