@@ -15,3 +15,23 @@ three:
   evaluation_category: three
   score: 1.1
 
+four:
+  odat_diagnosis: two
+  evaluation_category: one
+  score: nil
+
+five:
+  odat_diagnosis: two
+  evaluation_category: two
+  score: nil
+
+six:
+  odat_diagnosis: two
+  evaluation_category: three
+  score: nil
+
+seven:
+  odat_diagnosis: two
+  evaluation_category: four
+  score: nil
+
