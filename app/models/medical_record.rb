@@ -235,6 +235,15 @@ class MedicalRecord < ActiveRecord::Base
     diagnosis_center_resources = lambda { |odat_diagnoses| odat_diagnoses.first.center_resources.map { |r| r.name }.join(';') rescue '' }
     diagnosis_diagnosis_items = lambda { |odat_diagnoses| odat_diagnoses.first.diagnosis_items.map { |d| d.name }.join(';') rescue '' }
     diagnosis_main_diagnosis = lambda { |odat_diagnoses| odat_diagnoses.first.main_diagnosis.name rescue '' }
+    diagnosis_evaluation_category_scores = lambda do |odat_diagnoses| 
+      if odat_diagnoses.first
+        EvaluationCategory.all.map do |ec|
+          ec.name + ': ' + odat_diagnoses.first.get_evaluation_category_score(ec.id).to_s
+        end.join(';')
+      else
+        ''
+      end
+    end
 
     odat_diagnoses diagnosis_origin_source => 'Diagnosis origin source'
     odat_diagnoses diagnosis_origin_cause => 'Diagnosis origin cause'
@@ -243,6 +252,7 @@ class MedicalRecord < ActiveRecord::Base
     odat_diagnoses diagnosis_center_resources => 'Diagnosis center resources'
     odat_diagnoses diagnosis_diagnosis_items => 'Diagnosis items'
     odat_diagnoses diagnosis_main_diagnosis => 'Diagnosis main diagnosis'
+    odat_diagnoses diagnosis_evaluation_category_scores => 'Diagnosis evaluation category scores'
   end
 
 protected
