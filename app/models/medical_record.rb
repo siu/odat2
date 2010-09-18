@@ -7,50 +7,6 @@ class MedicalRecord < ActiveRecord::Base
   belongs_to :center
   belongs_to :province
 
-  comma do 
-    full_name
-    center :name => 'Center name'
-    province :name => 'Province name'
-    city
-    address
-    postal 'Postal code'
-    birth_position
-    birth_date
-    archive_date
-    gender
-    father_name
-    father_surname
-    father_birth_date
-    father_job :name => 'Father job'
-    father_civil_state :name => 'Father civil state'
-    father_job_status :name => 'Father job status'
-    father_formation_level :name => 'Father formation level'
-    father_email
-    father_extra_information
-    mother_name
-    mother_surname
-    mother_birth_date
-    mother_job :name => 'Mother job'
-    mother_civil_state :name => 'Mother civil state'
-    mother_job_status :name => 'Mother job status'
-    mother_formation_level :name => 'Mother formation level'
-    mother_email
-    mother_extra_information
-    home_phone
-    portable_phone
-    work_phone
-    total_siblings_amount
-    sanitary_services
-    social_services
-    educative_services
-    created_at
-    multiple_birth
-    position_in_siblings
-    handicap
-    dependency_degree
-    school_type :name => 'School type'
-  end
-
   has_many  :odat_diagnoses,
     :class_name => 'OdatDiagnosis',
     :dependent => :destroy, 
@@ -183,6 +139,110 @@ class MedicalRecord < ActiveRecord::Base
 
   def has_handicap_data?
     has_any_attr?([:handicap, :dependency_degree])
+  end
+
+  comma do 
+    full_name
+    center :name => 'Center name'
+    province :name => 'Province name'
+    city
+    address
+    postal 'Postal code'
+    birth_position
+    birth_date
+    archive_date
+    gender
+    father_name
+    father_surname
+    father_birth_date
+    father_job :name => 'Father job'
+    father_civil_state :name => 'Father civil state'
+    father_job_status :name => 'Father job status'
+    father_formation_level :name => 'Father formation level'
+    father_email
+    father_extra_information
+    mother_name
+    mother_surname
+    mother_birth_date
+    mother_job :name => 'Mother job'
+    mother_civil_state :name => 'Mother civil state'
+    mother_job_status :name => 'Mother job status'
+    mother_formation_level :name => 'Mother formation level'
+    mother_email
+    mother_extra_information
+    home_phone
+    portable_phone
+    work_phone
+    total_siblings_amount
+    sanitary_services
+    social_services
+    educative_services
+    created_at
+    multiple_birth
+    position_in_siblings
+    handicap
+    dependency_degree
+    school_type :name => 'School type'
+  end
+
+  comma :full do 
+    full_name
+    center :name => 'Center name'
+    province :name => 'Province name'
+    city
+    address
+    postal 'Postal code'
+    birth_position
+    birth_date
+    archive_date
+    gender
+    father_name
+    father_surname
+    father_birth_date
+    father_job :name => 'Father job'
+    father_civil_state :name => 'Father civil state'
+    father_job_status :name => 'Father job status'
+    father_formation_level :name => 'Father formation level'
+    father_email
+    father_extra_information
+    mother_name
+    mother_surname
+    mother_birth_date
+    mother_job :name => 'Mother job'
+    mother_civil_state :name => 'Mother civil state'
+    mother_job_status :name => 'Mother job status'
+    mother_formation_level :name => 'Mother formation level'
+    mother_email
+    mother_extra_information
+    home_phone
+    portable_phone
+    work_phone
+    total_siblings_amount
+    sanitary_services
+    social_services
+    educative_services
+    created_at
+    multiple_birth
+    position_in_siblings
+    handicap
+    dependency_degree
+    school_type :name => 'School type'
+
+    diagnosis_origin_source = lambda { |odat_diagnoses| odat_diagnoses.first.origin_source.name rescue '' }
+    diagnosis_origin_cause = lambda { |odat_diagnoses| odat_diagnoses.first.origin_cause.name rescue '' }
+    diagnosis_consultation_cause = lambda { |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' }
+    diagnosis_description = lambda { |odat_diagnoses| odat_diagnoses.first.description rescue '' }
+    diagnosis_center_resources = lambda { |odat_diagnoses| odat_diagnoses.first.center_resources.map { |r| r.name }.join(';') rescue '' }
+    diagnosis_diagnosis_items = lambda { |odat_diagnoses| odat_diagnoses.first.diagnosis_items.map { |d| d.name }.join(';') rescue '' }
+    diagnosis_main_diagnosis = lambda { |odat_diagnoses| odat_diagnoses.first.main_diagnosis.name rescue '' }
+
+    odat_diagnoses diagnosis_origin_source => 'Diagnosis origin source'
+    odat_diagnoses diagnosis_origin_cause => 'Diagnosis origin cause'
+    odat_diagnoses diagnosis_consultation_cause => 'Diagnosis consultation cause'
+    odat_diagnoses diagnosis_description => 'Diagnosis description'
+    odat_diagnoses diagnosis_center_resources => 'Diagnosis center resources'
+    odat_diagnoses diagnosis_diagnosis_items => 'Diagnosis items'
+    odat_diagnoses diagnosis_main_diagnosis => 'Diagnosis main diagnosis'
   end
 
 protected
