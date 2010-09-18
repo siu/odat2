@@ -148,4 +148,18 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:medical_records)
   end
+
+  test "show_full.csv should produce a csv file" do
+    login_as_user
+    get :show_full, :id => medical_records(:pedrito).id, :format => 'csv'
+    assert_response :success
+  end
+
+  test "index_full.csv should assign medical_records" do
+    login_as_user
+    get :index_full, :format => 'csv'
+    assert_response :success
+    assert_not_nil assigns(:medical_records)
+  end
+
 end
