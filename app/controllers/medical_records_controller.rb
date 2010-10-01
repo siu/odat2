@@ -10,13 +10,16 @@ class MedicalRecordsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @medical_records }
-      format.csv  { render :csv => @medical_records }
+      format.csv  do
+        @medical_records = current_user.medical_records
+        render :csv => @medical_records 
+      end
     end
   end
 
   # GET /medical_records/index_full.csv
   def index_full
-    @medical_records = current_user.medical_records.paginate(:page => params[:page])
+    @medical_records = current_user.medical_records
 
     render :csv => @medical_records, :style => :full
   end
