@@ -51,4 +51,12 @@ paco:
   surname: J. J.
   center: demo2
   created_at: Time.now
-        
+      
+<% for i in 1..110 %>
+user_<%= i %>:
+  name: record_<%= i %>
+  surname: record_<%= i %> record_<%= i %>
+  center: demo
+  created_at: Time.now
+<% end %>
+

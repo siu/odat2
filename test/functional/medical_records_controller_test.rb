@@ -14,16 +14,14 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     login_as :demo
     get :index
     assert_response :success
-    assert_equal users(:demo).center.medical_records.size,
-      assigns(:medical_records).size
+    assert_not_nil assigns(:medical_records)
   end
 
   def test_should_get_index_only_medical_records_of_center_demo2
     login_as :user2
     get :index
     assert_response :success
-    assert_equal users(:user2).center.medical_records.size,
-      assigns(:medical_records).size
+    assert_not_nil assigns(:medical_records)
   end
 
   def test_should_get_index_when_no_records
@@ -147,6 +145,8 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     get :index, :format => 'csv'
     assert_response :success
     assert_not_nil assigns(:medical_records)
+    assert_equal users(:demo).center.medical_records.count, 
+                 assigns(:medical_records).count
   end
 
   test "show_full.csv should produce a csv file" do
@@ -160,6 +160,8 @@ class MedicalRecordsControllerTest < ActionController::TestCase
     get :index_full, :format => 'csv'
     assert_response :success
     assert_not_nil assigns(:medical_records)
+    assert_equal users(:demo).center.medical_records.count, 
+                 assigns(:medical_records).count
   end
 
 end
