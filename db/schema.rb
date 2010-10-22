@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100718201512) do
+ActiveRecord::Schema.define(:version => 20101022162633) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -190,14 +190,6 @@ ActiveRecord::Schema.define(:version => 20100718201512) do
   end
 
   add_index "individual_reports", ["medical_record_id"], :name => "index_individual_reports_on_medical_record_id"
-
-  create_table "item_report_associations", :force => true do |t|
-    t.string   "item_type"
-    t.integer  "item_id"
-    t.integer  "comparative_report_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "job_statuses", :force => true do |t|
     t.string   "name"

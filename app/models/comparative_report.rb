@@ -6,9 +6,6 @@ class ComparativeReport < Report
   set_table_name "comparative_reports"
   default_scope :order => 'comparative_reports.created_at DESC'
 
-  has_many :item_report_associations, 
-    :validate => false
-
   belongs_to :comparative_report_template
   belongs_to :center
 
@@ -22,16 +19,12 @@ class ComparativeReport < Report
 
   alias :template :comparative_report_template
 
-  def items=(elements)
-    self.item_report_associations.delete_all
-    elements.each do |element|
-      self.item_report_associations << ItemReportAssociation.new(
-        :item => element, :comparative_report => self)
-    end
+  def items
+    @items ||= []
   end
 
-  def items
-    item_report_associations.collect { |a| a.item }
+  def items=(_items)
+    @items=_items
   end
 
   def results
