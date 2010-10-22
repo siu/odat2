@@ -52,6 +52,7 @@ class ComparativeReportTest < ActiveSupport::TestCase
   test "save report_field_template_assignments" do
     r = comparative_reports(:one)
     old_size = r.comparative_report_field_template_assignments.count
+    assert(old_size > 0)
 
     r.report_field_template_ids = []
     r.save
@@ -59,6 +60,30 @@ class ComparativeReportTest < ActiveSupport::TestCase
     new_size = r.comparative_report_field_template_assignments.count
 
     assert_equal(0, new_size)
+  end
+
+  test "adding report_field_template_ids" do
+    r = comparative_reports(:one)
+    old_size = r.comparative_report_field_template_assignments.count
+
+    r.report_field_template_ids = r.report_field_template_ids << report_field_templates(:for_medical_records3).id
+    r.save
+
+    new_size = r.comparative_report_field_template_assignments.count
+
+    assert_equal(old_size+1, new_size)
+  end
+
+  test "removing report_field_template_ids" do
+    r = comparative_reports(:one)
+    old_size = r.comparative_report_field_template_assignments.count
+
+    r.report_field_template_ids = r.report_field_template_ids[0..-2]
+    r.save
+
+    new_size = r.comparative_report_field_template_assignments.count
+
+    assert_equal(old_size-1, new_size)
   end
 
 protected
