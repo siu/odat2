@@ -7,14 +7,14 @@
 <div id="report">
 <h3><%= _('Informe de centro') %></h3>
 <table class="hdata">
-  <% @center_report.report_field_templates.each_with_index do |function, index| -%>
+  <% @center_report.comparative_report_field_template_assignments.each do |assignment| -%>
     <tr>
-      <th><%= function.name %></th>
+      <th><%= assignment.report_field_template.name %></th>
       <td>
         <% begin -%>
-          <% if @center_report.results[index][:render_method] == 'table' -%>
+          <% if assignment.results[:render_method] == 'table' -%>
             <table>
-              <% for row in @center_report.results[index][:data] -%>
+              <% for row in assignment.results[:data] -%>
                 <tr>
                   <% for cell in row -%>
                     <td><%= h cell %></td>
@@ -22,10 +22,10 @@
                 </tr>
               <% end -%>
             </table>
-          <% elsif @center_report.results[index][:render_method] == 'nested_list' -%>
-            <%= ul @center_report.results[index][:data] %>
+          <% elsif assignment.results[:render_method] == 'nested_list' -%>
+            <%= ul assignment.results[:data] %>
           <% else -%>
-            <%= @center_report.results[index][:data].inspect %>
+            <%= assignment.results[:data].inspect %>
           <% end -%>
         <% rescue Exception => e -%>
           <p><span class="error"><%= _('Algo ha ido mal') %>: <%= simple_format(h(e.message)) %></span></p>

@@ -27,3 +27,25 @@ for_medical_records:
   function: "objs.collect { |o| [o.id, o.full_name] }"
   render_method: table
   render_options: NULL
+
+for_medical_records2:
+  name: for_medical_records2
+  applicable_on: "MedicalRecord"
+  function: "objs.collect { |o| [o.id, o.full_name] }"
+  render_method: table
+  render_options: NULL
+
+for_medical_records3:
+  name: for_medical_records3
+  applicable_on: "MedicalRecord"
+  function: "objs.collect { |o| [o.id, o.full_name] }"
+  render_method: table
+  render_options: NULL
+
+for_medical_records4:
+  name: for_medical_records4
+  applicable_on: "MedicalRecord"
+  function: "objs.collect { |o| [o.id, o.full_name] }"
+  render_method: table
+  render_options: NULL
+
