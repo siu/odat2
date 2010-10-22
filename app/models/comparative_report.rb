@@ -28,7 +28,7 @@ class ComparativeReport < Report
   end
 
   def results
-    comparative_report_field_template_assignments.collect { |a| a.results }
+    comparative_report_field_template_assignments.collect { |a| a.results(@items) }
   end
 
   # Helpers for views
