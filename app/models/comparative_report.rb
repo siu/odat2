@@ -7,7 +7,6 @@ class ComparativeReport < Report
   default_scope :order => 'comparative_reports.created_at DESC'
 
   has_many :item_report_associations, 
-    :autosave => true, 
     :validate => false
 
   belongs_to :comparative_report_template
@@ -16,7 +15,6 @@ class ComparativeReport < Report
   # Report field templates
   has_many :comparative_report_field_template_assignments,
     :dependent => :destroy,
-    :autosave => true,
     :include => :report_field_template
   has_many :report_field_templates, 
     :through => :comparative_report_field_template_assignments, 
