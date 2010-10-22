@@ -25,7 +25,6 @@ class OdatDiagnosis < ActiveRecord::Base
   # Evaluation categories
   has_many :evaluation_category_scores,
     :dependent => :destroy, 
-    :autosave => true, 
     :include  => :evaluation_category
   has_many :evaluation_categories, :through => :evaluation_category_scores, :uniq => true
   accepts_nested_attributes_for :evaluation_category_scores
