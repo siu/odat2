@@ -40,6 +40,26 @@ class ComparativeReportTest < ActiveSupport::TestCase
       assert report.show_report_data?
     end
   end
+  
+  test "doesn't duplicate report_field_template_assignments on save" do
+    old_size = comparative_reports(:one).comparative_report_field_template_assignments.count
+    comparative_reports(:one).save
+    new_size = comparative_reports(:one).comparative_report_field_template_assignments.count
+
+    assert_equal(old_size, new_size)
+  end
+
+  test "save report_field_template_assignments" do
+    r = comparative_reports(:one)
+    old_size = r.comparative_report_field_template_assignments.count
+
+    r.report_field_template_ids = []
+    r.save
+
+    new_size = r.comparative_report_field_template_assignments.count
+
+    assert_equal(0, new_size)
+  end
 
 protected
   def create_report(opts = {})

@@ -68,17 +68,17 @@ pdf.font_size = @font_size
 # Begin document
 h1(pdf, @center_report.title)
 
-@center_report.report_field_templates.each_with_index do |function, index|
-  h2(pdf, function.name)
+@center_report.comparative_report_field_template_assignments.each do |assignment|
+  h2(pdf, assignment.report_field_template.name)
 
 begin
-  if @center_report.results[index][:render_method] == 'table'
-    print_table(pdf, @center_report.results[index][:data])
-  elsif @center_report.results[index][:render_method] == 'nested_list'
-    pdf_list(pdf, @center_report.results[index][:data])
+  if assignment.results[:render_method] == 'table'
+    print_table(pdf, assignment.results[:data])
+  elsif assignment.results[:render_method] == 'nested_list'
+    pdf_list(pdf, assignment.results[:data])
     #test(pdf)
   else
-    pdf.text @center_report.results[index][:data].inspect
+    pdf.text assignment.results[:data].inspect
     pdf.move_down 20
   end
 rescue Exception => e

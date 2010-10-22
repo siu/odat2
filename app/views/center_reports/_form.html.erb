@@ -10,12 +10,12 @@
         <th><%= _('Funciones analíticas') %></th>
         <td>
           <ul>
-            <% for field in @center_report.comparative_report_template.report_field_templates -%>
-              <li><%= check_box_tag('center_report[comparative_report_field_template_assignments_attributes[][report_field_template_id]', 
-                field.id,
-                @center_report.comparative_report_field_template_assignments.collect { |a| a.report_field_template_id}.include?(field.id),
-                :index => nil, 
-                :id => "cb_#{field.id}") %> <%= label_tag("cb_#{field.id}", field.name) %></li>
+            <% for report_field in @center_report.comparative_report_template.report_field_templates -%>
+              <li><%= check_box_tag('center_report[report_field_template_ids][]', 
+                        report_field.id, 
+                        @center_report.report_field_templates.include?(report_field), 
+                        :id => "cb_#{report_field.id}")  %> <%= label_tag("cb_#{report_field.id}", report_field.name) %>
+              </li>
             <% end -%>
           </ul>
         </td>

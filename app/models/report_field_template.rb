@@ -1,5 +1,8 @@
 # encoding: UTF-8
 class ReportFieldTemplate < ActiveRecord::Base
+  has_many :comparative_report_field_template_assignments,
+    :dependent => :destroy
+
   RENDER_METHODS = %w(single_value table graph nested_list)
   validates_presence_of :function
   validates_inclusion_of :render_method, :in => RENDER_METHODS

@@ -4,4 +4,12 @@ class ComparativeReportFieldTemplateAssignment < ActiveRecord::Base
   belongs_to :report_field_template
 
   default_scope :order => 'position ASC'
+
+  def results
+    @results ||= { 
+      :render_method => report_field_template.render_method,
+      :render_options => report_field_template.render_options,
+      :data => report_field_template.apply(comparative_report.items)
+    }
+  end
 end
