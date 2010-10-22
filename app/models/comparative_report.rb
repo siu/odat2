@@ -1,5 +1,8 @@
 # encoding: UTF-8
 class ComparativeReport < Report
+  # Load subclasses
+  require_dependency 'center_report'
+
   set_table_name "comparative_reports"
   default_scope :order => 'comparative_reports.created_at DESC'
 
