@@ -1,9 +1,6 @@
 # encoding: UTF-8
 class MedicalRecord < ActiveRecord::Base
-  default_scope :order => 'surname ASC', :include => [
-    :father_job, :father_civil_state, :father_job_status, :father_formation_level,
-    :mother_job, :mother_civil_state, :mother_job_status, :mother_formation_level,
-    :school_type]
+  default_scope :order => 'surname ASC'
 
   DEPENDENCY_DEGREES = 1..3
 
@@ -12,7 +9,8 @@ class MedicalRecord < ActiveRecord::Base
 
   has_many  :odat_diagnoses,
     :class_name => 'OdatDiagnosis',
-    :dependent => :destroy do
+    :dependent => :destroy, 
+    :order => 'created_at DESC' do
     def clone_last_or_new
       if empty?
         build
