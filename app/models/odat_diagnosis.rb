@@ -2,6 +2,9 @@
 class OdatDiagnosis < ActiveRecord::Base
   acts_as_html_text
 
+  default_scope :order => 'created_at DESC', :include => [
+    :origin_source, :origin_cause, :main_diagnosis, :diagnosis_items, :center_resources]
+
   belongs_to :medical_record
 
   # Fuente de derivacion
