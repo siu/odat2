@@ -1,4 +1,6 @@
 # encoding: UTF-8
+require 'gettext'
+
 class IndividualReport < Report
   set_table_name 'individual_reports'
   default_scope :order => 'individual_reports.created_at DESC'
@@ -7,6 +9,10 @@ class IndividualReport < Report
   # not to an odat_diagnosis
   belongs_to :odat_diagnosis
   belongs_to :medical_record
+
+  def to_pdf
+    IndividualReportPdf.new(self).to_pdf
+  end
 
   def show_personal_data?
     [
