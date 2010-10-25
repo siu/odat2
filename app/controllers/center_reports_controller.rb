@@ -18,7 +18,11 @@ class CenterReportsController < ApplicationController
   # GET /center_reports/1.xml
   def show
     @center_report = current_user.center.center_reports.find(params[:id])
-    @center_report.items = current_user.center.medical_records
+    @center_report.items = current_user.center.medical_records.find(:all, :include => [{:odat_diagnoses =>
+        [{:evaluation_category_scores => :evaluation_category}, :origin_cause, :origin_source, :consultation_cause, :main_diagnosis, :center_resources]
+    }])
+    @center_report.results
+    @center_report.items = nil
 
     respond_to do |format|
       format.html # show.html.erb
