@@ -3,7 +3,7 @@ require 'prawn'
 require 'prawn/format'
 
 view = @center_report.configurable_view
-@font_size = view.font_size ? view.font_size*0.9 : 12
+@font_size = view.font_size ? view.font_size*0.75 : 12
 @border_style = view.table_grid? ? :grid : :underline_header
 
 def h1(pdf, text)
