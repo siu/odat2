@@ -71,7 +71,6 @@ h1(pdf, @center_report.title)
 @center_report.results.each do |result|
   h2(pdf, result[:title])
 
-begin
   if result[:render_method] == 'table'
     print_table(pdf, result[:data])
   elsif result[:render_method] == 'nested_list'
@@ -81,9 +80,6 @@ begin
     pdf.text result[:data].inspect
     pdf.move_down 20
   end
-rescue Exception => e
-  pdf.text _('Algo ha ido mal') << ': ' << simple_format(h(e.message))
-end
 
 end
 

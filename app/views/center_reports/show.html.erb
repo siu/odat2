@@ -11,7 +11,6 @@
     <tr>
       <th><%= result[:title] %></th>
       <td>
-        <% begin -%>
           <% if result[:render_method] == 'table' -%>
             <table>
               <% for row in result[:data] -%>
@@ -27,9 +26,6 @@
           <% else -%>
             <%= result[:data].inspect %>
           <% end -%>
-        <% rescue Exception => e -%>
-          <p><span class="error"><%= _('Algo ha ido mal') %>: <%= simple_format(h(e.message)) %></span></p>
-        <% end -%>
       </td>
     </tr>
   <% end -%>
