@@ -81,13 +81,13 @@ class ReportPdf < Prawn::Document
   def pdf_list(elements, options = {})
     items = elements.each do |key, value|
       if value.is_a?(Hash)
-        bounding_box([bounds.left + 20, cursor], :width => bounds.width) do
+        indent(20) do
           text("&bull; #{key.to_s}")
           move_down 10
           pdf_list(value, options)
         end
       else
-        bounding_box([bounds.left + 20, cursor], :width => bounds.width) do
+        indent(20) do
           text("&bull; #{key.to_s} - #{mytag('strong', value.to_s)}")
         end
       end
