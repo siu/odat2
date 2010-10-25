@@ -19,6 +19,9 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
   
+  # PDF reports load path
+  config.load_paths << "#{RAILS_ROOT}/app/reports"
+  
   config.gem 'qoobaa-sqlite3-ruby',  :lib => 'sqlite3',  
                                      :source => 'http://gems.github.com'  
   config.gem "mocha"
