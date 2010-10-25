@@ -23,14 +23,12 @@ class CenterReportsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @center_report }
-      format.pdf  { 
-        prawnto :attachment => true, 
-        :filename => "ODAT-#{_('informe_centro')}_#{current_user.center.id}_#{@center_report.id}.pdf", 
-        :prawn => { 
-          :top_margin => @center_report.configurable_view.top_margin 
-        }
-        render :layout => false
-      }
+      format.pdf do
+        output = @center_report.to_pdf
+        send_data output, 
+          :filename => "ODAT-#{_('informe_centro')}_#{current_user.center.id}_#{@center_report.id}.pdf", 
+          :type => "application/pdf"
+      end
     end
   end
 
