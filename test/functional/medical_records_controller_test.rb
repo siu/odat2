@@ -149,15 +149,20 @@ class MedicalRecordsControllerTest < ActionController::TestCase
                  assigns(:medical_records).count
   end
 
-  test "show_full.csv should produce a csv file" do
+  test "show .csv?style=full should produce a csv file" do
     login_as_user
-    get :show_full, :id => medical_records(:pedrito).id, :format => 'csv'
+    get :show, 
+      :id => medical_records(:pedrito).id, 
+      :format => 'csv', 
+      :style => 'full'
     assert_response :success
   end
 
-  test "index_full.csv should assign medical_records" do
+  test "index.csv?style=full should assign medical_records" do
     login_as_user
-    get :index_full, :format => 'csv'
+    get :index, 
+      :format => 'csv',
+      :style => 'full'
     assert_response :success
     assert_not_nil assigns(:medical_records)
     assert_equal users(:demo).center.medical_records.count, 

@@ -12,13 +12,10 @@ ActionController::Routing::Routes.draw do |map|
 
   # MedicalRecords
   map.resources :medical_records, 
-                :as => 'expedientes', 
-                :member => { :show_full => :get }  do |record|
+                :as => 'expedientes' do |record|
       record.resources :odat_diagnoses, :as => 'diagnosticos'
       record.resources :individual_reports, :as => 'informes'
   end
-
-  map.route '/expedientes_full.csv', :controller => 'medical_records', :action => 'index_full', :format => :csv
 
   # Center Reports
   map.resources :center_reports

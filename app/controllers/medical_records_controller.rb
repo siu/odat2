@@ -4,6 +4,7 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records
   # GET /medical_records.xml
+  # GET /medical_records.csv?style=default
   def index
     @medical_records = current_user.medical_records.paginate(:page => params[:page])
 
@@ -12,38 +13,21 @@ class MedicalRecordsController < ApplicationController
       format.xml  { render :xml => @medical_records }
       format.csv  do
         @medical_records = current_user.medical_records
-        render :csv => @medical_records 
+        render( :csv => @medical_records, :style => (params[:style] || :default).to_sym )
       end
     end
   end
 
-  # GET /medical_records/index_full.csv
-  def index_full
-    @medical_records = current_user.medical_records
-
-    render :csv => @medical_records, :style => :full
-  end
-
   # GET /medical_records/1
   # GET /medical_records/1.xml
+  # GET /medical_records/1.csv?style=default
   def show
     @medical_record = current_user.medical_records.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @medical_record }
-      format.csv  { render :csv => @medical_record }
-    end
-  rescue ActiveRecord::RecordNotFound
-    redirect_to medical_records_path
-  end
-
-  # GET /medical_records/1/show_full.csv
-  def show_full
-    @medical_record = current_user.medical_records.find(params[:id])
-
-    respond_to do |format|
-      format.csv  { render :csv => @medical_record, :style => :full }
+      format.csv  { render :csv => @medical_record, :style => (params[:style] || :default).to_sym }
     end
   rescue ActiveRecord::RecordNotFound
     redirect_to medical_records_path
