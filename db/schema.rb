@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101022162633) do
+ActiveRecord::Schema.define(:version => 20101024163432) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20101022162633) do
     t.integer  "position"
   end
 
+  add_index "diagnosis_items", ["lft", "rgt"], :name => "index_diagnosis_items_on_lft_and_rgt"
   add_index "diagnosis_items", ["parent_id", "lft", "position"], :name => "index_diagnosis_items_on_parent_id_and_lft_and_position"
   add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft"
 
@@ -138,6 +139,8 @@ ActiveRecord::Schema.define(:version => 20101022162633) do
     t.integer "odat_diagnosis_id",      :null => false
     t.integer "evaluation_category_id", :null => false
   end
+
+  add_index "evaluation_category_scores", ["odat_diagnosis_id"], :name => "index_evaluation_category_scores_on_odat_diagnosis_id"
 
   create_table "formation_levels", :force => true do |t|
     t.string   "name"
