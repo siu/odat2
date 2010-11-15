@@ -39,8 +39,13 @@ Rails::Initializer.run do |config|
   config.gem "SyslogLogger",         :lib => 'syslog_logger'
   config.gem "authlogic"
 
-  config.gem "fastercsv"
-  config.gem "comma",                :source => 'http://gems.github.com'  
+  config.gem "fastercsv", 
+    :version => '1.5.3'
+
+  config.gem "crafterm-comma",
+    :version => '0.2.2',
+    :lib => 'comma',
+    :source => 'http://gems.github.com'  
 
   config.time_zone = 'UTC'
   config.i18n.default_locale = :es
