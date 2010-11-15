@@ -149,7 +149,7 @@ class MedicalRecord < ActiveRecord::Base
     address
     postal 'Postal code'
     birth_position
-    birth_date
+    birth_date 'Date of birth'
     archive_date
     gender
     father_name
@@ -193,7 +193,7 @@ class MedicalRecord < ActiveRecord::Base
     address
     postal 'Postal code'
     birth_position
-    birth_date
+    birth_date 'Date of birth'
     archive_date
     gender
     father_name
@@ -253,7 +253,7 @@ class MedicalRecord < ActiveRecord::Base
     address
     postal 'Postal code'
     birth_position
-    birth_date
+    birth_date 'Date of birth'
     archive_date
     gender
     father_name
