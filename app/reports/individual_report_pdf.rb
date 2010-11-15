@@ -236,6 +236,16 @@ class IndividualReportPdf < ReportPdf
 
       end
 
+      if @report.show_evaluation_scores?
+        h3(_('Apoyos/recursos'))
+
+        for cat_score in @report.odat_diagnosis.evaluation_category_scores
+          data << [h(cat_score.evaluation_category.name), "#{h(cat_score.score)} UMATs"]
+        end
+        print_table(data)
+        data = []
+      end
+
     end
 
     if @report.show_report_data?
