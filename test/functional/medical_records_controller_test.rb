@@ -169,4 +169,24 @@ class MedicalRecordsControllerTest < ActionController::TestCase
                  assigns(:medical_records).count
   end
 
+  test "show .csv?style=detailed should produce a csv file" do
+    login_as_user
+    get :show, 
+      :id => medical_records(:pedrito).id, 
+      :format => 'csv', 
+      :style => 'detailed'
+    assert_response :success
+  end
+
+  test "index.csv?style=detailed should assign medical_records" do
+    login_as_user
+    get :index, 
+      :format => 'csv',
+      :style => 'detailed'
+    assert_response :success
+    assert_not_nil assigns(:medical_records)
+    assert_equal users(:demo).center.medical_records.count, 
+                 assigns(:medical_records).count
+  end
+
 end
