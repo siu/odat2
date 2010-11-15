@@ -228,21 +228,13 @@ class MedicalRecord < ActiveRecord::Base
     dependency_degree
     school_type :name => 'School type'
 
-    diagnosis_origin_source = lambda { |odat_diagnoses| odat_diagnoses.first.origin_source.name rescue '' }
-    diagnosis_origin_cause = lambda { |odat_diagnoses| odat_diagnoses.first.origin_cause.name rescue '' }
-    diagnosis_consultation_cause = lambda { |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' }
-    diagnosis_description = lambda { |odat_diagnoses| odat_diagnoses.first.description rescue '' }
-    diagnosis_center_resources = lambda { |odat_diagnoses| odat_diagnoses.first.center_resources.map { |r| r.name }.join(';') rescue '' }
-    diagnosis_diagnosis_items = lambda { |odat_diagnoses| odat_diagnoses.first.diagnosis_items.map { |d| d.name }.join(';') rescue '' }
-    diagnosis_main_diagnosis = lambda { |odat_diagnoses| odat_diagnoses.first.main_diagnosis.name rescue '' }
-
-    odat_diagnoses diagnosis_origin_source => 'Diagnosis origin source'
-    odat_diagnoses diagnosis_origin_cause => 'Diagnosis origin cause'
-    odat_diagnoses diagnosis_consultation_cause => 'Diagnosis consultation cause'
-    odat_diagnoses diagnosis_description => 'Diagnosis description'
-    odat_diagnoses diagnosis_center_resources => 'Diagnosis center resources'
-    odat_diagnoses diagnosis_diagnosis_items => 'Diagnosis items'
-    odat_diagnoses diagnosis_main_diagnosis => 'Diagnosis main diagnosis'
+    odat_diagnoses 'Diagnosis origin source' do |odat_diagnoses| odat_diagnoses.first.origin_source.name rescue '' end
+    odat_diagnoses 'Diagnosis origin cause' do |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' end
+    odat_diagnoses 'Diagnosis consultation cause' do |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' end
+    odat_diagnoses 'Diagnosis description' do |odat_diagnoses| odat_diagnoses.first.description rescue '' end
+    odat_diagnoses 'Diagnosis center resources' do |odat_diagnoses| odat_diagnoses.first.center_resources.map { |r| r.name }.join(';') rescue '' end
+    odat_diagnoses 'Diagnosis items' do |odat_diagnoses| odat_diagnoses.first.diagnosis_items.map { |d| d.name }.join(';') rescue '' end
+    odat_diagnoses 'Diagnosis main diagnosis' do |odat_diagnoses| odat_diagnoses.first.main_diagnosis.name rescue '' end
   end
 
   comma :detailed do 
@@ -288,24 +280,18 @@ class MedicalRecord < ActiveRecord::Base
     dependency_degree
     school_type :name => 'School type'
 
-    diagnosis_origin_source = lambda { |odat_diagnoses| odat_diagnoses.first.origin_source.name rescue '' }
-    diagnosis_origin_cause = lambda { |odat_diagnoses| odat_diagnoses.first.origin_cause.name rescue '' }
-    diagnosis_consultation_cause = lambda { |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' }
-    diagnosis_description = lambda { |odat_diagnoses| odat_diagnoses.first.description rescue '' }
-    diagnosis_main_diagnosis = lambda { |odat_diagnoses| odat_diagnoses.first.main_diagnosis.name rescue '' }
-
-    odat_diagnoses diagnosis_origin_source => 'Diagnosis origin source'
-    odat_diagnoses diagnosis_origin_cause => 'Diagnosis origin cause'
-    odat_diagnoses diagnosis_consultation_cause => 'Diagnosis consultation cause'
-    odat_diagnoses diagnosis_description => 'Diagnosis description'
-    odat_diagnoses diagnosis_main_diagnosis => 'Diagnosis main diagnosis'
+    odat_diagnoses 'Diagnosis origin source' do |odat_diagnoses| odat_diagnoses.first.origin_source.name rescue '' end
+    odat_diagnoses 'Diagnosis origin cause' do |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' end
+    odat_diagnoses 'Diagnosis consultation cause' do |odat_diagnoses| odat_diagnoses.first.consultation_cause.name rescue '' end
+    odat_diagnoses 'Diagnosis description' do |odat_diagnoses| odat_diagnoses.first.description rescue '' end
+    odat_diagnoses 'Diagnosis main diagnosis' do |odat_diagnoses| odat_diagnoses.first.main_diagnosis.name rescue '' end
 
     for resource in CenterResource.all
-      odat_diagnoses lambda { |odat_diagnoses| odat_diagnoses.first.center_resources.include?(resource) rescue false } => "Center resources: " + resource.name
+      odat_diagnoses "Center resources: " + resource.name do |odat_diagnoses| odat_diagnoses.first.center_resources.include?(resource) rescue false end
     end
 
     for item in DiagnosisItem.all.select { |i| i.level > 1 }
-      odat_diagnoses lambda { |odat_diagnoses| odat_diagnoses.first.diagnosis_items.include?(item) rescue false } => item.name
+      odat_diagnoses item.name do |odat_diagnoses| odat_diagnoses.first.diagnosis_items.include?(item) rescue false end
     end
 
   end
