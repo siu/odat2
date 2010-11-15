@@ -13,7 +13,7 @@ class MedicalRecordsController < ApplicationController
       format.xml  { render :xml => @medical_records }
       format.csv  do
         @medical_records = current_user.medical_records
-        render( :csv => @medical_records, :style => (params[:style] || :default).to_sym )
+        render( :csv => @medical_records, :style => (params[:style] || :default).to_sym, :force_quotes => true )
       end
     end
   end
@@ -27,7 +27,7 @@ class MedicalRecordsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @medical_record }
-      format.csv  { render :csv => @medical_record, :style => (params[:style] || :default).to_sym }
+      format.csv  { render :csv => @medical_record, :style => (params[:style] || :default).to_sym, :force_quotes => true }
     end
   rescue ActiveRecord::RecordNotFound
     redirect_to medical_records_path
