@@ -318,6 +318,10 @@ class MedicalRecord < ActiveRecord::Base
       odat_diagnoses lambda { |odat_diagnoses| odat_diagnoses.first.diagnosis_items.include?(item) rescue false } => item.name
     end
 
+    EvaluationCategory.all.map do |ec|
+      odat_diagnoses lambda { |odat_diagnoses| odat_diagnoses.first.get_evaluation_category_score(ec.id).to_s rescue '' } => ec.name
+    end
+
   end
 
 protected
