@@ -65,7 +65,7 @@ class ReportPdf < Prawn::Document
   end
 
   def mytag(tag, text)
-    "<#{tag.to_s}>" << text << "</#{tag.to_s}>"
+    "<#{tag.to_s}>" << h(text) << "</#{tag.to_s}>"
   end
 
   def print_table(data)
@@ -82,13 +82,13 @@ class ReportPdf < Prawn::Document
     items = elements.each do |key, value|
       if value.is_a?(Hash)
         indent(20) do
-          text("&bull; #{key.to_s}")
+          text("&bull; #{h(key.to_s)}")
           move_down 10
           pdf_list(value, options)
         end
       else
         indent(20) do
-          text("&bull; #{key.to_s} - #{mytag('strong', value.to_s)}")
+          text("&bull; #{h(key.to_s)} - #{mytag('strong', value.to_s)}")
         end
       end
     end
