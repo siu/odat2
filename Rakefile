@@ -8,3 +8,10 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+begin
+    require "gettext_i18n_rails/tasks"
+rescue LoadError
+    puts "gettext_i18n_rails is not installed, you probably should run 'rake gems:install' or 'bundle install'."
+end
+

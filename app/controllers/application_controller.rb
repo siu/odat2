@@ -3,18 +3,15 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all
-  helper_method :current_user_session, :current_user
-  filter_parameter_logging :password, :password_confirmation
-
   # Protect cookies
   protect_from_forgery
 
   before_filter :login_required
+  before_filter :set_gettext_locale
 
-  # Gettext
-  before_init_gettext :set_gettext_locale
-  init_gettext "odat", :content_type => "application/xhtml+xml"
+  helper :all
+  helper_method :current_user_session, :current_user
+  filter_parameter_logging :password, :password_confirmation
 
   # Errors
   def rescue_404
@@ -24,9 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
 private
-  def set_gettext_locale
-    GetText.locale = I18n.locale.language
-  end
 
   def local_request?
     false

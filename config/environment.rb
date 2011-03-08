@@ -29,11 +29,11 @@ Rails::Initializer.run do |config|
                                      :lib => 'will_paginate',  
                                      :source => 'http://gems.github.com'  
   config.gem 'RedCloth'
-  config.gem "locale"
-  config.gem "locale_rails"
-  config.gem "gettext"
-  config.gem "gettext_activerecord"
-  config.gem "gettext_rails"
+
+  config.gem "gettext", :version => '>=1.9.3', :lib => false
+  config.gem "fast_gettext", :version => '>=0.4.8'
+  config.gem "gettext_i18n_rails"
+
   config.gem "prawn",                :version => '0.6.3'
   config.gem "prawn-format",         :lib => 'prawn/format'
   config.gem "SyslogLogger",         :lib => 'syslog_logger'
@@ -48,7 +48,7 @@ Rails::Initializer.run do |config|
     :source => 'http://gems.github.com'  
 
   config.time_zone = 'UTC'
-  config.i18n.default_locale = :es
+  config.i18n.default_locale = "es"
 
   # The edition/release configuration of the app is located in config/initializers/odat.rb
 end

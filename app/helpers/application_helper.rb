@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def locale_rtl?
-    return %w(ar).include?(I18n.locale.language)
+    return [:ar].include?(I18n.locale)
   end
 
   def print_boolean(value)

@@ -1,6 +1,4 @@
 class UserSession < Authlogic::Session::Base
-  include GetText
-
   disable_magic_states true
   generalize_credentials_error_messages N_('Los datos de inicio de sesión no son válidos')
 
