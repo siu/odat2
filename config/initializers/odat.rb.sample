@@ -2,8 +2,12 @@ require 'action_controller/request'
 
 ODAT_HOST = 'http://localhost:3000'
 
-I18n.default_locale = :es
-I18n.locale = :es
+FastGettext.add_text_domain 'odat', :path => 'po' #, :type => :po
+FastGettext.default_available_locales = ['ar', 'es', 'pt', 'gl']
+FastGettext.default_text_domain = 'odat'
+
+I18n.default_locale = "es"
+I18n.locale = "es"
 
 #ActionController::Base.relative_url_root = '/es'
 SESSION_SECRET = 'set_this_Secret-fef90b74968219df44040ebce2a0f37e'
