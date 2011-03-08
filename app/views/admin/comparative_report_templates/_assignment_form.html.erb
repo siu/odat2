@@ -5,7 +5,7 @@
   <% if assigned == true -%>
 
     <%= assignment_form.hidden_field 'report_field_template_id', :value => field.id, :index => nil, :class => 'cb' %>
-    <%= assignment_form.hidden_field '_delete', :value => field.id, :index => nil, :class => 'delete', :disabled => true %>
+    <%= assignment_form.hidden_field '_destroy', :value => field.id, :index => nil, :class => 'delete', :disabled => true %>
 
     <%= link_to 'C', "#field_form_#{field.id}", :class => "btn settings", :rel => 'facebox', :style => 'float:right' %>
     <strong><%= field.name %></strong><br />

@@ -85,7 +85,7 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
       :comparative_report_template => { 
         :comparative_report_template_field_assignments_attributes => 
           [
-            {:_delete => report_field_templates(:one).id}
+            {:_destroy => report_field_templates(:one).id}
           ]
       }
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
@@ -103,7 +103,7 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
         :comparative_report_template_field_assignments_attributes => 
           [
             {:report_field_template_id => report_field_templates(:one).id},
-            {:_delete => report_field_templates(:two).id}
+            {:_destroy => report_field_templates(:two).id}
           ]
       }
 
@@ -122,7 +122,7 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
         :comparative_report_template_field_assignments_attributes => 
           [
             {:report_field_template_id => report_field_templates(:two).id},
-            {:_delete => report_field_templates(:one).id}
+            {:_destroy => report_field_templates(:one).id}
           ]
       }
 

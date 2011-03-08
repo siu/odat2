@@ -2,7 +2,7 @@
   <% f.fields_for :report_field_templates do |field| -%>
     <% unless field.object.nil? -%>
       <li><%= field.object.name %>
-        <%= field.check_box :_delete %> <%= field.label :_delete, _('Borrar') %>
+        <%= field.check_box :_destroy %> <%= field.label :_destroy, _('Borrar') %>
       </li>
     <% end -%>
   <% end -%>

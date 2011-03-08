@@ -6,7 +6,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.11' unless defined? RAILS_GEM_VERSION
 
 if RUBY_VERSION >= '1.9'
   Encoding.default_internal = 'utf-8'
@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
   
   # PDF reports load path
-  config.load_paths << "#{RAILS_ROOT}/app/reports"
+  config.autoload_paths << "#{RAILS_ROOT}/app/reports"
   
   config.gem 'qoobaa-sqlite3-ruby',  :lib => 'sqlite3',  
                                      :source => 'http://gems.github.com'  
