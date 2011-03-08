@@ -22,6 +22,6 @@ SESSION_SECRET = 'set_this_Secret-fef90b74968219df44040ebce2a0f37e'
 # Make sure the secret is at least 30 characters and all random, 
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {  
-  :key => "_odat_#{I18n.locale.language}_session",
+  :key => "_odat_#{I18n.locale}_session",
   :secret => SESSION_SECRET
 }
