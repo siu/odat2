@@ -5,7 +5,7 @@ class ApplicationHelperTest < ActionView::TestCase
     assert !locale_rtl?
   end
   test "locale_rtl? is true for ar language" do
-    FastGettext.set_locale :ar
+    FastGettext.set_locale "ar"
     assert locale_rtl?
   end
   test "locale_rtl? is false for pt language" do
