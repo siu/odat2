@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "POT-Creation-Date: 2011-03-08 17:14+0100\n"
-"PO-Revision-Date: 2009-07-30 18:31+0100\n"
+"PO-Revision-Date: 2011-03-08 18:09+0100\n"
 "Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1) \n"
+"X-Poedit-Language: Galician\n"
+"X-Poedit-Country: SPAIN\n"
 
 #: config/initializers/custom_forms.rb:25
 msgid " o "
@@ -32,7 +34,8 @@ msgstr ""
 msgid "%{num} Informes"
 msgstr ""
 
-#: app/helpers/dashboard_helper.rb:10 app/helpers/dashboard_helper.rb:12
+#: app/helpers/dashboard_helper.rb:10
+#: app/helpers/dashboard_helper.rb:12
 msgid "%{status} hace %{time}"
 msgstr ""
 
@@ -77,10 +80,7 @@ msgid "Aquí se muestran todos los expedientes del centro"
 msgstr ""
 
 #: app/views/individual_reports/_form.html.erb:81
-msgid ""
-"Asociar el informe a un diagnóstico concreto es opcional, <strong>no es "
-"necesario rellenar esta sección si no se necesitan datos de diagnóstico</"
-"strong>."
+msgid "Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>."
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:244
@@ -159,7 +159,8 @@ msgstr ""
 msgid "Centros"
 msgstr ""
 
-#: app/views/users/_user_bar.html.erb:3 app/views/users/_user_bar.html.erb:4
+#: app/views/users/_user_bar.html.erb:3
+#: app/views/users/_user_bar.html.erb:4
 msgid "Cerrar Sesión"
 msgstr ""
 
@@ -198,7 +199,8 @@ msgstr ""
 msgid "Clasificación diagnóstica"
 msgstr ""
 
-#: app/views/user_sessions/new.html.erb:9 app/views/sessions/new.html.erb:8
+#: app/views/user_sessions/new.html.erb:9
+#: app/views/sessions/new.html.erb:8
 msgid "Clave"
 msgstr ""
 
@@ -414,9 +416,7 @@ msgid "Debes cerrar sesión para visitar esta página"
 msgstr ""
 
 #: app/models/odat_diagnosis.rb:31
-msgid ""
-"Debes especificar al menos un elemento en diagnóstico detallado y un "
-"diagnóstico principal"
+msgid "Debes especificar al menos un elemento en diagnóstico detallado y un diagnóstico principal"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:184
@@ -625,20 +625,15 @@ msgid "Email"
 msgstr ""
 
 #: app/views/dashboard/index.html.erb:3
-msgid ""
-"En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
+msgid "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
 msgstr ""
 
 #: app/views/medical_records/new.html.erb:5
-msgid ""
-"En esta pantalla se pueden introducir los datos de un expediente personal, "
-"<strong>rellene los datos con exactitud</strong>, luego los datos serán "
-"útiles para generar informes y estadísticas."
+msgid "En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas."
 msgstr ""
 
 #: app/views/center_reports/new.html.erb:4
-msgid ""
-"En este formulario se puede seleccionar qué datos se mostrarán en el informe"
+msgid "En este formulario se puede seleccionar qué datos se mostrarán en el informe"
 msgstr ""
 
 #: app/models/report_field_template.rb:71
@@ -803,7 +798,8 @@ msgstr ""
 msgid "Hermanos"
 msgstr ""
 
-#: app/views/user_sessions/new.html.erb:6 app/views/sessions/new.html.erb:5
+#: app/views/user_sessions/new.html.erb:6
+#: app/views/sessions/new.html.erb:5
 msgid "Identificador de usuario"
 msgstr ""
 
@@ -1019,12 +1015,14 @@ msgstr ""
 
 #: app/views/users/_visitor_bar.html.erb:3
 #: app/views/users/_visitor_bar.html.erb:4
-#: app/views/users/_user_bar.html.erb:7 app/views/users/_user_bar.html.erb:8
+#: app/views/users/_user_bar.html.erb:7
+#: app/views/users/_user_bar.html.erb:8
 msgid "Iniciar Sesión"
 msgstr ""
 
 #: app/views/user_sessions/new.html.erb:1
-#: app/views/user_sessions/new.html.erb:16 app/views/sessions/new.html.erb:1
+#: app/views/user_sessions/new.html.erb:16
+#: app/views/sessions/new.html.erb:1
 #: app/views/sessions/new.html.erb:17
 msgid "Iniciar sesión"
 msgstr ""
@@ -1090,9 +1088,7 @@ msgid "Login"
 msgstr ""
 
 #: app/helpers/application_helper.rb:39
-msgid ""
-"Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></"
-"strong></span> se muestran con un asterisco."
+msgid "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco."
 msgstr ""
 
 #: app/models/user_session.rb:3
@@ -1322,7 +1318,8 @@ msgstr ""
 msgid "Niveles de formación"
 msgstr ""
 
-#: app/helpers/application_helper.rb:17 app/reports/report_pdf.rb:47
+#: app/helpers/application_helper.rb:17
+#: app/reports/report_pdf.rb:47
 msgid "No"
 msgstr ""
 
@@ -1434,7 +1431,8 @@ msgstr ""
 msgid "Número total de hermanos"
 msgstr ""
 
-#: app/views/layouts/errors.html.erb:9 app/views/layouts/visitor.html.erb:13
+#: app/views/layouts/errors.html.erb:9
+#: app/views/layouts/visitor.html.erb:13
 #: app/views/layouts/_header.html.erb:1
 msgid "ODAT"
 msgstr ""
@@ -1452,7 +1450,8 @@ msgstr ""
 msgid "Ocupación"
 msgstr ""
 
-#: app/views/layouts/default.html.erb:4 app/views/layouts/_header.html.erb:2
+#: app/views/layouts/default.html.erb:4
+#: app/views/layouts/_header.html.erb:2
 msgid "Organización Diagnóstica para la Atención Temprana"
 msgstr ""
 
@@ -1580,9 +1579,12 @@ msgstr ""
 msgid "Pruebas"
 msgstr ""
 
-#: app/views/errors/500.html.erb:13 app/views/errors/500.html.erb:16
-#: app/views/errors/404.html.erb:13 app/views/errors/404.html.erb:16
-#: app/views/errors/422.html.erb:13 app/views/errors/422.html.erb:16
+#: app/views/errors/500.html.erb:13
+#: app/views/errors/500.html.erb:16
+#: app/views/errors/404.html.erb:13
+#: app/views/errors/404.html.erb:16
+#: app/views/errors/422.html.erb:13
+#: app/views/errors/422.html.erb:16
 msgid "Página de contacto"
 msgstr ""
 
@@ -1598,7 +1600,8 @@ msgstr ""
 msgid "Real patronato sobre discapacidad"
 msgstr ""
 
-#: app/views/user_sessions/new.html.erb:13 app/views/sessions/new.html.erb:14
+#: app/views/user_sessions/new.html.erb:13
+#: app/views/sessions/new.html.erb:14
 msgid "Recordarme"
 msgstr ""
 
@@ -1693,27 +1696,20 @@ msgid "Se ha eliminado el informe correctamente"
 msgstr ""
 
 #: app/controllers/odat_diagnoses_controller.rb:32
-msgid ""
-"Se han recuperado los datos del último diagnóstico para la creación del nuevo"
+msgid "Se han recuperado los datos del último diagnóstico para la creación del nuevo"
 msgstr ""
 
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:40
-msgid ""
-"Se utiliza para reseñar los diagnósticos confirmados. En este apartado "
-"reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de "
-"Down, Angelmans, Rett, etc."
+msgid "Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc."
 msgstr ""
 
 #: app/views/layouts/medical_records.html.erb:26
-msgid ""
-"Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e "
-"informes (operación irreversible)?"
+msgid "Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?"
 msgstr ""
 
 #: app/views/layouts/center_reports.html.erb:10
 #: app/views/center_reports/_menu.html.erb:11
-msgid ""
-"Seguro deseas borrar el informe de centro actual (operación irreversible)?"
+msgid "Seguro deseas borrar el informe de centro actual (operación irreversible)?"
 msgstr ""
 
 #: app/views/individual_reports/_form.html.erb:4
@@ -1763,7 +1759,8 @@ msgstr ""
 msgid "Situación laboral"
 msgstr ""
 
-#: app/helpers/application_helper.rb:15 app/reports/report_pdf.rb:45
+#: app/helpers/application_helper.rb:15
+#: app/reports/report_pdf.rb:45
 #: app/views/medical_records/_form.html.erb:104
 #: app/views/medical_records/_form_social_familiar.html.erb:211
 #: app/views/medical_records/_form_social_familiar.html.erb:216
@@ -1884,21 +1881,25 @@ msgstr ""
 msgid "Ver diagnóstico"
 msgstr ""
 
-#: app/views/dashboard/index.html.erb:7 app/views/dashboard/index.html.erb:41
+#: app/views/dashboard/index.html.erb:7
+#: app/views/dashboard/index.html.erb:41
 msgid "Ver todos"
 msgstr ""
 
-#: app/views/errors/500.html.erb:11 app/views/errors/404.html.erb:11
+#: app/views/errors/500.html.erb:11
+#: app/views/errors/404.html.erb:11
 #: app/views/errors/422.html.erb:11
 msgid "Volver a la lista de expedientes"
 msgstr ""
 
-#: app/views/errors/500.html.erb:12 app/views/errors/404.html.erb:12
+#: app/views/errors/500.html.erb:12
+#: app/views/errors/404.html.erb:12
 #: app/views/errors/422.html.erb:12
 msgid "Volver a la lista de informes de centro"
 msgstr ""
 
-#: app/views/errors/500.html.erb:10 app/views/errors/404.html.erb:10
+#: app/views/errors/500.html.erb:10
+#: app/views/errors/404.html.erb:10
 #: app/views/errors/422.html.erb:10
 msgid "Volver al área de trabajo"
 msgstr ""
@@ -2050,3 +2051,4 @@ msgstr ""
 #: app/views/dashboard/index.html.erb:41
 msgid "Últimos informes de centro modificados"
 msgstr ""
+
