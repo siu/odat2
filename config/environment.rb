@@ -25,9 +25,7 @@ Rails::Initializer.run do |config|
   config.gem 'qoobaa-sqlite3-ruby',  :lib => 'sqlite3',  
                                      :source => 'http://gems.github.com'  
   config.gem "mocha"
-  config.gem 'mislav-will_paginate', :version => '~> 2.3.7',  
-                                     :lib => 'will_paginate',  
-                                     :source => 'http://gems.github.com'  
+  config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
   config.gem 'RedCloth'
 
   config.gem "gettext", :version => '>=1.9.3', :lib => false
