@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101022162633) do
+ActiveRecord::Schema.define(:version => 20110323200008) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20101022162633) do
 
   create_table "diagnosis_items", :force => true do |t|
     t.string   "name"
-    t.string   "description"
-    t.string   "description_html"
+    t.text     "description"
+    t.text     "description_html"
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
