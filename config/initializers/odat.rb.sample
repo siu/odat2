@@ -2,7 +2,7 @@ require 'action_controller/request'
 
 ODAT_HOST = 'http://localhost:3000'
 
-FastGettext.add_text_domain 'odat', :path => 'po' #, :type => :po
+FastGettext.add_text_domain 'odat', :path => 'po', :type => :po
 FastGettext.default_available_locales = ['ar', 'es', 'pt', 'gl']
 FastGettext.default_text_domain = 'odat'
 
