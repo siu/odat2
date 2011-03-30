@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "POT-Creation-Date: 2011-03-08 17:14+0100\n"
-"PO-Revision-Date: 2011-03-08 18:09+0100\n"
-"Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
+"PO-Revision-Date: 2011-03-27 18:46+0100\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1) \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Poedit-Language: Galician\n"
 "X-Poedit-Country: SPAIN\n"
 
@@ -24,15 +24,15 @@ msgstr ""
 
 #: app/views/odat_diagnoses/_form_diagnosis_items_subcategory_toggle.html.erb:4
 msgid "%{count} elementos sin mostrar"
-msgstr ""
+msgstr "%{count} elementos sen mostrar"
 
 #: app/views/medical_records/_medical_record.html.erb:5
 msgid "%{num} Diagnósticos"
-msgstr ""
+msgstr "%{num} Diagnósticos"
 
 #: app/views/medical_records/_medical_record.html.erb:13
 msgid "%{num} Informes"
-msgstr ""
+msgstr "%{num} Informes"
 
 #: app/helpers/dashboard_helper.rb:10
 #: app/helpers/dashboard_helper.rb:12
@@ -41,21 +41,21 @@ msgstr ""
 
 #: app/views/layouts/_user_navbar.html.erb:10
 msgid "Acerca de ODAT"
-msgstr ""
+msgstr "Acerca de ODAT"
 
 #: app/views/admin/users/index.html.erb:7
 msgid "Activo"
-msgstr ""
+msgstr "Activo"
 
 #: app/views/admin/dashboard/index.html.erb:1
 #: app/views/layouts/_admin_navbar.html.erb:2
 msgid "Administración"
-msgstr ""
+msgstr "Administración"
 
 #: app/reports/center_report_pdf.rb:20
 #: app/views/center_reports/show.html.erb:31
 msgid "Algo ha ido mal"
-msgstr ""
+msgstr "Algo foi mal"
 
 #: app/reports/individual_report_pdf.rb:64
 #: app/reports/individual_report_pdf.rb:98
@@ -65,53 +65,53 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:32
 #: app/views/medical_records/_form_social_familiar.html.erb:111
 msgid "Apellidos"
-msgstr ""
+msgstr "Apelidos"
 
 #: app/views/admin/users/index.html.erb:8
 msgid "Aprovado"
-msgstr ""
+msgstr "Aprobado"
 
 #: app/views/center_reports/index.html.erb:4
 msgid "Aquí se muestran los informes de centro almacenados."
-msgstr ""
+msgstr "Aquí móstranse os informes de centro almacenados."
 
 #: app/views/medical_records/index.html.erb:5
 msgid "Aquí se muestran todos los expedientes del centro"
-msgstr ""
+msgstr "Aquí móstranse todos os expedientes do centro"
 
 #: app/views/individual_reports/_form.html.erb:81
 msgid "Asociar el informe a un diagnóstico concreto es opcional, <strong>no es necesario rellenar esta sección si no se necesitan datos de diagnóstico</strong>."
-msgstr ""
+msgstr "Asociar o informe a un diagnóstico concreto é opcional, <strong>non é necesario encher esta sección se non se necesitan datos de diagnóstico</strong>."
 
 #: app/reports/individual_report_pdf.rb:244
 #: app/views/individual_reports/show.html.erb:137
 #: app/views/individual_reports/_form.html.erb:123
 msgid "Asunto"
-msgstr ""
+msgstr "Asunto"
 
 #: app/views/admin/center_resources/new.html.erb:5
 #: app/views/admin/center_resources/edit.html.erb:6
 msgid "Atrás"
-msgstr ""
+msgstr "Atrás"
 
 #: app/views/admin/dashboard/index.html.erb:46
 msgid "Autonomías"
-msgstr ""
+msgstr "Autonomías"
 
 #: app/views/admin/diagnosis_items/help_index.html.erb:1
 #: app/views/admin/diagnosis_items/help.html.erb:1
 #: app/views/help/diagnosis_items/show.html.erb:1
 #: app/views/help/diagnosis_items/index.html.erb:1
 msgid "Ayuda para la clasificación diagnóstica"
-msgstr ""
+msgstr "Axuda para a clasificación diagnóstica"
 
 #: app/views/help/jobs/index.html.erb:1
 msgid "Ayuda sobre puestos de trabajo"
-msgstr ""
+msgstr "Axuda sobre postos de traballo"
 
 #: app/views/admin/comparative_report_templates/_report_field_templates_settings.html.erb:5
 msgid "Borrar"
-msgstr ""
+msgstr "Borrar"
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:99
 #: app/views/admin/comparative_report_templates/_form.html.erb:102
@@ -124,7 +124,7 @@ msgstr ""
 #: app/views/center_reports/_form.html.erb:57
 #: app/views/center_reports/_form.html.erb:59
 msgid "Cancelar"
-msgstr ""
+msgstr "Cancelar"
 
 #: po/model_attributes.rb:99
 msgid "CenterResource|Description"
@@ -149,24 +149,24 @@ msgstr ""
 #: app/views/admin/users/index.html.erb:6
 #: app/views/admin/users/_form.html.erb:19
 msgid "Centro"
-msgstr ""
+msgstr "Centro"
 
 #: app/views/layouts/_user_navbar.html.erb:3
 msgid "Centro: %{name}"
-msgstr ""
+msgstr "Centro: %{name}"
 
 #: app/views/admin/dashboard/index.html.erb:8
 msgid "Centros"
-msgstr ""
+msgstr "Centros"
 
 #: app/views/users/_user_bar.html.erb:3
 #: app/views/users/_user_bar.html.erb:4
 msgid "Cerrar Sesión"
-msgstr ""
+msgstr "Pechar Sesión"
 
 #: app/views/layouts/help/help_layout.html.erb:22
 msgid "Cerrar ventana"
-msgstr ""
+msgstr "Pechar fiestra"
 
 #: po/model_attributes.rb:41
 msgid "CivilState|Description"
@@ -188,7 +188,7 @@ msgstr ""
 #: app/views/medical_records/_form.html.erb:103
 #: app/views/medical_records/_show_handicap_data.html.erb:2
 msgid "Clasificación de minusvalía mayor que 33 grados"
-msgstr ""
+msgstr "Clasificación de minusvalía maior que 33 graos"
 
 #: app/views/admin/diagnosis_items/help_index.html.erb:4
 #: app/views/admin/diagnosis_items/help_index.html.erb:7
@@ -197,12 +197,12 @@ msgstr ""
 #: app/views/help/diagnosis_items/index.html.erb:4
 #: app/views/help/diagnosis_items/index.html.erb:7
 msgid "Clasificación diagnóstica"
-msgstr ""
+msgstr "Clasificación diagnóstica"
 
 #: app/views/user_sessions/new.html.erb:9
 #: app/views/sessions/new.html.erb:8
 msgid "Clave"
-msgstr ""
+msgstr "Clave"
 
 #: po/model_attributes.rb:30
 msgid "ComparativeReportFieldTemplateAssignment|Group"
@@ -241,48 +241,54 @@ msgid "ComparativeReportTemplate|View template"
 msgstr ""
 
 #: po/model_attributes.rb:95
+#, fuzzy
 msgid "ComparativeReport|Extra information"
-msgstr ""
+msgstr "Información extra"
 
 #: po/model_attributes.rb:96
+#, fuzzy
 msgid "ComparativeReport|Extra information html"
-msgstr ""
+msgstr "Información extra"
 
 #: po/model_attributes.rb:91
+#, fuzzy
 msgid "ComparativeReport|Show signature"
-msgstr ""
+msgstr "Mostrar sinatura"
 
 #: po/model_attributes.rb:93
+#, fuzzy
 msgid "ComparativeReport|Show signed on"
-msgstr ""
+msgstr "Mostrar data sinatura"
 
 #: po/model_attributes.rb:92
+#, fuzzy
 msgid "ComparativeReport|Signature"
-msgstr ""
+msgstr "Sinatura"
 
 #: po/model_attributes.rb:94
+#, fuzzy
 msgid "ComparativeReport|Signed on"
-msgstr ""
+msgstr "Data sinatura"
 
 #: po/model_attributes.rb:180
 msgid "ConfigurableView|Font family"
-msgstr ""
+msgstr "Letra"
 
 #: po/model_attributes.rb:179
 msgid "ConfigurableView|Font size"
-msgstr ""
+msgstr "Tamaño de letra"
 
 #: po/model_attributes.rb:181
 msgid "ConfigurableView|Table grid"
-msgstr ""
+msgstr "Límite das táboas"
 
 #: app/views/admin/users/index.html.erb:9
 msgid "Confirmado"
-msgstr ""
+msgstr "Confirmado"
 
 #: app/views/medical_records/show.html.erb:1
 msgid "Consultar datos del expediente"
-msgstr ""
+msgstr "Consultar datos do expediente"
 
 #: po/model_attributes.rb:22
 msgid "ConsultationCause|Description"
@@ -305,39 +311,39 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:207
 #: app/views/individual_reports/show.html.erb:97
 msgid "Coordinación"
-msgstr ""
+msgstr "Coordinación"
 
 #: app/helpers/dashboard_helper.rb:4
 msgid "Creado"
-msgstr ""
+msgstr "Creado"
 
 #: app/views/admin/users/_form.html.erb:24
 #: app/views/admin/centers/_form.html.erb:14
 msgid "Crear"
-msgstr ""
+msgstr "Crear"
 
 #: app/views/admin/dashboard/index.html.erb:6
 msgid "Cuentas de usuario"
-msgstr ""
+msgstr "Contas de usuario"
 
 #: app/views/medical_records/_form.html.erb:76
 msgid "Código postal"
-msgstr ""
+msgstr "Código postal"
 
 #: app/views/admin/users/index.html.erb:44
 msgid "Dar de alta nuevo usuario"
-msgstr ""
+msgstr "Dar de alta novo usuario"
 
 #: app/reports/individual_report_pdf.rb:192
 #: app/views/odat_diagnoses/_form.html.erb:19
 #: app/views/individual_reports/show.html.erb:121
 msgid "Datos de centro"
-msgstr ""
+msgstr "Datos de centro"
 
 #: app/reports/individual_report_pdf.rb:167
 #: app/views/individual_reports/show.html.erb:117
 msgid "Datos de demanda"
-msgstr ""
+msgstr "Datos de demanda"
 
 #: app/reports/individual_report_pdf.rb:157
 #: app/reports/individual_report_pdf.rb:213
@@ -346,44 +352,44 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:105
 #: app/views/individual_reports/show.html.erb:129
 msgid "Datos de diagnóstico"
-msgstr ""
+msgstr "Datos de diagnóstico"
 
 #: app/views/individual_reports/_form.html.erb:101
 msgid "Datos de la demanda"
-msgstr ""
+msgstr "Datos da demanda"
 
 #: app/views/individual_reports/_form.html.erb:65
 msgid "Datos de la madre"
-msgstr ""
+msgstr "Datos da nai"
 
 #: app/views/individual_reports/_form.html.erb:59
 msgid "Datos de los hermanos"
-msgstr ""
+msgstr "Datos dos irmáns"
 
 #: app/views/individual_reports/_form.html.erb:49
 msgid "Datos de minusvalía"
-msgstr ""
+msgstr "Datos de minusvalía"
 
 #: app/views/individual_reports/_form.html.erb:8
 msgid "Datos del expediente"
-msgstr ""
+msgstr "Datos do expediente"
 
 #: app/views/center_reports/_form.html.erb:7
 msgid "Datos del informe"
-msgstr ""
+msgstr "Datos do informe"
 
 #: app/views/individual_reports/_form.html.erb:62
 msgid "Datos del padre"
-msgstr ""
+msgstr "Datos do pai"
 
 #: app/views/odat_diagnoses/show.html.erb:27
 #: app/views/odat_diagnoses/_form.html.erb:14
 msgid "Datos demanda"
-msgstr ""
+msgstr "Datos demanda"
 
 #: app/views/individual_reports/_form.html.erb:94
 msgid "Datos diagnóstico"
-msgstr ""
+msgstr "Datos diagnóstico"
 
 #: app/reports/individual_report_pdf.rb:11
 #: app/views/odat_diagnoses/show.html.erb:3
@@ -393,11 +399,11 @@ msgstr ""
 #: app/views/individual_reports/_form.html.erb:24
 #: app/views/individual_reports/_form.html.erb:27
 msgid "Datos personales"
-msgstr ""
+msgstr "Datos persoais"
 
 #: app/views/odat_diagnoses/show.html.erb:25
 msgid "Datos socio-familiares"
-msgstr ""
+msgstr "Datos socio-familiares"
 
 #: app/reports/individual_report_pdf.rb:47
 #: app/views/medical_records/_show.html.erb:52
@@ -405,33 +411,33 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:67
 #: app/views/individual_reports/_form.html.erb:55
 msgid "Datos sociofamiliares"
-msgstr ""
+msgstr "Datos sociofamiliares"
 
 #: app/models/report_field_template.rb:84
 msgid "Debe ser una lista de clases separadas por comas"
-msgstr ""
+msgstr "Debe ser unha listaxe de clases separadas por comas"
 
 #: app/controllers/application_controller.rb:58
 msgid "Debes cerrar sesión para visitar esta página"
-msgstr ""
+msgstr "Debes pechar sesión para visitar esta páxina"
 
 #: app/models/odat_diagnosis.rb:31
 msgid "Debes especificar al menos un elemento en diagnóstico detallado y un diagnóstico principal"
-msgstr ""
+msgstr "Debes especificar polo menos un elemento en diagnóstico detallado e un diagnóstico principal"
 
 #: app/reports/individual_report_pdf.rb:184
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:15
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:38
 msgid "Denominación"
-msgstr ""
+msgstr "Denominación"
 
 #: app/views/reports/_context_menu.html.erb:3
 msgid "Descargar PDF"
-msgstr ""
+msgstr "Descargar PDF"
 
 #: app/models/diagnosis_item.rb:18
 msgid "Descripción no puede estar vacía"
-msgstr ""
+msgstr "Descrición non pode estar baleira"
 
 #: po/model_attributes.rb:173
 msgid "DiagnosisItem|Description"
@@ -461,16 +467,16 @@ msgstr ""
 #: app/views/odat_diagnoses/index.html.erb:11
 #: app/views/individual_reports/_form.html.erb:84
 msgid "Diagnóstico"
-msgstr ""
+msgstr "Diagnóstico"
 
 #: app/views/odat_diagnoses/_form.html.erb:26
 #: app/views/individual_reports/_form.html.erb:80
 msgid "Diagnóstico detallado"
-msgstr ""
+msgstr "Diagnóstico detallado"
 
 #: app/views/dashboard/index.html.erb:22
 msgid "Diagnóstico para <span class=\"record\">%{name}</span>"
-msgstr ""
+msgstr "Diagnóstico para <span class=\"record\">%{name}</span>"
 
 #: app/reports/individual_report_pdf.rb:203
 #: app/views/odat_diagnoses/show.html.erb:33
@@ -479,141 +485,141 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:125
 #: app/views/individual_reports/_form.html.erb:107
 msgid "Diagnóstico principal"
-msgstr ""
+msgstr "Diagnóstico principal"
 
 #: app/views/admin/dashboard/index.html.erb:17
 #: app/views/medical_records/index.html.erb:17
 #: app/views/layouts/medical_records.html.erb:9
 msgid "Diagnósticos"
-msgstr ""
+msgstr "Diagnósticos"
 
 #: app/views/odat_diagnoses/index.html.erb:1
 msgid "Diagnósticos de %{name}"
-msgstr ""
+msgstr "Diagnósticos de %{name}"
 
 #: app/views/individual_reports/show.html.erb:51
 msgid "Direccion"
-msgstr ""
+msgstr "Enderezo "
 
 #: app/reports/individual_report_pdf.rb:33
 #: app/views/medical_records/_form.html.erb:69
 #: app/views/medical_records/_show.html.erb:29
 msgid "Dirección"
-msgstr ""
+msgstr "Enderezo "
 
 #: app/views/individual_reports/_form.html.erb:46
 msgid "Dirección completa"
-msgstr ""
+msgstr "Enderezo completo"
 
 #: app/views/layouts/_user_navbar.html.erb:9
 msgid "Documentación ODAT"
-msgstr ""
+msgstr "Documentación ODAT"
 
 #: app/reports/individual_report_pdf.rb:129
 #: app/views/medical_records/_show_phones_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:183
 msgid "Domicilio"
-msgstr ""
+msgstr "Domicilio"
 
 #: app/reports/individual_report_pdf.rb:23
 #: app/views/medical_records/_show.html.erb:17
 #: app/views/individual_reports/show.html.erb:33
 #: app/views/individual_reports/_form.html.erb:37
 msgid "Edad"
-msgstr ""
+msgstr "Idade"
 
 #: app/views/admin/center_resources/edit.html.erb:1
 msgid "Editando recurso de centro"
-msgstr ""
+msgstr "Editando recurso de centro"
 
 #: app/views/admin/users/edit.html.erb:1
 msgid "Editar detalles de usuario"
-msgstr ""
+msgstr "Editar detalles de usuario"
 
 #: app/views/medical_records/edit.html.erb:1
 msgid "Editar expediente"
-msgstr ""
+msgstr "Editar expediente"
 
 #: app/views/individual_reports/edit.html.erb:1
 msgid "Editar informe"
-msgstr ""
+msgstr "Editar informe"
 
 #: app/controllers/odat_diagnoses_controller.rb:60
 msgid "El nuevo diagnóstico se ha almacenado con éxito"
-msgstr ""
+msgstr "O novo diagnóstico almacenouse con éxito"
 
 #: app/controllers/medical_records_controller.rb:64
 msgid "El nuevo expediente se ha almacenado con éxito"
-msgstr ""
+msgstr "O novo expediente almacenouse con éxito"
 
 #: app/controllers/center_reports_controller.rb:60
 msgid "El nuevo informe de centro se ha almacenado con éxito"
-msgstr ""
+msgstr "O novo informe de centro almacenouse con éxito"
 
 #: app/controllers/individual_reports_controller.rb:58
 msgid "El nuevo informe individual se ha almacenado con éxito"
-msgstr ""
+msgstr "O novo informe individual almacenouse con éxito"
 
 #: app/controllers/admin/users_controller.rb:67
 msgid "El usuario ha sido activado correctamente"
-msgstr ""
+msgstr "O usuario foi activado correctamente"
 
 #: app/controllers/admin/users_controller.rb:72
 msgid "El usuario ha sido aprobado correctamente"
-msgstr ""
+msgstr "O usuario foi aprobado correctamente"
 
 #: app/controllers/admin/users_controller.rb:82
 msgid "El usuario ha sido confirmado correctamente"
-msgstr ""
+msgstr "O usuario foi confirmado correctamente"
 
 #: app/controllers/admin/users_controller.rb:62
 msgid "El usuario ha sido desactivado correctamente"
-msgstr ""
+msgstr "O usuario foi desactivado correctamente"
 
 #: app/controllers/admin/users_controller.rb:77
 msgid "El usuario ha sido desaprobado correctamente"
-msgstr ""
+msgstr "O usuario foi desaprobado correctamente"
 
 #: app/controllers/admin/users_controller.rb:87
 msgid "El usuario ha sido desconfirmado correctamente"
-msgstr ""
+msgstr "O usuario foi desconfirmado correctamente"
 
 #: app/models/user_session.rb:11
 msgid "El usuario no está activo"
-msgstr ""
+msgstr "O usuario non está activo"
 
 #: app/models/user_session.rb:12
 msgid "El usuario no ha sido aprovado"
-msgstr ""
+msgstr "O usuario non foi aprobado"
 
 #: app/views/admin/dashboard/index.html.erb:50
 msgid "Elementos de diagnóstico"
-msgstr ""
+msgstr "Elementos de diagnóstico"
 
 #: app/views/admin/center_resources/index.html.erb:18
 #: app/views/odat_diagnoses/index.html.erb:12
 #: app/views/individual_reports/index.html.erb:11
 #: app/views/center_reports/index.html.erb:16
 msgid "Eliminar"
-msgstr ""
+msgstr "Eliminar "
 
 #: app/views/odat_diagnoses/index.html.erb:34
 msgid "Eliminar diagnóstico"
-msgstr ""
+msgstr "Eliminar diagnóstico"
 
 #: app/views/layouts/medical_records.html.erb:25
 msgid "Eliminar expediente"
-msgstr ""
+msgstr "Eliminar expediente"
 
 #: app/views/individual_reports/index.html.erb:25
 #: app/views/center_reports/_center_report.html.erb:6
 msgid "Eliminar informe"
-msgstr ""
+msgstr "Eliminar informe"
 
 #: app/views/layouts/center_reports.html.erb:9
 #: app/views/center_reports/_menu.html.erb:10
 msgid "Eliminar informe de centro"
-msgstr ""
+msgstr "Eliminar informe de centro"
 
 #: app/reports/individual_report_pdf.rb:82
 #: app/reports/individual_report_pdf.rb:116
@@ -622,28 +628,28 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:86
 #: app/views/medical_records/_form_social_familiar.html.erb:165
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: app/views/dashboard/index.html.erb:3
 msgid "En esta pantalla puedes encontrar los últimos eventos ocurridos en el centro"
-msgstr ""
+msgstr "Nesta pantalla podes atopar os últimos eventos acontecidos no centro"
 
 #: app/views/medical_records/new.html.erb:5
 msgid "En esta pantalla se pueden introducir los datos de un expediente personal, <strong>rellene los datos con exactitud</strong>, luego los datos serán útiles para generar informes y estadísticas."
-msgstr ""
+msgstr "Nesta pantalla pódense introducir os datos dun expediente persoal, <strong>encha os datos con exactitude</strong>, logo os datos serán útiles para xerar informes e estatísticas."
 
 #: app/views/center_reports/new.html.erb:4
 msgid "En este formulario se puede seleccionar qué datos se mostrarán en el informe"
-msgstr ""
+msgstr "Neste formulario pódese seleccionar que datos se mostrarán no informe"
 
 #: app/models/report_field_template.rb:71
 #: app/models/report_field_template.rb:87
 msgid "Error de sintaxis o de nombrado de variables: %{message}"
-msgstr ""
+msgstr "Erro de sintaxe ou de nomeado de variables: %{message}"
 
 #: app/controllers/application_controller.rb:49
 msgid "Es necesario iniciar sesión para visitar esta página"
-msgstr ""
+msgstr "É necesario iniciar sesión para visitar esta páxina"
 
 #: app/reports/individual_report_pdf.rb:79
 #: app/reports/individual_report_pdf.rb:113
@@ -652,54 +658,54 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:76
 #: app/views/medical_records/_form_social_familiar.html.erb:155
 msgid "Estado civil"
-msgstr ""
+msgstr "Estado civil"
 
 #: app/views/admin/dashboard/index.html.erb:62
 msgid "Estados Civiles"
-msgstr ""
+msgstr "Estados Civís"
 
 #: app/views/odat_diagnoses/_form.html.erb:9
 #: app/views/medical_records/index.html.erb:16
 #: app/views/medical_records/_form.html.erb:7
 #: app/views/individual_reports/_form.html.erb:11
 msgid "Expediente"
-msgstr ""
+msgstr "Expediente"
 
 #: app/views/admin/dashboard/index.html.erb:15
 #: app/views/medical_records/index.html.erb:1
 #: app/views/layouts/_user_navbar.html.erb:5
 msgid "Expedientes"
-msgstr ""
+msgstr "Expedientes"
 
 #: app/views/admin/dashboard/index.html.erb:12
 msgid "Expedientes y diagnósticos"
-msgstr ""
+msgstr "Expedientes e diagnósticos"
 
 #: app/views/odat_diagnoses/index.html.erb:10
 #: app/views/individual_reports/index.html.erb:9
 #: app/views/individual_reports/_form.html.erb:147
 #: app/views/center_reports/_form.html.erb:37
 msgid "Fecha"
-msgstr ""
+msgstr "Data"
 
 #: app/reports/individual_report_pdf.rb:161
 #: app/views/odat_diagnoses/show.html.erb:16
 #: app/views/individual_reports/show.html.erb:111
 #: app/views/center_reports/index.html.erb:14
 msgid "Fecha de creación"
-msgstr ""
+msgstr "Data de creación"
 
 #: app/reports/individual_report_pdf.rb:159
 #: app/views/individual_reports/show.html.erb:108
 #: app/views/individual_reports/_form.html.erb:98
 msgid "Fecha de creación del diagnóstico"
-msgstr ""
+msgstr "Data de creación do diagnóstico"
 
 #: app/reports/individual_report_pdf.rb:17
 #: app/views/medical_records/_show.html.erb:9
 #: app/views/individual_reports/show.html.erb:20
 msgid "Fecha de ingreso"
-msgstr ""
+msgstr "Data de ingreso"
 
 #: app/reports/individual_report_pdf.rb:20
 #: app/reports/individual_report_pdf.rb:67
@@ -713,25 +719,25 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:27
 #: app/views/individual_reports/_form.html.erb:34
 msgid "Fecha de nacimiento"
-msgstr ""
+msgstr "Data de nacemento"
 
 #: app/views/odat_diagnoses/index.html.erb:24
 msgid "Fecha desconocida"
-msgstr ""
+msgstr "Data descoñecida"
 
 #: app/views/medical_records/_form.html.erb:10
 #: app/views/individual_reports/_form.html.erb:15
 msgid "Fecha inicio expediente"
-msgstr ""
+msgstr "Data inicio expediente"
 
 #: app/controllers/medical_records_controller.rb:124
 msgid "Femenino"
-msgstr ""
+msgstr "Feminino"
 
 #: app/views/individual_reports/_form.html.erb:156
 #: app/views/center_reports/_form.html.erb:46
 msgid "Firma"
-msgstr ""
+msgstr "Sinatura"
 
 #: po/model_attributes.rb:168
 msgid "FormationLevel|Description"
@@ -753,30 +759,30 @@ msgstr ""
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:3
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:4
 msgid "Fuente de derivación"
-msgstr ""
+msgstr "Fonte de derivación"
 
 #: app/views/admin/dashboard/index.html.erb:60
 msgid "Fuentes de derivacion"
-msgstr ""
+msgstr "Fontes de derivación"
 
 #: app/views/admin/dashboard/index.html.erb:31
 msgid "Funciones Comparativas"
-msgstr ""
+msgstr "Funcións Comparativas "
 
 #: app/views/center_reports/_form.html.erb:10
 msgid "Funciones analíticas"
-msgstr ""
+msgstr "Funcións analíticas"
 
 #: app/reports/individual_report_pdf.rb:39
 #: app/views/medical_records/_show_handicap_data.html.erb:8
 msgid "Grado %{dependency_degree}"
-msgstr ""
+msgstr "Grao %{dependency_degree}"
 
 #: app/reports/individual_report_pdf.rb:38
 #: app/views/medical_records/_form.html.erb:108
 #: app/views/medical_records/_show_handicap_data.html.erb:7
 msgid "Grado de dependencia"
-msgstr ""
+msgstr "Grao de dependencia"
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:102
 #: app/views/admin/centers/_form.html.erb:16
@@ -785,27 +791,27 @@ msgstr ""
 #: app/views/individual_reports/_form.html.erb:170
 #: app/views/center_reports/_form.html.erb:59
 msgid "Guardar"
-msgstr ""
+msgstr "Gardar"
 
 #: app/controllers/user_sessions_controller.rb:22
 msgid "Has salido del sistema"
-msgstr ""
+msgstr "Saíches do sistema"
 
 #: app/reports/individual_report_pdf.rb:49
 #: app/views/medical_records/_show.html.erb:53
 #: app/views/medical_records/_form_social_familiar.html.erb:4
 #: app/views/individual_reports/show.html.erb:69
 msgid "Hermanos"
-msgstr ""
+msgstr "Irmáns"
 
 #: app/views/user_sessions/new.html.erb:6
 #: app/views/sessions/new.html.erb:5
 msgid "Identificador de usuario"
-msgstr ""
+msgstr "Identificador de usuario"
 
 #: app/views/reports/_context_menu.html.erb:2
 msgid "Imprimir"
-msgstr ""
+msgstr "Imprimir"
 
 #: po/model_attributes.rb:86
 msgid "IndividualReport|Extra information"
@@ -946,7 +952,7 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:93
 #: app/views/medical_records/_form_social_familiar.html.erb:172
 msgid "Información extra"
-msgstr ""
+msgstr "Información extra"
 
 #: app/reports/individual_report_pdf.rb:242
 #: app/views/individual_reports/show.html.erb:135
@@ -955,77 +961,77 @@ msgstr ""
 #: app/views/center_reports/index.html.erb:15
 #: app/views/center_reports/_form.html.erb:27
 msgid "Informe"
-msgstr ""
+msgstr "Informe"
 
 #: app/models/center_report.rb:4
 msgid "Informe de Centro"
-msgstr ""
+msgstr "Informe de Centro"
 
 #: app/views/dashboard/index.html.erb:45
 #: app/views/center_reports/show.html.erb:8
 msgid "Informe de centro"
-msgstr ""
+msgstr "Informe de centro"
 
 #: app/reports/center_report_pdf.rb:27
 #: app/views/center_reports/show.html.erb:40
 #: app/views/center_reports/_form.html.erb:31
 msgid "Informe de memoria"
-msgstr ""
+msgstr "Informe de memoria"
 
 #: app/reports/individual_report_pdf.rb:6
 msgid "Informe para %{full_name}"
-msgstr ""
+msgstr "Informe para %{full_name}"
 
 #: app/views/dashboard/index.html.erb:34
 msgid "Informe para %{name}"
-msgstr ""
+msgstr "Informe para %{name}"
 
 #: app/views/medical_records/index.html.erb:18
 #: app/views/layouts/medical_records.html.erb:17
 msgid "Informes"
-msgstr ""
+msgstr "Informes"
 
 #: app/views/admin/comparative_report_templates/show.html.erb:1
 msgid "Informes Comparativo: %{name}"
-msgstr ""
+msgstr "Informes Comparativo: %{name}"
 
 #: app/views/admin/dashboard/index.html.erb:26
 msgid "Informes comparativos"
-msgstr ""
+msgstr "Informes comparativos"
 
 #: app/views/center_reports/index.html.erb:1
 msgid "Informes de Centro"
-msgstr ""
+msgstr "Informes de Centro"
 
 #: app/views/layouts/_user_navbar.html.erb:6
 msgid "Informes de centro"
-msgstr ""
+msgstr "Informes de centro"
 
 #: app/views/admin/dashboard/index.html.erb:19
 msgid "Informes individuales"
-msgstr ""
+msgstr "Informes individuais"
 
 #: app/views/individual_reports/index.html.erb:1
 msgid "Informes para %{full_name}"
-msgstr ""
+msgstr "Informes para %{full_name}"
 
 #: app/views/admin/dashboard/index.html.erb:23
 msgid "Informes y funciones comparativas"
-msgstr ""
+msgstr "Informes e funcións comparativas"
 
 #: app/views/users/_visitor_bar.html.erb:3
 #: app/views/users/_visitor_bar.html.erb:4
 #: app/views/users/_user_bar.html.erb:7
 #: app/views/users/_user_bar.html.erb:8
 msgid "Iniciar Sesión"
-msgstr ""
+msgstr "Iniciar Sesión"
 
 #: app/views/user_sessions/new.html.erb:1
 #: app/views/user_sessions/new.html.erb:16
 #: app/views/sessions/new.html.erb:1
 #: app/views/sessions/new.html.erb:17
 msgid "Iniciar sesión"
-msgstr ""
+msgstr "Iniciar sesión"
 
 #: po/model_attributes.rb:17
 msgid "JobStatus|Description"
@@ -1064,15 +1070,15 @@ msgstr ""
 #: app/controllers/center_reports_controller.rb:79
 #: app/controllers/individual_reports_controller.rb:80
 msgid "Las modificaciones se han guardado correctamente"
-msgstr ""
+msgstr "As modificacións gardáronse correctamente"
 
 #: app/views/individual_reports/_form.html.erb:110
 msgid "Listado de diagnóstico detallado"
-msgstr ""
+msgstr "Listaxe de diagnóstico detallado"
 
 #: app/views/admin/users/index.html.erb:1
 msgid "Listado de usuarios"
-msgstr ""
+msgstr "Listaxe de usuarios"
 
 #: app/views/admin/report_field_templates/index.html.erb:1
 msgid "Listing report_field_templates"
@@ -1081,7 +1087,7 @@ msgstr ""
 #: app/views/medical_records/_form.html.erb:83
 #: app/views/medical_records/_show.html.erb:33
 msgid "Localidad"
-msgstr ""
+msgstr "Localidade"
 
 #: app/views/admin/users/index.html.erb:5
 msgid "Login"
@@ -1089,158 +1095,158 @@ msgstr ""
 
 #: app/helpers/application_helper.rb:39
 msgid "Los <span class=\"requiredField\">campos obligatorios<strong><sup>*</sup></strong></span> se muestran con un asterisco."
-msgstr ""
+msgstr "Os <span class=\"requiredField\">campos obrigatorios<strong><sup>*</sup></strong></span> móstranse cun asterisco."
 
 #: app/models/user_session.rb:3
 msgid "Los datos de inicio de sesión no son válidos"
-msgstr ""
+msgstr "Os datos de inicio de sesión non son válidos"
 
 #: app/reports/individual_report_pdf.rb:52
 #: app/views/medical_records/_show_siblings_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:14
 msgid "Lugar que ocupa"
-msgstr ""
+msgstr "Lugar que ocupa"
 
 #: app/reports/individual_report_pdf.rb:93
 #: app/views/medical_records/_show.html.erb:68
 #: app/views/medical_records/_form_social_familiar.html.erb:101
 #: app/views/individual_reports/show.html.erb:83
 msgid "Madre"
-msgstr ""
+msgstr "Nai"
 
 #: app/controllers/medical_records_controller.rb:124
 msgid "Masculino"
-msgstr ""
+msgstr "Masculino"
 
 #: po/model_attributes.rb:141
 msgid "MedicalRecord|Address"
-msgstr ""
+msgstr "Enderezo "
 
 #: po/model_attributes.rb:139
 msgid "MedicalRecord|Archive date"
-msgstr ""
+msgstr "Data de inicio do proceso"
 
 #: po/model_attributes.rb:138
 msgid "MedicalRecord|Birth date"
-msgstr ""
+msgstr "Data de nacemento"
 
 #: po/model_attributes.rb:142
 msgid "MedicalRecord|Birth position"
-msgstr ""
+msgstr "Número de partos"
 
 #: po/model_attributes.rb:140
 msgid "MedicalRecord|City"
-msgstr ""
+msgstr "Localidade"
 
 #: po/model_attributes.rb:165
 msgid "MedicalRecord|Dependency degree"
-msgstr ""
+msgstr "Grao de dependencia"
 
 #: po/model_attributes.rb:161
 msgid "MedicalRecord|Educative services"
-msgstr ""
+msgstr "Servizos educativos"
 
 #: po/model_attributes.rb:146
 msgid "MedicalRecord|Father birth date"
-msgstr ""
+msgstr "Data de nacemento do pai"
 
 #: po/model_attributes.rb:147
 msgid "MedicalRecord|Father email"
-msgstr ""
+msgstr "Email do pai"
 
 #: po/model_attributes.rb:148
 msgid "MedicalRecord|Father extra information"
-msgstr ""
+msgstr "Información extra do pai"
 
 #: po/model_attributes.rb:144
 msgid "MedicalRecord|Father name"
-msgstr ""
+msgstr "Nome do pai"
 
 #: po/model_attributes.rb:145
 msgid "MedicalRecord|Father surname"
-msgstr ""
+msgstr "Apelidos do pai"
 
 #: po/model_attributes.rb:143
 msgid "MedicalRecord|Gender"
-msgstr ""
+msgstr "Sexo"
 
 #: po/model_attributes.rb:164
 msgid "MedicalRecord|Handicap"
-msgstr ""
+msgstr "Minusvalía"
 
 #: po/model_attributes.rb:154
 msgid "MedicalRecord|Home phone"
-msgstr ""
+msgstr "Teléfono do domicilio"
 
 #: po/model_attributes.rb:151
 msgid "MedicalRecord|Mother birth date"
-msgstr ""
+msgstr "Data de nacemento da nai"
 
 #: po/model_attributes.rb:152
 msgid "MedicalRecord|Mother email"
-msgstr ""
+msgstr "Email da nai"
 
 #: po/model_attributes.rb:153
 msgid "MedicalRecord|Mother extra information"
-msgstr ""
+msgstr "Información extra da nai"
 
 #: po/model_attributes.rb:149
 msgid "MedicalRecord|Mother name"
-msgstr ""
+msgstr "Nome da nai"
 
 #: po/model_attributes.rb:150
 msgid "MedicalRecord|Mother surname"
-msgstr ""
+msgstr "Apelidos da nai"
 
 #: po/model_attributes.rb:162
 msgid "MedicalRecord|Multiple birth"
-msgstr ""
+msgstr "Parto múltiple"
 
 #: po/model_attributes.rb:136
 msgid "MedicalRecord|Name"
-msgstr ""
+msgstr "Nome"
 
 #: po/model_attributes.rb:155
 msgid "MedicalRecord|Portable phone"
-msgstr ""
+msgstr "Móbil"
 
 #: po/model_attributes.rb:163
 msgid "MedicalRecord|Position in siblings"
-msgstr ""
+msgstr "Posición entre os irmáns"
 
 #: po/model_attributes.rb:158
 msgid "MedicalRecord|Postal"
-msgstr ""
+msgstr "Código postal"
 
 #: po/model_attributes.rb:159
 msgid "MedicalRecord|Sanitary services"
-msgstr ""
+msgstr "Servizos sanitarios"
 
 #: po/model_attributes.rb:160
 msgid "MedicalRecord|Social services"
-msgstr ""
+msgstr "Servizos sociais"
 
 #: po/model_attributes.rb:137
 msgid "MedicalRecord|Surname"
-msgstr ""
+msgstr "Apelidos"
 
 #: po/model_attributes.rb:157
 msgid "MedicalRecord|Total siblings amount"
-msgstr ""
+msgstr "Número total de irmáns"
 
 #: po/model_attributes.rb:156
 msgid "MedicalRecord|Work phone"
-msgstr ""
+msgstr "Teléfono do traballo"
 
 #: app/views/medical_records/_form.html.erb:100
 #: app/views/medical_records/_show.html.erb:44
 #: app/views/individual_reports/show.html.erb:58
 msgid "Minusvalía"
-msgstr ""
+msgstr "Minusvalía"
 
 #: app/helpers/dashboard_helper.rb:5
 msgid "Modificado"
-msgstr ""
+msgstr "Modificado"
 
 #: app/views/admin/center_resources/index.html.erb:16
 #: app/views/odat_diagnoses/index.html.erb:29
@@ -1251,103 +1257,103 @@ msgstr ""
 #: app/views/center_reports/_center_report.html.erb:4
 #: app/views/center_reports/_menu.html.erb:6
 msgid "Modificar"
-msgstr ""
+msgstr "Modificar "
 
 #: app/views/admin/civil_states/edit.html.erb:1
 msgid "Modificar Estado Civil"
-msgstr ""
+msgstr "Modificar Estado Civil"
 
 #: app/views/center_reports/edit.html.erb:1
 msgid "Modificar Informe de centro"
-msgstr ""
+msgstr "Modificar Informe de centro"
 
 #: app/views/admin/comparative_report_templates/edit.html.erb:1
 msgid "Modificar Plantilla de Informe Comparativo"
-msgstr ""
+msgstr "Modificar Persoal de Informe Comparativo"
 
 #: app/views/odat_diagnoses/edit.html.erb:1
 msgid "Modificar diagnóstico"
-msgstr ""
+msgstr "Modificar diagnóstico"
 
 #: app/views/individual_reports/_form.html.erb:150
 #: app/views/individual_reports/_form.html.erb:159
 #: app/views/center_reports/_form.html.erb:40
 #: app/views/center_reports/_form.html.erb:49
 msgid "Mostrar"
-msgstr ""
+msgstr "Mostrar"
 
 #: app/reports/individual_report_pdf.rb:180
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:11
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:28
 msgid "Motivo de consulta expresado por los padres"
-msgstr ""
+msgstr "Motivo de consulta expresado polos pais"
 
 #: app/reports/individual_report_pdf.rb:175
 #: app/views/odat_diagnoses/_show_consultation_data.html.erb:7
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:16
 msgid "Motivo de derivación"
-msgstr ""
+msgstr "Motivo de derivación"
 
 #: app/views/admin/dashboard/index.html.erb:56
 msgid "Motivos de consulta"
-msgstr ""
+msgstr "Motivos de consulta"
 
 #: app/views/admin/dashboard/index.html.erb:58
 msgid "Motivos de derivación"
-msgstr ""
+msgstr "Motivos de derivación"
 
 #: app/reports/individual_report_pdf.rb:132
 #: app/views/medical_records/_show_phones_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:191
 msgid "Móvil"
-msgstr ""
+msgstr "Móbil"
 
 #: app/reports/individual_report_pdf.rb:76
 #: app/reports/individual_report_pdf.rb:110
 #: app/views/medical_records/_show_mother_data.html.erb:23
 #: app/views/medical_records/_show_father_data.html.erb:23
 msgid "Nivel de estudios"
-msgstr ""
+msgstr "Nivel de estudos"
 
 #: app/views/medical_records/_form_social_familiar.html.erb:67
 #: app/views/medical_records/_form_social_familiar.html.erb:146
 msgid "Nivel de estudios máximo"
-msgstr ""
+msgstr "Nivel de estudos máximo"
 
 #: app/views/admin/dashboard/index.html.erb:66
 msgid "Niveles de formación"
-msgstr ""
+msgstr "Niveis de formación"
 
 #: app/helpers/application_helper.rb:17
 #: app/reports/report_pdf.rb:47
 msgid "No"
-msgstr ""
+msgstr "Non "
 
 #: app/views/odat_diagnoses/index.html.erb:44
 msgid "No hay diagnósticos almacenados."
-msgstr ""
+msgstr "Non hai diagnósticos almacenados."
 
 #: app/views/individual_reports/index.html.erb:38
 msgid "No hay informes almacenados."
-msgstr ""
+msgstr "Non hai informes almacenados."
 
 #: app/reports/individual_report_pdf.rb:207
 #: app/views/odat_diagnoses/_show_main_diagnosis.html.erb:4
 msgid "No se ha indicado un diagnóstico principal."
-msgstr ""
+msgstr "Non se indicou un diagnóstico principal."
 
 #: app/views/users/_visitor_bar.html.erb:1
 #: app/views/users/_user_bar.html.erb:6
 msgid "No se ha iniciado sesión"
-msgstr ""
+msgstr "Non se iniciou sesión"
 
 #: app/views/user_sessions/new.html.erb:4
 msgid "No se ha podido iniciar sesión"
-msgstr ""
+msgstr "Non se puido iniciar sesión"
 
 #: app/helpers/application_helper.rb:22
 msgid "No se han encontrado registros."
-msgstr ""
+msgstr "Non se atoparon rexistros."
 
 #: app/reports/individual_report_pdf.rb:13
 #: app/reports/individual_report_pdf.rb:61
@@ -1364,16 +1370,16 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:104
 #: app/views/individual_reports/show.html.erb:13
 msgid "Nombre"
-msgstr ""
+msgstr "Nome "
 
 #: app/views/individual_reports/_form.html.erb:31
 msgid "Nombre completo"
-msgstr ""
+msgstr "Nome completo"
 
 #: app/views/admin/comparative_report_templates/new.html.erb:1
 #: app/views/admin/comparative_report_templates/index.html.erb:25
 msgid "Nueva Plantilla de Informe Comparativo"
-msgstr ""
+msgstr "Novo Persoal de Informe Comparativo"
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:99
 #: app/views/odat_diagnoses/_form.html.erb:37
@@ -1385,61 +1391,61 @@ msgstr ""
 #: app/views/individual_reports/_form.html.erb:168
 #: app/views/center_reports/_form.html.erb:57
 msgid "Nuevo"
-msgstr ""
+msgstr "Novo"
 
 #: app/views/admin/civil_states/new.html.erb:1
 msgid "Nuevo Estado Civil"
-msgstr ""
+msgstr "Novo Estado Civil"
 
 #: app/views/center_reports/new.html.erb:1
 #: app/views/center_reports/index.html.erb:7
 msgid "Nuevo Informe de Centro"
-msgstr ""
+msgstr "Novo Informe de Centro"
 
 #: app/views/odat_diagnoses/new.html.erb:1
 #: app/views/odat_diagnoses/index.html.erb:3
 msgid "Nuevo diagnóstico"
-msgstr ""
+msgstr "Novo diagnóstico"
 
 #: app/views/medical_records/new.html.erb:1
 #: app/views/medical_records/index.html.erb:9
 msgid "Nuevo expediente"
-msgstr ""
+msgstr "Novo expediente"
 
 #: app/views/individual_reports/new.html.erb:1
 #: app/views/individual_reports/index.html.erb:3
 msgid "Nuevo informe"
-msgstr ""
+msgstr "Novo informe"
 
 #: app/views/admin/center_resources/new.html.erb:1
 msgid "Nuevo recurso de centro"
-msgstr ""
+msgstr "Novo recurso de centro"
 
 #: app/views/admin/comparative_report_templates/index.html.erb:7
 msgid "Nº de funciones comparativas"
-msgstr ""
+msgstr "Nº de funcións comparativas"
 
 #: app/reports/individual_report_pdf.rb:29
 #: app/views/medical_records/_show.html.erb:25
 #: app/views/individual_reports/show.html.erb:45
 msgid "Número de parto <small>(en caso de parto múltiple)</small>"
-msgstr ""
+msgstr "Número de parto <small>(en caso de parto múltiple)</small>"
 
 #: app/reports/individual_report_pdf.rb:50
 #: app/views/medical_records/_show_siblings_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:7
 msgid "Número total de hermanos"
-msgstr ""
+msgstr "Número total de irmáns"
 
 #: app/views/layouts/errors.html.erb:9
 #: app/views/layouts/visitor.html.erb:13
 #: app/views/layouts/_header.html.erb:1
 msgid "ODAT"
-msgstr ""
+msgstr "ODAT"
 
 #: app/helpers/application_helper.rb:32
 msgid "Ocultar"
-msgstr ""
+msgstr "Ocultar"
 
 #: app/reports/individual_report_pdf.rb:73
 #: app/reports/individual_report_pdf.rb:107
@@ -1448,18 +1454,18 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:58
 #: app/views/medical_records/_form_social_familiar.html.erb:137
 msgid "Ocupación"
-msgstr ""
+msgstr "Ocupación"
 
 #: app/views/layouts/default.html.erb:4
 #: app/views/layouts/_header.html.erb:2
 msgid "Organización Diagnóstica para la Atención Temprana"
-msgstr ""
+msgstr "Organización Diagnóstica para a Atención Temperá"
 
 #: app/reports/individual_report_pdf.rb:259
 #: app/views/individual_reports/show.html.erb:152
 #: app/views/individual_reports/_form.html.erb:141
 msgid "Orientaciones"
-msgstr ""
+msgstr "Orientacións"
 
 #: po/model_attributes.rb:53
 msgid "OriginCause|Description"
@@ -1498,7 +1504,7 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:22
 #: app/views/individual_reports/show.html.erb:76
 msgid "Padre"
-msgstr ""
+msgstr "Pai"
 
 #: po/model_attributes.rb:49
 msgid "Page|Content"
@@ -1526,39 +1532,39 @@ msgstr ""
 
 #: app/views/odat_diagnoses/_form.html.erb:6
 msgid "Parte 1: General"
-msgstr ""
+msgstr "Parte 1: Xeral"
 
 #: app/views/odat_diagnoses/_form.html.erb:23
 msgid "Parte 2: Diagnóstico"
-msgstr ""
+msgstr "Parte 2: Diagnóstico"
 
 #: app/views/medical_records/_form.html.erb:59
 msgid "Parto múltiple"
-msgstr ""
+msgstr "Parto múltiple"
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:5
 msgid "Plantilla de Informe Comparativo"
-msgstr ""
+msgstr "Persoal de Informe Comparativo"
 
 #: app/views/admin/comparative_report_templates/index.html.erb:1
 msgid "Plantillas de Informes Comparativos"
-msgstr ""
+msgstr "Modelos de Informes Comparativos"
 
 #: app/views/admin/dashboard/index.html.erb:28
 msgid "Plantillas de informes comparativos"
-msgstr ""
+msgstr "Modelos de informes comparativos"
 
 #: app/views/individual_reports/_form.html.erb:40
 msgid "Posición en el parto"
-msgstr ""
+msgstr "Posición no parto"
 
 #: app/views/medical_records/_form.html.erb:62
 msgid "Posición en el parto <small>(orden)</small>"
-msgstr ""
+msgstr "Posición no parto  <small>(orde)</small>"
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:22
 msgid "Procesamiento de datos"
-msgstr ""
+msgstr "Procesamento de datos"
 
 #: po/model_attributes.rb:26
 msgid "Province|Name"
@@ -1567,17 +1573,17 @@ msgstr ""
 #: app/views/medical_records/_form.html.erb:90
 #: app/views/medical_records/_show.html.erb:37
 msgid "Provincia"
-msgstr ""
+msgstr "Provincia"
 
 #: app/views/admin/dashboard/index.html.erb:52
 msgid "Provincias"
-msgstr ""
+msgstr "Provincias"
 
 #: app/reports/individual_report_pdf.rb:249
 #: app/views/individual_reports/show.html.erb:142
 #: app/views/individual_reports/_form.html.erb:129
 msgid "Pruebas"
-msgstr ""
+msgstr "Probas"
 
 #: app/views/errors/500.html.erb:13
 #: app/views/errors/500.html.erb:16
@@ -1586,31 +1592,31 @@ msgstr ""
 #: app/views/errors/422.html.erb:13
 #: app/views/errors/422.html.erb:16
 msgid "Página de contacto"
-msgstr ""
+msgstr "Páxina de contacto"
 
 #: app/views/admin/dashboard/index.html.erb:39
 msgid "Páginas informativas"
-msgstr ""
+msgstr "Páxinas informativas"
 
 #: app/views/admin/dashboard/index.html.erb:36
 msgid "Páginas y ficheros"
-msgstr ""
+msgstr "Páxinas e ficheiros"
 
 #: app/views/layouts/_footer.html.erb:2
 msgid "Real patronato sobre discapacidad"
-msgstr ""
+msgstr "Real padroado sobre discapacidade"
 
 #: app/views/user_sessions/new.html.erb:13
 #: app/views/sessions/new.html.erb:14
 msgid "Recordarme"
-msgstr ""
+msgstr "Lembrarme"
 
 #: app/views/admin/dashboard/index.html.erb:48
 #: app/views/odat_diagnoses/show.html.erb:30
 #: app/views/odat_diagnoses/_form_center_details.html.erb:3
 #: app/views/individual_reports/_form.html.erb:104
 msgid "Recursos de centro"
-msgstr ""
+msgstr "Recursos de centro"
 
 #: po/model_attributes.rb:9
 msgid "Region|Name"
@@ -1618,7 +1624,7 @@ msgstr ""
 
 #: app/views/admin/users/new.html.erb:1
 msgid "Registrar nuevo usuario"
-msgstr ""
+msgstr "Rexistrar novo usuario"
 
 #: po/model_attributes.rb:3
 msgid "ReportFieldTemplate|Applicable on"
@@ -1668,7 +1674,7 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:147
 #: app/views/individual_reports/_form.html.erb:135
 msgid "Resultados"
-msgstr ""
+msgstr "Resultados"
 
 #: po/model_attributes.rb:37
 msgid "SchoolType|Description"
@@ -1684,59 +1690,59 @@ msgstr ""
 
 #: app/controllers/odat_diagnoses_controller.rb:114
 msgid "Se ha eliminado el diagnóstico correctamente"
-msgstr ""
+msgstr "Eliminouse o diagnóstico correctamente"
 
 #: app/controllers/medical_records_controller.rb:111
 msgid "Se ha eliminado el expediente para %{name} correctamente"
-msgstr ""
+msgstr "Eliminouse o expediente para %{name} correctamente"
 
 #: app/controllers/center_reports_controller.rb:100
 #: app/controllers/individual_reports_controller.rb:103
 msgid "Se ha eliminado el informe correctamente"
-msgstr ""
+msgstr "Eliminouse o expediente correctamente"
 
 #: app/controllers/odat_diagnoses_controller.rb:32
 msgid "Se han recuperado los datos del último diagnóstico para la creación del nuevo"
-msgstr ""
+msgstr "Recuperáronse os datos do último diagnóstico para a creación do novo"
 
 #: app/views/odat_diagnoses/_form_consultation_details.html.erb:40
 msgid "Se utiliza para reseñar los diagnósticos confirmados. En este apartado reseñaríamos los síndromes o enfermedades; como por ejemplo: Síndrome de Down, Angelmans, Rett, etc."
-msgstr ""
+msgstr "Utilízase para salientar os diagnósticos confirmados. Neste apartado salientariamos as síndromes ou enfermidades; por exemplo: Síndrome de Down, Angelmans, Rett, etc."
 
 #: app/views/layouts/medical_records.html.erb:26
 msgid "Seguro deseas borrar el expediente actual junto con todos sus diagnósticos e informes (operación irreversible)?"
-msgstr ""
+msgstr "Seguro desexas borrar o expediente actual xunto con todos os seus diagnósticos e informes (operación irreversible)?"
 
 #: app/views/layouts/center_reports.html.erb:10
 #: app/views/center_reports/_menu.html.erb:11
 msgid "Seguro deseas borrar el informe de centro actual (operación irreversible)?"
-msgstr ""
+msgstr "Seguro desexas borrar o informe de centro actual? (operación irreversible)"
 
 #: app/views/individual_reports/_form.html.erb:4
 msgid "Selecciona la información que será mostrada en el informe."
-msgstr ""
+msgstr "Selecciona a información que será mostrada no informe."
 
 #: app/reports/individual_report_pdf.rb:148
 #: app/views/medical_records/_show_coordination_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:220
 msgid "Servicios Educativos"
-msgstr ""
+msgstr "Servizos Educativos"
 
 #: app/reports/individual_report_pdf.rb:144
 #: app/views/medical_records/_show_coordination_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:210
 msgid "Servicios Sanitarios"
-msgstr ""
+msgstr "Servizos Sanitarios"
 
 #: app/reports/individual_report_pdf.rb:146
 #: app/views/medical_records/_show_coordination_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:215
 msgid "Servicios Sociales"
-msgstr ""
+msgstr "Servizos Sociais"
 
 #: app/views/individual_reports/_form.html.erb:71
 msgid "Servicios de coordinación"
-msgstr ""
+msgstr "Servizos de coordinación"
 
 #: app/reports/individual_report_pdf.rb:26
 #: app/views/medical_records/_form.html.erb:50
@@ -1744,11 +1750,11 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:39
 #: app/views/individual_reports/_form.html.erb:43
 msgid "Sexo"
-msgstr ""
+msgstr "Sexo"
 
 #: app/views/admin/dashboard/index.html.erb:64
 msgid "Situaciones laborales"
-msgstr ""
+msgstr "Situacións laborais"
 
 #: app/reports/individual_report_pdf.rb:70
 #: app/reports/individual_report_pdf.rb:104
@@ -1757,7 +1763,7 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:49
 #: app/views/medical_records/_form_social_familiar.html.erb:128
 msgid "Situación laboral"
-msgstr ""
+msgstr "Situación laboral"
 
 #: app/helpers/application_helper.rb:15
 #: app/reports/report_pdf.rb:45
@@ -1766,12 +1772,12 @@ msgstr ""
 #: app/views/medical_records/_form_social_familiar.html.erb:216
 #: app/views/medical_records/_form_social_familiar.html.erb:221
 msgid "Sí"
-msgstr ""
+msgstr "Si"
 
 #: app/views/individual_reports/_form.html.erb:120
 #: app/views/center_reports/_form.html.erb:28
 msgid "Sólo se requiere completar los campos necesarios para el informe."
-msgstr ""
+msgstr "Só se require completar os campos necesarios para o informe."
 
 #: app/reports/individual_report_pdf.rb:127
 #: app/views/medical_records/_show.html.erb:75
@@ -1779,34 +1785,37 @@ msgstr ""
 #: app/views/individual_reports/show.html.erb:90
 #: app/views/individual_reports/_form.html.erb:68
 msgid "Teléfonos"
-msgstr ""
+msgstr "Teléfonos"
 
 #: app/reports/individual_report_pdf.rb:135
 #: app/views/medical_records/_show_phones_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:199
 msgid "Trabajo"
-msgstr ""
+msgstr "Traballo"
 
 #: app/views/admin/dashboard/index.html.erb:54
 msgid "Trabajos"
-msgstr ""
+msgstr "Traballos"
 
 #: app/views/admin/comparative_report_templates/index.html.erb:6
 #: app/views/center_reports/index.html.erb:13
 msgid "Título"
-msgstr ""
+msgstr "Título"
 
 #: po/model_attributes.rb:117
+#, fuzzy
 msgid "User|Active"
-msgstr ""
+msgstr "Código de activación"
 
 #: po/model_attributes.rb:118
+#, fuzzy
 msgid "User|Approved"
-msgstr ""
+msgstr "Tipo"
 
 #: po/model_attributes.rb:119
+#, fuzzy
 msgid "User|Confirmed"
-msgstr ""
+msgstr "Centro"
 
 #: po/model_attributes.rb:105
 msgid "User|Crypted password"
@@ -1829,16 +1838,19 @@ msgid "User|Failed login count"
 msgstr ""
 
 #: po/model_attributes.rb:112
+#, fuzzy
 msgid "User|Last login at"
-msgstr ""
+msgstr "Login"
 
 #: po/model_attributes.rb:114
+#, fuzzy
 msgid "User|Last login ip"
-msgstr ""
+msgstr "Login"
 
 #: po/model_attributes.rb:111
+#, fuzzy
 msgid "User|Last request at"
-msgstr ""
+msgstr "Login"
 
 #: po/model_attributes.rb:103
 msgid "User|Login"
@@ -1865,52 +1877,53 @@ msgid "User|Persistence token"
 msgstr ""
 
 #: po/model_attributes.rb:120
+#, fuzzy
 msgid "User|Role"
-msgstr ""
+msgstr "Nome"
 
 #: app/views/admin/dashboard/index.html.erb:3
 msgid "Usuarios y Centros"
-msgstr ""
+msgstr "Usuarios e Centros"
 
 #: app/views/admin/center_resources/index.html.erb:15
 #: app/views/admin/center_resources/edit.html.erb:5
 msgid "Ver"
-msgstr ""
+msgstr "Ver"
 
 #: app/views/odat_diagnoses/show.html.erb:1
 msgid "Ver diagnóstico"
-msgstr ""
+msgstr "Ver diagnóstico"
 
 #: app/views/dashboard/index.html.erb:7
 #: app/views/dashboard/index.html.erb:41
 msgid "Ver todos"
-msgstr ""
+msgstr "Ver todos"
 
 #: app/views/errors/500.html.erb:11
 #: app/views/errors/404.html.erb:11
 #: app/views/errors/422.html.erb:11
 msgid "Volver a la lista de expedientes"
-msgstr ""
+msgstr "Volver á listaxe de expedientes"
 
 #: app/views/errors/500.html.erb:12
 #: app/views/errors/404.html.erb:12
 #: app/views/errors/422.html.erb:12
 msgid "Volver a la lista de informes de centro"
-msgstr ""
+msgstr "Volver á listaxe de informes de centro"
 
 #: app/views/errors/500.html.erb:10
 #: app/views/errors/404.html.erb:10
 #: app/views/errors/422.html.erb:10
 msgid "Volver al área de trabajo"
-msgstr ""
+msgstr "Volver ao área de traballo"
 
 #: app/models/medical_record.rb:312
 msgid "Ya existe un expediente para %{name}"
-msgstr ""
+msgstr "Xa existe un expediente para %{name}"
 
 #: app/views/odat_diagnoses/_form_diagnosis_details.html.erb:15
 msgid "ayuda"
-msgstr ""
+msgstr "axuda"
 
 #: po/model_attributes.rb:121
 msgid "center"
@@ -2010,7 +2023,7 @@ msgstr ""
 
 #: app/views/admin/center_resources/index.html.erb:20
 msgid "seguro?"
-msgstr ""
+msgstr "seguro?"
 
 #: po/model_attributes.rb:102
 msgid "user"
@@ -2018,37 +2031,37 @@ msgstr ""
 
 #: app/views/odat_diagnoses/index.html.erb:36
 msgid "¿Realmente deseas eliminar el diagnóstico permanentemente?"
-msgstr ""
+msgstr "Realmente desexas eliminar o diagnóstico permanentemente?"
 
 #: app/views/center_reports/_center_report.html.erb:8
 msgid "¿Realmente deseas eliminar el informe de centro permanentemente?"
-msgstr ""
+msgstr "Realmente desexas eliminar o informe de centro permanentemente?"
 
 #: app/views/individual_reports/index.html.erb:27
 msgid "¿Realmente deseas eliminar este informe permanentemente?"
-msgstr ""
+msgstr "Realmente desexas eliminar este informe permanentemente?"
 
 #: app/views/dashboard/index.html.erb:1
 msgid "Área de trabajo"
-msgstr ""
+msgstr "Área de traballo"
 
 #: app/views/odat_diagnoses/show.html.erb:20
 msgid "Última modificación"
-msgstr ""
+msgstr "Última modificación"
 
 #: app/views/dashboard/index.html.erb:30
 msgid "Últimos Informes Individuales modificados"
-msgstr ""
+msgstr "Últimos Informes Individuais modificados"
 
 #: app/views/dashboard/index.html.erb:18
 msgid "Últimos diagnósticos modificados"
-msgstr ""
+msgstr "Últimos diagnósticos modificados"
 
 #: app/views/dashboard/index.html.erb:7
 msgid "Últimos expedientes modificados"
-msgstr ""
+msgstr "Últimos expedientes modificados"
 
 #: app/views/dashboard/index.html.erb:41
 msgid "Últimos informes de centro modificados"
-msgstr ""
+msgstr "Últimos informes de centro modificados"
 
