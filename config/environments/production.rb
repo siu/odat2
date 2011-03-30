@@ -10,7 +10,7 @@ config.cache_classes = true
 # Use a different logger for distributed setups
 config.after_initialize do
   require 'syslog_logger'
-  LOGGER_FILE = "odat_#{I18n.locale.language}_#{RAILS_ENV}"
+  LOGGER_FILE = "odat_#{I18n.locale}_#{RAILS_ENV}"
   RAILS_DEFAULT_LOGGER = SyslogLogger.new(LOGGER_FILE)
   ActiveRecord::Base.logger = RAILS_DEFAULT_LOGGER
   ActionController::Base.logger = RAILS_DEFAULT_LOGGER
