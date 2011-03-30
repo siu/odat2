@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "POT-Creation-Date: 2011-03-08 17:14+0100\n"
-"PO-Revision-Date: 2011-03-27 18:46+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2011-03-30 22:22+0100\n"
+"Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -241,32 +241,26 @@ msgid "ComparativeReportTemplate|View template"
 msgstr ""
 
 #: po/model_attributes.rb:95
-#, fuzzy
 msgid "ComparativeReport|Extra information"
 msgstr "Información extra"
 
 #: po/model_attributes.rb:96
-#, fuzzy
 msgid "ComparativeReport|Extra information html"
 msgstr "Información extra"
 
 #: po/model_attributes.rb:91
-#, fuzzy
 msgid "ComparativeReport|Show signature"
 msgstr "Mostrar sinatura"
 
 #: po/model_attributes.rb:93
-#, fuzzy
 msgid "ComparativeReport|Show signed on"
 msgstr "Mostrar data sinatura"
 
 #: po/model_attributes.rb:92
-#, fuzzy
 msgid "ComparativeReport|Signature"
 msgstr "Sinatura"
 
 #: po/model_attributes.rb:94
-#, fuzzy
 msgid "ComparativeReport|Signed on"
 msgstr "Data sinatura"
 
