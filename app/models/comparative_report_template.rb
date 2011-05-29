@@ -7,7 +7,7 @@ class ComparativeReportTemplate < ActiveRecord::Base
 
   has_many :comparative_reports
 
-  accepts_nested_attributes_for :comparative_report_template_field_assignments
+  accepts_nested_attributes_for :comparative_report_template_field_assignments, :allow_destroy => true
 
   validates_presence_of :name
   
