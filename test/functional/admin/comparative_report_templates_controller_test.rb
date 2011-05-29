@@ -61,7 +61,7 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
     end
 
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
-    assert 1, assigns(:comparative_report_template).report_field_templates.size
+    assert_equal 1, assigns(:comparative_report_template).report_field_templates.size
   end
 
   test "should update and mantain associated comparative_report_field" do
@@ -75,7 +75,7 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
           ]
       }
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
-    assert 1, assigns(:comparative_report_template).report_field_templates.size
+    assert_equal 1, assigns(:comparative_report_template).report_field_templates.size
   end
 
   test "should update and remove associated comparative_report_field" do
@@ -89,13 +89,13 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
           ]
       }
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
-    assert 0, assigns(:comparative_report_template).report_field_templates.size
+    assert_equal 0, assigns(:comparative_report_template).report_field_templates.size
   end
 
   test "should update and mantain and remove associated comparative_report_fields 1" do
     login_as_admin
 
-    assert 2, comparative_report_templates(:two).report_field_templates.size
+    assert_equal 2, comparative_report_templates(:two).report_field_templates.size
     ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
 
     put :update, :id => comparative_report_templates(:two).to_param, 
@@ -108,13 +108,13 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
       }
 
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
-    assert 1, assigns(:comparative_report_template).report_field_templates.size
+    assert_equal 1, assigns(:comparative_report_template).report_field_templates.size
   end
 
   test "should update and mantain and remove associated comparative_report_fields 2" do
     login_as_admin
 
-    assert 2, comparative_report_templates(:two).report_field_templates.size
+    assert_equal 2, comparative_report_templates(:two).report_field_templates.size
     ComparativeReportTemplate.any_instance.stubs(:valid?).returns(:true)
 
     put :update, :id => comparative_report_templates(:two).to_param, 
@@ -127,7 +127,7 @@ class Admin::ComparativeReportTemplatesControllerTest < ActionController::TestCa
       }
 
     assert_redirected_to comparative_report_template_path(assigns(:comparative_report_template))
-    assert 1, assigns(:comparative_report_template).report_field_templates.size
+    assert_equal 1, assigns(:comparative_report_template).report_field_templates.size
   end
 
   test "should destroy comparative_report_template" do

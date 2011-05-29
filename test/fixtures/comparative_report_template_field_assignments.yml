@@ -27,7 +27,7 @@ two_one:
   comparative_report_template: two
   report_field_template: one
 
-two_one:
+two_two:
   position: 2
   name: MyString
   group: MyString

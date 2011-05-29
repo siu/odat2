@@ -30,13 +30,13 @@ class DiagnosisItemTest < ActiveSupport::TestCase
   end
 
   def test_ancestors
-    assert 3, diagnosis_items(:e1_1_1).ancestors.count
-    assert 3, diagnosis_items(:e1_1_2).ancestors.count
+    assert_equal 2, diagnosis_items(:e1_1_1).ancestors.count
+    assert_equal 2, diagnosis_items(:e1_1_2).ancestors.count
   end
 
   def test_self_and_ancestors
-    assert 4, diagnosis_items(:e1_1_1).self_and_ancestors.count
-    assert 4, diagnosis_items(:e1_1_2).self_and_ancestors.count
+    assert_equal 3, diagnosis_items(:e1_1_1).self_and_ancestors.count
+    assert_equal 3, diagnosis_items(:e1_1_2).self_and_ancestors.count
   end
 
   test "shoul return true to includes_any? if any is included" do

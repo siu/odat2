@@ -9,7 +9,7 @@ class ComparativeReportTest < ActiveSupport::TestCase
   test "Items can be added to the items list" do
     report = create_report(
       :items => [odat_diagnoses(:one), odat_diagnoses(:two)])
-    assert report.valid?, report.errors.full_messages
+    assert report.valid?, report.errors.full_messages.join(", ")
     assert_equal 2, report.items.size
   end
 
@@ -24,12 +24,12 @@ class ComparativeReportTest < ActiveSupport::TestCase
     report = create_report(
       :items => [odat_diagnoses(:one), odat_diagnoses(:two)],
       :report_field_templates => [report_field_templates(:for_odat_diagnoses)])
-    assert report.valid?, report.errors.full_messages
+    assert report.valid?, report.errors.full_messages.join(", ")
 
-    assert 2, report.results.size
-    assert 2, report.results.first[:data].size
+    assert_equal 1, report.results.size
+    assert_equal 2, report.results.first[:data].size
 
-    assert report.items[0].medical_record.full_name, report.results.first[:data][1]
+    assert_equal report.items[0].medical_record.full_name, report.results.first[:data][0][1]
   end
 
   test "show_report_data? should return true if show any report data" do
