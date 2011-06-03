@@ -7,13 +7,18 @@ config.cache_classes = true
 # Enable threaded mode
 # config.threadsafe!
 
-# Use a different logger for distributed setups
-config.after_initialize do
-  require 'syslog_logger'
-  LOGGER_FILE = "odat_#{I18n.locale}_#{RAILS_ENV}"
-  RAILS_DEFAULT_LOGGER = SyslogLogger.new(LOGGER_FILE)
-  ActiveRecord::Base.logger = RAILS_DEFAULT_LOGGER
-  ActionController::Base.logger = RAILS_DEFAULT_LOGGER
+require 'rbconfig'
+is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+
+if !is_windows
+  # Use a different logger for distributed setups
+  config.after_initialize do
+    require 'syslog_logger'
+    LOGGER_FILE = "odat_#{I18n.locale}_#{RAILS_ENV}"
+    RAILS_DEFAULT_LOGGER = SyslogLogger.new(LOGGER_FILE)
+    ActiveRecord::Base.logger = RAILS_DEFAULT_LOGGER
+    ActionController::Base.logger = RAILS_DEFAULT_LOGGER
+  end
 end
 
 # Full error reports are disabled and caching is turned on
