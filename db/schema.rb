@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110323200008) do
+ActiveRecord::Schema.define(:version => 20110704191014) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -112,12 +112,10 @@ ActiveRecord::Schema.define(:version => 20110323200008) do
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
   end
 
-  add_index "diagnosis_items", ["lft", "rgt"], :name => "index_diagnosis_items_on_lft_and_rgt"
-  add_index "diagnosis_items", ["parent_id", "lft", "position"], :name => "index_diagnosis_items_on_parent_id_and_lft_and_position"
   add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft"
+  add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft_and_position"
 
   create_table "diagnosis_items_odat_diagnoses", :id => false, :force => true do |t|
     t.integer "diagnosis_item_id", :null => false
@@ -139,8 +137,6 @@ ActiveRecord::Schema.define(:version => 20110323200008) do
     t.integer "odat_diagnosis_id",      :null => false
     t.integer "evaluation_category_id", :null => false
   end
-
-  add_index "evaluation_category_scores", ["odat_diagnosis_id"], :name => "index_evaluation_category_scores_on_odat_diagnosis_id"
 
   create_table "formation_levels", :force => true do |t|
     t.string   "name"
@@ -361,12 +357,12 @@ ActiveRecord::Schema.define(:version => 20110323200008) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
+    t.string   "name",               :limit => 25
+    t.integer  "center_id"
     t.boolean  "active",                            :default => true,   :null => false
     t.boolean  "approved",                          :default => false,  :null => false
     t.boolean  "confirmed",                         :default => false,  :null => false
     t.string   "role",                              :default => "user", :null => false
-    t.string   "name",               :limit => 25
-    t.integer  "center_id"
   end
 
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"

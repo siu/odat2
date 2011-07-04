@@ -6,8 +6,6 @@ class DiagnosisItem < ActiveRecord::Base
   validates_presence_of :name
   #validate :has_description_if_leaf
 
-  default_scope :order => 'position ASC, id ASC'
-
   def is_ancestor_of_any?(items)
     items.any? { |i| i.is_or_is_descendant_of?(self) }
   end
