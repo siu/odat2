@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704191014) do
+ActiveRecord::Schema.define(:version => 20110722191346) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -122,22 +122,6 @@ ActiveRecord::Schema.define(:version => 20110704191014) do
     t.integer "odat_diagnosis_id", :null => false
   end
 
-  create_table "evaluation_categories", :force => true do |t|
-    t.string   "name",                            :null => false
-    t.boolean  "accepts_null",  :default => true, :null => false
-    t.integer  "default_value"
-    t.float    "min_range",     :default => 1.0
-    t.float    "max_range",     :default => 10.0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "evaluation_category_scores", :force => true do |t|
-    t.float   "score"
-    t.integer "odat_diagnosis_id",      :null => false
-    t.integer "evaluation_category_id", :null => false
-  end
-
   create_table "formation_levels", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -185,7 +169,6 @@ ActiveRecord::Schema.define(:version => 20110704191014) do
     t.text     "extra_information"
     t.text     "extra_information_html"
     t.boolean  "show_handicap_data"
-    t.boolean  "show_evaluation_scores",                          :default => false
   end
 
   add_index "individual_reports", ["medical_record_id"], :name => "index_individual_reports_on_medical_record_id"
