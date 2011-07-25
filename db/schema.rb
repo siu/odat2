@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
 
   create_table "comparative_reports", :force => true do |t|
     t.boolean  "show_signature",                                :default => true
-    t.text     "signature",                      :limit => 255
+    t.text     "signature",                      :limit => 150
     t.boolean  "show_signed_on",                                :default => true
     t.datetime "signed_on"
     t.integer  "configurable_view_id"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
 
   create_table "diagnosis_items", :force => true do |t|
     t.string   "name"
-    t.text     "description"
-    t.text     "description_html"
+    t.text     "description",      :limit => 4096
+    t.text     "description_html", :limit => 4096
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
@@ -115,7 +115,6 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
   end
 
   add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft"
-  add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft_and_position"
 
   create_table "diagnosis_items_odat_diagnoses", :id => false, :force => true do |t|
     t.integer "diagnosis_item_id", :null => false
@@ -144,7 +143,7 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
     t.text     "orientation_html"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "signature",                        :limit => 255
+    t.text     "signature",                        :limit => 150
     t.datetime "signed_on"
     t.boolean  "show_signature",                                  :default => true
     t.boolean  "show_signed_on",                                  :default => true
@@ -222,7 +221,7 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
     t.string   "home_phone",                :limit => 9
     t.string   "portable_phone",            :limit => 9
     t.string   "work_phone",                :limit => 9
-    t.integer  "total_siblings_amount",     :limit => 8
+    t.integer  "total_siblings_amount",     :limit => 6
     t.string   "postal",                    :limit => 5
     t.boolean  "sanitary_services"
     t.boolean  "social_services"
@@ -306,7 +305,7 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
 
   create_table "reports", :force => true do |t|
     t.boolean  "show_signature",                        :default => true
-    t.text     "signature",              :limit => 255
+    t.text     "signature",              :limit => 150
     t.boolean  "show_signed_on",                        :default => true
     t.datetime "signed_on"
     t.datetime "created_at"
@@ -340,12 +339,12 @@ ActiveRecord::Schema.define(:version => 20110722191346) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
-    t.string   "name",               :limit => 25
-    t.integer  "center_id"
     t.boolean  "active",                            :default => true,   :null => false
     t.boolean  "approved",                          :default => false,  :null => false
     t.boolean  "confirmed",                         :default => false,  :null => false
     t.string   "role",                              :default => "user", :null => false
+    t.string   "name",               :limit => 25
+    t.integer  "center_id"
   end
 
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
