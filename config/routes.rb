@@ -64,7 +64,9 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :consultation_causes
     admin.resources :origin_causes
     admin.resources :origin_sources
-    admin.resources :diagnosis_items
+    admin.resources :diagnosis_items, :member => {
+        :move => :get
+    }
     admin.resources :provinces
     admin.resources :pages
     admin.resources :report_field_templates,       :name_prefix => nil

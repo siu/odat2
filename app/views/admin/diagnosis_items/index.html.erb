@@ -2,23 +2,21 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th><%= _('Nombre') %></th>
   </tr>
 
 <% for diagnosis_item in @diagnosis_items %>
   <tr>
-    <td><%=h diagnosis_item.name %></td>
-    <td><%=h diagnosis_item.description %></td>
-    <td><%= link_to 'Show', [:admin, diagnosis_item] %></td>
-    <td><%= link_to 'Edit', edit_admin_diagnosis_item_path(diagnosis_item) %></td>
-    <td><%= link_to 'Destroy', [:admin, diagnosis_item], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h diagnosis_item.name %> (<%= diagnosis_item.descendants.count %> sub-elementos)</td>
+    <td><%= link_to _('Ver'), [:admin, diagnosis_item] %></td>
+    <td><%= link_to _('Modificar'), edit_admin_diagnosis_item_path(diagnosis_item) %></td>
+    <td><%= link_to _('Mover arriba'), move_admin_diagnosis_item_path(diagnosis_item, :direction => 'up') %></td>
+    <td><%= link_to _('Mover abajo'), move_admin_diagnosis_item_path(diagnosis_item, :direction => 'down') %></td>
+    <td><%= link_to _('Eliminar'), [:admin, diagnosis_item], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<%= will_paginate @diagnosis_items %>
-
 <br />
 
-<%= link_to 'New diagnosis_item', new_admin_diagnosis_item_path %>
+<%= link_to _('Crear nuevo eje'), new_admin_diagnosis_item_path %>

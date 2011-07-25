@@ -1,13 +1,38 @@
-<p>
-  <b>Name:</b>
-  <%=h @diagnosis_item.name %>
-</p>
+<h3><%= @diagnosis_item.name %></h3>
 
 <p>
-  <b>Description:</b>
-  <%=h @diagnosis_item.description %>
-</p>
+<%= link_to _('Modificar'), edit_admin_diagnosis_item_path(@diagnosis_item) %> 
+<% unless @diagnosis_item.left_sibling.nil? %>
+| <%= link_to _('&larr; Elemento anterior'), admin_diagnosis_item_path(@diagnosis_item.left_sibling) %>
+<% end %>
+<% unless @diagnosis_item.parent.nil? %>
+| <%= link_to _('&uarr; Volver al elemento superior'), admin_diagnosis_item_path(@diagnosis_item.parent) %>
+<% end %>
+<% unless @diagnosis_item.right_sibling.nil? %>
+| <%= link_to _('&rarr; Elemento siguiente'), admin_diagnosis_item_path(@diagnosis_item.right_sibling) %>
+<% end %>
+| <%= link_to _('&#8607; Volver al listado'), admin_diagnosis_items_path %></p>
+
+<%=@diagnosis_item.description_html %>
+
+<h3>Subelementos</h3>
+<table>
+  <tr>
+    <th><%= _('Nombre') %></th>
+  </tr>
+
+<% for diagnosis_item in @diagnosis_item.children %>
+  <tr>
+    <td><%=h diagnosis_item.name %> (<%= diagnosis_item.descendants.count %> sub-elementos)</td>
+    <td><%= link_to _('Ver'), [:admin, diagnosis_item] %></td>
+    <td><%= link_to _('Modificar'), edit_admin_diagnosis_item_path(diagnosis_item) %></td>
+    <td><%= link_to _('Mover arriba'), move_admin_diagnosis_item_path(diagnosis_item, :direction => 'up') %></td>
+    <td><%= link_to _('Mover abajo'), move_admin_diagnosis_item_path(diagnosis_item, :direction => 'down') %></td>
+    <td><%= link_to _('Eliminar'), [:admin, diagnosis_item], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to _('Crear nuevo subelemento'), new_admin_diagnosis_item_path(:parent_id => @diagnosis_item.id) %></p>
 
 
-<%= link_to 'Edit', edit_admin_diagnosis_item_path(@diagnosis_item) %> |
-<%= link_to 'Back', admin_diagnosis_items_path %>

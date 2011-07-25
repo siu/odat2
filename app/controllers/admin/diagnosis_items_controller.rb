@@ -3,10 +3,7 @@ class Admin::DiagnosisItemsController < Admin::AdminSectionController
   # GET /diagnosis_items
   # GET /diagnosis_items.xml
   def index
-    @diagnosis_items = DiagnosisItem.paginate(
-      :page => params[:page], 
-      :order => 'name ASC')
-
+    @diagnosis_items = DiagnosisItem.roots
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @diagnosis_items }
@@ -27,7 +24,7 @@ class Admin::DiagnosisItemsController < Admin::AdminSectionController
   # GET /diagnosis_items/new
   # GET /diagnosis_items/new.xml
   def new
-    @diagnosis_item = DiagnosisItem.new
+    @diagnosis_item = DiagnosisItem.new(:parent_id => params[:parent_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +35,24 @@ class Admin::DiagnosisItemsController < Admin::AdminSectionController
   # GET /diagnosis_items/1/edit
   def edit
     @diagnosis_item = DiagnosisItem.find(params[:id])
+  end
+
+  # GET /diagnosis_items/1/move
+  def move
+    @diagnosis_item = DiagnosisItem.find(params[:id])
+    begin
+      if params[:direction] == 'up'
+          @diagnosis_item.move_left
+      else
+          @diagnosis_item.move_right
+      end
+    rescue
+    end
+    unless @diagnosis_item.parent.nil?
+        redirect_to([:admin, @diagnosis_item.parent])
+    else
+        redirect_to(admin_diagnosis_items_path)
+    end
   end
 
   # POST /diagnosis_items

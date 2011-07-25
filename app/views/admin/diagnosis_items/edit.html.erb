@@ -12,9 +12,17 @@
     <%= f.text_area :description %>
   </p>
   <p>
+    <%= f.label :parent_id %><br />
+    <%= f.collection_select(:parent_id, DiagnosisItem.find(:all), :id, :name, {:include_blank => true}) %>
+  </p>
+  <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', [:admin, @diagnosis_item] %> |
-<%= link_to 'Back', admin_diagnosis_items_path %>
+<p>
+<%= link_to _('Cancelar'), admin_diagnosis_item_path(@diagnosis_item) %> |
+<% if @diagnosis_item.parent %>
+        <%= link_to _('Volver al elemento superior'), admin_diagnosis_item_path(@diagnosis_item.parent) %> |
+<% end %>
+<%= link_to _('Volver al listado'), admin_diagnosis_items_path %></p>
