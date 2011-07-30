@@ -9,7 +9,7 @@ class UserSession < Authlogic::Session::Base
     # If the record was not found or it already contains errors return (don't show more information)
     return if attempted_record.nil? or errors.any?
     errors.add(:base, N_('El usuario no está activo')) and return false unless attempted_record.active?
-    errors.add(:base, N_('El usuario no ha sido aprovado')) unless attempted_record.approved?
+    errors.add(:base, N_('El usuario no ha sido aprobado')) unless attempted_record.approved?
   end
 
 end
