@@ -19,6 +19,7 @@ GEM
     comma (0.4.1)
       activesupport (>= 2.2.2)
     fast_gettext (0.5.11)
+    fastercsv (1.5.4)
     gettext (2.1.0)
       locale (>= 2.0.5)
     gettext_i18n_rails (0.2.19)
@@ -56,9 +57,10 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (= 4.2.3)
   SyslogLogger
-  authlogic
+  authlogic (= 2.1.6)
   comma
   fast_gettext (>= 0.5)
+  fastercsv
   gettext (>= 1.9.3)
   gettext_i18n_rails
   mocha

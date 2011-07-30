@@ -3,10 +3,11 @@ source :gemcutter
 gem "rails", "2.3.11"
 gem "sqlite3-ruby", "1.2.5"
 
-gem 'authlogic'
+gem 'authlogic', '2.1.6'
 gem 'will_paginate', '~> 2.3.11'
 
 gem 'RedCloth', '4.2.3'
+gem 'fastercsv', :platforms => :ruby_18
 gem 'comma'
 
 gem 'gettext', '>=1.9.3', :require => false, :group => :development
