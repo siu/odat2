@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class UserSession < Authlogic::Session::Base
   disable_magic_states true
   generalize_credentials_error_messages N_('Los datos de inicio de sesión no son válidos')
