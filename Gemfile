@@ -19,6 +19,10 @@ gem 'prawn-format', :require => 'prawn/format'
 
 group :test do
   gem 'mocha'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'redgreen'
+  gem 'test_notifier'
 end
 
 group :production do
