@@ -51,3 +51,23 @@
   <% end -%>
 
 </table>
+<script>
+  $(function () {
+    var $checkboxes = $('.leaf:input');
+    $.each($checkboxes, function(idx, item) {
+      $item = $(item);
+      $leafs = $item.siblings('ul').find(':input');
+      $leafs.attr('disabled', !$item.checked);
+    });
+    $checkboxes.change(function(event) {
+      var $item = $(event.target);
+      var $label = $($item.next('label'));
+
+      var id = event.target.id;
+      var checked = event.target.checked;
+
+      update_main_diagnosis_select(checked, id, $label.text());
+      $item.parent().children().find('input').attr('disabled', !checked);
+    });
+  });
+</script>
