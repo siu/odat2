@@ -250,6 +250,9 @@ table td {
 fieldset table {
 	border-spacing: 0 2px;
 }
+table.vdata tr:hover td {
+	background-color: #E5ECF9;
+}
 div.notice, div.error, div.info, .errorExplanation {
 	background-color: #e5ecf9;
 	border: 1px solid #c0c0e0;
