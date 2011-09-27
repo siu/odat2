@@ -44,7 +44,7 @@
            <%= hide_attr_unless(
              last_cat.is_ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
       <% end %>
-      <li><%= display_item_for_diagnosis(f, cat, @odat_diagnosis.diagnosis_items) %></li>
+      <li><%= item_for_diagnosis(f, cat, @odat_diagnosis.diagnosis_items) %></li>
     <% end %>
     <% last_parent_id = cat.parent_id %>
     <% last_level = level %>
@@ -69,5 +69,6 @@
       update_main_diagnosis_select(checked, id, $label.text());
       $item.parent().children().find('input').attr('disabled', !checked);
     });
+    update_main_diagnosis_select();
   });
 </script>
