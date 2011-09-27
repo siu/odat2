@@ -57,7 +57,7 @@
     $.each($checkboxes, function(idx, item) {
       $item = $(item);
       $leafs = $item.siblings('ul').find(':input');
-      $leafs.attr('disabled', !$item.checked);
+      $leafs.attr('disabled', !item.checked);
     });
     $checkboxes.change(function(event) {
       var $item = $(event.target);
