@@ -46,6 +46,17 @@ function update_main_diagnosis_select(checked, id, name) {
     var option = $('#odat_diagnosis_main_diagnosis_item_id option[value='+id+']');
     option.remove();
   }
+
+  var main_diagnosis_id = $("#odat_diagnosis_main_diagnosis_item_id option:selected").val();
+  var my_options = $("#odat_diagnosis_main_diagnosis_item_id option");
+  my_options.sort(function(a,b) {
+      if (a.text > b.text) return 1;
+      else if (a.text < b.text) return -1;
+      else return 0
+  })
+  $("#odat_diagnosis_main_diagnosis_item_id").empty().append( my_options );
+  $("#odat_diagnosis_main_diagnosis_item_id").val(main_diagnosis_id);
+
 }
 function hide_flash() {
   $('#flash').slideUp();
