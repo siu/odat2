@@ -12,7 +12,15 @@
               <ul>
               <% for item in subcat.children -%>
                 <% if item.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items) -%>
-                  <li><%= item.name %></li>
+                  <li><%= item.name %>
+                    <ul>
+                    <% for subitem in item.children -%>
+                      <% if subitem.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items) -%>
+                        <li><%= subitem.name %></li>
+                      <% end -%>
+                    <% end -%>
+                    </ul>
+                  </li>
                 <% end -%>
               <% end -%>
               </ul>
