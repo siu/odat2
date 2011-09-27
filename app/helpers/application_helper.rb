@@ -46,7 +46,7 @@ module ApplicationHelper
       else
         content_tag("li", key.to_s + ' &rarr; ' + content_tag("strong", value.to_s))
       end
-    end.reverse
+    end
     content_tag(type, items, options)
   end
 
