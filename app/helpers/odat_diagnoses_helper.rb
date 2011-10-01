@@ -1,12 +1,11 @@
 # encoding: UTF-8
 module OdatDiagnosesHelper
-  def item_for_diagnosis(f, item, diagnoses)
+  def item_for_diagnosis(f, item, diagnoses, opts={})
     output = ''
     output << check_box_tag("odat_diagnosis[diagnosis_item_ids][]", 
       item.id,
       diagnoses.include?(item),
-      :id => "diagnosis_item_ids_#{item.id}",
-      :class => "leaf")
+      opts.merge(:id => "diagnosis_item_ids_#{item.id}"))
     output << label_tag("diagnosis_item_ids[#{item.id}]", item.name)
     if not item.leaf?
       if item.multiple_select?

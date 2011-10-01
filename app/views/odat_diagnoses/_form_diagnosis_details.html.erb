@@ -44,7 +44,7 @@
            <%= hide_attr_unless(
              last_cat.is_ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
       <% end %>
-      <li><%= item_for_diagnosis(f, cat, @odat_diagnosis.diagnosis_items) %></li>
+      <li><%= item_for_diagnosis(f, cat, @odat_diagnosis.diagnosis_items, :class => 'leaf') %></li>
     <% end %>
     <% last_parent_id = cat.parent_id %>
     <% last_level = level %>
