@@ -63,7 +63,7 @@
       var $item = $(event.target);
       var $label = $($item.next('label'));
 
-      var id = event.target.id;
+      var id = event.target.value;
       var checked = event.target.checked;
 
       update_main_diagnosis_select(checked, id, $label.text());
