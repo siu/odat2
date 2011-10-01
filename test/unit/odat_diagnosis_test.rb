@@ -69,6 +69,21 @@ class OdatDiagnosisTest < ActiveSupport::TestCase
     end
   end
 
+  test "Main diagnosis items contains only diagnosis_items up to level 3" do
+    odat_diagnosis = new_odat_diagnosis()
+    odat_diagnosis.diagnosis_items = [
+      diagnosis_items(:e1_1_1),
+      diagnosis_items(:e1_1_2),
+      diagnosis_items(:e1_1_2_a),
+      diagnosis_items(:e1_1_2_b),
+      diagnosis_items(:e1_1_2_c),
+    ]
+    assert odat_diagnosis.main_diagnosis_items == [
+      diagnosis_items(:e1_1_1),
+      diagnosis_items(:e1_1_2),
+    ]
+  end
+
 protected
 
   def create_odat_diagnosis(opts = {})

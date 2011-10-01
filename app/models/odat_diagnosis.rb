@@ -46,4 +46,10 @@ class OdatDiagnosis < ActiveRecord::Base
     o.main_diagnosis_item_id = self.main_diagnosis_item_id
     o
   end
+
+  def main_diagnosis_items
+    diagnosis_items.select do |i|
+      i.level < 3
+    end
+  end
 end

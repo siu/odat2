@@ -59,10 +59,10 @@ class DiagnosisItemTest < ActiveSupport::TestCase
   end
 
   test "has a multiple_select? operation" do
-    assert diagnosis_items(:e1_1_1).multiple_select?
+    assert !diagnosis_items(:e1_1_1).multiple_select?
   end
 
   test "has a multiple_select? operation 2" do
-    assert !diagnosis_items(:e1_1_2).multiple_select?
+    assert diagnosis_items(:e1_1_2).multiple_select?
   end
 end

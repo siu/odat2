@@ -57,7 +57,7 @@ class Admin::DiagnosisItemsControllerTest < ActionController::TestCase
 
   def test_should_destroy_children_items
     login_as_admin
-    assert_difference('DiagnosisItem.count', -3) do
+    assert_difference('DiagnosisItem.count', -7) do
       delete :destroy, :id => diagnosis_items(:s1_1).id
     end
 
