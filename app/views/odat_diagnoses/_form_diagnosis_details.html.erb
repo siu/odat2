@@ -1,7 +1,7 @@
 <table>
   <% last_level = -1 %>
   <% last_cat = nil %>
-  <% DiagnosisItem.each_with_level(DiagnosisItem.roots.map { |c| c.self_and_descendants }.flatten) do |cat, level| %>
+  <% DiagnosisItem.each_with_level(DiagnosisItem.level1_2_roots.map { |c| c.self_and_descendants }.flatten) do |cat, level| %>
     <% if level == 0 %>
       <% if last_level > 1 %>
         </ul>
