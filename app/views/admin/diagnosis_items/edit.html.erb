@@ -12,6 +12,10 @@
     <%= f.text_area :description %>
   </p>
   <p>
+    <%= f.label :multiple_select %><br />
+    <%= f.check_box :multiple_select %>
+  </p>
+  <p>
     <%= f.label :parent_id %><br />
     <%= f.collection_select(:parent_id, DiagnosisItem.find(:all), :id, :name, {:include_blank => true}) %>
   </p>

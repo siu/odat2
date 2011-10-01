@@ -79,4 +79,5 @@ e1_1_2:
   parent_id: 5
   lft: 6
   rgt: 7
+  multiple_select: false
 

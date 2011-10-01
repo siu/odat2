@@ -57,4 +57,12 @@ class DiagnosisItemTest < ActiveSupport::TestCase
   test "shoul return false to includes_any? if subcat has no children" do
     assert !diagnosis_items(:s2_2).is_ancestor_of_any?([])
   end
+
+  test "has a multiple_select? operation" do
+    assert diagnosis_items(:e1_1_1).multiple_select?
+  end
+
+  test "has a multiple_select? operation 2" do
+    assert !diagnosis_items(:e1_1_2).multiple_select?
+  end
 end

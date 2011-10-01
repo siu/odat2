@@ -8,5 +8,4 @@ class DiagnosisItem < ActiveRecord::Base
   def is_ancestor_of_any?(items)
     items.any? { |i| i.is_or_is_descendant_of?(self) }
   end
-
 end
