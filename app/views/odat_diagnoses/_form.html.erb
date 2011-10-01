@@ -32,6 +32,13 @@
     <%= render(:partial => 'form_main_diagnosis_details', :locals => {:f => f}) %>
   </fieldset>
 
+  <h3><%= _('Parte 3: Intervenciones') %></h3>
+
+  <fieldset>
+    <legend><%= _('Intervenciones') %></legend>
+    <%= render(:partial => 'form_level3', :locals => {:f => f}) %>
+  </fieldset>
+
   <p>
   <% if @odat_diagnosis.new_record? -%>
     <%= f.submit_or_cancel(_('Nuevo'),_('Cancelar'), medical_record_odat_diagnoses_path(@medical_record)) %> 

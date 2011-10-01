@@ -1,0 +1,53 @@
+<table>
+  <% last_level = -1 %>
+  <% last_cat = nil %>
+  <% DiagnosisItem.each_with_level(DiagnosisItem.level3_roots.map { |c| c.self_and_descendants }.flatten) do |cat, level| %>
+    <% if level == 0 %>
+      <% if last_level > 1 %>
+        </ul>
+      <% end %>
+      <% if last_level > 0 %>
+          </td>
+        </tr>
+      <% end %>
+        <tr>
+          <th><%= h cat.name %><br />
+            <small class="help">(<%= link_to(_('ayuda'), 
+                                             [:help, cat],
+                                             :target => '_blank', 
+                                             :class => 'help',
+                                             :onclick => 'link_popup(this); return false;') %>)</small>
+          </th>
+
+    <% elsif level == 1 %>
+      <% if last_level < 1 %>
+        <td>
+          <ul>
+      <% end %>
+      <% if last_level > 1 %>
+          </ul>
+        </li>
+      <% end %>
+
+        <li> <%= h(cat.name) %>
+<%= render(:partial => 'form_diagnosis_items_subcategory_toggle',
+                      :locals => {
+                        :f => f, 
+                        :cat_id => cat.parent_id, 
+                        :subcat => cat, 
+                        :diagnoses => @odat_diagnosis.diagnosis_items}) %>
+    <% last_cat = cat %>
+
+    <% elsif level == 2 %>
+      <% if last_level < 2 %>
+        <ul id="subcat_<%= "#{last_cat.parent_id}_#{cat.parent_id}" %>" 
+           <%= hide_attr_unless(
+             last_cat.is_ancestor_of_any?( @odat_diagnosis.diagnosis_items)) %>>
+      <% end %>
+      <li><%= item_for_diagnosis(f, cat, @odat_diagnosis.diagnosis_items) %></li>
+    <% end %>
+    <% last_parent_id = cat.parent_id %>
+    <% last_level = level %>
+  <% end -%>
+
+</table>
