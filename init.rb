@@ -3,9 +3,14 @@
 def at_exit
 	require "irb"
 	require "drb/acl"
-	require "sqlite3"
-	require 'rubygems/gem_runner'
 end
 
-ENV['RAILS_ENV'] = 'production'
-load("script/server", false)
+require 'rubygems'
+require 'bundler/setup'
+
+require 'thin'
+
+unless defined?(Ocra)
+	args = %w{start -e production}
+	Thin::Runner.new(args).run!
+end
