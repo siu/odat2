@@ -131,6 +131,11 @@
   <% end -%>
 <% end -%>
 
+<% if @individual_report.show_level3? -%>
+  <h3><%= _('Datos de intervención') %></h3>
+  <%= render :partial => 'odat_diagnoses/show_level3' %>
+<% end -%>
+
 <% if @individual_report.show_report_data? -%>
   <h3><%= _('Informe') %></h3>
   <% if @individual_report.show_topic? -%>

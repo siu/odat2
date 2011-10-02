@@ -18,6 +18,14 @@ class OdatDiagnosis < ActiveRecord::Base
 
   has_and_belongs_to_many :diagnosis_items
 
+  has_and_belongs_to_many :level1_2_items,
+    :class_name => 'DiagnosisItem',
+    :conditions => 'id <= 285'
+
+  has_and_belongs_to_many :level3_items,
+    :class_name => 'DiagnosisItem',
+    :conditions => 'id > 285'
+
   has_and_belongs_to_many :center_resources
 
   has_many :individual_reports, :dependent => :destroy
