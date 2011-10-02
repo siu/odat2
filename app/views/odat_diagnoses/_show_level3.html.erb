@@ -1,5 +1,5 @@
 <table class="hdata">
-  <% for cat in DiagnosisItem.level1_2_roots -%>
+  <% for cat in DiagnosisItem.level3_roots -%>
     <% if cat.is_ancestor_of_any?(@odat_diagnosis.diagnosis_items) -%>
       <tr>
         <th>
