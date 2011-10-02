@@ -1,4 +1,4 @@
-class AddLevelColumnToDiagnosisItems < ActiveRecord::Migration
+class AddClassificationLevelColumnToDiagnosisItems < ActiveRecord::Migration
   def self.up
     add_column :diagnosis_items, :classification_level, :integer
   end
