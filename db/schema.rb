@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111002091733) do
+ActiveRecord::Schema.define(:version => 20111002155839) do
 
   create_table "center_resources", :force => true do |t|
     t.string   "name"
@@ -105,14 +105,15 @@ ActiveRecord::Schema.define(:version => 20111002091733) do
 
   create_table "diagnosis_items", :force => true do |t|
     t.string   "name"
-    t.text     "description",      :limit => 4096
-    t.text     "description_html", :limit => 4096
+    t.text     "description",          :limit => 4096
+    t.text     "description_html",     :limit => 4096
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "multiple_select",                  :default => true
+    t.boolean  "multiple_select",                      :default => true
+    t.integer  "classification_level"
   end
 
   add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft"

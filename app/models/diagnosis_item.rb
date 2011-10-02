@@ -3,8 +3,12 @@ class DiagnosisItem < ActiveRecord::Base
   acts_as_nested_set
   acts_as_html_text
 
-  named_scope :level1_2_roots, :conditions => "#{parent_column_name} is NULL AND id <= 285", :order => quoted_left_column_name
-  named_scope :level3_roots, :conditions => "#{parent_column_name} is NULL AND id > 285", :order => quoted_left_column_name
+  named_scope :level1_2_roots, 
+    :conditions => "#{parent_column_name} is NULL AND classification_level <= 2", 
+    :order => quoted_left_column_name
+  named_scope :level3_roots, 
+    :conditions => "#{parent_column_name} is NULL AND classification_level > 2", 
+    :order => quoted_left_column_name
 
   validates_presence_of :name
 

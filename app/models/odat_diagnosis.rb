@@ -20,11 +20,11 @@ class OdatDiagnosis < ActiveRecord::Base
 
   has_and_belongs_to_many :level1_2_items,
     :class_name => 'DiagnosisItem',
-    :conditions => 'id <= 285'
+    :conditions => 'classification_level <= 2'
 
   has_and_belongs_to_many :level3_items,
     :class_name => 'DiagnosisItem',
-    :conditions => 'id > 285'
+    :conditions => 'classification_level > 2'
 
   has_and_belongs_to_many :center_resources
 
@@ -57,7 +57,7 @@ class OdatDiagnosis < ActiveRecord::Base
 
   def main_diagnosis_items
     diagnosis_items.select do |i|
-      i.level < 3
+      i.classification_level <= 2 and i.level < 3
     end
   end
 end
