@@ -13,7 +13,7 @@ jQuery.fn.submitWithAjax = function() {
   return this;
 };
 
-jQuery(document).ready(function($) {
+$(function() {
   $('#user_session_login').focus();
   $('a[rel*=facebox]').facebox();
 
