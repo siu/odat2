@@ -40,7 +40,6 @@ jQuery(document).ready(function($) {
 }) 
 //
 function update_main_diagnosis_select(checked, id, name) {
-  console.log(checked, id, name);
   if(checked === true) {
     $('#odat_diagnosis_main_diagnosis_item_id').append('<option value="' + id + '">' +name+ '</option>');
   } else {
