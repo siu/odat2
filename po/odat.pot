@@ -6,14 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
-"POT-Creation-Date: 2011-03-08 17:14+0100\n"
+"POT-Creation-Date: 2012-07-27 09:55+0200\n"
 "PO-Revision-Date: 2009-07-30 18:31+0100\n"
 "Last-Translator: David Siñuela <siu.4coders@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: config/initializers/custom_forms.rb:25
@@ -36,6 +36,22 @@ msgstr ""
 msgid "%{status} hace %{time}"
 msgstr ""
 
+#: app/views/admin/diagnosis_items/show.html.erb:14
+msgid "&#8607; Volver al listado"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/show.html.erb:6
+msgid "&larr; Elemento anterior"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/show.html.erb:12
+msgid "&rarr; Elemento siguiente"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/show.html.erb:9
+msgid "&uarr; Volver al elemento superior"
+msgstr ""
+
 #: app/views/layouts/_user_navbar.html.erb:10
 msgid "Acerca de ODAT"
 msgstr ""
@@ -44,8 +60,8 @@ msgstr ""
 msgid "Activo"
 msgstr ""
 
-#: app/views/admin/dashboard/index.html.erb:1
 #: app/views/layouts/_admin_navbar.html.erb:2
+#: app/views/admin/dashboard/index.html.erb:1
 msgid "Administración"
 msgstr ""
 
@@ -56,11 +72,11 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:64
 #: app/reports/individual_report_pdf.rb:98
-#: app/views/medical_records/_show_mother_data.html.erb:6
-#: app/views/medical_records/_form.html.erb:33
 #: app/views/medical_records/_show_father_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:32
 #: app/views/medical_records/_form_social_familiar.html.erb:111
+#: app/views/medical_records/_form.html.erb:33
+#: app/views/medical_records/_show_mother_data.html.erb:6
 msgid "Apellidos"
 msgstr ""
 
@@ -84,13 +100,13 @@ msgid ""
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:244
-#: app/views/individual_reports/show.html.erb:137
-#: app/views/individual_reports/_form.html.erb:123
+#: app/views/individual_reports/show.html.erb:142
+#: app/views/individual_reports/_form.html.erb:126
 msgid "Asunto"
 msgstr ""
 
-#: app/views/admin/center_resources/new.html.erb:5
 #: app/views/admin/center_resources/edit.html.erb:6
+#: app/views/admin/center_resources/new.html.erb:5
 msgid "Atrás"
 msgstr ""
 
@@ -98,8 +114,8 @@ msgstr ""
 msgid "Autonomías"
 msgstr ""
 
-#: app/views/admin/diagnosis_items/help_index.html.erb:1
 #: app/views/admin/diagnosis_items/help.html.erb:1
+#: app/views/admin/diagnosis_items/help_index.html.erb:1
 #: app/views/help/diagnosis_items/show.html.erb:1
 #: app/views/help/diagnosis_items/index.html.erb:1
 msgid "Ayuda para la clasificación diagnóstica"
@@ -115,34 +131,35 @@ msgstr ""
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:99
 #: app/views/admin/comparative_report_templates/_form.html.erb:102
-#: app/views/odat_diagnoses/_form.html.erb:37
-#: app/views/odat_diagnoses/_form.html.erb:39
-#: app/views/medical_records/_form.html.erb:120
-#: app/views/medical_records/_form.html.erb:122
-#: app/views/individual_reports/_form.html.erb:168
-#: app/views/individual_reports/_form.html.erb:170
+#: app/views/admin/diagnosis_items/edit.html.erb:28
+#: app/views/odat_diagnoses/_form.html.erb:44
+#: app/views/odat_diagnoses/_form.html.erb:46
 #: app/views/center_reports/_form.html.erb:57
 #: app/views/center_reports/_form.html.erb:59
+#: app/views/individual_reports/_form.html.erb:171
+#: app/views/individual_reports/_form.html.erb:173
+#: app/views/medical_records/_form.html.erb:120
+#: app/views/medical_records/_form.html.erb:122
 msgid "Cancelar"
 msgstr ""
 
-#: po/model_attributes.rb:99
+#: po/model_attributes.rb:102
 msgid "CenterResource|Description"
 msgstr ""
 
-#: po/model_attributes.rb:101
+#: po/model_attributes.rb:104
 msgid "CenterResource|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:98
+#: po/model_attributes.rb:101
 msgid "CenterResource|Name"
 msgstr ""
 
-#: po/model_attributes.rb:100
+#: po/model_attributes.rb:103
 msgid "CenterResource|Position"
 msgstr ""
 
-#: po/model_attributes.rb:122
+#: po/model_attributes.rb:125
 msgid "Center|Name"
 msgstr ""
 
@@ -167,110 +184,110 @@ msgstr ""
 msgid "Cerrar ventana"
 msgstr ""
 
-#: po/model_attributes.rb:41
+#: po/model_attributes.rb:44
 msgid "CivilState|Description"
 msgstr ""
 
-#: po/model_attributes.rb:43
+#: po/model_attributes.rb:46
 msgid "CivilState|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:40
+#: po/model_attributes.rb:43
 msgid "CivilState|Name"
 msgstr ""
 
-#: po/model_attributes.rb:42
+#: po/model_attributes.rb:45
 msgid "CivilState|Position"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:36
-#: app/views/medical_records/_form.html.erb:103
 #: app/views/medical_records/_show_handicap_data.html.erb:2
+#: app/views/medical_records/_form.html.erb:103
 msgid "Clasificación de minusvalía mayor que 33 grados"
 msgstr ""
 
+#: app/views/admin/diagnosis_items/help.html.erb:4
 #: app/views/admin/diagnosis_items/help_index.html.erb:4
 #: app/views/admin/diagnosis_items/help_index.html.erb:7
-#: app/views/admin/diagnosis_items/help.html.erb:4
 #: app/views/help/diagnosis_items/show.html.erb:4
 #: app/views/help/diagnosis_items/index.html.erb:4
 #: app/views/help/diagnosis_items/index.html.erb:7
 msgid "Clasificación diagnóstica"
 msgstr ""
 
-#: app/views/user_sessions/new.html.erb:9 app/views/sessions/new.html.erb:8
+#: app/views/sessions/new.html.erb:8 app/views/user_sessions/new.html.erb:9
 msgid "Clave"
 msgstr ""
 
-#: po/model_attributes.rb:30
+#: po/model_attributes.rb:33
 msgid "ComparativeReportFieldTemplateAssignment|Group"
 msgstr ""
 
-#: po/model_attributes.rb:29
+#: po/model_attributes.rb:32
 msgid "ComparativeReportFieldTemplateAssignment|Name"
 msgstr ""
 
-#: po/model_attributes.rb:28
+#: po/model_attributes.rb:31
 msgid "ComparativeReportFieldTemplateAssignment|Position"
 msgstr ""
 
-#: po/model_attributes.rb:34
+#: po/model_attributes.rb:37
 msgid "ComparativeReportTemplateFieldAssignment|Group"
 msgstr ""
 
-#: po/model_attributes.rb:33
+#: po/model_attributes.rb:36
 msgid "ComparativeReportTemplateFieldAssignment|Name"
 msgstr ""
 
-#: po/model_attributes.rb:32
+#: po/model_attributes.rb:35
 msgid "ComparativeReportTemplateFieldAssignment|Position"
 msgstr ""
 
-#: po/model_attributes.rb:183
+#: po/model_attributes.rb:187
 msgid "ComparativeReportTemplate|Name"
 msgstr ""
 
-#: po/model_attributes.rb:184
+#: po/model_attributes.rb:188
 msgid "ComparativeReportTemplate|Title"
 msgstr ""
 
-#: po/model_attributes.rb:185
+#: po/model_attributes.rb:189
 msgid "ComparativeReportTemplate|View template"
 msgstr ""
 
-#: po/model_attributes.rb:95
+#: po/model_attributes.rb:98
 msgid "ComparativeReport|Extra information"
 msgstr ""
 
-#: po/model_attributes.rb:96
+#: po/model_attributes.rb:99
 msgid "ComparativeReport|Extra information html"
 msgstr ""
 
-#: po/model_attributes.rb:91
+#: po/model_attributes.rb:94
 msgid "ComparativeReport|Show signature"
 msgstr ""
 
-#: po/model_attributes.rb:93
+#: po/model_attributes.rb:96
 msgid "ComparativeReport|Show signed on"
 msgstr ""
 
-#: po/model_attributes.rb:92
+#: po/model_attributes.rb:95
 msgid "ComparativeReport|Signature"
 msgstr ""
 
-#: po/model_attributes.rb:94
+#: po/model_attributes.rb:97
 msgid "ComparativeReport|Signed on"
 msgstr ""
 
-#: po/model_attributes.rb:180
+#: po/model_attributes.rb:184
 msgid "ConfigurableView|Font family"
 msgstr ""
 
-#: po/model_attributes.rb:179
+#: po/model_attributes.rb:183
 msgid "ConfigurableView|Font size"
 msgstr ""
 
-#: po/model_attributes.rb:181
+#: po/model_attributes.rb:185
 msgid "ConfigurableView|Table grid"
 msgstr ""
 
@@ -282,26 +299,26 @@ msgstr ""
 msgid "Consultar datos del expediente"
 msgstr ""
 
-#: po/model_attributes.rb:22
+#: po/model_attributes.rb:25
 msgid "ConsultationCause|Description"
 msgstr ""
 
-#: po/model_attributes.rb:24
+#: po/model_attributes.rb:27
 msgid "ConsultationCause|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:21
+#: po/model_attributes.rb:24
 msgid "ConsultationCause|Name"
 msgstr ""
 
-#: po/model_attributes.rb:23
+#: po/model_attributes.rb:26
 msgid "ConsultationCause|Position"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:143
+#: app/views/individual_reports/show.html.erb:97
 #: app/views/medical_records/_show.html.erb:82
 #: app/views/medical_records/_form_social_familiar.html.erb:207
-#: app/views/individual_reports/show.html.erb:97
 msgid "Coordinación"
 msgstr ""
 
@@ -312,6 +329,14 @@ msgstr ""
 #: app/views/admin/users/_form.html.erb:24
 #: app/views/admin/centers/_form.html.erb:14
 msgid "Crear"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/index.html.erb:22
+msgid "Crear nuevo eje"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/show.html.erb:36
+msgid "Crear nuevo subelemento"
 msgstr ""
 
 #: app/views/admin/dashboard/index.html.erb:6
@@ -385,11 +410,11 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:11
 #: app/views/odat_diagnoses/show.html.erb:3
-#: app/views/medical_records/_form.html.erb:22
-#: app/views/medical_records/_show.html.erb:1
 #: app/views/individual_reports/show.html.erb:9
 #: app/views/individual_reports/_form.html.erb:24
 #: app/views/individual_reports/_form.html.erb:27
+#: app/views/medical_records/_show.html.erb:1
+#: app/views/medical_records/_form.html.erb:22
 msgid "Datos personales"
 msgstr ""
 
@@ -398,10 +423,10 @@ msgid "Datos socio-familiares"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:47
-#: app/views/medical_records/_show.html.erb:52
-#: app/views/medical_records/_form_social_familiar.html.erb:2
 #: app/views/individual_reports/show.html.erb:67
 #: app/views/individual_reports/_form.html.erb:55
+#: app/views/medical_records/_show.html.erb:52
+#: app/views/medical_records/_form_social_familiar.html.erb:2
 msgid "Datos sociofamiliares"
 msgstr ""
 
@@ -413,7 +438,7 @@ msgstr ""
 msgid "Debes cerrar sesión para visitar esta página"
 msgstr ""
 
-#: app/models/odat_diagnosis.rb:31
+#: app/models/odat_diagnosis.rb:39
 msgid ""
 "Debes especificar al menos un elemento en diagnóstico detallado y un "
 "diagnóstico principal"
@@ -429,31 +454,31 @@ msgstr ""
 msgid "Descargar PDF"
 msgstr ""
 
-#: app/models/diagnosis_item.rb:18
-msgid "Descripción no puede estar vacía"
+#: po/model_attributes.rb:133
+msgid "DiagnosisItem|Classification level"
 msgstr ""
 
-#: po/model_attributes.rb:173
+#: po/model_attributes.rb:128
 msgid "DiagnosisItem|Description"
 msgstr ""
 
-#: po/model_attributes.rb:174
+#: po/model_attributes.rb:129
 msgid "DiagnosisItem|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:175
+#: po/model_attributes.rb:130
 msgid "DiagnosisItem|Lft"
 msgstr ""
 
-#: po/model_attributes.rb:172
+#: po/model_attributes.rb:132
+msgid "DiagnosisItem|Multiple select"
+msgstr ""
+
+#: po/model_attributes.rb:127
 msgid "DiagnosisItem|Name"
 msgstr ""
 
-#: po/model_attributes.rb:177
-msgid "DiagnosisItem|Position"
-msgstr ""
-
-#: po/model_attributes.rb:176
+#: po/model_attributes.rb:131
 msgid "DiagnosisItem|Rgt"
 msgstr ""
 
@@ -474,16 +499,16 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:203
 #: app/views/odat_diagnoses/show.html.erb:33
-#: app/views/odat_diagnoses/_form_main_diagnosis_details.html.erb:4
 #: app/views/odat_diagnoses/_form.html.erb:31
+#: app/views/odat_diagnoses/_form_main_diagnosis_details.html.erb:4
 #: app/views/individual_reports/show.html.erb:125
 #: app/views/individual_reports/_form.html.erb:107
 msgid "Diagnóstico principal"
 msgstr ""
 
+#: app/views/layouts/medical_records.html.erb:9
 #: app/views/admin/dashboard/index.html.erb:17
 #: app/views/medical_records/index.html.erb:17
-#: app/views/layouts/medical_records.html.erb:9
 msgid "Diagnósticos"
 msgstr ""
 
@@ -496,8 +521,8 @@ msgid "Direccion"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:33
-#: app/views/medical_records/_form.html.erb:69
 #: app/views/medical_records/_show.html.erb:29
+#: app/views/medical_records/_form.html.erb:69
 msgid "Dirección"
 msgstr ""
 
@@ -510,15 +535,15 @@ msgid "Documentación ODAT"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:129
-#: app/views/medical_records/_show_phones_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:183
+#: app/views/medical_records/_show_phones_data.html.erb:2
 msgid "Domicilio"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:23
-#: app/views/medical_records/_show.html.erb:17
 #: app/views/individual_reports/show.html.erb:33
 #: app/views/individual_reports/_form.html.erb:37
+#: app/views/medical_records/_show.html.erb:17
 msgid "Edad"
 msgstr ""
 
@@ -578,22 +603,28 @@ msgstr ""
 msgid "El usuario ha sido desconfirmado correctamente"
 msgstr ""
 
-#: app/models/user_session.rb:11
+#: app/models/user_session.rb:12
 msgid "El usuario no está activo"
 msgstr ""
 
-#: app/models/user_session.rb:12
-msgid "El usuario no ha sido aprovado"
+#: app/models/user_session.rb:13
+msgid "El usuario no ha sido aprobado"
 msgstr ""
 
 #: app/views/admin/dashboard/index.html.erb:50
 msgid "Elementos de diagnóstico"
 msgstr ""
 
+#: app/views/individual_reports/_form.html.erb:113
+msgid "Elementos del nivel 3"
+msgstr ""
+
 #: app/views/admin/center_resources/index.html.erb:18
+#: app/views/admin/diagnosis_items/show.html.erb:31
+#: app/views/admin/diagnosis_items/index.html.erb:15
 #: app/views/odat_diagnoses/index.html.erb:12
-#: app/views/individual_reports/index.html.erb:11
 #: app/views/center_reports/index.html.erb:16
+#: app/views/individual_reports/index.html.erb:11
 msgid "Eliminar"
 msgstr ""
 
@@ -605,8 +636,8 @@ msgstr ""
 msgid "Eliminar expediente"
 msgstr ""
 
-#: app/views/individual_reports/index.html.erb:25
 #: app/views/center_reports/_center_report.html.erb:6
+#: app/views/individual_reports/index.html.erb:25
 msgid "Eliminar informe"
 msgstr ""
 
@@ -617,10 +648,10 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:82
 #: app/reports/individual_report_pdf.rb:116
-#: app/views/medical_records/_show_mother_data.html.erb:33
 #: app/views/medical_records/_show_father_data.html.erb:33
 #: app/views/medical_records/_form_social_familiar.html.erb:86
 #: app/views/medical_records/_form_social_familiar.html.erb:165
+#: app/views/medical_records/_show_mother_data.html.erb:33
 msgid "Email"
 msgstr ""
 
@@ -652,10 +683,10 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:79
 #: app/reports/individual_report_pdf.rb:113
-#: app/views/medical_records/_show_mother_data.html.erb:28
 #: app/views/medical_records/_show_father_data.html.erb:28
 #: app/views/medical_records/_form_social_familiar.html.erb:76
 #: app/views/medical_records/_form_social_familiar.html.erb:155
+#: app/views/medical_records/_show_mother_data.html.erb:28
 msgid "Estado civil"
 msgstr ""
 
@@ -664,15 +695,15 @@ msgid "Estados Civiles"
 msgstr ""
 
 #: app/views/odat_diagnoses/_form.html.erb:9
+#: app/views/individual_reports/_form.html.erb:11
 #: app/views/medical_records/index.html.erb:16
 #: app/views/medical_records/_form.html.erb:7
-#: app/views/individual_reports/_form.html.erb:11
 msgid "Expediente"
 msgstr ""
 
+#: app/views/layouts/_user_navbar.html.erb:5
 #: app/views/admin/dashboard/index.html.erb:15
 #: app/views/medical_records/index.html.erb:1
-#: app/views/layouts/_user_navbar.html.erb:5
 msgid "Expedientes"
 msgstr ""
 
@@ -681,16 +712,16 @@ msgid "Expedientes y diagnósticos"
 msgstr ""
 
 #: app/views/odat_diagnoses/index.html.erb:10
-#: app/views/individual_reports/index.html.erb:9
-#: app/views/individual_reports/_form.html.erb:147
 #: app/views/center_reports/_form.html.erb:37
+#: app/views/individual_reports/index.html.erb:9
+#: app/views/individual_reports/_form.html.erb:150
 msgid "Fecha"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:161
 #: app/views/odat_diagnoses/show.html.erb:16
-#: app/views/individual_reports/show.html.erb:111
 #: app/views/center_reports/index.html.erb:14
+#: app/views/individual_reports/show.html.erb:111
 msgid "Fecha de creación"
 msgstr ""
 
@@ -701,22 +732,22 @@ msgid "Fecha de creación del diagnóstico"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:17
-#: app/views/medical_records/_show.html.erb:9
 #: app/views/individual_reports/show.html.erb:20
+#: app/views/medical_records/_show.html.erb:9
 msgid "Fecha de ingreso"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:20
 #: app/reports/individual_report_pdf.rb:67
 #: app/reports/individual_report_pdf.rb:101
-#: app/views/medical_records/_show_mother_data.html.erb:10
-#: app/views/medical_records/_form.html.erb:40
-#: app/views/medical_records/_show_father_data.html.erb:10
-#: app/views/medical_records/_show.html.erb:13
-#: app/views/medical_records/_form_social_familiar.html.erb:39
-#: app/views/medical_records/_form_social_familiar.html.erb:118
 #: app/views/individual_reports/show.html.erb:27
 #: app/views/individual_reports/_form.html.erb:34
+#: app/views/medical_records/_show.html.erb:13
+#: app/views/medical_records/_show_father_data.html.erb:10
+#: app/views/medical_records/_form_social_familiar.html.erb:39
+#: app/views/medical_records/_form_social_familiar.html.erb:118
+#: app/views/medical_records/_form.html.erb:40
+#: app/views/medical_records/_show_mother_data.html.erb:10
 msgid "Fecha de nacimiento"
 msgstr ""
 
@@ -724,8 +755,8 @@ msgstr ""
 msgid "Fecha desconocida"
 msgstr ""
 
-#: app/views/medical_records/_form.html.erb:10
 #: app/views/individual_reports/_form.html.erb:15
+#: app/views/medical_records/_form.html.erb:10
 msgid "Fecha inicio expediente"
 msgstr ""
 
@@ -733,24 +764,24 @@ msgstr ""
 msgid "Femenino"
 msgstr ""
 
-#: app/views/individual_reports/_form.html.erb:156
 #: app/views/center_reports/_form.html.erb:46
+#: app/views/individual_reports/_form.html.erb:159
 msgid "Firma"
 msgstr ""
 
-#: po/model_attributes.rb:168
+#: po/model_attributes.rb:179
 msgid "FormationLevel|Description"
 msgstr ""
 
-#: po/model_attributes.rb:170
+#: po/model_attributes.rb:181
 msgid "FormationLevel|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:167
+#: po/model_attributes.rb:178
 msgid "FormationLevel|Name"
 msgstr ""
 
-#: po/model_attributes.rb:169
+#: po/model_attributes.rb:180
 msgid "FormationLevel|Position"
 msgstr ""
 
@@ -778,32 +809,32 @@ msgid "Grado %{dependency_degree}"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:38
-#: app/views/medical_records/_form.html.erb:108
 #: app/views/medical_records/_show_handicap_data.html.erb:7
+#: app/views/medical_records/_form.html.erb:108
 msgid "Grado de dependencia"
 msgstr ""
 
 #: app/views/admin/comparative_report_templates/_form.html.erb:102
 #: app/views/admin/centers/_form.html.erb:16
-#: app/views/odat_diagnoses/_form.html.erb:39
-#: app/views/medical_records/_form.html.erb:122
-#: app/views/individual_reports/_form.html.erb:170
+#: app/views/odat_diagnoses/_form.html.erb:46
 #: app/views/center_reports/_form.html.erb:59
+#: app/views/individual_reports/_form.html.erb:173
+#: app/views/medical_records/_form.html.erb:122
 msgid "Guardar"
 msgstr ""
 
-#: app/controllers/user_sessions_controller.rb:22
+#: app/controllers/user_sessions_controller.rb:23
 msgid "Has salido del sistema"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:49
+#: app/views/individual_reports/show.html.erb:69
 #: app/views/medical_records/_show.html.erb:53
 #: app/views/medical_records/_form_social_familiar.html.erb:4
-#: app/views/individual_reports/show.html.erb:69
 msgid "Hermanos"
 msgstr ""
 
-#: app/views/user_sessions/new.html.erb:6 app/views/sessions/new.html.erb:5
+#: app/views/sessions/new.html.erb:5 app/views/user_sessions/new.html.erb:6
 msgid "Identificador de usuario"
 msgstr ""
 
@@ -811,153 +842,153 @@ msgstr ""
 msgid "Imprimir"
 msgstr ""
 
-#: po/model_attributes.rb:86
+#: po/model_attributes.rb:89
 msgid "IndividualReport|Extra information"
 msgstr ""
 
-#: po/model_attributes.rb:87
+#: po/model_attributes.rb:90
 msgid "IndividualReport|Extra information html"
 msgstr ""
 
-#: po/model_attributes.rb:63
+#: po/model_attributes.rb:66
 msgid "IndividualReport|Orientation"
 msgstr ""
 
-#: po/model_attributes.rb:64
+#: po/model_attributes.rb:67
 msgid "IndividualReport|Orientation html"
 msgstr ""
 
-#: po/model_attributes.rb:61
+#: po/model_attributes.rb:64
 msgid "IndividualReport|Results"
 msgstr ""
 
-#: po/model_attributes.rb:62
+#: po/model_attributes.rb:65
 msgid "IndividualReport|Results html"
 msgstr ""
 
-#: po/model_attributes.rb:75
+#: po/model_attributes.rb:78
 msgid "IndividualReport|Show address"
 msgstr ""
 
-#: po/model_attributes.rb:71
+#: po/model_attributes.rb:74
 msgid "IndividualReport|Show age"
 msgstr ""
 
-#: po/model_attributes.rb:70
+#: po/model_attributes.rb:73
 msgid "IndividualReport|Show birth date"
 msgstr ""
 
-#: po/model_attributes.rb:74
+#: po/model_attributes.rb:77
 msgid "IndividualReport|Show birth position"
 msgstr ""
 
-#: po/model_attributes.rb:82
+#: po/model_attributes.rb:85
 msgid "IndividualReport|Show center resources"
 msgstr ""
 
-#: po/model_attributes.rb:81
+#: po/model_attributes.rb:84
 msgid "IndividualReport|Show consultation details"
 msgstr ""
 
-#: po/model_attributes.rb:84
+#: po/model_attributes.rb:87
 msgid "IndividualReport|Show coordination services"
 msgstr ""
 
-#: po/model_attributes.rb:83
+#: po/model_attributes.rb:86
 msgid "IndividualReport|Show detailed diagnosis"
 msgstr ""
 
-#: po/model_attributes.rb:80
+#: po/model_attributes.rb:83
 msgid "IndividualReport|Show diagnosis created at"
 msgstr ""
 
-#: po/model_attributes.rb:89
-msgid "IndividualReport|Show evaluation scores"
-msgstr ""
-
-#: po/model_attributes.rb:77
+#: po/model_attributes.rb:80
 msgid "IndividualReport|Show father data"
 msgstr ""
 
-#: po/model_attributes.rb:72
+#: po/model_attributes.rb:75
 msgid "IndividualReport|Show full name"
 msgstr ""
 
-#: po/model_attributes.rb:73
+#: po/model_attributes.rb:76
 msgid "IndividualReport|Show gender"
 msgstr ""
 
-#: po/model_attributes.rb:88
+#: po/model_attributes.rb:91
 msgid "IndividualReport|Show handicap data"
 msgstr ""
 
-#: po/model_attributes.rb:85
+#: po/model_attributes.rb:92
+msgid "IndividualReport|Show level3"
+msgstr ""
+
+#: po/model_attributes.rb:88
 msgid "IndividualReport|Show main diagnosis"
 msgstr ""
 
-#: po/model_attributes.rb:69
+#: po/model_attributes.rb:72
 msgid "IndividualReport|Show medical record archive date"
 msgstr ""
 
-#: po/model_attributes.rb:78
+#: po/model_attributes.rb:81
 msgid "IndividualReport|Show mother data"
 msgstr ""
 
-#: po/model_attributes.rb:79
+#: po/model_attributes.rb:82
 msgid "IndividualReport|Show phone numbers"
 msgstr ""
 
-#: po/model_attributes.rb:76
+#: po/model_attributes.rb:79
 msgid "IndividualReport|Show siblings data"
 msgstr ""
 
-#: po/model_attributes.rb:67
+#: po/model_attributes.rb:70
 msgid "IndividualReport|Show signature"
 msgstr ""
 
-#: po/model_attributes.rb:68
+#: po/model_attributes.rb:71
 msgid "IndividualReport|Show signed on"
 msgstr ""
 
-#: po/model_attributes.rb:65
+#: po/model_attributes.rb:68
 msgid "IndividualReport|Signature"
 msgstr ""
 
-#: po/model_attributes.rb:66
+#: po/model_attributes.rb:69
 msgid "IndividualReport|Signed on"
 msgstr ""
 
-#: po/model_attributes.rb:59
+#: po/model_attributes.rb:62
 msgid "IndividualReport|Tests"
 msgstr ""
 
-#: po/model_attributes.rb:60
+#: po/model_attributes.rb:63
 msgid "IndividualReport|Tests html"
 msgstr ""
 
-#: po/model_attributes.rb:57
+#: po/model_attributes.rb:60
 msgid "IndividualReport|Topic"
 msgstr ""
 
-#: po/model_attributes.rb:58
+#: po/model_attributes.rb:61
 msgid "IndividualReport|Topic html"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:85
 #: app/reports/individual_report_pdf.rb:119
-#: app/views/medical_records/_show_mother_data.html.erb:37
 #: app/views/medical_records/_show_father_data.html.erb:37
 #: app/views/medical_records/_form_social_familiar.html.erb:93
 #: app/views/medical_records/_form_social_familiar.html.erb:172
+#: app/views/medical_records/_show_mother_data.html.erb:37
 msgid "Información extra"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:242
-#: app/views/individual_reports/show.html.erb:135
-#: app/views/individual_reports/index.html.erb:10
-#: app/views/individual_reports/_form.html.erb:119
 #: app/views/center_reports/index.html.erb:15
 #: app/views/center_reports/_form.html.erb:27
+#: app/views/individual_reports/show.html.erb:140
+#: app/views/individual_reports/index.html.erb:10
+#: app/views/individual_reports/_form.html.erb:122
 msgid "Informe"
 msgstr ""
 
@@ -984,8 +1015,8 @@ msgstr ""
 msgid "Informe para %{name}"
 msgstr ""
 
-#: app/views/medical_records/index.html.erb:18
 #: app/views/layouts/medical_records.html.erb:17
+#: app/views/medical_records/index.html.erb:18
 msgid "Informes"
 msgstr ""
 
@@ -1017,53 +1048,53 @@ msgstr ""
 msgid "Informes y funciones comparativas"
 msgstr ""
 
+#: app/views/users/_user_bar.html.erb:7 app/views/users/_user_bar.html.erb:8
 #: app/views/users/_visitor_bar.html.erb:3
 #: app/views/users/_visitor_bar.html.erb:4
-#: app/views/users/_user_bar.html.erb:7 app/views/users/_user_bar.html.erb:8
 msgid "Iniciar Sesión"
 msgstr ""
 
+#: app/views/sessions/new.html.erb:1 app/views/sessions/new.html.erb:17
 #: app/views/user_sessions/new.html.erb:1
-#: app/views/user_sessions/new.html.erb:16 app/views/sessions/new.html.erb:1
-#: app/views/sessions/new.html.erb:17
+#: app/views/user_sessions/new.html.erb:16
 msgid "Iniciar sesión"
 msgstr ""
 
-#: po/model_attributes.rb:17
+#: po/model_attributes.rb:20
 msgid "JobStatus|Description"
 msgstr ""
 
-#: po/model_attributes.rb:19
+#: po/model_attributes.rb:22
 msgid "JobStatus|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:16
+#: po/model_attributes.rb:19
 msgid "JobStatus|Name"
 msgstr ""
 
-#: po/model_attributes.rb:18
+#: po/model_attributes.rb:21
 msgid "JobStatus|Position"
 msgstr ""
 
-#: po/model_attributes.rb:12
+#: po/model_attributes.rb:15
 msgid "Job|Description"
 msgstr ""
 
-#: po/model_attributes.rb:14
+#: po/model_attributes.rb:17
 msgid "Job|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:11
+#: po/model_attributes.rb:14
 msgid "Job|Name"
 msgstr ""
 
-#: po/model_attributes.rb:13
+#: po/model_attributes.rb:16
 msgid "Job|Position"
 msgstr ""
 
+#: app/controllers/center_reports_controller.rb:79
 #: app/controllers/odat_diagnoses_controller.rb:89
 #: app/controllers/medical_records_controller.rb:87
-#: app/controllers/center_reports_controller.rb:79
 #: app/controllers/individual_reports_controller.rb:80
 msgid "Las modificaciones se han guardado correctamente"
 msgstr ""
@@ -1080,8 +1111,8 @@ msgstr ""
 msgid "Listing report_field_templates"
 msgstr ""
 
-#: app/views/medical_records/_form.html.erb:83
 #: app/views/medical_records/_show.html.erb:33
+#: app/views/medical_records/_form.html.erb:83
 msgid "Localidad"
 msgstr ""
 
@@ -1095,20 +1126,20 @@ msgid ""
 "strong></span> se muestran con un asterisco."
 msgstr ""
 
-#: app/models/user_session.rb:3
+#: app/models/user_session.rb:4
 msgid "Los datos de inicio de sesión no son válidos"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:52
-#: app/views/medical_records/_show_siblings_data.html.erb:6
 #: app/views/medical_records/_form_social_familiar.html.erb:14
+#: app/views/medical_records/_show_siblings_data.html.erb:6
 msgid "Lugar que ocupa"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:93
+#: app/views/individual_reports/show.html.erb:83
 #: app/views/medical_records/_show.html.erb:68
 #: app/views/medical_records/_form_social_familiar.html.erb:101
-#: app/views/individual_reports/show.html.erb:83
 msgid "Madre"
 msgstr ""
 
@@ -1116,129 +1147,129 @@ msgstr ""
 msgid "Masculino"
 msgstr ""
 
-#: po/model_attributes.rb:141
+#: po/model_attributes.rb:152
 msgid "MedicalRecord|Address"
 msgstr ""
 
-#: po/model_attributes.rb:139
+#: po/model_attributes.rb:150
 msgid "MedicalRecord|Archive date"
 msgstr ""
 
-#: po/model_attributes.rb:138
+#: po/model_attributes.rb:149
 msgid "MedicalRecord|Birth date"
 msgstr ""
 
-#: po/model_attributes.rb:142
+#: po/model_attributes.rb:153
 msgid "MedicalRecord|Birth position"
 msgstr ""
 
-#: po/model_attributes.rb:140
+#: po/model_attributes.rb:151
 msgid "MedicalRecord|City"
 msgstr ""
 
-#: po/model_attributes.rb:165
+#: po/model_attributes.rb:176
 msgid "MedicalRecord|Dependency degree"
 msgstr ""
 
-#: po/model_attributes.rb:161
+#: po/model_attributes.rb:172
 msgid "MedicalRecord|Educative services"
 msgstr ""
 
-#: po/model_attributes.rb:146
+#: po/model_attributes.rb:157
 msgid "MedicalRecord|Father birth date"
 msgstr ""
 
-#: po/model_attributes.rb:147
+#: po/model_attributes.rb:158
 msgid "MedicalRecord|Father email"
 msgstr ""
 
-#: po/model_attributes.rb:148
+#: po/model_attributes.rb:159
 msgid "MedicalRecord|Father extra information"
 msgstr ""
 
-#: po/model_attributes.rb:144
+#: po/model_attributes.rb:155
 msgid "MedicalRecord|Father name"
 msgstr ""
 
-#: po/model_attributes.rb:145
+#: po/model_attributes.rb:156
 msgid "MedicalRecord|Father surname"
 msgstr ""
 
-#: po/model_attributes.rb:143
+#: po/model_attributes.rb:154
 msgid "MedicalRecord|Gender"
 msgstr ""
 
-#: po/model_attributes.rb:164
+#: po/model_attributes.rb:175
 msgid "MedicalRecord|Handicap"
 msgstr ""
 
-#: po/model_attributes.rb:154
+#: po/model_attributes.rb:165
 msgid "MedicalRecord|Home phone"
 msgstr ""
 
-#: po/model_attributes.rb:151
+#: po/model_attributes.rb:162
 msgid "MedicalRecord|Mother birth date"
 msgstr ""
 
-#: po/model_attributes.rb:152
+#: po/model_attributes.rb:163
 msgid "MedicalRecord|Mother email"
 msgstr ""
 
-#: po/model_attributes.rb:153
+#: po/model_attributes.rb:164
 msgid "MedicalRecord|Mother extra information"
 msgstr ""
 
-#: po/model_attributes.rb:149
+#: po/model_attributes.rb:160
 msgid "MedicalRecord|Mother name"
 msgstr ""
 
-#: po/model_attributes.rb:150
+#: po/model_attributes.rb:161
 msgid "MedicalRecord|Mother surname"
 msgstr ""
 
-#: po/model_attributes.rb:162
+#: po/model_attributes.rb:173
 msgid "MedicalRecord|Multiple birth"
 msgstr ""
 
-#: po/model_attributes.rb:136
+#: po/model_attributes.rb:147
 msgid "MedicalRecord|Name"
 msgstr ""
 
-#: po/model_attributes.rb:155
+#: po/model_attributes.rb:166
 msgid "MedicalRecord|Portable phone"
 msgstr ""
 
-#: po/model_attributes.rb:163
+#: po/model_attributes.rb:174
 msgid "MedicalRecord|Position in siblings"
 msgstr ""
 
-#: po/model_attributes.rb:158
+#: po/model_attributes.rb:169
 msgid "MedicalRecord|Postal"
 msgstr ""
 
-#: po/model_attributes.rb:159
+#: po/model_attributes.rb:170
 msgid "MedicalRecord|Sanitary services"
 msgstr ""
 
-#: po/model_attributes.rb:160
+#: po/model_attributes.rb:171
 msgid "MedicalRecord|Social services"
 msgstr ""
 
-#: po/model_attributes.rb:137
+#: po/model_attributes.rb:148
 msgid "MedicalRecord|Surname"
 msgstr ""
 
-#: po/model_attributes.rb:157
+#: po/model_attributes.rb:168
 msgid "MedicalRecord|Total siblings amount"
 msgstr ""
 
-#: po/model_attributes.rb:156
+#: po/model_attributes.rb:167
 msgid "MedicalRecord|Work phone"
 msgstr ""
 
-#: app/views/medical_records/_form.html.erb:100
-#: app/views/medical_records/_show.html.erb:44
 #: app/views/individual_reports/show.html.erb:58
+#: app/views/medical_records/_show.html.erb:44
+#: app/views/medical_records/_form.html.erb:100
 msgid "Minusvalía"
 msgstr ""
 
@@ -1246,14 +1277,17 @@ msgstr ""
 msgid "Modificado"
 msgstr ""
 
-#: app/views/admin/center_resources/index.html.erb:16
-#: app/views/odat_diagnoses/index.html.erb:29
-#: app/views/medical_records/_medical_record.html.erb:3
-#: app/views/layouts/medical_records.html.erb:6
 #: app/views/layouts/center_reports.html.erb:6
-#: app/views/individual_reports/index.html.erb:22
-#: app/views/center_reports/_center_report.html.erb:4
+#: app/views/layouts/medical_records.html.erb:6
+#: app/views/admin/center_resources/index.html.erb:16
+#: app/views/admin/diagnosis_items/show.html.erb:4
+#: app/views/admin/diagnosis_items/show.html.erb:28
+#: app/views/admin/diagnosis_items/index.html.erb:12
+#: app/views/odat_diagnoses/index.html.erb:29
 #: app/views/center_reports/_menu.html.erb:6
+#: app/views/center_reports/_center_report.html.erb:4
+#: app/views/individual_reports/index.html.erb:22
+#: app/views/medical_records/_medical_record.html.erb:3
 msgid "Modificar"
 msgstr ""
 
@@ -1273,10 +1307,10 @@ msgstr ""
 msgid "Modificar diagnóstico"
 msgstr ""
 
-#: app/views/individual_reports/_form.html.erb:150
-#: app/views/individual_reports/_form.html.erb:159
 #: app/views/center_reports/_form.html.erb:40
 #: app/views/center_reports/_form.html.erb:49
+#: app/views/individual_reports/_form.html.erb:153
+#: app/views/individual_reports/_form.html.erb:162
 msgid "Mostrar"
 msgstr ""
 
@@ -1300,16 +1334,33 @@ msgstr ""
 msgid "Motivos de derivación"
 msgstr ""
 
+#: app/views/admin/diagnosis_items/show.html.erb:30
+#: app/views/admin/diagnosis_items/index.html.erb:14
+msgid "Mover abajo"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/show.html.erb:29
+#: app/views/admin/diagnosis_items/index.html.erb:13
+msgid "Mover arriba"
+msgstr ""
+
 #: app/reports/individual_report_pdf.rb:132
-#: app/views/medical_records/_show_phones_data.html.erb:7
 #: app/views/medical_records/_form_social_familiar.html.erb:191
+#: app/views/medical_records/_show_phones_data.html.erb:7
 msgid "Móvil"
+msgstr ""
+
+#: app/views/odat_diagnoses/show.html.erb:39
+#: app/views/odat_diagnoses/_form.html.erb:35
+#: app/views/odat_diagnoses/_form.html.erb:38
+#: app/views/individual_reports/show.html.erb:135
+msgid "Nivel 3"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:76
 #: app/reports/individual_report_pdf.rb:110
-#: app/views/medical_records/_show_mother_data.html.erb:23
 #: app/views/medical_records/_show_father_data.html.erb:23
+#: app/views/medical_records/_show_mother_data.html.erb:23
 msgid "Nivel de estudios"
 msgstr ""
 
@@ -1322,7 +1373,7 @@ msgstr ""
 msgid "Niveles de formación"
 msgstr ""
 
-#: app/helpers/application_helper.rb:17 app/reports/report_pdf.rb:47
+#: app/reports/report_pdf.rb:48 app/helpers/application_helper.rb:17
 msgid "No"
 msgstr ""
 
@@ -1339,8 +1390,8 @@ msgstr ""
 msgid "No se ha indicado un diagnóstico principal."
 msgstr ""
 
-#: app/views/users/_visitor_bar.html.erb:1
 #: app/views/users/_user_bar.html.erb:6
+#: app/views/users/_visitor_bar.html.erb:1
 msgid "No se ha iniciado sesión"
 msgstr ""
 
@@ -1356,16 +1407,18 @@ msgstr ""
 #: app/reports/individual_report_pdf.rb:61
 #: app/reports/individual_report_pdf.rb:95
 #: app/views/admin/comparative_report_templates/index.html.erb:5
+#: app/views/admin/diagnosis_items/show.html.erb:21
+#: app/views/admin/diagnosis_items/index.html.erb:5
 #: app/views/odat_diagnoses/show.html.erb:7
 #: app/views/odat_diagnoses/_form_medical_record_details.html.erb:3
-#: app/views/medical_records/_show_mother_data.html.erb:2
-#: app/views/medical_records/index.html.erb:15
-#: app/views/medical_records/_form.html.erb:25
-#: app/views/medical_records/_show_father_data.html.erb:2
+#: app/views/individual_reports/show.html.erb:13
 #: app/views/medical_records/_show.html.erb:5
+#: app/views/medical_records/_show_father_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:25
 #: app/views/medical_records/_form_social_familiar.html.erb:104
-#: app/views/individual_reports/show.html.erb:13
+#: app/views/medical_records/index.html.erb:15
+#: app/views/medical_records/_form.html.erb:25
+#: app/views/medical_records/_show_mother_data.html.erb:2
 msgid "Nombre"
 msgstr ""
 
@@ -1378,15 +1431,15 @@ msgstr ""
 msgid "Nueva Plantilla de Informe Comparativo"
 msgstr ""
 
+#: app/views/layouts/medical_records.html.erb:12
+#: app/views/layouts/medical_records.html.erb:21
 #: app/views/admin/comparative_report_templates/_form.html.erb:99
-#: app/views/odat_diagnoses/_form.html.erb:37
+#: app/views/odat_diagnoses/_form.html.erb:44
+#: app/views/center_reports/_form.html.erb:57
+#: app/views/individual_reports/_form.html.erb:171
 #: app/views/medical_records/_medical_record.html.erb:9
 #: app/views/medical_records/_medical_record.html.erb:16
 #: app/views/medical_records/_form.html.erb:120
-#: app/views/layouts/medical_records.html.erb:12
-#: app/views/layouts/medical_records.html.erb:21
-#: app/views/individual_reports/_form.html.erb:168
-#: app/views/center_reports/_form.html.erb:57
 msgid "Nuevo"
 msgstr ""
 
@@ -1423,18 +1476,18 @@ msgid "Nº de funciones comparativas"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:29
-#: app/views/medical_records/_show.html.erb:25
 #: app/views/individual_reports/show.html.erb:45
+#: app/views/medical_records/_show.html.erb:25
 msgid "Número de parto <small>(en caso de parto múltiple)</small>"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:50
-#: app/views/medical_records/_show_siblings_data.html.erb:2
 #: app/views/medical_records/_form_social_familiar.html.erb:7
+#: app/views/medical_records/_show_siblings_data.html.erb:2
 msgid "Número total de hermanos"
 msgstr ""
 
-#: app/views/layouts/errors.html.erb:9 app/views/layouts/visitor.html.erb:13
+#: app/views/layouts/visitor.html.erb:13 app/views/layouts/errors.html.erb:9
 #: app/views/layouts/_header.html.erb:1
 msgid "ODAT"
 msgstr ""
@@ -1445,11 +1498,19 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:73
 #: app/reports/individual_report_pdf.rb:107
-#: app/views/medical_records/_show_mother_data.html.erb:19
 #: app/views/medical_records/_show_father_data.html.erb:19
 #: app/views/medical_records/_form_social_familiar.html.erb:58
 #: app/views/medical_records/_form_social_familiar.html.erb:137
+#: app/views/medical_records/_show_mother_data.html.erb:19
 msgid "Ocupación"
+msgstr ""
+
+#: po/model_attributes.rb:11
+msgid "OdatDiagnosis|Description"
+msgstr ""
+
+#: po/model_attributes.rb:12
+msgid "OdatDiagnosis|Description html"
 msgstr ""
 
 #: app/views/layouts/default.html.erb:4 app/views/layouts/_header.html.erb:2
@@ -1457,71 +1518,71 @@ msgid "Organización Diagnóstica para la Atención Temprana"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:259
-#: app/views/individual_reports/show.html.erb:152
-#: app/views/individual_reports/_form.html.erb:141
+#: app/views/individual_reports/show.html.erb:157
+#: app/views/individual_reports/_form.html.erb:144
 msgid "Orientaciones"
 msgstr ""
 
-#: po/model_attributes.rb:53
+#: po/model_attributes.rb:56
 msgid "OriginCause|Description"
 msgstr ""
 
-#: po/model_attributes.rb:55
+#: po/model_attributes.rb:58
 msgid "OriginCause|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:52
+#: po/model_attributes.rb:55
 msgid "OriginCause|Name"
 msgstr ""
 
-#: po/model_attributes.rb:54
+#: po/model_attributes.rb:57
 msgid "OriginCause|Position"
 msgstr ""
 
-#: po/model_attributes.rb:132
+#: po/model_attributes.rb:143
 msgid "OriginSource|Description"
 msgstr ""
 
-#: po/model_attributes.rb:134
+#: po/model_attributes.rb:145
 msgid "OriginSource|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:131
+#: po/model_attributes.rb:142
 msgid "OriginSource|Name"
 msgstr ""
 
-#: po/model_attributes.rb:133
+#: po/model_attributes.rb:144
 msgid "OriginSource|Position"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:59
+#: app/views/individual_reports/show.html.erb:76
 #: app/views/medical_records/_show.html.erb:60
 #: app/views/medical_records/_form_social_familiar.html.erb:22
-#: app/views/individual_reports/show.html.erb:76
 msgid "Padre"
 msgstr ""
 
-#: po/model_attributes.rb:49
+#: po/model_attributes.rb:52
 msgid "Page|Content"
 msgstr ""
 
-#: po/model_attributes.rb:50
+#: po/model_attributes.rb:53
 msgid "Page|Content html"
 msgstr ""
 
-#: po/model_attributes.rb:46
+#: po/model_attributes.rb:49
 msgid "Page|Permalink"
 msgstr ""
 
-#: po/model_attributes.rb:47
+#: po/model_attributes.rb:50
 msgid "Page|Sidebar content"
 msgstr ""
 
-#: po/model_attributes.rb:48
+#: po/model_attributes.rb:51
 msgid "Page|Sidebar content html"
 msgstr ""
 
-#: po/model_attributes.rb:45
+#: po/model_attributes.rb:48
 msgid "Page|Title"
 msgstr ""
 
@@ -1561,12 +1622,12 @@ msgstr ""
 msgid "Procesamiento de datos"
 msgstr ""
 
-#: po/model_attributes.rb:26
+#: po/model_attributes.rb:29
 msgid "Province|Name"
 msgstr ""
 
-#: app/views/medical_records/_form.html.erb:90
 #: app/views/medical_records/_show.html.erb:37
+#: app/views/medical_records/_form.html.erb:90
 msgid "Provincia"
 msgstr ""
 
@@ -1575,14 +1636,14 @@ msgid "Provincias"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:249
-#: app/views/individual_reports/show.html.erb:142
-#: app/views/individual_reports/_form.html.erb:129
+#: app/views/individual_reports/show.html.erb:147
+#: app/views/individual_reports/_form.html.erb:132
 msgid "Pruebas"
 msgstr ""
 
+#: app/views/errors/422.html.erb:13 app/views/errors/422.html.erb:16
 #: app/views/errors/500.html.erb:13 app/views/errors/500.html.erb:16
 #: app/views/errors/404.html.erb:13 app/views/errors/404.html.erb:16
-#: app/views/errors/422.html.erb:13 app/views/errors/422.html.erb:16
 msgid "Página de contacto"
 msgstr ""
 
@@ -1598,7 +1659,7 @@ msgstr ""
 msgid "Real patronato sobre discapacidad"
 msgstr ""
 
-#: app/views/user_sessions/new.html.erb:13 app/views/sessions/new.html.erb:14
+#: app/views/sessions/new.html.erb:14 app/views/user_sessions/new.html.erb:13
 msgid "Recordarme"
 msgstr ""
 
@@ -1637,45 +1698,45 @@ msgstr ""
 msgid "ReportFieldTemplate|Render options"
 msgstr ""
 
-#: po/model_attributes.rb:128
+#: po/model_attributes.rb:139
 msgid "Report|Extra information"
 msgstr ""
 
-#: po/model_attributes.rb:129
+#: po/model_attributes.rb:140
 msgid "Report|Extra information html"
 msgstr ""
 
-#: po/model_attributes.rb:124
+#: po/model_attributes.rb:135
 msgid "Report|Show signature"
 msgstr ""
 
-#: po/model_attributes.rb:126
+#: po/model_attributes.rb:137
 msgid "Report|Show signed on"
 msgstr ""
 
-#: po/model_attributes.rb:125
+#: po/model_attributes.rb:136
 msgid "Report|Signature"
 msgstr ""
 
-#: po/model_attributes.rb:127
+#: po/model_attributes.rb:138
 msgid "Report|Signed on"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:254
-#: app/views/individual_reports/show.html.erb:147
-#: app/views/individual_reports/_form.html.erb:135
+#: app/views/individual_reports/show.html.erb:152
+#: app/views/individual_reports/_form.html.erb:138
 msgid "Resultados"
 msgstr ""
 
-#: po/model_attributes.rb:37
+#: po/model_attributes.rb:40
 msgid "SchoolType|Description"
 msgstr ""
 
-#: po/model_attributes.rb:38
+#: po/model_attributes.rb:41
 msgid "SchoolType|Description html"
 msgstr ""
 
-#: po/model_attributes.rb:36
+#: po/model_attributes.rb:39
 msgid "SchoolType|Name"
 msgstr ""
 
@@ -1743,10 +1804,10 @@ msgid "Servicios de coordinación"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:26
-#: app/views/medical_records/_form.html.erb:50
-#: app/views/medical_records/_show.html.erb:21
 #: app/views/individual_reports/show.html.erb:39
 #: app/views/individual_reports/_form.html.erb:43
+#: app/views/medical_records/_show.html.erb:21
+#: app/views/medical_records/_form.html.erb:50
 msgid "Sexo"
 msgstr ""
 
@@ -1756,37 +1817,37 @@ msgstr ""
 
 #: app/reports/individual_report_pdf.rb:70
 #: app/reports/individual_report_pdf.rb:104
-#: app/views/medical_records/_show_mother_data.html.erb:15
 #: app/views/medical_records/_show_father_data.html.erb:15
 #: app/views/medical_records/_form_social_familiar.html.erb:49
 #: app/views/medical_records/_form_social_familiar.html.erb:128
+#: app/views/medical_records/_show_mother_data.html.erb:15
 msgid "Situación laboral"
 msgstr ""
 
-#: app/helpers/application_helper.rb:15 app/reports/report_pdf.rb:45
-#: app/views/medical_records/_form.html.erb:104
+#: app/reports/report_pdf.rb:46 app/helpers/application_helper.rb:15
 #: app/views/medical_records/_form_social_familiar.html.erb:211
 #: app/views/medical_records/_form_social_familiar.html.erb:216
 #: app/views/medical_records/_form_social_familiar.html.erb:221
+#: app/views/medical_records/_form.html.erb:104
 msgid "Sí"
 msgstr ""
 
-#: app/views/individual_reports/_form.html.erb:120
 #: app/views/center_reports/_form.html.erb:28
+#: app/views/individual_reports/_form.html.erb:123
 msgid "Sólo se requiere completar los campos necesarios para el informe."
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:127
-#: app/views/medical_records/_show.html.erb:75
-#: app/views/medical_records/_form_social_familiar.html.erb:180
 #: app/views/individual_reports/show.html.erb:90
 #: app/views/individual_reports/_form.html.erb:68
+#: app/views/medical_records/_show.html.erb:75
+#: app/views/medical_records/_form_social_familiar.html.erb:180
 msgid "Teléfonos"
 msgstr ""
 
 #: app/reports/individual_report_pdf.rb:135
-#: app/views/medical_records/_show_phones_data.html.erb:11
 #: app/views/medical_records/_form_social_familiar.html.erb:199
+#: app/views/medical_records/_show_phones_data.html.erb:11
 msgid "Trabajo"
 msgstr ""
 
@@ -1799,75 +1860,75 @@ msgstr ""
 msgid "Título"
 msgstr ""
 
-#: po/model_attributes.rb:117
+#: po/model_attributes.rb:119
 msgid "User|Active"
 msgstr ""
 
-#: po/model_attributes.rb:118
+#: po/model_attributes.rb:120
 msgid "User|Approved"
 msgstr ""
 
-#: po/model_attributes.rb:119
+#: po/model_attributes.rb:121
 msgid "User|Confirmed"
 msgstr ""
 
-#: po/model_attributes.rb:105
+#: po/model_attributes.rb:108
 msgid "User|Crypted password"
 msgstr ""
 
-#: po/model_attributes.rb:113
+#: po/model_attributes.rb:116
 msgid "User|Current login at"
 msgstr ""
 
-#: po/model_attributes.rb:115
+#: po/model_attributes.rb:118
 msgid "User|Current login ip"
 msgstr ""
 
-#: po/model_attributes.rb:104
+#: po/model_attributes.rb:107
 msgid "User|Email"
 msgstr ""
 
-#: po/model_attributes.rb:110
+#: po/model_attributes.rb:113
 msgid "User|Failed login count"
 msgstr ""
 
-#: po/model_attributes.rb:112
+#: po/model_attributes.rb:115
 msgid "User|Last login at"
 msgstr ""
 
-#: po/model_attributes.rb:114
+#: po/model_attributes.rb:117
 msgid "User|Last login ip"
 msgstr ""
 
-#: po/model_attributes.rb:111
+#: po/model_attributes.rb:114
 msgid "User|Last request at"
 msgstr ""
 
-#: po/model_attributes.rb:103
+#: po/model_attributes.rb:106
 msgid "User|Login"
 msgstr ""
 
-#: po/model_attributes.rb:109
+#: po/model_attributes.rb:112
 msgid "User|Login count"
 msgstr ""
 
-#: po/model_attributes.rb:116
+#: po/model_attributes.rb:123
 msgid "User|Name"
 msgstr ""
 
-#: po/model_attributes.rb:106
+#: po/model_attributes.rb:109
 msgid "User|Password salt"
 msgstr ""
 
-#: po/model_attributes.rb:108
+#: po/model_attributes.rb:111
 msgid "User|Perishable token"
 msgstr ""
 
-#: po/model_attributes.rb:107
+#: po/model_attributes.rb:110
 msgid "User|Persistence token"
 msgstr ""
 
-#: po/model_attributes.rb:120
+#: po/model_attributes.rb:122
 msgid "User|Role"
 msgstr ""
 
@@ -1875,8 +1936,10 @@ msgstr ""
 msgid "Usuarios y Centros"
 msgstr ""
 
-#: app/views/admin/center_resources/index.html.erb:15
 #: app/views/admin/center_resources/edit.html.erb:5
+#: app/views/admin/center_resources/index.html.erb:15
+#: app/views/admin/diagnosis_items/show.html.erb:27
+#: app/views/admin/diagnosis_items/index.html.erb:11
 msgid "Ver"
 msgstr ""
 
@@ -1888,18 +1951,28 @@ msgstr ""
 msgid "Ver todos"
 msgstr ""
 
-#: app/views/errors/500.html.erb:11 app/views/errors/404.html.erb:11
-#: app/views/errors/422.html.erb:11
+#: app/views/errors/422.html.erb:11 app/views/errors/500.html.erb:11
+#: app/views/errors/404.html.erb:11
 msgid "Volver a la lista de expedientes"
 msgstr ""
 
-#: app/views/errors/500.html.erb:12 app/views/errors/404.html.erb:12
-#: app/views/errors/422.html.erb:12
+#: app/views/errors/422.html.erb:12 app/views/errors/500.html.erb:12
+#: app/views/errors/404.html.erb:12
 msgid "Volver a la lista de informes de centro"
 msgstr ""
 
-#: app/views/errors/500.html.erb:10 app/views/errors/404.html.erb:10
-#: app/views/errors/422.html.erb:10
+#: app/views/admin/diagnosis_items/edit.html.erb:30
+#: app/views/admin/diagnosis_items/new.html.erb:25
+msgid "Volver al elemento superior"
+msgstr ""
+
+#: app/views/admin/diagnosis_items/edit.html.erb:32
+#: app/views/admin/diagnosis_items/new.html.erb:27
+msgid "Volver al listado"
+msgstr ""
+
+#: app/views/errors/422.html.erb:10 app/views/errors/500.html.erb:10
+#: app/views/errors/404.html.erb:10
 msgid "Volver al área de trabajo"
 msgstr ""
 
@@ -1907,67 +1980,68 @@ msgstr ""
 msgid "Ya existe un expediente para %{name}"
 msgstr ""
 
+#: app/views/odat_diagnoses/_form_level3.html.erb:15
 #: app/views/odat_diagnoses/_form_diagnosis_details.html.erb:15
 msgid "ayuda"
 msgstr ""
 
-#: po/model_attributes.rb:121
+#: po/model_attributes.rb:124
 msgid "center"
 msgstr ""
 
-#: po/model_attributes.rb:97
+#: po/model_attributes.rb:100
 msgid "center resource"
 msgstr ""
 
-#: po/model_attributes.rb:39
+#: po/model_attributes.rb:42
 msgid "civil state"
 msgstr ""
 
-#: po/model_attributes.rb:90
+#: po/model_attributes.rb:93
 msgid "comparative report"
 msgstr ""
 
-#: po/model_attributes.rb:27
+#: po/model_attributes.rb:30
 msgid "comparative report field template assignment"
 msgstr ""
 
-#: po/model_attributes.rb:182
+#: po/model_attributes.rb:186
 msgid "comparative report template"
 msgstr ""
 
-#: po/model_attributes.rb:31
+#: po/model_attributes.rb:34
 msgid "comparative report template field assignment"
 msgstr ""
 
-#: po/model_attributes.rb:178
+#: po/model_attributes.rb:182
 msgid "configurable view"
 msgstr ""
 
-#: po/model_attributes.rb:20
+#: po/model_attributes.rb:23
 msgid "consultation cause"
 msgstr ""
 
-#: po/model_attributes.rb:171
+#: po/model_attributes.rb:126
 msgid "diagnosis item"
 msgstr ""
 
-#: po/model_attributes.rb:166
+#: po/model_attributes.rb:177
 msgid "formation level"
 msgstr ""
 
-#: po/model_attributes.rb:56
+#: po/model_attributes.rb:59
 msgid "individual report"
 msgstr ""
 
-#: po/model_attributes.rb:10
+#: po/model_attributes.rb:13
 msgid "job"
 msgstr ""
 
-#: po/model_attributes.rb:15
+#: po/model_attributes.rb:18
 msgid "job status"
 msgstr ""
 
-#: po/model_attributes.rb:135
+#: po/model_attributes.rb:146
 msgid "medical record"
 msgstr "expediente"
 
@@ -1975,19 +2049,23 @@ msgstr "expediente"
 msgid "ocultar"
 msgstr ""
 
-#: po/model_attributes.rb:51
+#: po/model_attributes.rb:10
+msgid "odat diagnosis"
+msgstr ""
+
+#: po/model_attributes.rb:54
 msgid "origin cause"
 msgstr ""
 
-#: po/model_attributes.rb:130
+#: po/model_attributes.rb:141
 msgid "origin source"
 msgstr ""
 
-#: po/model_attributes.rb:44
+#: po/model_attributes.rb:47
 msgid "page"
 msgstr ""
 
-#: po/model_attributes.rb:25
+#: po/model_attributes.rb:28
 msgid "province"
 msgstr ""
 
@@ -1995,7 +2073,7 @@ msgstr ""
 msgid "region"
 msgstr ""
 
-#: po/model_attributes.rb:123
+#: po/model_attributes.rb:134
 msgid "report"
 msgstr ""
 
@@ -2003,7 +2081,7 @@ msgstr ""
 msgid "report field template"
 msgstr ""
 
-#: po/model_attributes.rb:35
+#: po/model_attributes.rb:38
 msgid "school type"
 msgstr ""
 
@@ -2011,7 +2089,7 @@ msgstr ""
 msgid "seguro?"
 msgstr ""
 
-#: po/model_attributes.rb:102
+#: po/model_attributes.rb:105
 msgid "user"
 msgstr ""
 
