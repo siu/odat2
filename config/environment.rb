@@ -18,6 +18,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+  config.frameworks -= [ :active_resource, :action_mailer ]
   
   # PDF reports load path
   config.autoload_paths << "#{RAILS_ROOT}/app/reports"
