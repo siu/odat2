@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   # Protect cookies
   protect_from_forgery
 
+  before_filter :set_locale
   before_filter :login_required
-  before_filter :set_gettext_locale
 
   helper :all
   helper_method :current_user_session, :current_user
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
             :layout => 'visitor.html.erb'
   end
 
-private
+protected
 
   def local_request?
     false
@@ -70,4 +70,8 @@ private
     session[:return_to] = nil
   end
 
+  def set_locale
+    FastGettext.text_domain = 'odat'
+    I18n.locale = FastGettext.set_locale(ODAT_FRONTEND_LOCALE)
+  end
 end

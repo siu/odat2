@@ -19,6 +19,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find  
     @user_session.destroy  
+    reset_session
     flash[:notice] = _('Has salido del sistema')
     redirect_to root_url
   end

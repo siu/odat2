@@ -72,14 +72,14 @@ ActiveRecord::Schema.define(:version => 20111002155839) do
   end
 
   create_table "comparative_reports", :force => true do |t|
-    t.boolean  "show_signature",                                :default => true
-    t.text     "signature",                      :limit => 150
-    t.boolean  "show_signed_on",                                :default => true
+    t.boolean  "show_signature",                 :default => true
+    t.text     "signature"
+    t.boolean  "show_signed_on",                 :default => true
     t.datetime "signed_on"
     t.integer  "configurable_view_id"
     t.integer  "center_id"
     t.integer  "comparative_report_template_id"
-    t.string   "type",                                          :default => "ComparativeReport", :null => false
+    t.string   "type",                           :default => "ComparativeReport", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "extra_information"
@@ -105,18 +105,19 @@ ActiveRecord::Schema.define(:version => 20111002155839) do
 
   create_table "diagnosis_items", :force => true do |t|
     t.string   "name"
-    t.text     "description",          :limit => 4096
-    t.text     "description_html",     :limit => 4096
+    t.text     "description"
+    t.text     "description_html"
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "multiple_select",                      :default => true
+    t.boolean  "multiple_select",      :default => true
     t.integer  "classification_level"
   end
 
   add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft"
+  add_index "diagnosis_items", ["parent_id", "lft"], :name => "index_diagnosis_items_on_parent_id_and_lft_and_position"
 
   create_table "diagnosis_items_odat_diagnoses", :id => false, :force => true do |t|
     t.integer "diagnosis_item_id", :null => false
@@ -145,10 +146,10 @@ ActiveRecord::Schema.define(:version => 20111002155839) do
     t.text     "orientation_html"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "signature",                        :limit => 150
+    t.text     "signature"
     t.datetime "signed_on"
-    t.boolean  "show_signature",                                  :default => true
-    t.boolean  "show_signed_on",                                  :default => true
+    t.boolean  "show_signature",                   :default => true
+    t.boolean  "show_signed_on",                   :default => true
     t.integer  "configurable_view_id"
     t.boolean  "show_medical_record_archive_date"
     t.boolean  "show_birth_date"
@@ -170,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20111002155839) do
     t.text     "extra_information"
     t.text     "extra_information_html"
     t.boolean  "show_handicap_data"
-    t.boolean  "show_level3",                                     :default => false
+    t.boolean  "show_level3",                      :default => false
   end
 
   add_index "individual_reports", ["medical_record_id"], :name => "index_individual_reports_on_medical_record_id"
@@ -224,7 +225,7 @@ ActiveRecord::Schema.define(:version => 20111002155839) do
     t.string   "home_phone",                :limit => 9
     t.string   "portable_phone",            :limit => 9
     t.string   "work_phone",                :limit => 9
-    t.integer  "total_siblings_amount",     :limit => 6
+    t.integer  "total_siblings_amount",     :limit => 8
     t.string   "postal",                    :limit => 5
     t.boolean  "sanitary_services"
     t.boolean  "social_services"
@@ -307,9 +308,9 @@ ActiveRecord::Schema.define(:version => 20111002155839) do
   end
 
   create_table "reports", :force => true do |t|
-    t.boolean  "show_signature",                        :default => true
-    t.text     "signature",              :limit => 150
-    t.boolean  "show_signed_on",                        :default => true
+    t.boolean  "show_signature",         :default => true
+    t.text     "signature"
+    t.boolean  "show_signed_on",         :default => true
     t.datetime "signed_on"
     t.datetime "created_at"
     t.datetime "updated_at"

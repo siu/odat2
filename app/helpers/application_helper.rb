@@ -6,8 +6,8 @@ module ApplicationHelper
     content_for(:page_title) { page_title }
   end
 
-  def locale_rtl?
-    return [:ar].include?(I18n.locale)
+  def locale_rtl?(locale)
+    return [:ar].include?(locale.to_sym)
   end
 
   def print_boolean(value)

@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES" <%= %'dir="rtl"' if locale_rtl? %>>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES" <%= %'dir="rtl"' if locale_rtl?(I18n.locale) %>>
   <head>
     <title><%= yield(:page_title) || _('Organización Diagnóstica para la Atención Temprana') %> - ODAT</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <%= stylesheet_link_tag 'base', 'layout', 'gfx', 'facebox' %>
-    <%= stylesheet_link_tag 'rtl-fix' if locale_rtl? %>
+    <%= stylesheet_link_tag 'rtl-fix' if locale_rtl?(I18n.locale) %>
     <%= stylesheet_link_tag 'print', :media => 'print' %>
     <%= javascript_include_tag 'jquery-1.6.4.min.js' %>
     <%= javascript_include_tag 'application' %>
